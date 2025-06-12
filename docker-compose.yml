@@ -1,0 +1,18 @@
+services:
+  db:
+    image: postgres:15
+    volumes:
+      - "dbdata:/var/lib/postgresql/data"
+    env_file:
+      - .env.test
+    ports:
+      - "5454:5432"
+    networks:
+      - drf-auth-kit
+
+volumes:
+  dbdata:
+
+networks:
+  drf-auth-kit:
+    driver: bridge
