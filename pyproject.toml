@@ -81,7 +81,7 @@ dependencies = [
 ]
 description = "Modern Django REST Framework authentication toolkit with JWT cookies, social login, and 2FA support"
 license = {file = "LICENSE"}
-name = "auth_kit"
+name = "drf-auth-kit"
 readme = "README.rst"
 requires-python = ">=3.10,<4.0"
 version = "0.1.0"

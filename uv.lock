@@ -55,128 +55,6 @@ wheels = [
 ]
 
 [[package]]
-name = "auth-kit"
-version = "0.1.0"
-source = { editable = "." }
-dependencies = [
-    { name = "django" },
-    { name = "django-allauth" },
-    { name = "django-stubs-ext" },
-    { name = "djangorestframework" },
-    { name = "djangorestframework-simplejwt" },
-    { name = "structlog" },
-]
-
-[package.dev-dependencies]
-dev = [
-    { name = "commitizen" },
-    { name = "coveralls" },
-    { name = "django-cleanup" },
-    { name = "django-cors-headers" },
-    { name = "django-debug-toolbar" },
-    { name = "django-extensions" },
-    { name = "django-rest-knox" },
-    { name = "django-structlog" },
-    { name = "drf-spectacular" },
-    { name = "drf-spectacular-extras" },
-    { name = "environs" },
-    { name = "factory-boy" },
-    { name = "faker" },
-    { name = "freezegun" },
-    { name = "ipython", version = "8.37.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
-    { name = "ipython", version = "9.3.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
-    { name = "mock" },
-    { name = "psycopg", extra = ["binary"] },
-    { name = "psycopg-pool" },
-    { name = "pytest-cov" },
-    { name = "pytest-django" },
-    { name = "pytest-mock" },
-    { name = "pytest-xdist" },
-]
-docs = [
-    { name = "myst-parser" },
-    { name = "sphinx" },
-    { name = "sphinx-rtd-theme" },
-]
-lint = [
-    { name = "black" },
-    { name = "django-stubs", extra = ["compatible-mypy"] },
-    { name = "djangorestframework-stubs", extra = ["compatible-mypy"] },
-    { name = "interrogate" },
-    { name = "mypy" },
-    { name = "pre-commit" },
-    { name = "pyright", extra = ["nodejs"] },
-    { name = "ruff" },
-    { name = "toml-sort" },
-]
-test = [
-    { name = "coverage", extra = ["toml"] },
-    { name = "pytest" },
-    { name = "pytest-cov" },
-    { name = "pytest-mock" },
-    { name = "pytest-xdist" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "django", specifier = ">=5,<6" },
-    { name = "django-allauth", specifier = ">=65.5.0" },
-    { name = "django-stubs-ext", specifier = ">=5,<6" },
-    { name = "djangorestframework", specifier = ">=3,<4" },
-    { name = "djangorestframework-simplejwt", specifier = ">=5" },
-    { name = "structlog", specifier = ">=25.2.0,<26" },
-]
-
-[package.metadata.requires-dev]
-dev = [
-    { name = "commitizen", specifier = ">=4.5.0,<5" },
-    { name = "coveralls", specifier = ">=4.0.1,<5" },
-    { name = "django-cleanup", specifier = ">=9.0.0,<10" },
-    { name = "django-cors-headers", specifier = ">=4.7.0,<5" },
-    { name = "django-debug-toolbar", specifier = ">=5.1.0,<6" },
-    { name = "django-extensions", specifier = ">=3.2.3,<4" },
-    { name = "django-rest-knox", specifier = ">=5.0.2" },
-    { name = "django-structlog", specifier = ">=9.1.0,<10" },
-    { name = "drf-spectacular", specifier = ">=0.28.0" },
-    { name = "drf-spectacular-extras", specifier = ">=0.1.0" },
-    { name = "environs", specifier = ">=14.1.1,<15" },
-    { name = "factory-boy", specifier = ">=3.3.3,<4" },
-    { name = "faker", specifier = ">=37.1.0,<38" },
-    { name = "freezegun", specifier = ">=1.5.1,<2" },
-    { name = "ipython", specifier = ">=8.35.0" },
-    { name = "mock", specifier = ">=5.2.0,<6" },
-    { name = "psycopg", extras = ["binary"], specifier = ">=3.2.6,<4" },
-    { name = "psycopg-pool", specifier = ">=3.2.6,<4" },
-    { name = "pytest-cov", specifier = ">=6.1.1,<7" },
-    { name = "pytest-django", specifier = ">=4.11.1,<5" },
-    { name = "pytest-mock", specifier = ">=3.14.0,<4" },
-    { name = "pytest-xdist", specifier = ">=3.6.1,<4" },
-]
-docs = [
-    { name = "myst-parser", specifier = ">=4.0.1" },
-    { name = "sphinx", specifier = ">=7.0.0,<8" },
-    { name = "sphinx-rtd-theme" },
-]
-lint = [
-    { name = "black", specifier = ">=25.1.0,<26" },
-    { name = "django-stubs", extras = ["compatible-mypy"], specifier = ">=5,<6" },
-    { name = "djangorestframework-stubs", extras = ["compatible-mypy"], specifier = ">=3,<4" },
-    { name = "interrogate", specifier = ">=1.7.0" },
-    { name = "mypy", specifier = ">=1.15.0" },
-    { name = "pre-commit", specifier = ">=3.4.0,<4.0.0" },
-    { name = "pyright", extras = ["nodejs"], specifier = ">=1.1.400,<2" },
-    { name = "ruff", specifier = ">=0.11.3,<0.12" },
-    { name = "toml-sort", specifier = ">=0.24.2,<0.25" },
-]
-test = [
-    { name = "coverage", extras = ["toml"], specifier = ">=7.8.0,<8" },
-    { name = "pytest", specifier = ">=8.3.5,<9" },
-    { name = "pytest-cov", specifier = ">=6.1.0,<7" },
-    { name = "pytest-mock", specifier = ">=3.14.0,<4" },
-    { name = "pytest-xdist", specifier = ">=3.6.1,<4" },
-]
-
-[[package]]
 name = "babel"
 version = "2.17.0"
 source = { registry = "https://pypi.org/simple" }
@@ -693,6 +571,128 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/ae/ed/aefcc8cd0ba62a0560c3c18c33925362d46c6075480bfa4df87b28e169a9/docutils-0.21.2.tar.gz", hash = "sha256:3a6b18732edf182daa3cd12775bbb338cf5691468f91eeeb109deff6ebfa986f", size = 2204444 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/8f/d7/9322c609343d929e75e7e5e6255e614fcc67572cfd083959cdef3b7aad79/docutils-0.21.2-py3-none-any.whl", hash = "sha256:dafca5b9e384f0e419294eb4d2ff9fa826435bf15f15b7bd45723e8ad76811b2", size = 587408 },
+]
+
+[[package]]
+name = "drf-auth-kit"
+version = "0.1.0"
+source = { editable = "." }
+dependencies = [
+    { name = "django" },
+    { name = "django-allauth" },
+    { name = "django-stubs-ext" },
+    { name = "djangorestframework" },
+    { name = "djangorestframework-simplejwt" },
+    { name = "structlog" },
+]
+
+[package.dev-dependencies]
+dev = [
+    { name = "commitizen" },
+    { name = "coveralls" },
+    { name = "django-cleanup" },
+    { name = "django-cors-headers" },
+    { name = "django-debug-toolbar" },
+    { name = "django-extensions" },
+    { name = "django-rest-knox" },
+    { name = "django-structlog" },
+    { name = "drf-spectacular" },
+    { name = "drf-spectacular-extras" },
+    { name = "environs" },
+    { name = "factory-boy" },
+    { name = "faker" },
+    { name = "freezegun" },
+    { name = "ipython", version = "8.37.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
+    { name = "ipython", version = "9.3.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
+    { name = "mock" },
+    { name = "psycopg", extra = ["binary"] },
+    { name = "psycopg-pool" },
+    { name = "pytest-cov" },
+    { name = "pytest-django" },
+    { name = "pytest-mock" },
+    { name = "pytest-xdist" },
+]
+docs = [
+    { name = "myst-parser" },
+    { name = "sphinx" },
+    { name = "sphinx-rtd-theme" },
+]
+lint = [
+    { name = "black" },
+    { name = "django-stubs", extra = ["compatible-mypy"] },
+    { name = "djangorestframework-stubs", extra = ["compatible-mypy"] },
+    { name = "interrogate" },
+    { name = "mypy" },
+    { name = "pre-commit" },
+    { name = "pyright", extra = ["nodejs"] },
+    { name = "ruff" },
+    { name = "toml-sort" },
+]
+test = [
+    { name = "coverage", extra = ["toml"] },
+    { name = "pytest" },
+    { name = "pytest-cov" },
+    { name = "pytest-mock" },
+    { name = "pytest-xdist" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "django", specifier = ">=5,<6" },
+    { name = "django-allauth", specifier = ">=65.5.0" },
+    { name = "django-stubs-ext", specifier = ">=5,<6" },
+    { name = "djangorestframework", specifier = ">=3,<4" },
+    { name = "djangorestframework-simplejwt", specifier = ">=5" },
+    { name = "structlog", specifier = ">=25.2.0,<26" },
+]
+
+[package.metadata.requires-dev]
+dev = [
+    { name = "commitizen", specifier = ">=4.5.0,<5" },
+    { name = "coveralls", specifier = ">=4.0.1,<5" },
+    { name = "django-cleanup", specifier = ">=9.0.0,<10" },
+    { name = "django-cors-headers", specifier = ">=4.7.0,<5" },
+    { name = "django-debug-toolbar", specifier = ">=5.1.0,<6" },
+    { name = "django-extensions", specifier = ">=3.2.3,<4" },
+    { name = "django-rest-knox", specifier = ">=5.0.2" },
+    { name = "django-structlog", specifier = ">=9.1.0,<10" },
+    { name = "drf-spectacular", specifier = ">=0.28.0" },
+    { name = "drf-spectacular-extras", specifier = ">=0.1.0" },
+    { name = "environs", specifier = ">=14.1.1,<15" },
+    { name = "factory-boy", specifier = ">=3.3.3,<4" },
+    { name = "faker", specifier = ">=37.1.0,<38" },
+    { name = "freezegun", specifier = ">=1.5.1,<2" },
+    { name = "ipython", specifier = ">=8.35.0" },
+    { name = "mock", specifier = ">=5.2.0,<6" },
+    { name = "psycopg", extras = ["binary"], specifier = ">=3.2.6,<4" },
+    { name = "psycopg-pool", specifier = ">=3.2.6,<4" },
+    { name = "pytest-cov", specifier = ">=6.1.1,<7" },
+    { name = "pytest-django", specifier = ">=4.11.1,<5" },
+    { name = "pytest-mock", specifier = ">=3.14.0,<4" },
+    { name = "pytest-xdist", specifier = ">=3.6.1,<4" },
+]
+docs = [
+    { name = "myst-parser", specifier = ">=4.0.1" },
+    { name = "sphinx", specifier = ">=7.0.0,<8" },
+    { name = "sphinx-rtd-theme" },
+]
+lint = [
+    { name = "black", specifier = ">=25.1.0,<26" },
+    { name = "django-stubs", extras = ["compatible-mypy"], specifier = ">=5,<6" },
+    { name = "djangorestframework-stubs", extras = ["compatible-mypy"], specifier = ">=3,<4" },
+    { name = "interrogate", specifier = ">=1.7.0" },
+    { name = "mypy", specifier = ">=1.15.0" },
+    { name = "pre-commit", specifier = ">=3.4.0,<4.0.0" },
+    { name = "pyright", extras = ["nodejs"], specifier = ">=1.1.400,<2" },
+    { name = "ruff", specifier = ">=0.11.3,<0.12" },
+    { name = "toml-sort", specifier = ">=0.24.2,<0.25" },
+]
+test = [
+    { name = "coverage", extras = ["toml"], specifier = ">=7.8.0,<8" },
+    { name = "pytest", specifier = ">=8.3.5,<9" },
+    { name = "pytest-cov", specifier = ">=6.1.0,<7" },
+    { name = "pytest-mock", specifier = ">=3.14.0,<4" },
+    { name = "pytest-xdist", specifier = ">=3.6.1,<4" },
 ]
 
 [[package]]
