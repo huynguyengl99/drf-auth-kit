@@ -1,3 +1,11 @@
+"""
+Configuration settings for Auth Kit package.
+
+This module provides a centralized configuration system for Auth Kit,
+allowing dynamic loading of serializers, views, and authentication classes
+based on user settings.
+"""
+
 # pyright: reportAssignmentType=false
 # mypy: disable-error-code=assignment
 
@@ -25,10 +33,14 @@ else:
 
 
 class ImportStr(str):
+    """String subclass that marks a setting as requiring import resolution."""
+
     pass
 
 
 class MySetting:
+    """Default settings configuration for Auth Kit."""
+
     # SERIALIZER & VIEWS dynamic load
 
     LOGIN_REQUEST_SERIALIZER: type[Serializer[dict[str, Any]]] = ImportStr(
@@ -133,6 +145,17 @@ def create_api_settings_from_model(
     import_strings: tuple[str, ...],
     override_value: dict[str, Any] | None = None,
 ) -> MySetting:
+    """
+    Create API settings instance from a model class.
+
+    Args:
+        model_class: The settings model class to use as defaults
+        import_strings: Tuple of setting names that require import resolution
+        override_value: Optional override values for settings
+
+    Returns:
+        Configured MySetting instance
+    """
     # Get user settings from Django settings
     user_settings = getattr(settings, "AUTH_KIT", override_value)
 
@@ -161,6 +184,13 @@ auth_kit_settings = create_api_settings_from_model(MySetting, IMPORT_STRINGS)
 
 
 def reload_api_settings(*args: Any, **kwargs: Any) -> None:
+    """
+    Reload API settings when Django settings change.
+
+    Args:
+        *args: Variable length argument list
+        **kwargs: Arbitrary keyword arguments including 'setting' and 'value'
+    """
     global auth_kit_settings  # noqa
 
     setting, value = kwargs["setting"], kwargs["value"]

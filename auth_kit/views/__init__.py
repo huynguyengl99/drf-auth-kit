@@ -1,3 +1,10 @@
+"""
+Views package for Auth Kit.
+
+This module exports all authentication-related view classes
+for login, logout, registration, password management, and JWT token handling.
+"""
+
 from .jwt import RefreshViewWithCookieSupport
 from .login import LoginView
 from .logout import LogoutView

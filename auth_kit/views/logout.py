@@ -1,3 +1,10 @@
+"""
+Logout views for Auth Kit.
+
+This module provides logout functionality with support for different
+authentication types and token cleanup.
+"""
+
 from typing import Any
 
 from django.conf import settings
@@ -10,19 +17,21 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.request import Request
 from rest_framework.response import Response
 
+from drf_spectacular.utils import extend_schema
 from rest_framework_simplejwt.exceptions import TokenError
 from rest_framework_simplejwt.tokens import RefreshToken
 
+from auth_kit.api_descriptions import get_logout_description
 from auth_kit.app_settings import auth_kit_settings
 from auth_kit.jwt_auth import unset_jwt_cookies, unset_token_cookie
 
 
 class LogoutView(GenericAPIView[Any]):
     """
-    Calls Django logout method and delete the Token object
-    assigned to the current User object.
+    User Logout
 
-    Accepts/Returns nothing.
+    Logout user and invalidate authentication tokens.
+    Clears authentication cookies and blacklists tokens when available.
     """
 
     permission_classes = (IsAuthenticated,)
@@ -30,16 +39,43 @@ class LogoutView(GenericAPIView[Any]):
     serializer_class = auth_kit_settings.LOGOUT_SERIALIZER
 
     def initial(self, request: Request, *args: Any, **kwargs: Any) -> None:
+        """
+        Initialize the request with refresh token from cookies.
+
+        Args:
+            request: The DRF request object
+            *args: Variable length argument list
+            **kwargs: Arbitrary keyword arguments
+        """
         super().initial(request, *args, **kwargs)
         cookie_name = auth_kit_settings.AUTH_JWT_REFRESH_COOKIE_NAME
 
         if cookie_name and cookie_name in request.COOKIES:
             self.request.data["refresh"] = request.COOKIES.get(cookie_name)
 
+    @extend_schema(description=get_logout_description())
     def post(self, request: Request, *args: Any, **kwargs: Any) -> Response:
+        """
+        Logout user and invalidate tokens.
+
+        Args:
+            request: The DRF request object
+            *args: Variable length argument list
+            **kwargs: Arbitrary keyword arguments
+
+        Returns:
+            DRF response with logout result
+        """
         return self.logout(request)
 
     def logout_jwt(self, request: Request, response: Response) -> None:
+        """
+        Handle JWT logout including token blacklisting.
+
+        Args:
+            request: The DRF request object
+            response: The DRF response object
+        """
         if auth_kit_settings.USE_AUTH_COOKIE:
             unset_jwt_cookies(response)
 
@@ -81,6 +117,15 @@ class LogoutView(GenericAPIView[Any]):
                 response.status_code = status.HTTP_500_INTERNAL_SERVER_ERROR
 
     def logout(self, request: Request) -> Response:
+        """
+        Perform user logout based on authentication type.
+
+        Args:
+            request: The DRF request object
+
+        Returns:
+            DRF response with logout result
+        """
         if auth_kit_settings.SESSION_LOGIN:
             django_logout(request)
 
@@ -103,4 +148,13 @@ class LogoutView(GenericAPIView[Any]):
         return response
 
     def logout_custom(self, request: Request, response: Response) -> None:
+        """
+        Handle custom logout logic.
+
+        Override this method to implement custom logout behavior.
+
+        Args:
+            request: The DRF request object
+            response: The DRF response object
+        """
         pass

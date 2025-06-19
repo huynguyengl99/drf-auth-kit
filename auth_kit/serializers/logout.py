@@ -1,3 +1,10 @@
+"""
+Logout serializers for Auth Kit.
+
+This module provides serializers for handling logout requests
+with support for different authentication types.
+"""
+
 from typing import Any
 
 from rest_framework import serializers
@@ -7,6 +14,8 @@ from auth_kit.app_settings import auth_kit_settings
 
 
 class JWTLogoutSerializer(serializers.Serializer[dict[str, str]]):
+    """JWT logout with refresh token blacklisting."""
+
     refresh = serializers.CharField(
         write_only=True, required=(not auth_kit_settings.USE_AUTH_COOKIE)
     )
@@ -14,6 +23,8 @@ class JWTLogoutSerializer(serializers.Serializer[dict[str, str]]):
 
 
 class AuthKitLogoutSerializer(serializers.Serializer[dict[str, str]]):
+    """Logout confirmation for token-based authentication."""
+
     detail = serializers.CharField(read_only=True)
 
 

@@ -1,3 +1,10 @@
+"""
+User detail serializers for Auth Kit.
+
+This module provides serializers for user profile management
+and user detail display.
+"""
+
 from django.contrib.auth.base_user import AbstractBaseUser
 from rest_framework import serializers
 
@@ -9,16 +16,25 @@ from auth_kit.serializers.login_factors import UserModel
 
 
 class UserDetailsSerializer(serializers.ModelSerializer[AbstractBaseUser]):
-    """
-    User model w/o password
-    """
+    """User profile information and updates."""
 
     @staticmethod
     def validate_username(username: str) -> str:
+        """
+        Validate and clean username using allauth adapter.
+
+        Args:
+            username: Username to validate
+
+        Returns:
+            Cleaned username
+        """
         username = get_adapter().clean_username(username)  # pyright: ignore
         return username
 
     class Meta:  # pyright: ignore[reportIncompatibleVariableOverride]
+        """Metadata configuration for user profile serialization."""
+
         extra_fields: list[str] = []
         if hasattr(UserModel, "USERNAME_FIELD"):
             extra_fields.append(UserModel.USERNAME_FIELD)

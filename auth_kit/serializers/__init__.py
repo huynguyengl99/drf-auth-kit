@@ -1,3 +1,10 @@
+"""
+Serializers package for Auth Kit.
+
+This module exports commonly used serializers for authentication,
+registration, password management, and JWT token handling.
+"""
+
 from .jwt import CookieTokenRefreshSerializer, JWTSerializer
 from .login import LoginSerializer
 from .password import (

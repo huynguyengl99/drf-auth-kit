@@ -1,3 +1,10 @@
+"""
+Password management views for Auth Kit.
+
+This module provides views for password reset, confirmation,
+and change operations.
+"""
+
 from typing import Any
 
 from django.http import HttpResponseBase
@@ -14,10 +21,10 @@ from auth_kit.utils import sensitive_post_parameters_m
 
 class PasswordResetView(GenericAPIView[Any]):
     """
-    Calls Django Auth PasswordResetForm save method.
+    Password reset request view.
 
-    Accepts the following POST parameters: email
-    Returns the success/fail message.
+    Accepts email address and sends password reset email
+    using django-allauth forms.
     """
 
     serializer_class = auth_kit_settings.PASSWORD_RESET_SERIALIZER
@@ -26,6 +33,17 @@ class PasswordResetView(GenericAPIView[Any]):
     throttle_scope = "auth_kit"
 
     def post(self, request: Request, *args: Any, **kwargs: Any) -> Response:
+        """
+        Handle POST request for password reset.
+
+        Args:
+            request: The HTTP request object
+            *args: Variable length argument list
+            **kwargs: Arbitrary keyword arguments
+
+        Returns:
+            HTTP response with success message
+        """
         # Create a serializer with request.data
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
@@ -40,12 +58,9 @@ class PasswordResetView(GenericAPIView[Any]):
 
 class PasswordResetConfirmView(GenericAPIView[Any]):
     """
-    Password reset e-mail link is confirmed, therefore
-    this resets the user's password.
+    Password reset confirmation view.
 
-    Accepts the following POST parameters: token, uid,
-        new_password1, new_password2
-    Returns the success/fail message.
+    Validates reset token and sets new password for the user.
     """
 
     serializer_class = auth_kit_settings.PASSWORD_RESET_CONFIRM_SERIALIZER
@@ -54,9 +69,30 @@ class PasswordResetConfirmView(GenericAPIView[Any]):
 
     @sensitive_post_parameters_m
     def dispatch(self, *args: Any, **kwargs: Any) -> HttpResponseBase:
+        """
+        Dispatch the request with sensitive parameter protection.
+
+        Args:
+            *args: Variable length argument list
+            **kwargs: Arbitrary keyword arguments
+
+        Returns:
+            HTTP response
+        """
         return super().dispatch(*args, **kwargs)
 
     def post(self, request: Request, *args: Any, **kwargs: Any) -> Response:
+        """
+        Handle POST request for password reset confirmation.
+
+        Args:
+            request: The HTTP request object
+            *args: Variable length argument list
+            **kwargs: Arbitrary keyword arguments
+
+        Returns:
+            HTTP response with success message
+        """
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
@@ -67,9 +103,9 @@ class PasswordResetConfirmView(GenericAPIView[Any]):
 
 class PasswordChangeView(GenericAPIView[Any]):
     """
-    Calls Django Auth SetPasswordForm save method.
+    Password change view for authenticated users.
 
-    Returns the success/fail message.
+    Allows authenticated users to change their password.
     """
 
     serializer_class = auth_kit_settings.PASSWORD_CHANGE_SERIALIZER
@@ -78,9 +114,30 @@ class PasswordChangeView(GenericAPIView[Any]):
 
     @sensitive_post_parameters_m
     def dispatch(self, *args: Any, **kwargs: Any) -> HttpResponseBase:
+        """
+        Dispatch the request with sensitive parameter protection.
+
+        Args:
+            *args: Variable length argument list
+            **kwargs: Arbitrary keyword arguments
+
+        Returns:
+            HTTP response
+        """
         return super().dispatch(*args, **kwargs)
 
     def post(self, request: Request, *args: Any, **kwargs: Any) -> Response:
+        """
+        Handle POST request for password change.
+
+        Args:
+            request: The HTTP request object
+            *args: Variable length argument list
+            **kwargs: Arbitrary keyword arguments
+
+        Returns:
+            HTTP response with success message
+        """
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()

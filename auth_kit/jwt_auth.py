@@ -1,3 +1,10 @@
+"""
+JWT cookie authentication utilities.
+
+This module provides utility functions for setting and unsetting
+JWT authentication cookies in HTTP responses.
+"""
+
 from datetime import datetime
 
 from rest_framework.response import Response
@@ -12,6 +19,16 @@ def set_auth_kit_cookie(
     cookie_path: str,
     cookie_exp_time: datetime | None,
 ) -> None:
+    """
+    Set an authentication cookie in the HTTP response.
+
+    Args:
+        response: The HTTP response object
+        cookie_name: Name of the cookie to set
+        cookie_value: Value to store in the cookie
+        cookie_path: Path for which the cookie is valid
+        cookie_exp_time: Expiration time for the cookie
+    """
     response.set_cookie(
         cookie_name,
         cookie_value,
@@ -25,6 +42,12 @@ def set_auth_kit_cookie(
 
 
 def unset_jwt_cookies(response: Response) -> None:
+    """
+    Remove JWT authentication cookies from the HTTP response.
+
+    Args:
+        response: The HTTP response object
+    """
     cookie_samesite = auth_kit_settings.AUTH_COOKIE_SAMESITE
     cookie_domain = auth_kit_settings.AUTH_COOKIE_DOMAIN
 
@@ -42,6 +65,12 @@ def unset_jwt_cookies(response: Response) -> None:
 
 
 def unset_token_cookie(response: Response) -> None:
+    """
+    Remove token authentication cookie from the HTTP response.
+
+    Args:
+        response: The HTTP response object
+    """
     cookie_samesite = auth_kit_settings.AUTH_COOKIE_SAMESITE
     cookie_domain = auth_kit_settings.AUTH_COOKIE_DOMAIN
 

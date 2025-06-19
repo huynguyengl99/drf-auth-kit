@@ -1,3 +1,10 @@
+"""
+URL configuration for Auth Kit authentication endpoints.
+
+This module defines all URL patterns for authentication-related views
+including login, logout, registration, password reset, and email verification.
+"""
+
 from django.urls import re_path
 from django.views.generic import TemplateView
 

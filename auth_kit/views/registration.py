@@ -1,3 +1,10 @@
+"""
+User registration views for Auth Kit.
+
+This module provides views for user registration, email verification,
+and email verification resend functionality.
+"""
+
 # pyright: reportMissingTypeStubs=false, reportUnknownVariableType=false
 from typing import Any, NoReturn
 from urllib.parse import urlencode
@@ -20,7 +27,13 @@ from allauth.account.app_settings import EmailVerificationMethod
 from allauth.account.models import EmailAddress, get_emailconfirmation_model
 from allauth.account.views import ConfirmEmailView
 from allauth.utils import build_absolute_uri
+from drf_spectacular.utils import extend_schema
 
+from auth_kit.api_descriptions import (
+    EMAIL_RESEND_DESCRIPTION,
+    EMAIL_VERIFY_DESCRIPTION,
+    get_registration_description,
+)
 from auth_kit.app_settings import auth_kit_settings
 from auth_kit.serializers import (
     ResendEmailVerificationSerializer,
@@ -30,6 +43,16 @@ from auth_kit.utils import sensitive_post_parameters_m
 
 
 def get_email_verification_url(request: Request, emailconfirmation: Any) -> str:
+    """
+    Generate email verification URL with confirmation key.
+
+    Args:
+        request: The DRF request object
+        emailconfirmation: Email confirmation instance
+
+    Returns:
+        Complete email verification URL with query parameters
+    """
     query_params: dict[str, str] = {"key": str(emailconfirmation.key)}
     encoded_params = urlencode(query_params)
 
@@ -44,6 +67,13 @@ def get_email_verification_url(request: Request, emailconfirmation: Any) -> str:
 
 
 def send_verify_email(request: Request, user: AbstractUser) -> None:
+    """
+    Send email verification message to user.
+
+    Args:
+        request: The DRF request object
+        user: User instance to send verification email to
+    """
     if allauth_account_settings.EMAIL_VERIFICATION == EmailVerificationMethod.NONE:
         return
 
@@ -70,9 +100,10 @@ def send_verify_email(request: Request, user: AbstractUser) -> None:
 
 class RegisterView(CreateAPIView[Any]):
     """
-    Registers a new user.
+    User Registration
 
-    Accepts the following POST parameters: username, email, password1, password2.
+    Create new user accounts with email verification.
+    Users must verify their email address before the account is fully activated.
     """
 
     serializer_class = auth_kit_settings.REGISTER_SERIALIZER
@@ -81,9 +112,28 @@ class RegisterView(CreateAPIView[Any]):
 
     @sensitive_post_parameters_m
     def dispatch(self, *args: Any, **kwargs: Any) -> HttpResponseBase:
+        """
+        Dispatch the request with sensitive parameter protection.
+
+        Args:
+            *args: Variable length argument list
+            **kwargs: Arbitrary keyword arguments
+
+        Returns:
+            HTTP response
+        """
         return super().dispatch(*args, **kwargs)
 
     def get_response_data(self, user: AbstractUser) -> dict[str, Any]:
+        """
+        Get response data for successful registration.
+
+        Args:
+            user: The newly registered user
+
+        Returns:
+            Dictionary containing response message
+        """
         if (
             allauth_account_settings.EMAIL_VERIFICATION
             == allauth_account_settings.EmailVerificationMethod.MANDATORY
@@ -91,7 +141,19 @@ class RegisterView(CreateAPIView[Any]):
             return {"detail": _("Verification e-mail sent.")}
         return {"detail": _("Successfully registered.")}
 
+    @extend_schema(description=get_registration_description())
     def create(self, request: Request, *args: Any, **kwargs: Any) -> Response:
+        """
+        Create a new user account.
+
+        Args:
+            request: The DRF request object
+            *args: Variable length argument list
+            **kwargs: Arbitrary keyword arguments
+
+        Returns:
+            DRF response with registration result
+        """
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         user = serializer.save()
@@ -110,21 +172,54 @@ class RegisterView(CreateAPIView[Any]):
 
 class VerifyEmailView(APIView, ConfirmEmailView):  # type: ignore[misc]
     """
-    Verifies the email associated with the provided key.
+    Email Verification
 
-    Accepts the following POST parameter: key.
+    Verify email addresses using confirmation keys sent via email.
+    Required to activate user accounts after registration.
     """
 
     permission_classes = (AllowAny,)
     authentication_classes = []
 
     def get_serializer(self, *args: Any, **kwargs: Any) -> VerifyEmailSerializer:
+        """
+        Get the email verification serializer.
+
+        Args:
+            *args: Variable length argument list
+            **kwargs: Arbitrary keyword arguments
+
+        Returns:
+            Email verification serializer instance
+        """
         return VerifyEmailSerializer(*args, **kwargs)
 
     def get(self, *args: Any, **kwargs: Any) -> NoReturn:
+        """
+        GET method not allowed for email verification.
+
+        Args:
+            *args: Variable length argument list
+            **kwargs: Arbitrary keyword arguments
+
+        Raises:
+            MethodNotAllowed: Always raises this exception
+        """
         raise MethodNotAllowed("GET")
 
+    @extend_schema(description=EMAIL_VERIFY_DESCRIPTION)
     def post(self, request: Request, *args: Any, **kwargs: Any) -> Response:
+        """
+        Verify email address using confirmation key.
+
+        Args:
+            request: The DRF request object
+            *args: Variable length argument list
+            **kwargs: Arbitrary keyword arguments
+
+        Returns:
+            DRF response with verification result
+        """
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         self.kwargs["key"] = serializer.validated_data["key"]
@@ -135,9 +230,10 @@ class VerifyEmailView(APIView, ConfirmEmailView):  # type: ignore[misc]
 
 class ResendEmailVerificationView(CreateAPIView[Any]):
     """
-    Resends another email to an unverified email.
+    Resend Email Verification
 
-    Accepts the following POST parameter: email.
+    Request a new email verification message for unverified accounts.
+    Useful when the original verification email was lost or expired.
     """
 
     authentication_classes = []
@@ -145,7 +241,19 @@ class ResendEmailVerificationView(CreateAPIView[Any]):
     serializer_class = ResendEmailVerificationSerializer
     queryset = EmailAddress.objects.all()
 
+    @extend_schema(description=EMAIL_RESEND_DESCRIPTION)
     def create(self, request: Request, *args: Any, **kwargs: Any) -> Response:
+        """
+        Send new email verification message.
+
+        Args:
+            request: The DRF request object
+            *args: Variable length argument list
+            **kwargs: Arbitrary keyword arguments
+
+        Returns:
+            DRF response with success message
+        """
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
 

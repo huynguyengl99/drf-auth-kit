@@ -1,3 +1,10 @@
+"""
+Forms for Auth Kit authentication processes.
+
+This module provides form classes for password reset functionality
+using django-allauth integration.
+"""
+
 # pyright: reportMissingTypeStubs=false, reportUnknownVariableType=false
 from typing import Any
 from urllib.parse import urlencode
@@ -23,6 +30,17 @@ from .app_settings import auth_kit_settings
 def password_reset_url_generator(
     request: HttpRequest, user: AbstractUser, temp_key: str
 ) -> str:
+    """
+    Generate password reset URL with token and user ID.
+
+    Args:
+        request: The HTTP request object
+        user: The user requesting password reset
+        temp_key: Temporary token for password reset
+
+    Returns:
+        Complete password reset URL with query parameters
+    """
     uid = user_pk_to_url_str(user)
 
     query_params: dict[str, str] = {"uid": uid, "token": temp_key}
@@ -39,7 +57,24 @@ def password_reset_url_generator(
 
 
 class AllAuthPasswordResetForm(DefaultPasswordResetForm):  # type: ignore[misc]
+    """
+    Custom password reset form integrated with django-allauth.
+
+    Extends the default allauth password reset form to support
+    custom URL generation and Auth Kit settings.
+    """
+
     def save(self, request: HttpRequest, **kwargs: Any) -> str:
+        """
+        Save the password reset form and send reset email.
+
+        Args:
+            request: The HTTP request object
+            **kwargs: Additional keyword arguments including token_generator and url_generator
+
+        Returns:
+            Email address that the reset email was sent to
+        """
         email: str = self.cleaned_data["email"]
         token_generator = kwargs.get("token_generator", default_token_generator)
 

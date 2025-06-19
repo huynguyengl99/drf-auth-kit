@@ -1,3 +1,10 @@
+"""
+Authentication classes for Auth Kit.
+
+This module provides cookie-based authentication classes that work with
+JWT tokens, DRF tokens, and custom authentication backends.
+"""
+
 from typing import Any
 
 from django.contrib.auth.base_user import AbstractBaseUser
@@ -12,14 +19,25 @@ from auth_kit.app_settings import auth_kit_settings
 
 class AuthKitCookieAuthentication(JWTAuthentication):
     """
-    An authentication plugin that hopefully authenticates requests through a JSON web
-    token provided in a request cookie (and through the header as normal, with a
-    preference to the header).
+    Base authentication class that supports both header and cookie-based authentication.
+
+    An authentication plugin that authenticates requests through tokens provided
+    in request cookies or headers, with preference given to headers.
     """
 
     def _authenticate(
         self, request: Request, cookie_name: str | None
     ) -> tuple[Any, Any] | None:
+        """
+        Authenticate the request using header or cookie-based token.
+
+        Args:
+            request: The HTTP request object
+            cookie_name: Name of the cookie containing the authentication token
+
+        Returns:
+            Tuple of (user, token) if authentication succeeds, None otherwise
+        """
         header = self.get_header(request)
         if header is None:  # pyright: ignore[reportUnnecessaryComparison]
             if cookie_name:
@@ -45,20 +63,51 @@ class AuthKitCookieAuthentication(JWTAuthentication):
             return self.custom_authenticate(token)
 
     def authenticate_credentials(self, key: str) -> tuple[Any, Any] | None:
+        """
+        Authenticate using token credentials.
+
+        Args:
+            key: The token key to authenticate
+
+        Returns:
+            Tuple of (user, token) if authentication succeeds, None otherwise
+        """
         pass
 
     def custom_authenticate(self, token: str) -> tuple[Any, Any] | None:
+        """
+        Custom authentication method for non-standard auth types.
+
+        Args:
+            token: The token to authenticate
+
+        Returns:
+            Tuple of (user, token) if authentication succeeds, None otherwise
+        """
         pass
 
 
 class TokenCookieAuthentication(TokenAuthentication, AuthKitCookieAuthentication):
+    """Authentication class for DRF token-based authentication with cookie support."""
+
     keyword = "Bearer"
 
     def authenticate(self, request: Request) -> tuple[Any, Any] | None:
+        """
+        Authenticate the request using DRF token from cookie or header.
+
+        Args:
+            request: The HTTP request object
+
+        Returns:
+            Tuple of (user, token) if authentication succeeds, None otherwise
+        """
         return self._authenticate(request, auth_kit_settings.AUTH_TOKEN_COOKIE_NAME)
 
 
 class TokenCookieAuthenticationScheme(SimpleJWTScheme):  # type: ignore[no-untyped-call]
+    """OpenAPI schema for token cookie authentication."""
+
     target_class = "auth_kit.authentication.TokenCookieAuthentication"
     optional = True
     name = [  # type: ignore[assignment]
@@ -69,6 +118,15 @@ class TokenCookieAuthenticationScheme(SimpleJWTScheme):  # type: ignore[no-untyp
     def get_security_definition(  # pyright: ignore[reportIncompatibleMethodOverride]
         self, auto_schema: Any
     ) -> list[dict[str, Any]]:
+        """
+        Get security definition for OpenAPI schema.
+
+        Args:
+            auto_schema: The auto schema generator instance
+
+        Returns:
+            List of security definitions for the schema
+        """
         return [
             super().get_security_definition(auto_schema),  # type: ignore[no-untyped-call]
             {
@@ -80,11 +138,24 @@ class TokenCookieAuthenticationScheme(SimpleJWTScheme):  # type: ignore[no-untyp
 
 
 class JWTCookieAuthentication(AuthKitCookieAuthentication):
+    """Authentication class for JWT-based authentication with cookie support."""
+
     def authenticate(self, request: Request) -> tuple[Any, Any] | None:
+        """
+        Authenticate the request using JWT from cookie or header.
+
+        Args:
+            request: The HTTP request object
+
+        Returns:
+            Tuple of (user, token) if authentication succeeds, None otherwise
+        """
         return self._authenticate(request, auth_kit_settings.AUTH_JWT_COOKIE_NAME)
 
 
 class JWTCookieAuthenticationScheme(SimpleJWTScheme):  # type: ignore[no-untyped-call]
+    """OpenAPI schema for JWT cookie authentication."""
+
     target_class = "auth_kit.authentication.JWTCookieAuthentication"
     optional = True
     name = ["JWTAuthentication", "JWTCookieAuthentication"]  # type: ignore[assignment]
@@ -92,6 +163,15 @@ class JWTCookieAuthenticationScheme(SimpleJWTScheme):  # type: ignore[no-untyped
     def get_security_definition(  # pyright: ignore[reportIncompatibleMethodOverride]
         self, auto_schema: Any
     ) -> list[dict[str, Any]]:
+        """
+        Get security definition for OpenAPI schema.
+
+        Args:
+            auto_schema: The auto schema generator instance
+
+        Returns:
+            List of security definitions for the schema
+        """
         return [
             super().get_security_definition(auto_schema),  # type: ignore[no-untyped-call]
             {
