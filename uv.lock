@@ -60,8 +60,10 @@ version = "0.0.1"
 source = { editable = "." }
 dependencies = [
     { name = "django" },
+    { name = "django-allauth" },
     { name = "django-stubs-ext" },
     { name = "djangorestframework" },
+    { name = "djangorestframework-simplejwt" },
     { name = "structlog" },
 ]
 
@@ -73,8 +75,10 @@ dev = [
     { name = "django-cors-headers" },
     { name = "django-debug-toolbar" },
     { name = "django-extensions" },
+    { name = "django-rest-knox" },
     { name = "django-structlog" },
     { name = "drf-spectacular" },
+    { name = "drf-spectacular-extras" },
     { name = "environs" },
     { name = "factory-boy" },
     { name = "faker" },
@@ -116,8 +120,10 @@ test = [
 [package.metadata]
 requires-dist = [
     { name = "django", specifier = ">=5,<6" },
+    { name = "django-allauth", specifier = ">=65.5.0" },
     { name = "django-stubs-ext", specifier = ">=5,<6" },
     { name = "djangorestframework", specifier = ">=3,<4" },
+    { name = "djangorestframework-simplejwt", specifier = ">=5" },
     { name = "structlog", specifier = ">=25.2.0,<26" },
 ]
 
@@ -129,8 +135,10 @@ dev = [
     { name = "django-cors-headers", specifier = ">=4.7.0,<5" },
     { name = "django-debug-toolbar", specifier = ">=5.1.0,<6" },
     { name = "django-extensions", specifier = ">=3.2.3,<4" },
+    { name = "django-rest-knox", specifier = ">=5.0.2" },
     { name = "django-structlog", specifier = ">=9.1.0,<10" },
-    { name = "drf-spectacular", specifier = ">=0.28.0,<1" },
+    { name = "drf-spectacular", specifier = ">=0.28.0" },
+    { name = "drf-spectacular-extras", specifier = ">=0.1.0" },
     { name = "environs", specifier = ">=14.1.1,<15" },
     { name = "factory-boy", specifier = ">=3.3.3,<4" },
     { name = "faker", specifier = ">=37.1.0,<38" },
@@ -493,6 +501,16 @@ wheels = [
 ]
 
 [[package]]
+name = "django-allauth"
+version = "65.9.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "asgiref" },
+    { name = "django" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/9d/a3/00aa9d5bb5df4f7464495675074dc11107c08b3eea3462fb3edc059d71e1/django_allauth-65.9.0.tar.gz", hash = "sha256:a06bca9974df44321e94c33bcf770bb6f924d1a44b57defbce4d7ec54a55483e", size = 1710514 }
+
+[[package]]
 name = "django-cleanup"
 version = "9.0.0"
 source = { registry = "https://pypi.org/simple" }
@@ -549,6 +567,19 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/23/64/c7e4791edf01ba483cce444770b3e6a930ba12195ba1eeb37b5bf6dce8a8/django-ipware-7.0.1.tar.gz", hash = "sha256:d9ec43d2bf7cdf216fed8d494a084deb5761a54860a53b2e74346a4f384cff47", size = 6827 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/11/33/bf539925b102d68200da5b1d3eacb8aa5d5d9a065972e8b8724d0d53bb0d/django_ipware-7.0.1-py2.py3-none-any.whl", hash = "sha256:db16bbee920f661ae7f678e4270460c85850f03c6761a4eaeb489bdc91f64709", size = 6425 },
+]
+
+[[package]]
+name = "django-rest-knox"
+version = "5.0.2"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "django" },
+    { name = "djangorestframework" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/ba/7e/6ef520fbfa0cb902fe32c6f921426b1dcfa50cb2471a0ddca31ba770fa72/django_rest_knox-5.0.2.tar.gz", hash = "sha256:f283622bcf5d28a6a0203845c065d06c7432efa54399ae32070c61ac03af2d6f", size = 16292 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/13/29/09468c086fd19f34b00a9698ee9cc1864dfae8c171be140657b965577472/django_rest_knox-5.0.2-py3-none-any.whl", hash = "sha256:694da5d0ad6eb3edbfd7cdc8d69c089fc074e6b0e548e00ff2750bf2fdfadb6f", size = 14960 },
 ]
 
 [[package]]
@@ -614,6 +645,20 @@ wheels = [
 ]
 
 [[package]]
+name = "djangorestframework-simplejwt"
+version = "5.5.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "django" },
+    { name = "djangorestframework" },
+    { name = "pyjwt" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/db/1e/0d4439d0fa1d93599fbcfc56efdc02cbf012e3a4b4ef90c835e0a51017d4/djangorestframework_simplejwt-5.5.0.tar.gz", hash = "sha256:474a1b737067e6462b3609627a392d13a4da8a08b1f0574104ac6d7b1406f90e", size = 97946 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/42/b4/d1c1750aa7c8cc07e4974275f96b9b9b3a38e95ff734e14b4e97790c8974/djangorestframework_simplejwt-5.5.0-py3-none-any.whl", hash = "sha256:4ef6b38af20cdde4a4a51d1fd8e063cbbabb7b45f149cc885d38d905c5a62edb", size = 103480 },
+]
+
+[[package]]
 name = "djangorestframework-stubs"
 version = "3.16.0"
 source = { registry = "https://pypi.org/simple" }
@@ -665,6 +710,18 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/da/b9/741056455aed00fa51a1df41fad5ad27c8e0d433b6bf490d4e60e2808bc6/drf_spectacular-0.28.0.tar.gz", hash = "sha256:2c778a47a40ab2f5078a7c42e82baba07397bb35b074ae4680721b2805943061", size = 237849 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/fb/66/c2929871393b1515c3767a670ff7d980a6882964a31a4ca2680b30d7212a/drf_spectacular-0.28.0-py3-none-any.whl", hash = "sha256:856e7edf1056e49a4245e87a61e8da4baff46c83dbc25be1da2df77f354c7cb4", size = 103928 },
+]
+
+[[package]]
+name = "drf-spectacular-extras"
+version = "0.1.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "drf-spectacular" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/63/6c/69eca8511dac17ab21c89c98ad3cbc015b97cd9939105d67017226f1df81/drf_spectacular_extras-0.1.0.tar.gz", hash = "sha256:127efcb9be393e0ad710a3657554ec059f8ad62e281a435ea45917b58d06b52a", size = 6616 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/b4/12/154cfa9cd3c811a79e041aaefcfa49020870486857a8b0cacef07ec014c2/drf_spectacular_extras-0.1.0-py3-none-any.whl", hash = "sha256:806e329182eb8237de90222e00ca4f5d521c2b4d50f7f73a1064b71140fe67f6", size = 7584 },
 ]
 
 [[package]]
@@ -1357,6 +1414,15 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/7c/2d/c3338d48ea6cc0feb8446d8e6937e1408088a72a39937982cc6111d17f84/pygments-2.19.1.tar.gz", hash = "sha256:61c16d2a8576dc0649d9f39e089b5f02bcd27fba10d8fb4dcc28173f7a45151f", size = 4968581 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/8a/0b/9fcc47d19c48b59121088dd6da2488a49d5f72dacf8262e2790a1d2c7d15/pygments-2.19.1-py3-none-any.whl", hash = "sha256:9ea1544ad55cecf4b8242fab6dd35a93bbce657034b0611ee383099054ab6d8c", size = 1225293 },
+]
+
+[[package]]
+name = "pyjwt"
+version = "2.9.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/fb/68/ce067f09fca4abeca8771fe667d89cc347d1e99da3e093112ac329c6020e/pyjwt-2.9.0.tar.gz", hash = "sha256:7e1e5b56cc735432a7369cbfa0efe50fa113ebecdc04ae6922deba8b84582d0c", size = 78825 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/79/84/0fdf9b18ba31d69877bd39c9cd6052b47f3761e9910c15de788e519f079f/PyJWT-2.9.0-py3-none-any.whl", hash = "sha256:3b02fb0f44517787776cf48f2ae25d8e14f300e6d7545a4315cee571a415e850", size = 22344 },
 ]
 
 [[package]]

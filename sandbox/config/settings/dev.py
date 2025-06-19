@@ -65,10 +65,17 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
+    "rest_framework.authtoken",
     "drf_spectacular",
+    "drf_spectacular_extras",
     "django_cleanup.apps.CleanupConfig",
     "debug_toolbar",
     "django_extensions",
+    "allauth",
+    "allauth.account",
+    "auth_kit",
+    "rest_framework_simplejwt.token_blacklist",
+    "knox",
 ]
 
 # =========================================================================
@@ -87,6 +94,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "debug_toolbar.middleware.DebugToolbarMiddleware",
+    "allauth.account.middleware.AccountMiddleware",
 ]
 
 # =========================================================================
@@ -137,6 +145,10 @@ DATABASES = {
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
+# Email:
+
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
 # =========================================================================
 # AUTHENTICATION CONFIGURATION
 # =========================================================================
@@ -186,15 +198,39 @@ REST_FRAMEWORK = {
         "rest_framework.renderers.JSONRenderer",
         "rest_framework.renderers.BrowsableAPIRenderer",
     ],
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "auth_kit.authentication.AuthKitAuthentication",
+    ],
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
     "DEFAULT_PARSER_CLASSES": (
         "rest_framework.parsers.JSONParser",
-        "rest_framework.parsers.FormParser",
         "rest_framework.parsers.MultiPartParser",
     ),
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
     "PAGE_SIZE": 20,
 }
+
+
+# =========================================================================
+# AUTH-KIT CONFIGURATION
+# =========================================================================
+AUTH_KIT = {
+    # "AUTH_TYPE": "custom",
+    # "CUSTOM_LOGIN_RESPONSE_SERIALIZER": (
+    #     "custom_auth.serializers.KnoxTokenResponseSerializer"
+    # ),
+    # "LOGIN_VIEW": "custom_auth.views.KnoxLoginView",
+    # "LOGOUT_VIEW": "custom_auth.views.KnoxLogoutView",
+    # "CUSTOM_AUTHENTICATION": "custom_auth.authentication.KnoxTokenCookieAuthentication",
+    "AUTH_TYPE": "jwt"
+}
+
+# =========================================================================
+# ALLAUTH CONFIGURATION
+# =========================================================================
+
+ACCOUNT_EMAIL_VERIFICATION = "mandatory"
+ACCOUNT_SIGNUP_FIELDS = ["email*", "username*"]
 
 # =========================================================================
 # API DOCUMENTATION CONFIGURATION

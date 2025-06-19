@@ -30,6 +30,27 @@ jobs:
       matrix:
         python-version: ["3.10", "3.11", "3.12", "3.13"]
       fail-fast: false
+    services:
+      postgres:
+        image: postgres
+        env:
+          POSTGRES_PASSWORD: auth_kit_test_pass
+          POSTGRES_DB: auth_kit_test_db
+          POSTGRES_USER: auth_kit_test_user
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+    env:
+      POSTGRES_DB: auth_kit_test_db
+      POSTGRES_USER: auth_kit_test_user
+      POSTGRES_PASSWORD: auth_kit_test_pass
+      POSTGRES_HOST: localhost
+      POSTGRES_PORT: 5432
+      TOX_GH_MAJOR_MINOR: ${{ matrix.python-version }}
     steps:
       - uses: actions/checkout@v4
       - name: Install the latest version of uv
@@ -44,6 +65,26 @@ jobs:
 
   coverage:
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres
+        env:
+          POSTGRES_PASSWORD: auth_kit_test_pass
+          POSTGRES_DB: auth_kit_test_db
+          POSTGRES_USER: auth_kit_test_user
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+    env:
+      POSTGRES_DB: auth_kit_test_db
+      POSTGRES_USER: auth_kit_test_user
+      POSTGRES_PASSWORD: auth_kit_test_pass
+      POSTGRES_HOST: localhost
+      POSTGRES_PORT: 5432
     steps:
       - uses: actions/checkout@v4
       - name: Install the latest version of uv

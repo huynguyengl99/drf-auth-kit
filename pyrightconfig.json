@@ -4,7 +4,7 @@
     "reportMissingTypeArgument": "warning",
     "reportMissingTypeStubs": "warning",
     "pythonVersion": "3.11",
-    "reportIncompatibleVariableOverride": "warning",
+    "reportIncompatibleVariableOverride": "none",
     "reportUnknownMemberType": "warning",
     "executionEnvironments": [
         {

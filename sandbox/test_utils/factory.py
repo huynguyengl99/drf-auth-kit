@@ -22,7 +22,7 @@ class BaseFactoryMeta(FactoryMetaClass):
 
 
 class BaseModelFactory(factory.django.DjangoModelFactory[T], metaclass=BaseFactoryMeta):
-    class Meta:
+    class Meta:  # pyright: ignore
         abstract = True
 
     @classmethod

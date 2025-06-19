@@ -1,0 +1,8 @@
+[run]
+branch = True
+source = auth_kit
+omit =
+    settings.py
+
+[report]
+show_missing = True

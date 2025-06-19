@@ -26,6 +26,8 @@ from drf_spectacular.views import (
     SpectacularRedocView,
     SpectacularSwaggerView,
 )
+from drf_spectacular_extras.views import SpectacularScalarView  #  type: ignore
+from status.views import StatusView
 
 api_urlpatterns = [
     path("schema/", SpectacularAPIView.as_view(), name="schema"),
@@ -39,14 +41,20 @@ api_urlpatterns = [
         SpectacularRedocView.as_view(url_name="schema"),
         name="redoc",
     ),
-    path("myapp/", include("auth_kit.myapp.urls")),
+    path(
+        "schema/scalar/",
+        SpectacularScalarView.as_view(url_name="schema"),
+        name="scalar",
+    ),
+    path("auth/", include("auth_kit.urls")),
+    path("status/", StatusView.as_view(), name="status"),
 ]
 
 
 urlpatterns = [
     path("", RedirectView.as_view(url="admin/")),
     path("admin/", admin.site.urls),
-    path("api/", include(api_urlpatterns)),  # type: ignore[arg-type]
+    path("api/", include(api_urlpatterns)),
 ]
 
 

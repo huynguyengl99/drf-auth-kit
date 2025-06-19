@@ -13,6 +13,6 @@ if [ "$1" == "--sandbox" ]; then
   export DJANGO_SETTINGS_MODULE=config.settings.dev
   mypy sandbox
 else
-  export DJANGO_SETTINGS_MODULE=auth_kit.settings
+  export DJANGO_SETTINGS_MODULE=auth_kit.app_settings
   mypy auth_kit
 fi
