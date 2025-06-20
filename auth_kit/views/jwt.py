@@ -76,6 +76,6 @@ class RefreshViewWithCookieSupport(TokenRefreshView):
             )
 
             if auth_kit_settings.AUTH_COOKIE_HTTPONLY:
-                del response.data["refresh"]
+                response.data["refresh"] = ""
 
         return super().finalize_response(request, response, *args, **kwargs)

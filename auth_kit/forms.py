@@ -13,12 +13,15 @@ from django.contrib.auth.base_user import AbstractBaseUser
 from django.contrib.auth.models import AbstractUser
 from django.http import HttpRequest
 from django.urls import reverse
+from django.utils.translation import gettext_lazy as _
+from rest_framework.exceptions import ValidationError
 
 from allauth.account import app_settings as allauth_account_settings
 from allauth.account.adapter import get_adapter
 from allauth.account.forms import ResetPasswordForm as DefaultPasswordResetForm
 from allauth.account.forms import default_token_generator
 from allauth.account.utils import (
+    filter_users_by_email,
     user_pk_to_url_str,
     user_username,
 )
@@ -49,7 +52,7 @@ def password_reset_url_generator(
     if auth_kit_settings.PASSWORD_RESET_CONFIRM_URL:
         url = f"{auth_kit_settings.PASSWORD_RESET_CONFIRM_URL}?{encoded_params}"
     else:
-        path = reverse("rest_password_reset_confirm")
+        path = reverse(f"{auth_kit_settings.URL_NAMESPACE}rest_password_reset_confirm")
         full_path = f"{path}?{encoded_params}"
         url = build_absolute_uri(request, full_path)
 
@@ -63,6 +66,20 @@ class AllAuthPasswordResetForm(DefaultPasswordResetForm):  # type: ignore[misc]
     Extends the default allauth password reset form to support
     custom URL generation and Auth Kit settings.
     """
+
+    def clean_email(self):
+        """
+        Invalid email should not raise error, as this would leak users
+        for unit test: test_password_reset_with_invalid_email
+        """
+        email = self.cleaned_data["email"].lower()
+        email = get_adapter().clean_email(email)
+        self.users = filter_users_by_email(email, is_active=True, prefer_verified=True)
+        if not self.users and not auth_kit_settings.PASSWORD_RESET_PREVENT_ENUMERATION:
+            raise ValidationError(
+                _("The email address is not assigned to any user account.")
+            )
+        return self.cleaned_data["email"]
 
     def save(self, request: HttpRequest, **kwargs: Any) -> str:
         """

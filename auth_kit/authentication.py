@@ -8,7 +8,7 @@ JWT tokens, DRF tokens, and custom authentication backends.
 from typing import Any
 
 from django.contrib.auth.base_user import AbstractBaseUser
-from rest_framework.authentication import BaseAuthentication, TokenAuthentication
+from rest_framework.authentication import TokenAuthentication
 from rest_framework.request import Request
 
 from drf_spectacular.contrib.rest_framework_simplejwt import SimpleJWTScheme
@@ -180,12 +180,3 @@ class JWTCookieAuthenticationScheme(SimpleJWTScheme):  # type: ignore[no-untyped
                 "name": auth_kit_settings.AUTH_JWT_COOKIE_NAME,
             },
         ]
-
-
-AuthKitAuthentication: type[BaseAuthentication]
-if auth_kit_settings.AUTH_TYPE == "jwt":
-    AuthKitAuthentication = JWTCookieAuthentication
-elif auth_kit_settings.AUTH_TYPE == "token":
-    AuthKitAuthentication = TokenCookieAuthentication
-else:
-    AuthKitAuthentication = auth_kit_settings.CUSTOM_AUTHENTICATION

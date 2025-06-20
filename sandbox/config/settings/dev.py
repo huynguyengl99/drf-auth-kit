@@ -199,7 +199,7 @@ REST_FRAMEWORK = {
         "rest_framework.renderers.BrowsableAPIRenderer",
     ],
     "DEFAULT_AUTHENTICATION_CLASSES": [
-        "auth_kit.authentication.AuthKitAuthentication",
+        "auth_kit.authentication.JWTCookieAuthentication",
     ],
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
     "DEFAULT_PARSER_CLASSES": (
@@ -223,6 +223,9 @@ AUTH_KIT = {
     # "LOGOUT_VIEW": "custom_auth.views.KnoxLogoutView",
     # "CUSTOM_AUTHENTICATION": "custom_auth.authentication.KnoxTokenCookieAuthentication",
     "AUTH_TYPE": "jwt"
+}
+SIMPLE_JWT = {
+    "ROTATE_REFRESH_TOKENS": True,
 }
 
 # =========================================================================

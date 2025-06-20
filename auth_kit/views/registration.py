@@ -59,7 +59,7 @@ def get_email_verification_url(request: Request, emailconfirmation: Any) -> str:
     if auth_kit_settings.REGISTER_EMAIL_CONFIRM_URL:
         url = f"{auth_kit_settings.REGISTER_EMAIL_CONFIRM_URL}?{encoded_params}"
     else:
-        path = reverse("account_confirm_email")
+        path = reverse(f"{auth_kit_settings.URL_NAMESPACE}account_confirm_email")
         full_path = f"{path}?{encoded_params}"
         url = build_absolute_uri(request, full_path)
 

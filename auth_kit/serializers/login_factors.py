@@ -230,11 +230,21 @@ class TokenResponseSerializer(TokenSerializer, BaseLoginResponseSerializer):
         }
 
 
-LoginResponseSerializer: type[Serializer[Any]]
+def get_login_response_serializer() -> type[Serializer[dict[str, Any]]]:
+    """
+    Get the appropriate login response serializer based on current settings.
 
-if auth_kit_settings.AUTH_TYPE == "jwt":
-    LoginResponseSerializer = JWTResponseSerializer
-elif auth_kit_settings.AUTH_TYPE == "token":
-    LoginResponseSerializer = TokenResponseSerializer
-else:
-    LoginResponseSerializer = auth_kit_settings.CUSTOM_LOGIN_RESPONSE_SERIALIZER
+    Returns:
+        The appropriate response serializer class
+    """
+    if auth_kit_settings.LOGIN_RESPONSE_SERIALIZER != BaseLoginResponseSerializer:
+        return auth_kit_settings.LOGIN_RESPONSE_SERIALIZER
+
+    if auth_kit_settings.AUTH_TYPE == "jwt":
+        return JWTResponseSerializer
+    elif auth_kit_settings.AUTH_TYPE == "token":
+        return TokenResponseSerializer
+    else:
+        raise TypeError(
+            "You must specify your login response serializer via  auth_kit_settings.LOGIN_RESPONSE_SERIALIZER"
+        )

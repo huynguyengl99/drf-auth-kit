@@ -24,6 +24,7 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from auth_kit.api_descriptions import get_logout_description
 from auth_kit.app_settings import auth_kit_settings
 from auth_kit.jwt_auth import unset_jwt_cookies, unset_token_cookie
+from auth_kit.serializers.logout import get_logout_serializer
 
 
 class LogoutView(GenericAPIView[Any]):
@@ -36,7 +37,9 @@ class LogoutView(GenericAPIView[Any]):
 
     permission_classes = (IsAuthenticated,)
     throttle_scope = "auth_kit"
-    serializer_class = auth_kit_settings.LOGOUT_SERIALIZER
+
+    def get_serializer_class(self):
+        return get_logout_serializer()
 
     def initial(self, request: Request, *args: Any, **kwargs: Any) -> None:
         """

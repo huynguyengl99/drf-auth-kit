@@ -36,7 +36,6 @@ class LoginView(GenericAPIView[Any]):
 
     permission_classes = (AllowAny,)
     authentication_classes = []
-    serializer_class = auth_kit_settings.LOGIN_SERIALIZER
     throttle_scope = "auth_kit"
 
     def __init__(self, **kwargs: Any) -> None:
@@ -50,6 +49,9 @@ class LoginView(GenericAPIView[Any]):
         self.user: AbstractUser | AbstractBaseUser | None = None
         self.access_token: str | None = None
         self.refresh_token: str | None = None
+
+    def get_serializer_class(self):
+        return auth_kit_settings.LOGIN_SERIALIZER_FACTORY()
 
     @sensitive_post_parameters_m
     def dispatch(self, *args: Any, **kwargs: Any) -> HttpResponseBase:

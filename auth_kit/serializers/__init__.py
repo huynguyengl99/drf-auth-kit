@@ -6,7 +6,7 @@ registration, password management, and JWT token handling.
 """
 
 from .jwt import CookieTokenRefreshSerializer, JWTSerializer
-from .login import LoginSerializer
+from .login import get_login_serializer
 from .password import (
     PasswordChangeSerializer,
     PasswordResetConfirmSerializer,
@@ -21,7 +21,7 @@ from .registration import (
 # UsersDetailSerializer and login factors serializers are not imported here to avoid circular import
 
 __all__ = [
-    "LoginSerializer",
+    "get_login_serializer",
     "CookieTokenRefreshSerializer",
     "JWTSerializer",
     "PasswordChangeSerializer",

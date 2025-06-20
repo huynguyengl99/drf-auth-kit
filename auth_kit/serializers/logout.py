@@ -5,6 +5,7 @@ This module provides serializers for handling logout requests
 with support for different authentication types.
 """
 
+from functools import lru_cache
 from typing import Any
 
 from rest_framework import serializers
@@ -28,11 +29,17 @@ class AuthKitLogoutSerializer(serializers.Serializer[dict[str, str]]):
     detail = serializers.CharField(read_only=True)
 
 
-LogoutSerializer: type[Serializer[Any]]
+@lru_cache
+def get_logout_serializer() -> type[Serializer[dict[str, Any]]]:
+    """
+    Get the appropriate logout serializer based on current settings.
 
-if auth_kit_settings.AUTH_TYPE == "jwt":
-    LogoutSerializer = JWTLogoutSerializer
-elif auth_kit_settings.AUTH_TYPE == "token":
-    LogoutSerializer = AuthKitLogoutSerializer
-else:
-    LogoutSerializer = auth_kit_settings.CUSTOM_LOGOUT_SERIALIZER
+    Returns:
+        The appropriate logout serializer class
+    """
+    if auth_kit_settings.LOGOUT_SERIALIZER != AuthKitLogoutSerializer:
+        return auth_kit_settings.LOGOUT_SERIALIZER
+
+    if auth_kit_settings.AUTH_TYPE == "jwt":
+        return JWTLogoutSerializer
+    return AuthKitLogoutSerializer

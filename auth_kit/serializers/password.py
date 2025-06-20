@@ -168,8 +168,7 @@ class PasswordResetConfirmSerializer(serializers.Serializer[dict[str, Any]]):
 class PasswordChangeSerializer(serializers.Serializer[dict[str, Any]]):
     """Password change for authenticated users."""
 
-    if auth_kit_settings.OLD_PASSWORD_FIELD_ENABLED:
-        old_password = serializers.CharField(max_length=128, write_only=True)
+    old_password = serializers.CharField(max_length=128, write_only=True)
 
     new_password1 = serializers.CharField(max_length=128, write_only=True)
     new_password2 = serializers.CharField(max_length=128, write_only=True)
@@ -188,6 +187,9 @@ class PasswordChangeSerializer(serializers.Serializer[dict[str, Any]]):
             **kwargs: Arbitrary keyword arguments
         """
         super().__init__(*args, **kwargs)
+
+        if not auth_kit_settings.OLD_PASSWORD_FIELD_ENABLED:
+            self.fields.pop("old_password")
 
         self.request = self.context.get("request")
         self.user = getattr(self.request, "user", None)
