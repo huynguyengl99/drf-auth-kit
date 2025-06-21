@@ -87,7 +87,6 @@ class AuthKitCookieAuthentication(JWTAuthentication):
         Returns:
             Tuple of (user, token) if authentication succeeds, None otherwise
         """
-        pass
 
 
 class TokenCookieAuthentication(TokenAuthentication, AuthKitCookieAuthentication):

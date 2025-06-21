@@ -3,8 +3,7 @@ from typing import Any
 from django.contrib.auth.models import User
 
 from allauth.account.models import EmailAddress
-
-from test_utils.factory import BaseModelFactory
+from sandbox.test_utils.factory import BaseModelFactory
 
 
 class UserFactory(BaseModelFactory[User]):

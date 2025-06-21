@@ -5,7 +5,6 @@ from rest_framework.response import Response
 from auth_kit.app_settings import auth_kit_settings
 from auth_kit.jwt_auth import set_auth_kit_cookie
 from auth_kit.views import LoginView, LogoutView
-
 from custom_auth.constants import AUTH_KNOX_TOKEN_COOKIE_NAME
 
 

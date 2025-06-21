@@ -115,7 +115,7 @@ class LoginView(GenericAPIView[Any]):
                 auth_kit_settings.AUTH_TOKEN_COOKIE_PATH,
                 token_cookie_expire_time,
             )
-        elif auth_kit_settings.AUTH_TYPE == "custom":
+        else:  # custom
             self.set_custom_cookie(response)
 
         return response
@@ -156,4 +156,3 @@ class LoginView(GenericAPIView[Any]):
         Args:
             response: The DRF response object
         """
-        pass
