@@ -97,6 +97,27 @@ class TestLoginView(APITestCase):
 
         assert not response.cookies
 
+    @override_auth_kit_settings(SESSION_LOGIN=True)
+    def test_login_with_session(self) -> None:
+        UserFactory.create_with_email_address(self.user_data)
+
+        url = reverse("rest_login")
+        response: Response = self.client.post(url, self.login_data, format="json")
+
+        assert response.status_code == status.HTTP_200_OK
+
+        # Verify refresh token is remove due because of moving to secure http only cookie
+        assert response.data["refresh"] == ""
+
+        client_cookies = response.cookies
+
+        assert client_cookies.keys() == {
+            "auth-jwt",
+            "auth-refresh-jwt",
+            "csrftoken",
+            "sessionid",
+        }
+
     def test_login_invalid_credentials(self) -> None:
         UserFactory.create_with_email_address(self.user_data)
 
@@ -165,3 +186,4 @@ class TestLoginView(APITestCase):
         assert client_cookies["auth-token"].value
         assert client_cookies["auth-token"]["httponly"]
         assert client_cookies["auth-token"]["samesite"] == "Lax"
+        get_login_serializer.cache_clear()

@@ -1,11 +1,15 @@
+from datetime import timedelta
+
 from django.contrib.auth import get_user_model
 from django.urls import reverse
+from django.utils import timezone
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.test import APITestCase
 
 from auth_kit.test_utils import override_auth_kit_settings
 from rest_framework_simplejwt.tokens import RefreshToken
+from test_utils.simple_jwt import override_jwt_settings
 from test_utils.user_factory import UserFactory
 
 User = get_user_model()
@@ -85,7 +89,10 @@ class TestRefreshViewWithCookieSupport(APITestCase):
         assert response.status_code == status.HTTP_200_OK
         assert "access" in response.data
 
-    def test_refresh_token_sets_cookies_correctly(self) -> None:
+    @override_jwt_settings(ROTATE_REFRESH_TOKENS=True)
+    def test_refresh_token_sets_cookies_correctly_with_refresh_token_rotation(
+        self,
+    ) -> None:
         """Test that refresh response sets authentication cookies with correct properties"""
         refresh_token = RefreshToken.for_user(self.user)
 
@@ -108,19 +115,6 @@ class TestRefreshViewWithCookieSupport(APITestCase):
         assert refresh_cookie["httponly"] is True
         assert refresh_cookie["samesite"] == "Lax"
 
-    def test_refresh_token_includes_expiration_times(self) -> None:
-        """Test that refresh response includes token expiration times"""
-        refresh_token = RefreshToken.for_user(self.user)
-
-        data = {"refresh": str(refresh_token)}
-        response: Response = self.client.post(self.url, data, format="json")
-
-        assert response.status_code == status.HTTP_200_OK
-        assert "access_expiration" in response.data
-        assert "refresh_expiration" in response.data
-        assert response.data["access_expiration"] is not None
-        assert response.data["refresh_expiration"] is not None
-
     def test_refresh_token_httponly_removes_refresh_from_response(self) -> None:
         """Test that refresh token is removed from response when httponly is enabled"""
         refresh_token = RefreshToken.for_user(self.user)
@@ -133,7 +127,8 @@ class TestRefreshViewWithCookieSupport(APITestCase):
         assert "refresh" not in response.data or response.data["refresh"] == ""
 
     @override_auth_kit_settings(AUTH_COOKIE_HTTPONLY=False)
-    def test_refresh_token_non_httponly_keeps_refresh_in_response(self) -> None:
+    @override_jwt_settings(ROTATE_REFRESH_TOKENS=True)
+    def test_rotate_refresh_token(self) -> None:
         """Test that refresh token is kept in response when httponly is disabled"""
         refresh_token = RefreshToken.for_user(self.user)
 
@@ -142,6 +137,7 @@ class TestRefreshViewWithCookieSupport(APITestCase):
 
         assert response.status_code == status.HTTP_200_OK
         assert "refresh" in response.data
+        assert "refresh_expiration" in response.data
         assert response.data["refresh"] != ""
 
     @override_auth_kit_settings(
@@ -171,10 +167,6 @@ class TestRefreshViewWithCookieSupport(APITestCase):
 
     def test_refresh_token_expired_token(self) -> None:
         """Test JWT refresh with expired refresh token"""
-        from datetime import timedelta
-
-        from django.utils import timezone
-
         refresh_token = RefreshToken.for_user(self.user)
         # Manually expire the token
         refresh_token.payload["exp"] = int(

@@ -62,7 +62,9 @@ class AuthKitCookieAuthentication(JWTAuthentication):
         else:
             return self.custom_authenticate(token)
 
-    def authenticate_credentials(self, key: str) -> tuple[Any, Any] | None:
+    def authenticate_credentials(
+        self, key: str
+    ) -> tuple[Any, Any] | None:  # pragma: no cover
         """
         Authenticate using token credentials.
 

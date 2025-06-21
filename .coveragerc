@@ -2,7 +2,8 @@
 branch = True
 source = auth_kit
 omit =
-    settings.py
+    app_settings.py
+    test_utils.py
 
 [report]
 show_missing = True

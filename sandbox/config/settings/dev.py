@@ -224,9 +224,6 @@ AUTH_KIT = {
     # "CUSTOM_AUTHENTICATION": "custom_auth.authentication.KnoxTokenCookieAuthentication",
     "AUTH_TYPE": "jwt"
 }
-SIMPLE_JWT = {
-    "ROTATE_REFRESH_TOKENS": True,
-}
 
 # =========================================================================
 # ALLAUTH CONFIGURATION

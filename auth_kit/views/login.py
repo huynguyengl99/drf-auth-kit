@@ -67,11 +67,11 @@ class LoginView(GenericAPIView[Any]):
         """
         return super().dispatch(*args, **kwargs)
 
-    def process_login(self) -> None:
+    def perform_session_login(self, user) -> None:
         """
         Process user login using Django's login function.
         """
-        django_login(self.request, self.user)  # type: ignore[unused-ignore, arg-type]
+        django_login(self.request, user)  # type: ignore[unused-ignore, arg-type]
 
     def create_response_with_cookies(self, validated_data: dict[str, Any]) -> Response:
         """
@@ -140,6 +140,9 @@ class LoginView(GenericAPIView[Any]):
             response = self.create_response_with_cookies(serializer.data)
         else:
             response = Response(serializer.data, status=status.HTTP_200_OK)
+
+        if auth_kit_settings.SESSION_LOGIN:
+            self.perform_session_login(serializer.validated_data["user"])
 
         return response
 
