@@ -10,6 +10,7 @@ from typing import Any
 from django.conf import settings
 from django.contrib.auth import logout as django_logout
 from django.core.exceptions import ObjectDoesNotExist
+from django.utils.functional import lazy
 from django.utils.translation import gettext_lazy as _
 from rest_framework import status
 from rest_framework.generics import GenericAPIView
@@ -56,7 +57,7 @@ class LogoutView(GenericAPIView[Any]):
         if cookie_name and cookie_name in request.COOKIES:
             self.request.data["refresh"] = request.COOKIES.get(cookie_name)
 
-    @extend_schema(description=get_logout_description())
+    @extend_schema(description=lazy(get_logout_description, str)())
     def post(self, request: Request, *args: Any, **kwargs: Any) -> Response:
         """
         Logout user and invalidate tokens.

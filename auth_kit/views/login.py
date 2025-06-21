@@ -12,6 +12,7 @@ from django.contrib.auth.base_user import AbstractBaseUser
 from django.contrib.auth.models import AbstractUser
 from django.http import HttpResponseBase
 from django.utils import timezone
+from django.utils.functional import lazy
 from rest_framework import status
 from rest_framework.generics import GenericAPIView
 from rest_framework.permissions import AllowAny
@@ -119,7 +120,7 @@ class LoginView(GenericAPIView[Any]):
 
         return response
 
-    @extend_schema(description=get_login_description())
+    @extend_schema(description=lazy(get_login_description, str)())
     def post(self, request: Request, *args: Any, **kwargs: Any) -> Response:
         """
         Authenticate user and return access tokens.

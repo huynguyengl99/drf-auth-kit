@@ -13,6 +13,7 @@ from django.core.exceptions import ValidationError as DjangoValidationError
 from django.utils.translation import gettext_lazy as _
 from rest_framework import serializers
 from rest_framework.exceptions import ValidationError
+from rest_framework.fields import empty
 from rest_framework.request import Request
 
 from allauth.account.adapter import (  # pyright: ignore[reportMissingTypeStubs]
@@ -164,7 +165,7 @@ class RegisterSerializer(serializers.Serializer[dict[str, Any]]):
 class VerifyEmailSerializer(serializers.Serializer[dict[str, Any]]):
     """Email address verification with confirmation key."""
 
-    key = UnquoteStringField(required=True, write_only=True)
+    key = UnquoteStringField(required=True, write_only=True, default=empty)
     detail = serializers.CharField(read_only=True)
 
 

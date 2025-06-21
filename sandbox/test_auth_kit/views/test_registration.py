@@ -59,7 +59,7 @@ class TestRegisterView(APITestCase):
             register_email.subject == "[testserver] Please Confirm Your Email Address"
         )
         assert (
-            "http://testserver/api/auth/registration/account-confirm-email?key="
+            "http://testserver/api/auth/registration/verify-email?key="
             in register_email.body
         )
 

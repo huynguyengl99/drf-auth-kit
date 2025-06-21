@@ -12,6 +12,7 @@ from rest_framework.authentication import TokenAuthentication
 from rest_framework.request import Request
 
 from drf_spectacular.contrib.rest_framework_simplejwt import SimpleJWTScheme
+from drf_spectacular.plumbing import build_bearer_security_scheme_object
 from rest_framework_simplejwt.authentication import JWTAuthentication
 
 from auth_kit.app_settings import auth_kit_settings
@@ -130,11 +131,15 @@ class TokenCookieAuthenticationScheme(SimpleJWTScheme):  # type: ignore[no-untyp
             List of security definitions for the schema
         """
         return [
-            super().get_security_definition(auto_schema),  # type: ignore[no-untyped-call]
+            build_bearer_security_scheme_object(
+                header_name="HTTP_AUTHORIZATION",
+                token_prefix=TokenCookieAuthentication.keyword,
+                bearer_format="DRF Token",
+            ),
             {
                 "type": "apiKey",
                 "in": "cookie",
-                "name": auth_kit_settings.AUTH_JWT_COOKIE_NAME,
+                "name": auth_kit_settings.AUTH_TOKEN_COOKIE_NAME,
             },
         ]
 

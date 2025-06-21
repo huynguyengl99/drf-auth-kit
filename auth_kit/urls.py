@@ -6,7 +6,6 @@ including login, logout, registration, password reset, and email verification.
 """
 
 from django.urls import re_path
-from django.views.generic import TemplateView
 
 from rest_framework_simplejwt.views import TokenVerifyView
 
@@ -53,16 +52,6 @@ urlpatterns = [
         r"registration/resend-email/?$",
         ResendEmailVerificationView.as_view(),
         name="rest_resend_email",
-    ),
-    re_path(
-        r"^registration/account-confirm-email/?$",
-        VerifyEmailView.as_view(),
-        name="account_confirm_email",
-    ),
-    re_path(
-        r"account-email-verification-sent/?$",
-        TemplateView.as_view(),
-        name="account_email_verification_sent",
     ),
 ]
 
