@@ -27,8 +27,8 @@ class BaseModelFactory(factory.django.DjangoModelFactory[T], metaclass=BaseFacto
 
     @classmethod
     def create(cls, **kwargs: Any) -> T:
-        return super().create(**kwargs)  # pyright: ignore[reportUnknownMemberType]
+        return super().create(**kwargs)
 
     @classmethod
     def build(cls, **kwargs: Any) -> T:
-        return super().build(**kwargs)  # pyright: ignore[reportUnknownMemberType]
+        return super().build(**kwargs)

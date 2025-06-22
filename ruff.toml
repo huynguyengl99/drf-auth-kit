@@ -1,4 +1,4 @@
-src = ["drf-auth-kit", "tests"]
+src = ["drf-auth-kit", "sandbox", "sandbox_extras"]
 target-version = "py311"
 
 [lint]
@@ -24,3 +24,6 @@ section-order = ["future", "standard-library", "django", "third-party", "first-p
 
 [lint.isort.sections]
 django = ["django", "rest_framework"]
+
+[lint.per-file-ignores]
+"sandbox/*/test_*.py" = ["PLR2004"]

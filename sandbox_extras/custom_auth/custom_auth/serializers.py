@@ -1,6 +1,6 @@
 # pyright: reportMissingTypeStubs=false
 from datetime import datetime, timedelta
-from typing import Any
+from typing import Any, cast
 
 from django.contrib.auth import user_logged_in
 from django.contrib.auth.base_user import AbstractBaseUser
@@ -25,7 +25,7 @@ class KnoxTokenSerializer(serializers.Serializer[dict[str, Any]]):
 
 class KnoxTokenResponseSerializer(KnoxTokenSerializer, BaseLoginResponseSerializer):
     def get_token_ttl(self) -> timedelta:
-        return timedelta(knox_settings.TOKEN_TTL)
+        return cast(timedelta, knox_settings.TOKEN_TTL)
 
     def get_token_prefix(self) -> str:
         return str(knox_settings.TOKEN_PREFIX)
@@ -61,9 +61,7 @@ class KnoxTokenResponseSerializer(KnoxTokenSerializer, BaseLoginResponseSerializ
                     "Maximum amount of tokens allowed per user exceeded."
                 )
         instance, token = self.create_token(user)
-        user_logged_in.send(  # pyright: ignore[reportUnknownMemberType]
-            sender=request.user.__class__, request=request, user=user
-        )
+        user_logged_in.send(sender=request.user.__class__, request=request, user=user)
 
         return {
             "user": user,

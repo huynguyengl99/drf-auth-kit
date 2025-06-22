@@ -13,7 +13,6 @@ from pathlib import Path
 from typing import Any
 
 import django_stubs_ext
-import structlog
 from environs import env
 
 # =========================================================================
@@ -47,8 +46,8 @@ CURRENT_ENV = env.str("DJANGO_SETTINGS_MODULE").split(".")[-1]
 # =========================================================================
 SECRET_KEY = "this-is-a-mock-secret-key"
 
-DEBUG = True
-TEST = False
+DEBUG = False
+TEST = True
 
 ALLOWED_HOSTS = ["*"]
 SERVER_URL = env.str("SERVER_URL", "http://localhost:8000")
@@ -75,7 +74,7 @@ INSTALLED_APPS = [
     "allauth.account",
     "auth_kit",
     "rest_framework_simplejwt.token_blacklist",
-    "knox",
+    "accounts",
 ]
 
 # =========================================================================
@@ -144,10 +143,11 @@ DATABASES = {
 # Default primary key field type
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+# Custom User
+AUTH_USER_MODEL = "accounts.User"
 
 # Email:
-
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+EMAIL_BACKEND = "django.core.mail.backends.locmem.EmailBackend"
 
 # =========================================================================
 # AUTHENTICATION CONFIGURATION
@@ -215,14 +215,7 @@ REST_FRAMEWORK = {
 # AUTH-KIT CONFIGURATION
 # =========================================================================
 AUTH_KIT = {
-    # "AUTH_TYPE": "custom",
-    # "CUSTOM_LOGIN_RESPONSE_SERIALIZER": (
-    #     "custom_auth.serializers.KnoxTokenResponseSerializer"
-    # ),
-    # "LOGIN_VIEW": "custom_auth.views.KnoxLoginView",
-    # "LOGOUT_VIEW": "custom_auth.views.KnoxLogoutView",
-    # "CUSTOM_AUTHENTICATION": "custom_auth.authentication.KnoxTokenCookieAuthentication",
-    "AUTH_TYPE": "jwt"
+    "AUTH_TYPE": "jwt",
 }
 
 # =========================================================================
@@ -230,7 +223,8 @@ AUTH_KIT = {
 # =========================================================================
 
 ACCOUNT_EMAIL_VERIFICATION = "mandatory"
-ACCOUNT_SIGNUP_FIELDS = ["email*", "username*"]
+ACCOUNT_SIGNUP_FIELDS = ["email*"]
+ACCOUNT_USER_MODEL_USERNAME_FIELD = "identifier"
 
 # =========================================================================
 # API DOCUMENTATION CONFIGURATION
@@ -248,95 +242,3 @@ SPECTACULAR_SETTINGS: dict[str, Any] = {
     "SERVE_PERMISSIONS": [],
     "SERVE_AUTHENTICATION": [],
 }
-
-# =========================================================================
-# CORS CONFIGURATION
-# =========================================================================
-
-CORS_ALLOWED_ORIGINS: list[str] = env.list("CORS_ALLOWED_ORIGINS", default=[])
-CORS_ALLOW_CREDENTIALS = True
-CSRF_TRUSTED_ORIGINS = env.list("CSRF_TRUSTED_ORIGINS", default=[SERVER_URL])
-
-# =========================================================================
-# LOGGING CONFIGURATION
-# =========================================================================
-
-pre_chain = [
-    structlog.contextvars.merge_contextvars,
-    structlog.processors.TimeStamper(fmt="iso"),
-    structlog.stdlib.add_logger_name,
-    structlog.stdlib.add_log_level,
-    structlog.stdlib.PositionalArgumentsFormatter(),
-]
-
-LOGGING = {
-    "version": 1,
-    "disable_existing_loggers": False,
-    "formatters": {
-        "plain_console": {
-            "()": structlog.stdlib.ProcessorFormatter,
-            "processors": [
-                structlog.stdlib.ProcessorFormatter.remove_processors_meta,
-                structlog.dev.ConsoleRenderer(
-                    exception_formatter=structlog.dev.plain_traceback
-                ),
-            ],
-            "foreign_pre_chain": pre_chain,
-        },
-        "json_formatter": {
-            "()": structlog.stdlib.ProcessorFormatter,
-            "processors": [
-                structlog.processors.dict_tracebacks,
-                structlog.stdlib.ProcessorFormatter.remove_processors_meta,
-                structlog.processors.JSONRenderer(),
-            ],
-            "foreign_pre_chain": pre_chain,
-        },
-    },
-    "handlers": {
-        "console": {
-            "class": "logging.StreamHandler",
-            "formatter": "plain_console",
-        }
-    },
-    "loggers": {
-        "": {
-            "handlers": ["console"],
-            "level": "INFO",
-            "propagate": False,
-        },
-        "django_structlog": {
-            "handlers": ["console"],
-            "level": "INFO",
-        },
-        "django_structlog_auth_kit": {
-            "handlers": ["console"],
-            "level": "INFO",
-        },
-        "auth_kit": {
-            "handlers": ["console"],
-            "level": "INFO",
-        },
-    },
-}
-
-structlog.configure(
-    processors=pre_chain  # type: ignore[arg-type]
-    + [
-        structlog.stdlib.filter_by_level,
-        structlog.processors.StackInfoRenderer(),
-        structlog.processors.UnicodeDecoder(),
-        structlog.stdlib.ProcessorFormatter.wrap_for_formatter,
-    ],
-    logger_factory=structlog.stdlib.LoggerFactory(),
-    cache_logger_on_first_use=True,
-)
-
-# =========================================================================
-# DJANGO SHELL_PLUS
-# =========================================================================
-SHELL_PLUS = "ipython"
-IPYTHON_ARGUMENTS = [
-    "--ext",
-    "autoreload",
-]

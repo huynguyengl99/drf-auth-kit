@@ -28,8 +28,6 @@ from drf_spectacular.views import (
 )
 from drf_spectacular_extras.views import SpectacularScalarView  #  type: ignore
 
-from status.views import StatusView
-
 api_urlpatterns = [
     path("schema/", SpectacularAPIView.as_view(), name="schema"),
     path(
@@ -48,7 +46,6 @@ api_urlpatterns = [
         name="scalar",
     ),
     path("auth/", include("auth_kit.urls")),
-    path("status/", StatusView.as_view(), name="status"),
 ]
 
 

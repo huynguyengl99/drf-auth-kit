@@ -1,0 +1,609 @@
+openapi: 3.0.3
+info:
+  title: DRF Auth Kit API Documentation
+  version: 1.0.0
+  description: DRF Auth Kit OpenAPI specification
+paths:
+  /auth/login/:
+    post:
+      operationId: login_create
+      description: Authenticate with username/email and password to obtain access
+        tokens. Returns user details along with JWT access and refresh tokens with
+        expiration times. Authentication cookies are set automatically for secure
+        token storage.
+      tags:
+      - login
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+        required: true
+      security:
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Login'
+          description: ''
+  /auth/logout/:
+    post:
+      operationId: logout_create
+      description: Logout user and invalidate authentication tokens. Blacklists JWT
+        refresh tokens to prevent further use. Clears authentication cookies from
+        the browser. Requires authentication to ensure only valid sessions can be
+        logged out.
+      tags:
+      - logout
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/JWTLogoutRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/JWTLogoutRequest'
+      security:
+      - JWTAuthentication: []
+        JWTCookieAuthentication: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JWTLogout'
+          description: ''
+  /auth/password/change/:
+    post:
+      operationId: password_change_create
+      description: 'Change the current user''s password. Requires authentication. '
+      tags:
+      - password
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PasswordChangeRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PasswordChangeRequest'
+        required: true
+      security:
+      - JWTAuthentication: []
+        JWTCookieAuthentication: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PasswordChange'
+          description: ''
+  /auth/password/reset/:
+    post:
+      operationId: password_reset_create
+      description: Send password reset instructions to the provided email address.
+        If the email is registered, a secure reset link will be sent. The link expires
+        after a limited time for security.
+      tags:
+      - password
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PasswordResetRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PasswordResetRequest'
+        required: true
+      security:
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PasswordReset'
+          description: ''
+  /auth/password/reset/confirm/:
+    post:
+      operationId: password_reset_confirm_create
+      description: Complete the password reset process using the token from the reset
+        email. Requires the UID and token from the email along with the new password.
+        The token is single-use and expires for security.
+      tags:
+      - password
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PasswordResetConfirmRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PasswordResetConfirmRequest'
+        required: true
+      security:
+      - JWTAuthentication: []
+        JWTCookieAuthentication: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PasswordResetConfirm'
+          description: ''
+  /auth/registration/:
+    post:
+      operationId: registration_create
+      description: |-
+        User Registration
+
+        Create new user accounts with email verification.
+        Users must verify their email address before the account is fully activated.
+      tags:
+      - registration
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegisterRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/RegisterRequest'
+        required: true
+      security:
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Register'
+          description: ''
+  /auth/registration/resend-email/:
+    post:
+      operationId: registration_resend_email_create
+      description: |-
+        Resend Email Verification
+
+        Request a new email verification message for unverified accounts.
+        Useful when the original verification email was lost or expired.
+      tags:
+      - registration
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ResendEmailVerificationRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ResendEmailVerificationRequest'
+        required: true
+      security:
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResendEmailVerification'
+          description: ''
+  /auth/registration/verify-email/:
+    get:
+      operationId: registration_verify_email_retrieve
+      description: GET method not allowed for email verification.
+      tags:
+      - registration
+      security:
+      - {}
+      responses:
+        '405':
+          description: Method not allowed
+    post:
+      operationId: registration_verify_email_create
+      description: Confirm email address using the verification key sent via email.
+        This activates the user account and allows login access.
+      tags:
+      - registration
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VerifyEmailRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/VerifyEmailRequest'
+        required: true
+      security:
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VerifyEmail'
+          description: ''
+  /auth/token/refresh/:
+    post:
+      operationId: token_refresh_create
+      description: Generate new JWT access tokens using refresh tokens. Refresh tokens
+        can be provided in request data or extracted automatically from HTTP cookies.
+        Returns new access tokens with updated expiration times. New tokens are automatically
+        set in HTTP cookies for secure storage.
+      tags:
+      - token
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CookieTokenRefreshRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/CookieTokenRefreshRequest'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CookieTokenRefresh'
+          description: ''
+  /auth/token/verify/:
+    post:
+      operationId: token_verify_create
+      description: |-
+        Takes a token and indicates if it is valid.  This view provides no
+        information about a token's fitness for a particular use.
+      tags:
+      - token
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TokenVerifyRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/TokenVerifyRequest'
+        required: true
+      responses:
+        '200':
+          description: No response body
+  /auth/user/:
+    get:
+      operationId: user_retrieve
+      description: Retrieve the authenticated user's profile information including
+        username, email, first name, and last name. Password fields are excluded.
+      tags:
+      - user
+      security:
+      - JWTAuthentication: []
+        JWTCookieAuthentication: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserDetails'
+          description: ''
+    put:
+      operationId: user_update
+      description: Update the authenticated user's profile information. Allows modification
+        of username, first name, and last name. Email field is read-only for security.
+      tags:
+      - user
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserDetailsRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/UserDetailsRequest'
+      security:
+      - JWTAuthentication: []
+        JWTCookieAuthentication: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserDetails'
+          description: ''
+    patch:
+      operationId: user_partial_update
+      description: Partially update the authenticated user's profile information.
+        Only provided fields will be updated. Email field is read-only.
+      tags:
+      - user
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedUserDetailsRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedUserDetailsRequest'
+      security:
+      - JWTAuthentication: []
+        JWTCookieAuthentication: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserDetails'
+          description: ''
+components:
+  schemas:
+    CookieTokenRefresh:
+      type: object
+      description: JWT token refresh with cookie and request data support.
+      properties:
+        access:
+          type: string
+          readOnly: true
+        access_expiration:
+          type: string
+          format: date-time
+          readOnly: true
+    CookieTokenRefreshRequest:
+      type: object
+      description: JWT token refresh with cookie and request data support.
+      properties:
+        refresh:
+          type: string
+          writeOnly: true
+          description: Will override cookie.
+    JWTLogout:
+      type: object
+      description: JWT logout with refresh token blacklisting.
+      properties:
+        detail:
+          type: string
+          readOnly: true
+    JWTLogoutRequest:
+      type: object
+      description: JWT logout with refresh token blacklisting.
+      properties:
+        refresh:
+          type: string
+          writeOnly: true
+          minLength: 1
+    Login:
+      type: object
+      description: User authentication with credentials response.
+      properties:
+        access:
+          type: string
+          readOnly: true
+        refresh:
+          type: string
+          readOnly: true
+        access_expiration:
+          type: string
+          format: date-time
+          readOnly: true
+        refresh_expiration:
+          type: string
+          format: date-time
+          readOnly: true
+        user:
+          allOf:
+          - $ref: '#/components/schemas/UserDetails'
+          readOnly: true
+    LoginRequest:
+      type: object
+      description: User authentication with credentials response.
+      properties:
+        email:
+          type: string
+          format: email
+          writeOnly: true
+          minLength: 1
+        password:
+          type: string
+          writeOnly: true
+          minLength: 1
+      required:
+      - email
+      - password
+    PasswordChange:
+      type: object
+      description: Password change for authenticated users.
+      properties:
+        detail:
+          type: string
+          readOnly: true
+    PasswordChangeRequest:
+      type: object
+      description: Password change for authenticated users.
+      properties:
+        new_password1:
+          type: string
+          writeOnly: true
+          minLength: 1
+          maxLength: 128
+        new_password2:
+          type: string
+          writeOnly: true
+          minLength: 1
+          maxLength: 128
+      required:
+      - new_password1
+      - new_password2
+    PasswordReset:
+      type: object
+      description: Password reset request with email verification.
+      properties:
+        detail:
+          type: string
+          readOnly: true
+    PasswordResetConfirm:
+      type: object
+      description: Password reset confirmation with new password.
+      properties:
+        detail:
+          type: string
+          readOnly: true
+    PasswordResetConfirmRequest:
+      type: object
+      description: Password reset confirmation with new password.
+      properties:
+        new_password1:
+          type: string
+          writeOnly: true
+          minLength: 1
+          maxLength: 128
+        new_password2:
+          type: string
+          writeOnly: true
+          minLength: 1
+          maxLength: 128
+        uid:
+          type: string
+          writeOnly: true
+          minLength: 1
+        token:
+          type: string
+          writeOnly: true
+          minLength: 1
+      required:
+      - new_password1
+      - new_password2
+      - token
+      - uid
+    PasswordResetRequest:
+      type: object
+      description: Password reset request with email verification.
+      properties:
+        email:
+          type: string
+          format: email
+          writeOnly: true
+          minLength: 1
+      required:
+      - email
+    PatchedUserDetailsRequest:
+      type: object
+      description: User profile information and updates.
+      properties:
+        first_name:
+          type: string
+          maxLength: 150
+        last_name:
+          type: string
+          maxLength: 150
+    Register:
+      type: object
+      description: User registration with email verification.
+      properties:
+        detail:
+          type: string
+          readOnly: true
+    RegisterRequest:
+      type: object
+      description: User registration with email verification.
+      properties:
+        email:
+          type: string
+          format: email
+          writeOnly: true
+          minLength: 1
+        password1:
+          type: string
+          writeOnly: true
+          minLength: 1
+        password2:
+          type: string
+          writeOnly: true
+          minLength: 1
+      required:
+      - email
+      - password1
+      - password2
+    ResendEmailVerification:
+      type: object
+      description: Request new email verification message.
+      properties:
+        detail:
+          type: string
+          readOnly: true
+    ResendEmailVerificationRequest:
+      type: object
+      description: Request new email verification message.
+      properties:
+        email:
+          type: string
+          format: email
+          writeOnly: true
+          minLength: 1
+      required:
+      - email
+    TokenVerifyRequest:
+      type: object
+      properties:
+        token:
+          type: string
+          writeOnly: true
+          minLength: 1
+      required:
+      - token
+    UserDetails:
+      type: object
+      description: User profile information and updates.
+      properties:
+        pk:
+          type: integer
+          readOnly: true
+          title: ID
+        email:
+          type: string
+          format: email
+          readOnly: true
+          title: Email address
+        first_name:
+          type: string
+          maxLength: 150
+        last_name:
+          type: string
+          maxLength: 150
+    UserDetailsRequest:
+      type: object
+      description: User profile information and updates.
+      properties:
+        first_name:
+          type: string
+          maxLength: 150
+        last_name:
+          type: string
+          maxLength: 150
+    VerifyEmail:
+      type: object
+      description: Email address verification with confirmation key.
+      properties:
+        detail:
+          type: string
+          readOnly: true
+    VerifyEmailRequest:
+      type: object
+      description: Email address verification with confirmation key.
+      properties:
+        key:
+          type: string
+          writeOnly: true
+          minLength: 1
+      required:
+      - key
+  securitySchemes:
+    JWTAuthentication:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    JWTCookieAuthentication:
+      type: apiKey
+      in: cookie
+      name: auth-jwt

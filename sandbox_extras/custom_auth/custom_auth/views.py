@@ -23,6 +23,6 @@ class KnoxLoginView(LoginView):
 class KnoxLogoutView(LogoutView):
     def logout_custom(self, request: Request, response: Response) -> None:
         request._auth.delete()
-        user_logged_out.send(  # pyright: ignore[reportUnknownMemberType]
+        user_logged_out.send(
             sender=request.user.__class__, request=request, user=request.user
         )
