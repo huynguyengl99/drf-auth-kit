@@ -5,6 +5,10 @@ build:
   tools:
     python: "3.11"
   jobs:
+    post_checkout:
+      # Use `git log` to check if the latest commit contains "bump: version",
+      # if not, exit the command with 183 to cancel the build
+      - '(git --no-pager log --pretty="tformat:%s -- %b" -1 | tr "\n" " " | grep -q "bump: version") || exit 183'
     create_environment:
       - asdf plugin add uv
       - asdf install uv latest
