@@ -37,7 +37,7 @@ if [ "$RUN_COVERAGE" = true ]; then
 
     pytest --cov=auth_kit --cov-append --cov-report= sandbox_extras/custom_username
 
-    pytest --cov=auth_kit --cov-append --cov-report=term-missing sandbox
+    pytest --cov=auth_kit --cov-append --cov-report=xml --cov-report=term-missing sandbox
 else
     echo "Running tests without coverage..."
 
