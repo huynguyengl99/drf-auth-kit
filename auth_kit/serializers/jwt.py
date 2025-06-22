@@ -12,6 +12,7 @@ from rest_framework import serializers
 
 from rest_framework_simplejwt.exceptions import InvalidToken
 from rest_framework_simplejwt.serializers import TokenRefreshSerializer
+from rest_framework_simplejwt.settings import api_settings as jwt_settings
 
 from auth_kit.app_settings import auth_kit_settings
 
@@ -29,8 +30,25 @@ class CookieTokenRefreshSerializer(TokenRefreshSerializer, JWTSerializer):
     """JWT token refresh with cookie and request data support."""
 
     refresh = serializers.CharField(
-        required=False, help_text=_("Will override cookie.")
+        required=False, help_text=_("Will override cookie."), allow_blank=True
     )
+
+    def __init__(self, *args: Any, **kwargs: Any) -> None:
+        """
+        Initialize password change serializer.
+
+        Args:
+            *args: Variable length argument list
+            **kwargs: Arbitrary keyword arguments
+        """
+        super().__init__(*args, **kwargs)
+
+        if not jwt_settings.ROTATE_REFRESH_TOKENS:
+            self.fields.pop("refresh_expiration")
+            self.fields["refresh"].write_only = True
+
+        self.request = self.context.get("request")
+        self.user = getattr(self.request, "user", None)
 
     def extract_refresh_token(self) -> str:
         """

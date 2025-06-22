@@ -9,22 +9,27 @@ using django-allauth integration.
 from typing import Any
 from urllib.parse import urlencode
 
+from django.contrib.auth import get_user_model
 from django.contrib.auth.base_user import AbstractBaseUser
 from django.contrib.auth.models import AbstractUser
 from django.http import HttpRequest
 from django.urls import reverse
+from django.utils.translation import gettext_lazy as _
+from rest_framework.exceptions import ValidationError
 
-from allauth.account import app_settings as allauth_account_settings
 from allauth.account.adapter import get_adapter
 from allauth.account.forms import ResetPasswordForm as DefaultPasswordResetForm
 from allauth.account.forms import default_token_generator
 from allauth.account.utils import (
+    filter_users_by_email,
     user_pk_to_url_str,
     user_username,
 )
 from allauth.utils import build_absolute_uri
 
 from .app_settings import auth_kit_settings
+
+UserModel = get_user_model()
 
 
 def password_reset_url_generator(
@@ -49,7 +54,7 @@ def password_reset_url_generator(
     if auth_kit_settings.PASSWORD_RESET_CONFIRM_URL:
         url = f"{auth_kit_settings.PASSWORD_RESET_CONFIRM_URL}?{encoded_params}"
     else:
-        path = reverse("rest_password_reset_confirm")
+        path = reverse(f"{auth_kit_settings.URL_NAMESPACE}rest_password_reset_confirm")
         full_path = f"{path}?{encoded_params}"
         url = build_absolute_uri(request, full_path)
 
@@ -63,6 +68,19 @@ class AllAuthPasswordResetForm(DefaultPasswordResetForm):  # type: ignore[misc]
     Extends the default allauth password reset form to support
     custom URL generation and Auth Kit settings.
     """
+
+    def clean_email(self) -> str:
+        """Validate email for password reset, preventing user enumeration if configured."""
+        email = self.cleaned_data["email"].lower()
+        email = get_adapter().clean_email(email)
+        self.users: list[AbstractBaseUser] = filter_users_by_email(
+            email, is_active=True, prefer_verified=True
+        )
+        if not self.users and not auth_kit_settings.PASSWORD_RESET_PREVENT_ENUMERATION:
+            raise ValidationError(
+                _("The email address is not assigned to any user account.")
+            )
+        return str(self.cleaned_data["email"])
 
     def save(self, request: HttpRequest, **kwargs: Any) -> str:
         """
@@ -78,9 +96,7 @@ class AllAuthPasswordResetForm(DefaultPasswordResetForm):  # type: ignore[misc]
         email: str = self.cleaned_data["email"]
         token_generator = kwargs.get("token_generator", default_token_generator)
 
-        users: list[AbstractBaseUser] = (  # pyright: ignore[reportUnknownMemberType]
-            self.users
-        )
+        users: list[AbstractBaseUser] = self.users
 
         for user in users:
             temp_key: str = token_generator.make_token(user)
@@ -98,13 +114,9 @@ class AllAuthPasswordResetForm(DefaultPasswordResetForm):  # type: ignore[misc]
                 "request": request,
                 "token": temp_key,
                 "uid": uid,
+                "username": user_username(user),
             }
-            if (
-                allauth_account_settings.AuthenticationMethod.USERNAME
-                in allauth_account_settings.LOGIN_METHODS
-            ):
-                context["username"] = user_username(user)
-            get_adapter(request).send_mail(  # pyright: ignore[reportUnknownMemberType]
+            get_adapter(request).send_mail(
                 "account/email/password_reset_key", email, context
             )
         return str(self.cleaned_data["email"])

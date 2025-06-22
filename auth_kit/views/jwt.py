@@ -7,11 +7,14 @@ This module provides views for JWT token refresh with cookie support.
 from typing import Any
 
 from django.utils import timezone
+from django.utils.functional import lazy
 from rest_framework import status
 from rest_framework.request import Request
 from rest_framework.response import Response
 
-from drf_spectacular.utils import extend_schema
+from drf_spectacular.utils import (
+    extend_schema,
+)
 from rest_framework_simplejwt.settings import api_settings as jwt_settings
 from rest_framework_simplejwt.views import TokenRefreshView
 
@@ -31,7 +34,7 @@ class RefreshViewWithCookieSupport(TokenRefreshView):
 
     serializer_class = CookieTokenRefreshSerializer  # type: ignore[assignment]
 
-    @extend_schema(description=get_jwt_refresh_description())
+    @extend_schema(description=lazy(get_jwt_refresh_description, str)())
     def post(self, request: Request, *args: Any, **kwargs: Any) -> Response:
         """Refresh JWT access tokens."""
         return super().post(request, *args, **kwargs)
@@ -76,6 +79,6 @@ class RefreshViewWithCookieSupport(TokenRefreshView):
             )
 
             if auth_kit_settings.AUTH_COOKIE_HTTPONLY:
-                del response.data["refresh"]
+                response.data["refresh"] = ""
 
         return super().finalize_response(request, response, *args, **kwargs)

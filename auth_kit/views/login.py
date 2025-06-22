@@ -12,13 +12,17 @@ from django.contrib.auth.base_user import AbstractBaseUser
 from django.contrib.auth.models import AbstractUser
 from django.http import HttpResponseBase
 from django.utils import timezone
+from django.utils.functional import lazy
 from rest_framework import status
 from rest_framework.generics import GenericAPIView
 from rest_framework.permissions import AllowAny
 from rest_framework.request import Request
 from rest_framework.response import Response
+from rest_framework.serializers import Serializer
 
-from drf_spectacular.utils import extend_schema
+from drf_spectacular.utils import (
+    extend_schema,
+)
 
 from auth_kit.api_descriptions import get_login_description
 from auth_kit.app_settings import auth_kit_settings
@@ -36,7 +40,6 @@ class LoginView(GenericAPIView[Any]):
 
     permission_classes = (AllowAny,)
     authentication_classes = []
-    serializer_class = auth_kit_settings.LOGIN_SERIALIZER
     throttle_scope = "auth_kit"
 
     def __init__(self, **kwargs: Any) -> None:
@@ -50,6 +53,18 @@ class LoginView(GenericAPIView[Any]):
         self.user: AbstractUser | AbstractBaseUser | None = None
         self.access_token: str | None = None
         self.refresh_token: str | None = None
+
+    def get_serializer_class(self) -> type[Serializer[dict[str, Any]]]:
+        """
+        Get the login serializer class based on current settings.
+
+        Returns the appropriate serializer class for handling login requests
+        and responses based on the configured authentication type (JWT, token, or custom).
+
+        Returns:
+            The login serializer class from the auth kit settings
+        """
+        return auth_kit_settings.LOGIN_SERIALIZER_FACTORY()
 
     @sensitive_post_parameters_m
     def dispatch(self, *args: Any, **kwargs: Any) -> HttpResponseBase:
@@ -65,11 +80,11 @@ class LoginView(GenericAPIView[Any]):
         """
         return super().dispatch(*args, **kwargs)
 
-    def process_login(self) -> None:
+    def perform_session_login(self, user: AbstractBaseUser) -> None:
         """
         Process user login using Django's login function.
         """
-        django_login(self.request, self.user)  # type: ignore[unused-ignore, arg-type]
+        django_login(self.request, user)  # type: ignore[unused-ignore, arg-type]
 
     def create_response_with_cookies(self, validated_data: dict[str, Any]) -> Response:
         """
@@ -112,12 +127,12 @@ class LoginView(GenericAPIView[Any]):
                 auth_kit_settings.AUTH_TOKEN_COOKIE_PATH,
                 token_cookie_expire_time,
             )
-        elif auth_kit_settings.AUTH_TYPE == "custom":
+        else:  # custom
             self.set_custom_cookie(response)
 
         return response
 
-    @extend_schema(description=get_login_description())
+    @extend_schema(description=lazy(get_login_description, str)())
     def post(self, request: Request, *args: Any, **kwargs: Any) -> Response:
         """
         Authenticate user and return access tokens.
@@ -139,6 +154,9 @@ class LoginView(GenericAPIView[Any]):
         else:
             response = Response(serializer.data, status=status.HTTP_200_OK)
 
+        if auth_kit_settings.SESSION_LOGIN:
+            self.perform_session_login(serializer.validated_data["user"])
+
         return response
 
     def set_custom_cookie(self, response: Response) -> None:
@@ -150,4 +168,3 @@ class LoginView(GenericAPIView[Any]):
         Args:
             response: The DRF response object
         """
-        pass

@@ -15,6 +15,15 @@ from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.request import Request
 from rest_framework.response import Response
 
+from drf_spectacular.utils import (
+    extend_schema,
+)
+
+from auth_kit.api_descriptions import (
+    PASSWORD_CHANGE_DESCRIPTION,
+    PASSWORD_RESET_CONFIRM_DESCRIPTION,
+    PASSWORD_RESET_DESCRIPTION,
+)
 from auth_kit.app_settings import auth_kit_settings
 from auth_kit.utils import sensitive_post_parameters_m
 
@@ -32,6 +41,7 @@ class PasswordResetView(GenericAPIView[Any]):
     authentication_classes = []
     throttle_scope = "auth_kit"
 
+    @extend_schema(description=PASSWORD_RESET_DESCRIPTION)
     def post(self, request: Request, *args: Any, **kwargs: Any) -> Response:
         """
         Handle POST request for password reset.
@@ -81,6 +91,7 @@ class PasswordResetConfirmView(GenericAPIView[Any]):
         """
         return super().dispatch(*args, **kwargs)
 
+    @extend_schema(description=PASSWORD_RESET_CONFIRM_DESCRIPTION)
     def post(self, request: Request, *args: Any, **kwargs: Any) -> Response:
         """
         Handle POST request for password reset confirmation.
@@ -126,6 +137,7 @@ class PasswordChangeView(GenericAPIView[Any]):
         """
         return super().dispatch(*args, **kwargs)
 
+    @extend_schema(description=PASSWORD_CHANGE_DESCRIPTION)
     def post(self, request: Request, *args: Any, **kwargs: Any) -> Response:
         """
         Handle POST request for password change.

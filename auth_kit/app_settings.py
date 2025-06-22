@@ -47,14 +47,14 @@ class MySetting:
         "auth_kit.serializers.login_factors.LoginRequestSerializer"
     )
     LOGIN_RESPONSE_SERIALIZER: type[BaseLoginResponseSerializer] = ImportStr(
-        "auth_kit.serializers.login_factors.LoginResponseSerializer"
+        "auth_kit.serializers.login_factors.BaseLoginResponseSerializer"
     )
-    LOGIN_SERIALIZER: type[Serializer[dict[str, Any]]] = ImportStr(
-        "auth_kit.serializers.LoginSerializer"
+    LOGIN_SERIALIZER_FACTORY: Callable[[], type[Serializer[dict[str, Any]]]] = (
+        ImportStr("auth_kit.serializers.login.get_login_serializer")
     )
     LOGIN_VIEW: type["GenericAPIView[Any]"] = ImportStr("auth_kit.views.LoginView")
     LOGOUT_SERIALIZER: type[Serializer[dict[str, Any]]] = ImportStr(
-        "auth_kit.serializers.logout.LogoutSerializer"
+        "auth_kit.serializers.logout.AuthKitLogoutSerializer"
     )
     LOGOUT_VIEW: type["GenericAPIView[Any]"] = ImportStr("auth_kit.views.LogoutView")
     JWT_TOKEN_CLAIMS_SERIALIZER: type[TokenObtainPairSerializer] = ImportStr(
@@ -85,6 +85,7 @@ class MySetting:
         "auth_kit.forms.password_reset_url_generator"
     )
     OLD_PASSWORD_FIELD_ENABLED: bool = False
+    PASSWORD_RESET_PREVENT_ENUMERATION: bool = True
 
     # REGISTRATION CONFIGURATIONS
     REGISTER_EMAIL_CONFIRM_URL: str | None = None
@@ -127,6 +128,9 @@ class MySetting:
     CUSTOM_AUTHENTICATION: type[BaseAuthentication] = ImportStr(
         "auth_kit.authentication.AuthKitCookieAuthentication"
     )
+
+    # Utils
+    URL_NAMESPACE: str = ""
 
     # Field to satisfy the type checker for APISettings compatibility
     user_settings: dict[str, Any] = {}
@@ -200,4 +204,4 @@ def reload_api_settings(*args: Any, **kwargs: Any) -> None:
         )
 
 
-setting_changed.connect(reload_api_settings)  # pyright: ignore[reportUnknownMemberType]
+setting_changed.connect(reload_api_settings)

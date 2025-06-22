@@ -2,16 +2,21 @@
 Utility functions for Auth Kit.
 
 This module provides helper functions for JWT token generation,
-security decorators, and type casting utilities.
+security decorators, type casting utilities, and user model references.
 """
 
 from typing import Any, cast
 
+from django.contrib.auth import get_user_model
 from django.contrib.auth.base_user import AbstractBaseUser
+from django.contrib.auth.models import User
 from django.utils.decorators import method_decorator
 from django.views.decorators.debug import sensitive_post_parameters
 
 from rest_framework_simplejwt.tokens import AccessToken, RefreshToken
+
+UserModel: type[User] = get_user_model()  # type: ignore[assignment, unused-ignore]
+UserNameField: str = UserModel.USERNAME_FIELD
 
 
 def jwt_encode(user: AbstractBaseUser) -> tuple[AccessToken, RefreshToken]:

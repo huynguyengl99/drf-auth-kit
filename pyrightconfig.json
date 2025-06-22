@@ -5,7 +5,8 @@
     "reportMissingTypeStubs": "warning",
     "pythonVersion": "3.11",
     "reportIncompatibleVariableOverride": "none",
-    "reportUnknownMemberType": "warning",
+    "reportUnknownMemberType": "none",
+    "reportUnknownVariableType": "none",
     "executionEnvironments": [
         {
             "root": "sandbox/config/settings",

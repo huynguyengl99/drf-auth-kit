@@ -27,12 +27,12 @@ from allauth.account.app_settings import EmailVerificationMethod
 from allauth.account.models import EmailAddress, get_emailconfirmation_model
 from allauth.account.views import ConfirmEmailView
 from allauth.utils import build_absolute_uri
-from drf_spectacular.utils import extend_schema
+from drf_spectacular.utils import OpenApiResponse, extend_schema
 
 from auth_kit.api_descriptions import (
     EMAIL_RESEND_DESCRIPTION,
     EMAIL_VERIFY_DESCRIPTION,
-    get_registration_description,
+    REGISTER_DESCRIPTION,
 )
 from auth_kit.app_settings import auth_kit_settings
 from auth_kit.serializers import (
@@ -59,7 +59,7 @@ def get_email_verification_url(request: Request, emailconfirmation: Any) -> str:
     if auth_kit_settings.REGISTER_EMAIL_CONFIRM_URL:
         url = f"{auth_kit_settings.REGISTER_EMAIL_CONFIRM_URL}?{encoded_params}"
     else:
-        path = reverse("account_confirm_email")
+        path = reverse(f"{auth_kit_settings.URL_NAMESPACE}rest_verify_email")
         full_path = f"{path}?{encoded_params}"
         url = build_absolute_uri(request, full_path)
 
@@ -80,7 +80,7 @@ def send_verify_email(request: Request, user: AbstractUser) -> None:
     email_template = "account/email/email_confirmation_signup"
 
     email_address = EmailAddress.objects.get_for_user(  # pyright: ignore
-        user, user.email  # pyright: ignore[reportUnknownMemberType]
+        user, user.email
     )
     model = get_emailconfirmation_model()
     emailconfirmation = model.create(email_address)  # pyright: ignore
@@ -88,12 +88,12 @@ def send_verify_email(request: Request, user: AbstractUser) -> None:
 
     ctx: dict[str, Any] = {
         "user": user,
-        "key": emailconfirmation.key,  # pyright: ignore[reportUnknownMemberType]
+        "key": emailconfirmation.key,
         "activate_url": auth_kit_settings.GET_EMAIL_VERIFICATION_URL_FUNC(
             request, emailconfirmation
         ),
     }
-    adapter.send_mail(  # pyright: ignore[reportUnknownMemberType]
+    adapter.send_mail(
         email_template, emailconfirmation.email_address.email, ctx  # pyright: ignore
     )
 
@@ -141,7 +141,7 @@ class RegisterView(CreateAPIView[Any]):
             return {"detail": _("Verification e-mail sent.")}
         return {"detail": _("Successfully registered.")}
 
-    @extend_schema(description=get_registration_description())
+    @extend_schema(description=REGISTER_DESCRIPTION)
     def create(self, request: Request, *args: Any, **kwargs: Any) -> Response:
         """
         Create a new user account.
@@ -194,16 +194,10 @@ class VerifyEmailView(APIView, ConfirmEmailView):  # type: ignore[misc]
         """
         return VerifyEmailSerializer(*args, **kwargs)
 
+    @extend_schema(responses={405: OpenApiResponse(description="Method not allowed")})
     def get(self, *args: Any, **kwargs: Any) -> NoReturn:
         """
         GET method not allowed for email verification.
-
-        Args:
-            *args: Variable length argument list
-            **kwargs: Arbitrary keyword arguments
-
-        Raises:
-            MethodNotAllowed: Always raises this exception
         """
         raise MethodNotAllowed("GET")
 
@@ -223,8 +217,8 @@ class VerifyEmailView(APIView, ConfirmEmailView):  # type: ignore[misc]
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         self.kwargs["key"] = serializer.validated_data["key"]
-        confirmation = self.get_object()  # pyright: ignore[reportUnknownMemberType]
-        confirmation.confirm(self.request)  # pyright: ignore[reportUnknownMemberType]
+        confirmation = self.get_object()
+        confirmation.confirm(self.request)
         return Response({"detail": _("ok")}, status=status.HTTP_200_OK)
 
 

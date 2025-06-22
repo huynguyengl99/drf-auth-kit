@@ -7,14 +7,12 @@ user authentication, and token generation for different authentication types.
 
 from typing import Any, cast
 
-from django.contrib.auth import authenticate, get_user_model
+from django.contrib.auth import authenticate
 from django.contrib.auth.base_user import AbstractBaseUser
-from django.contrib.auth.models import User
 from django.db.models import QuerySet
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 from rest_framework import exceptions, serializers
-from rest_framework.serializers import Serializer
 
 from allauth.account import (  # pyright: ignore[reportMissingTypeStubs]
     app_settings as allauth_account_settings,
@@ -23,27 +21,43 @@ from allauth.account.models import (  # pyright: ignore[reportMissingTypeStubs]
     EmailAddress,
 )
 from drf_spectacular.utils import (
-    extend_schema_field,  # pyright: ignore[reportUnknownVariableType]
+    extend_schema_field,
 )
 from rest_framework_simplejwt.settings import api_settings as jwt_settings
 
 from auth_kit.app_settings import auth_kit_settings
 from auth_kit.serializers import JWTSerializer
 from auth_kit.serializers.token import TokenSerializer
-from auth_kit.utils import cast_dict, jwt_encode
-
-UserModel: type[User] = get_user_model()  # type: ignore[assignment, unused-ignore]
-UserNameField: str = UserModel.USERNAME_FIELD
+from auth_kit.utils import UserModel, UserNameField, cast_dict, jwt_encode
 
 
 class LoginRequestSerializer(serializers.Serializer[dict[str, Any]]):
     """User authentication credentials."""
 
-    if UserNameField == "username":
-        username = serializers.CharField(write_only=True)
-    elif UserNameField == "email":
-        email = serializers.EmailField(write_only=True)
+    username = serializers.CharField(write_only=True)
+    email = serializers.EmailField(write_only=True)
     password = serializers.CharField(style={"input_type": "password"}, write_only=True)
+
+    fields: dict[str, Any]  # type: ignore[assignment]
+
+    def __init__(self, *args: Any, **kwargs: Any) -> None:
+        """
+        Initialize login serializer.
+
+        Args:
+            *args: Variable length argument list
+            **kwargs: Arbitrary keyword arguments
+        """
+        super().__init__(*args, **kwargs)
+
+        if UserNameField == "username":
+            self.fields.pop("email")
+        elif UserNameField == "email":
+            self.fields.pop("username")
+        else:
+            self.fields.pop("email")
+            self.fields.pop("username")
+            self.fields[UserNameField] = serializers.CharField(write_only=True)
 
     def authenticate(self, **kwargs: Any) -> AbstractBaseUser | None:
         """
@@ -77,22 +91,11 @@ class LoginRequestSerializer(serializers.Serializer[dict[str, Any]]):
         elif UserModel.USERNAME_FIELD == "username":
             return self.authenticate(username=username, password=password)
         else:
-            return None
-
-    @staticmethod
-    def validate_auth_user_status(user: AbstractBaseUser | None) -> None:
-        """
-        Validate that the authenticated user is active.
-
-        Args:
-            user: User instance to validate
-
-        Raises:
-            ValidationError: If user account is disabled
-        """
-        if user and not user.is_active:
-            msg = _("User account is disabled.")
-            raise exceptions.ValidationError(msg)
+            creds = {
+                "password": password,
+                UserNameField: username,
+            }
+            return self.authenticate(**creds)
 
     def validate_email_verification_status(self, user: AbstractBaseUser) -> None:
         """
@@ -133,7 +136,7 @@ class LoginRequestSerializer(serializers.Serializer[dict[str, Any]]):
             ValidationError: If authentication fails or user is inactive
         """
         super().validate(attrs)
-        username = attrs.get("username")
+        username = attrs.get(UserModel.USERNAME_FIELD)
         email = attrs.get("email")
         password = attrs.get("password")
         user = self.get_auth_user(username, email, password)
@@ -141,9 +144,6 @@ class LoginRequestSerializer(serializers.Serializer[dict[str, Any]]):
         if not user:
             msg = _("Unable to log in with provided credentials.")
             raise exceptions.ValidationError(msg)
-
-        # Did we get back an active user?
-        self.validate_auth_user_status(user)
 
         # If required, is the email verified?
         self.validate_email_verification_status(user)
@@ -171,9 +171,7 @@ class BaseLoginResponseSerializer(serializers.Serializer[dict[str, Any]]):
         user_detail_serializer = auth_kit_settings.USER_DETAILS_SERIALIZER(
             obj["user"], context=self.context
         )
-        return cast_dict(
-            user_detail_serializer.data  # pyright: ignore[reportUnknownMemberType]
-        )
+        return cast_dict(user_detail_serializer.data)
 
 
 class JWTResponseSerializer(JWTSerializer, BaseLoginResponseSerializer):
@@ -226,15 +224,25 @@ class TokenResponseSerializer(TokenSerializer, BaseLoginResponseSerializer):
 
         return {
             "user": user,
-            "key": token.key,  # pyright: ignore[reportUnknownMemberType]
+            "key": token.key,
         }
 
 
-LoginResponseSerializer: type[Serializer[Any]]
+def get_login_response_serializer() -> type[BaseLoginResponseSerializer]:
+    """
+    Get the appropriate login response serializer based on current settings.
 
-if auth_kit_settings.AUTH_TYPE == "jwt":
-    LoginResponseSerializer = JWTResponseSerializer
-elif auth_kit_settings.AUTH_TYPE == "token":
-    LoginResponseSerializer = TokenResponseSerializer
-else:
-    LoginResponseSerializer = auth_kit_settings.CUSTOM_LOGIN_RESPONSE_SERIALIZER
+    Returns:
+        The appropriate response serializer class
+    """
+    if auth_kit_settings.LOGIN_RESPONSE_SERIALIZER != BaseLoginResponseSerializer:
+        return auth_kit_settings.LOGIN_RESPONSE_SERIALIZER
+
+    if auth_kit_settings.AUTH_TYPE == "jwt":
+        return JWTResponseSerializer
+    elif auth_kit_settings.AUTH_TYPE == "token":
+        return TokenResponseSerializer
+    else:  # pragma: no cover
+        raise TypeError(
+            "You must specify your login response serializer via  auth_kit_settings.LOGIN_RESPONSE_SERIALIZER"
+        )

@@ -8,10 +8,13 @@ JWT tokens, DRF tokens, and custom authentication backends.
 from typing import Any
 
 from django.contrib.auth.base_user import AbstractBaseUser
-from rest_framework.authentication import BaseAuthentication, TokenAuthentication
+from rest_framework.authentication import TokenAuthentication
 from rest_framework.request import Request
 
 from drf_spectacular.contrib.rest_framework_simplejwt import SimpleJWTScheme
+from drf_spectacular.plumbing import (
+    build_bearer_security_scheme_object,
+)
 from rest_framework_simplejwt.authentication import JWTAuthentication
 
 from auth_kit.app_settings import auth_kit_settings
@@ -25,11 +28,11 @@ class AuthKitCookieAuthentication(JWTAuthentication):
     in request cookies or headers, with preference given to headers.
     """
 
-    def _authenticate(
+    def authenticate_with_cookie(
         self, request: Request, cookie_name: str | None
     ) -> tuple[Any, Any] | None:
         """
-        Authenticate the request using header or cookie-based token.
+        Authenticate using header or cookie-based token with header taking priority.
 
         Args:
             request: The HTTP request object
@@ -39,12 +42,9 @@ class AuthKitCookieAuthentication(JWTAuthentication):
             Tuple of (user, token) if authentication succeeds, None otherwise
         """
         header = self.get_header(request)
-        if header is None:  # pyright: ignore[reportUnnecessaryComparison]
-            if cookie_name:
-                raw_token = request.COOKIES.get(cookie_name)
-                raw_token = raw_token.encode("utf-8") if raw_token else None
-            else:
-                return None
+        if header is None and cookie_name:  # pyright: ignore
+            raw_token = request.COOKIES.get(cookie_name)
+            raw_token = raw_token.encode("utf-8") if raw_token else None
         else:
             raw_token = self.get_raw_token(header)
 
@@ -62,7 +62,9 @@ class AuthKitCookieAuthentication(JWTAuthentication):
         else:
             return self.custom_authenticate(token)
 
-    def authenticate_credentials(self, key: str) -> tuple[Any, Any] | None:
+    def authenticate_credentials(
+        self, key: str
+    ) -> tuple[Any, Any] | None:  # pragma: no cover
         """
         Authenticate using token credentials.
 
@@ -84,7 +86,6 @@ class AuthKitCookieAuthentication(JWTAuthentication):
         Returns:
             Tuple of (user, token) if authentication succeeds, None otherwise
         """
-        pass
 
 
 class TokenCookieAuthentication(TokenAuthentication, AuthKitCookieAuthentication):
@@ -102,7 +103,9 @@ class TokenCookieAuthentication(TokenAuthentication, AuthKitCookieAuthentication
         Returns:
             Tuple of (user, token) if authentication succeeds, None otherwise
         """
-        return self._authenticate(request, auth_kit_settings.AUTH_TOKEN_COOKIE_NAME)
+        return self.authenticate_with_cookie(
+            request, auth_kit_settings.AUTH_TOKEN_COOKIE_NAME
+        )
 
 
 class TokenCookieAuthenticationScheme(SimpleJWTScheme):  # type: ignore[no-untyped-call]
@@ -128,11 +131,15 @@ class TokenCookieAuthenticationScheme(SimpleJWTScheme):  # type: ignore[no-untyp
             List of security definitions for the schema
         """
         return [
-            super().get_security_definition(auto_schema),  # type: ignore[no-untyped-call]
+            build_bearer_security_scheme_object(  # type: ignore[no-untyped-call]
+                header_name="HTTP_AUTHORIZATION",
+                token_prefix=TokenCookieAuthentication.keyword,
+                bearer_format="DRF Token",
+            ),
             {
                 "type": "apiKey",
                 "in": "cookie",
-                "name": auth_kit_settings.AUTH_JWT_COOKIE_NAME,
+                "name": auth_kit_settings.AUTH_TOKEN_COOKIE_NAME,
             },
         ]
 
@@ -150,7 +157,9 @@ class JWTCookieAuthentication(AuthKitCookieAuthentication):
         Returns:
             Tuple of (user, token) if authentication succeeds, None otherwise
         """
-        return self._authenticate(request, auth_kit_settings.AUTH_JWT_COOKIE_NAME)
+        return self.authenticate_with_cookie(
+            request, auth_kit_settings.AUTH_JWT_COOKIE_NAME
+        )
 
 
 class JWTCookieAuthenticationScheme(SimpleJWTScheme):  # type: ignore[no-untyped-call]
@@ -180,12 +189,3 @@ class JWTCookieAuthenticationScheme(SimpleJWTScheme):  # type: ignore[no-untyped
                 "name": auth_kit_settings.AUTH_JWT_COOKIE_NAME,
             },
         ]
-
-
-AuthKitAuthentication: type[BaseAuthentication]
-if auth_kit_settings.AUTH_TYPE == "jwt":
-    AuthKitAuthentication = JWTCookieAuthentication
-elif auth_kit_settings.AUTH_TYPE == "token":
-    AuthKitAuthentication = TokenCookieAuthentication
-else:
-    AuthKitAuthentication = auth_kit_settings.CUSTOM_AUTHENTICATION

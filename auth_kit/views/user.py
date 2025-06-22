@@ -15,7 +15,9 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.request import Request
 from rest_framework.response import Response
 
-from drf_spectacular.utils import extend_schema
+from drf_spectacular.utils import (
+    extend_schema,
+)
 
 from auth_kit.api_descriptions import (
     USER_PROFILE_GET_DESCRIPTION,

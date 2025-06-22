@@ -9,10 +9,10 @@ from django.contrib.auth.base_user import AbstractBaseUser
 from rest_framework import serializers
 
 from allauth.account.adapter import (  # pyright: ignore[reportMissingTypeStubs]
-    get_adapter,  # pyright: ignore[reportUnknownVariableType]
+    get_adapter,
 )
 
-from auth_kit.serializers.login_factors import UserModel
+from auth_kit.utils import UserModel
 
 
 class UserDetailsSerializer(serializers.ModelSerializer[AbstractBaseUser]):
@@ -35,15 +35,15 @@ class UserDetailsSerializer(serializers.ModelSerializer[AbstractBaseUser]):
     class Meta:  # pyright: ignore[reportIncompatibleVariableOverride]
         """Metadata configuration for user profile serialization."""
 
-        extra_fields: list[str] = []
-        if hasattr(UserModel, "USERNAME_FIELD"):
-            extra_fields.append(UserModel.USERNAME_FIELD)
-        if hasattr(UserModel, "EMAIL_FIELD"):
-            extra_fields.append(UserModel.EMAIL_FIELD)
-        if hasattr(UserModel, "first_name"):
-            extra_fields.append("first_name")
-        if hasattr(UserModel, "last_name"):
-            extra_fields.append("last_name")
+        user_fields = [
+            getattr(UserModel, "USERNAME_FIELD", None),
+            getattr(UserModel, "EMAIL_FIELD", None),
+            "first_name",
+            "last_name",
+        ]
+        extra_fields = [
+            field for field in user_fields if field and hasattr(UserModel, field)
+        ]
         model = UserModel
         fields = ("pk", *extra_fields)
         read_only_fields = ("email",)

@@ -10,20 +10,25 @@ from typing import Any
 from django.conf import settings
 from django.contrib.auth import logout as django_logout
 from django.core.exceptions import ObjectDoesNotExist
+from django.utils.functional import lazy
 from django.utils.translation import gettext_lazy as _
 from rest_framework import status
 from rest_framework.generics import GenericAPIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.request import Request
 from rest_framework.response import Response
+from rest_framework.serializers import Serializer
 
-from drf_spectacular.utils import extend_schema
+from drf_spectacular.utils import (
+    extend_schema,
+)
 from rest_framework_simplejwt.exceptions import TokenError
 from rest_framework_simplejwt.tokens import RefreshToken
 
 from auth_kit.api_descriptions import get_logout_description
 from auth_kit.app_settings import auth_kit_settings
 from auth_kit.jwt_auth import unset_jwt_cookies, unset_token_cookie
+from auth_kit.serializers.logout import get_logout_serializer
 
 
 class LogoutView(GenericAPIView[Any]):
@@ -36,7 +41,18 @@ class LogoutView(GenericAPIView[Any]):
 
     permission_classes = (IsAuthenticated,)
     throttle_scope = "auth_kit"
-    serializer_class = auth_kit_settings.LOGOUT_SERIALIZER
+
+    def get_serializer_class(self) -> type[Serializer[dict[str, Any]]]:
+        """
+        Get the logout serializer class based on current settings.
+
+        Returns the appropriate serializer class for handling logout requests
+        based on the configured authentication type (JWT, token, or custom).
+
+        Returns:
+            The logout serializer class from the auth kit settings
+        """
+        return get_logout_serializer()
 
     def initial(self, request: Request, *args: Any, **kwargs: Any) -> None:
         """
@@ -53,7 +69,7 @@ class LogoutView(GenericAPIView[Any]):
         if cookie_name and cookie_name in request.COOKIES:
             self.request.data["refresh"] = request.COOKIES.get(cookie_name)
 
-    @extend_schema(description=get_logout_description())
+    @extend_schema(description=lazy(get_logout_description, str)())
     def post(self, request: Request, *args: Any, **kwargs: Any) -> Response:
         """
         Logout user and invalidate tokens.

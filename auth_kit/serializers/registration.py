@@ -5,40 +5,56 @@ This module provides serializers for user registration, email verification,
 and email verification resend functionality with django-allauth integration.
 """
 
-# pyright: reportUnknownMemberType=false
 from typing import Any
 
 from django.contrib.auth.base_user import AbstractBaseUser
-from django.core.exceptions import ValidationError as DjangoValidationError
 from django.utils.translation import gettext_lazy as _
 from rest_framework import serializers
 from rest_framework.exceptions import ValidationError
+from rest_framework.fields import empty
 from rest_framework.request import Request
 
 from allauth.account.adapter import (  # pyright: ignore[reportMissingTypeStubs]
-    get_adapter,  # pyright: ignore[reportUnknownVariableType]
+    get_adapter,
 )
 from allauth.account.models import (  # pyright: ignore[reportMissingTypeStubs]
     EmailAddress,
 )
 from allauth.account.utils import (  # pyright: ignore[reportMissingTypeStubs]
-    setup_user_email,  # pyright: ignore[reportUnknownVariableType]
+    setup_user_email,
 )
 
 from auth_kit.serializer_fields import UnquoteStringField
-from auth_kit.serializers.login_factors import UserNameField
+from auth_kit.utils import UserNameField
 
 
 class RegisterSerializer(serializers.Serializer[dict[str, Any]]):
     """User registration with email verification."""
 
-    if UserNameField == "username":
-        username = serializers.CharField(write_only=True)
+    username = serializers.CharField(write_only=True)
 
     email = serializers.EmailField(write_only=True)
     password1 = serializers.CharField(write_only=True)
     password2 = serializers.CharField(write_only=True)
     detail = serializers.CharField(read_only=True)
+
+    def __init__(self, *args: Any, **kwargs: Any) -> None:
+        """
+        Initialize login serializer.
+
+        Args:
+            *args: Variable length argument list
+            **kwargs: Arbitrary keyword arguments
+        """
+        super().__init__(*args, **kwargs)
+
+        if UserNameField == "username":
+            pass
+        elif UserNameField == "email" or not UserNameField:
+            self.fields.pop("username")
+        else:
+            self.fields.pop("username")
+            self.fields[UserNameField] = serializers.CharField(write_only=True)
 
     def validate_username(self, username: str) -> str:
         """
@@ -124,7 +140,7 @@ class RegisterSerializer(serializers.Serializer[dict[str, Any]]):
             Dictionary of cleaned registration data
         """
         return {
-            "username": self.validated_data.get("username", ""),
+            "username": self.validated_data.get(UserNameField, ""),
             "password1": self.validated_data.get("password1", ""),
             "email": self.validated_data.get("email", ""),
         }
@@ -148,13 +164,6 @@ class RegisterSerializer(serializers.Serializer[dict[str, Any]]):
         self.cleaned_data = self.get_cleaned_data()
 
         user = adapter.save_user(request, user, self, commit=False)
-        if "password1" in self.cleaned_data:
-            try:
-                adapter.clean_password(self.cleaned_data["password1"], user=user)
-            except DjangoValidationError as exc:
-                raise serializers.ValidationError(
-                    detail=serializers.as_serializer_error(exc)
-                ) from exc
         user.save()
         self.custom_signup(request, user)
         setup_user_email(request, user, [])
@@ -164,7 +173,7 @@ class RegisterSerializer(serializers.Serializer[dict[str, Any]]):
 class VerifyEmailSerializer(serializers.Serializer[dict[str, Any]]):
     """Email address verification with confirmation key."""
 
-    key = UnquoteStringField(required=True, write_only=True)
+    key = UnquoteStringField(required=True, write_only=True, default=empty)
     detail = serializers.CharField(read_only=True)
 
 

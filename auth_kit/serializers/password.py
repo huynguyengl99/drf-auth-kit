@@ -19,12 +19,12 @@ from allauth.account.forms import (  # pyright: ignore[reportMissingTypeStubs]
     default_token_generator,
 )
 from allauth.account.utils import (  # pyright: ignore[reportMissingTypeStubs]
-    url_str_to_user_pk as uid_decoder,  # pyright: ignore[reportUnknownVariableType]
+    url_str_to_user_pk as uid_decoder,
 )
 
 from auth_kit.app_settings import auth_kit_settings
 from auth_kit.forms import AllAuthPasswordResetForm
-from auth_kit.serializers.login_factors import UserModel
+from auth_kit.utils import UserModel
 
 
 class PasswordResetSerializer(serializers.Serializer[dict[str, Any]]):
@@ -61,8 +61,7 @@ class PasswordResetSerializer(serializers.Serializer[dict[str, Any]]):
         """
         # Create PasswordResetForm with the serializer
         self.reset_form = AllAuthPasswordResetForm(data=self.initial_data)
-        if not self.reset_form.is_valid():
-            raise serializers.ValidationError(str(self.reset_form.errors))
+        assert self.reset_form.is_valid()
 
         return value
 
@@ -130,7 +129,7 @@ class PasswordResetConfirmSerializer(serializers.Serializer[dict[str, Any]]):
         """
         # Decode the uidb64 (allauth use base36) to uid to get User object
         try:
-            uid: str = force_str(  # pyright: ignore[reportUnknownVariableType]
+            uid: str = force_str(
                 uid_decoder(attrs["uid"])  # pyright: ignore[reportUnknownArgumentType]
             )
             self.user = UserModel._default_manager.get(pk=uid)
@@ -168,8 +167,7 @@ class PasswordResetConfirmSerializer(serializers.Serializer[dict[str, Any]]):
 class PasswordChangeSerializer(serializers.Serializer[dict[str, Any]]):
     """Password change for authenticated users."""
 
-    if auth_kit_settings.OLD_PASSWORD_FIELD_ENABLED:
-        old_password = serializers.CharField(max_length=128, write_only=True)
+    old_password = serializers.CharField(max_length=128, write_only=True)
 
     new_password1 = serializers.CharField(max_length=128, write_only=True)
     new_password2 = serializers.CharField(max_length=128, write_only=True)
@@ -178,6 +176,8 @@ class PasswordChangeSerializer(serializers.Serializer[dict[str, Any]]):
     set_password_form_class = SetPasswordForm
 
     set_password_form = None
+
+    fields: dict[str, Any]  # type: ignore[assignment]
 
     def __init__(self, *args: Any, **kwargs: Any) -> None:
         """
@@ -188,6 +188,9 @@ class PasswordChangeSerializer(serializers.Serializer[dict[str, Any]]):
             **kwargs: Arbitrary keyword arguments
         """
         super().__init__(*args, **kwargs)
+
+        if not auth_kit_settings.OLD_PASSWORD_FIELD_ENABLED:
+            self.fields.pop("old_password")
 
         self.request = self.context.get("request")
         self.user = getattr(self.request, "user", None)
@@ -244,11 +247,9 @@ class PasswordChangeSerializer(serializers.Serializer[dict[str, Any]]):
             ValidationError: If password validation fails
         """
         assert self.user
-        self.set_password_form = (
-            self.set_password_form_class(  # pyright: ignore[reportUnknownMemberType]
-                user=self.user,
-                data=attrs,
-            )
+        self.set_password_form = self.set_password_form_class(
+            user=self.user,
+            data=attrs,
         )
 
         self.custom_validation(attrs)
