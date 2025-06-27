@@ -22,14 +22,17 @@ from rest_framework.settings import APISettings
 if TYPE_CHECKING:
     from rest_framework.authtoken.models import Token
     from rest_framework.generics import GenericAPIView  # prevent circular import
+    from rest_framework.viewsets import GenericViewSet
 
     from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 
     from auth_kit.serializers.login_factors import BaseLoginResponseSerializer
+    from auth_kit.social.views import SocialConnectView, SocialLoginView
 else:
     TokenObtainPairSerializer = Token = GenericAPIView = BaseLoginResponseSerializer = (
         Any
     )
+    SocialLoginView = SocialConnectView = Any
 
 
 class ImportStr(str):
@@ -117,6 +120,34 @@ class MySetting:
     AUTH_COOKIE_HTTPONLY: bool = True
     AUTH_COOKIE_SAMESITE: Literal["Lax", "Strict", "None"] = "Lax"
     AUTH_COOKIE_DOMAIN: str | None = None
+
+    # Social authentication configurations
+    SOCIAL_LOGIN_AUTH_TYPE: Literal["token", "code"] = "code"
+    SOCIAL_LOGIN_AUTO_CONNECT_BY_EMAIL: bool = True
+    SOCIAL_LOGIN_CALLBACK_BASE_URL: str = ""
+    SOCIAL_CONNECT_CALLBACK_BASE_URL: str = ""
+    SOCIAL_HIDE_AUTH_ERROR_DETAILS: bool = True
+    SOCIAL_CONNECT_REQUIRE_EMAIL_MATCH: bool = True
+
+    SOCIAL_LOGIN_VIEW: type["SocialLoginView"] = ImportStr(
+        "auth_kit.social.views.login.SocialLoginView"
+    )
+    SOCIAL_CONNECT_VIEW: type["SocialConnectView"] = ImportStr(
+        "auth_kit.social.views.connect.SocialConnectView"
+    )
+    SOCIAL_ACCOUNT_VIEW_SET: type["GenericViewSet[Any]"] = ImportStr(
+        "auth_kit.social.views.account.SocialAccountViewSet"
+    )
+
+    SOCIAL_LOGIN_SERIALIZER_FACTORY: Callable[[], type[Serializer[dict[str, Any]]]] = (
+        ImportStr("auth_kit.social.serializers.get_social_login_serializer")
+    )
+    SOCIAL_LOGIN_CALLBACK_URL_GENERATOR: Callable[..., str] = ImportStr(
+        "auth_kit.social.utils.get_social_login_callback_url"
+    )
+    SOCIAL_CONNECT_CALLBACK_URL_GENERATOR: Callable[..., str] = ImportStr(
+        "auth_kit.social.utils.get_social_connect_callback_url"
+    )
 
     # Custom auth
     CUSTOM_LOGIN_RESPONSE_SERIALIZER: type[Serializer[dict[str, Any]]] = ImportStr(

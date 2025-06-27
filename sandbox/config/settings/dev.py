@@ -37,6 +37,7 @@ env_file = f"{ROOT_DIR}/.env.test"
 
 if os.path.isfile(env_file):
     env.read_env(env_file, recurse=False)
+    env.read_env(f"{ROOT_DIR}/.env", override=True)
 else:
     env.read_env()
 
@@ -73,7 +74,13 @@ INSTALLED_APPS = [
     "django_extensions",
     "allauth",
     "allauth.account",
+    "allauth.socialaccount",
+    "allauth.socialaccount.providers.google",
+    "allauth.socialaccount.providers.github",
+    "allauth.socialaccount.providers.facebook",
+    "allauth.socialaccount.providers.openid_connect",
     "auth_kit",
+    "auth_kit.social",
     "rest_framework_simplejwt.token_blacklist",
     "knox",
 ]
@@ -222,7 +229,7 @@ AUTH_KIT = {
     # "LOGIN_VIEW": "custom_auth.views.KnoxLoginView",
     # "LOGOUT_VIEW": "custom_auth.views.KnoxLogoutView",
     # "CUSTOM_AUTHENTICATION": "custom_auth.authentication.KnoxTokenCookieAuthentication",
-    "AUTH_TYPE": "jwt"
+    "AUTH_TYPE": "jwt",
 }
 
 # =========================================================================
@@ -231,6 +238,71 @@ AUTH_KIT = {
 
 ACCOUNT_EMAIL_VERIFICATION = "mandatory"
 ACCOUNT_SIGNUP_FIELDS = ["email*", "username*"]
+
+SOCIALACCOUNT_PROVIDERS = {
+    "google": {
+        "SCOPE": [
+            "profile",
+            "email",
+        ],
+        "AUTH_PARAMS": {
+            "access_type": "online",
+        },
+        "OAUTH_PKCE_ENABLED": True,
+        "FETCH_USERINFO": True,
+        "APP": {
+            "client_id": env.str("GOOGLE_AUTH_CLIENT_ID", ""),
+            "secret": env.str("GOOGLE_AUTH_CLIENT_SECRET", ""),
+            "key": "",
+        },
+    },
+    "github": {
+        "SCOPE": [
+            "user",
+        ],
+        "APPS": [
+            {
+                "client_id": env.str("GITHUB_AUTH_CLIENT_ID", ""),
+                "secret": env.str("GITHUB_AUTH_CLIENT_SECRET", ""),
+                "key": "",
+            }
+        ],
+    },
+    "facebook": {
+        "METHOD": "oauth2",  # Set to 'js_sdk' to use the Facebook connect SDK
+        "SCOPE": ["email", "public_profile"],
+        "FIELDS": [
+            "id",
+            "first_name",
+            "last_name",
+            "name",
+            "picture",
+            "email",
+        ],
+        "EXCHANGE_TOKEN": True,
+        "VERIFIED_EMAIL": False,
+        "VERSION": "v13.0",
+        "GRAPH_API_URL": "https://graph.facebook.com/v13.0",
+        "APP": {
+            "client_id": env.str("FACEBOOK_AUTH_CLIENT_ID", ""),
+            "secret": env.str("FACEBOOK_AUTH_CLIENT_SECRET", ""),
+            "key": "",
+        },
+    },
+    "openid_connect": {
+        "APPS": [
+            {
+                "provider_id": "linkedin",
+                "name": "LinkedIn",
+                "client_id": env.str("LINKED_IN_AUTH_CLIENT_ID", ""),
+                "secret": env.str("LINKED_IN_AUTH_CLIENT_SECRET", ""),
+                "settings": {
+                    "server_url": "https://www.linkedin.com/oauth",
+                },
+            }
+        ]
+    },
+}
 
 # =========================================================================
 # API DOCUMENTATION CONFIGURATION

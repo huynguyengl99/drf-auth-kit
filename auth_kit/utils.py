@@ -5,7 +5,7 @@ This module provides helper functions for JWT token generation,
 security decorators, type casting utilities, and user model references.
 """
 
-from typing import Any, cast
+from typing import Any, TypeAlias, cast
 
 from django.contrib.auth import get_user_model
 from django.contrib.auth.base_user import AbstractBaseUser
@@ -13,10 +13,12 @@ from django.contrib.auth.models import User
 from django.utils.decorators import method_decorator
 from django.views.decorators.debug import sensitive_post_parameters
 
+import structlog
 from rest_framework_simplejwt.tokens import AccessToken, RefreshToken
 
 UserModel: type[User] = get_user_model()  # type: ignore[assignment, unused-ignore]
 UserNameField: str = UserModel.USERNAME_FIELD
+UserModelType: TypeAlias = User
 
 
 def jwt_encode(user: AbstractBaseUser) -> tuple[AccessToken, RefreshToken]:
@@ -58,3 +60,6 @@ def cast_dict(arg: Any) -> dict[str, Any]:
         The argument cast as a dictionary
     """
     return cast(dict[str, Any], arg)
+
+
+logger: structlog.stdlib.BoundLogger = structlog.get_logger("chanx")

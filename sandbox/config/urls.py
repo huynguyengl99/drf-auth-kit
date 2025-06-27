@@ -21,6 +21,10 @@ from django.contrib import admin
 from django.urls import include, path
 from django.views.generic import RedirectView
 
+from auth_kit.social.views.ui import (
+    SocialAccountManagementView,
+    SocialLoginTemplateView,
+)
 from drf_spectacular.views import (
     SpectacularAPIView,
     SpectacularRedocView,
@@ -48,7 +52,19 @@ api_urlpatterns = [
         name="scalar",
     ),
     path("auth/", include("auth_kit.urls")),
+    path("auth/social/", include("auth_kit.social.urls")),
     path("status/", StatusView.as_view(), name="status"),
+    # In your urls.py
+    path(
+        "auth/social/login/",
+        SocialLoginTemplateView.as_view(),
+        name="social_login_page",
+    ),
+    path(
+        "auth/social/manage/",
+        SocialAccountManagementView.as_view(),
+        name="social_login_page",
+    ),
 ]
 
 

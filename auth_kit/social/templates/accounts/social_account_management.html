@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Social Accounts</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #4285f4, #ea4335, #fbbc05, #34a853, #1da1f2, #0077b5);
+        }
+
+        .header {
+            padding: 40px 40px 20px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .user-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+
+        .user-details h1 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .user-details p {
+            color: #666;
+            font-size: 16px;
+        }
+
+        .stats {
+            display: flex;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4285f4;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title i {
+            margin-right: 10px;
+            color: #4285f4;
+        }
+
+        .providers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .provider-card {
+            background: white;
+            border: 2px solid #e1e5e9;
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .provider-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border-color: #4285f4;
+        }
+
+        .provider-card.connected {
+            border-color: #34a853;
+            background: linear-gradient(135deg, #f8fff8 0%, #e8f5e8 100%);
+        }
+
+        .provider-card.connected::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 0;
+            height: 0;
+            border-left: 20px solid transparent;
+            border-top: 20px solid #34a853;
+        }
+
+        .provider-card.connected::after {
+            content: '✓';
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .provider-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .provider-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 18px;
+            color: #666;
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+        }
+
+        .provider-info h3 {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .provider-status {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .status-connected {
+            color: #34a853;
+        }
+
+        .status-not-connected {
+            color: #666;
+        }
+
+        .connection-details {
+            margin: 15px 0;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            font-size: 13px;
+            color: #666;
+        }
+
+        .connection-details strong {
+            color: #333;
+        }
+
+        .provider-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 10px 16px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            text-align: center;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn i {
+            margin-right: 6px;
+            font-size: 12px;
+        }
+
+        .btn-connect {
+            background: #4285f4;
+            color: white;
+        }
+
+        .btn-connect:hover {
+            background: #3367d6;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(66, 133, 244, 0.3);
+        }
+
+        .btn-disconnect {
+            background: #dc3545;
+            color: white;
+        }
+
+        .btn-disconnect:hover {
+            background: #c82333;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
+        }
+
+        .btn-reconnect {
+            background: #ffc107;
+            color: #212529;
+        }
+
+        .btn-reconnect:hover {
+            background: #e0a800;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(255, 193, 7, 0.3);
+        }
+
+        .alert {
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+        }
+
+        .alert i {
+            margin-right: 10px;
+            font-size: 16px;
+        }
+
+        .alert-error {
+            background: #fef2f2;
+            color: #dc2626;
+            border: 1px solid #fecaca;
+        }
+
+        .alert-success {
+            background: #f0fdf4;
+            color: #16a34a;
+            border: 1px solid #bbf7d0;
+        }
+
+        .alert-info {
+            background: #eff6ff;
+            color: #2563eb;
+            border: 1px solid #bfdbfe;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #666;
+        }
+
+        .empty-state i {
+            font-size: 48px;
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+
+        .empty-state h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .loading {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: currentColor;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .security-notice {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        .security-notice h4 {
+            color: #495057;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .security-notice h4 i {
+            margin-right: 8px;
+            color: #6c757d;
+        }
+
+        .security-notice p {
+            color: #6c757d;
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px;
+            }
+
+            .header, .content {
+                padding: 30px 20px;
+            }
+
+            .providers-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                gap: 20px;
+            }
+
+            .user-info {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .user-avatar {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+
+        /* Custom provider colors */
+        .provider-card[data-provider="google"] .provider-icon {
+            background: linear-gradient(135deg, #4285f4, #34a853);
+            color: white;
+        }
+
+        .provider-card[data-provider="facebook"] .provider-icon {
+            background: #1877f2;
+            color: white;
+        }
+
+        .provider-card[data-provider="github"] .provider-icon {
+            background: #181717;
+            color: white;
+        }
+
+        .provider-card[data-provider="microsoft"] .provider-icon {
+            background: #00a1f1;
+            color: white;
+        }
+
+        .provider-card[data-provider="apple"] .provider-icon {
+            background: #000000;
+            color: white;
+        }
+
+        .provider-card[data-provider="twitter"] .provider-icon,
+        .provider-card[data-provider="twitter_oauth2"] .provider-icon {
+            background: #1da1f2;
+            color: white;
+        }
+
+        .provider-card[data-provider="discord"] .provider-icon {
+            background: #5865f2;
+            color: white;
+        }
+
+        .provider-card[data-provider="linkedin_oauth2"] .provider-icon {
+            background: #0077b5;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="user-info">
+                <div class="user-avatar">
+                    {% if user.first_name %}
+                        {{ user.first_name|first|upper }}{{ user.last_name|first|upper }}
+                    {% else %}
+                        {{ user.username|first|upper }}
+                    {% endif %}
+                </div>
+                <div class="user-details">
+                    <h1>
+                        {% if user.first_name %}
+                            {{ user.first_name }} {{ user.last_name }}
+                        {% else %}
+                            {{ user.username }}
+                        {% endif %}
+                    </h1>
+                    <p>{{ user.email }}</p>
+                </div>
+            </div>
+
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number">{{ connected_count }}</div>
+                    <div class="stat-label">Connected</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">{{ total_count }}</div>
+                    <div class="stat-label">Available</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">
+                        <i class="fas fa-info-circle"></i>
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+
+            {% if error %}
+                <div class="alert alert-error">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    {{ error }}
+                </div>
+            {% endif %}
+
+            {% if connected_count > 0 %}
+                <div class="alert alert-info">
+                    <i class="fas fa-shield-alt"></i>
+                    You have {{ connected_count }} social account{{ connected_count|pluralize }} connected. You can disconnect them at any time.
+                </div>
+            {% endif %}
+
+            <div class="section-title">
+                <i class="fas fa-link"></i>
+                Social Account Connections
+            </div>
+
+            {% if providers %}
+                <div class="providers-grid">
+                    {% for provider in providers %}
+                        <div class="provider-card {% if provider.is_connected %}connected{% endif %}"
+                             data-provider="{{ provider.id }}">
+                            <div class="provider-header">
+                                <div class="provider-icon">
+                                    <i class="{{ provider.icon_class }}"></i>
+                                </div>
+                                <div class="provider-info">
+                                    <h3>{{ provider.name }}</h3>
+                                    <div class="provider-status">
+                                        {% if provider.is_connected %}
+                                            <span class="status-connected">
+                                                <i class="fas fa-check-circle"></i> Connected
+                                            </span>
+                                        {% else %}
+                                            <span class="status-not-connected">
+                                                <i class="far fa-circle"></i> Not connected
+                                            </span>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+
+                            {% if provider.is_connected and provider.social_account %}
+                                <div class="connection-details">
+                                    <div><strong>Account ID:</strong> {{ provider.social_account.uid }}</div>
+                                    {% if provider.social_account.last_login %}
+                                        <div><strong>Last login:</strong> {{ provider.social_account.last_login|date:"M d, Y" }}</div>
+                                    {% endif %}
+                                    <div><strong>Connected:</strong> {{ provider.social_account.date_joined|date:"M d, Y" }}</div>
+                                </div>
+                            {% endif %}
+
+                            <div class="provider-actions">
+                                {% if provider.is_connected %}
+                                    <button class="btn btn-disconnect"
+                                            onclick="disconnectProvider('{{ provider.social_account.id }}', '{{ provider.name }}')">
+                                        <i class="fas fa-unlink"></i>
+                                        Disconnect {{ provider.name }}
+                                    </button>
+                                {% else %}
+                                    <a href="{{ provider.connect_url }}" class="btn btn-connect">
+                                        <i class="fas fa-link"></i>
+                                        Connect {{ provider.name }}
+                                    </a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div class="empty-state">
+                    <i class="fas fa-plug"></i>
+                    <h3>No Social Providers Available</h3>
+                    <p>No social login providers are currently configured by your administrator.</p>
+                </div>
+            {% endif %}
+
+            <div class="security-notice">
+                <h4><i class="fas fa-shield-alt"></i> Security Notice</h4>
+                <p>
+                    Connected social accounts can be used to sign in to your account.
+                    Only connect accounts from providers you trust. You can disconnect
+                    any social account at any time without affecting your main account.
+                </p>
+            </div>
+
+            <div class="security-notice" style="margin-top: 15px; background: #e3f2fd; border-color: #bbdefb;">
+                <h4><i class="fas fa-info-circle"></i> How to Connect</h4>
+                <p>
+                    <strong>Click "Connect"</strong> to link a social account - you'll be redirected to the provider's login page in the same window.
+                    After authorizing, you'll return here with the account connected.
+                    <br><strong>New Tab:</strong> Hold Ctrl/Cmd while clicking to open in a new tab instead.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function disconnectProvider(socialAccountId, providerName) {
+            if (!confirm(`Are you sure you want to disconnect your ${providerName} account? You can reconnect it later if needed.`)) {
+                return;
+            }
+
+            const button = event.target;
+            const originalContent = button.innerHTML;
+
+            // Show loading state
+            button.innerHTML = '<span class="loading"></span> Disconnecting...';
+            button.disabled = true;
+
+            // Make API call to disconnect
+            fetch(`/api/auth/social/accounts/${socialAccountId}/`, {
+                method: 'DELETE',
+                headers: {
+                    'X-CSRFToken': getCsrfToken(),
+                    'Content-Type': 'application/json',
+                },
+                credentials: 'same-origin'
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Reload the page to reflect changes
+                    window.location.reload();
+                } else {
+                    throw new Error('Failed to disconnect account');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Failed to disconnect account. Please try again.');
+
+                // Restore button state
+                button.innerHTML = originalContent;
+                button.disabled = false;
+            });
+        }
+
+        function getCsrfToken() {
+            const cookies = document.cookie.split(';');
+            for (let cookie of cookies) {
+                const [name, value] = cookie.trim().split('=');
+                if (name === 'csrftoken') {
+                    return value;
+                }
+            }
+            return '';
+        }
+
+        // Handle OAuth callback messages
+        window.addEventListener('message', function(event) {
+            if (event.data.type === 'oauth_success') {
+                // Show success message and reload
+                const alertDiv = document.createElement('div');
+                alertDiv.className = 'alert alert-success';
+                alertDiv.innerHTML = '<i class="fas fa-check-circle"></i> Successfully connected your social account!';
+
+                const content = document.querySelector('.content');
+                content.insertBefore(alertDiv, content.firstChild);
+
+                // Reload after a short delay
+                setTimeout(() => {
+                    window.location.reload();
+                }, 1500);
+            } else if (event.data.type === 'oauth_error') {
+                // Show error message
+                const alertDiv = document.createElement('div');
+                alertDiv.className = 'alert alert-error';
+                alertDiv.innerHTML = `<i class="fas fa-exclamation-triangle"></i> Failed to connect account: ${event.data.error || 'Unknown error'}`;
+
+                const content = document.querySelector('.content');
+                content.insertBefore(alertDiv, content.firstChild);
+            }
+        });
+    </script>
+</body>
+</html>

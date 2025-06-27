@@ -86,6 +86,11 @@ readme = "README.rst"
 requires-python = ">=3.10,<4.0"
 version = "0.1.1"
 
+[project.optional-dependencies]
+social = [
+  "django-allauth[socialaccount]>=65.5.0"
+]
+
 [project.urls]
 Documentation = "https://drf-auth-kit.readthedocs.io/"
 Homepage = "https://github.com/huynguyengl99/drf-auth-kit"

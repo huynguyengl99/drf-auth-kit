@@ -9,7 +9,6 @@ using django-allauth integration.
 from typing import Any
 from urllib.parse import urlencode
 
-from django.contrib.auth import get_user_model
 from django.contrib.auth.base_user import AbstractBaseUser
 from django.contrib.auth.models import AbstractUser
 from django.http import HttpRequest
@@ -28,8 +27,6 @@ from allauth.account.utils import (
 from allauth.utils import build_absolute_uri
 
 from .app_settings import auth_kit_settings
-
-UserModel = get_user_model()
 
 
 def password_reset_url_generator(
