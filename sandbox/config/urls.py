@@ -63,7 +63,7 @@ api_urlpatterns = [
     path(
         "auth/social/manage/",
         SocialAccountManagementView.as_view(),
-        name="social_login_page",
+        name="social_management_page",
     ),
 ]
 

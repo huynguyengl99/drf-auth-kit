@@ -64,6 +64,8 @@ def test_auth_kit_jwt_no_using_auth_cookie(no_warnings: CaptureFixture[str]) -> 
     import auth_kit.urls
 
     reload(auth_kit.urls)
+    get_login_serializer.cache_clear()
+    get_logout_serializer.cache_clear()
     urlpatterns = [
         path("auth/", include(auth_kit.urls)),
     ]
