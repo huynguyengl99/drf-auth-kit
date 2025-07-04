@@ -691,9 +691,9 @@ source = { editable = "." }
 dependencies = [
     { name = "django" },
     { name = "django-allauth" },
-    { name = "django-stubs-ext" },
     { name = "djangorestframework" },
     { name = "djangorestframework-simplejwt" },
+    { name = "drf-spectacular" },
     { name = "structlog" },
 ]
 
@@ -712,7 +712,7 @@ dev = [
     { name = "django-extensions" },
     { name = "django-rest-knox" },
     { name = "django-structlog" },
-    { name = "drf-spectacular" },
+    { name = "django-stubs-ext" },
     { name = "drf-spectacular-extras" },
     { name = "environs" },
     { name = "factory-boy" },
@@ -758,9 +758,9 @@ requires-dist = [
     { name = "django", specifier = ">=5,<6" },
     { name = "django-allauth", specifier = ">=65.5.0" },
     { name = "django-allauth", extras = ["socialaccount"], marker = "extra == 'social'", specifier = ">=65.5.0" },
-    { name = "django-stubs-ext", specifier = ">=5,<6" },
     { name = "djangorestframework", specifier = ">=3,<4" },
     { name = "djangorestframework-simplejwt", specifier = ">=5" },
+    { name = "drf-spectacular", specifier = ">=0.28.0" },
     { name = "structlog", specifier = ">=25.2.0,<26" },
 ]
 provides-extras = ["social"]
@@ -775,7 +775,7 @@ dev = [
     { name = "django-extensions", specifier = ">=3.2.3,<4" },
     { name = "django-rest-knox", specifier = ">=5.0.2" },
     { name = "django-structlog", specifier = ">=9.1.0,<10" },
-    { name = "drf-spectacular", specifier = ">=0.28.0" },
+    { name = "django-stubs-ext", specifier = ">=5,<6" },
     { name = "drf-spectacular-extras", specifier = ">=0.1.0" },
     { name = "environs", specifier = ">=14.1.1,<15" },
     { name = "factory-boy", specifier = ">=3.3.3,<4" },
