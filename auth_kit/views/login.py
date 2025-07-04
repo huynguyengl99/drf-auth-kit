@@ -18,7 +18,7 @@ from rest_framework.generics import GenericAPIView
 from rest_framework.permissions import AllowAny
 from rest_framework.request import Request
 from rest_framework.response import Response
-from rest_framework.serializers import Serializer
+from rest_framework.serializers import BaseSerializer, Serializer
 
 from drf_spectacular.utils import (
     extend_schema,
@@ -149,6 +149,23 @@ class LoginView(GenericAPIView[Any]):
         serializer = self.get_serializer(data=self.request.data)
         serializer.is_valid(raise_exception=True)
 
+        return self.perform_login(serializer)
+
+    def perform_login(self, serializer: BaseSerializer[Any]) -> Response:
+        """
+        Complete the login process after successful validation.
+
+        This method handles the final steps of user authentication including:
+        - Creating the response with authentication tokens
+        - Setting authentication cookies if configured
+        - Performing Django session login if enabled
+
+        Args:
+            serializer: The validated login serializer containing user data and tokens
+
+        Returns:
+            Response: DRF response object with login result and authentication data
+        """
         if auth_kit_settings.USE_AUTH_COOKIE:
             response = self.create_response_with_cookies(serializer.data)
         else:

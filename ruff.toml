@@ -1,5 +1,5 @@
 src = ["drf-auth-kit", "sandbox", "sandbox_extras"]
-target-version = "py311"
+target-version = "py310"
 
 [lint]
 ignore = [

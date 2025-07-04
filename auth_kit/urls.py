@@ -5,7 +5,7 @@ This module defines all URL patterns for authentication-related views
 including login, logout, registration, password reset, and email verification.
 """
 
-from django.urls import re_path
+from django.urls import URLPattern, URLResolver, include, re_path
 
 from rest_framework_simplejwt.views import TokenVerifyView
 
@@ -21,7 +21,7 @@ from auth_kit.views import (
 
 from .app_settings import auth_kit_settings
 
-urlpatterns = [
+urlpatterns: list[URLPattern | URLResolver] = [
     # URLs that do not require a session or valid token
     re_path(
         r"password/reset/?$", PasswordResetView.as_view(), name="rest_password_reset"
@@ -31,7 +31,6 @@ urlpatterns = [
         PasswordResetConfirmView.as_view(),
         name="rest_password_reset_confirm",
     ),
-    re_path(r"login/?$", auth_kit_settings.LOGIN_VIEW.as_view(), name="rest_login"),
     # URLs that require a user to be logged in with a valid session / token.
     re_path(r"logout/?$", auth_kit_settings.LOGOUT_VIEW.as_view(), name="rest_logout"),
     re_path(
@@ -54,6 +53,18 @@ urlpatterns = [
         name="rest_resend_email",
     ),
 ]
+
+if not auth_kit_settings.USE_MFA:
+    urlpatterns.extend(
+        [
+            re_path(
+                r"login/?$", auth_kit_settings.LOGIN_VIEW.as_view(), name="rest_login"
+            ),
+        ]
+    )
+else:
+
+    urlpatterns.extend([re_path("", include("auth_kit.mfa.urls"))])
 
 if auth_kit_settings.AUTH_TYPE == "jwt":
     urlpatterns.extend(

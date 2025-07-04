@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 import os
+from datetime import timedelta
 from pathlib import Path
 from typing import Any
 
@@ -81,6 +82,7 @@ INSTALLED_APPS = [
     "allauth.socialaccount.providers.openid_connect",
     "auth_kit",
     "auth_kit.social",
+    "auth_kit.mfa",
     "rest_framework_simplejwt.token_blacklist",
     "knox",
 ]
@@ -215,6 +217,11 @@ REST_FRAMEWORK = {
     ),
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
     "PAGE_SIZE": 20,
+}
+
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(days=30),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=30),
 }
 
 

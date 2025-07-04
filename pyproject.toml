@@ -88,6 +88,9 @@ requires-python = ">=3.10,<4.0"
 version = "0.1.1"
 
 [project.optional-dependencies]
+mfa = [
+  "pyotp>=2.9.0"
+]
 social = [
   "django-allauth[socialaccount]>=65.5.0"
 ]
@@ -122,7 +125,7 @@ include = ["auth_kit"]
 [tool.interrogate]
 badge-format = "svg"
 color = true
-exclude = ["build", "docs", "sandbox", "setup.py"]
+exclude = ["**/migration", "build", "docs", "sandbox", "setup.py"]
 ext = []
 fail-under = 80
 generate-badge = "docs/_static/"

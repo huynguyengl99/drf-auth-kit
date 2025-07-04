@@ -28,6 +28,7 @@ if TYPE_CHECKING:
 
     from auth_kit.serializers.login_factors import BaseLoginResponseSerializer
     from auth_kit.social.views import SocialConnectView, SocialLoginView
+
 else:
     TokenObtainPairSerializer = Token = GenericAPIView = BaseLoginResponseSerializer = (
         Any
@@ -160,6 +161,8 @@ class MySetting:
         "auth_kit.authentication.AuthKitCookieAuthentication"
     )
 
+    # MFA
+    USE_MFA: bool = False
     # Utils
     URL_NAMESPACE: str = ""
 
