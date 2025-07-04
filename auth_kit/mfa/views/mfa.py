@@ -7,6 +7,7 @@ including creation, activation, deactivation, and deletion of MFA configurations
 
 from typing import Any
 
+from django.utils.functional import lazy
 from rest_framework import mixins, status, viewsets
 from rest_framework.decorators import action
 from rest_framework.permissions import IsAuthenticated
@@ -16,6 +17,15 @@ from rest_framework.response import Response
 from drf_spectacular.utils import extend_schema
 
 from auth_kit.mfa.handlers.base import MFAHandlerRegistry
+from auth_kit.mfa.mfa_api_descriptions import (
+    MFA_METHOD_CONFIRM_DESCRIPTION,
+    MFA_METHOD_CREATE_DESCRIPTION,
+    MFA_METHOD_DEACTIVATE_DESCRIPTION,
+    MFA_METHOD_LIST_DESCRIPTION,
+    MFA_METHOD_SEND_CODE_DESCRIPTION,
+    get_mfa_method_delete_description,
+    get_mfa_method_primary_description,
+)
 from auth_kit.mfa.mfa_settings import auth_kit_mfa_settings
 
 
@@ -68,7 +78,14 @@ class MFAMethodViewSet(
         return auth_kit_mfa_settings.MFA_MODEL.objects.filter(user=self.request.user)
 
     @extend_schema(
-        responses=auth_kit_mfa_settings.MFA_METHOD_CONFIG_SERIALIZER(many=True)
+        description=MFA_METHOD_CREATE_DESCRIPTION,
+    )
+    def create(self, request, *args, **kwargs):
+        return super().create(request, *args, **kwargs)
+
+    @extend_schema(
+        description=MFA_METHOD_LIST_DESCRIPTION,
+        responses=auth_kit_mfa_settings.MFA_METHOD_CONFIG_SERIALIZER(many=True),
     )
     def list(self, request: Request, *args: Any, **kwargs: Any) -> Response:
         """
@@ -104,6 +121,9 @@ class MFAMethodViewSet(
 
         return Response(raw_data)
 
+    @extend_schema(
+        description=MFA_METHOD_CONFIRM_DESCRIPTION,
+    )
     @action(
         detail=False,
         methods=["post"],
@@ -125,6 +145,9 @@ class MFAMethodViewSet(
         serializer.is_valid(raise_exception=True)
         return Response(serializer.data)
 
+    @extend_schema(
+        description=MFA_METHOD_DEACTIVATE_DESCRIPTION,
+    )
     @action(
         detail=False,
         methods=["post"],
@@ -146,6 +169,9 @@ class MFAMethodViewSet(
         serializer.is_valid(raise_exception=True)
         return Response(serializer.data)
 
+    @extend_schema(
+        description=lazy(get_mfa_method_primary_description, str)(),
+    )
     @action(
         detail=False,
         methods=["post"],
@@ -167,6 +193,9 @@ class MFAMethodViewSet(
         serializer.is_valid(raise_exception=True)
         return Response(serializer.data)
 
+    @extend_schema(
+        description=MFA_METHOD_SEND_CODE_DESCRIPTION,
+    )
     @action(
         detail=False,
         methods=["post"],
@@ -188,6 +217,9 @@ class MFAMethodViewSet(
         serializer.is_valid(raise_exception=True)
         return Response(serializer.data)
 
+    @extend_schema(
+        description=lazy(get_mfa_method_delete_description, str)(),
+    )
     @action(
         detail=False,
         methods=["post"],

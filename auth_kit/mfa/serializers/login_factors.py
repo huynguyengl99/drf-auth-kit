@@ -20,6 +20,25 @@ from auth_kit.mfa.services.user_token import ephemeral_token_service
 from auth_kit.serializers.login_factors import get_login_response_serializer
 
 
+def get_no_mfa_login_response_serializer() -> (
+    type[serializers.Serializer[dict[str, Any]]]
+):
+    """
+    Get login response serializer for users without MFA enabled.
+
+    Returns:
+        Serializer class with MFA disabled flag
+    """
+    serializer_class = get_login_response_serializer()
+
+    class NoMFALoginResponseSerializer(serializer_class):  # type: ignore
+        """Login response serializer with MFA disabled indicator."""
+
+        mfa_enabled = serializers.BooleanField(default=False, read_only=True)
+
+    return NoMFALoginResponseSerializer
+
+
 class MFAFirstStepResponseSerializer(serializers.Serializer[dict[str, Any]]):
     """
     Serializer for first step MFA authentication response.
@@ -36,6 +55,10 @@ class MFAFirstStepResponseSerializer(serializers.Serializer[dict[str, Any]]):
     ephemeral_token = serializers.CharField(read_only=True)
     method = MFAMethodField(read_only=True)
     mfa_enabled = serializers.BooleanField(default=True, read_only=True)
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.no_mfa_serializer = None
 
     def validate(self, attrs: dict[str, Any]) -> dict[str, Any]:
         """
@@ -64,11 +87,16 @@ class MFAFirstStepResponseSerializer(serializers.Serializer[dict[str, Any]]):
                 "mfa_enabled": True,
             }
         except MFAMethodDoesNotExistError:
-            serializer_class = get_no_mfa_login_response_serializer()
-            serializer = serializer_class(data={}, context={"user": user})
-            serializer.is_valid(raise_exception=True)
+            no_mfa_serializer_class = (
+                auth_kit_mfa_settings.GET_NO_MFA_LOGIN_RESPONSE_SERIALIZER()
+            )
 
-            return serializer.data
+            self.no_mfa_serializer = no_mfa_serializer_class(
+                data={}, context={"user": user}
+            )
+            self.no_mfa_serializer.is_valid(raise_exception=True)
+
+            return self.no_mfa_serializer.validated_data
 
     def to_representation(self, instance: dict[str, Any]) -> dict[str, Any]:
         """
@@ -83,7 +111,7 @@ class MFAFirstStepResponseSerializer(serializers.Serializer[dict[str, Any]]):
         if instance.get("mfa_enabled"):
             return super().to_representation(instance)
         else:
-            return instance
+            return self.no_mfa_serializer.to_representation(instance)
 
 
 class MFASecondStepRequestSerializer(serializers.Serializer[dict[str, Any]]):
@@ -251,22 +279,3 @@ class MFAResendSerializer(serializers.Serializer[dict[str, Any]]):
         attrs["ephemeral_token"] = ephemeral_token_service.make_token(user, method_name)
 
         return attrs
-
-
-def get_no_mfa_login_response_serializer() -> (
-    type[serializers.Serializer[dict[str, Any]]]
-):
-    """
-    Get login response serializer for users without MFA enabled.
-
-    Returns:
-        Serializer class with MFA disabled flag
-    """
-    serializer_class = get_login_response_serializer()
-
-    class NoMFALoginResponseSerializer(serializer_class):  # type: ignore
-        """Login response serializer with MFA disabled indicator."""
-
-        mfa_enabled = serializers.BooleanField(default=False, read_only=True)
-
-    return NoMFALoginResponseSerializer

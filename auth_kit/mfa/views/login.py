@@ -8,6 +8,7 @@ and code resending functionality.
 
 from typing import Any
 
+from django.utils.functional import lazy
 from rest_framework import status
 from rest_framework.generics import GenericAPIView
 from rest_framework.permissions import AllowAny
@@ -20,7 +21,14 @@ from drf_spectacular.utils import (
     extend_schema,
 )
 
+from auth_kit.mfa.mfa_api_descriptions import (
+    get_mfa_login_change_method_description,
+    get_mfa_login_first_step_description,
+    get_mfa_login_resend_description,
+    get_mfa_login_second_step_description,
+)
 from auth_kit.mfa.mfa_settings import auth_kit_mfa_settings
+from auth_kit.mfa.utils import get_mfa_login_first_step_response_schemas
 from auth_kit.views import LoginView
 
 
@@ -47,13 +55,10 @@ class LoginFirstStepView(LoginView):
         return auth_kit_mfa_settings.MFA_FIRST_STEP_SERIALIZER_FACTORY()
 
     @extend_schema(
-        description="First step authentication",
+        description=lazy(get_mfa_login_first_step_description, str)(),
         responses=PolymorphicProxySerializer(
             component_name="FirstStepResponse",
-            serializers=[
-                auth_kit_mfa_settings.MFA_FIRST_STEP_RESPONSE_SERIALIZER,
-                auth_kit_mfa_settings.GET_NO_MFA_LOGIN_RESPONSE_SERIALIZER(),
-            ],
+            serializers=get_mfa_login_first_step_response_schemas,
             resource_type_field_name=None,
         ),
     )
@@ -102,6 +107,9 @@ class LoginSecondStepView(LoginView):
         """
         return auth_kit_mfa_settings.MFA_SECOND_STEP_SERIALIZER_FACTORY()
 
+    @extend_schema(
+        description=lazy(get_mfa_login_second_step_description, str)(),
+    )
     def post(self, request: Request, *args: Any, **kwargs: Any) -> Response:
         """
         Process second step MFA verification.
@@ -130,6 +138,9 @@ class LoginChangeMethodView(GenericAPIView[Any]):
     throttle_scope = "auth_kit"
     serializer_class = auth_kit_mfa_settings.MFA_CHANGE_METHOD_SERIALIZER
 
+    @extend_schema(
+        description=lazy(get_mfa_login_change_method_description, str)(),
+    )
     def post(self, request: Request, *args: Any, **kwargs: Any) -> Response:
         """
         Switch to different MFA method.
@@ -160,6 +171,9 @@ class LoginMFAResendView(GenericAPIView[Any]):
     throttle_scope = "auth_kit"
     serializer_class = auth_kit_mfa_settings.MFA_RESEND_SERIALIZER
 
+    @extend_schema(
+        description=lazy(get_mfa_login_resend_description, str)(),
+    )
     def post(self, request: Request, *args: Any, **kwargs: Any) -> Response:
         """
         Resend verification code.

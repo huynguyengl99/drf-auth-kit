@@ -10,6 +10,7 @@ from typing import Any
 from rest_framework.serializers import Serializer
 
 from auth_kit.mfa.handlers.base import MFAHandlerRegistry
+from auth_kit.mfa.mfa_settings import auth_kit_mfa_settings
 
 
 def get_setup_data_schemas() -> list[type[Serializer[Any]]]:
@@ -26,4 +27,11 @@ def get_setup_data_schemas() -> list[type[Serializer[Any]]]:
     return [
         handler.get_initialize_method_serializer_class()
         for handler in handlers.values()
+    ]
+
+
+def get_mfa_login_first_step_response_schemas():
+    return [
+        auth_kit_mfa_settings.MFA_FIRST_STEP_RESPONSE_SERIALIZER,
+        auth_kit_mfa_settings.GET_NO_MFA_LOGIN_RESPONSE_SERIALIZER(),
     ]

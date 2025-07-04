@@ -237,6 +237,7 @@ AUTH_KIT = {
     # "LOGOUT_VIEW": "custom_auth.views.KnoxLogoutView",
     # "CUSTOM_AUTHENTICATION": "custom_auth.authentication.KnoxTokenCookieAuthentication",
     "AUTH_TYPE": "jwt",
+    "USE_MFA": True,
 }
 
 # =========================================================================
