@@ -30,7 +30,16 @@ def get_setup_data_schemas() -> list[type[Serializer[Any]]]:
     ]
 
 
-def get_mfa_login_first_step_response_schemas():
+def get_mfa_login_first_step_response_schemas() -> list[type[Serializer[Any]]]:
+    """
+    Get serializer classes for MFA login first step responses.
+
+    Returns both MFA-enabled and no-MFA response serializers for
+    OpenAPI schema generation.
+
+    Returns:
+       List of serializer classes for first step login responses
+    """
     return [
         auth_kit_mfa_settings.MFA_FIRST_STEP_RESPONSE_SERIALIZER,
         auth_kit_mfa_settings.GET_NO_MFA_LOGIN_RESPONSE_SERIALIZER(),

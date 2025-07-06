@@ -7,6 +7,7 @@
     "reportIncompatibleVariableOverride": "none",
     "reportUnknownMemberType": "none",
     "reportUnknownVariableType": "none",
+    "reportPrivateUsage": "none",
     "executionEnvironments": [
         {
             "root": "sandbox/config/settings",

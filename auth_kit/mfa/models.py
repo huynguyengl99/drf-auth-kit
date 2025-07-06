@@ -31,7 +31,7 @@ from .exceptions import MFAMethodDoesNotExistError
 from .mfa_settings import auth_kit_mfa_settings
 from .services.backup_codes import generate_backup_codes
 
-if TYPE_CHECKING:
+if TYPE_CHECKING:  # pragma: no cover
     from django.contrib.auth.models import User  # noqa
 
 

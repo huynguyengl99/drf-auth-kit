@@ -134,28 +134,23 @@ class MFAMethodConfirmSerializer(MFAMethodGenericSerializer):
         Raises:
             ValidationError: If method not found or code invalid
         """
-        try:
-            request = cast(Request, self.context.get("request"))
+        request = cast(Request, self.context.get("request"))
 
-            method = auth_kit_mfa_settings.MFA_MODEL.objects.get_by_name(
-                request.user.pk, attrs["method"], is_active=False
-            )
-            handler = MFAHandlerRegistry.get_handler(method)
-            is_code_valid = handler.validate_otp_code(attrs["code"])
-            if not is_code_valid:
-                raise serializers.ValidationError(_("Invalid OTP code"))
+        method = auth_kit_mfa_settings.MFA_MODEL.objects.get_by_name(
+            request.user.pk, attrs["method"], is_active=False
+        )
+        handler = MFAHandlerRegistry.get_handler(method)
+        is_code_valid = handler.validate_otp_code(attrs["code"])
+        if not is_code_valid:
+            raise serializers.ValidationError(_("Invalid OTP code"))
 
-            method.is_active = True
-            if not auth_kit_mfa_settings.MFA_MODEL.objects.filter(
-                user=request.user, is_primary=True
-            ).exists():
-                method.is_primary = True
-            method.save()
+        method.is_active = True
+        if not auth_kit_mfa_settings.MFA_MODEL.objects.filter(
+            user=request.user, is_primary=True
+        ).exists():
+            method.is_primary = True
+        method.save()
 
-        except auth_kit_mfa_settings.MFA_MODEL.DoesNotExist as e:
-            raise serializers.ValidationError(
-                _("Method does not exist or is already activated")
-            ) from e
         return {
             "detail": _("Activated MFA method"),
         }
@@ -202,7 +197,7 @@ class MFAMethodDeactivateSerializer(MFAMethodGenericSerializer):
         handler = MFAHandlerRegistry.get_handler(method)
         is_code_valid = handler.validate_otp_code(attrs["code"])
         if not is_code_valid:
-            raise serializers.ValidationError("Invalid OTP code")
+            raise serializers.ValidationError(_("Invalid OTP code"))
 
         method.is_active = False
         method.save()

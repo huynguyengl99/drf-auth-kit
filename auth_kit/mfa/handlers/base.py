@@ -17,7 +17,7 @@ from pyotp import TOTP
 from auth_kit.mfa.mfa_settings import auth_kit_mfa_settings
 from auth_kit.mfa.models import MFAMethod
 
-if TYPE_CHECKING:
+if TYPE_CHECKING:  # pragma: no cover
     from django.utils.functional import (
         _StrPromise,  # pyright: ignore[reportPrivateUsage]
     )
@@ -124,7 +124,7 @@ class MFABaseHandler:
         """
         return SetupMethodSerializer
 
-    def create_code(self) -> str:
+    def get_otp_code(self) -> str:
         """
         Generate current TOTP code.
 

@@ -45,7 +45,7 @@ class MFAEmailHandler(MFABaseHandler):
         Generates current TOTP code and sends it to user's email address
         using both plain text and HTML templates.
         """
-        context = {"code": self.create_code()}
+        context = {"code": self.get_otp_code()}
         email_plain_template = self.EMAIL_PLAIN_TEMPLATE
         email_html_template = self.EMAIL_HTML_TEMPLATE
         send_mail(

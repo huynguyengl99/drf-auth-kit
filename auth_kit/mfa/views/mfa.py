@@ -63,8 +63,6 @@ class MFAMethodViewSet(
         """
         if self.action == "create":
             return auth_kit_mfa_settings.MFA_METHOD_CREATE_SERIALIZER
-        elif self.action == "list":
-            return auth_kit_mfa_settings.MFA_METHOD_CONFIG_SERIALIZER
         else:
             return super().get_serializer_class()
 
@@ -80,7 +78,18 @@ class MFAMethodViewSet(
     @extend_schema(
         description=MFA_METHOD_CREATE_DESCRIPTION,
     )
-    def create(self, request, *args, **kwargs):
+    def create(self, request: Request, *args: Any, **kwargs: Any) -> Response:
+        """
+        Create a new MFA method for the user.
+
+        Args:
+            request: HTTP request with method configuration
+            *args: Variable length argument list
+            **kwargs: Arbitrary keyword arguments
+
+        Returns:
+            Response with created method details and backup codes
+        """
         return super().create(request, *args, **kwargs)
 
     @extend_schema(

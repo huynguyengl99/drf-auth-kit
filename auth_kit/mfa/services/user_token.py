@@ -67,8 +67,6 @@ class EphemeralTokenService:
             Tuple of (user, method_name) if valid, None if invalid
         """
         user_model = cast(User, get_user_model())
-        if not token:
-            return None
         try:
             token = str(token)
             user_pk, mfa_method_name, ts_b36, _token_hash = token.rsplit("-", 3)

@@ -5,92 +5,90 @@ This module provides dynamic descriptions for OpenAPI schema generation
 of MFA-related endpoints based on Auth Kit configuration settings.
 """
 
+from typing import TYPE_CHECKING
+
+from django.utils.text import format_lazy
 from django.utils.translation import gettext_lazy as _
 
-from auth_kit.app_settings import auth_kit_settings
+from auth_kit.api_descriptions import (
+    get_auth_cookie_description,
+    get_auth_tokens_name,
+    get_auth_type_description,
+)
 from auth_kit.mfa.mfa_settings import auth_kit_mfa_settings
 
+if TYPE_CHECKING:  # pragma: no cover
+    from django.utils.functional import _StrOrPromise
+else:
+    _StrOrPromise = str
 
-def get_mfa_login_first_step_description() -> str:
+
+def get_mfa_ephemeral_token_expiry_description() -> _StrOrPromise:
+    """Get ephemeral token expiry description."""
+    return _("MFA code expires in %(seconds)s seconds.") % {
+        "seconds": auth_kit_mfa_settings.MFA_EPHEMERAL_TOKEN_EXPIRY
+    }
+
+
+def get_mfa_login_first_step_description() -> _StrOrPromise:
     """Generate dynamic first step login description based on MFA settings."""
     base = _(
-        "First step of MFA-enabled authentication. Validates credentials and initiates MFA flow. "
+        "First step of MFA-enabled authentication. Validates credentials and initiates MFA flow."
     )
 
-    if auth_kit_settings.AUTH_TYPE == "jwt":
-        auth_part = _(
-            "Returns ephemeral token for MFA verification or complete JWT tokens if MFA is disabled. "
-        )
-    elif auth_kit_settings.AUTH_TYPE == "token":
-        auth_part = _(
-            "Returns ephemeral token for MFA verification or complete DRF tokens if MFA is disabled. "
-        )
-    else:
-        auth_part = _(
-            "Returns ephemeral token for MFA verification or complete custom tokens if MFA is disabled. "
-        )
+    # Use the token name instead of the full description
+    auth_part = _(
+        "Returns ephemeral token for MFA verification or complete %(auth_tokens)s if MFA is disabled."
+    ) % {"auth_tokens": get_auth_tokens_name()}
 
-    mfa_part = _("MFA code expires in %(seconds)s seconds. ") % {
-        "seconds": auth_kit_mfa_settings.MFA_EPHEMERAL_TOKEN_EXPIRY
-    }
+    mfa_part = get_mfa_ephemeral_token_expiry_description()
 
-    return str(base) + str(auth_part) + str(mfa_part)
+    return format_lazy("{} {} {}", base, auth_part, mfa_part)
 
 
-def get_mfa_login_second_step_description() -> str:
+def get_mfa_login_second_step_description() -> _StrOrPromise:
     """Generate dynamic second step login description based on authentication type."""
-    base = _(
-        "Complete MFA authentication using verification code and ephemeral token. "
-    )
+    base = _("Complete MFA authentication using verification code and ephemeral token.")
 
-    if auth_kit_settings.AUTH_TYPE == "jwt":
-        auth_part = _(
-            "Returns user details along with JWT access and refresh tokens with expiration times. "
-        )
-    elif auth_kit_settings.AUTH_TYPE == "token":
-        auth_part = _(
-            "Returns user details along with a DRF authentication token for API access. "
-        )
-    else:
-        auth_part = _("Returns user details along with custom authentication tokens. ")
-
-    cookie_part = ""
-    if auth_kit_settings.USE_AUTH_COOKIE:
-        cookie_part = _(
-            "Authentication cookies are set automatically for secure token storage. "
-        )
-
+    # Reuse auth type and cookie descriptions from main api_descriptions
+    auth_part = get_auth_type_description()
+    cookie_part = get_auth_cookie_description()
     verification_part = _("Supports both TOTP codes and backup codes for verification.")
 
-    return str(base) + str(auth_part) + str(cookie_part) + str(verification_part)
+    if cookie_part:
+        return format_lazy(
+            "{} {} {} {}", base, auth_part, cookie_part, verification_part
+        )
+    else:
+        return format_lazy("{} {} {}", base, auth_part, verification_part)
 
 
-def get_mfa_login_change_method_description() -> str:
+def get_mfa_login_change_method_description() -> _StrOrPromise:
     """Generate description for MFA method change during login."""
-    base = _("Switch to a different MFA method during authentication flow. ")
+    base = _("Switch to a different MFA method during authentication flow.")
 
-    requirements = _("Requires valid ephemeral token from first step authentication. ")
+    requirements = _("Requires valid ephemeral token from first step authentication.")
 
     expiry_part = _("New ephemeral token expires in %(seconds)s seconds.") % {
         "seconds": auth_kit_mfa_settings.MFA_EPHEMERAL_TOKEN_EXPIRY
     }
 
-    return str(base) + str(requirements) + str(expiry_part)
+    return format_lazy("{} {} {}", base, requirements, expiry_part)
 
 
-def get_mfa_login_resend_description() -> str:
+def get_mfa_login_resend_description() -> _StrOrPromise:
     """Generate description for MFA code resend functionality."""
-    base = _("Resend MFA verification code using existing ephemeral token. ")
+    base = _("Resend MFA verification code using existing ephemeral token.")
 
     handlers_part = _(
-        "Only applicable for methods that require code dispatch (e.g., email). "
+        "Only applicable for methods that require code dispatch (e.g., email)."
     )
 
     expiry_part = _("New ephemeral token expires in %(seconds)s seconds.") % {
         "seconds": auth_kit_mfa_settings.MFA_EPHEMERAL_TOKEN_EXPIRY
     }
 
-    return str(base) + str(handlers_part) + str(expiry_part)
+    return format_lazy("{} {} {}", base, handlers_part, expiry_part)
 
 
 # MFA Method Management Descriptions
@@ -117,22 +115,20 @@ MFA_METHOD_DEACTIVATE_DESCRIPTION = _(
 )
 
 
-def get_mfa_method_primary_description() -> str:
+def get_mfa_method_primary_description() -> _StrOrPromise:
     """Generate dynamic description for setting primary MFA method."""
     base = _(
         "Set an active MFA method as the primary authentication method. "
-        "Primary method is used by default during login flow. "
+        "Primary method is used by default during login flow."
     )
-
-    verification_part = ""
-    if auth_kit_mfa_settings.MFA_UPDATE_PRIMARY_METHOD_REQUIRED_PRIMARY_CODE:
-        verification_part = _(
-            "Requires verification code from current primary method. "
-        )
 
     ending = _("Only one method can be primary at a time.")
 
-    return str(base) + str(verification_part) + str(ending)
+    if auth_kit_mfa_settings.MFA_UPDATE_PRIMARY_METHOD_REQUIRED_PRIMARY_CODE:
+        verification_part = _("Requires verification code from current primary method.")
+        return format_lazy("{} {} {}", base, verification_part, ending)
+    else:
+        return format_lazy("{} {}", base, ending)
 
 
 MFA_METHOD_SEND_CODE_DESCRIPTION = _(
@@ -141,23 +137,26 @@ MFA_METHOD_SEND_CODE_DESCRIPTION = _(
 )
 
 
-def get_mfa_method_delete_description() -> str:
+def get_mfa_method_delete_description() -> _StrOrPromise:
     """Generate dynamic description for MFA method deletion."""
-    base = _("Permanently delete an MFA method. ")
+    base = _("Permanently delete an MFA method.")
+    ending = _("This action cannot be undone.")
 
     restrictions = []
 
     if auth_kit_mfa_settings.MFA_PREVENT_DELETE_ACTIVE_METHOD:
-        restrictions.append(_("Cannot delete active methods. "))
+        restrictions.append(_("Cannot delete active methods."))
 
     if auth_kit_mfa_settings.MFA_PREVENT_DELETE_PRIMARY_METHOD:
-        restrictions.append(_("Cannot delete primary methods. "))
+        restrictions.append(_("Cannot delete primary methods."))
 
     if auth_kit_mfa_settings.MFA_DELETE_ACTIVE_METHOD_REQUIRE_CODE:
-        restrictions.append(_("Requires verification code for active methods. "))
+        restrictions.append(_("Requires verification code for active methods."))
 
-    ending = _("This action cannot be undone.")
-
-    restrictions_text = "".join(str(r) for r in restrictions)
-
-    return str(base) + restrictions_text + str(ending)
+    if restrictions:
+        # Build format string dynamically based on number of restrictions
+        restrictions_format = " ".join(["{}" for _ in restrictions])
+        restrictions_text = format_lazy(restrictions_format, *restrictions)
+        return format_lazy("{} {} {}", base, restrictions_text, ending)
+    else:
+        return format_lazy("{} {}", base, ending)

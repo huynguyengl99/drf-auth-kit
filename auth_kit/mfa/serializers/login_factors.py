@@ -6,11 +6,12 @@ first step response, second step verification, method switching, and
 code resending functionality.
 """
 
-from typing import Any, TypedDict
+from typing import Any, TypedDict, cast
 
 from django.utils.translation import gettext_lazy as _
 from rest_framework import serializers
 from rest_framework.exceptions import ValidationError
+from rest_framework.serializers import Serializer
 
 from auth_kit.mfa.exceptions import MFAMethodDoesNotExistError
 from auth_kit.mfa.fields import MFAMethodField
@@ -56,9 +57,9 @@ class MFAFirstStepResponseSerializer(serializers.Serializer[dict[str, Any]]):
     method = MFAMethodField(read_only=True)
     mfa_enabled = serializers.BooleanField(default=True, read_only=True)
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self, *args: Any, **kwargs: Any):
         super().__init__(*args, **kwargs)
-        self.no_mfa_serializer = None
+        self.no_mfa_serializer: None | Serializer[dict[str, Any]] = None
 
     def validate(self, attrs: dict[str, Any]) -> dict[str, Any]:
         """
@@ -96,7 +97,7 @@ class MFAFirstStepResponseSerializer(serializers.Serializer[dict[str, Any]]):
             )
             self.no_mfa_serializer.is_valid(raise_exception=True)
 
-            return self.no_mfa_serializer.validated_data
+            return cast(dict[str, Any], self.no_mfa_serializer.validated_data)
 
     def to_representation(self, instance: dict[str, Any]) -> dict[str, Any]:
         """
@@ -111,6 +112,7 @@ class MFAFirstStepResponseSerializer(serializers.Serializer[dict[str, Any]]):
         if instance.get("mfa_enabled"):
             return super().to_representation(instance)
         else:
+            assert self.no_mfa_serializer
             return self.no_mfa_serializer.to_representation(instance)
 
 
