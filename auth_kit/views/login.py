@@ -5,12 +5,12 @@ This module provides login view with support for different authentication
 types and cookie-based token management.
 """
 
-from typing import Any
+from typing import Any, cast
 
 from django.contrib.auth import login as django_login
 from django.contrib.auth.base_user import AbstractBaseUser
 from django.contrib.auth.models import AbstractUser
-from django.http import HttpResponseBase
+from django.http import HttpResponseBase, HttpResponseRedirect
 from django.utils import timezone
 from django.utils.functional import lazy
 from rest_framework import status
@@ -151,6 +151,34 @@ class LoginView(GenericAPIView[Any]):
 
         return self.perform_login(serializer)
 
+    def create_redirect_response(
+        self, serializer_data: dict[str, Any], redirect_url: str
+    ) -> HttpResponseRedirect:
+        """
+        Create HTTP redirect response with authentication cookies.
+
+        Reuses the cookie setting logic from create_response_with_cookies.
+
+        Args:
+            serializer_data: Validated login data containing tokens
+            redirect_url: URL to redirect to
+
+        Returns:
+            HttpResponseRedirect with authentication cookies set
+        """
+        # Create a temporary response to set cookies on
+        temp_response = self.create_response_with_cookies(serializer_data)
+
+        # Create redirect response
+        redirect_response = HttpResponseRedirect(redirect_url)
+
+        # Copy cookies from temp response to redirect response
+        if auth_kit_settings.USE_AUTH_COOKIE:
+            for cookie_name, cookie_value in temp_response.cookies.items():
+                redirect_response.cookies[cookie_name] = cookie_value
+
+        return redirect_response
+
     def perform_login(self, serializer: BaseSerializer[Any]) -> Response:
         """
         Complete the login process after successful validation.
@@ -159,20 +187,35 @@ class LoginView(GenericAPIView[Any]):
         - Creating the response with authentication tokens
         - Setting authentication cookies if configured
         - Performing Django session login if enabled
+        - Redirecting if configured
 
         Args:
             serializer: The validated login serializer containing user data and tokens
 
         Returns:
-            Response: DRF response object with login result and authentication data
+            Response: DRF response with login result (cast from HttpResponseRedirect if redirecting)
         """
+        if auth_kit_settings.SESSION_LOGIN:
+            self.perform_session_login(serializer.validated_data["user"])
+
+        # Check for redirect URL if enabled
+        redirect_url = None
+        if auth_kit_settings.ALLOW_LOGIN_REDIRECT:
+            redirect_url = self.request.query_params.get(
+                "next"
+            ) or self.request.query_params.get("redirect_to")
+
+        # If redirect URL is provided, return HttpResponseRedirect with cookies
+        if redirect_url:
+            return cast(
+                Response, self.create_redirect_response(serializer.data, redirect_url)
+            )
+
+        # Standard API response
         if auth_kit_settings.USE_AUTH_COOKIE:
             response = self.create_response_with_cookies(serializer.data)
         else:
             response = Response(serializer.data, status=status.HTTP_200_OK)
-
-        if auth_kit_settings.SESSION_LOGIN:
-            self.perform_session_login(serializer.validated_data["user"])
 
         return response
 

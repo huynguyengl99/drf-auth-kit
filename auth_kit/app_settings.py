@@ -104,6 +104,7 @@ class MySetting:
     AUTH_TYPE: Literal["jwt", "token", "custom"] = "jwt"  # jwt | token | custom
     USE_AUTH_COOKIE: bool = True
     SESSION_LOGIN: bool = False
+    ALLOW_LOGIN_REDIRECT: bool = False
 
     # Auth using drf Token
     AUTH_TOKEN_MODEL: Token = ImportStr("rest_framework.authtoken.models.Token")

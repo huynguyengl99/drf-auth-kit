@@ -1,4 +1,5 @@
 from django.contrib.auth import get_user_model
+from django.http import HttpResponseRedirect
 from django.test import override_settings
 from django.urls import reverse
 from rest_framework import status
@@ -203,3 +204,118 @@ class TestLoginView(APITestCase):
 
         assert response.status_code == status.HTTP_400_BAD_REQUEST
         assert "Unable to log in with provided credentials." in str(response.data)
+
+    @override_auth_kit_settings(ALLOW_LOGIN_REDIRECT=True)
+    def test_login_redirect_with_next_param(self) -> None:
+        """Test login redirect with 'next' query parameter"""
+        UserFactory.create_with_email_address(self.user_data)
+        redirect_url = "/dashboard/"
+
+        url = reverse("rest_login") + f"?next={redirect_url}"
+        response = self.client.post(url, self.login_data, format="json")
+
+        assert isinstance(response, HttpResponseRedirect)
+        assert response.url == redirect_url
+        assert response.status_code == 302
+
+    @override_auth_kit_settings(ALLOW_LOGIN_REDIRECT=True)
+    def test_login_redirect_with_redirect_to_param(self) -> None:
+        """Test login redirect with 'redirect_to' query parameter"""
+        UserFactory.create_with_email_address(self.user_data)
+        redirect_url = "/profile/"
+
+        url = reverse("rest_login") + f"?redirect_to={redirect_url}"
+        response = self.client.post(url, self.login_data, format="json")
+
+        assert isinstance(response, HttpResponseRedirect)
+        assert response.url == redirect_url
+        assert response.status_code == 302
+
+    @override_auth_kit_settings(ALLOW_LOGIN_REDIRECT=True)
+    def test_login_redirect_next_takes_priority(self) -> None:
+        """Test that 'next' parameter takes priority over 'redirect_to'"""
+        UserFactory.create_with_email_address(self.user_data)
+        next_url = "/dashboard/"
+        redirect_to_url = "/profile/"
+
+        url = reverse("rest_login") + f"?next={next_url}&redirect_to={redirect_to_url}"
+        response = self.client.post(url, self.login_data, format="json")
+
+        assert isinstance(response, HttpResponseRedirect)
+        assert response.url == next_url
+        assert response.status_code == 302
+
+    @override_auth_kit_settings(ALLOW_LOGIN_REDIRECT=False)
+    def test_login_no_redirect_when_disabled(self) -> None:
+        """Test that redirect is disabled when ALLOW_LOGIN_REDIRECT is False"""
+        UserFactory.create_with_email_address(self.user_data)
+        redirect_url = "/dashboard/"
+
+        url = reverse("rest_login") + f"?next={redirect_url}"
+        response = self.client.post(url, self.login_data, format="json")
+
+        assert not isinstance(response, HttpResponseRedirect)
+        assert response.status_code == 200
+
+    @override_auth_kit_settings(ALLOW_LOGIN_REDIRECT=True)
+    def test_login_redirect_sets_jwt_cookies(self) -> None:
+        """Test that redirect response includes JWT authentication cookies"""
+        UserFactory.create_with_email_address(self.user_data)
+        redirect_url = "/dashboard/"
+
+        url = reverse("rest_login") + f"?next={redirect_url}"
+        response = self.client.post(url, self.login_data, format="json")
+
+        assert isinstance(response, HttpResponseRedirect)
+        assert response.url == redirect_url
+        # Check that JWT authentication cookies are set
+        assert "auth-jwt" in response.cookies
+        assert "auth-refresh-jwt" in response.cookies
+
+    @override_auth_kit_settings(
+        ALLOW_LOGIN_REDIRECT=True, USE_AUTH_COOKIE=True, AUTH_TYPE="token"
+    )
+    def test_login_redirect_sets_token_cookies(self) -> None:
+        """Test that redirect response includes token authentication cookies"""
+        get_login_serializer.cache_clear()
+        UserFactory.create_with_email_address(self.user_data)
+        redirect_url = "/dashboard/"
+
+        url = reverse("rest_login") + f"?next={redirect_url}"
+        response = self.client.post(url, self.login_data, format="json")
+
+        assert isinstance(response, HttpResponseRedirect)
+        assert response.url == redirect_url
+        # Check that token authentication cookie is set
+        assert "auth-token" in response.cookies
+        get_login_serializer.cache_clear()
+
+    @override_auth_kit_settings(ALLOW_LOGIN_REDIRECT=True, USE_AUTH_COOKIE=False)
+    def test_login_redirect_without_cookies(self) -> None:
+        """Test redirect when USE_AUTH_COOKIE is disabled"""
+        UserFactory.create_with_email_address(self.user_data)
+        redirect_url = "/dashboard/"
+
+        url = reverse("rest_login") + f"?next={redirect_url}"
+        response = self.client.post(url, self.login_data, format="json")
+
+        assert isinstance(response, HttpResponseRedirect)
+        assert response.url == redirect_url
+        # No cookies should be set when USE_AUTH_COOKIE is False
+        assert len(response.cookies) == 0
+
+    @override_auth_kit_settings(ALLOW_LOGIN_REDIRECT=True)
+    def test_login_redirect_with_invalid_credentials(self) -> None:
+        """Test that redirect is not performed with invalid credentials"""
+        UserFactory.create_with_email_address(self.user_data)
+        redirect_url = "/dashboard/"
+        invalid_login_data = {
+            "username": self.user_data["username"],
+            "password": "wrongpassword",
+        }
+
+        url = reverse("rest_login") + f"?next={redirect_url}"
+        response = self.client.post(url, invalid_login_data, format="json")
+
+        assert not isinstance(response, HttpResponseRedirect)
+        assert response.status_code == 400
