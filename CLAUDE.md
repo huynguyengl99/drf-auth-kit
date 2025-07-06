@@ -94,3 +94,18 @@ The package uses a settings-based configuration system where:
 - Code formatting with Black and linting with Ruff
 - Documentation coverage tracked with interrogate (80% minimum)
 - Uses UV for fast dependency resolution and virtual environment management
+
+## Commit Guidelines
+
+- Always use conventional commit message in this format:
+
+  ```
+  <type>(<scope>): <description>
+  ...(body, if needed for long commit)
+  ```
+
+  Rules:
+  - Keep description concise but descriptive
+  - Use conventional commit types (feat, fix, docs, style, refactor, test, chore, etc.)
+  - Include scope when relevant
+  - No AI info
