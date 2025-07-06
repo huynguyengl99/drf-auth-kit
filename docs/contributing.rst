@@ -10,7 +10,7 @@ Contributing
    :alt: Checked with pyright
 
 .. image:: /_static/interrogate_badge.svg
-   :target: https://github.com/huynguyengl99/drf-auth-kit
+   :target: https://github.com/forthecraft/drf-auth-kit
    :alt: Documentation Coverage
 
 .. include:: ../CONTRIBUTING.md

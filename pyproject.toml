@@ -97,8 +97,8 @@ social = [
 
 [project.urls]
 Documentation = "https://drf-auth-kit.readthedocs.io/"
-Homepage = "https://github.com/huynguyengl99/drf-auth-kit"
-Repository = "https://github.com/huynguyengl99/drf-auth-kit"
+Homepage = "https://github.com/forthecraft/drf-auth-kit"
+Repository = "https://github.com/forthecraft/drf-auth-kit"
 
 [tool.black]
 line-length = 88

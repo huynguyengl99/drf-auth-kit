@@ -5,12 +5,12 @@ DRF AUTH KIT
    :target: https://pypi.org/project/drf-auth-kit/
    :alt: PyPI
 
-.. image:: https://codecov.io/gh/huynguyengl99/drf-auth-kit/branch/main/graph/badge.svg
-   :target: https://codecov.io/gh/huynguyengl99/drf-auth-kit
+.. image:: https://codecov.io/gh/forthecraft/drf-auth-kit/branch/main/graph/badge.svg
+   :target: https://codecov.io/gh/forthecraft/drf-auth-kit
    :alt: Code Coverage
 
-.. image:: https://github.com/huynguyengl99/drf-auth-kit/actions/workflows/test.yml/badge.svg?branch=main
-   :target: https://github.com/huynguyengl99/drf-auth-kit/actions/workflows/test.yml
+.. image:: https://github.com/forthecraft/drf-auth-kit/actions/workflows/test.yml/badge.svg?branch=main
+   :target: https://github.com/forthecraft/drf-auth-kit/actions/workflows/test.yml
    :alt: Test
 
 .. image:: https://www.mypy-lang.org/static/mypy_badge.svg
@@ -22,7 +22,7 @@ DRF AUTH KIT
    :alt: Checked with pyright
 
 .. image:: https://drf-auth-kit.readthedocs.io/en/latest/_static/interrogate_badge.svg
-   :target: https://github.com/huynguyengl99/drf-auth-kit
+   :target: https://github.com/forthecraft/drf-auth-kit
    :alt: Docstring
 
 Modern Django REST Framework authentication toolkit with JWT cookies, social login, and comprehensive user management.
