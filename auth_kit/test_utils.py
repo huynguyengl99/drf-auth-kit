@@ -13,6 +13,7 @@ from collections.abc import Callable, Iterator
 from typing import Any, TypeVar, cast
 
 from auth_kit.app_settings import auth_kit_settings
+from auth_kit.mfa.mfa_settings import auth_kit_mfa_settings
 
 T = TypeVar("T", bound=Callable[..., Any])
 
@@ -91,22 +92,31 @@ def override_auth_kit_settings(**settings: Any) -> Callable[[T], T]:
 
 
 @contextlib.contextmanager
-def settings_context(**settings: Any) -> Iterator[None]:
+def settings_context(**settings: Any) -> Iterator[None]:  # noqa
     """Context manager for overriding auth kit settings temporarily."""
     # Initialize user_settings if it doesn't exist
+
     if not hasattr(auth_kit_settings, "user_settings"):
         auth_kit_settings.user_settings = {}
+        auth_kit_mfa_settings.user_settings = {}
 
     # Save original settings
     old_settings = {}
     for key in settings:
-        old_settings[key] = auth_kit_settings.user_settings.get(key)
+        old_settings[key] = auth_kit_settings.user_settings.get(
+            key
+        ) or auth_kit_mfa_settings.user_settings.get(key)
 
     # Apply new settings and clear cached properties
     for key, value in settings.items():
-        auth_kit_settings.user_settings[key] = value
-        with contextlib.suppress(AttributeError):
-            delattr(auth_kit_settings, key)
+        if hasattr(auth_kit_settings, key):
+            auth_kit_settings.user_settings[key] = value
+            with contextlib.suppress(AttributeError):
+                delattr(auth_kit_settings, key)
+        elif hasattr(auth_kit_mfa_settings, key):
+            auth_kit_mfa_settings.user_settings[key] = value
+            with contextlib.suppress(AttributeError):
+                delattr(auth_kit_mfa_settings, key)
 
     try:
         yield
@@ -114,10 +124,18 @@ def settings_context(**settings: Any) -> Iterator[None]:
         # Restore original settings
         for key in settings:
             if old_settings[key] is not None:
-                auth_kit_settings.user_settings[key] = old_settings[key]
-            else:
+                if hasattr(auth_kit_settings, key):
+                    auth_kit_settings.user_settings[key] = old_settings[key]
+                elif hasattr(auth_kit_mfa_settings, key):
+                    auth_kit_mfa_settings.user_settings[key] = old_settings[key]
+            elif hasattr(auth_kit_settings, key):
                 auth_kit_settings.user_settings.pop(key, None)
+            elif hasattr(auth_kit_mfa_settings, key):
+                auth_kit_mfa_settings.user_settings.pop(key, None)
 
             # Clear cached properties again
             with contextlib.suppress(AttributeError):
-                delattr(auth_kit_settings, key)
+                if hasattr(auth_kit_settings, key):
+                    delattr(auth_kit_settings, key)
+                elif hasattr(auth_kit_mfa_settings, key):
+                    delattr(auth_kit_mfa_settings, key)

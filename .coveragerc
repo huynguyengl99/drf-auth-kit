@@ -4,6 +4,7 @@ source = auth_kit
 omit =
     app_settings.py
     test_utils.py
+    mfa_settings.py
 
 [report]
 show_missing = True

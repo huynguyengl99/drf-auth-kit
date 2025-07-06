@@ -7,9 +7,9 @@ paths:
   /auth/login/:
     post:
       operationId: login_create
-      description: 'Authenticate with username/email and password to obtain access
+      description: Authenticate with username/email and password to obtain access
         tokens. Returns user details along with JWT access and refresh tokens with
-        expiration times. '
+        expiration times.
       tags:
       - login
       requestBody:
@@ -229,9 +229,9 @@ paths:
   /auth/token/refresh/:
     post:
       operationId: token_refresh_create
-      description: 'Generate new JWT access tokens using refresh tokens. Refresh tokens
+      description: Generate new JWT access tokens using refresh tokens. Refresh tokens
         must be provided in the request data. Returns new access tokens with updated
-        expiration times. '
+        expiration times.
       tags:
       - token
       requestBody:
