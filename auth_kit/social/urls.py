@@ -18,6 +18,7 @@ from allauth.socialaccount.adapter import (  # pyright: ignore[reportMissingType
 from auth_kit.app_settings import auth_kit_settings
 from auth_kit.social.utils import normalize_app_name
 from auth_kit.social.views import SocialConnectView, SocialLoginView
+from auth_kit.utils import filter_excluded_urls
 
 router = routers.SimpleRouter()
 router.register(
@@ -102,3 +103,6 @@ def create_social_provider_urls() -> list[Any]:
 
 # Generate URL patterns for all social providers
 urlpatterns += create_social_provider_urls()
+
+# Apply URL exclusion filtering
+urlpatterns = filter_excluded_urls(urlpatterns)

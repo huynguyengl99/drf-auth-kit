@@ -8,6 +8,8 @@ login flow endpoints and MFA method management via ViewSet routing.
 from django.urls import re_path
 from rest_framework import routers
 
+from auth_kit.utils import filter_excluded_urls
+
 from .mfa_settings import auth_kit_mfa_settings
 
 mfa_router = routers.SimpleRouter()
@@ -38,3 +40,6 @@ urlpatterns = [
     ),
     *mfa_router.urls,
 ]
+
+# Apply URL exclusion filtering
+urlpatterns = filter_excluded_urls(urlpatterns)

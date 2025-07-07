@@ -166,6 +166,7 @@ class MySetting:
     USE_MFA: bool = False
     # Utils
     URL_NAMESPACE: str = ""
+    EXCLUDED_URL_NAMES: list[str] = []
 
     # Field to satisfy the type checker for APISettings compatibility
     user_settings: dict[str, Any] = {}

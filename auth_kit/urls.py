@@ -9,6 +9,7 @@ from django.urls import URLPattern, URLResolver, include, re_path
 
 from rest_framework_simplejwt.views import TokenVerifyView
 
+from auth_kit.utils import filter_excluded_urls
 from auth_kit.views import (
     PasswordChangeView,
     PasswordResetConfirmView,
@@ -77,3 +78,6 @@ if auth_kit_settings.AUTH_TYPE == "jwt":
             ),
         ]
     )
+
+# Apply URL exclusion filtering
+urlpatterns = filter_excluded_urls(urlpatterns)
