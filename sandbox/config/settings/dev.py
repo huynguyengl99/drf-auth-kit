@@ -230,12 +230,8 @@ SIMPLE_JWT = {
 # =========================================================================
 AUTH_KIT = {
     # "AUTH_TYPE": "custom",
-    # "CUSTOM_LOGIN_RESPONSE_SERIALIZER": (
-    #     "custom_auth.serializers.KnoxTokenResponseSerializer"
-    # ),
     # "LOGIN_VIEW": "custom_auth.views.KnoxLoginView",
     # "LOGOUT_VIEW": "custom_auth.views.KnoxLogoutView",
-    # "CUSTOM_AUTHENTICATION": "custom_auth.authentication.KnoxTokenCookieAuthentication",
     "AUTH_TYPE": "jwt",
     "USE_MFA": True,
 }

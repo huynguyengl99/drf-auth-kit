@@ -88,6 +88,10 @@ requires-python = ">=3.10,<4.0"
 version = "0.1.1"
 
 [project.optional-dependencies]
+all = [
+  "django-allauth[socialaccount]>=65.5.0",
+  "pyotp>=2.9.0"
+]
 mfa = [
   "pyotp>=2.9.0"
 ]

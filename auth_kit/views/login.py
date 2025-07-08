@@ -184,6 +184,7 @@ class LoginView(GenericAPIView[Any]):
         Complete the login process after successful validation.
 
         This method handles the final steps of user authentication including:
+
         - Creating the response with authentication tokens
         - Setting authentication cookies if configured
         - Performing Django session login if enabled

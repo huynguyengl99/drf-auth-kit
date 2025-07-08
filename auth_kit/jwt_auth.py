@@ -7,7 +7,10 @@ JWT authentication cookies in HTTP responses.
 
 from datetime import datetime
 
+from django.contrib.auth.base_user import AbstractBaseUser
 from rest_framework.response import Response
+
+from rest_framework_simplejwt.tokens import AccessToken, RefreshToken
 
 from .app_settings import auth_kit_settings
 
@@ -79,3 +82,19 @@ def unset_token_cookie(response: Response) -> None:
         samesite=cookie_samesite,
         domain=cookie_domain,
     )
+
+
+def jwt_encode(user: AbstractBaseUser) -> tuple[AccessToken, RefreshToken]:
+    """
+    Generate JWT access and refresh tokens for a user.
+
+    Args:
+        user: The user to generate tokens for
+
+    Returns:
+        Tuple containing (access_token, refresh_token)
+    """
+    from auth_kit.app_settings import auth_kit_settings
+
+    refresh: RefreshToken = auth_kit_settings.JWT_TOKEN_CLAIMS_SERIALIZER.get_token(user)  # type: ignore
+    return refresh.access_token, refresh

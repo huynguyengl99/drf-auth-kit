@@ -19,20 +19,10 @@ class MFAEmailHandler(MFABaseHandler):
 
     Sends TOTP verification codes to user's email address. Uses longer
     TOTP intervals to account for email delivery delays.
-
-    Attributes:
-        NAME: Handler identifier ('email')
-        TOTP_INTERVAL: Extended interval for email delivery delays
-        APPLICATION_ISSUER_NAME: Application name for emails
-        EMAIL_PLAIN_TEMPLATE: Template path for plain text emails
-        EMAIL_HTML_TEMPLATE: Template path for HTML emails
-        EMAIL_SUBJECT: Email subject line
-        SETUP_RESPONSE_MESSAGE: Message shown after sending code
     """
 
     NAME = "email"
     TOTP_INTERVAL = 180  # 3 minutes due to email delivery delays
-    APPLICATION_ISSUER_NAME = "MyApplication"
     EMAIL_PLAIN_TEMPLATE = "auth_kit/mfa/email/code.txt"
     EMAIL_HTML_TEMPLATE = "auth_kit/mfa/email/code.html"
     EMAIL_SUBJECT = "Your verification code"

@@ -25,35 +25,21 @@ DRF AUTH KIT
    :target: https://github.com/forthecraft/drf-auth-kit
    :alt: Docstring
 
-Modern Django REST Framework authentication toolkit with JWT cookies, social login, and comprehensive user management.
+Modern Django REST Framework authentication toolkit with JWT cookies, social login, MFA, and comprehensive user management.
+
+Built as a next-generation alternative to existing DRF authentication packages, DRF Auth Kit provides a complete authentication solution with modern developer experience, inspired by dj-rest-auth but enhanced with full type safety, automatic OpenAPI schema generation, and comprehensive MFA support inspired by django-trench.
 
 Features
 --------
 
-🔐 **Multiple Authentication Types**
-   - JWT tokens with automatic refresh
-   - DRF token authentication
-   - Custom authentication support
-
-🍪 **Cookie-Based Security**
-   - Secure HTTP-only cookies
-   - Automatic token management
-   - CSRF protection
-
-📧 **Complete User Management**
-   - User registration with email verification
-   - Password reset and change
-   - Email verification workflows
-
-🔧 **Flexible Configuration**
-   - Multiple authentication backends
-   - Customizable serializers and views
-   - Django Allauth integration
-
-🚀 **Developer Experience**
-   - Full type hints support
-   - Comprehensive test coverage
-   - Auto-generated API documentation
+- **Multiple Authentication Types**: JWT (default), DRF Token, or Custom
+- **Cookie-Based Security**: HTTP-only cookies
+- **Complete User Management**: Registration, password reset, email verification
+- **Multi-Factor Authentication**: Support multiple MFAs with backup codes
+- **Social Authentication**: Django Allauth integration with 50+ providers, support for both OAuth2 and OpenID connect.
+- **Full Type Safety**: Complete type hints with mypy and pyright
+- **OpenAPI Integration**: Auto-generated API documentation with DRF Spectacular
+- **Flexible Configuration**: Customizable serializers, views, and authentication backends
 
 Installation
 ------------
@@ -61,6 +47,21 @@ Installation
 .. code-block:: bash
 
     pip install drf-auth-kit
+
+**Optional Features:**
+
+.. code-block:: bash
+
+    # For MFA support
+    pip install drf-auth-kit[mfa]
+
+    # For social authentication
+    pip install drf-auth-kit[social]
+
+    # For both MFA and social
+    pip install drf-auth-kit[all]
+
+**Core Dependencies:** Django 5.0+, DRF 3.0+, Django Allauth, DRF SimpleJWT
 
 Quick Start
 -----------
@@ -72,9 +73,13 @@ Quick Start
     INSTALLED_APPS = [
         # ... your apps
         'rest_framework',
-        'allauth',
-        'allauth.account',
+        'allauth',  # Required for social auth
+        'allauth.account',  # Required for social auth
+        # 'allauth.socialaccount',  # For social login
+        # 'allauth.socialaccount.providers.google',  # For Google login
         'auth_kit',
+        # 'auth_kit.social',  # For social authentication
+        # 'auth_kit.mfa',  # For MFA support
     ]
 
     REST_FRAMEWORK = {
@@ -83,10 +88,23 @@ Quick Start
         ],
     }
 
-    AUTH_KIT = {
-        'AUTH_TYPE': 'jwt',  # or 'token' or 'custom'
-        'USE_AUTH_COOKIE': True,
-    }
+    # Override only if needed:
+    # AUTH_KIT = {
+    #     'USE_MFA': True,  # Enable MFA
+    # }
+
+    # Google OAuth2 settings (for social login)
+    # SOCIALACCOUNT_PROVIDERS = {
+    #     'google': {
+    #         'SCOPE': ['profile', 'email'],
+    #         'AUTH_PARAMS': {'access_type': 'online'},
+    #         'OAUTH_PKCE_ENABLED': True,
+    #         'APP': {
+    #             'client_id': 'your-google-client-id',
+    #             'secret': 'your-google-client-secret',
+    #         }
+    #     }
+    # }
 
 2. Include Auth Kit URLs:
 
@@ -96,10 +114,11 @@ Quick Start
 
     urlpatterns = [
         path('api/auth/', include('auth_kit.urls')),
+        # path('api/auth/social/', include('auth_kit.social.urls')),  # For social auth
         # ... your other URLs
     ]
 
-3. Run migrations:
+3. Run migrations (only needed if using MFA):
 
 .. code-block:: bash
 
@@ -122,21 +141,6 @@ Authentication Types
    - Bring your own authentication backend
    - Full customization support
    - Integrate with third-party services
-
-API Endpoints
--------------
-
-The package provides these authentication endpoints:
-
-- ``POST /auth/login/`` - User authentication
-- ``POST /auth/logout/`` - User logout
-- ``POST /auth/registration/`` - User registration
-- ``POST /auth/password/reset/`` - Password reset request
-- ``POST /auth/password/reset/confirm/`` - Password reset confirmation
-- ``POST /auth/password/change/`` - Password change
-- ``GET/PUT/PATCH /auth/user/`` - User profile management
-- ``POST /auth/registration/verify-email/`` - Email verification
-- ``POST /auth/token/refresh/`` - JWT token refresh (JWT mode only)
 
 Documentation
 -------------

@@ -15,25 +15,34 @@ from typing import TYPE_CHECKING, Any, Literal, cast
 
 from django.conf import settings
 from django.core.signals import setting_changed
-from rest_framework.authentication import BaseAuthentication
 from rest_framework.serializers import Serializer
 from rest_framework.settings import APISettings
 
 if TYPE_CHECKING:
     from rest_framework.authtoken.models import Token
-    from rest_framework.generics import GenericAPIView  # prevent circular import
     from rest_framework.viewsets import GenericViewSet
 
     from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 
     from auth_kit.serializers.login_factors import BaseLoginResponseSerializer
     from auth_kit.social.views import SocialConnectView, SocialLoginView
+    from auth_kit.views import (
+        LoginView,
+        LogoutView,
+        PasswordChangeView,
+        PasswordResetConfirmView,
+        PasswordResetView,
+        RegisterView,
+        ResendEmailVerificationView,
+        UserDetailsView,
+        VerifyEmailView,
+    )
+    from auth_kit.views.jwt import RefreshViewWithCookieSupport
 
 else:
     TokenObtainPairSerializer = Token = GenericAPIView = BaseLoginResponseSerializer = (
         Any
     )
-    SocialLoginView = SocialConnectView = Any
 
 
 class ImportStr(str):
@@ -45,8 +54,41 @@ class ImportStr(str):
 class MySetting:
     """Default settings configuration for Auth Kit."""
 
-    # SERIALIZER & VIEWS dynamic load
+    # ===================================================================
+    # CORE AUTHENTICATION SETTINGS
+    # ===================================================================
+    AUTH_TYPE: Literal["jwt", "token", "custom"] = "jwt"  # jwt | token | custom
+    USE_AUTH_COOKIE: bool = True
+    SESSION_LOGIN: bool = False
+    ALLOW_LOGIN_REDIRECT: bool = False
 
+    # ===================================================================
+    # COOKIE CONFIGURATION
+    # ===================================================================
+    AUTH_COOKIE_SECURE: bool = False
+    AUTH_COOKIE_HTTPONLY: bool = True
+    AUTH_COOKIE_SAMESITE: Literal["Lax", "Strict", "None"] = "Lax"
+    AUTH_COOKIE_DOMAIN: str | None = None
+
+    # ===================================================================
+    # JWT AUTHENTICATION SETTINGS
+    # ===================================================================
+    AUTH_JWT_COOKIE_NAME: str = "auth-jwt"
+    AUTH_JWT_COOKIE_PATH: str = "/"
+    AUTH_JWT_REFRESH_COOKIE_NAME: str = "auth-refresh-jwt"
+    AUTH_JWT_REFRESH_COOKIE_PATH: str = "/"
+
+    # ===================================================================
+    # TOKEN AUTHENTICATION SETTINGS
+    # ===================================================================
+    AUTH_TOKEN_MODEL: Token = ImportStr("rest_framework.authtoken.models.Token")
+    AUTH_TOKEN_COOKIE_NAME: str = "auth-token"
+    AUTH_TOKEN_COOKIE_PATH: str = "/"
+    AUTH_TOKEN_COOKIE_EXPIRE_TIME: timedelta = timedelta(days=1)
+
+    # ===================================================================
+    # LOGIN & LOGOUT SERIALIZERS & VIEWS
+    # ===================================================================
     LOGIN_REQUEST_SERIALIZER: type[Serializer[dict[str, Any]]] = ImportStr(
         "auth_kit.serializers.login_factors.LoginRequestSerializer"
     )
@@ -56,42 +98,40 @@ class MySetting:
     LOGIN_SERIALIZER_FACTORY: Callable[[], type[Serializer[dict[str, Any]]]] = (
         ImportStr("auth_kit.serializers.login.get_login_serializer")
     )
-    LOGIN_VIEW: type["GenericAPIView[Any]"] = ImportStr("auth_kit.views.LoginView")
+    LOGIN_VIEW: type["LoginView"] = ImportStr("auth_kit.views.LoginView")
+
     LOGOUT_SERIALIZER: type[Serializer[dict[str, Any]]] = ImportStr(
         "auth_kit.serializers.logout.AuthKitLogoutSerializer"
     )
-    LOGOUT_VIEW: type["GenericAPIView[Any]"] = ImportStr("auth_kit.views.LogoutView")
-    JWT_TOKEN_CLAIMS_SERIALIZER: type[TokenObtainPairSerializer] = ImportStr(
-        "rest_framework_simplejwt.serializers.TokenObtainPairSerializer"
-    )
+    LOGOUT_VIEW: type["LogoutView"] = ImportStr("auth_kit.views.LogoutView")
+
+    # ===================================================================
+    # USER MANAGEMENT SERIALIZERS & VIEWS
+    # ===================================================================
     USER_DETAILS_SERIALIZER: type[Serializer[dict[str, Any]]] = ImportStr(
         "auth_kit.serializers.user.UserDetailsSerializer"
     )
-    USER_DETAILS_VIEW: type["GenericAPIView[Any]"] = ImportStr(
+    USER_DETAILS_VIEW: type["UserDetailsView"] = ImportStr(
         "auth_kit.views.UserDetailsView"
     )
-    PASSWORD_RESET_SERIALIZER: type[Serializer[dict[str, Any]]] = ImportStr(
-        "auth_kit.serializers.PasswordResetSerializer"
-    )
-    PASSWORD_RESET_CONFIRM_SERIALIZER: type[Serializer[dict[str, Any]]] = ImportStr(
-        "auth_kit.serializers.PasswordResetConfirmSerializer"
-    )
-    PASSWORD_CHANGE_SERIALIZER: type[Serializer[dict[str, Any]]] = ImportStr(
-        "auth_kit.serializers.PasswordChangeSerializer"
-    )
+
+    # ===================================================================
+    # REGISTRATION SERIALIZERS & VIEWS
+    # ===================================================================
     REGISTER_SERIALIZER: type[Serializer[dict[str, Any]]] = ImportStr(
         "auth_kit.serializers.RegisterSerializer"
     )
+    REGISTER_VIEW: type["RegisterView"] = ImportStr("auth_kit.views.RegisterView")
 
-    # PASSWORD CHANGE/RESET CONFIGURATIONS
-    PASSWORD_RESET_CONFIRM_URL: str | None = None
-    PASSWORD_RESET_URL_GENERATOR: Callable[..., str] = ImportStr(
-        "auth_kit.forms.password_reset_url_generator"
+    # Email Verification
+    VERIFY_EMAIL_VIEW: type["VerifyEmailView"] = ImportStr(
+        "auth_kit.views.VerifyEmailView"
     )
-    OLD_PASSWORD_FIELD_ENABLED: bool = False
-    PASSWORD_RESET_PREVENT_ENUMERATION: bool = True
+    RESEND_EMAIL_VERIFICATION_VIEW: type["ResendEmailVerificationView"] = ImportStr(
+        "auth_kit.views.ResendEmailVerificationView"
+    )
 
-    # REGISTRATION CONFIGURATIONS
+    # Registration Configuration
     REGISTER_EMAIL_CONFIRM_URL: str | None = None
     GET_EMAIL_VERIFICATION_URL_FUNC: Callable[..., str] = ImportStr(
         "auth_kit.views.registration.get_email_verification_url"
@@ -100,30 +140,51 @@ class MySetting:
         "auth_kit.views.registration.send_verify_email"
     )
 
-    # Auth type setup
-    AUTH_TYPE: Literal["jwt", "token", "custom"] = "jwt"  # jwt | token | custom
-    USE_AUTH_COOKIE: bool = True
-    SESSION_LOGIN: bool = False
-    ALLOW_LOGIN_REDIRECT: bool = False
+    # ===================================================================
+    # PASSWORD MANAGEMENT SERIALIZERS & VIEWS
+    # ===================================================================
+    PASSWORD_CHANGE_SERIALIZER: type[Serializer[dict[str, Any]]] = ImportStr(
+        "auth_kit.serializers.PasswordChangeSerializer"
+    )
+    PASSWORD_CHANGE_VIEW: type["PasswordChangeView"] = ImportStr(
+        "auth_kit.views.PasswordChangeView"
+    )
 
-    # Auth using drf Token
-    AUTH_TOKEN_MODEL: Token = ImportStr("rest_framework.authtoken.models.Token")
-    AUTH_TOKEN_COOKIE_NAME: str = "auth-token"
-    AUTH_TOKEN_COOKIE_PATH: str = "/"
-    AUTH_TOKEN_COOKIE_EXPIRE_TIME: timedelta = timedelta(days=1)
+    PASSWORD_RESET_SERIALIZER: type[Serializer[dict[str, Any]]] = ImportStr(
+        "auth_kit.serializers.PasswordResetSerializer"
+    )
+    PASSWORD_RESET_VIEW: type["PasswordResetView"] = ImportStr(
+        "auth_kit.views.PasswordResetView"
+    )
 
-    # Auth using jwt
-    AUTH_JWT_COOKIE_NAME: str = "auth-jwt"
-    AUTH_JWT_COOKIE_PATH: str = "/"
-    AUTH_JWT_REFRESH_COOKIE_NAME: str = "auth-refresh-jwt"
-    AUTH_JWT_REFRESH_COOKIE_PATH: str = "/"
+    PASSWORD_RESET_CONFIRM_SERIALIZER: type[Serializer[dict[str, Any]]] = ImportStr(
+        "auth_kit.serializers.PasswordResetConfirmSerializer"
+    )
+    PASSWORD_RESET_CONFIRM_VIEW: type["PasswordResetConfirmView"] = ImportStr(
+        "auth_kit.views.PasswordResetConfirmView"
+    )
 
-    AUTH_COOKIE_SECURE: bool = False
-    AUTH_COOKIE_HTTPONLY: bool = True
-    AUTH_COOKIE_SAMESITE: Literal["Lax", "Strict", "None"] = "Lax"
-    AUTH_COOKIE_DOMAIN: str | None = None
+    # Password Configuration
+    PASSWORD_RESET_CONFIRM_URL: str | None = None
+    PASSWORD_RESET_URL_GENERATOR: Callable[..., str] = ImportStr(
+        "auth_kit.forms.password_reset_url_generator"
+    )
+    OLD_PASSWORD_FIELD_ENABLED: bool = False
+    PASSWORD_RESET_PREVENT_ENUMERATION: bool = True
 
-    # Social authentication configurations
+    # ===================================================================
+    # JWT SPECIFIC SETTINGS
+    # ===================================================================
+    JWT_TOKEN_CLAIMS_SERIALIZER: type[TokenObtainPairSerializer] = ImportStr(
+        "rest_framework_simplejwt.serializers.TokenObtainPairSerializer"
+    )
+    JWT_REFRESH_VIEW: type["RefreshViewWithCookieSupport"] = ImportStr(
+        "auth_kit.views.jwt.RefreshViewWithCookieSupport"
+    )
+
+    # ===================================================================
+    # SOCIAL AUTHENTICATION
+    # ===================================================================
     SOCIAL_LOGIN_AUTH_TYPE: Literal["token", "code"] = "code"
     SOCIAL_LOGIN_AUTO_CONNECT_BY_EMAIL: bool = True
     SOCIAL_LOGIN_CALLBACK_BASE_URL: str = ""
@@ -131,6 +192,7 @@ class MySetting:
     SOCIAL_HIDE_AUTH_ERROR_DETAILS: bool = True
     SOCIAL_CONNECT_REQUIRE_EMAIL_MATCH: bool = True
 
+    # Social Views & Serializers
     SOCIAL_LOGIN_VIEW: type["SocialLoginView"] = ImportStr(
         "auth_kit.social.views.login.SocialLoginView"
     )
@@ -140,7 +202,6 @@ class MySetting:
     SOCIAL_ACCOUNT_VIEW_SET: type["GenericViewSet[Any]"] = ImportStr(
         "auth_kit.social.views.account.SocialAccountViewSet"
     )
-
     SOCIAL_LOGIN_SERIALIZER_FACTORY: Callable[[], type[Serializer[dict[str, Any]]]] = (
         ImportStr("auth_kit.social.serializers.get_social_login_serializer")
     )
@@ -151,20 +212,14 @@ class MySetting:
         "auth_kit.social.utils.get_social_connect_callback_url"
     )
 
-    # Custom auth
-    CUSTOM_LOGIN_RESPONSE_SERIALIZER: type[Serializer[dict[str, Any]]] = ImportStr(
-        "auth_kit.serializers.login_factors.BaseLoginResponseSerializer"
-    )
-    CUSTOM_LOGOUT_SERIALIZER: type[Serializer[dict[str, Any]]] = ImportStr(
-        "auth_kit.serializers.logout.AuthKitLogoutSerializer"
-    )
-    CUSTOM_AUTHENTICATION: type[BaseAuthentication] = ImportStr(
-        "auth_kit.authentication.AuthKitCookieAuthentication"
-    )
-
-    # MFA
+    # ===================================================================
+    # MULTI-FACTOR AUTHENTICATION
+    # ===================================================================
     USE_MFA: bool = False
-    # Utils
+
+    # ===================================================================
+    # URL & UTILITY SETTINGS
+    # ===================================================================
     URL_NAMESPACE: str = ""
     EXCLUDED_URL_NAMES: list[str] = []
 

@@ -25,11 +25,6 @@ class MFAAppHandler(MFABaseHandler):
     Generates QR codes and provisioning URIs for setting up TOTP
     in authenticator applications. Does not require code dispatch
     as codes are generated locally on user's device.
-
-    Class Attributes:
-        NAME: Handler identifier ('app')
-        APPLICATION_ISSUER_NAME: Application name for TOTP URIs
-        REQUIRES_DISPATCH: False as no code dispatch needed
     """
 
     NAME = "app"

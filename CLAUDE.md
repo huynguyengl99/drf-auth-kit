@@ -60,7 +60,7 @@ DRF Auth Kit is a modern Django REST Framework authentication toolkit that provi
 ### Key Features
 
 - **Multiple Authentication Types**: JWT (recommended), DRF Token, or custom
-- **Cookie Security**: HTTP-only cookies with CSRF protection
+- **Cookie Security**: HTTP-only cookies
 - **Flexible Configuration**: Customizable serializers, views, and authentication backends
 - **MFA Support**: Optional multi-factor authentication with backup codes
 - **Social Login**: Integration with various social providers via Allauth

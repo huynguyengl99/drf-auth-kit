@@ -26,9 +26,10 @@ from drf_spectacular.utils import (
 from rest_framework_simplejwt.settings import api_settings as jwt_settings
 
 from auth_kit.app_settings import auth_kit_settings
+from auth_kit.jwt_auth import jwt_encode
 from auth_kit.serializers import JWTSerializer
 from auth_kit.serializers.token import TokenSerializer
-from auth_kit.utils import UserModel, UserNameField, cast_dict, jwt_encode
+from auth_kit.utils import UserModel, UserNameField, cast_dict
 
 
 class LoginRequestSerializer(serializers.Serializer[dict[str, Any]]):

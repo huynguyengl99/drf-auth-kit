@@ -9,37 +9,18 @@ from collections.abc import Sequence
 from typing import Any, TypeAlias, cast
 
 from django.contrib.auth import get_user_model
-from django.contrib.auth.base_user import AbstractBaseUser
 from django.contrib.auth.models import User
 from django.urls import URLPattern, URLResolver
 from django.utils.decorators import method_decorator
 from django.views.decorators.debug import sensitive_post_parameters
 
 import structlog
-from rest_framework_simplejwt.tokens import AccessToken, RefreshToken
 
 from auth_kit.app_settings import auth_kit_settings
 
 UserModel: type[User] = get_user_model()  # type: ignore[assignment, unused-ignore]
 UserNameField: str = UserModel.USERNAME_FIELD
 UserModelType: TypeAlias = User
-
-
-def jwt_encode(user: AbstractBaseUser) -> tuple[AccessToken, RefreshToken]:
-    """
-    Generate JWT access and refresh tokens for a user.
-
-    Args:
-        user: The user to generate tokens for
-
-    Returns:
-        Tuple containing (access_token, refresh_token)
-    """
-    from auth_kit.app_settings import auth_kit_settings
-
-    refresh: RefreshToken = auth_kit_settings.JWT_TOKEN_CLAIMS_SERIALIZER.get_token(user)  # type: ignore
-    return refresh.access_token, refresh
-
 
 sensitive_post_parameters_m = method_decorator(
     sensitive_post_parameters(

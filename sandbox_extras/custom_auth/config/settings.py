@@ -216,7 +216,6 @@ AUTH_KIT = {
     "LOGIN_RESPONSE_SERIALIZER": "custom_auth.serializers.KnoxTokenResponseSerializer",
     "LOGIN_VIEW": "custom_auth.views.KnoxLoginView",
     "LOGOUT_VIEW": "custom_auth.views.KnoxLogoutView",
-    "CUSTOM_AUTHENTICATION": "custom_auth.authentication.KnoxTokenCookieAuthentication",
 }
 
 # =========================================================================

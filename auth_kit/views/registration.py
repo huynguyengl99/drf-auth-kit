@@ -10,6 +10,7 @@ from typing import Any, NoReturn
 from urllib.parse import urlencode
 
 from django.contrib.auth.models import AbstractUser
+from django.db.models import QuerySet
 from django.http import HttpResponseBase
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
@@ -233,7 +234,16 @@ class ResendEmailVerificationView(CreateAPIView[Any]):
     authentication_classes = []
     permission_classes = (AllowAny,)
     serializer_class = ResendEmailVerificationSerializer
-    queryset = EmailAddress.objects.all()
+
+    def get_queryset(self) -> QuerySet[EmailAddress]:
+        """
+        Get queryset of email addresses for verification resend.
+
+        Returns:
+            QuerySet of EmailAddress objects for filtering and lookup
+            during email verification resend operations
+        """
+        return EmailAddress.objects.get_queryset()  # type: ignore[no-any-return]
 
     @extend_schema(description=EMAIL_RESEND_DESCRIPTION)
     def create(self, request: Request, *args: Any, **kwargs: Any) -> Response:

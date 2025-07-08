@@ -10,26 +10,19 @@ from django.urls import URLPattern, URLResolver, include, re_path
 from rest_framework_simplejwt.views import TokenVerifyView
 
 from auth_kit.utils import filter_excluded_urls
-from auth_kit.views import (
-    PasswordChangeView,
-    PasswordResetConfirmView,
-    PasswordResetView,
-    RefreshViewWithCookieSupport,
-    RegisterView,
-    ResendEmailVerificationView,
-    VerifyEmailView,
-)
 
 from .app_settings import auth_kit_settings
 
 urlpatterns: list[URLPattern | URLResolver] = [
     # URLs that do not require a session or valid token
     re_path(
-        r"password/reset/?$", PasswordResetView.as_view(), name="rest_password_reset"
+        r"password/reset/?$",
+        auth_kit_settings.PASSWORD_RESET_VIEW.as_view(),
+        name="rest_password_reset",
     ),
     re_path(
         r"password/reset/confirm/?$",
-        PasswordResetConfirmView.as_view(),
+        auth_kit_settings.PASSWORD_RESET_CONFIRM_VIEW.as_view(),
         name="rest_password_reset_confirm",
     ),
     # URLs that require a user to be logged in with a valid session / token.
@@ -40,17 +33,23 @@ urlpatterns: list[URLPattern | URLResolver] = [
         name="rest_user_details",
     ),
     re_path(
-        r"password/change/?$", PasswordChangeView.as_view(), name="rest_password_change"
+        r"password/change/?$",
+        auth_kit_settings.PASSWORD_CHANGE_VIEW.as_view(),
+        name="rest_password_change",
     ),
-    re_path(r"registration/?$", RegisterView.as_view(), name="rest_register"),
+    re_path(
+        r"registration/?$",
+        auth_kit_settings.REGISTER_VIEW.as_view(),
+        name="rest_register",
+    ),
     re_path(
         r"registration/verify-email/?$",
-        VerifyEmailView.as_view(),
+        auth_kit_settings.VERIFY_EMAIL_VIEW.as_view(),
         name="rest_verify_email",
     ),
     re_path(
         r"registration/resend-email/?$",
-        ResendEmailVerificationView.as_view(),
+        auth_kit_settings.RESEND_EMAIL_VERIFICATION_VIEW.as_view(),
         name="rest_resend_email",
     ),
 ]
@@ -73,7 +72,7 @@ if auth_kit_settings.AUTH_TYPE == "jwt":
             re_path(r"token/verify/?$", TokenVerifyView.as_view(), name="token_verify"),
             re_path(
                 r"token/refresh/?$",
-                RefreshViewWithCookieSupport().as_view(),
+                auth_kit_settings.JWT_REFRESH_VIEW.as_view(),
                 name="token_refresh",
             ),
         ]
