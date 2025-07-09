@@ -24,7 +24,7 @@ from allauth.account.utils import (  # pyright: ignore[reportMissingTypeStubs]
 
 from auth_kit.app_settings import auth_kit_settings
 from auth_kit.forms import AllAuthPasswordResetForm
-from auth_kit.utils import UserModel
+from auth_kit.utils import UserModel, convert_form_errors_to_drf
 
 
 class PasswordResetSerializer(serializers.Serializer[dict[str, Any]]):
@@ -146,7 +146,9 @@ class PasswordResetConfirmSerializer(serializers.Serializer[dict[str, Any]]):
             data=attrs,
         )
         if not self.set_password_form.is_valid():
-            raise serializers.ValidationError(str(self.set_password_form.errors))
+            raise serializers.ValidationError(
+                convert_form_errors_to_drf(self.set_password_form)
+            )
 
         return attrs
 
@@ -254,7 +256,9 @@ class PasswordChangeSerializer(serializers.Serializer[dict[str, Any]]):
 
         self.custom_validation(attrs)
         if not self.set_password_form.is_valid():
-            raise serializers.ValidationError(str(self.set_password_form.errors))
+            raise serializers.ValidationError(
+                convert_form_errors_to_drf(self.set_password_form)
+            )
         return attrs
 
     def save(self, **kwargs: Any) -> AbstractBaseUser:  # type: ignore[override]

@@ -18,8 +18,7 @@ from auth_kit.utils import UserModel
 class UserDetailsSerializer(serializers.ModelSerializer[AbstractBaseUser]):
     """User profile information and updates."""
 
-    @staticmethod
-    def validate_username(username: str) -> str:
+    def validate_username(self, username: str) -> str:
         """
         Validate and clean username using allauth adapter.
 
@@ -29,7 +28,13 @@ class UserDetailsSerializer(serializers.ModelSerializer[AbstractBaseUser]):
         Returns:
             Cleaned username
         """
-        username = get_adapter().clean_username(username)  # pyright: ignore
+
+        # Skip uniqueness validation if username belongs to current user
+        if self.instance and getattr(self.instance, "username", None) == username:
+            return username
+
+        # Use allauth adapter to validate uniqueness for new usernames
+        get_adapter().clean_username(username)
         return username
 
     class Meta:  # pyright: ignore[reportIncompatibleVariableOverride]

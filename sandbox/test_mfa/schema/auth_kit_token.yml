@@ -1088,6 +1088,12 @@ components:
           type: string
           writeOnly: true
           minLength: 1
+        first_name:
+          type: string
+          writeOnly: true
+        last_name:
+          type: string
+          writeOnly: true
       required:
       - email
       - password1

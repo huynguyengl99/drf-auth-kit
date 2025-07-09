@@ -273,6 +273,51 @@ class TestUserDetailsView(APITestCase):
         assert self.user.first_name == ""
         assert self.user.last_name == ""
 
+    def test_patch_with_same_username(self) -> None:
+        """Test PATCH with user's current username should succeed"""
+        self.client.force_authenticate(user=self.user)
+
+        # Try to update with same username (should not raise uniqueness error)
+        data = {
+            "username": "testuser",  # Same as current username
+            "first_name": "Updated",
+        }
+
+        response: Response = self.client.patch(self.url, data, format="json")
+
+        assert response.status_code == status.HTTP_200_OK
+        assert response.data["username"] == "testuser"
+        assert response.data["first_name"] == "Updated"
+
+        # Verify changes in database
+        self.user.refresh_from_db()
+        assert self.user.username == "testuser"
+        assert self.user.first_name == "Updated"
+
+    def test_put_with_same_username(self) -> None:
+        """Test PUT with user's current username should succeed"""
+        self.client.force_authenticate(user=self.user)
+
+        # Try to update with same username (should not raise uniqueness error)
+        data = {
+            "username": "testuser",  # Same as current username
+            "first_name": "Updated",
+            "last_name": "User",
+        }
+
+        response: Response = self.client.put(self.url, data, format="json")
+
+        assert response.status_code == status.HTTP_200_OK
+        assert response.data["username"] == "testuser"
+        assert response.data["first_name"] == "Updated"
+        assert response.data["last_name"] == "User"
+
+        # Verify changes in database
+        self.user.refresh_from_db()
+        assert self.user.username == "testuser"
+        assert self.user.first_name == "Updated"
+        assert self.user.last_name == "User"
+
 
 class TestUserDetailsViewEdgeCases(APITestCase):
     """Test edge cases for user details view"""

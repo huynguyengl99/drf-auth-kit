@@ -10,6 +10,7 @@ from typing import Any, TypeAlias, cast
 
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import User
+from django.forms import Form
 from django.urls import URLPattern, URLResolver
 from django.utils.decorators import method_decorator
 from django.views.decorators.debug import sensitive_post_parameters
@@ -75,3 +76,26 @@ def filter_excluded_urls(
 
 
 logger: structlog.stdlib.BoundLogger = structlog.get_logger("chanx")
+
+
+def convert_form_errors_to_drf(form: Form) -> dict[str, list[str]]:
+    """
+    Convert Django form errors to DRF-compatible format.
+
+    Args:
+        form: Django form instance with errors
+
+    Returns:
+        Dictionary with field names as keys and lists of error messages as values
+    """
+    errors = {}
+
+    # Convert field errors
+    for field_name, field_errors in form.errors.items():
+        if field_name == "__all__":
+            # Non-field errors go to "non_field_errors" key (DRF convention)
+            errors["non_field_errors"] = [str(error) for error in field_errors]
+        else:
+            errors[field_name] = [str(error) for error in field_errors]
+
+    return errors

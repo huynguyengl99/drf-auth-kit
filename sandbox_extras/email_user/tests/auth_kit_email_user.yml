@@ -289,14 +289,6 @@ paths:
         of username, first name, and last name. Email field is read-only for security.
       tags:
       - user
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/UserDetailsRequest'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/UserDetailsRequest'
       security:
       - JWTAuthentication: []
         JWTCookieAuthentication: []
@@ -313,14 +305,6 @@ paths:
         Only provided fields will be updated. Email field is read-only.
       tags:
       - user
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/PatchedUserDetailsRequest'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/PatchedUserDetailsRequest'
       security:
       - JWTAuthentication: []
         JWTCookieAuthentication: []
@@ -481,16 +465,6 @@ components:
           minLength: 1
       required:
       - email
-    PatchedUserDetailsRequest:
-      type: object
-      description: User profile information and updates.
-      properties:
-        first_name:
-          type: string
-          maxLength: 150
-        last_name:
-          type: string
-          maxLength: 150
     Register:
       type: object
       description: User registration with email verification.
@@ -559,22 +533,6 @@ components:
           format: email
           readOnly: true
           title: Email address
-        first_name:
-          type: string
-          maxLength: 150
-        last_name:
-          type: string
-          maxLength: 150
-    UserDetailsRequest:
-      type: object
-      description: User profile information and updates.
-      properties:
-        first_name:
-          type: string
-          maxLength: 150
-        last_name:
-          type: string
-          maxLength: 150
     VerifyEmail:
       type: object
       description: Email address verification with confirmation key.

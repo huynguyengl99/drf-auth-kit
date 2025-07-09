@@ -3,7 +3,11 @@ from __future__ import annotations
 from typing import TYPE_CHECKING, Any, ClassVar, TypeVar, cast
 
 from django.contrib import auth
-from django.contrib.auth.models import AbstractUser, BaseUserManager, Permission
+from django.contrib.auth.models import (
+    AbstractBaseUser,
+    BaseUserManager,
+    Permission,
+)
 from django.db import models
 from django.db.models import Model, QuerySet
 from django.db.models.expressions import Combinable
@@ -11,7 +15,7 @@ from django.db.models.expressions import Combinable
 if TYPE_CHECKING:
     from django.contrib.auth.backends import ModelBackend
 
-_T = TypeVar("_T", bound=AbstractUser)
+_T = TypeVar("_T", bound=AbstractBaseUser)
 
 
 class UserManager(BaseUserManager[_T]):
@@ -122,11 +126,22 @@ class UserManager(BaseUserManager[_T]):
         return self.none()
 
 
-class User(AbstractUser):
+class User(AbstractBaseUser):
     email = models.EmailField[str | Combinable, str](
         verbose_name="email address",
         max_length=255,
         unique=True,
+    )
+    is_staff = models.BooleanField(
+        "staff status",
+        default=False,
+    )
+    is_active = models.BooleanField(
+        "active",
+        default=True,
+    )
+    is_superuser = models.BooleanField(
+        default=False,
     )
     objects: ClassVar[UserManager[User]] = UserManager["User"]()  # type: ignore[assignment]
 

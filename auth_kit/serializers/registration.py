@@ -25,7 +25,7 @@ from allauth.account.utils import (  # pyright: ignore[reportMissingTypeStubs]
 )
 
 from auth_kit.serializer_fields import UnquoteStringField
-from auth_kit.utils import UserNameField
+from auth_kit.utils import UserModel, UserNameField
 
 
 class RegisterSerializer(serializers.Serializer[dict[str, Any]]):
@@ -37,6 +37,10 @@ class RegisterSerializer(serializers.Serializer[dict[str, Any]]):
     password1 = serializers.CharField(write_only=True)
     password2 = serializers.CharField(write_only=True)
     detail = serializers.CharField(read_only=True)
+    first_name = serializers.CharField(
+        write_only=True, required=False, allow_blank=True
+    )
+    last_name = serializers.CharField(write_only=True, required=False, allow_blank=True)
 
     def __init__(self, *args: Any, **kwargs: Any) -> None:
         """
@@ -55,6 +59,12 @@ class RegisterSerializer(serializers.Serializer[dict[str, Any]]):
         else:
             self.fields.pop("username")
             self.fields[UserNameField] = serializers.CharField(write_only=True)
+
+        if not hasattr(UserModel, "first_name"):
+            self.fields.pop("first_name")
+
+        if not hasattr(UserModel, "last_name"):
+            self.fields.pop("last_name")
 
     def validate_username(self, username: str) -> str:
         """

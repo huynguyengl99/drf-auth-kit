@@ -3,7 +3,7 @@ from django.urls import include, path
 from sandbox.test_utils.drf_spectacular_utils import assert_schema, generate_schema
 
 
-def test_auth_kit_knox_token():
+def test_email_user_schema() -> None:
     urlpatterns = [
         path("auth/", include("auth_kit.urls")),
     ]

@@ -279,32 +279,6 @@ class TestEmailOnlyAuthFlows(APITestCase):
         assert user_data["pk"] == user.pk
         assert "username" not in user_data  # Username should not be present
 
-    def test_user_profile_update(self) -> None:
-        """Test updating user profile for email-only user"""
-        user, _ = UserFactory.create_with_email_address(self.user_data)
-        user.first_name = "John"
-        user.last_name = "Doe"
-        user.save()
-
-        self.client.force_authenticate(user=user)
-
-        url = reverse("rest_user_details")
-        data = {
-            "first_name": "Jane",
-            "last_name": "Smith",
-        }
-
-        response: Response = self.client.patch(url, data, format="json")
-
-        assert response.status_code == status.HTTP_200_OK
-
-        # Verify changes
-        user.refresh_from_db()
-        assert user.first_name == "Jane"
-        assert user.last_name == "Smith"
-        assert response.data["first_name"] == "Jane"
-        assert response.data["last_name"] == "Smith"
-
     @override_auth_kit_settings(
         PASSWORD_RESET_CONFIRM_URL="https://myapp.com/reset-password"
     )
