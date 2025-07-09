@@ -13,7 +13,10 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.request import Request
 from rest_framework.response import Response
 
+from drf_spectacular.utils import extend_schema
+
 from auth_kit.social.serializers.connect import SocialConnectSerializer
+from auth_kit.social.social_api_descriptions import SOCIAL_CONNECT_DESCRIPTION
 
 
 class SocialConnectView(GenericAPIView[Any]):
@@ -35,6 +38,7 @@ class SocialConnectView(GenericAPIView[Any]):
         """
         return SocialConnectSerializer
 
+    @extend_schema(description=SOCIAL_CONNECT_DESCRIPTION)
     def post(self, request: Request, *args: Any, **kwargs: Any) -> Response:
         """
         Connect a social account to the current user's account.

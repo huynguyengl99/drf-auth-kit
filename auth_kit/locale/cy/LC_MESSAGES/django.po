@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DRF Auth Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-08 06:02+0000\n"
+"POT-Creation-Date: 2025-07-09 05:21+0000\n"
 "PO-Revision-Date: 2025-07-08 12:00+0000\n"
 "Last-Translator: DRF Auth Kit Team\n"
 "Language-Team: Welsh\n"
@@ -17,7 +17,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1) ? 0 : (n==2) ? 1 : (n != 8 && n != "
 "11) ? 2 : 3;\n"
-#: auth_kit/api_descriptions.py:25
+
+#: auth_kit/api_descriptions.py:29
 msgid ""
 "Returns user details along with JWT access and refresh tokens with "
 "expiration times."
@@ -25,68 +26,72 @@ msgstr ""
 "Dychwelyd manylion defnyddiwr ynghyd â thocynnau mynediad a adnewyddu JWT "
 "gydag amseroedd dod i ben."
 
-#: auth_kit/api_descriptions.py:29
+#: auth_kit/api_descriptions.py:33
 msgid ""
 "Returns user details along with a DRF authentication token for API access."
 msgstr ""
 "Dychwelyd manylion defnyddiwr ynghyd â thocyn dilysu DRF ar gyfer mynediad "
 "API."
 
-#: auth_kit/api_descriptions.py:32
+#: auth_kit/api_descriptions.py:36
 msgid "Returns user details along with custom authentication tokens."
 msgstr "Dychwelyd manylion defnyddiwr ynghyd â thocynnau dilysu personol."
 
-#: auth_kit/api_descriptions.py:38
+#: auth_kit/api_descriptions.py:42
 msgid "JWT access and refresh tokens"
 msgstr "Tocynnau mynediad a adnewyddu JWT"
 
-#: auth_kit/api_descriptions.py:40
+#: auth_kit/api_descriptions.py:44
 msgid "DRF authentication token"
 msgstr "Tocyn dilysu DRF"
 
-#: auth_kit/api_descriptions.py:42
+#: auth_kit/api_descriptions.py:46
 msgid "custom authentication tokens"
 msgstr "tocynnau dilysu personol"
 
-#: auth_kit/api_descriptions.py:49
+#: auth_kit/api_descriptions.py:53
 msgid "Authentication cookies are set automatically for secure token storage."
-msgstr "Mae cwcis dilysu yn cael eu gosod yn awtomatig ar gyfer storio tocynnau diogel."
+msgstr ""
+"Mae cwcis dilysu yn cael eu gosod yn awtomatig ar gyfer storio tocynnau "
+"diogel."
 
-#: auth_kit/api_descriptions.py:57
+#: auth_kit/api_descriptions.py:61
 msgid "Blacklists JWT refresh tokens to prevent further use."
 msgstr "Rhestr ddu tocynnau adnewyddu JWT i atal defnydd pellach."
 
-#: auth_kit/api_descriptions.py:59
+#: auth_kit/api_descriptions.py:63
 msgid "Deletes the DRF authentication token from the database."
 msgstr "Dileu'r tocyn dilysu DRF o'r gronfa ddata."
 
-#: auth_kit/api_descriptions.py:61
+#: auth_kit/api_descriptions.py:65
 msgid "Invalidates custom authentication tokens."
 msgstr "Dirymu tocynnau dilysu personol."
 
-#: auth_kit/api_descriptions.py:67
+#: auth_kit/api_descriptions.py:71
 msgid "Clears authentication cookies from the browser."
 msgstr "Clirio cwcis dilysu o'r porwr."
 
-#: auth_kit/api_descriptions.py:73
+#: auth_kit/api_descriptions.py:77
 msgid "Authenticate with username/email and password to obtain access tokens."
-msgstr "Dilysu gydag enw defnyddiwr/e-bost a chyfrinair i gael tocynnau mynediad."
+msgstr ""
+"Dilysu gydag enw defnyddiwr/e-bost a chyfrinair i gael tocynnau mynediad."
 
-#: auth_kit/api_descriptions.py:85
+#: auth_kit/api_descriptions.py:89
 msgid "Logout user and invalidate authentication tokens."
 msgstr "Allgofnodi defnyddiwr a dirymu tocynnau dilysu."
 
-#: auth_kit/api_descriptions.py:89
+#: auth_kit/api_descriptions.py:93
 msgid ""
 "Requires authentication to ensure only valid sessions can be logged out."
 msgstr ""
 "Angen dilysu i sicrhau y gall sesiynau dilys yn unig gael eu hallgofnodi."
 
-#: auth_kit/api_descriptions.py:100
-msgid "Generate new JWT access tokens using refresh tokens."
-msgstr "Cynhyrchu tocynnau mynediad JWT newydd gan ddefnyddio tocynnau adnewyddu."
-
 #: auth_kit/api_descriptions.py:104
+msgid "Generate new JWT access tokens using refresh tokens."
+msgstr ""
+"Cynhyrchu tocynnau mynediad JWT newydd gan ddefnyddio tocynnau adnewyddu."
+
+#: auth_kit/api_descriptions.py:108
 msgid ""
 "Refresh tokens can be provided in request data or extracted automatically "
 "from HTTP cookies."
@@ -94,23 +99,33 @@ msgstr ""
 "Gellir darparu tocynnau adnewyddu yn nata'r cais neu eu hechdynnu'n "
 "awtomatig o gwcis HTTP."
 
-#: auth_kit/api_descriptions.py:106 auth_kit/api_descriptions.py:116
+#: auth_kit/api_descriptions.py:110 auth_kit/api_descriptions.py:120
 msgid "Returns new access tokens with updated expiration times."
-msgstr "Dychwelyd tocynnau mynediad newydd gydag amseroedd dod i ben wedi'u diweddaru."
+msgstr ""
+"Dychwelyd tocynnau mynediad newydd gydag amseroedd dod i ben wedi'u "
+"diweddaru."
 
-#: auth_kit/api_descriptions.py:108
+#: auth_kit/api_descriptions.py:112
 msgid "New tokens are automatically set in HTTP cookies for secure storage."
-msgstr "Mae tocynnau newydd yn cael eu gosod yn awtomatig mewn cwcis HTTP ar gyfer storio diogel."
+msgstr ""
+"Mae tocynnau newydd yn cael eu gosod yn awtomatig mewn cwcis HTTP ar gyfer "
+"storio diogel."
 
-#: auth_kit/api_descriptions.py:115
+#: auth_kit/api_descriptions.py:119
 msgid "Refresh tokens must be provided in the request data."
 msgstr "Rhaid darparu tocynnau adnewyddu yn nata'r cais."
 
-#: auth_kit/api_descriptions.py:122
+#: auth_kit/api_descriptions.py:127
 msgid "Register a new user account."
 msgstr "Cofrestru cyfrif defnyddiwr newydd."
 
-#: auth_kit/api_descriptions.py:126
+#: auth_kit/api_descriptions.py:134
+msgid ""
+"Users must verify their email address before the account is fully activated."
+msgstr ""
+"Rhaid i ddefnyddwyr wirio eu cyfeiriad e-bost cyn i'r cyfrif gael ei actifadu'n llawn."
+
+#: auth_kit/api_descriptions.py:143
 msgid ""
 "Send password reset instructions to the provided email address. If the email "
 "is registered, a secure reset link will be sent. The link expires after a "
@@ -120,30 +135,30 @@ msgstr ""
 "yw'r e-bost wedi'i gofrestru, anfonir dolen ailosod ddiogel. Mae'r ddolen yn "
 "dod i ben ar ôl amser cyfyngedig ar gyfer diogelwch."
 
-#: auth_kit/api_descriptions.py:132
+#: auth_kit/api_descriptions.py:149
 msgid ""
 "Complete the password reset process using the token from the reset email. "
 "Requires the UID and token from the email along with the new password. The "
 "token is single-use and expires for security."
 msgstr ""
-"Cwblhau'r broses ailosod cyfrinair gan ddefnyddio'r tocyn o'r e-bost ailosod. "
-"Angen yr UID a'r tocyn o'r e-bost ynghyd â'r cyfrinair newydd. Mae'r tocyn "
-"yn defnydd-unwaith ac yn dod i ben ar gyfer diogelwch."
+"Cwblhau'r broses ailosod cyfrinair gan ddefnyddio'r tocyn o'r e-bost "
+"ailosod. Angen yr UID a'r tocyn o'r e-bost ynghyd â'r cyfrinair newydd. "
+"Mae'r tocyn yn defnydd-unwaith ac yn dod i ben ar gyfer diogelwch."
 
-#: auth_kit/api_descriptions.py:138
+#: auth_kit/api_descriptions.py:155
 msgid "Change the current user's password. Requires authentication. "
 msgstr "Newid cyfrinair y defnyddiwr cyfredol. Angen dilysu. "
 
-#: auth_kit/api_descriptions.py:142
+#: auth_kit/api_descriptions.py:159
 msgid ""
 "Confirm email address using the verification key sent via email. This "
 "activates the user account and allows login access."
 msgstr ""
-"Cadarnhau cyfeiriad e-bost gan ddefnyddio'r allwedd wirio a anfonwyd trwy "
-"e-bost. Mae hyn yn actifadu'r cyfrif defnyddiwr ac yn caniatáu mynediad "
+"Cadarnhau cyfeiriad e-bost gan ddefnyddio'r allwedd wirio a anfonwyd trwy e-"
+"bost. Mae hyn yn actifadu'r cyfrif defnyddiwr ac yn caniatáu mynediad "
 "mewngofnodi."
 
-#: auth_kit/api_descriptions.py:147
+#: auth_kit/api_descriptions.py:164
 msgid ""
 "Send a new email verification message to unverified email addresses. Only "
 "works for email addresses that are registered but not yet verified."
@@ -152,7 +167,7 @@ msgstr ""
 "yn gweithio ar gyfer cyfeiriadau e-bost sydd wedi'u cofrestru ond heb eu "
 "gwirio eto."
 
-#: auth_kit/api_descriptions.py:152
+#: auth_kit/api_descriptions.py:169
 msgid ""
 "Retrieve the authenticated user's profile information including username, "
 "email, first name, and last name. Password fields are excluded."
@@ -161,7 +176,7 @@ msgstr ""
 "defnyddiwr, e-bost, enw cyntaf, a chyfenw. Mae meysydd cyfrinair wedi'u "
 "heithrio."
 
-#: auth_kit/api_descriptions.py:157
+#: auth_kit/api_descriptions.py:174
 msgid ""
 "Update the authenticated user's profile information. Allows modification of "
 "username, first name, and last name. Email field is read-only for security."
@@ -170,7 +185,7 @@ msgstr ""
 "defnyddiwr, enw cyntaf, a chyfenw. Mae'r maes e-bost yn ddarllen-yn-unig ar "
 "gyfer diogelwch."
 
-#: auth_kit/api_descriptions.py:163
+#: auth_kit/api_descriptions.py:180
 msgid ""
 "Partially update the authenticated user's profile information. Only provided "
 "fields will be updated. Email field is read-only."
@@ -201,8 +216,8 @@ msgid ""
 "First step of MFA-enabled authentication. Validates credentials and "
 "initiates MFA flow."
 msgstr ""
-"Cam cyntaf dilysiad â MFA wedi'i alluogi. Dilysu cymwysterau a chychwyn "
-"llif MFA."
+"Cam cyntaf dilysiad â MFA wedi'i alluogi. Dilysu cymwysterau a chychwyn llif "
+"MFA."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:41
 #, python-format
@@ -216,8 +231,7 @@ msgstr ""
 #: auth_kit/mfa/mfa_api_descriptions.py:51
 msgid ""
 "Complete MFA authentication using verification code and ephemeral token."
-msgstr ""
-"Cwblhau dilysiad MFA gan ddefnyddio cod gwirio a thocyn dros dro."
+msgstr "Cwblhau dilysiad MFA gan ddefnyddio cod gwirio a thocyn dros dro."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:56
 msgid "Supports both TOTP codes and backup codes for verification."
@@ -261,8 +275,8 @@ msgid ""
 "must be confirmed before activation."
 msgstr ""
 "Cychwyn gosod dull MFA newydd. Creu'r dull gyda chodau wrth gefn a dychwelyd "
-"cyfarwyddiadau gosod (e.e., cod QR ar gyfer apiau dilysydd). Rhaid cadarnhau'r "
-"dull cyn ei actifadu."
+"cyfarwyddiadau gosod (e.e., cod QR ar gyfer apiau dilysydd). Rhaid "
+"cadarnhau'r dull cyn ei actifadu."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:107
 msgid ""
@@ -359,9 +373,23 @@ msgstr "Dull MFA"
 msgid "MFA Methods"
 msgstr "Dulliau MFA"
 
+#: auth_kit/mfa/serializers/login_factors.py:153
+msgid "Invalid code"
+msgstr "Cod annilys"
+
+#: auth_kit/mfa/serializers/login_factors.py:172
+#: auth_kit/mfa/serializers/login_factors.py:226
+#: auth_kit/mfa/serializers/login_factors.py:272
+msgid "Invalid token"
+msgstr "Tocyn annilys"
+
 #: auth_kit/mfa/serializers/login_factors.py:230
 msgid "Please select a new method"
 msgstr "Dewiswch ddull newydd"
+
+#: auth_kit/mfa/serializers/mfa.py:76
+msgid "This method is already exists"
+msgstr "Mae'r dull hwn eisoes yn bodoli"
 
 #: auth_kit/mfa/serializers/mfa.py:145 auth_kit/mfa/serializers/mfa.py:200
 #: auth_kit/mfa/serializers/mfa.py:345
@@ -442,7 +470,8 @@ msgstr "Nid oedd y ddau faes cyfrinair yn cydweddu."
 
 #: auth_kit/social/serializers/connect.py:55
 msgid "Social account email must match your current account email."
-msgstr "Rhaid i e-bost cyfrif cymdeithasol gydweddu â'ch e-bost cyfrif cyfredol."
+msgstr ""
+"Rhaid i e-bost cyfrif cymdeithasol gydweddu â'ch e-bost cyfrif cyfredol."
 
 #: auth_kit/social/serializers/connect.py:98
 msgid "Connected"
@@ -460,7 +489,61 @@ msgstr "Mae defnyddiwr eisoes wedi'i gofrestru gyda'r cyfeiriad e-bost hwn."
 msgid "Failed to exchange code for access token"
 msgstr "Methu cyfnewid cod am docyn mynediad"
 
-#: auth_kit/social/views/login.py:50
+#: auth_kit/social/social_api_descriptions.py:29
+#, python-format
+msgid ""
+"Authenticate with %(provider)s using OAuth2/OpenID Connect authorization "
+"code to obtain access tokens."
+msgstr ""
+"Dilysu gyda %(provider)s gan ddefnyddio cod awdurdodi OAuth2/OpenID Connect "
+"i gael tocynnau mynediad."
+
+#: auth_kit/social/social_api_descriptions.py:51
+#, python-format
+msgid ""
+"Connect a %(provider)s account to the current user's account. This allows "
+"the user to login using their existing %(provider)s account in the future."
+msgstr ""
+"Cysylltu cyfrif %(provider)s i gyfrif y defnyddiwr cyfredol. Mae hyn yn caniatáu "
+"i'r defnyddiwr fewngofnodi gan ddefnyddio eu cyfrif %(provider)s presennol yn y dyfodol."
+
+#: auth_kit/social/social_api_descriptions.py:56
+#, python-format
+msgid ""
+"Requires authentication and a valid OAuth2/OpenID Connect authorization code "
+"from %(provider)s."
+msgstr ""
+"Angen dilysu a chod awdurdodi OAuth2/OpenID Connect dilys "
+"o %(provider)s."
+
+#: auth_kit/social/social_api_descriptions.py:60
+#, python-format
+msgid ""
+"On success, the %(provider)s account is linked and can be used for future "
+"logins."
+msgstr ""
+"Ar lwyddiant, mae'r cyfrif %(provider)s wedi'i gysylltu a gellir ei ddefnyddio "
+"ar gyfer mewngofnodi yn y dyfodol."
+
+#: auth_kit/social/social_api_descriptions.py:73
+msgid ""
+"List all social accounts connected to the current user. Shows account "
+"details including provider, UID, and connection dates."
+msgstr ""
+"Rhestr o'r holl gyfrifon cymdeithasol wedi'u cysylltu i'r defnyddiwr cyfredol. "
+"Dangos manylion cyfrif gan gynnwys darparwr, UID, a dyddiadau cysylltu."
+
+#: auth_kit/social/social_api_descriptions.py:78
+msgid ""
+"Disconnect a social account from the current user. Removes the social "
+"account connection and prevents future logins via that provider. Requires "
+"authentication and the account must belong to the current user."
+msgstr ""
+"Datgysylltu cyfrif cymdeithasol oddi wrth y defnyddiwr cyfredol. Tynnu'r "
+"cysylltiad cyfrif cymdeithasol ac atal mewngofnodi yn y dyfodol trwy'r darparwr hwnnw. "
+"Angen dilysu a rhaid i'r cyfrif berthyn i'r defnyddiwr cyfredol."
+
+#: auth_kit/social/views/login.py:58
 msgid "adapter_class is not defined"
 msgstr "Nid yw adapter_class wedi'i ddiffinio"
 
@@ -492,15 +575,15 @@ msgstr "Mae'r cyfrinair wedi'i ailosod gyda'r cyfrinair newydd."
 msgid "New password has been saved."
 msgstr "Mae'r cyfrinair newydd wedi'i gadw."
 
-#: auth_kit/views/registration.py:142
+#: auth_kit/views/registration.py:143
 msgid "Verification e-mail sent."
 msgstr "E-bost gwirio wedi'i anfon."
 
-#: auth_kit/views/registration.py:143
+#: auth_kit/views/registration.py:144
 msgid "Successfully registered."
 msgstr "Wedi cofrestru'n llwyddiannus."
 
-#: auth_kit/views/registration.py:223 auth_kit/views/registration.py:268
+#: auth_kit/views/registration.py:224 auth_kit/views/registration.py:269
 msgid "ok"
 msgstr "iawn"
 

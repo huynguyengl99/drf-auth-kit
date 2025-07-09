@@ -150,7 +150,7 @@ class MFASecondStepRequestSerializer(serializers.Serializer[dict[str, Any]]):
         handler = MFAHandlerRegistry.get_handler(mfa_method)
         is_code_valid = handler.validate_code(code)
         if not is_code_valid:
-            raise ValidationError("Invalid code")
+            raise ValidationError(_("Invalid code"))
 
     def validate(self, attrs: dict[str, Any]) -> dict[str, Any]:
         """
@@ -169,7 +169,7 @@ class MFASecondStepRequestSerializer(serializers.Serializer[dict[str, Any]]):
         user_and_method = ephemeral_token_service.check_token(token=ephemeral_token)
 
         if not user_and_method:
-            raise ValidationError("Invalid token")
+            raise ValidationError(_("Invalid token"))
 
         user, method_name = user_and_method
 
@@ -223,7 +223,7 @@ class MFAChangeMethodSerializer(serializers.Serializer[MFAChangeMethodAttrs]):
         user_and_method = ephemeral_token_service.check_token(token=ephemeral_token)
 
         if not user_and_method:
-            raise ValidationError("Invalid token")
+            raise ValidationError(_("Invalid token"))
 
         user, method_name = user_and_method
         if method_name == attrs["new_method"]:
@@ -269,7 +269,7 @@ class MFAResendSerializer(serializers.Serializer[dict[str, Any]]):
         user_and_method = ephemeral_token_service.check_token(token=ephemeral_token)
 
         if not user_and_method:
-            raise ValidationError("Invalid token")
+            raise ValidationError(_("Invalid token"))
 
         user, method_name = user_and_method
         mfa_method = auth_kit_mfa_settings.MFA_MODEL.objects.get_by_name(

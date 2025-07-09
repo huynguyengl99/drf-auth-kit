@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DRF Auth Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-08 06:02+0000\n"
+"POT-Creation-Date: 2025-07-09 05:21+0000\n"
 "PO-Revision-Date: 2025-07-08 06:02+0000\n"
 "Last-Translator: DRF Auth Kit Team\n"
 "Language-Team: Catalan\n"
@@ -16,7 +16,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-#: auth_kit/api_descriptions.py:25
+
+#: auth_kit/api_descriptions.py:29
 msgid ""
 "Returns user details along with JWT access and refresh tokens with "
 "expiration times."
@@ -24,92 +25,111 @@ msgstr ""
 "Retorna els detalls de l'usuari juntament amb els tokens JWT d'accés i "
 "actualització amb temps d'expiració."
 
-#: auth_kit/api_descriptions.py:29
+#: auth_kit/api_descriptions.py:33
 msgid ""
 "Returns user details along with a DRF authentication token for API access."
 msgstr ""
 "Retorna els detalls de l'usuari juntament amb un token d'autenticació DRF "
 "per a l'accés a l'API."
 
-#: auth_kit/api_descriptions.py:32
+#: auth_kit/api_descriptions.py:36
 msgid "Returns user details along with custom authentication tokens."
-msgstr "Retorna els detalls de l'usuari juntament amb tokens d'autenticació personalitzats."
+msgstr ""
+"Retorna els detalls de l'usuari juntament amb tokens d'autenticació "
+"personalitzats."
 
-#: auth_kit/api_descriptions.py:38
+#: auth_kit/api_descriptions.py:42
 msgid "JWT access and refresh tokens"
 msgstr "Tokens JWT d'accés i actualització"
 
-#: auth_kit/api_descriptions.py:40
+#: auth_kit/api_descriptions.py:44
 msgid "DRF authentication token"
 msgstr "Token d'autenticació DRF"
 
-#: auth_kit/api_descriptions.py:42
+#: auth_kit/api_descriptions.py:46
 msgid "custom authentication tokens"
 msgstr "tokens d'autenticació personalitzats"
 
-#: auth_kit/api_descriptions.py:49
+#: auth_kit/api_descriptions.py:53
 msgid "Authentication cookies are set automatically for secure token storage."
-msgstr "Les galetes d'autenticació es configuren automàticament per a l'emmagatzematge segur de tokens."
+msgstr ""
+"Les galetes d'autenticació es configuren automàticament per a "
+"l'emmagatzematge segur de tokens."
 
-#: auth_kit/api_descriptions.py:57
+#: auth_kit/api_descriptions.py:61
 msgid "Blacklists JWT refresh tokens to prevent further use."
-msgstr "Afegeix els tokens JWT d'actualització a la llista negra per evitar el seu ús posterior."
+msgstr ""
+"Afegeix els tokens JWT d'actualització a la llista negra per evitar el seu "
+"ús posterior."
 
-#: auth_kit/api_descriptions.py:59
+#: auth_kit/api_descriptions.py:63
 msgid "Deletes the DRF authentication token from the database."
 msgstr "Elimina el token d'autenticació DRF de la base de dades."
 
-#: auth_kit/api_descriptions.py:61
+#: auth_kit/api_descriptions.py:65
 msgid "Invalidates custom authentication tokens."
 msgstr "Invalida els tokens d'autenticació personalitzats."
 
-#: auth_kit/api_descriptions.py:67
+#: auth_kit/api_descriptions.py:71
 msgid "Clears authentication cookies from the browser."
 msgstr "Neteja les galetes d'autenticació del navegador."
 
-#: auth_kit/api_descriptions.py:73
+#: auth_kit/api_descriptions.py:77
 msgid "Authenticate with username/email and password to obtain access tokens."
-msgstr "Autentica amb nom d'usuari/correu electrònic i contrasenya per obtenir tokens d'accés."
+msgstr ""
+"Autentica amb nom d'usuari/correu electrònic i contrasenya per obtenir "
+"tokens d'accés."
 
-#: auth_kit/api_descriptions.py:85
+#: auth_kit/api_descriptions.py:89
 msgid "Logout user and invalidate authentication tokens."
 msgstr "Tanca la sessió de l'usuari i invalida els tokens d'autenticació."
 
-#: auth_kit/api_descriptions.py:89
+#: auth_kit/api_descriptions.py:93
 msgid ""
 "Requires authentication to ensure only valid sessions can be logged out."
 msgstr ""
-"Requereix autenticació per assegurar que només es poden tancar sessions vàlides."
+"Requereix autenticació per assegurar que només es poden tancar sessions "
+"vàlides."
 
-#: auth_kit/api_descriptions.py:100
+#: auth_kit/api_descriptions.py:104
 msgid "Generate new JWT access tokens using refresh tokens."
 msgstr "Genera nous tokens JWT d'accés utilitzant tokens d'actualització."
 
-#: auth_kit/api_descriptions.py:104
+#: auth_kit/api_descriptions.py:108
 msgid ""
 "Refresh tokens can be provided in request data or extracted automatically "
 "from HTTP cookies."
 msgstr ""
-"Els tokens d'actualització es poden proporcionar en les dades de la "
-"petició o extreure automàticament des de les galetes HTTP."
+"Els tokens d'actualització es poden proporcionar en les dades de la petició "
+"o extreure automàticament des de les galetes HTTP."
 
-#: auth_kit/api_descriptions.py:106 auth_kit/api_descriptions.py:116
+#: auth_kit/api_descriptions.py:110 auth_kit/api_descriptions.py:120
 msgid "Returns new access tokens with updated expiration times."
 msgstr "Retorna nous tokens d'accés amb temps d'expiració actualitzats."
 
-#: auth_kit/api_descriptions.py:108
+#: auth_kit/api_descriptions.py:112
 msgid "New tokens are automatically set in HTTP cookies for secure storage."
-msgstr "Els nous tokens es configuren automàticament en galetes HTTP per a l'emmagatzematge segur."
+msgstr ""
+"Els nous tokens es configuren automàticament en galetes HTTP per a "
+"l'emmagatzematge segur."
 
-#: auth_kit/api_descriptions.py:115
+#: auth_kit/api_descriptions.py:119
 msgid "Refresh tokens must be provided in the request data."
-msgstr "Els tokens d'actualització s'han de proporcionar en les dades de la petició."
+msgstr ""
+"Els tokens d'actualització s'han de proporcionar en les dades de la petició."
 
-#: auth_kit/api_descriptions.py:122
+#: auth_kit/api_descriptions.py:127
 msgid "Register a new user account."
 msgstr "Registra un nou compte d'usuari."
 
-#: auth_kit/api_descriptions.py:126
+#: auth_kit/api_descriptions.py:134
+msgid ""
+"Users must verify their email address before the account is fully activated."
+msgstr ""
+"Els usuaris han de verificar la seva adreça de correu electrònic abans que "
+"el compte estigui completament activat."
+
+#: auth_kit/api_descriptions.py:143
 msgid ""
 "Send password reset instructions to the provided email address. If the email "
 "is registered, a secure reset link will be sent. The link expires after a "
@@ -119,7 +139,7 @@ msgstr ""
 "proporcionada. Si el correu està registrat, s'enviarà un enllaç segur de "
 "restabliment. L'enllaç expira després d'un temps limitat per seguretat."
 
-#: auth_kit/api_descriptions.py:132
+#: auth_kit/api_descriptions.py:149
 msgid ""
 "Complete the password reset process using the token from the reset email. "
 "Requires the UID and token from the email along with the new password. The "
@@ -129,49 +149,54 @@ msgstr ""
 "correu de restabliment. Requereix l'UID i el token del correu juntament amb "
 "la nova contrasenya. El token és d'un sol ús i expira per seguretat."
 
-#: auth_kit/api_descriptions.py:138
+#: auth_kit/api_descriptions.py:155
 msgid "Change the current user's password. Requires authentication. "
 msgstr "Canvia la contrasenya de l'usuari actual. Requereix autenticació. "
 
-#: auth_kit/api_descriptions.py:142
+#: auth_kit/api_descriptions.py:159
 msgid ""
 "Confirm email address using the verification key sent via email. This "
 "activates the user account and allows login access."
 msgstr ""
 "Confirma l'adreça de correu electrònic utilitzant la clau de verificació "
-"enviada per correu. Això activa el compte d'usuari i permet l'accés d'inici de sessió."
+"enviada per correu. Això activa el compte d'usuari i permet l'accés d'inici "
+"de sessió."
 
-#: auth_kit/api_descriptions.py:147
+#: auth_kit/api_descriptions.py:164
 msgid ""
 "Send a new email verification message to unverified email addresses. Only "
 "works for email addresses that are registered but not yet verified."
 msgstr ""
 "Envia un nou missatge de verificació de correu a adreces de correu no "
-"verificades. Només funciona per a adreces de correu registrades però encara no verificades."
+"verificades. Només funciona per a adreces de correu registrades però encara "
+"no verificades."
 
-#: auth_kit/api_descriptions.py:152
+#: auth_kit/api_descriptions.py:169
 msgid ""
 "Retrieve the authenticated user's profile information including username, "
 "email, first name, and last name. Password fields are excluded."
 msgstr ""
-"Recupera la informació del perfil de l'usuari autenticat incloent nom d'usuari, "
-"correu electrònic, nom i cognoms. Els camps de contrasenya s'exclouen."
+"Recupera la informació del perfil de l'usuari autenticat incloent nom "
+"d'usuari, correu electrònic, nom i cognoms. Els camps de contrasenya "
+"s'exclouen."
 
-#: auth_kit/api_descriptions.py:157
+#: auth_kit/api_descriptions.py:174
 msgid ""
 "Update the authenticated user's profile information. Allows modification of "
 "username, first name, and last name. Email field is read-only for security."
 msgstr ""
 "Actualitza la informació del perfil de l'usuari autenticat. Permet la "
-"modificació del nom d'usuari, nom i cognoms. El camp de correu és només de lectura per seguretat."
+"modificació del nom d'usuari, nom i cognoms. El camp de correu és només de "
+"lectura per seguretat."
 
-#: auth_kit/api_descriptions.py:163
+#: auth_kit/api_descriptions.py:180
 msgid ""
 "Partially update the authenticated user's profile information. Only provided "
 "fields will be updated. Email field is read-only."
 msgstr ""
 "Actualitza parcialment la informació del perfil de l'usuari autenticat. "
-"Només s'actualitzaran els camps proporcionats. El camp de correu és només de lectura."
+"Només s'actualitzaran els camps proporcionats. El camp de correu és només de "
+"lectura."
 
 #: auth_kit/forms.py:78
 msgid "The email address is not assigned to any user account."
@@ -211,11 +236,13 @@ msgstr ""
 msgid ""
 "Complete MFA authentication using verification code and ephemeral token."
 msgstr ""
-"Completa l'autenticació MFA utilitzant el codi de verificació i el token efímer."
+"Completa l'autenticació MFA utilitzant el codi de verificació i el token "
+"efímer."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:56
 msgid "Supports both TOTP codes and backup codes for verification."
-msgstr "Suporta tant codis TOTP com codis de còpia de seguretat per a la verificació."
+msgstr ""
+"Suporta tant codis TOTP com codis de còpia de seguretat per a la verificació."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:68
 msgid "Switch to a different MFA method during authentication flow."
@@ -233,11 +260,14 @@ msgstr "El nou token efímer expira en %(seconds)s segons."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:81
 msgid "Resend MFA verification code using existing ephemeral token."
-msgstr "Reenvia el codi de verificació MFA utilitzant el token efímer existent."
+msgstr ""
+"Reenvia el codi de verificació MFA utilitzant el token efímer existent."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:84
 msgid "Only applicable for methods that require code dispatch (e.g., email)."
-msgstr "Només aplicable per a mètodes que requereixen enviament de codi (per exemple, correu)."
+msgstr ""
+"Només aplicable per a mètodes que requereixen enviament de codi (per "
+"exemple, correu)."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:96
 msgid ""
@@ -245,7 +275,8 @@ msgid ""
 "which methods are configured, active, and set as primary."
 msgstr ""
 "Llista tots els mètodes MFA disponibles amb el seu estat de configuració i "
-"activació. Mostra quins mètodes estan configurats, actius i establerts com a primaris."
+"activació. Mostra quins mètodes estan configurats, actius i establerts com a "
+"primaris."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:101
 msgid ""
@@ -254,7 +285,9 @@ msgid ""
 "must be confirmed before activation."
 msgstr ""
 "Inicialitza la configuració d'un nou mètode MFA. Crea el mètode amb codis de "
-"còpia de seguretat i retorna instruccions de configuració (per exemple, codi QR per a aplicacions d'autenticació). El mètode s'ha de confirmar abans de l'activació."
+"còpia de seguretat i retorna instruccions de configuració (per exemple, codi "
+"QR per a aplicacions d'autenticació). El mètode s'ha de confirmar abans de "
+"l'activació."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:107
 msgid ""
@@ -263,7 +296,9 @@ msgid ""
 "Required before the method can be used for authentication."
 msgstr ""
 "Confirma i activa un mètode MFA recentment creat utilitzant el codi de "
-"verificació. S'estableix automàticament com a mètode primari si no existeix cap altre mètode primari. Requerit abans que el mètode pugui ser utilitzat per a l'autenticació."
+"verificació. S'estableix automàticament com a mètode primari si no existeix "
+"cap altre mètode primari. Requerit abans que el mètode pugui ser utilitzat "
+"per a l'autenticació."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:113
 msgid ""
@@ -272,7 +307,8 @@ msgid ""
 "first."
 msgstr ""
 "Desactiva un mètode MFA actiu. Requereix codi de verificació del mateix "
-"mètode. No es poden desactivar mètodes primaris - estableix primer un altre mètode com a primari."
+"mètode. No es poden desactivar mètodes primaris - estableix primer un altre "
+"mètode com a primari."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:121
 msgid ""
@@ -350,9 +386,23 @@ msgstr "Mètode MFA"
 msgid "MFA Methods"
 msgstr "Mètodes MFA"
 
+#: auth_kit/mfa/serializers/login_factors.py:153
+msgid "Invalid code"
+msgstr "Codi invàlid"
+
+#: auth_kit/mfa/serializers/login_factors.py:172
+#: auth_kit/mfa/serializers/login_factors.py:226
+#: auth_kit/mfa/serializers/login_factors.py:272
+msgid "Invalid token"
+msgstr "Token invàlid"
+
 #: auth_kit/mfa/serializers/login_factors.py:230
 msgid "Please select a new method"
 msgstr "Si us plau, selecciona un nou mètode"
+
+#: auth_kit/mfa/serializers/mfa.py:76
+msgid "This method is already exists"
+msgstr "Aquest mètode ja existeix"
 
 #: auth_kit/mfa/serializers/mfa.py:145 auth_kit/mfa/serializers/mfa.py:200
 #: auth_kit/mfa/serializers/mfa.py:345
@@ -421,7 +471,9 @@ msgstr "Valor invàlid"
 
 #: auth_kit/serializers/password.py:220
 msgid "Your old password was entered incorrectly. Please enter it again."
-msgstr "La teva contrasenya anterior s'ha introduït incorrectament. Si us plau, introdueix-la de nou."
+msgstr ""
+"La teva contrasenya anterior s'ha introduït incorrectament. Si us plau, "
+"introdueix-la de nou."
 
 #: auth_kit/serializers/registration.py:88
 msgid "A user is already registered with this e-mail address."
@@ -433,7 +485,9 @@ msgstr "Els dos camps de contrasenya no coincideixen."
 
 #: auth_kit/social/serializers/connect.py:55
 msgid "Social account email must match your current account email."
-msgstr "El correu del compte social ha de coincidir amb el correu del teu compte actual."
+msgstr ""
+"El correu del compte social ha de coincidir amb el correu del teu compte "
+"actual."
 
 #: auth_kit/social/serializers/connect.py:98
 msgid "Connected"
@@ -451,7 +505,61 @@ msgstr "L'usuari ja està registrat amb aquesta adreça de correu electrònic."
 msgid "Failed to exchange code for access token"
 msgstr "Ha fallat l'intercanvi de codi per token d'accés"
 
-#: auth_kit/social/views/login.py:50
+#: auth_kit/social/social_api_descriptions.py:29
+#, python-format
+msgid ""
+"Authenticate with %(provider)s using OAuth2/OpenID Connect authorization "
+"code to obtain access tokens."
+msgstr ""
+"Autentica amb %(provider)s utilitzant el codi d'autorització OAuth2/OpenID "
+"Connect per obtenir tokens d'accés."
+
+#: auth_kit/social/social_api_descriptions.py:51
+#, python-format
+msgid ""
+"Connect a %(provider)s account to the current user's account. This allows "
+"the user to login using their existing %(provider)s account in the future."
+msgstr ""
+"Connecta un compte %(provider)s al compte de l'usuari actual. Això permet "
+"a l'usuari iniciar sessió utilitzant el seu compte %(provider)s existent en el futur."
+
+#: auth_kit/social/social_api_descriptions.py:56
+#, python-format
+msgid ""
+"Requires authentication and a valid OAuth2/OpenID Connect authorization code "
+"from %(provider)s."
+msgstr ""
+"Requereix autenticació i un codi d'autorització OAuth2/OpenID Connect vàlid "
+"de %(provider)s."
+
+#: auth_kit/social/social_api_descriptions.py:60
+#, python-format
+msgid ""
+"On success, the %(provider)s account is linked and can be used for future "
+"logins."
+msgstr ""
+"En cas d'èxit, el compte %(provider)s es vincula i es pot utilitzar per a "
+"futurs inicis de sessió."
+
+#: auth_kit/social/social_api_descriptions.py:73
+msgid ""
+"List all social accounts connected to the current user. Shows account "
+"details including provider, UID, and connection dates."
+msgstr ""
+"Llista tots els comptes socials connectats a l'usuari actual. Mostra els "
+"detalls del compte incloent proveïdor, UID i dates de connexió."
+
+#: auth_kit/social/social_api_descriptions.py:78
+msgid ""
+"Disconnect a social account from the current user. Removes the social "
+"account connection and prevents future logins via that provider. Requires "
+"authentication and the account must belong to the current user."
+msgstr ""
+"Desconnecta un compte social de l'usuari actual. Elimina la connexió del "
+"compte social i impedeix futurs inicis de sessió a través d'aquest proveïdor. "
+"Requereix autenticació i el compte ha de pertànyer a l'usuari actual."
+
+#: auth_kit/social/views/login.py:58
 msgid "adapter_class is not defined"
 msgstr "adapter_class no està definida"
 
@@ -483,15 +591,15 @@ msgstr "La contrasenya s'ha restablert amb la nova contrasenya."
 msgid "New password has been saved."
 msgstr "La nova contrasenya s'ha desat."
 
-#: auth_kit/views/registration.py:142
+#: auth_kit/views/registration.py:143
 msgid "Verification e-mail sent."
 msgstr "Correu de verificació enviat."
 
-#: auth_kit/views/registration.py:143
+#: auth_kit/views/registration.py:144
 msgid "Successfully registered."
 msgstr "Registrat correctament."
 
-#: auth_kit/views/registration.py:223 auth_kit/views/registration.py:268
+#: auth_kit/views/registration.py:224 auth_kit/views/registration.py:269
 msgid "ok"
 msgstr "d'acord"
 

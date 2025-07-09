@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DRF Auth Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-08 06:02+0000\n"
+"POT-Creation-Date: 2025-07-09 05:21+0000\n"
 "PO-Revision-Date: 2025-07-09 00:00+0000\n"
 "Last-Translator: DRF Auth Kit Team\n"
 "Language-Team: Arabic\n"
@@ -17,161 +17,167 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
-#: auth_kit/api_descriptions.py:25
-msgid ""
-"Returns user details along with JWT access and refresh tokens with "
-"expiration times."
-msgstr ""
-"يعيد تفاصيل المستخدم مع رموز الوصول والتحديث JWT مع "
-"أوقات الانتهاء."
 
 #: auth_kit/api_descriptions.py:29
 msgid ""
-"Returns user details along with a DRF authentication token for API access."
-msgstr ""
-"يعيد تفاصيل المستخدم مع رمز مصادقة DRF للوصول إلى API."
+"Returns user details along with JWT access and refresh tokens with "
+"expiration times."
+msgstr "يعيد تفاصيل المستخدم مع رموز الوصول والتحديث JWT مع أوقات الانتهاء."
 
-#: auth_kit/api_descriptions.py:32
+#: auth_kit/api_descriptions.py:33
+msgid ""
+"Returns user details along with a DRF authentication token for API access."
+msgstr "يعيد تفاصيل المستخدم مع رمز مصادقة DRF للوصول إلى API."
+
+#: auth_kit/api_descriptions.py:36
 msgid "Returns user details along with custom authentication tokens."
 msgstr "يعيد تفاصيل المستخدم مع رموز المصادقة المخصصة."
 
-#: auth_kit/api_descriptions.py:38
+#: auth_kit/api_descriptions.py:42
 msgid "JWT access and refresh tokens"
 msgstr "رموز الوصول والتحديث JWT"
 
-#: auth_kit/api_descriptions.py:40
+#: auth_kit/api_descriptions.py:44
 msgid "DRF authentication token"
 msgstr "رمز مصادقة DRF"
 
-#: auth_kit/api_descriptions.py:42
+#: auth_kit/api_descriptions.py:46
 msgid "custom authentication tokens"
 msgstr "رموز المصادقة المخصصة"
 
-#: auth_kit/api_descriptions.py:49
+#: auth_kit/api_descriptions.py:53
 msgid "Authentication cookies are set automatically for secure token storage."
 msgstr "يتم تعيين ملفات تعريف الارتباط تلقائياً لتخزين آمن للرموز."
 
-#: auth_kit/api_descriptions.py:57
+#: auth_kit/api_descriptions.py:61
 msgid "Blacklists JWT refresh tokens to prevent further use."
 msgstr "يضع رموز تحديث JWT في القائمة السوداء لمنع الاستخدام الإضافي."
 
-#: auth_kit/api_descriptions.py:59
+#: auth_kit/api_descriptions.py:63
 msgid "Deletes the DRF authentication token from the database."
 msgstr "يحذف رمز مصادقة DRF من قاعدة البيانات."
 
-#: auth_kit/api_descriptions.py:61
+#: auth_kit/api_descriptions.py:65
 msgid "Invalidates custom authentication tokens."
 msgstr "يبطل رموز المصادقة المخصصة."
 
-#: auth_kit/api_descriptions.py:67
+#: auth_kit/api_descriptions.py:71
 msgid "Clears authentication cookies from the browser."
 msgstr "يمحو ملفات تعريف الارتباط من المتصفح."
 
-#: auth_kit/api_descriptions.py:73
+#: auth_kit/api_descriptions.py:77
 msgid "Authenticate with username/email and password to obtain access tokens."
-msgstr "قم بالمصادقة باسم المستخدم/البريد الإلكتروني وكلمة المرور للحصول على رموز الوصول."
+msgstr ""
+"قم بالمصادقة باسم المستخدم/البريد الإلكتروني وكلمة المرور للحصول على رموز "
+"الوصول."
 
-#: auth_kit/api_descriptions.py:85
+#: auth_kit/api_descriptions.py:89
 msgid "Logout user and invalidate authentication tokens."
 msgstr "تسجيل خروج المستخدم وإبطال رموز المصادقة."
 
-#: auth_kit/api_descriptions.py:89
+#: auth_kit/api_descriptions.py:93
 msgid ""
 "Requires authentication to ensure only valid sessions can be logged out."
-msgstr ""
-"يتطلب المصادقة لضمان أن الجلسات الصحيحة فقط يمكن تسجيل الخروج منها."
+msgstr "يتطلب المصادقة لضمان أن الجلسات الصحيحة فقط يمكن تسجيل الخروج منها."
 
-#: auth_kit/api_descriptions.py:100
+#: auth_kit/api_descriptions.py:104
 msgid "Generate new JWT access tokens using refresh tokens."
 msgstr "إنشاء رموز وصول JWT جديدة باستخدام رموز التحديث."
 
-#: auth_kit/api_descriptions.py:104
+#: auth_kit/api_descriptions.py:108
 msgid ""
 "Refresh tokens can be provided in request data or extracted automatically "
 "from HTTP cookies."
 msgstr ""
-"يمكن توفير رموز التحديث في بيانات الطلب أو استخراجها تلقائياً "
-"من ملفات تعريف الارتباط HTTP."
+"يمكن توفير رموز التحديث في بيانات الطلب أو استخراجها تلقائياً من ملفات تعريف "
+"الارتباط HTTP."
 
-#: auth_kit/api_descriptions.py:106 auth_kit/api_descriptions.py:116
+#: auth_kit/api_descriptions.py:110 auth_kit/api_descriptions.py:120
 msgid "Returns new access tokens with updated expiration times."
 msgstr "يعيد رموز وصول جديدة مع أوقات انتهاء محدثة."
 
-#: auth_kit/api_descriptions.py:108
+#: auth_kit/api_descriptions.py:112
 msgid "New tokens are automatically set in HTTP cookies for secure storage."
-msgstr "يتم تعيين الرموز الجديدة تلقائياً في ملفات تعريف الارتباط HTTP للتخزين الآمن."
+msgstr ""
+"يتم تعيين الرموز الجديدة تلقائياً في ملفات تعريف الارتباط HTTP للتخزين الآمن."
 
-#: auth_kit/api_descriptions.py:115
+#: auth_kit/api_descriptions.py:119
 msgid "Refresh tokens must be provided in the request data."
 msgstr "يجب توفير رموز التحديث في بيانات الطلب."
 
-#: auth_kit/api_descriptions.py:122
+#: auth_kit/api_descriptions.py:127
 msgid "Register a new user account."
 msgstr "تسجيل حساب مستخدم جديد."
 
-#: auth_kit/api_descriptions.py:126
+#: auth_kit/api_descriptions.py:134
+msgid ""
+"Users must verify their email address before the account is fully activated."
+msgstr "يجب على المستخدمين التحقق من عنوان البريد الإلكتروني قبل تفعيل الحساب بالكامل."
+
+#: auth_kit/api_descriptions.py:143
 msgid ""
 "Send password reset instructions to the provided email address. If the email "
 "is registered, a secure reset link will be sent. The link expires after a "
 "limited time for security."
 msgstr ""
-"إرسال تعليمات إعادة تعيين كلمة المرور إلى عنوان البريد الإلكتروني المقدم. إذا كان البريد الإلكتروني "
-"مسجلاً، سيتم إرسال رابط إعادة تعيين آمن. ينتهي الرابط بعد "
-"وقت محدود للأمان."
+"إرسال تعليمات إعادة تعيين كلمة المرور إلى عنوان البريد الإلكتروني المقدم. "
+"إذا كان البريد الإلكتروني مسجلاً، سيتم إرسال رابط إعادة تعيين آمن. ينتهي "
+"الرابط بعد وقت محدود للأمان."
 
-#: auth_kit/api_descriptions.py:132
+#: auth_kit/api_descriptions.py:149
 msgid ""
 "Complete the password reset process using the token from the reset email. "
 "Requires the UID and token from the email along with the new password. The "
 "token is single-use and expires for security."
 msgstr ""
-"إكمال عملية إعادة تعيين كلمة المرور باستخدام الرمز من البريد الإلكتروني لإعادة التعيين. "
-"يتطلب معرف المستخدم والرمز من البريد الإلكتروني مع كلمة المرور الجديدة. "
-"الرمز للاستخدام مرة واحدة وينتهي للأمان."
+"إكمال عملية إعادة تعيين كلمة المرور باستخدام الرمز من البريد الإلكتروني "
+"لإعادة التعيين. يتطلب معرف المستخدم والرمز من البريد الإلكتروني مع كلمة "
+"المرور الجديدة. الرمز للاستخدام مرة واحدة وينتهي للأمان."
 
-#: auth_kit/api_descriptions.py:138
+#: auth_kit/api_descriptions.py:155
 msgid "Change the current user's password. Requires authentication. "
 msgstr "تغيير كلمة مرور المستخدم الحالي. يتطلب المصادقة."
 
-#: auth_kit/api_descriptions.py:142
+#: auth_kit/api_descriptions.py:159
 msgid ""
 "Confirm email address using the verification key sent via email. This "
 "activates the user account and allows login access."
 msgstr ""
-"تأكيد عنوان البريد الإلكتروني باستخدام مفتاح التحقق المرسل عبر البريد الإلكتروني. هذا "
-"ينشط حساب المستخدم ويسمح بالوصول لتسجيل الدخول."
+"تأكيد عنوان البريد الإلكتروني باستخدام مفتاح التحقق المرسل عبر البريد "
+"الإلكتروني. هذا ينشط حساب المستخدم ويسمح بالوصول لتسجيل الدخول."
 
-#: auth_kit/api_descriptions.py:147
+#: auth_kit/api_descriptions.py:164
 msgid ""
 "Send a new email verification message to unverified email addresses. Only "
 "works for email addresses that are registered but not yet verified."
 msgstr ""
-"إرسال رسالة تحقق بريد إلكتروني جديدة إلى عناوين البريد الإلكتروني غير المتحققة. يعمل فقط "
-"مع عناوين البريد الإلكتروني المسجلة ولكن لم يتم التحقق منها بعد."
+"إرسال رسالة تحقق بريد إلكتروني جديدة إلى عناوين البريد الإلكتروني غير "
+"المتحققة. يعمل فقط مع عناوين البريد الإلكتروني المسجلة ولكن لم يتم التحقق "
+"منها بعد."
 
-#: auth_kit/api_descriptions.py:152
+#: auth_kit/api_descriptions.py:169
 msgid ""
 "Retrieve the authenticated user's profile information including username, "
 "email, first name, and last name. Password fields are excluded."
 msgstr ""
-"استرداد معلومات ملف المستخدم المصادق عليه بما في ذلك اسم المستخدم، "
-"البريد الإلكتروني، الاسم الأول، واسم العائلة. حقول كلمة المرور مستبعدة."
+"استرداد معلومات ملف المستخدم المصادق عليه بما في ذلك اسم المستخدم، البريد "
+"الإلكتروني، الاسم الأول، واسم العائلة. حقول كلمة المرور مستبعدة."
 
-#: auth_kit/api_descriptions.py:157
+#: auth_kit/api_descriptions.py:174
 msgid ""
 "Update the authenticated user's profile information. Allows modification of "
 "username, first name, and last name. Email field is read-only for security."
 msgstr ""
-"تحديث معلومات ملف المستخدم المصادق عليه. يسمح بتعديل "
-"اسم المستخدم، الاسم الأول، واسم العائلة. حقل البريد الإلكتروني للقراءة فقط للأمان."
+"تحديث معلومات ملف المستخدم المصادق عليه. يسمح بتعديل اسم المستخدم، الاسم "
+"الأول، واسم العائلة. حقل البريد الإلكتروني للقراءة فقط للأمان."
 
-#: auth_kit/api_descriptions.py:163
+#: auth_kit/api_descriptions.py:180
 msgid ""
 "Partially update the authenticated user's profile information. Only provided "
 "fields will be updated. Email field is read-only."
 msgstr ""
-"تحديث جزئي لمعلومات ملف المستخدم المصادق عليه. الحقول المقدمة فقط "
-"سيتم تحديثها. حقل البريد الإلكتروني للقراءة فقط."
+"تحديث جزئي لمعلومات ملف المستخدم المصادق عليه. الحقول المقدمة فقط سيتم "
+"تحديثها. حقل البريد الإلكتروني للقراءة فقط."
 
 #: auth_kit/forms.py:78
 msgid "The email address is not assigned to any user account."
@@ -195,17 +201,15 @@ msgid ""
 "First step of MFA-enabled authentication. Validates credentials and "
 "initiates MFA flow."
 msgstr ""
-"الخطوة الأولى من المصادقة المفعلة بـ MFA. يتحقق من الاعتمادات و "
-"يبدأ تدفق MFA."
+"الخطوة الأولى من المصادقة المفعلة بـ MFA. يتحقق من الاعتمادات و يبدأ تدفق "
+"MFA."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:41
 #, python-format
 msgid ""
 "Returns ephemeral token for MFA verification or complete %(auth_tokens)s if "
 "MFA is disabled."
-msgstr ""
-"يعيد رمز مؤقت للتحقق من MFA أو %(auth_tokens)s كاملة إذا كان "
-"MFA معطل."
+msgstr "يعيد رمز مؤقت للتحقق من MFA أو %(auth_tokens)s كاملة إذا كان MFA معطل."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:51
 msgid ""
@@ -243,8 +247,8 @@ msgid ""
 "List all available MFA methods with their setup and activation status. Shows "
 "which methods are configured, active, and set as primary."
 msgstr ""
-"قائمة بجميع طرق MFA المتاحة مع حالة الإعداد والتفعيل. يظهر "
-"الطرق المكونة والنشطة والمعينة كأساسية."
+"قائمة بجميع طرق MFA المتاحة مع حالة الإعداد والتفعيل. يظهر الطرق المكونة "
+"والنشطة والمعينة كأساسية."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:101
 msgid ""
@@ -252,9 +256,8 @@ msgid ""
 "returns setup instructions (e.g., QR code for authenticator apps). Method "
 "must be confirmed before activation."
 msgstr ""
-"تهيئة إعداد طريقة MFA جديدة. ينشئ الطريقة مع رموز احتياطية و "
-"يعيد تعليمات الإعداد (مثل رمز QR لتطبيقات المصادقة). يجب "
-"تأكيد الطريقة قبل التفعيل."
+"تهيئة إعداد طريقة MFA جديدة. ينشئ الطريقة مع رموز احتياطية و يعيد تعليمات "
+"الإعداد (مثل رمز QR لتطبيقات المصادقة). يجب تأكيد الطريقة قبل التفعيل."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:107
 msgid ""
@@ -262,9 +265,9 @@ msgid ""
 "Automatically sets as primary method if no other primary method exists. "
 "Required before the method can be used for authentication."
 msgstr ""
-"تأكيد وتفعيل طريقة MFA المنشأة حديثاً باستخدام رمز التحقق. "
-"يتم تعيينها تلقائياً كطريقة أساسية إذا لم توجد طريقة أساسية أخرى. "
-"مطلوب قبل أن يمكن استخدام الطريقة للمصادقة."
+"تأكيد وتفعيل طريقة MFA المنشأة حديثاً باستخدام رمز التحقق. يتم تعيينها "
+"تلقائياً كطريقة أساسية إذا لم توجد طريقة أساسية أخرى. مطلوب قبل أن يمكن "
+"استخدام الطريقة للمصادقة."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:113
 msgid ""
@@ -272,17 +275,16 @@ msgid ""
 "itself. Cannot deactivate primary methods - set another method as primary "
 "first."
 msgstr ""
-"إلغاء تفعيل طريقة MFA نشطة. يتطلب رمز التحقق من الطريقة "
-"نفسها. لا يمكن إلغاء تفعيل الطرق الأساسية - اعين طريقة أخرى كأساسية "
-"أولاً."
+"إلغاء تفعيل طريقة MFA نشطة. يتطلب رمز التحقق من الطريقة نفسها. لا يمكن إلغاء "
+"تفعيل الطرق الأساسية - اعين طريقة أخرى كأساسية أولاً."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:121
 msgid ""
 "Set an active MFA method as the primary authentication method. Primary "
 "method is used by default during login flow."
 msgstr ""
-"تعيين طريقة MFA نشطة كطريقة المصادقة الأساسية. الطريقة الأساسية "
-"تستخدم افتراضياً أثناء تدفق تسجيل الدخول."
+"تعيين طريقة MFA نشطة كطريقة المصادقة الأساسية. الطريقة الأساسية تستخدم "
+"افتراضياً أثناء تدفق تسجيل الدخول."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:125
 msgid "Only one method can be primary at a time."
@@ -297,8 +299,8 @@ msgid ""
 "Send verification code for methods that support code dispatch. Useful for "
 "testing method configuration or manual code requests."
 msgstr ""
-"إرسال رمز التحقق للطرق التي تدعم إرسال الرمز. مفيد لـ "
-"اختبار تكوين الطريقة أو طلبات الرمز اليدوية."
+"إرسال رمز التحقق للطرق التي تدعم إرسال الرمز. مفيد لـ اختبار تكوين الطريقة "
+"أو طلبات الرمز اليدوية."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:142
 msgid "Permanently delete an MFA method."
@@ -352,9 +354,23 @@ msgstr "طريقة المصادقة متعددة العوامل"
 msgid "MFA Methods"
 msgstr "طرق المصادقة متعددة العوامل"
 
+#: auth_kit/mfa/serializers/login_factors.py:153
+msgid "Invalid code"
+msgstr "رمز غير صحيح"
+
+#: auth_kit/mfa/serializers/login_factors.py:172
+#: auth_kit/mfa/serializers/login_factors.py:226
+#: auth_kit/mfa/serializers/login_factors.py:272
+msgid "Invalid token"
+msgstr "رمز غير صحيح"
+
 #: auth_kit/mfa/serializers/login_factors.py:230
 msgid "Please select a new method"
 msgstr "يرجى اختيار طريقة جديدة"
+
+#: auth_kit/mfa/serializers/mfa.py:76
+msgid "This method is already exists"
+msgstr "هذه الطريقة موجودة بالفعل"
 
 #: auth_kit/mfa/serializers/mfa.py:145 auth_kit/mfa/serializers/mfa.py:200
 #: auth_kit/mfa/serializers/mfa.py:345
@@ -453,7 +469,58 @@ msgstr "المستخدم مسجل بالفعل بهذا عنوان البريد 
 msgid "Failed to exchange code for access token"
 msgstr "فشل في استبدال الرمز برمز الوصول"
 
-#: auth_kit/social/views/login.py:50
+#: auth_kit/social/social_api_descriptions.py:29
+#, python-format
+msgid ""
+"Authenticate with %(provider)s using OAuth2/OpenID Connect authorization "
+"code to obtain access tokens."
+msgstr ""
+"قم بالمصادقة مع %(provider)s باستخدام رمز التفويض OAuth2/OpenID Connect "
+"للحصول على رموز الوصول."
+
+#: auth_kit/social/social_api_descriptions.py:51
+#, python-format
+msgid ""
+"Connect a %(provider)s account to the current user's account. This allows "
+"the user to login using their existing %(provider)s account in the future."
+msgstr ""
+"ربط حساب %(provider)s بحساب المستخدم الحالي. هذا يسمح للمستخدم بتسجيل "
+"الدخول باستخدام حساب %(provider)s الموجود في المستقبل."
+
+#: auth_kit/social/social_api_descriptions.py:56
+#, python-format
+msgid ""
+"Requires authentication and a valid OAuth2/OpenID Connect authorization code "
+"from %(provider)s."
+msgstr ""
+"يتطلب المصادقة ورمز تفويض OAuth2/OpenID Connect صالح من %(provider)s."
+
+#: auth_kit/social/social_api_descriptions.py:60
+#, python-format
+msgid ""
+"On success, the %(provider)s account is linked and can be used for future "
+"logins."
+msgstr "عند النجاح، يتم ربط حساب %(provider)s ويمكن استخدامه لتسجيل الدخول في المستقبل."
+
+#: auth_kit/social/social_api_descriptions.py:73
+msgid ""
+"List all social accounts connected to the current user. Shows account "
+"details including provider, UID, and connection dates."
+msgstr ""
+"قائمة بجميع الحسابات الاجتماعية المتصلة بالمستخدم الحالي. يظهر تفاصيل "
+"الحساب بما في ذلك المزود، معرف المستخدم، وتواريخ الاتصال."
+
+#: auth_kit/social/social_api_descriptions.py:78
+msgid ""
+"Disconnect a social account from the current user. Removes the social "
+"account connection and prevents future logins via that provider. Requires "
+"authentication and the account must belong to the current user."
+msgstr ""
+"قطع اتصال حساب اجتماعي من المستخدم الحالي. يزيل اتصال الحساب الاجتماعي "
+"ويمنع تسجيل الدخول في المستقبل عبر هذا المزود. يتطلب المصادقة ويجب أن "
+"يكون الحساب ملكاً للمستخدم الحالي."
+
+#: auth_kit/social/views/login.py:58
 msgid "adapter_class is not defined"
 msgstr "adapter_class غير معرف"
 
@@ -485,15 +552,15 @@ msgstr "تم إعادة تعيين كلمة المرور بكلمة المرور
 msgid "New password has been saved."
 msgstr "تم حفظ كلمة المرور الجديدة."
 
-#: auth_kit/views/registration.py:142
+#: auth_kit/views/registration.py:143
 msgid "Verification e-mail sent."
 msgstr "تم إرسال بريد إلكتروني للتحقق."
 
-#: auth_kit/views/registration.py:143
+#: auth_kit/views/registration.py:144
 msgid "Successfully registered."
 msgstr "تم التسجيل بنجاح."
 
-#: auth_kit/views/registration.py:223 auth_kit/views/registration.py:268
+#: auth_kit/views/registration.py:224 auth_kit/views/registration.py:269
 msgid "ok"
 msgstr "موافق"
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DRF Auth Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-08 06:02+0000\n"
+"POT-Creation-Date: 2025-07-09 05:21+0000\n"
 "PO-Revision-Date: 2025-07-08 06:02+0000\n"
 "Last-Translator: DRF Auth Kit Team\n"
 "Language-Team: Hungarian\n"
@@ -16,77 +16,86 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-#: auth_kit/api_descriptions.py:25
+
+#: auth_kit/api_descriptions.py:29
 msgid ""
 "Returns user details along with JWT access and refresh tokens with "
 "expiration times."
 msgstr ""
-"Visszaadja a felhasználói adatokat a JWT hozzáférési és frissítő "
-"tokenekkel, lejárati időkkel együtt."
+"Visszaadja a felhasználói adatokat a JWT hozzáférési és frissítő tokenekkel, "
+"lejárati időkkel együtt."
 
-#: auth_kit/api_descriptions.py:29
+#: auth_kit/api_descriptions.py:33
 msgid ""
 "Returns user details along with a DRF authentication token for API access."
 msgstr ""
 "Visszaadja a felhasználói adatokat egy DRF hitelesítési tokennel az API "
 "hozzáféréshez."
 
-#: auth_kit/api_descriptions.py:32
+#: auth_kit/api_descriptions.py:36
 msgid "Returns user details along with custom authentication tokens."
-msgstr "Visszaadja a felhasználói adatokat egyéni hitelesítési tokenekkel együtt."
+msgstr ""
+"Visszaadja a felhasználói adatokat egyéni hitelesítési tokenekkel együtt."
 
-#: auth_kit/api_descriptions.py:38
+#: auth_kit/api_descriptions.py:42
 msgid "JWT access and refresh tokens"
 msgstr "JWT hozzáférési és frissítő tokenek"
 
-#: auth_kit/api_descriptions.py:40
+#: auth_kit/api_descriptions.py:44
 msgid "DRF authentication token"
 msgstr "DRF hitelesítési token"
 
-#: auth_kit/api_descriptions.py:42
+#: auth_kit/api_descriptions.py:46
 msgid "custom authentication tokens"
 msgstr "egyéni hitelesítési tokenek"
 
-#: auth_kit/api_descriptions.py:49
+#: auth_kit/api_descriptions.py:53
 msgid "Authentication cookies are set automatically for secure token storage."
-msgstr "A hitelesítési sütik automatikusan beállításra kerülnek a biztonságos token tároláshoz."
+msgstr ""
+"A hitelesítési sütik automatikusan beállításra kerülnek a biztonságos token "
+"tároláshoz."
 
-#: auth_kit/api_descriptions.py:57
+#: auth_kit/api_descriptions.py:61
 msgid "Blacklists JWT refresh tokens to prevent further use."
-msgstr "Feketelistára helyezi a JWT frissítő tokeneket a további használat megakadályozásához."
+msgstr ""
+"Feketelistára helyezi a JWT frissítő tokeneket a további használat "
+"megakadályozásához."
 
-#: auth_kit/api_descriptions.py:59
+#: auth_kit/api_descriptions.py:63
 msgid "Deletes the DRF authentication token from the database."
 msgstr "Törli a DRF hitelesítési tokent az adatbázisból."
 
-#: auth_kit/api_descriptions.py:61
+#: auth_kit/api_descriptions.py:65
 msgid "Invalidates custom authentication tokens."
 msgstr "Érvényteleníti az egyéni hitelesítési tokeneket."
 
-#: auth_kit/api_descriptions.py:67
+#: auth_kit/api_descriptions.py:71
 msgid "Clears authentication cookies from the browser."
 msgstr "Törli a hitelesítési sütiket a böngészőből."
 
-#: auth_kit/api_descriptions.py:73
+#: auth_kit/api_descriptions.py:77
 msgid "Authenticate with username/email and password to obtain access tokens."
-msgstr "Hitelesítés felhasználónévvel/e-mail címmel és jelszóval a hozzáférési tokenek megszerzéséhez."
-
-#: auth_kit/api_descriptions.py:85
-msgid "Logout user and invalidate authentication tokens."
-msgstr "Felhasználó kijelentkeztetése és hitelesítési tokenek érvénytelenítése."
+msgstr ""
+"Hitelesítés felhasználónévvel/e-mail címmel és jelszóval a hozzáférési "
+"tokenek megszerzéséhez."
 
 #: auth_kit/api_descriptions.py:89
+msgid "Logout user and invalidate authentication tokens."
+msgstr ""
+"Felhasználó kijelentkeztetése és hitelesítési tokenek érvénytelenítése."
+
+#: auth_kit/api_descriptions.py:93
 msgid ""
 "Requires authentication to ensure only valid sessions can be logged out."
 msgstr ""
 "Hitelesítést igényel, hogy csak érvényes munkamenetek legyenek "
 "kijelentkeztethetők."
 
-#: auth_kit/api_descriptions.py:100
+#: auth_kit/api_descriptions.py:104
 msgid "Generate new JWT access tokens using refresh tokens."
 msgstr "Új JWT hozzáférési tokenek generálása frissítő tokenek használatával."
 
-#: auth_kit/api_descriptions.py:104
+#: auth_kit/api_descriptions.py:108
 msgid ""
 "Refresh tokens can be provided in request data or extracted automatically "
 "from HTTP cookies."
@@ -94,33 +103,40 @@ msgstr ""
 "A frissítő tokenek megadhatók a kérés adataiban vagy automatikusan "
 "kinyerhetők a HTTP sütiből."
 
-#: auth_kit/api_descriptions.py:106 auth_kit/api_descriptions.py:116
+#: auth_kit/api_descriptions.py:110 auth_kit/api_descriptions.py:120
 msgid "Returns new access tokens with updated expiration times."
 msgstr "Visszaadja az új hozzáférési tokeneket frissített lejárati időkkel."
 
-#: auth_kit/api_descriptions.py:108
+#: auth_kit/api_descriptions.py:112
 msgid "New tokens are automatically set in HTTP cookies for secure storage."
-msgstr "Az új tokenek automatikusan beállításra kerülnek a HTTP sütiekben a biztonságos tároláshoz."
+msgstr ""
+"Az új tokenek automatikusan beállításra kerülnek a HTTP sütiekben a "
+"biztonságos tároláshoz."
 
-#: auth_kit/api_descriptions.py:115
+#: auth_kit/api_descriptions.py:119
 msgid "Refresh tokens must be provided in the request data."
 msgstr "A frissítő tokeneket a kérés adataiban kell megadni."
 
-#: auth_kit/api_descriptions.py:122
+#: auth_kit/api_descriptions.py:127
 msgid "Register a new user account."
 msgstr "Új felhasználói fiók regisztrálása."
 
-#: auth_kit/api_descriptions.py:126
+#: auth_kit/api_descriptions.py:134
+msgid ""
+"Users must verify their email address before the account is fully activated."
+msgstr "A felhasználóknak igazolniuk kell az e-mail címüket, mielőtt a fiók teljesen aktiválódik."
+
+#: auth_kit/api_descriptions.py:143
 msgid ""
 "Send password reset instructions to the provided email address. If the email "
 "is registered, a secure reset link will be sent. The link expires after a "
 "limited time for security."
 msgstr ""
-"Jelszó visszaállítási utasítások küldése a megadott e-mail címre. Ha az "
-"e-mail cím regisztrálva van, egy biztonságos visszaállítási link lesz "
+"Jelszó visszaállítási utasítások küldése a megadott e-mail címre. Ha az e-"
+"mail cím regisztrálva van, egy biztonságos visszaállítási link lesz "
 "elküldve. A link biztonsági okokból korlátozott ideig érvényes."
 
-#: auth_kit/api_descriptions.py:132
+#: auth_kit/api_descriptions.py:149
 msgid ""
 "Complete the password reset process using the token from the reset email. "
 "Requires the UID and token from the email along with the new password. The "
@@ -131,38 +147,38 @@ msgstr ""
 "az új jelszó megadása szükséges. A token egyszer használatos és biztonsági "
 "okokból lejár."
 
-#: auth_kit/api_descriptions.py:138
+#: auth_kit/api_descriptions.py:155
 msgid "Change the current user's password. Requires authentication. "
 msgstr "A jelenlegi felhasználó jelszavának módosítása. Hitelesítést igényel."
 
-#: auth_kit/api_descriptions.py:142
+#: auth_kit/api_descriptions.py:159
 msgid ""
 "Confirm email address using the verification key sent via email. This "
 "activates the user account and allows login access."
 msgstr ""
-"E-mail cím megerősítése az e-mailben küldött ellenőrző kulcs "
-"használatával. Ez aktiválja a felhasználói fiókot és lehetővé teszi a "
-"bejelentkezési hozzáférést."
+"E-mail cím megerősítése az e-mailben küldött ellenőrző kulcs használatával. "
+"Ez aktiválja a felhasználói fiókot és lehetővé teszi a bejelentkezési "
+"hozzáférést."
 
-#: auth_kit/api_descriptions.py:147
+#: auth_kit/api_descriptions.py:164
 msgid ""
 "Send a new email verification message to unverified email addresses. Only "
 "works for email addresses that are registered but not yet verified."
 msgstr ""
-"Új e-mail ellenőrző üzenet küldése el nem igazolt e-mail címekre. Csak "
-"olyan e-mail címekre működik, amelyek regisztrálva vannak, de még nem "
-"lettek ellenőrizve."
+"Új e-mail ellenőrző üzenet küldése el nem igazolt e-mail címekre. Csak olyan "
+"e-mail címekre működik, amelyek regisztrálva vannak, de még nem lettek "
+"ellenőrizve."
 
-#: auth_kit/api_descriptions.py:152
+#: auth_kit/api_descriptions.py:169
 msgid ""
 "Retrieve the authenticated user's profile information including username, "
 "email, first name, and last name. Password fields are excluded."
 msgstr ""
 "A hitelesített felhasználó profil információinak lekérése, beleértve a "
-"felhasználónevet, e-mail címet, keresztnevet és vezetéknevet. A jelszó "
-"mezők ki vannak zárva."
+"felhasználónevet, e-mail címet, keresztnevet és vezetéknevet. A jelszó mezők "
+"ki vannak zárva."
 
-#: auth_kit/api_descriptions.py:157
+#: auth_kit/api_descriptions.py:174
 msgid ""
 "Update the authenticated user's profile information. Allows modification of "
 "username, first name, and last name. Email field is read-only for security."
@@ -171,13 +187,13 @@ msgstr ""
 "a felhasználónév, keresztnév és vezetéknév módosítását. Az e-mail mező "
 "biztonsági okokból csak olvasható."
 
-#: auth_kit/api_descriptions.py:163
+#: auth_kit/api_descriptions.py:180
 msgid ""
 "Partially update the authenticated user's profile information. Only provided "
 "fields will be updated. Email field is read-only."
 msgstr ""
-"A hitelesített felhasználó profil információinak részleges frissítése. "
-"Csak a megadott mezők lesznek frissítve. Az e-mail mező csak olvasható."
+"A hitelesített felhasználó profil információinak részleges frissítése. Csak "
+"a megadott mezők lesznek frissítve. Az e-mail mező csak olvasható."
 
 #: auth_kit/forms.py:78
 msgid "The email address is not assigned to any user account."
@@ -216,12 +232,13 @@ msgstr ""
 #: auth_kit/mfa/mfa_api_descriptions.py:51
 msgid ""
 "Complete MFA authentication using verification code and ephemeral token."
-msgstr ""
-"Az MFA hitelesítés befejezése ellenőrző kóddal és ideiglenes tokennel."
+msgstr "Az MFA hitelesítés befejezése ellenőrző kóddal és ideiglenes tokennel."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:56
 msgid "Supports both TOTP codes and backup codes for verification."
-msgstr "Mind a TOTP kódokat, mind a biztonsági mentés kódokat támogatja az ellenőrzéshez."
+msgstr ""
+"Mind a TOTP kódokat, mind a biztonsági mentés kódokat támogatja az "
+"ellenőrzéshez."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:68
 msgid "Switch to a different MFA method during authentication flow."
@@ -239,11 +256,14 @@ msgstr "Az új ideiglenes token %(seconds)s másodperc múlva lejár."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:81
 msgid "Resend MFA verification code using existing ephemeral token."
-msgstr "MFA ellenőrző kód újraküldése a meglévő ideiglenes token használatával."
+msgstr ""
+"MFA ellenőrző kód újraküldése a meglévő ideiglenes token használatával."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:84
 msgid "Only applicable for methods that require code dispatch (e.g., email)."
-msgstr "Csak olyan módszerekre alkalmazható, amelyek kódküldést igényelnek (pl. e-mail)."
+msgstr ""
+"Csak olyan módszerekre alkalmazható, amelyek kódküldést igényelnek (pl. e-"
+"mail)."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:96
 msgid ""
@@ -251,8 +271,8 @@ msgid ""
 "which methods are configured, active, and set as primary."
 msgstr ""
 "Az összes elérhető MFA módszer felsorolása a beállítási és aktiválási "
-"állapotukkal. Megmutatja, hogy mely módszerek vannak konfigurálva, "
-"aktiválva és elsődlegesként beállítva."
+"állapotukkal. Megmutatja, hogy mely módszerek vannak konfigurálva, aktiválva "
+"és elsődlegesként beállítva."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:101
 msgid ""
@@ -261,8 +281,8 @@ msgid ""
 "must be confirmed before activation."
 msgstr ""
 "Új MFA módszer beállításának kezdeményezése. Létrehozza a módszert "
-"biztonsági mentés kódokkal és visszaadja a beállítási utasításokat (pl. "
-"QR kód az authenticator alkalmazásokhoz). A módszert megerősíteni kell az "
+"biztonsági mentés kódokkal és visszaadja a beállítási utasításokat (pl. QR "
+"kód az authenticator alkalmazásokhoz). A módszert megerősíteni kell az "
 "aktiválás előtt."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:107
@@ -363,9 +383,23 @@ msgstr "MFA módszer"
 msgid "MFA Methods"
 msgstr "MFA módszerek"
 
+#: auth_kit/mfa/serializers/login_factors.py:153
+msgid "Invalid code"
+msgstr "Érvénytelen kód"
+
+#: auth_kit/mfa/serializers/login_factors.py:172
+#: auth_kit/mfa/serializers/login_factors.py:226
+#: auth_kit/mfa/serializers/login_factors.py:272
+msgid "Invalid token"
+msgstr "Érvénytelen token"
+
 #: auth_kit/mfa/serializers/login_factors.py:230
 msgid "Please select a new method"
 msgstr "Kérjük válasszon új módszert"
+
+#: auth_kit/mfa/serializers/mfa.py:76
+msgid "This method is already exists"
+msgstr "Ez a módszer már létezik"
 
 #: auth_kit/mfa/serializers/mfa.py:145 auth_kit/mfa/serializers/mfa.py:200
 #: auth_kit/mfa/serializers/mfa.py:345
@@ -446,7 +480,9 @@ msgstr "A két jelszó mező nem egyezik."
 
 #: auth_kit/social/serializers/connect.py:55
 msgid "Social account email must match your current account email."
-msgstr "A közösségi fiók e-mail címének meg kell egyeznie a jelenlegi fiók e-mail címével."
+msgstr ""
+"A közösségi fiók e-mail címének meg kell egyeznie a jelenlegi fiók e-mail "
+"címével."
 
 #: auth_kit/social/serializers/connect.py:98
 msgid "Connected"
@@ -464,7 +500,64 @@ msgstr "Ezzel az e-mail címmel már regisztrálva van felhasználó."
 msgid "Failed to exchange code for access token"
 msgstr "Nem sikerült kicserélni a kódot hozzáférési tokenre"
 
-#: auth_kit/social/views/login.py:50
+#: auth_kit/social/social_api_descriptions.py:29
+#, python-format
+msgid ""
+"Authenticate with %(provider)s using OAuth2/OpenID Connect authorization "
+"code to obtain access tokens."
+msgstr ""
+"Hitelesítés %(provider)s szolgáltatóval OAuth2/OpenID Connect engedélyezési "
+"kód használatával a hozzáférési tokenek megszerzéséhez."
+
+#: auth_kit/social/social_api_descriptions.py:51
+#, python-format
+msgid ""
+"Connect a %(provider)s account to the current user's account. This allows "
+"the user to login using their existing %(provider)s account in the future."
+msgstr ""
+"%(provider)s fiók csatlakoztatása a jelenlegi felhasználó fiókjához. Ez lehetővé "
+"teszi a felhasználó számára, hogy a jövőben a meglévő %(provider)s fiókjával "
+"jelentkezzen be."
+
+#: auth_kit/social/social_api_descriptions.py:56
+#, python-format
+msgid ""
+"Requires authentication and a valid OAuth2/OpenID Connect authorization code "
+"from %(provider)s."
+msgstr ""
+"Hitelesítést és érvényes OAuth2/OpenID Connect engedélyezési kódot igényel "
+"%(provider)s szolgáltatótól."
+
+#: auth_kit/social/social_api_descriptions.py:60
+#, python-format
+msgid ""
+"On success, the %(provider)s account is linked and can be used for future "
+"logins."
+msgstr ""
+"Sikeres esetben a %(provider)s fiók összekapcsolódik és használható lesz a "
+"jövőbeli bejelentkezésekhez."
+
+#: auth_kit/social/social_api_descriptions.py:73
+msgid ""
+"List all social accounts connected to the current user. Shows account "
+"details including provider, UID, and connection dates."
+msgstr ""
+"A jelenlegi felhasználóhoz csatlakoztatott összes közösségi fiók felsorolása. "
+"Megjeleníti a fiók részleteit, beleértve a szolgáltatót, UID-t és "
+"csatlakozási dátumokat."
+
+#: auth_kit/social/social_api_descriptions.py:78
+msgid ""
+"Disconnect a social account from the current user. Removes the social "
+"account connection and prevents future logins via that provider. Requires "
+"authentication and the account must belong to the current user."
+msgstr ""
+"Közösségi fiók leválasztása a jelenlegi felhasználóról. Eltávolítja a "
+"közösségi fiók kapcsolatot és megakadályozza a jövőbeli bejelentkezéseket "
+"azon a szolgáltatón keresztül. Hitelesítést igényel és a fióknak a jelenlegi "
+"felhasználóhoz kell tartoznia."
+
+#: auth_kit/social/views/login.py:58
 msgid "adapter_class is not defined"
 msgstr "az adapter_class nincs definiálva"
 
@@ -496,15 +589,15 @@ msgstr "A jelszó visszaállítása megtörtént az új jelszóval."
 msgid "New password has been saved."
 msgstr "Az új jelszó elmentve."
 
-#: auth_kit/views/registration.py:142
+#: auth_kit/views/registration.py:143
 msgid "Verification e-mail sent."
 msgstr "Ellenőrző e-mail elküldve."
 
-#: auth_kit/views/registration.py:143
+#: auth_kit/views/registration.py:144
 msgid "Successfully registered."
 msgstr "Sikeresen regisztrálva."
 
-#: auth_kit/views/registration.py:223 auth_kit/views/registration.py:268
+#: auth_kit/views/registration.py:224 auth_kit/views/registration.py:269
 msgid "ok"
 msgstr "rendben"
 

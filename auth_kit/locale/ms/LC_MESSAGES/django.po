@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DRF Auth Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-08 06:02+0000\n"
+"POT-Creation-Date: 2025-07-09 05:21+0000\n"
 "PO-Revision-Date: 2025-07-08 06:02+0000\n"
 "Last-Translator: DRF Auth Kit Team\n"
 "Language-Team: Malay\n"
@@ -17,161 +17,180 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: auth_kit/api_descriptions.py:25
+#: auth_kit/api_descriptions.py:29
 msgid ""
 "Returns user details along with JWT access and refresh tokens with "
 "expiration times."
 msgstr ""
-"Memulangkan butiran pengguna bersama token akses JWT dan token penyegaran dengan "
-"masa tamat tempoh."
+"Memulangkan butiran pengguna bersama token akses JWT dan token penyegaran "
+"dengan masa tamat tempoh."
 
-#: auth_kit/api_descriptions.py:29
+#: auth_kit/api_descriptions.py:33
 msgid ""
 "Returns user details along with a DRF authentication token for API access."
 msgstr ""
 "Memulangkan butiran pengguna bersama token pengesahan DRF untuk akses API."
 
-#: auth_kit/api_descriptions.py:32
+#: auth_kit/api_descriptions.py:36
 msgid "Returns user details along with custom authentication tokens."
 msgstr "Memulangkan butiran pengguna bersama token pengesahan tersuai."
 
-#: auth_kit/api_descriptions.py:38
+#: auth_kit/api_descriptions.py:42
 msgid "JWT access and refresh tokens"
 msgstr "Token akses JWT dan token penyegaran"
 
-#: auth_kit/api_descriptions.py:40
+#: auth_kit/api_descriptions.py:44
 msgid "DRF authentication token"
 msgstr "Token pengesahan DRF"
 
-#: auth_kit/api_descriptions.py:42
+#: auth_kit/api_descriptions.py:46
 msgid "custom authentication tokens"
 msgstr "token pengesahan tersuai"
 
-#: auth_kit/api_descriptions.py:49
+#: auth_kit/api_descriptions.py:53
 msgid "Authentication cookies are set automatically for secure token storage."
-msgstr "Cookie pengesahan ditetapkan secara automatik untuk penyimpanan token yang selamat."
+msgstr ""
+"Cookie pengesahan ditetapkan secara automatik untuk penyimpanan token yang "
+"selamat."
 
-#: auth_kit/api_descriptions.py:57
+#: auth_kit/api_descriptions.py:61
 msgid "Blacklists JWT refresh tokens to prevent further use."
-msgstr "Memasukkan token penyegaran JWT ke dalam senarai hitam untuk mencegah penggunaan selanjutnya."
+msgstr ""
+"Memasukkan token penyegaran JWT ke dalam senarai hitam untuk mencegah "
+"penggunaan selanjutnya."
 
-#: auth_kit/api_descriptions.py:59
+#: auth_kit/api_descriptions.py:63
 msgid "Deletes the DRF authentication token from the database."
 msgstr "Memadamkan token pengesahan DRF dari pangkalan data."
 
-#: auth_kit/api_descriptions.py:61
+#: auth_kit/api_descriptions.py:65
 msgid "Invalidates custom authentication tokens."
 msgstr "Membatalkan token pengesahan tersuai."
 
-#: auth_kit/api_descriptions.py:67
+#: auth_kit/api_descriptions.py:71
 msgid "Clears authentication cookies from the browser."
 msgstr "Membersihkan cookie pengesahan dari pelayar."
 
-#: auth_kit/api_descriptions.py:73
+#: auth_kit/api_descriptions.py:77
 msgid "Authenticate with username/email and password to obtain access tokens."
-msgstr "Mengesahkan dengan nama pengguna/e-mel dan kata laluan untuk mendapatkan token akses."
+msgstr ""
+"Mengesahkan dengan nama pengguna/e-mel dan kata laluan untuk mendapatkan "
+"token akses."
 
-#: auth_kit/api_descriptions.py:85
+#: auth_kit/api_descriptions.py:89
 msgid "Logout user and invalidate authentication tokens."
 msgstr "Log keluar pengguna dan membatalkan token pengesahan."
 
-#: auth_kit/api_descriptions.py:89
+#: auth_kit/api_descriptions.py:93
 msgid ""
 "Requires authentication to ensure only valid sessions can be logged out."
 msgstr ""
-"Memerlukan pengesahan untuk memastikan hanya sesi yang sah boleh dilog keluar."
+"Memerlukan pengesahan untuk memastikan hanya sesi yang sah boleh dilog "
+"keluar."
 
-#: auth_kit/api_descriptions.py:100
+#: auth_kit/api_descriptions.py:104
 msgid "Generate new JWT access tokens using refresh tokens."
 msgstr "Menjana token akses JWT baru menggunakan token penyegaran."
 
-#: auth_kit/api_descriptions.py:104
+#: auth_kit/api_descriptions.py:108
 msgid ""
 "Refresh tokens can be provided in request data or extracted automatically "
 "from HTTP cookies."
 msgstr ""
-"Token penyegaran boleh disediakan dalam data permintaan atau diekstrak secara automatik "
-"dari cookie HTTP."
+"Token penyegaran boleh disediakan dalam data permintaan atau diekstrak "
+"secara automatik dari cookie HTTP."
 
-#: auth_kit/api_descriptions.py:106 auth_kit/api_descriptions.py:116
+#: auth_kit/api_descriptions.py:110 auth_kit/api_descriptions.py:120
 msgid "Returns new access tokens with updated expiration times."
-msgstr "Memulangkan token akses baru dengan masa tamat tempoh yang dikemas kini."
+msgstr ""
+"Memulangkan token akses baru dengan masa tamat tempoh yang dikemas kini."
 
-#: auth_kit/api_descriptions.py:108
+#: auth_kit/api_descriptions.py:112
 msgid "New tokens are automatically set in HTTP cookies for secure storage."
-msgstr "Token baru ditetapkan secara automatik dalam cookie HTTP untuk penyimpanan yang selamat."
+msgstr ""
+"Token baru ditetapkan secara automatik dalam cookie HTTP untuk penyimpanan "
+"yang selamat."
 
-#: auth_kit/api_descriptions.py:115
+#: auth_kit/api_descriptions.py:119
 msgid "Refresh tokens must be provided in the request data."
 msgstr "Token penyegaran mesti disediakan dalam data permintaan."
 
-#: auth_kit/api_descriptions.py:122
+#: auth_kit/api_descriptions.py:127
 msgid "Register a new user account."
 msgstr "Daftarkan akaun pengguna baru."
 
-#: auth_kit/api_descriptions.py:126
+#: auth_kit/api_descriptions.py:134
+msgid ""
+"Users must verify their email address before the account is fully activated."
+msgstr ""
+"Pengguna mesti mengesahkan alamat e-mel mereka sebelum akaun diaktifkan "
+"sepenuhnya."
+
+#: auth_kit/api_descriptions.py:143
 msgid ""
 "Send password reset instructions to the provided email address. If the email "
 "is registered, a secure reset link will be sent. The link expires after a "
 "limited time for security."
 msgstr ""
-"Hantar arahan tetapan semula kata laluan ke alamat e-mel yang disediakan. Jika e-mel "
-"telah didaftarkan, pautan tetapan semula yang selamat akan dihantar. Pautan akan tamat tempoh selepas "
-"masa terhad untuk keselamatan."
+"Hantar arahan tetapan semula kata laluan ke alamat e-mel yang disediakan. "
+"Jika e-mel telah didaftarkan, pautan tetapan semula yang selamat akan "
+"dihantar. Pautan akan tamat tempoh selepas masa terhad untuk keselamatan."
 
-#: auth_kit/api_descriptions.py:132
+#: auth_kit/api_descriptions.py:149
 msgid ""
 "Complete the password reset process using the token from the reset email. "
 "Requires the UID and token from the email along with the new password. The "
 "token is single-use and expires for security."
 msgstr ""
-"Melengkapkan proses tetapan semula kata laluan menggunakan token dari e-mel tetapan semula. "
-"Memerlukan UID dan token dari e-mel bersama dengan kata laluan baru. "
-"Token adalah untuk kegunaan sekali dan tamat tempoh untuk keselamatan."
+"Melengkapkan proses tetapan semula kata laluan menggunakan token dari e-mel "
+"tetapan semula. Memerlukan UID dan token dari e-mel bersama dengan kata "
+"laluan baru. Token adalah untuk kegunaan sekali dan tamat tempoh untuk "
+"keselamatan."
 
-#: auth_kit/api_descriptions.py:138
+#: auth_kit/api_descriptions.py:155
 msgid "Change the current user's password. Requires authentication. "
 msgstr "Tukar kata laluan pengguna semasa. Memerlukan pengesahan. "
 
-#: auth_kit/api_descriptions.py:142
+#: auth_kit/api_descriptions.py:159
 msgid ""
 "Confirm email address using the verification key sent via email. This "
 "activates the user account and allows login access."
 msgstr ""
-"Sahkan alamat e-mel menggunakan kunci pengesahan yang dihantar melalui e-mel. Ini "
-"mengaktifkan akaun pengguna dan membenarkan akses log masuk."
+"Sahkan alamat e-mel menggunakan kunci pengesahan yang dihantar melalui e-"
+"mel. Ini mengaktifkan akaun pengguna dan membenarkan akses log masuk."
 
-#: auth_kit/api_descriptions.py:147
+#: auth_kit/api_descriptions.py:164
 msgid ""
 "Send a new email verification message to unverified email addresses. Only "
 "works for email addresses that are registered but not yet verified."
 msgstr ""
-"Hantar mesej pengesahan e-mel baru ke alamat e-mel yang tidak disahkan. Hanya "
-"berfungsi untuk alamat e-mel yang didaftarkan tetapi belum disahkan."
+"Hantar mesej pengesahan e-mel baru ke alamat e-mel yang tidak disahkan. "
+"Hanya berfungsi untuk alamat e-mel yang didaftarkan tetapi belum disahkan."
 
-#: auth_kit/api_descriptions.py:152
+#: auth_kit/api_descriptions.py:169
 msgid ""
 "Retrieve the authenticated user's profile information including username, "
 "email, first name, and last name. Password fields are excluded."
 msgstr ""
-"Dapatkan maklumat profil pengguna yang disahkan termasuk nama pengguna, "
-"e-mel, nama pertama, dan nama akhir. Medan kata laluan dikecualikan."
+"Dapatkan maklumat profil pengguna yang disahkan termasuk nama pengguna, e-"
+"mel, nama pertama, dan nama akhir. Medan kata laluan dikecualikan."
 
-#: auth_kit/api_descriptions.py:157
+#: auth_kit/api_descriptions.py:174
 msgid ""
 "Update the authenticated user's profile information. Allows modification of "
 "username, first name, and last name. Email field is read-only for security."
 msgstr ""
-"Kemas kini maklumat profil pengguna yang disahkan. Membenarkan pengubahsuaian "
-"nama pengguna, nama pertama, dan nama akhir. Medan e-mel adalah baca sahaja untuk keselamatan."
+"Kemas kini maklumat profil pengguna yang disahkan. Membenarkan "
+"pengubahsuaian nama pengguna, nama pertama, dan nama akhir. Medan e-mel "
+"adalah baca sahaja untuk keselamatan."
 
-#: auth_kit/api_descriptions.py:163
+#: auth_kit/api_descriptions.py:180
 msgid ""
 "Partially update the authenticated user's profile information. Only provided "
 "fields will be updated. Email field is read-only."
 msgstr ""
-"Kemas kini sebahagian maklumat profil pengguna yang disahkan. Hanya medan yang disediakan "
-"akan dikemas kini. Medan e-mel adalah baca sahaja."
+"Kemas kini sebahagian maklumat profil pengguna yang disahkan. Hanya medan "
+"yang disediakan akan dikemas kini. Medan e-mel adalah baca sahaja."
 
 #: auth_kit/forms.py:78
 msgid "The email address is not assigned to any user account."
@@ -204,8 +223,8 @@ msgid ""
 "Returns ephemeral token for MFA verification or complete %(auth_tokens)s if "
 "MFA is disabled."
 msgstr ""
-"Memulangkan token sementara untuk pengesahan MFA atau lengkap %(auth_tokens)s jika "
-"MFA dilumpuhkan."
+"Memulangkan token sementara untuk pengesahan MFA atau lengkap "
+"%(auth_tokens)s jika MFA dilumpuhkan."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:51
 msgid ""
@@ -233,19 +252,23 @@ msgstr "Token sementara baru tamat tempoh dalam %(seconds)s saat."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:81
 msgid "Resend MFA verification code using existing ephemeral token."
-msgstr "Hantar semula kod pengesahan MFA menggunakan token sementara yang sedia ada."
+msgstr ""
+"Hantar semula kod pengesahan MFA menggunakan token sementara yang sedia ada."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:84
 msgid "Only applicable for methods that require code dispatch (e.g., email)."
-msgstr "Hanya terpakai untuk kaedah yang memerlukan penghantaran kod (contohnya, e-mel)."
+msgstr ""
+"Hanya terpakai untuk kaedah yang memerlukan penghantaran kod (contohnya, e-"
+"mel)."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:96
 msgid ""
 "List all available MFA methods with their setup and activation status. Shows "
 "which methods are configured, active, and set as primary."
 msgstr ""
-"Senaraikan semua kaedah MFA yang tersedia dengan status persediaan dan pengaktifan mereka. Menunjukkan "
-"kaedah mana yang dikonfigurasi, aktif, dan ditetapkan sebagai utama."
+"Senaraikan semua kaedah MFA yang tersedia dengan status persediaan dan "
+"pengaktifan mereka. Menunjukkan kaedah mana yang dikonfigurasi, aktif, dan "
+"ditetapkan sebagai utama."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:101
 msgid ""
@@ -254,8 +277,8 @@ msgid ""
 "must be confirmed before activation."
 msgstr ""
 "Mulakan persediaan kaedah MFA baru. Mencipta kaedah dengan kod sandaran dan "
-"memulangkan arahan persediaan (contohnya, kod QR untuk aplikasi pengesah). Kaedah "
-"mesti disahkan sebelum pengaktifan."
+"memulangkan arahan persediaan (contohnya, kod QR untuk aplikasi pengesah). "
+"Kaedah mesti disahkan sebelum pengaktifan."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:107
 msgid ""
@@ -264,8 +287,8 @@ msgid ""
 "Required before the method can be used for authentication."
 msgstr ""
 "Sahkan dan aktifkan kaedah MFA yang baru dicipta menggunakan kod pengesahan. "
-"Secara automatik menetapkan sebagai kaedah utama jika tiada kaedah utama lain wujud. "
-"Diperlukan sebelum kaedah boleh digunakan untuk pengesahan."
+"Secara automatik menetapkan sebagai kaedah utama jika tiada kaedah utama "
+"lain wujud. Diperlukan sebelum kaedah boleh digunakan untuk pengesahan."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:113
 msgid ""
@@ -274,8 +297,8 @@ msgid ""
 "first."
 msgstr ""
 "Nyahaktifkan kaedah MFA yang aktif. Memerlukan kod pengesahan dari kaedah "
-"itu sendiri. Tidak boleh nyahaktifkan kaedah utama - tetapkan kaedah lain sebagai utama "
-"dahulu."
+"itu sendiri. Tidak boleh nyahaktifkan kaedah utama - tetapkan kaedah lain "
+"sebagai utama dahulu."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:121
 msgid ""
@@ -298,8 +321,8 @@ msgid ""
 "Send verification code for methods that support code dispatch. Useful for "
 "testing method configuration or manual code requests."
 msgstr ""
-"Hantar kod pengesahan untuk kaedah yang menyokong penghantaran kod. Berguna untuk "
-"menguji konfigurasi kaedah atau permintaan kod manual."
+"Hantar kod pengesahan untuk kaedah yang menyokong penghantaran kod. Berguna "
+"untuk menguji konfigurasi kaedah atau permintaan kod manual."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:142
 msgid "Permanently delete an MFA method."
@@ -353,9 +376,23 @@ msgstr "Kaedah MFA"
 msgid "MFA Methods"
 msgstr "Kaedah MFA"
 
+#: auth_kit/mfa/serializers/login_factors.py:153
+msgid "Invalid code"
+msgstr "Kod tidak sah"
+
+#: auth_kit/mfa/serializers/login_factors.py:172
+#: auth_kit/mfa/serializers/login_factors.py:226
+#: auth_kit/mfa/serializers/login_factors.py:272
+msgid "Invalid token"
+msgstr "Token tidak sah"
+
 #: auth_kit/mfa/serializers/login_factors.py:230
 msgid "Please select a new method"
 msgstr "Sila pilih kaedah baru"
+
+#: auth_kit/mfa/serializers/mfa.py:76
+msgid "This method is already exists"
+msgstr "Kaedah ini sudah wujud"
 
 #: auth_kit/mfa/serializers/mfa.py:145 auth_kit/mfa/serializers/mfa.py:200
 #: auth_kit/mfa/serializers/mfa.py:345
@@ -424,7 +461,8 @@ msgstr "Nilai tidak sah"
 
 #: auth_kit/serializers/password.py:220
 msgid "Your old password was entered incorrectly. Please enter it again."
-msgstr "Kata laluan lama anda dimasukkan dengan salah. Sila masukkannya semula."
+msgstr ""
+"Kata laluan lama anda dimasukkan dengan salah. Sila masukkannya semula."
 
 #: auth_kit/serializers/registration.py:88
 msgid "A user is already registered with this e-mail address."
@@ -454,7 +492,62 @@ msgstr "Pengguna telah didaftarkan dengan alamat e-mel ini."
 msgid "Failed to exchange code for access token"
 msgstr "Gagal menukar kod untuk token akses"
 
-#: auth_kit/social/views/login.py:50
+#: auth_kit/social/social_api_descriptions.py:29
+#, python-format
+msgid ""
+"Authenticate with %(provider)s using OAuth2/OpenID Connect authorization "
+"code to obtain access tokens."
+msgstr ""
+"Mengesahkan dengan %(provider)s menggunakan kod kebenaran OAuth2/OpenID "
+"Connect untuk mendapatkan token akses."
+
+#: auth_kit/social/social_api_descriptions.py:51
+#, python-format
+msgid ""
+"Connect a %(provider)s account to the current user's account. This allows "
+"the user to login using their existing %(provider)s account in the future."
+msgstr ""
+"Sambungkan akaun %(provider)s ke akaun pengguna semasa. Ini membolehkan "
+"pengguna log masuk menggunakan akaun %(provider)s sedia ada mereka pada masa "
+"akan datang."
+
+#: auth_kit/social/social_api_descriptions.py:56
+#, python-format
+msgid ""
+"Requires authentication and a valid OAuth2/OpenID Connect authorization code "
+"from %(provider)s."
+msgstr ""
+"Memerlukan pengesahan dan kod kebenaran OAuth2/OpenID Connect yang sah dari "
+"%(provider)s."
+
+#: auth_kit/social/social_api_descriptions.py:60
+#, python-format
+msgid ""
+"On success, the %(provider)s account is linked and can be used for future "
+"logins."
+msgstr ""
+"Apabila berjaya, akaun %(provider)s dipautkan dan boleh digunakan untuk log "
+"masuk pada masa akan datang."
+
+#: auth_kit/social/social_api_descriptions.py:73
+msgid ""
+"List all social accounts connected to the current user. Shows account "
+"details including provider, UID, and connection dates."
+msgstr ""
+"Senaraikan semua akaun sosial yang disambungkan kepada pengguna semasa. "
+"Menunjukkan butiran akaun termasuk penyedia, UID, dan tarikh sambungan."
+
+#: auth_kit/social/social_api_descriptions.py:78
+msgid ""
+"Disconnect a social account from the current user. Removes the social "
+"account connection and prevents future logins via that provider. Requires "
+"authentication and the account must belong to the current user."
+msgstr ""
+"Putuskan sambungan akaun sosial dari pengguna semasa. Menghapuskan sambungan "
+"akaun sosial dan mencegah log masuk masa depan melalui penyedia tersebut. "
+"Memerlukan pengesahan dan akaun mesti milik pengguna semasa."
+
+#: auth_kit/social/views/login.py:58
 msgid "adapter_class is not defined"
 msgstr "adapter_class tidak ditakrifkan"
 
@@ -486,15 +579,15 @@ msgstr "Kata laluan telah ditetapkan semula dengan kata laluan baru."
 msgid "New password has been saved."
 msgstr "Kata laluan baru telah disimpan."
 
-#: auth_kit/views/registration.py:142
+#: auth_kit/views/registration.py:143
 msgid "Verification e-mail sent."
 msgstr "E-mel pengesahan dihantar."
 
-#: auth_kit/views/registration.py:143
+#: auth_kit/views/registration.py:144
 msgid "Successfully registered."
 msgstr "Berjaya didaftarkan."
 
-#: auth_kit/views/registration.py:223 auth_kit/views/registration.py:268
+#: auth_kit/views/registration.py:224 auth_kit/views/registration.py:269
 msgid "ok"
 msgstr "baik"
 

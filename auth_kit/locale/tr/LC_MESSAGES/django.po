@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DRF Auth Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-08 06:02+0000\n"
+"POT-Creation-Date: 2025-07-09 05:21+0000\n"
 "PO-Revision-Date: 2025-07-09 00:00+0000\n"
 "Last-Translator: DRF Auth Kit Team\n"
 "Language-Team: Turkish\n"
@@ -16,139 +16,182 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-#: auth_kit/api_descriptions.py:25
-msgid ""
-"Returns user details along with JWT access and refresh tokens with "
-"expiration times."
-msgstr "JWT erişim ve yenileme tokenları ile birlikte kullanıcı detaylarını döner ve token süre sonu bilgilerini içerir."
 
 #: auth_kit/api_descriptions.py:29
 msgid ""
+"Returns user details along with JWT access and refresh tokens with "
+"expiration times."
+msgstr ""
+"JWT erişim ve yenileme tokenları ile birlikte kullanıcı detaylarını döner ve "
+"token süre sonu bilgilerini içerir."
+
+#: auth_kit/api_descriptions.py:33
+msgid ""
 "Returns user details along with a DRF authentication token for API access."
-msgstr "API erişimi için DRF authentication tokeni ile birlikte kullanıcı detaylarını döner."
+msgstr ""
+"API erişimi için DRF authentication tokeni ile birlikte kullanıcı "
+"detaylarını döner."
 
-#: auth_kit/api_descriptions.py:32
+#: auth_kit/api_descriptions.py:36
 msgid "Returns user details along with custom authentication tokens."
-msgstr "Özel authentication tokenları ile birlikte kullanıcı detaylarını döner."
+msgstr ""
+"Özel authentication tokenları ile birlikte kullanıcı detaylarını döner."
 
-#: auth_kit/api_descriptions.py:38
+#: auth_kit/api_descriptions.py:42
 msgid "JWT access and refresh tokens"
 msgstr "JWT erişim ve yenileme tokenları"
 
-#: auth_kit/api_descriptions.py:40
+#: auth_kit/api_descriptions.py:44
 msgid "DRF authentication token"
 msgstr "DRF authentication tokeni"
 
-#: auth_kit/api_descriptions.py:42
+#: auth_kit/api_descriptions.py:46
 msgid "custom authentication tokens"
 msgstr "özel authentication tokenları"
 
-#: auth_kit/api_descriptions.py:49
+#: auth_kit/api_descriptions.py:53
 msgid "Authentication cookies are set automatically for secure token storage."
-msgstr "Güvenli token depolama için authentication çerezleri otomatik olarak ayarlanır."
+msgstr ""
+"Güvenli token depolama için authentication çerezleri otomatik olarak "
+"ayarlanır."
 
-#: auth_kit/api_descriptions.py:57
+#: auth_kit/api_descriptions.py:61
 msgid "Blacklists JWT refresh tokens to prevent further use."
-msgstr "Daha fazla kullanımı önlemek için JWT yenileme tokenlarını kara listeye alır."
+msgstr ""
+"Daha fazla kullanımı önlemek için JWT yenileme tokenlarını kara listeye alır."
 
-#: auth_kit/api_descriptions.py:59
+#: auth_kit/api_descriptions.py:63
 msgid "Deletes the DRF authentication token from the database."
 msgstr "DRF authentication tokenini veritabanından siler."
 
-#: auth_kit/api_descriptions.py:61
+#: auth_kit/api_descriptions.py:65
 msgid "Invalidates custom authentication tokens."
 msgstr "Özel authentication tokenlarını geçersiz kılar."
 
-#: auth_kit/api_descriptions.py:67
+#: auth_kit/api_descriptions.py:71
 msgid "Clears authentication cookies from the browser."
 msgstr "Tarayıcıdan authentication çerezlerini temizler."
 
-#: auth_kit/api_descriptions.py:73
+#: auth_kit/api_descriptions.py:77
 msgid "Authenticate with username/email and password to obtain access tokens."
-msgstr "Erişim tokenları elde etmek için kullanıcı adı/e-posta ve şifre ile kimlik doğrulaması yapar."
+msgstr ""
+"Erişim tokenları elde etmek için kullanıcı adı/e-posta ve şifre ile kimlik "
+"doğrulaması yapar."
 
-#: auth_kit/api_descriptions.py:85
+#: auth_kit/api_descriptions.py:89
 msgid "Logout user and invalidate authentication tokens."
 msgstr "Kullanıcıyı çıkış yapar ve authentication tokenlarını geçersiz kılar."
 
-#: auth_kit/api_descriptions.py:89
+#: auth_kit/api_descriptions.py:93
 msgid ""
 "Requires authentication to ensure only valid sessions can be logged out."
-msgstr "Sadece geçerli oturumların çıkış yapabilmesini sağlamak için kimlik doğrulaması gerektirir."
+msgstr ""
+"Sadece geçerli oturumların çıkış yapabilmesini sağlamak için kimlik "
+"doğrulaması gerektirir."
 
-#: auth_kit/api_descriptions.py:100
+#: auth_kit/api_descriptions.py:104
 msgid "Generate new JWT access tokens using refresh tokens."
 msgstr "Yenileme tokenlarını kullanarak yeni JWT erişim tokenları oluşturur."
 
-#: auth_kit/api_descriptions.py:104
+#: auth_kit/api_descriptions.py:108
 msgid ""
 "Refresh tokens can be provided in request data or extracted automatically "
 "from HTTP cookies."
-msgstr "Yenileme tokenları istek verisinde sağlanabilir veya HTTP çerezlerinden otomatik olarak çıkarılabilir."
+msgstr ""
+"Yenileme tokenları istek verisinde sağlanabilir veya HTTP çerezlerinden "
+"otomatik olarak çıkarılabilir."
 
-#: auth_kit/api_descriptions.py:106 auth_kit/api_descriptions.py:116
+#: auth_kit/api_descriptions.py:110 auth_kit/api_descriptions.py:120
 msgid "Returns new access tokens with updated expiration times."
 msgstr "Güncellenmiş süre sonu bilgileri ile yeni erişim tokenları döner."
 
-#: auth_kit/api_descriptions.py:108
+#: auth_kit/api_descriptions.py:112
 msgid "New tokens are automatically set in HTTP cookies for secure storage."
-msgstr "Güvenli depolama için yeni tokenlar otomatik olarak HTTP çerezlerinde ayarlanır."
+msgstr ""
+"Güvenli depolama için yeni tokenlar otomatik olarak HTTP çerezlerinde "
+"ayarlanır."
 
-#: auth_kit/api_descriptions.py:115
+#: auth_kit/api_descriptions.py:119
 msgid "Refresh tokens must be provided in the request data."
 msgstr "Yenileme tokenları istek verisinde sağlanmalıdır."
 
-#: auth_kit/api_descriptions.py:122
+#: auth_kit/api_descriptions.py:127
 msgid "Register a new user account."
 msgstr "Yeni kullanıcı hesabı kaydeder."
 
-#: auth_kit/api_descriptions.py:126
+#: auth_kit/api_descriptions.py:134
+msgid ""
+"Users must verify their email address before the account is fully activated."
+msgstr ""
+"Hesap tam olarak etkinleştirilmeden önce kullanıcılar e-posta adreslerini "
+"doğrulamalıdır."
+
+#: auth_kit/api_descriptions.py:143
 msgid ""
 "Send password reset instructions to the provided email address. If the email "
 "is registered, a secure reset link will be sent. The link expires after a "
 "limited time for security."
-msgstr "Belirtilen e-posta adresine şifre sıfırlama talimatları gönderir. E-posta kayıtlıysa, güvenli bir sıfırlama bağlantısı gönderilir. Bağlantı güvenlik için sınırlı süre sonra süresini dolmuş olur."
+msgstr ""
+"Belirtilen e-posta adresine şifre sıfırlama talimatları gönderir. E-posta "
+"kayıtlıysa, güvenli bir sıfırlama bağlantısı gönderilir. Bağlantı güvenlik "
+"için sınırlı süre sonra süresini dolmuş olur."
 
-#: auth_kit/api_descriptions.py:132
+#: auth_kit/api_descriptions.py:149
 msgid ""
 "Complete the password reset process using the token from the reset email. "
 "Requires the UID and token from the email along with the new password. The "
 "token is single-use and expires for security."
-msgstr "Sıfırlama e-postasından gelen tokeni kullanarak şifre sıfırlama işlemini tamamlar. Yeni şifre ile birlikte e-postadaki UID ve token gereklidir. Token tek kullanımlıktır ve güvenlik için süresini dolmuş olur."
+msgstr ""
+"Sıfırlama e-postasından gelen tokeni kullanarak şifre sıfırlama işlemini "
+"tamamlar. Yeni şifre ile birlikte e-postadaki UID ve token gereklidir. Token "
+"tek kullanımlıktır ve güvenlik için süresini dolmuş olur."
 
-#: auth_kit/api_descriptions.py:138
+#: auth_kit/api_descriptions.py:155
 msgid "Change the current user's password. Requires authentication. "
-msgstr "Mevcut kullanıcının şifresini değiştirir. Kimlik doğrulaması gereklidir."
+msgstr ""
+"Mevcut kullanıcının şifresini değiştirir. Kimlik doğrulaması gereklidir."
 
-#: auth_kit/api_descriptions.py:142
+#: auth_kit/api_descriptions.py:159
 msgid ""
 "Confirm email address using the verification key sent via email. This "
 "activates the user account and allows login access."
-msgstr "E-posta ile gönderilen doğrulama anahtarını kullanarak e-posta adresini onaylar. Bu, kullanıcı hesabını etkinleştirir ve giriş erişimi sağlar."
+msgstr ""
+"E-posta ile gönderilen doğrulama anahtarını kullanarak e-posta adresini "
+"onaylar. Bu, kullanıcı hesabını etkinleştirir ve giriş erişimi sağlar."
 
-#: auth_kit/api_descriptions.py:147
+#: auth_kit/api_descriptions.py:164
 msgid ""
 "Send a new email verification message to unverified email addresses. Only "
 "works for email addresses that are registered but not yet verified."
-msgstr "Doğrulanmamış e-posta adreslerine yeni e-posta doğrulama mesajı gönderir. Sadece kayıtlı ancak henüz doğrulanmamış e-posta adresleri için çalışır."
+msgstr ""
+"Doğrulanmamış e-posta adreslerine yeni e-posta doğrulama mesajı gönderir. "
+"Sadece kayıtlı ancak henüz doğrulanmamış e-posta adresleri için çalışır."
 
-#: auth_kit/api_descriptions.py:152
+#: auth_kit/api_descriptions.py:169
 msgid ""
 "Retrieve the authenticated user's profile information including username, "
 "email, first name, and last name. Password fields are excluded."
-msgstr "Kimlik doğrulaması yapılmış kullanıcının kullanıcı adı, e-posta, ad ve soyad dahil profil bilgilerini alır. Şifre alanları hariç tutulur."
+msgstr ""
+"Kimlik doğrulaması yapılmış kullanıcının kullanıcı adı, e-posta, ad ve soyad "
+"dahil profil bilgilerini alır. Şifre alanları hariç tutulur."
 
-#: auth_kit/api_descriptions.py:157
+#: auth_kit/api_descriptions.py:174
 msgid ""
 "Update the authenticated user's profile information. Allows modification of "
 "username, first name, and last name. Email field is read-only for security."
-msgstr "Kimlik doğrulaması yapılmış kullanıcının profil bilgilerini günceller. Kullanıcı adı, ad ve soyad değişikliğine izin verir. E-posta alanı güvenlik için salt okunurdur."
+msgstr ""
+"Kimlik doğrulaması yapılmış kullanıcının profil bilgilerini günceller. "
+"Kullanıcı adı, ad ve soyad değişikliğine izin verir. E-posta alanı güvenlik "
+"için salt okunurdur."
 
-#: auth_kit/api_descriptions.py:163
+#: auth_kit/api_descriptions.py:180
 msgid ""
 "Partially update the authenticated user's profile information. Only provided "
 "fields will be updated. Email field is read-only."
-msgstr "Kimlik doğrulaması yapılmış kullanıcının profil bilgilerini kısmen günceller. Sadece sağlanan alanlar güncellenecektir. E-posta alanı salt okunurdur."
+msgstr ""
+"Kimlik doğrulaması yapılmış kullanıcının profil bilgilerini kısmen "
+"günceller. Sadece sağlanan alanlar güncellenecektir. E-posta alanı salt "
+"okunurdur."
 
 #: auth_kit/forms.py:78
 msgid "The email address is not assigned to any user account."
@@ -171,19 +214,24 @@ msgstr "MFA kodu %(seconds)s saniye içinde süresi dolacak."
 msgid ""
 "First step of MFA-enabled authentication. Validates credentials and "
 "initiates MFA flow."
-msgstr "MFA-etkin kimlik doğrulamasının ilk adımı. Kimlik bilgilerini doğrular ve MFA akışını başlatır."
+msgstr ""
+"MFA-etkin kimlik doğrulamasının ilk adımı. Kimlik bilgilerini doğrular ve "
+"MFA akışını başlatır."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:41
 #, python-format
 msgid ""
 "Returns ephemeral token for MFA verification or complete %(auth_tokens)s if "
 "MFA is disabled."
-msgstr "MFA doğrulaması için geçici token döner veya MFA devre dışıysa tam %(auth_tokens)s döner."
+msgstr ""
+"MFA doğrulaması için geçici token döner veya MFA devre dışıysa tam "
+"%(auth_tokens)s döner."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:51
 msgid ""
 "Complete MFA authentication using verification code and ephemeral token."
-msgstr "Doğrulama kodu ve geçici token kullanarak MFA kimlik doğrulamasını tamamlar."
+msgstr ""
+"Doğrulama kodu ve geçici token kullanarak MFA kimlik doğrulamasını tamamlar."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:56
 msgid "Supports both TOTP codes and backup codes for verification."
@@ -209,40 +257,56 @@ msgstr "Mevcut geçici token kullanarak MFA doğrulama kodunu yeniden gönderir.
 
 #: auth_kit/mfa/mfa_api_descriptions.py:84
 msgid "Only applicable for methods that require code dispatch (e.g., email)."
-msgstr "Sadece kod gönderimi gerektiren yöntemler için geçerlidir (örn., e-posta)."
+msgstr ""
+"Sadece kod gönderimi gerektiren yöntemler için geçerlidir (örn., e-posta)."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:96
 msgid ""
 "List all available MFA methods with their setup and activation status. Shows "
 "which methods are configured, active, and set as primary."
-msgstr "Tüm mevcut MFA yöntemlerini kurulum ve etkinleştirme durumları ile listeler. Hangi yöntemlerin yapılandırıldığını, etkin olduğunu ve birincil olarak ayarlandığını gösterir."
+msgstr ""
+"Tüm mevcut MFA yöntemlerini kurulum ve etkinleştirme durumları ile listeler. "
+"Hangi yöntemlerin yapılandırıldığını, etkin olduğunu ve birincil olarak "
+"ayarlandığını gösterir."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:101
 msgid ""
 "Initialize a new MFA method setup. Creates the method with backup codes and "
 "returns setup instructions (e.g., QR code for authenticator apps). Method "
 "must be confirmed before activation."
-msgstr "Yeni MFA yöntem kurulumunu başlatır. Yedek kodlarla yöntemi oluşturur ve kurulum talimatlarını döner (örn., authenticator uygulamaları için QR kod). Etkinleştirmeden önce yöntem onaylanmalıdır."
+msgstr ""
+"Yeni MFA yöntem kurulumunu başlatır. Yedek kodlarla yöntemi oluşturur ve "
+"kurulum talimatlarını döner (örn., authenticator uygulamaları için QR kod). "
+"Etkinleştirmeden önce yöntem onaylanmalıdır."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:107
 msgid ""
 "Confirm and activate a newly created MFA method using verification code. "
 "Automatically sets as primary method if no other primary method exists. "
 "Required before the method can be used for authentication."
-msgstr "Doğrulama kodu kullanarak yeni oluşturulan MFA yöntemini onaylar ve etkinleştirir. Başka bir birincil yöntem yoksa otomatik olarak birincil yöntem olarak ayarlar. Yöntem kimlik doğrulaması için kullanılmadan önce gereklidir."
+msgstr ""
+"Doğrulama kodu kullanarak yeni oluşturulan MFA yöntemini onaylar ve "
+"etkinleştirir. Başka bir birincil yöntem yoksa otomatik olarak birincil "
+"yöntem olarak ayarlar. Yöntem kimlik doğrulaması için kullanılmadan önce "
+"gereklidir."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:113
 msgid ""
 "Deactivate an active MFA method. Requires verification code from the method "
 "itself. Cannot deactivate primary methods - set another method as primary "
 "first."
-msgstr "Etkin MFA yöntemini devre dışı bırakır. Yöntemin kendisinden doğrulama kodu gerektirir. Birincil yöntemler devre dışı bırakılamaz - önce başka bir yöntemi birincil olarak ayarlayın."
+msgstr ""
+"Etkin MFA yöntemini devre dışı bırakır. Yöntemin kendisinden doğrulama kodu "
+"gerektirir. Birincil yöntemler devre dışı bırakılamaz - önce başka bir "
+"yöntemi birincil olarak ayarlayın."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:121
 msgid ""
 "Set an active MFA method as the primary authentication method. Primary "
 "method is used by default during login flow."
-msgstr "Etkin MFA yöntemini birincil kimlik doğrulama yöntemi olarak ayarlar. Birincil yöntem giriş akışı sırasında varsayılan olarak kullanılır."
+msgstr ""
+"Etkin MFA yöntemini birincil kimlik doğrulama yöntemi olarak ayarlar. "
+"Birincil yöntem giriş akışı sırasında varsayılan olarak kullanılır."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:125
 msgid "Only one method can be primary at a time."
@@ -256,7 +320,9 @@ msgstr "Mevcut birincil yöntemden doğrulama kodu gerektirir."
 msgid ""
 "Send verification code for methods that support code dispatch. Useful for "
 "testing method configuration or manual code requests."
-msgstr "Kod gönderimini destekleyen yöntemler için doğrulama kodu gönderir. Yöntem yapılandırmasını test etmek veya manuel kod istekleri için yararlıdır."
+msgstr ""
+"Kod gönderimini destekleyen yöntemler için doğrulama kodu gönderir. Yöntem "
+"yapılandırmasını test etmek veya manuel kod istekleri için yararlıdır."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:142
 msgid "Permanently delete an MFA method."
@@ -310,9 +376,23 @@ msgstr "MFA Yöntemi"
 msgid "MFA Methods"
 msgstr "MFA Yöntemleri"
 
+#: auth_kit/mfa/serializers/login_factors.py:153
+msgid "Invalid code"
+msgstr "Geçersiz kod"
+
+#: auth_kit/mfa/serializers/login_factors.py:172
+#: auth_kit/mfa/serializers/login_factors.py:226
+#: auth_kit/mfa/serializers/login_factors.py:272
+msgid "Invalid token"
+msgstr "Geçersiz token"
+
 #: auth_kit/mfa/serializers/login_factors.py:230
 msgid "Please select a new method"
 msgstr "Lütfen yeni bir yöntem seçin"
+
+#: auth_kit/mfa/serializers/mfa.py:76
+msgid "This method is already exists"
+msgstr "Bu yöntem zaten mevcut"
 
 #: auth_kit/mfa/serializers/mfa.py:145 auth_kit/mfa/serializers/mfa.py:200
 #: auth_kit/mfa/serializers/mfa.py:345
@@ -411,7 +491,61 @@ msgstr "Kullanıcı bu e-posta adresi ile zaten kayıtlı."
 msgid "Failed to exchange code for access token"
 msgstr "Kod erişim tokeni ile değiştirilemedi"
 
-#: auth_kit/social/views/login.py:50
+#: auth_kit/social/social_api_descriptions.py:29
+#, python-format
+msgid ""
+"Authenticate with %(provider)s using OAuth2/OpenID Connect authorization "
+"code to obtain access tokens."
+msgstr ""
+"Erişim tokenları elde etmek için OAuth2/OpenID Connect yetkilendirme kodunu "
+"kullanarak %(provider)s ile kimlik doğrulaması yapar."
+
+#: auth_kit/social/social_api_descriptions.py:51
+#, python-format
+msgid ""
+"Connect a %(provider)s account to the current user's account. This allows "
+"the user to login using their existing %(provider)s account in the future."
+msgstr ""
+"%(provider)s hesabını mevcut kullanıcının hesabına bağlar. Bu, kullanıcının "
+"gelecekte mevcut %(provider)s hesabını kullanarak giriş yapmasına olanak tanır."
+
+#: auth_kit/social/social_api_descriptions.py:56
+#, python-format
+msgid ""
+"Requires authentication and a valid OAuth2/OpenID Connect authorization code "
+"from %(provider)s."
+msgstr ""
+"Kimlik doğrulaması ve %(provider)s'den geçerli OAuth2/OpenID Connect "
+"yetkilendirme kodu gerektirir."
+
+#: auth_kit/social/social_api_descriptions.py:60
+#, python-format
+msgid ""
+"On success, the %(provider)s account is linked and can be used for future "
+"logins."
+msgstr ""
+"Başarı durumunda, %(provider)s hesabı bağlanır ve gelecekteki girişler için "
+"kullanılabilir."
+
+#: auth_kit/social/social_api_descriptions.py:73
+msgid ""
+"List all social accounts connected to the current user. Shows account "
+"details including provider, UID, and connection dates."
+msgstr ""
+"Mevcut kullanıcıya bağlı tüm sosyal hesapları listeler. Sağlayıcı, UID ve "
+"bağlantı tarihleri dahil hesap detaylarını gösterir."
+
+#: auth_kit/social/social_api_descriptions.py:78
+msgid ""
+"Disconnect a social account from the current user. Removes the social "
+"account connection and prevents future logins via that provider. Requires "
+"authentication and the account must belong to the current user."
+msgstr ""
+"Sosyal hesabı mevcut kullanıcıdan ayırır. Sosyal hesap bağlantısını kaldırır "
+"ve bu sağlayıcı üzerinden gelecekteki girişleri engeller. Kimlik doğrulaması "
+"gerektirir ve hesap mevcut kullanıcıya ait olmalıdır."
+
+#: auth_kit/social/views/login.py:58
 msgid "adapter_class is not defined"
 msgstr "adapter_class tanımlanmadı"
 
@@ -443,15 +577,15 @@ msgstr "Şifre yeni şifre ile sıfırlandı."
 msgid "New password has been saved."
 msgstr "Yeni şifre kaydedildi."
 
-#: auth_kit/views/registration.py:142
+#: auth_kit/views/registration.py:143
 msgid "Verification e-mail sent."
 msgstr "Doğrulama e-postası gönderildi."
 
-#: auth_kit/views/registration.py:143
+#: auth_kit/views/registration.py:144
 msgid "Successfully registered."
 msgstr "Başarıyla kaydedildi."
 
-#: auth_kit/views/registration.py:223 auth_kit/views/registration.py:268
+#: auth_kit/views/registration.py:224 auth_kit/views/registration.py:269
 msgid "ok"
 msgstr "tamam"
 

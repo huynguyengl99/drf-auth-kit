@@ -202,9 +202,9 @@ class MySetting:
     SOCIAL_ACCOUNT_VIEW_SET: type["GenericViewSet[Any]"] = ImportStr(
         "auth_kit.social.views.account.SocialAccountViewSet"
     )
-    SOCIAL_LOGIN_SERIALIZER_FACTORY: Callable[[], type[Serializer[dict[str, Any]]]] = (
-        ImportStr("auth_kit.social.serializers.get_social_login_serializer")
-    )
+    SOCIAL_LOGIN_SERIALIZER_FACTORY: Callable[
+        [str], type[Serializer[dict[str, Any]]]
+    ] = ImportStr("auth_kit.social.serializers.get_social_login_serializer")
     SOCIAL_LOGIN_CALLBACK_URL_GENERATOR: Callable[..., str] = ImportStr(
         "auth_kit.social.utils.get_social_login_callback_url"
     )

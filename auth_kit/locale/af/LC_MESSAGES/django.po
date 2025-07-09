@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DRF Auth Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-08 06:02+0000\n"
+"POT-Creation-Date: 2025-07-09 05:21+0000\n"
 "PO-Revision-Date: 2025-07-08 12:00+0000\n"
 "Last-Translator: DRF Auth Kit Team\n"
 "Language-Team: Afrikaans\n"
@@ -16,7 +16,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-#: auth_kit/api_descriptions.py:25
+
+#: auth_kit/api_descriptions.py:29
 msgid ""
 "Returns user details along with JWT access and refresh tokens with "
 "expiration times."
@@ -24,67 +25,71 @@ msgstr ""
 "Gee gebruikersbesonderhede saam met JWT-toegang en verfris tokens met "
 "vervaldatums terug."
 
-#: auth_kit/api_descriptions.py:29
+#: auth_kit/api_descriptions.py:33
 msgid ""
 "Returns user details along with a DRF authentication token for API access."
 msgstr ""
-"Gee gebruikersbesonderhede saam met 'n DRF-verifikasietoken vir API-toegang terug."
+"Gee gebruikersbesonderhede saam met 'n DRF-verifikasietoken vir API-toegang "
+"terug."
 
-#: auth_kit/api_descriptions.py:32
+#: auth_kit/api_descriptions.py:36
 msgid "Returns user details along with custom authentication tokens."
-msgstr "Gee gebruikersbesonderhede saam met aangepaste verifikasietokens terug."
+msgstr ""
+"Gee gebruikersbesonderhede saam met aangepaste verifikasietokens terug."
 
-#: auth_kit/api_descriptions.py:38
+#: auth_kit/api_descriptions.py:42
 msgid "JWT access and refresh tokens"
 msgstr "JWT-toegang en verfris tokens"
 
-#: auth_kit/api_descriptions.py:40
+#: auth_kit/api_descriptions.py:44
 msgid "DRF authentication token"
 msgstr "DRF-verifikasietoken"
 
-#: auth_kit/api_descriptions.py:42
+#: auth_kit/api_descriptions.py:46
 msgid "custom authentication tokens"
 msgstr "aangepaste verifikasietokens"
 
-#: auth_kit/api_descriptions.py:49
+#: auth_kit/api_descriptions.py:53
 msgid "Authentication cookies are set automatically for secure token storage."
 msgstr "Verifikasie-koekies word outomaties gestel vir veilige token-berging."
 
-#: auth_kit/api_descriptions.py:57
+#: auth_kit/api_descriptions.py:61
 msgid "Blacklists JWT refresh tokens to prevent further use."
 msgstr "Swartlys JWT-verfris tokens om verdere gebruik te voorkom."
 
-#: auth_kit/api_descriptions.py:59
+#: auth_kit/api_descriptions.py:63
 msgid "Deletes the DRF authentication token from the database."
 msgstr "Skrap die DRF-verifikasietoken uit die databasis."
 
-#: auth_kit/api_descriptions.py:61
+#: auth_kit/api_descriptions.py:65
 msgid "Invalidates custom authentication tokens."
 msgstr "Maak aangepaste verifikasietokens ongeldig."
 
-#: auth_kit/api_descriptions.py:67
+#: auth_kit/api_descriptions.py:71
 msgid "Clears authentication cookies from the browser."
 msgstr "Maak verifikasie-koekies uit die blaaier skoon."
 
-#: auth_kit/api_descriptions.py:73
+#: auth_kit/api_descriptions.py:77
 msgid "Authenticate with username/email and password to obtain access tokens."
-msgstr "Verifieer met gebruikersnaam/e-pos en wagwoord om toegangstokens te verkry."
+msgstr ""
+"Verifieer met gebruikersnaam/e-pos en wagwoord om toegangstokens te verkry."
 
-#: auth_kit/api_descriptions.py:85
+#: auth_kit/api_descriptions.py:89
 msgid "Logout user and invalidate authentication tokens."
 msgstr "Teken gebruiker uit en maak verifikasietokens ongeldig."
 
-#: auth_kit/api_descriptions.py:89
+#: auth_kit/api_descriptions.py:93
 msgid ""
 "Requires authentication to ensure only valid sessions can be logged out."
 msgstr ""
-"Vereis verifikasie om te verseker dat slegs geldige sessies uitgeteken kan word."
+"Vereis verifikasie om te verseker dat slegs geldige sessies uitgeteken kan "
+"word."
 
-#: auth_kit/api_descriptions.py:100
+#: auth_kit/api_descriptions.py:104
 msgid "Generate new JWT access tokens using refresh tokens."
 msgstr "Genereer nuwe JWT-toegangstokens met verfris tokens."
 
-#: auth_kit/api_descriptions.py:104
+#: auth_kit/api_descriptions.py:108
 msgid ""
 "Refresh tokens can be provided in request data or extracted automatically "
 "from HTTP cookies."
@@ -92,79 +97,89 @@ msgstr ""
 "Verfris tokens kan verskaf word in versoekdata of outomaties onttrek word "
 "uit HTTP-koekies."
 
-#: auth_kit/api_descriptions.py:106 auth_kit/api_descriptions.py:116
+#: auth_kit/api_descriptions.py:110 auth_kit/api_descriptions.py:120
 msgid "Returns new access tokens with updated expiration times."
 msgstr "Gee nuwe toegangstokens met bygewerkte vervaldatums terug."
 
-#: auth_kit/api_descriptions.py:108
+#: auth_kit/api_descriptions.py:112
 msgid "New tokens are automatically set in HTTP cookies for secure storage."
-msgstr "Nuwe tokens word outomaties in HTTP-koekies gestel vir veilige berging."
+msgstr ""
+"Nuwe tokens word outomaties in HTTP-koekies gestel vir veilige berging."
 
-#: auth_kit/api_descriptions.py:115
+#: auth_kit/api_descriptions.py:119
 msgid "Refresh tokens must be provided in the request data."
 msgstr "Verfris tokens moet in die versoekdata verskaf word."
 
-#: auth_kit/api_descriptions.py:122
+#: auth_kit/api_descriptions.py:127
 msgid "Register a new user account."
 msgstr "Registreer 'n nuwe gebruikersrekening."
 
-#: auth_kit/api_descriptions.py:126
+#: auth_kit/api_descriptions.py:134
+msgid ""
+"Users must verify their email address before the account is fully activated."
+msgstr ""
+"Gebruikers moet hul e-posadres verifieer voordat die rekening volledig "
+"geaktiveer is."
+
+#: auth_kit/api_descriptions.py:143
 msgid ""
 "Send password reset instructions to the provided email address. If the email "
 "is registered, a secure reset link will be sent. The link expires after a "
 "limited time for security."
 msgstr ""
 "Stuur wagwoord-herstel instruksies na die verskafde e-posadres. As die e-pos "
-"geregistreer is, sal 'n veilige herstel skakel gestuur word. Die skakel verval "
-"na 'n beperkte tyd vir sekuriteit."
+"geregistreer is, sal 'n veilige herstel skakel gestuur word. Die skakel "
+"verval na 'n beperkte tyd vir sekuriteit."
 
-#: auth_kit/api_descriptions.py:132
+#: auth_kit/api_descriptions.py:149
 msgid ""
 "Complete the password reset process using the token from the reset email. "
 "Requires the UID and token from the email along with the new password. The "
 "token is single-use and expires for security."
 msgstr ""
 "Voltooi die wagwoord-herstel proses met die token uit die herstel e-pos. "
-"Vereis die UID en token uit die e-pos saam met die nuwe wagwoord. Die "
-"token is eenmalig-gebruik en verval vir sekuriteit."
+"Vereis die UID en token uit die e-pos saam met die nuwe wagwoord. Die token "
+"is eenmalig-gebruik en verval vir sekuriteit."
 
-#: auth_kit/api_descriptions.py:138
+#: auth_kit/api_descriptions.py:155
 msgid "Change the current user's password. Requires authentication. "
 msgstr "Verander die huidige gebruiker se wagwoord. Vereis verifikasie. "
 
-#: auth_kit/api_descriptions.py:142
+#: auth_kit/api_descriptions.py:159
 msgid ""
 "Confirm email address using the verification key sent via email. This "
 "activates the user account and allows login access."
 msgstr ""
-"Bevestig e-posadres met die verifikasie sleutel wat via e-pos gestuur is. Dit "
-"aktiveer die gebruikersrekening en laat inteken toe."
+"Bevestig e-posadres met die verifikasie sleutel wat via e-pos gestuur is. "
+"Dit aktiveer die gebruikersrekening en laat inteken toe."
 
-#: auth_kit/api_descriptions.py:147
+#: auth_kit/api_descriptions.py:164
 msgid ""
 "Send a new email verification message to unverified email addresses. Only "
 "works for email addresses that are registered but not yet verified."
 msgstr ""
-"Stuur 'n nuwe e-pos verifikasie boodskap na ongeverifieerde e-posadresse. Werk "
-"slegs vir e-posadresse wat geregistreer is maar nog nie geverifieer is nie."
+"Stuur 'n nuwe e-pos verifikasie boodskap na ongeverifieerde e-posadresse. "
+"Werk slegs vir e-posadresse wat geregistreer is maar nog nie geverifieer is "
+"nie."
 
-#: auth_kit/api_descriptions.py:152
+#: auth_kit/api_descriptions.py:169
 msgid ""
 "Retrieve the authenticated user's profile information including username, "
 "email, first name, and last name. Password fields are excluded."
 msgstr ""
-"Herwin die geverifieerde gebruiker se profiel inligting insluitend gebruikersnaam, "
-"e-pos, voornaam, en van. Wagwoord velde word uitgesluit."
+"Herwin die geverifieerde gebruiker se profiel inligting insluitend "
+"gebruikersnaam, e-pos, voornaam, en van. Wagwoord velde word uitgesluit."
 
-#: auth_kit/api_descriptions.py:157
+#: auth_kit/api_descriptions.py:174
 msgid ""
 "Update the authenticated user's profile information. Allows modification of "
 "username, first name, and last name. Email field is read-only for security."
 msgstr ""
 "Werk die geverifieerde gebruiker se profiel inligting by. Laat wysiging van "
-"gebruikersnaam, voornaam, en van toe. E-pos veld is lees-alleen vir sekuriteit."
+"gebruikersnaam, voornaam, en van toe. E-pos veld is lees-alleen vir "
+"sekuriteit."
 
-#: auth_kit/api_descriptions.py:163
+#: auth_kit/api_descriptions.py:180
 msgid ""
 "Partially update the authenticated user's profile information. Only provided "
 "fields will be updated. Email field is read-only."
@@ -209,8 +224,7 @@ msgstr ""
 #: auth_kit/mfa/mfa_api_descriptions.py:51
 msgid ""
 "Complete MFA authentication using verification code and ephemeral token."
-msgstr ""
-"Voltooi MFA-verifikasie met verifikasie kode en kortstondige token."
+msgstr "Voltooi MFA-verifikasie met verifikasie kode en kortstondige token."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:56
 msgid "Supports both TOTP codes and backup codes for verification."
@@ -252,9 +266,9 @@ msgid ""
 "returns setup instructions (e.g., QR code for authenticator apps). Method "
 "must be confirmed before activation."
 msgstr ""
-"Inisialiseer 'n nuwe MFA-metode opstelling. Skep die metode met rugsteun-kodes en "
-"gee opstelling instruksies (bv. QR-kode vir verifikasie-apps). Metode "
-"moet bevestig word voor aktivering."
+"Inisialiseer 'n nuwe MFA-metode opstelling. Skep die metode met rugsteun-"
+"kodes en gee opstelling instruksies (bv. QR-kode vir verifikasie-apps). "
+"Metode moet bevestig word voor aktivering."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:107
 msgid ""
@@ -262,8 +276,8 @@ msgid ""
 "Automatically sets as primary method if no other primary method exists. "
 "Required before the method can be used for authentication."
 msgstr ""
-"Bevestig en aktiveer 'n nuutgeskepte MFA-metode met verifikasie kode. "
-"Stel outomaties as primêre metode as geen ander primêre metode bestaan nie. "
+"Bevestig en aktiveer 'n nuutgeskepte MFA-metode met verifikasie kode. Stel "
+"outomaties as primêre metode as geen ander primêre metode bestaan nie. "
 "Vereis voor die metode gebruik kan word vir verifikasie."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:113
@@ -273,15 +287,16 @@ msgid ""
 "first."
 msgstr ""
 "Deaktiveer 'n aktiewe MFA-metode. Vereis verifikasie kode van die metode "
-"self. Kan nie primêre metodes deaktiveer nie - stel eers 'n ander metode as primêr."
+"self. Kan nie primêre metodes deaktiveer nie - stel eers 'n ander metode as "
+"primêr."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:121
 msgid ""
 "Set an active MFA method as the primary authentication method. Primary "
 "method is used by default during login flow."
 msgstr ""
-"Stel 'n aktiewe MFA-metode as die primêre verifikasie metode. Primêre "
-"metode word by verstek gebruik tydens inteken-vloei."
+"Stel 'n aktiewe MFA-metode as die primêre verifikasie metode. Primêre metode "
+"word by verstek gebruik tydens inteken-vloei."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:125
 msgid "Only one method can be primary at a time."
@@ -296,8 +311,8 @@ msgid ""
 "Send verification code for methods that support code dispatch. Useful for "
 "testing method configuration or manual code requests."
 msgstr ""
-"Stuur verifikasie kode vir metodes wat kode-versending ondersteun. Nuttig vir "
-"toets metode konfigurasie of handmatige kode-versoeke."
+"Stuur verifikasie kode vir metodes wat kode-versending ondersteun. Nuttig "
+"vir toets metode konfigurasie of handmatige kode-versoeke."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:142
 msgid "Permanently delete an MFA method."
@@ -351,9 +366,23 @@ msgstr "MFA-metode"
 msgid "MFA Methods"
 msgstr "MFA-metodes"
 
+#: auth_kit/mfa/serializers/login_factors.py:153
+msgid "Invalid code"
+msgstr "Ongeldige kode"
+
+#: auth_kit/mfa/serializers/login_factors.py:172
+#: auth_kit/mfa/serializers/login_factors.py:226
+#: auth_kit/mfa/serializers/login_factors.py:272
+msgid "Invalid token"
+msgstr "Ongeldige token"
+
 #: auth_kit/mfa/serializers/login_factors.py:230
 msgid "Please select a new method"
 msgstr "Kies asseblief 'n nuwe metode"
+
+#: auth_kit/mfa/serializers/mfa.py:76
+msgid "This method is already exists"
+msgstr "Hierdie metode bestaan reeds"
 
 #: auth_kit/mfa/serializers/mfa.py:145 auth_kit/mfa/serializers/mfa.py:200
 #: auth_kit/mfa/serializers/mfa.py:345
@@ -452,7 +481,63 @@ msgstr "Gebruiker is reeds geregistreer met hierdie e-posadres."
 msgid "Failed to exchange code for access token"
 msgstr "Kon nie kode vir toegangstoken uitruil nie"
 
-#: auth_kit/social/views/login.py:50
+#: auth_kit/social/social_api_descriptions.py:29
+#, python-format
+msgid ""
+"Authenticate with %(provider)s using OAuth2/OpenID Connect authorization "
+"code to obtain access tokens."
+msgstr ""
+"Verifieer met %(provider)s deur OAuth2/OpenID Connect magtigingskode te "
+"gebruik om toegangstokens te verkry."
+
+#: auth_kit/social/social_api_descriptions.py:51
+#, python-format
+msgid ""
+"Connect a %(provider)s account to the current user's account. This allows "
+"the user to login using their existing %(provider)s account in the future."
+msgstr ""
+"Verbind 'n %(provider)s-rekening aan die huidige gebruiker se rekening. Dit "
+"laat die gebruiker toe om in die toekoms met hul bestaande %(provider)s-"
+"rekening in te teken."
+
+#: auth_kit/social/social_api_descriptions.py:56
+#, python-format
+msgid ""
+"Requires authentication and a valid OAuth2/OpenID Connect authorization code "
+"from %(provider)s."
+msgstr ""
+"Vereis verifikasie en 'n geldige OAuth2/OpenID Connect magtigingskode van "
+"%(provider)s."
+
+#: auth_kit/social/social_api_descriptions.py:60
+#, python-format
+msgid ""
+"On success, the %(provider)s account is linked and can be used for future "
+"logins."
+msgstr ""
+"Met sukses word die %(provider)s-rekening gekoppel en kan vir toekomstige "
+"intekeninge gebruik word."
+
+#: auth_kit/social/social_api_descriptions.py:73
+msgid ""
+"List all social accounts connected to the current user. Shows account "
+"details including provider, UID, and connection dates."
+msgstr ""
+"Lys alle sosiale rekeninge wat aan die huidige gebruiker gekoppel is. Wys "
+"rekening besonderhede insluitend verskaffer, UID, en verbindingsdatums."
+
+#: auth_kit/social/social_api_descriptions.py:78
+msgid ""
+"Disconnect a social account from the current user. Removes the social "
+"account connection and prevents future logins via that provider. Requires "
+"authentication and the account must belong to the current user."
+msgstr ""
+"Ontkoppel 'n sosiale rekening van die huidige gebruiker. Verwyder die "
+"sosiale rekening verbinding en voorkom toekomstige intekeninge via daardie "
+"verskaffer. Vereis verifikasie en die rekening moet aan die huidige "
+"gebruiker behoort."
+
+#: auth_kit/social/views/login.py:58
 msgid "adapter_class is not defined"
 msgstr "adapter_class is nie gedefinieer nie"
 
@@ -484,15 +569,15 @@ msgstr "Wagwoord is herstel met die nuwe wagwoord."
 msgid "New password has been saved."
 msgstr "Nuwe wagwoord is gestoor."
 
-#: auth_kit/views/registration.py:142
+#: auth_kit/views/registration.py:143
 msgid "Verification e-mail sent."
 msgstr "Verifikasie e-pos gestuur."
 
-#: auth_kit/views/registration.py:143
+#: auth_kit/views/registration.py:144
 msgid "Successfully registered."
 msgstr "Suksesvol geregistreer."
 
-#: auth_kit/views/registration.py:223 auth_kit/views/registration.py:268
+#: auth_kit/views/registration.py:224 auth_kit/views/registration.py:269
 msgid "ok"
 msgstr "ok"
 

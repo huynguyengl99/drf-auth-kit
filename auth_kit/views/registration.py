@@ -13,6 +13,7 @@ from django.contrib.auth.models import AbstractUser
 from django.db.models import QuerySet
 from django.http import HttpResponseBase
 from django.urls import reverse
+from django.utils.functional import lazy
 from django.utils.translation import gettext_lazy as _
 from rest_framework import status
 from rest_framework.exceptions import MethodNotAllowed
@@ -33,7 +34,7 @@ from drf_spectacular.utils import OpenApiResponse, extend_schema
 from auth_kit.api_descriptions import (
     EMAIL_RESEND_DESCRIPTION,
     EMAIL_VERIFY_DESCRIPTION,
-    REGISTER_DESCRIPTION,
+    get_register_description,
 )
 from auth_kit.app_settings import auth_kit_settings
 from auth_kit.serializers import (
@@ -142,8 +143,8 @@ class RegisterView(CreateAPIView[Any]):
             return {"detail": _("Verification e-mail sent.")}
         return {"detail": _("Successfully registered.")}
 
-    @extend_schema(description=REGISTER_DESCRIPTION)
-    def create(self, request: Request, *args: Any, **kwargs: Any) -> Response:
+    @extend_schema(description=lazy(get_register_description, str)())
+    def post(self, request: Request, *args: Any, **kwargs: Any) -> Response:
         """
         Create a new user account.
 
@@ -246,7 +247,7 @@ class ResendEmailVerificationView(CreateAPIView[Any]):
         return EmailAddress.objects.get_queryset()  # type: ignore[no-any-return]
 
     @extend_schema(description=EMAIL_RESEND_DESCRIPTION)
-    def create(self, request: Request, *args: Any, **kwargs: Any) -> Response:
+    def post(self, request: Request, *args: Any, **kwargs: Any) -> Response:
         """
         Send new email verification message.
 

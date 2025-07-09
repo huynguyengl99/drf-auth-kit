@@ -14,10 +14,30 @@ from allauth.socialaccount import signals  # pyright: ignore[reportMissingTypeSt
 from allauth.socialaccount.models import (  # pyright: ignore[reportMissingTypeStubs]
     SocialAccount,
 )
+from drf_spectacular.utils import OpenApiParameter, extend_schema, extend_schema_view
 
 from auth_kit.social.serializers import SocialAccountSerializer
+from auth_kit.social.social_api_descriptions import (
+    SOCIAL_ACCOUNT_DELETE_DESCRIPTION,
+    SOCIAL_ACCOUNT_LIST_DESCRIPTION,
+)
 
 
+@extend_schema_view(
+    list=extend_schema(description=SOCIAL_ACCOUNT_LIST_DESCRIPTION),
+    destroy=extend_schema(
+        description=SOCIAL_ACCOUNT_DELETE_DESCRIPTION,
+        parameters=[
+            OpenApiParameter(
+                name="id",
+                location="path",
+                required=True,
+                type=int,
+                description="A unique integer value identifying this social account.",
+            )
+        ],
+    ),
+)
 class SocialAccountViewSet(
     mixins.ListModelMixin, mixins.DestroyModelMixin, GenericViewSet[SocialAccount]
 ):

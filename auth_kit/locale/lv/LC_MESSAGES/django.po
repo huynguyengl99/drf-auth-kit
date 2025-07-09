@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DRF Auth Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-08 06:02+0000\n"
+"POT-Creation-Date: 2025-07-09 05:21+0000\n"
 "PO-Revision-Date: 2025-07-08 06:02+0000\n"
 "Last-Translator: DRF Auth Kit Team\n"
 "Language-Team: Latvian\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
 
-#: auth_kit/api_descriptions.py:25
+#: auth_kit/api_descriptions.py:29
 msgid ""
 "Returns user details along with JWT access and refresh tokens with "
 "expiration times."
@@ -26,67 +26,74 @@ msgstr ""
 "Atgriež lietotāja datus kopā ar JWT piekļuves un atjaunošanas žetoniem ar "
 "beigu termiņiem."
 
-#: auth_kit/api_descriptions.py:29
+#: auth_kit/api_descriptions.py:33
 msgid ""
 "Returns user details along with a DRF authentication token for API access."
 msgstr ""
 "Atgriež lietotāja datus kopā ar DRF autentifikācijas žetonu API piekļuvei."
 
-#: auth_kit/api_descriptions.py:32
+#: auth_kit/api_descriptions.py:36
 msgid "Returns user details along with custom authentication tokens."
 msgstr "Atgriež lietotāja datus kopā ar pielāgotiem autentifikācijas žetoniem."
 
-#: auth_kit/api_descriptions.py:38
+#: auth_kit/api_descriptions.py:42
 msgid "JWT access and refresh tokens"
 msgstr "JWT piekļuves un atjaunošanas žetoni"
 
-#: auth_kit/api_descriptions.py:40
+#: auth_kit/api_descriptions.py:44
 msgid "DRF authentication token"
 msgstr "DRF autentifikācijas žetons"
 
-#: auth_kit/api_descriptions.py:42
+#: auth_kit/api_descriptions.py:46
 msgid "custom authentication tokens"
 msgstr "pielāgoti autentifikācijas žetoni"
 
-#: auth_kit/api_descriptions.py:49
+#: auth_kit/api_descriptions.py:53
 msgid "Authentication cookies are set automatically for secure token storage."
-msgstr "Autentifikācijas sīkdatnes tiek iestatītas automātiski drošai žetonu glabāšanai."
+msgstr ""
+"Autentifikācijas sīkdatnes tiek iestatītas automātiski drošai žetonu "
+"glabāšanai."
 
-#: auth_kit/api_descriptions.py:57
+#: auth_kit/api_descriptions.py:61
 msgid "Blacklists JWT refresh tokens to prevent further use."
-msgstr "Iekļauj JWT atjaunošanas žetonus melnajā sarakstā, lai novērstu turpmāku izmantošanu."
+msgstr ""
+"Iekļauj JWT atjaunošanas žetonus melnajā sarakstā, lai novērstu turpmāku "
+"izmantošanu."
 
-#: auth_kit/api_descriptions.py:59
+#: auth_kit/api_descriptions.py:63
 msgid "Deletes the DRF authentication token from the database."
 msgstr "Dzēš DRF autentifikācijas žetonu no datu bāzes."
 
-#: auth_kit/api_descriptions.py:61
+#: auth_kit/api_descriptions.py:65
 msgid "Invalidates custom authentication tokens."
 msgstr "Padara nederīgus pielāgotos autentifikācijas žetonus."
 
-#: auth_kit/api_descriptions.py:67
+#: auth_kit/api_descriptions.py:71
 msgid "Clears authentication cookies from the browser."
 msgstr "Notīra autentifikācijas sīkdatnes no pārlūkprogrammas."
 
-#: auth_kit/api_descriptions.py:73
+#: auth_kit/api_descriptions.py:77
 msgid "Authenticate with username/email and password to obtain access tokens."
-msgstr "Autentificēties ar lietotājvārdu/e-pastu un paroli, lai iegūtu piekļuves žetonus."
+msgstr ""
+"Autentificēties ar lietotājvārdu/e-pastu un paroli, lai iegūtu piekļuves "
+"žetonus."
 
-#: auth_kit/api_descriptions.py:85
+#: auth_kit/api_descriptions.py:89
 msgid "Logout user and invalidate authentication tokens."
 msgstr "Atteikt lietotāju un paddarīt nederīgus autentifikācijas žetonus."
 
-#: auth_kit/api_descriptions.py:89
+#: auth_kit/api_descriptions.py:93
 msgid ""
 "Requires authentication to ensure only valid sessions can be logged out."
 msgstr ""
-"Nepieciešama autentifikācija, lai nodrošinātu, ka tikai derīgās sesijas var tikt atteiktas."
+"Nepieciešama autentifikācija, lai nodrošinātu, ka tikai derīgās sesijas var "
+"tikt atteiktas."
 
-#: auth_kit/api_descriptions.py:100
+#: auth_kit/api_descriptions.py:104
 msgid "Generate new JWT access tokens using refresh tokens."
 msgstr "Ģenerēt jaunus JWT piekļuves žetonus, izmantojot atjaunošanas žetonus."
 
-#: auth_kit/api_descriptions.py:104
+#: auth_kit/api_descriptions.py:108
 msgid ""
 "Refresh tokens can be provided in request data or extracted automatically "
 "from HTTP cookies."
@@ -94,63 +101,70 @@ msgstr ""
 "Atjaunošanas žetoni var tikt nodrošināti pieprasījuma datos vai automātiski "
 "izvilkti no HTTP sīkdatnēm."
 
-#: auth_kit/api_descriptions.py:106 auth_kit/api_descriptions.py:116
+#: auth_kit/api_descriptions.py:110 auth_kit/api_descriptions.py:120
 msgid "Returns new access tokens with updated expiration times."
 msgstr "Atgriež jaunus piekļuves žetonus ar atjaunotiem beigu termiņiem."
 
-#: auth_kit/api_descriptions.py:108
+#: auth_kit/api_descriptions.py:112
 msgid "New tokens are automatically set in HTTP cookies for secure storage."
-msgstr "Jauni žetoni tiek automātiski iestatīti HTTP sīkdatnēs drošai glabāšanai."
+msgstr ""
+"Jauni žetoni tiek automātiski iestatīti HTTP sīkdatnēs drošai glabāšanai."
 
-#: auth_kit/api_descriptions.py:115
+#: auth_kit/api_descriptions.py:119
 msgid "Refresh tokens must be provided in the request data."
 msgstr "Atjaunošanas žetoni jānodrošina pieprasījuma datos."
 
-#: auth_kit/api_descriptions.py:122
+#: auth_kit/api_descriptions.py:127
 msgid "Register a new user account."
 msgstr "Reģistrēt jaunu lietotāja kontu."
 
-#: auth_kit/api_descriptions.py:126
+#: auth_kit/api_descriptions.py:134
+msgid ""
+"Users must verify their email address before the account is fully activated."
+msgstr "Lietotājiem ir jāapstiprina sava e-pasta adrese, pirms konts tiek pilnībā aktivizēts."
+
+#: auth_kit/api_descriptions.py:143
 msgid ""
 "Send password reset instructions to the provided email address. If the email "
 "is registered, a secure reset link will be sent. The link expires after a "
 "limited time for security."
 msgstr ""
-"Sūtīt paroles atiestatīšanas instrukcijas uz norādīto e-pasta adresi. Ja e-pasts "
-"ir reģistrēts, tiks nosūtīta droša atiestatīšanas saite. Saite beidzas pēc "
-"ierobežota laika drošības nolūkos."
+"Sūtīt paroles atiestatīšanas instrukcijas uz norādīto e-pasta adresi. Ja e-"
+"pasts ir reģistrēts, tiks nosūtīta droša atiestatīšanas saite. Saite beidzas "
+"pēc ierobežota laika drošības nolūkos."
 
-#: auth_kit/api_descriptions.py:132
+#: auth_kit/api_descriptions.py:149
 msgid ""
 "Complete the password reset process using the token from the reset email. "
 "Requires the UID and token from the email along with the new password. The "
 "token is single-use and expires for security."
 msgstr ""
-"Pabeigt paroles atiestatīšanas procesu, izmantojot žetonu no atiestatīšanas e-pasta. "
-"Nepieciešams UID un žetons no e-pasta kopā ar jauno paroli. "
-"Žetons ir vienreizējs un beidzas drošības nolūkos."
+"Pabeigt paroles atiestatīšanas procesu, izmantojot žetonu no atiestatīšanas "
+"e-pasta. Nepieciešams UID un žetons no e-pasta kopā ar jauno paroli. Žetons "
+"ir vienreizējs un beidzas drošības nolūkos."
 
-#: auth_kit/api_descriptions.py:138
+#: auth_kit/api_descriptions.py:155
 msgid "Change the current user's password. Requires authentication. "
 msgstr "Mainīt pašreizējā lietotāja paroli. Nepieciešama autentifikācija. "
 
-#: auth_kit/api_descriptions.py:142
+#: auth_kit/api_descriptions.py:159
 msgid ""
 "Confirm email address using the verification key sent via email. This "
 "activates the user account and allows login access."
 msgstr ""
-"Apstiprināt e-pasta adresi, izmantojot verifikācijas atslēgu, kas nosūtīta pa e-pastu. Tas "
-"aktivizē lietotāja kontu un ļauj pieteikties."
+"Apstiprināt e-pasta adresi, izmantojot verifikācijas atslēgu, kas nosūtīta "
+"pa e-pastu. Tas aktivizē lietotāja kontu un ļauj pieteikties."
 
-#: auth_kit/api_descriptions.py:147
+#: auth_kit/api_descriptions.py:164
 msgid ""
 "Send a new email verification message to unverified email addresses. Only "
 "works for email addresses that are registered but not yet verified."
 msgstr ""
-"Sūtīt jaunu e-pasta verifikācijas ziņojumu uz neapstiprinātām e-pasta adresēm. Darbojas "
-"tikai e-pasta adresēm, kas ir reģistrētas, bet vēl nav apstiprinātas."
+"Sūtīt jaunu e-pasta verifikācijas ziņojumu uz neapstiprinātām e-pasta "
+"adresēm. Darbojas tikai e-pasta adresēm, kas ir reģistrētas, bet vēl nav "
+"apstiprinātas."
 
-#: auth_kit/api_descriptions.py:152
+#: auth_kit/api_descriptions.py:169
 msgid ""
 "Retrieve the authenticated user's profile information including username, "
 "email, first name, and last name. Password fields are excluded."
@@ -158,15 +172,16 @@ msgstr ""
 "Iegūt autentificētā lietotāja profila informāciju, ieskaitot lietotājvārdu, "
 "e-pastu, vārdu un uzvārdu. Paroles lauki nav iekļauti."
 
-#: auth_kit/api_descriptions.py:157
+#: auth_kit/api_descriptions.py:174
 msgid ""
 "Update the authenticated user's profile information. Allows modification of "
 "username, first name, and last name. Email field is read-only for security."
 msgstr ""
 "Atjaunot autentificētā lietotāja profila informāciju. Ļauj modificēt "
-"lietotājvārdu, vārdu un uzvārdu. E-pasta lauks ir tikai lasāms drošības nolūkos."
+"lietotājvārdu, vārdu un uzvārdu. E-pasta lauks ir tikai lasāms drošības "
+"nolūkos."
 
-#: auth_kit/api_descriptions.py:163
+#: auth_kit/api_descriptions.py:180
 msgid ""
 "Partially update the authenticated user's profile information. Only provided "
 "fields will be updated. Email field is read-only."
@@ -205,14 +220,15 @@ msgid ""
 "Returns ephemeral token for MFA verification or complete %(auth_tokens)s if "
 "MFA is disabled."
 msgstr ""
-"Atgriež īslaicīgu žetonu MFA verifikācijai vai pilnu %(auth_tokens)s, ja "
-"MFA ir atspējots."
+"Atgriež īslaicīgu žetonu MFA verifikācijai vai pilnu %(auth_tokens)s, ja MFA "
+"ir atspējots."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:51
 msgid ""
 "Complete MFA authentication using verification code and ephemeral token."
 msgstr ""
-"Pabeigt MFA autentifikāciju, izmantojot verifikācijas kodu un īslaicīgu žetonu."
+"Pabeigt MFA autentifikāciju, izmantojot verifikācijas kodu un īslaicīgu "
+"žetonu."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:56
 msgid "Supports both TOTP codes and backup codes for verification."
@@ -234,19 +250,22 @@ msgstr "Jaunais īslaicīgais žetons beidzas pēc %(seconds)s sekundēm."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:81
 msgid "Resend MFA verification code using existing ephemeral token."
-msgstr "Atkārtoti nosūtīt MFA verifikācijas kodu, izmantojot esošu īslaicīgu žetonu."
+msgstr ""
+"Atkārtoti nosūtīt MFA verifikācijas kodu, izmantojot esošu īslaicīgu žetonu."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:84
 msgid "Only applicable for methods that require code dispatch (e.g., email)."
-msgstr "Attiecas tikai uz metodēm, kas prasa koda nosūtīšanu (piemēram, e-pasts)."
+msgstr ""
+"Attiecas tikai uz metodēm, kas prasa koda nosūtīšanu (piemēram, e-pasts)."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:96
 msgid ""
 "List all available MFA methods with their setup and activation status. Shows "
 "which methods are configured, active, and set as primary."
 msgstr ""
-"Saraksts ar visām pieejamām MFA metodēm ar to iestatīšanas un aktivizēšanas statusu. Rāda, "
-"kuras metodes ir konfigurētas, aktīvas un iestatītas kā primārās."
+"Saraksts ar visām pieejamām MFA metodēm ar to iestatīšanas un aktivizēšanas "
+"statusu. Rāda, kuras metodes ir konfigurētas, aktīvas un iestatītas kā "
+"primārās."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:101
 msgid ""
@@ -254,9 +273,9 @@ msgid ""
 "returns setup instructions (e.g., QR code for authenticator apps). Method "
 "must be confirmed before activation."
 msgstr ""
-"Inicializēt jaunu MFA metodes iestatīšanu. Izveido metodi ar rezerves kodiem un "
-"atgriež iestatīšanas instrukcijas (piemēram, QR kodu autentificētāju lietotnēm). Metode "
-"jāapstiprina pirms aktivizēšanas."
+"Inicializēt jaunu MFA metodes iestatīšanu. Izveido metodi ar rezerves kodiem "
+"un atgriež iestatīšanas instrukcijas (piemēram, QR kodu autentificētāju "
+"lietotnēm). Metode jāapstiprina pirms aktivizēšanas."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:107
 msgid ""
@@ -274,8 +293,9 @@ msgid ""
 "itself. Cannot deactivate primary methods - set another method as primary "
 "first."
 msgstr ""
-"Deaktivizēt aktīvu MFA metodi. Nepieciešams verifikācijas kods no pašas metodes. "
-"Nevar deaktivizēt primārās metodes - vispirms iestatiet citu metodi kā primāro."
+"Deaktivizēt aktīvu MFA metodi. Nepieciešams verifikācijas kods no pašas "
+"metodes. Nevar deaktivizēt primārās metodes - vispirms iestatiet citu metodi "
+"kā primāro."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:121
 msgid ""
@@ -353,9 +373,23 @@ msgstr "MFA metode"
 msgid "MFA Methods"
 msgstr "MFA metodes"
 
+#: auth_kit/mfa/serializers/login_factors.py:153
+msgid "Invalid code"
+msgstr "Nederīgs kods"
+
+#: auth_kit/mfa/serializers/login_factors.py:172
+#: auth_kit/mfa/serializers/login_factors.py:226
+#: auth_kit/mfa/serializers/login_factors.py:272
+msgid "Invalid token"
+msgstr "Nederīgs žetons"
+
 #: auth_kit/mfa/serializers/login_factors.py:230
 msgid "Please select a new method"
 msgstr "Lūdzu, izvēlieties jaunu metodi"
+
+#: auth_kit/mfa/serializers/mfa.py:76
+msgid "This method is already exists"
+msgstr "Šī metode jau eksistē"
 
 #: auth_kit/mfa/serializers/mfa.py:145 auth_kit/mfa/serializers/mfa.py:200
 #: auth_kit/mfa/serializers/mfa.py:345
@@ -454,7 +488,48 @@ msgstr "Lietotājs jau ir reģistrēts ar šo e-pasta adresi."
 msgid "Failed to exchange code for access token"
 msgstr "Neizdevās apmainīt kodu pret piekļuves žetonu"
 
-#: auth_kit/social/views/login.py:50
+#: auth_kit/social/social_api_descriptions.py:29
+#, python-format
+msgid ""
+"Authenticate with %(provider)s using OAuth2/OpenID Connect authorization "
+"code to obtain access tokens."
+msgstr "Autentificēties ar %(provider)s, izmantojot OAuth2/OpenID Connect autorizācijas kodu, lai iegūtu piekļuves žetonus."
+
+#: auth_kit/social/social_api_descriptions.py:51
+#, python-format
+msgid ""
+"Connect a %(provider)s account to the current user's account. This allows "
+"the user to login using their existing %(provider)s account in the future."
+msgstr "Savienot %(provider)s kontu ar pašreizējā lietotāja kontu. Tas ļauj lietotājam turpmāk pieteikties, izmantojot savu esošo %(provider)s kontu."
+
+#: auth_kit/social/social_api_descriptions.py:56
+#, python-format
+msgid ""
+"Requires authentication and a valid OAuth2/OpenID Connect authorization code "
+"from %(provider)s."
+msgstr "Nepieciešama autentifikācija un derīgs OAuth2/OpenID Connect autorizācijas kods no %(provider)s."
+
+#: auth_kit/social/social_api_descriptions.py:60
+#, python-format
+msgid ""
+"On success, the %(provider)s account is linked and can be used for future "
+"logins."
+msgstr "Veiksmīgas darbības gadījumā %(provider)s konts tiek saistīts un to var izmantot turpmākajām pieteikšanās reizēm."
+
+#: auth_kit/social/social_api_descriptions.py:73
+msgid ""
+"List all social accounts connected to the current user. Shows account "
+"details including provider, UID, and connection dates."
+msgstr "Uzskaita visus sociālos kontus, kas savienoti ar pašreizējo lietotāju. Rāda konta detaļas, ieskaitot nodrošinātāju, UID un savienojuma datumus."
+
+#: auth_kit/social/social_api_descriptions.py:78
+msgid ""
+"Disconnect a social account from the current user. Removes the social "
+"account connection and prevents future logins via that provider. Requires "
+"authentication and the account must belong to the current user."
+msgstr "Atvienot sociālo kontu no pašreizējā lietotāja. Noņem sociālā konta savienojumu un novērš turpmāko pieteikšanos caur šo nodrošinātāju. Nepieciešama autentifikācija un kontam jāpieder pašreizējam lietotājam."
+
+#: auth_kit/social/views/login.py:58
 msgid "adapter_class is not defined"
 msgstr "adapter_class nav definēts"
 
@@ -486,15 +561,15 @@ msgstr "Parole ir atiestatīta ar jauno paroli."
 msgid "New password has been saved."
 msgstr "Jaunā parole ir saglabāta."
 
-#: auth_kit/views/registration.py:142
+#: auth_kit/views/registration.py:143
 msgid "Verification e-mail sent."
 msgstr "Verifikācijas e-pasts nosūtīts."
 
-#: auth_kit/views/registration.py:143
+#: auth_kit/views/registration.py:144
 msgid "Successfully registered."
 msgstr "Sekmīgi reģistrēts."
 
-#: auth_kit/views/registration.py:223 auth_kit/views/registration.py:268
+#: auth_kit/views/registration.py:224 auth_kit/views/registration.py:269
 msgid "ok"
 msgstr "labi"
 

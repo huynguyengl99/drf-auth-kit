@@ -73,7 +73,7 @@ class MFAMethodCreateSerializer(MFAMethodGenericSerializer):
             name=value, user=request.user
         ).exists()
         if method_exists:
-            raise serializers.ValidationError("This method already exists")
+            raise serializers.ValidationError(_("This method is already exists"))
 
         return value
 

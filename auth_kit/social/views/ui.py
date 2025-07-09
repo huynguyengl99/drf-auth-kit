@@ -27,6 +27,7 @@ from allauth.socialaccount.providers.openid_connect.provider import (  # pyright
 from allauth.socialaccount.providers.openid_connect.views import (  # pyright: ignore[reportMissingTypeStubs]
     OpenIDConnectOAuth2Adapter,
 )
+from drf_spectacular.utils import extend_schema
 
 from auth_kit.app_settings import auth_kit_settings
 
@@ -235,6 +236,7 @@ def get_provider_display_name(social_app: SocialApp) -> str:
     return provider_key.replace("_oauth2", "").replace("_", " ").title()  # type: ignore[no-any-return]
 
 
+@extend_schema(exclude=True)
 class SocialLoginTemplateView(APIView):
     """
     Template view for social login page.
@@ -349,6 +351,7 @@ class SocialLoginTemplateView(APIView):
         return render(request, self.template_name, context)
 
 
+@extend_schema(exclude=True)
 class SocialAccountManagementView(APIView):
     """
     View for managing social account connections.

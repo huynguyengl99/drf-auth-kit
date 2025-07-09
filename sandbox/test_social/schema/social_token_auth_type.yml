@@ -1,0 +1,533 @@
+openapi: 3.0.3
+info:
+  title: DRF Auth Kit API Documentation
+  version: 1.0.0
+  description: DRF Auth Kit OpenAPI specification
+paths:
+  /auth/accounts/:
+    get:
+      operationId: accounts_list
+      description: List all social accounts connected to the current user. Shows account
+        details including provider, UID, and connection dates.
+      parameters:
+      - name: limit
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      - name: offset
+        required: false
+        in: query
+        description: The initial index from which to return the results.
+        schema:
+          type: integer
+      tags:
+      - accounts
+      security:
+      - JWTAuthentication: []
+        JWTCookieAuthentication: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedSocialAccountList'
+          description: ''
+  /auth/accounts/{id}/:
+    delete:
+      operationId: accounts_destroy
+      description: Disconnect a social account from the current user. Removes the
+        social account connection and prevents future logins via that provider. Requires
+        authentication and the account must belong to the current user.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this social account.
+        required: true
+      tags:
+      - accounts
+      security:
+      - JWTAuthentication: []
+        JWTCookieAuthentication: []
+      responses:
+        '204':
+          description: No response body
+  /auth/facebook/:
+    post:
+      operationId: facebook_create
+      description: Authenticate with Facebook using OAuth2/OpenID Connect authorization
+        code to obtain access tokens. Returns user details along with JWT access and
+        refresh tokens with expiration times. Authentication cookies are set automatically
+        for secure token storage.
+      tags:
+      - facebook
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FacebookSocialLoginRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/FacebookSocialLoginRequest'
+        required: true
+      security:
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FacebookSocialLogin'
+          description: ''
+  /auth/facebook/connect/:
+    post:
+      operationId: facebook_connect_create
+      description: Connect a Facebook account to the current user's account. This
+        allows the user to login using their existing Facebook account in the future.
+        Requires authentication and a valid OAuth2/OpenID Connect authorization code
+        from Facebook. On success, the Facebook account is linked and can be used
+        for future logins.
+      tags:
+      - facebook
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SocialConnectRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/SocialConnectRequest'
+        required: true
+      security:
+      - JWTAuthentication: []
+        JWTCookieAuthentication: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SocialConnect'
+          description: ''
+  /auth/github/:
+    post:
+      operationId: github_create
+      description: Authenticate with Github using OAuth2/OpenID Connect authorization
+        code to obtain access tokens. Returns user details along with JWT access and
+        refresh tokens with expiration times. Authentication cookies are set automatically
+        for secure token storage.
+      tags:
+      - github
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GithubSocialLoginRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/GithubSocialLoginRequest'
+        required: true
+      security:
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GithubSocialLogin'
+          description: ''
+  /auth/github/connect/:
+    post:
+      operationId: github_connect_create
+      description: Connect a Github account to the current user's account. This allows
+        the user to login using their existing Github account in the future. Requires
+        authentication and a valid OAuth2/OpenID Connect authorization code from Github.
+        On success, the Github account is linked and can be used for future logins.
+      tags:
+      - github
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SocialConnectRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/SocialConnectRequest'
+        required: true
+      security:
+      - JWTAuthentication: []
+        JWTCookieAuthentication: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SocialConnect'
+          description: ''
+  /auth/google/:
+    post:
+      operationId: google_create
+      description: Authenticate with Google using OAuth2/OpenID Connect authorization
+        code to obtain access tokens. Returns user details along with JWT access and
+        refresh tokens with expiration times. Authentication cookies are set automatically
+        for secure token storage.
+      tags:
+      - google
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GoogleSocialLoginRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/GoogleSocialLoginRequest'
+        required: true
+      security:
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GoogleSocialLogin'
+          description: ''
+  /auth/google/connect/:
+    post:
+      operationId: google_connect_create
+      description: Connect a Google account to the current user's account. This allows
+        the user to login using their existing Google account in the future. Requires
+        authentication and a valid OAuth2/OpenID Connect authorization code from Google.
+        On success, the Google account is linked and can be used for future logins.
+      tags:
+      - google
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SocialConnectRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/SocialConnectRequest'
+        required: true
+      security:
+      - JWTAuthentication: []
+        JWTCookieAuthentication: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SocialConnect'
+          description: ''
+  /auth/linkedin/:
+    post:
+      operationId: linkedin_create
+      description: Authenticate with Linkedin using OAuth2/OpenID Connect authorization
+        code to obtain access tokens. Returns user details along with JWT access and
+        refresh tokens with expiration times. Authentication cookies are set automatically
+        for secure token storage.
+      tags:
+      - linkedin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LinkedinSocialLoginRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/LinkedinSocialLoginRequest'
+        required: true
+      security:
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LinkedinSocialLogin'
+          description: ''
+  /auth/linkedin/connect/:
+    post:
+      operationId: linkedin_connect_create
+      description: Connect a Linkedin account to the current user's account. This
+        allows the user to login using their existing Linkedin account in the future.
+        Requires authentication and a valid OAuth2/OpenID Connect authorization code
+        from Linkedin. On success, the Linkedin account is linked and can be used
+        for future logins.
+      tags:
+      - linkedin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SocialConnectRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/SocialConnectRequest'
+        required: true
+      security:
+      - JWTAuthentication: []
+        JWTCookieAuthentication: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SocialConnect'
+          description: ''
+components:
+  schemas:
+    FacebookSocialLogin:
+      type: object
+      description: Social authentication with Facebook OAuth credentials response.
+      properties:
+        access:
+          type: string
+          readOnly: true
+        refresh:
+          type: string
+          readOnly: true
+        access_expiration:
+          type: string
+          format: date-time
+          readOnly: true
+        refresh_expiration:
+          type: string
+          format: date-time
+          readOnly: true
+        user:
+          allOf:
+          - $ref: '#/components/schemas/UserDetails'
+          readOnly: true
+    FacebookSocialLoginRequest:
+      type: object
+      description: Social authentication with Facebook OAuth credentials response.
+      properties:
+        access_token:
+          type: string
+          writeOnly: true
+          minLength: 1
+        id_token:
+          type: string
+          writeOnly: true
+      required:
+      - access_token
+    GithubSocialLogin:
+      type: object
+      description: Social authentication with Github OAuth credentials response.
+      properties:
+        access:
+          type: string
+          readOnly: true
+        refresh:
+          type: string
+          readOnly: true
+        access_expiration:
+          type: string
+          format: date-time
+          readOnly: true
+        refresh_expiration:
+          type: string
+          format: date-time
+          readOnly: true
+        user:
+          allOf:
+          - $ref: '#/components/schemas/UserDetails'
+          readOnly: true
+    GithubSocialLoginRequest:
+      type: object
+      description: Social authentication with Github OAuth credentials response.
+      properties:
+        access_token:
+          type: string
+          writeOnly: true
+          minLength: 1
+        id_token:
+          type: string
+          writeOnly: true
+      required:
+      - access_token
+    GoogleSocialLogin:
+      type: object
+      description: Social authentication with Google OAuth credentials response.
+      properties:
+        access:
+          type: string
+          readOnly: true
+        refresh:
+          type: string
+          readOnly: true
+        access_expiration:
+          type: string
+          format: date-time
+          readOnly: true
+        refresh_expiration:
+          type: string
+          format: date-time
+          readOnly: true
+        user:
+          allOf:
+          - $ref: '#/components/schemas/UserDetails'
+          readOnly: true
+    GoogleSocialLoginRequest:
+      type: object
+      description: Social authentication with Google OAuth credentials response.
+      properties:
+        access_token:
+          type: string
+          writeOnly: true
+          minLength: 1
+        id_token:
+          type: string
+          writeOnly: true
+      required:
+      - access_token
+    LinkedinSocialLogin:
+      type: object
+      description: Social authentication with Linkedin OAuth credentials response.
+      properties:
+        access:
+          type: string
+          readOnly: true
+        refresh:
+          type: string
+          readOnly: true
+        access_expiration:
+          type: string
+          format: date-time
+          readOnly: true
+        refresh_expiration:
+          type: string
+          format: date-time
+          readOnly: true
+        user:
+          allOf:
+          - $ref: '#/components/schemas/UserDetails'
+          readOnly: true
+    LinkedinSocialLoginRequest:
+      type: object
+      description: Social authentication with Linkedin OAuth credentials response.
+      properties:
+        access_token:
+          type: string
+          writeOnly: true
+          minLength: 1
+        id_token:
+          type: string
+          writeOnly: true
+      required:
+      - access_token
+    PaginatedSocialAccountList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=400&limit=100
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=200&limit=100
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/SocialAccount'
+    SocialAccount:
+      type: object
+      description: |-
+        Serializer for SocialAccount instances.
+
+        Provides a REST API representation of django-allauth SocialAccount
+        objects, including provider information and connection metadata.
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        provider:
+          type: string
+          maxLength: 200
+        uid:
+          type: string
+          maxLength: 191
+        last_login:
+          type: string
+          format: date-time
+          readOnly: true
+        date_joined:
+          type: string
+          format: date-time
+          readOnly: true
+      required:
+      - provider
+      - uid
+    SocialConnect:
+      type: object
+      description: |-
+        Serializer for connecting social accounts to existing user accounts.
+
+        Handles OAuth authorization code exchange and connects the social
+        account to the currently authenticated user's account.
+      properties:
+        detail:
+          type: string
+          readOnly: true
+    SocialConnectRequest:
+      type: object
+      description: |-
+        Serializer for connecting social accounts to existing user accounts.
+
+        Handles OAuth authorization code exchange and connects the social
+        account to the currently authenticated user's account.
+      properties:
+        code:
+          type: string
+          writeOnly: true
+          minLength: 1
+      required:
+      - code
+    UserDetails:
+      type: object
+      description: User profile information and updates.
+      properties:
+        pk:
+          type: integer
+          readOnly: true
+          title: ID
+        username:
+          type: string
+          description: Required. 150 characters or fewer. Letters, digits and @/./+/-/_
+            only.
+          pattern: ^[\w.@+-]+$
+          maxLength: 150
+        email:
+          type: string
+          format: email
+          readOnly: true
+          title: Email address
+        first_name:
+          type: string
+          maxLength: 150
+        last_name:
+          type: string
+          maxLength: 150
+      required:
+      - username
+  securitySchemes:
+    JWTAuthentication:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    JWTCookieAuthentication:
+      type: apiKey
+      in: cookie
+      name: auth-jwt

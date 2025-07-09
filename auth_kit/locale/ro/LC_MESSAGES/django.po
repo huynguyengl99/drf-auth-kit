@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DRF Auth Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-08 06:02+0000\n"
+"POT-Creation-Date: 2025-07-09 05:21+0000\n"
 "PO-Revision-Date: 2025-07-08 06:02+0000\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
@@ -15,161 +15,184 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?"
 "2:1));\n"
 
-#: auth_kit/api_descriptions.py:25
+#: auth_kit/api_descriptions.py:29
 msgid ""
 "Returns user details along with JWT access and refresh tokens with "
 "expiration times."
 msgstr ""
-"Returnează detaliile utilizatorului împreună cu token-urile de acces și împrospătare JWT cu "
-"timpii de expirare."
+"Returnează detaliile utilizatorului împreună cu token-urile de acces și "
+"împrospătare JWT cu timpii de expirare."
 
-#: auth_kit/api_descriptions.py:29
+#: auth_kit/api_descriptions.py:33
 msgid ""
 "Returns user details along with a DRF authentication token for API access."
 msgstr ""
-"Returnează detaliile utilizatorului împreună cu un token de autentificare DRF pentru accesul API."
+"Returnează detaliile utilizatorului împreună cu un token de autentificare "
+"DRF pentru accesul API."
 
-#: auth_kit/api_descriptions.py:32
+#: auth_kit/api_descriptions.py:36
 msgid "Returns user details along with custom authentication tokens."
-msgstr "Returnează detaliile utilizatorului împreună cu token-uri de autentificare personalizate."
+msgstr ""
+"Returnează detaliile utilizatorului împreună cu token-uri de autentificare "
+"personalizate."
 
-#: auth_kit/api_descriptions.py:38
+#: auth_kit/api_descriptions.py:42
 msgid "JWT access and refresh tokens"
 msgstr "Token-uri de acces și împrospătare JWT"
 
-#: auth_kit/api_descriptions.py:40
+#: auth_kit/api_descriptions.py:44
 msgid "DRF authentication token"
 msgstr "Token de autentificare DRF"
 
-#: auth_kit/api_descriptions.py:42
+#: auth_kit/api_descriptions.py:46
 msgid "custom authentication tokens"
 msgstr "token-uri de autentificare personalizate"
 
-#: auth_kit/api_descriptions.py:49
+#: auth_kit/api_descriptions.py:53
 msgid "Authentication cookies are set automatically for secure token storage."
-msgstr "Cookie-urile de autentificare sunt setate automat pentru stocarea securizată a token-urilor."
+msgstr ""
+"Cookie-urile de autentificare sunt setate automat pentru stocarea securizată "
+"a token-urilor."
 
-#: auth_kit/api_descriptions.py:57
+#: auth_kit/api_descriptions.py:61
 msgid "Blacklists JWT refresh tokens to prevent further use."
-msgstr "Adaugă la lista neagră token-urile de împrospătare JWT pentru a preveni folosirea ulterioară."
+msgstr ""
+"Adaugă la lista neagră token-urile de împrospătare JWT pentru a preveni "
+"folosirea ulterioară."
 
-#: auth_kit/api_descriptions.py:59
+#: auth_kit/api_descriptions.py:63
 msgid "Deletes the DRF authentication token from the database."
 msgstr "Șterge token-ul de autentificare DRF din baza de date."
 
-#: auth_kit/api_descriptions.py:61
+#: auth_kit/api_descriptions.py:65
 msgid "Invalidates custom authentication tokens."
 msgstr "Invalidează token-urile de autentificare personalizate."
 
-#: auth_kit/api_descriptions.py:67
+#: auth_kit/api_descriptions.py:71
 msgid "Clears authentication cookies from the browser."
 msgstr "Curăță cookie-urile de autentificare din browser."
 
-#: auth_kit/api_descriptions.py:73
+#: auth_kit/api_descriptions.py:77
 msgid "Authenticate with username/email and password to obtain access tokens."
-msgstr "Autentifică cu numele de utilizator/email și parola pentru a obține token-uri de acces."
+msgstr ""
+"Autentifică cu numele de utilizator/email și parola pentru a obține token-"
+"uri de acces."
 
-#: auth_kit/api_descriptions.py:85
+#: auth_kit/api_descriptions.py:89
 msgid "Logout user and invalidate authentication tokens."
 msgstr "Deconectează utilizatorul și invalidează token-urile de autentificare."
 
-#: auth_kit/api_descriptions.py:89
+#: auth_kit/api_descriptions.py:93
 msgid ""
 "Requires authentication to ensure only valid sessions can be logged out."
 msgstr ""
-"Necesită autentificare pentru a asigura că doar sesiunile valide pot fi deconectate."
-
-#: auth_kit/api_descriptions.py:100
-msgid "Generate new JWT access tokens using refresh tokens."
-msgstr "Generează noi token-uri de acces JWT folosind token-urile de împrospătare."
+"Necesită autentificare pentru a asigura că doar sesiunile valide pot fi "
+"deconectate."
 
 #: auth_kit/api_descriptions.py:104
+msgid "Generate new JWT access tokens using refresh tokens."
+msgstr ""
+"Generează noi token-uri de acces JWT folosind token-urile de împrospătare."
+
+#: auth_kit/api_descriptions.py:108
 msgid ""
 "Refresh tokens can be provided in request data or extracted automatically "
 "from HTTP cookies."
 msgstr ""
-"Token-urile de împrospătare pot fi furnizate în datele cererii sau extrase automat "
-"din cookie-urile HTTP."
+"Token-urile de împrospătare pot fi furnizate în datele cererii sau extrase "
+"automat din cookie-urile HTTP."
 
-#: auth_kit/api_descriptions.py:106 auth_kit/api_descriptions.py:116
+#: auth_kit/api_descriptions.py:110 auth_kit/api_descriptions.py:120
 msgid "Returns new access tokens with updated expiration times."
 msgstr "Returnează noi token-uri de acces cu timpii de expirare actualizați."
 
-#: auth_kit/api_descriptions.py:108
+#: auth_kit/api_descriptions.py:112
 msgid "New tokens are automatically set in HTTP cookies for secure storage."
-msgstr "Noile token-uri sunt setate automat în cookie-urile HTTP pentru stocare securizată."
+msgstr ""
+"Noile token-uri sunt setate automat în cookie-urile HTTP pentru stocare "
+"securizată."
 
-#: auth_kit/api_descriptions.py:115
+#: auth_kit/api_descriptions.py:119
 msgid "Refresh tokens must be provided in the request data."
 msgstr "Token-urile de împrospătare trebuie furnizate în datele cererii."
 
-#: auth_kit/api_descriptions.py:122
+#: auth_kit/api_descriptions.py:127
 msgid "Register a new user account."
 msgstr "Înregistrează un nou cont de utilizator."
 
-#: auth_kit/api_descriptions.py:126
+#: auth_kit/api_descriptions.py:134
+msgid ""
+"Users must verify their email address before the account is fully activated."
+msgstr ""
+"Utilizatorii trebuie să își verifice adresa de email înainte ca contul să fie "
+"complet activat."
+
+#: auth_kit/api_descriptions.py:143
 msgid ""
 "Send password reset instructions to the provided email address. If the email "
 "is registered, a secure reset link will be sent. The link expires after a "
 "limited time for security."
 msgstr ""
-"Trimite instrucțiuni de resetare a parolei la adresa de email furnizată. Dacă email-ul "
-"este înregistrat, va fi trimis un link de resetare securizat. Link-ul expiră după o "
-"perioadă limitată din motive de securitate."
+"Trimite instrucțiuni de resetare a parolei la adresa de email furnizată. "
+"Dacă email-ul este înregistrat, va fi trimis un link de resetare securizat. "
+"Link-ul expiră după o perioadă limitată din motive de securitate."
 
-#: auth_kit/api_descriptions.py:132
+#: auth_kit/api_descriptions.py:149
 msgid ""
 "Complete the password reset process using the token from the reset email. "
 "Requires the UID and token from the email along with the new password. The "
 "token is single-use and expires for security."
 msgstr ""
-"Completează procesul de resetare a parolei folosind token-ul din email-ul de resetare. "
-"Necesită UID-ul și token-ul din email împreună cu noua parolă. "
+"Completează procesul de resetare a parolei folosind token-ul din email-ul de "
+"resetare. Necesită UID-ul și token-ul din email împreună cu noua parolă. "
 "Token-ul este de unică folosință și expiră din motive de securitate."
 
-#: auth_kit/api_descriptions.py:138
+#: auth_kit/api_descriptions.py:155
 msgid "Change the current user's password. Requires authentication. "
 msgstr "Schimbă parola utilizatorului curent. Necesită autentificare. "
 
-#: auth_kit/api_descriptions.py:142
+#: auth_kit/api_descriptions.py:159
 msgid ""
 "Confirm email address using the verification key sent via email. This "
 "activates the user account and allows login access."
 msgstr ""
-"Confirmă adresa de email folosind cheia de verificare trimisă prin email. Aceasta "
-"activează contul de utilizator și permite accesul de conectare."
+"Confirmă adresa de email folosind cheia de verificare trimisă prin email. "
+"Aceasta activează contul de utilizator și permite accesul de conectare."
 
-#: auth_kit/api_descriptions.py:147
+#: auth_kit/api_descriptions.py:164
 msgid ""
 "Send a new email verification message to unverified email addresses. Only "
 "works for email addresses that are registered but not yet verified."
 msgstr ""
-"Trimite un nou mesaj de verificare email la adresele de email neverificate. Funcționează doar "
-"pentru adresele de email care sunt înregistrate dar nu încă verificate."
+"Trimite un nou mesaj de verificare email la adresele de email neverificate. "
+"Funcționează doar pentru adresele de email care sunt înregistrate dar nu "
+"încă verificate."
 
-#: auth_kit/api_descriptions.py:152
+#: auth_kit/api_descriptions.py:169
 msgid ""
 "Retrieve the authenticated user's profile information including username, "
 "email, first name, and last name. Password fields are excluded."
 msgstr ""
-"Recuperează informațiile de profil ale utilizatorului autentificat incluzând numele de utilizator, "
-"email, prenumele și numele de familie. Câmpurile de parolă sunt excluse."
+"Recuperează informațiile de profil ale utilizatorului autentificat incluzând "
+"numele de utilizator, email, prenumele și numele de familie. Câmpurile de "
+"parolă sunt excluse."
 
-#: auth_kit/api_descriptions.py:157
+#: auth_kit/api_descriptions.py:174
 msgid ""
 "Update the authenticated user's profile information. Allows modification of "
 "username, first name, and last name. Email field is read-only for security."
 msgstr ""
-"Actualizează informațiile de profil ale utilizatorului autentificat. Permite modificarea "
-"numelui de utilizator, prenumelui și numelui de familie. Câmpul email este doar-citire din motive de securitate."
+"Actualizează informațiile de profil ale utilizatorului autentificat. Permite "
+"modificarea numelui de utilizator, prenumelui și numelui de familie. Câmpul "
+"email este doar-citire din motive de securitate."
 
-#: auth_kit/api_descriptions.py:163
+#: auth_kit/api_descriptions.py:180
 msgid ""
 "Partially update the authenticated user's profile information. Only provided "
 "fields will be updated. Email field is read-only."
 msgstr ""
-"Actualizează parțial informațiile de profil ale utilizatorului autentificat. Doar câmpurile furnizate "
-"vor fi actualizate. Câmpul email este doar-citire."
+"Actualizează parțial informațiile de profil ale utilizatorului autentificat. "
+"Doar câmpurile furnizate vor fi actualizate. Câmpul email este doar-citire."
 
 #: auth_kit/forms.py:78
 msgid "The email address is not assigned to any user account."
@@ -202,18 +225,20 @@ msgid ""
 "Returns ephemeral token for MFA verification or complete %(auth_tokens)s if "
 "MFA is disabled."
 msgstr ""
-"Returnează token efemer pentru verificarea MFA sau %(auth_tokens)s complete dacă "
-"MFA este dezactivat."
+"Returnează token efemer pentru verificarea MFA sau %(auth_tokens)s complete "
+"dacă MFA este dezactivat."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:51
 msgid ""
 "Complete MFA authentication using verification code and ephemeral token."
 msgstr ""
-"Completează autentificarea MFA folosind codul de verificare și token-ul efemer."
+"Completează autentificarea MFA folosind codul de verificare și token-ul "
+"efemer."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:56
 msgid "Supports both TOTP codes and backup codes for verification."
-msgstr "Suportă atât codurile TOTP cât și codurile de rezervă pentru verificare."
+msgstr ""
+"Suportă atât codurile TOTP cât și codurile de rezervă pentru verificare."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:68
 msgid "Switch to a different MFA method during authentication flow."
@@ -235,15 +260,16 @@ msgstr "Retrimite codul de verificare MFA folosind token-ul efemer existent."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:84
 msgid "Only applicable for methods that require code dispatch (e.g., email)."
-msgstr "Aplicabil doar pentru metodele care necesită trimiterea codului (ex. email)."
+msgstr ""
+"Aplicabil doar pentru metodele care necesită trimiterea codului (ex. email)."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:96
 msgid ""
 "List all available MFA methods with their setup and activation status. Shows "
 "which methods are configured, active, and set as primary."
 msgstr ""
-"Listează toate metodele MFA disponibile cu statusul lor de configurare și activare. Arată "
-"care metode sunt configurate, active și setate ca primare."
+"Listează toate metodele MFA disponibile cu statusul lor de configurare și "
+"activare. Arată care metode sunt configurate, active și setate ca primare."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:101
 msgid ""
@@ -251,9 +277,9 @@ msgid ""
 "returns setup instructions (e.g., QR code for authenticator apps). Method "
 "must be confirmed before activation."
 msgstr ""
-"Inițializează configurarea unei noi metode MFA. Creează metoda cu coduri de rezervă și "
-"returnează instrucțiunile de configurare (ex. cod QR pentru aplicațiile de autentificare). Metoda "
-"trebuie confirmată înainte de activare."
+"Inițializează configurarea unei noi metode MFA. Creează metoda cu coduri de "
+"rezervă și returnează instrucțiunile de configurare (ex. cod QR pentru "
+"aplicațiile de autentificare). Metoda trebuie confirmată înainte de activare."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:107
 msgid ""
@@ -280,8 +306,8 @@ msgid ""
 "Set an active MFA method as the primary authentication method. Primary "
 "method is used by default during login flow."
 msgstr ""
-"Setează o metodă MFA activă ca metodă primară de autentificare. Metoda primară "
-"este folosită implicit în timpul fluxului de conectare."
+"Setează o metodă MFA activă ca metodă primară de autentificare. Metoda "
+"primară este folosită implicit în timpul fluxului de conectare."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:125
 msgid "Only one method can be primary at a time."
@@ -296,8 +322,8 @@ msgid ""
 "Send verification code for methods that support code dispatch. Useful for "
 "testing method configuration or manual code requests."
 msgstr ""
-"Trimite cod de verificare pentru metodele care suportă trimiterea codului. Util pentru "
-"testarea configurației metodei sau cererile manuale de cod."
+"Trimite cod de verificare pentru metodele care suportă trimiterea codului. "
+"Util pentru testarea configurației metodei sau cererile manuale de cod."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:142
 msgid "Permanently delete an MFA method."
@@ -351,9 +377,23 @@ msgstr "Metodă MFA"
 msgid "MFA Methods"
 msgstr "Metode MFA"
 
+#: auth_kit/mfa/serializers/login_factors.py:153
+msgid "Invalid code"
+msgstr "Cod invalid"
+
+#: auth_kit/mfa/serializers/login_factors.py:172
+#: auth_kit/mfa/serializers/login_factors.py:226
+#: auth_kit/mfa/serializers/login_factors.py:272
+msgid "Invalid token"
+msgstr "Token invalid"
+
 #: auth_kit/mfa/serializers/login_factors.py:230
 msgid "Please select a new method"
 msgstr "Vă rugăm selectați o metodă nouă"
+
+#: auth_kit/mfa/serializers/mfa.py:76
+msgid "This method is already exists"
+msgstr "Această metodă există deja"
 
 #: auth_kit/mfa/serializers/mfa.py:145 auth_kit/mfa/serializers/mfa.py:200
 #: auth_kit/mfa/serializers/mfa.py:345
@@ -422,7 +462,8 @@ msgstr "Valoare invalidă"
 
 #: auth_kit/serializers/password.py:220
 msgid "Your old password was entered incorrectly. Please enter it again."
-msgstr "Parola veche a fost introdusă incorect. Vă rugăm introduceți-o din nou."
+msgstr ""
+"Parola veche a fost introdusă incorect. Vă rugăm introduceți-o din nou."
 
 #: auth_kit/serializers/registration.py:88
 msgid "A user is already registered with this e-mail address."
@@ -434,7 +475,9 @@ msgstr "Cele două câmpuri de parolă nu se potrivesc."
 
 #: auth_kit/social/serializers/connect.py:55
 msgid "Social account email must match your current account email."
-msgstr "Email-ul contului social trebuie să se potrivească cu email-ul contului curent."
+msgstr ""
+"Email-ul contului social trebuie să se potrivească cu email-ul contului "
+"curent."
 
 #: auth_kit/social/serializers/connect.py:98
 msgid "Connected"
@@ -452,7 +495,62 @@ msgstr "Utilizatorul este deja înregistrat cu această adresă de email."
 msgid "Failed to exchange code for access token"
 msgstr "Nu s-a reușit schimbarea codului pentru token de acces"
 
-#: auth_kit/social/views/login.py:50
+#: auth_kit/social/social_api_descriptions.py:29
+#, python-format
+msgid ""
+"Authenticate with %(provider)s using OAuth2/OpenID Connect authorization "
+"code to obtain access tokens."
+msgstr ""
+"Autentifică cu %(provider)s folosind codul de autorizare OAuth2/OpenID "
+"Connect pentru a obține token-uri de acces."
+
+#: auth_kit/social/social_api_descriptions.py:51
+#, python-format
+msgid ""
+"Connect a %(provider)s account to the current user's account. This allows "
+"the user to login using their existing %(provider)s account in the future."
+msgstr ""
+"Conectează un cont %(provider)s la contul utilizatorului curent. Aceasta "
+"permite utilizatorului să se conecteze folosind contul %(provider)s existent "
+"în viitor."
+
+#: auth_kit/social/social_api_descriptions.py:56
+#, python-format
+msgid ""
+"Requires authentication and a valid OAuth2/OpenID Connect authorization code "
+"from %(provider)s."
+msgstr ""
+"Necesită autentificare și un cod de autorizare OAuth2/OpenID Connect valid "
+"de la %(provider)s."
+
+#: auth_kit/social/social_api_descriptions.py:60
+#, python-format
+msgid ""
+"On success, the %(provider)s account is linked and can be used for future "
+"logins."
+msgstr ""
+"La succes, contul %(provider)s este conectat și poate fi folosit pentru "
+"conectări viitoare."
+
+#: auth_kit/social/social_api_descriptions.py:73
+msgid ""
+"List all social accounts connected to the current user. Shows account "
+"details including provider, UID, and connection dates."
+msgstr ""
+"Listează toate conturile sociale conectate la utilizatorul curent. Arată "
+"detaliile contului incluzând furnizorul, UID-ul și datele de conectare."
+
+#: auth_kit/social/social_api_descriptions.py:78
+msgid ""
+"Disconnect a social account from the current user. Removes the social "
+"account connection and prevents future logins via that provider. Requires "
+"authentication and the account must belong to the current user."
+msgstr ""
+"Deconectează un cont social de la utilizatorul curent. Elimină conexiunea "
+"contului social și previne conectările viitoare prin acel furnizor. "
+"Necesită autentificare și contul trebuie să aparțină utilizatorului curent."
+
+#: auth_kit/social/views/login.py:58
 msgid "adapter_class is not defined"
 msgstr "adapter_class nu este definit"
 
@@ -484,15 +582,15 @@ msgstr "Parola a fost resetată cu noua parolă."
 msgid "New password has been saved."
 msgstr "Noua parolă a fost salvată."
 
-#: auth_kit/views/registration.py:142
+#: auth_kit/views/registration.py:143
 msgid "Verification e-mail sent."
 msgstr "Email de verificare trimis."
 
-#: auth_kit/views/registration.py:143
+#: auth_kit/views/registration.py:144
 msgid "Successfully registered."
 msgstr "Înregistrat cu succes."
 
-#: auth_kit/views/registration.py:223 auth_kit/views/registration.py:268
+#: auth_kit/views/registration.py:224 auth_kit/views/registration.py:269
 msgid "ok"
 msgstr "ok"
 

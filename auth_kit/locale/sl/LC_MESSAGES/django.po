@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DRF Auth Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-08 06:02+0000\n"
+"POT-Creation-Date: 2025-07-09 05:21+0000\n"
 "PO-Revision-Date: 2025-07-08 06:02+0000\n"
 "Last-Translator: DRF Auth Kit Team\n"
 "Language-Team: Slovenian\n"
@@ -17,75 +17,85 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
 "n%100==4 ? 2 : 3);\n"
-#: auth_kit/api_descriptions.py:25
+
+#: auth_kit/api_descriptions.py:29
 msgid ""
 "Returns user details along with JWT access and refresh tokens with "
 "expiration times."
 msgstr ""
-"Vrne podrobnosti uporabnika skupaj z JWT dostopnimi in osveževalnimi žetoni z "
-"času poteka."
+"Vrne podrobnosti uporabnika skupaj z JWT dostopnimi in osveževalnimi žetoni "
+"z času poteka."
 
-#: auth_kit/api_descriptions.py:29
+#: auth_kit/api_descriptions.py:33
 msgid ""
 "Returns user details along with a DRF authentication token for API access."
 msgstr ""
-"Vrne podrobnosti uporabnika skupaj z DRF avtentifikacijskim žetonom za dostop do API-ja."
+"Vrne podrobnosti uporabnika skupaj z DRF avtentifikacijskim žetonom za "
+"dostop do API-ja."
 
-#: auth_kit/api_descriptions.py:32
+#: auth_kit/api_descriptions.py:36
 msgid "Returns user details along with custom authentication tokens."
-msgstr "Vrne podrobnosti uporabnika skupaj z zasebnimi avtentifikacijskimi žetoni."
+msgstr ""
+"Vrne podrobnosti uporabnika skupaj z zasebnimi avtentifikacijskimi žetoni."
 
-#: auth_kit/api_descriptions.py:38
+#: auth_kit/api_descriptions.py:42
 msgid "JWT access and refresh tokens"
 msgstr "JWT dostopni in osveževalni žetoni"
 
-#: auth_kit/api_descriptions.py:40
+#: auth_kit/api_descriptions.py:44
 msgid "DRF authentication token"
 msgstr "DRF avtentifikacijski žeton"
 
-#: auth_kit/api_descriptions.py:42
+#: auth_kit/api_descriptions.py:46
 msgid "custom authentication tokens"
 msgstr "zasebni avtentifikacijski žetoni"
 
-#: auth_kit/api_descriptions.py:49
+#: auth_kit/api_descriptions.py:53
 msgid "Authentication cookies are set automatically for secure token storage."
-msgstr "Avtentifikacijski piškotki so samodejno nastavljeni za varno shranjevanje žetonov."
+msgstr ""
+"Avtentifikacijski piškotki so samodejno nastavljeni za varno shranjevanje "
+"žetonov."
 
-#: auth_kit/api_descriptions.py:57
+#: auth_kit/api_descriptions.py:61
 msgid "Blacklists JWT refresh tokens to prevent further use."
-msgstr "Uvrsti JWT osveževalne žetone na črni seznam za preprečevanje nadaljnje uporabe."
+msgstr ""
+"Uvrsti JWT osveževalne žetone na črni seznam za preprečevanje nadaljnje "
+"uporabe."
 
-#: auth_kit/api_descriptions.py:59
+#: auth_kit/api_descriptions.py:63
 msgid "Deletes the DRF authentication token from the database."
 msgstr "Izbriše DRF avtentifikacijski žeton iz podatkovne baze."
 
-#: auth_kit/api_descriptions.py:61
+#: auth_kit/api_descriptions.py:65
 msgid "Invalidates custom authentication tokens."
 msgstr "Razveljavi zasebne avtentifikacijske žetone."
 
-#: auth_kit/api_descriptions.py:67
+#: auth_kit/api_descriptions.py:71
 msgid "Clears authentication cookies from the browser."
 msgstr "Počisti avtentifikacijske piškotke iz brskalnika."
 
-#: auth_kit/api_descriptions.py:73
+#: auth_kit/api_descriptions.py:77
 msgid "Authenticate with username/email and password to obtain access tokens."
-msgstr "Avtentifikacija z uporabniškim imenom/e-pošto in geslom za pridobitev dostopnih žetonov."
+msgstr ""
+"Avtentifikacija z uporabniškim imenom/e-pošto in geslom za pridobitev "
+"dostopnih žetonov."
 
-#: auth_kit/api_descriptions.py:85
+#: auth_kit/api_descriptions.py:89
 msgid "Logout user and invalidate authentication tokens."
 msgstr "Odjavi uporabnika in razveljavi avtentifikacijske žetone."
 
-#: auth_kit/api_descriptions.py:89
+#: auth_kit/api_descriptions.py:93
 msgid ""
 "Requires authentication to ensure only valid sessions can be logged out."
 msgstr ""
-"Zahteva avtentifikacijo za zagotovitev, da se lahko odjavijo le veljavne seje."
+"Zahteva avtentifikacijo za zagotovitev, da se lahko odjavijo le veljavne "
+"seje."
 
-#: auth_kit/api_descriptions.py:100
+#: auth_kit/api_descriptions.py:104
 msgid "Generate new JWT access tokens using refresh tokens."
 msgstr "Ustvari nove JWT dostopne žetone z uporabo osveževalnih žetonov."
 
-#: auth_kit/api_descriptions.py:104
+#: auth_kit/api_descriptions.py:108
 msgid ""
 "Refresh tokens can be provided in request data or extracted automatically "
 "from HTTP cookies."
@@ -93,86 +103,96 @@ msgstr ""
 "Osveževalni žetoni se lahko zagotovijo v podatkih zahteve ali samodejno "
 "izvlečejo iz HTTP piškotkov."
 
-#: auth_kit/api_descriptions.py:106 auth_kit/api_descriptions.py:116
+#: auth_kit/api_descriptions.py:110 auth_kit/api_descriptions.py:120
 msgid "Returns new access tokens with updated expiration times."
 msgstr "Vrne nove dostopne žetone z posodobljenimi časi poteka."
 
-#: auth_kit/api_descriptions.py:108
+#: auth_kit/api_descriptions.py:112
 msgid "New tokens are automatically set in HTTP cookies for secure storage."
-msgstr "Novi žetoni so samodejno nastavljeni v HTTP piškotkih za varno shranjevanje."
+msgstr ""
+"Novi žetoni so samodejno nastavljeni v HTTP piškotkih za varno shranjevanje."
 
-#: auth_kit/api_descriptions.py:115
+#: auth_kit/api_descriptions.py:119
 msgid "Refresh tokens must be provided in the request data."
 msgstr "Osveževalni žetoni morajo biti zagotovljeni v podatkih zahteve."
 
-#: auth_kit/api_descriptions.py:122
+#: auth_kit/api_descriptions.py:127
 msgid "Register a new user account."
 msgstr "Registrira nov uporabniški račun."
 
-#: auth_kit/api_descriptions.py:126
+#: auth_kit/api_descriptions.py:134
+msgid ""
+"Users must verify their email address before the account is fully activated."
+msgstr ""
+"Uporabniki morajo potrditi svoj e-poštni naslov preden je račun popolnoma "
+"aktiviran."
+
+#: auth_kit/api_descriptions.py:143
 msgid ""
 "Send password reset instructions to the provided email address. If the email "
 "is registered, a secure reset link will be sent. The link expires after a "
 "limited time for security."
 msgstr ""
-"Pošlje navodila za ponastavitev gesla na podani e-poštni naslov. Če je e-pošta "
-"registrirana, bo poslana varna povezava za ponastavitev. Povezava iz varnostnih "
-"razlogov poteče po omejenem času."
+"Pošlje navodila za ponastavitev gesla na podani e-poštni naslov. Če je e-"
+"pošta registrirana, bo poslana varna povezava za ponastavitev. Povezava iz "
+"varnostnih razlogov poteče po omejenem času."
 
-#: auth_kit/api_descriptions.py:132
+#: auth_kit/api_descriptions.py:149
 msgid ""
 "Complete the password reset process using the token from the reset email. "
 "Requires the UID and token from the email along with the new password. The "
 "token is single-use and expires for security."
 msgstr ""
-"Dokonča postopek ponastavitve gesla z uporabo žetona iz e-pošte za ponastavitev. "
-"Zahteva UID in žeton iz e-pošte skupaj z novim geslom. Žeton je za enkratno "
-"uporabo in iz varnostnih razlogov poteče."
+"Dokonča postopek ponastavitve gesla z uporabo žetona iz e-pošte za "
+"ponastavitev. Zahteva UID in žeton iz e-pošte skupaj z novim geslom. Žeton "
+"je za enkratno uporabo in iz varnostnih razlogov poteče."
 
-#: auth_kit/api_descriptions.py:138
+#: auth_kit/api_descriptions.py:155
 msgid "Change the current user's password. Requires authentication. "
 msgstr "Spremeni geslo trenutnega uporabnika. Zahteva avtentifikacijo. "
 
-#: auth_kit/api_descriptions.py:142
+#: auth_kit/api_descriptions.py:159
 msgid ""
 "Confirm email address using the verification key sent via email. This "
 "activates the user account and allows login access."
 msgstr ""
-"Potrdi e-poštni naslov z uporabo verifikacijskega ključa, poslanega po e-pošti. "
-"To aktivira uporabniški račun in omogoča dostop za prijavo."
+"Potrdi e-poštni naslov z uporabo verifikacijskega ključa, poslanega po e-"
+"pošti. To aktivira uporabniški račun in omogoča dostop za prijavo."
 
-#: auth_kit/api_descriptions.py:147
+#: auth_kit/api_descriptions.py:164
 msgid ""
 "Send a new email verification message to unverified email addresses. Only "
 "works for email addresses that are registered but not yet verified."
 msgstr ""
-"Pošlje novo sporočilo za verifikacijo e-pošte na nepotrjene e-poštne naslove. "
-"Deluje samo za e-poštne naslove, ki so registrirani, vendar še niso potrjeni."
+"Pošlje novo sporočilo za verifikacijo e-pošte na nepotrjene e-poštne "
+"naslove. Deluje samo za e-poštne naslove, ki so registrirani, vendar še niso "
+"potrjeni."
 
-#: auth_kit/api_descriptions.py:152
+#: auth_kit/api_descriptions.py:169
 msgid ""
 "Retrieve the authenticated user's profile information including username, "
 "email, first name, and last name. Password fields are excluded."
 msgstr ""
-"Pridobi informacije o profilu avtentificiranega uporabnika, vključno z uporabniškim "
-"imenom, e-pošto, imenom in priimkom. Polja za gesla so izključena."
+"Pridobi informacije o profilu avtentificiranega uporabnika, vključno z "
+"uporabniškim imenom, e-pošto, imenom in priimkom. Polja za gesla so "
+"izključena."
 
-#: auth_kit/api_descriptions.py:157
+#: auth_kit/api_descriptions.py:174
 msgid ""
 "Update the authenticated user's profile information. Allows modification of "
 "username, first name, and last name. Email field is read-only for security."
 msgstr ""
-"Posodobi informacije o profilu avtentificiranega uporabnika. Omogoča spreminjanje "
-"uporabniškega imena, imena in priimka. Polje e-pošte je iz varnostnih razlogov "
-"samo za branje."
+"Posodobi informacije o profilu avtentificiranega uporabnika. Omogoča "
+"spreminjanje uporabniškega imena, imena in priimka. Polje e-pošte je iz "
+"varnostnih razlogov samo za branje."
 
-#: auth_kit/api_descriptions.py:163
+#: auth_kit/api_descriptions.py:180
 msgid ""
 "Partially update the authenticated user's profile information. Only provided "
 "fields will be updated. Email field is read-only."
 msgstr ""
-"Delno posodobi informacije o profilu avtentificiranega uporabnika. Posodobljena "
-"bodo le zagotovljena polja. Polje e-pošte je samo za branje."
+"Delno posodobi informacije o profilu avtentificiranega uporabnika. "
+"Posodobljena bodo le zagotovljena polja. Polje e-pošte je samo za branje."
 
 #: auth_kit/forms.py:78
 msgid "The email address is not assigned to any user account."
@@ -196,8 +216,8 @@ msgid ""
 "First step of MFA-enabled authentication. Validates credentials and "
 "initiates MFA flow."
 msgstr ""
-"Prvi korak avtentifikacije z omogočeno MFA. Validira poverilnice in "
-"sproži MFA tok."
+"Prvi korak avtentifikacije z omogočeno MFA. Validira poverilnice in sproži "
+"MFA tok."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:41
 #, python-format
@@ -205,14 +225,15 @@ msgid ""
 "Returns ephemeral token for MFA verification or complete %(auth_tokens)s if "
 "MFA is disabled."
 msgstr ""
-"Vrne začasni žeton za MFA verifikacijo ali popolne %(auth_tokens)s če "
-"je MFA onemogočena."
+"Vrne začasni žeton za MFA verifikacijo ali popolne %(auth_tokens)s če je MFA "
+"onemogočena."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:51
 msgid ""
 "Complete MFA authentication using verification code and ephemeral token."
 msgstr ""
-"Dokonča MFA avtentifikacijo z uporabo verifikacijske kode in začasnega žetona."
+"Dokonča MFA avtentifikacijo z uporabo verifikacijske kode in začasnega "
+"žetona."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:56
 msgid "Supports both TOTP codes and backup codes for verification."
@@ -234,7 +255,9 @@ msgstr "Nov začasni žeton poteče v %(seconds)s sekundah."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:81
 msgid "Resend MFA verification code using existing ephemeral token."
-msgstr "Ponovno pošlje MFA verifikacijsko kodo z uporabo obstoječega začasnega žetona."
+msgstr ""
+"Ponovno pošlje MFA verifikacijsko kodo z uporabo obstoječega začasnega "
+"žetona."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:84
 msgid "Only applicable for methods that require code dispatch (e.g., email)."
@@ -246,7 +269,8 @@ msgid ""
 "which methods are configured, active, and set as primary."
 msgstr ""
 "Prikaže vse dostopne MFA metode z njihovim stanjem nastavitve in aktivacije. "
-"Prikazuje, katere metode so konfigurirane, aktivne in nastavljene kot primarne."
+"Prikazuje, katere metode so konfigurirane, aktivne in nastavljene kot "
+"primarne."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:101
 msgid ""
@@ -255,8 +279,8 @@ msgid ""
 "must be confirmed before activation."
 msgstr ""
 "Inicializira nastavitev nove MFA metode. Ustvari metodo z rezervnimi kodami "
-"in vrne navodila za nastavitev (npr. QR koda za avtentifikatorske aplikacije). "
-"Metoda mora biti potrjena pred aktivacijo."
+"in vrne navodila za nastavitev (npr. QR koda za avtentifikatorske "
+"aplikacije). Metoda mora biti potrjena pred aktivacijo."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:107
 msgid ""
@@ -275,7 +299,8 @@ msgid ""
 "first."
 msgstr ""
 "Deaktivira aktivno MFA metodo. Zahteva verifikacijsko kodo iz metode same. "
-"Ne more deaktivirati primarnih metod - najprej nastavite drugo metodo kot primarno."
+"Ne more deaktivirati primarnih metod - najprej nastavite drugo metodo kot "
+"primarno."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:121
 msgid ""
@@ -353,9 +378,23 @@ msgstr "MFA Metoda"
 msgid "MFA Methods"
 msgstr "MFA Metode"
 
+#: auth_kit/mfa/serializers/login_factors.py:153
+msgid "Invalid code"
+msgstr "Neveljavna koda"
+
+#: auth_kit/mfa/serializers/login_factors.py:172
+#: auth_kit/mfa/serializers/login_factors.py:226
+#: auth_kit/mfa/serializers/login_factors.py:272
+msgid "Invalid token"
+msgstr "Neveljaven žeton"
+
 #: auth_kit/mfa/serializers/login_factors.py:230
 msgid "Please select a new method"
 msgstr "Prosimo, izberite novo metodo"
+
+#: auth_kit/mfa/serializers/mfa.py:76
+msgid "This method is already exists"
+msgstr "Ta metoda že obstaja"
 
 #: auth_kit/mfa/serializers/mfa.py:145 auth_kit/mfa/serializers/mfa.py:200
 #: auth_kit/mfa/serializers/mfa.py:345
@@ -436,7 +475,8 @@ msgstr "Polji za geslo se ne ujemata."
 
 #: auth_kit/social/serializers/connect.py:55
 msgid "Social account email must match your current account email."
-msgstr "E-pošta družabnega računa se mora ujemati z e-pošto vašega trenutnega računa."
+msgstr ""
+"E-pošta družabnega računa se mora ujemati z e-pošto vašega trenutnega računa."
 
 #: auth_kit/social/serializers/connect.py:98
 msgid "Connected"
@@ -454,7 +494,61 @@ msgstr "Uporabnik s tem e-poštnim naslovom je že registriran."
 msgid "Failed to exchange code for access token"
 msgstr "Neuspešna izmenjava kode za dostopni žeton"
 
-#: auth_kit/social/views/login.py:50
+#: auth_kit/social/social_api_descriptions.py:29
+#, python-format
+msgid ""
+"Authenticate with %(provider)s using OAuth2/OpenID Connect authorization "
+"code to obtain access tokens."
+msgstr ""
+"Avtentifikacija z %(provider)s z uporabo avtorizacijske kode OAuth2/OpenID "
+"Connect za pridobitev dostopnih žetonov."
+
+#: auth_kit/social/social_api_descriptions.py:51
+#, python-format
+msgid ""
+"Connect a %(provider)s account to the current user's account. This allows "
+"the user to login using their existing %(provider)s account in the future."
+msgstr ""
+"Poveže %(provider)s račun z računom trenutnega uporabnika. To omogoča "
+"uporabniku, da se v prihodnosti prijavi z obstojekim %(provider)s računom."
+
+#: auth_kit/social/social_api_descriptions.py:56
+#, python-format
+msgid ""
+"Requires authentication and a valid OAuth2/OpenID Connect authorization code "
+"from %(provider)s."
+msgstr ""
+"Zahteva avtentifikacijo in veljavno avtorizacijsko kodo OAuth2/OpenID Connect "
+"od %(provider)s."
+
+#: auth_kit/social/social_api_descriptions.py:60
+#, python-format
+msgid ""
+"On success, the %(provider)s account is linked and can be used for future "
+"logins."
+msgstr ""
+"Ob uspehu je %(provider)s račun povezan in ga je mogoče uporabiti za prihodnje "
+"prijave."
+
+#: auth_kit/social/social_api_descriptions.py:73
+msgid ""
+"List all social accounts connected to the current user. Shows account "
+"details including provider, UID, and connection dates."
+msgstr ""
+"Izpiše vse družabne račune, povezane s trenutnim uporabnikom. Prikaže "
+"podrobnosti računa, vključno s ponudnikom, UID in datumi povezave."
+
+#: auth_kit/social/social_api_descriptions.py:78
+msgid ""
+"Disconnect a social account from the current user. Removes the social "
+"account connection and prevents future logins via that provider. Requires "
+"authentication and the account must belong to the current user."
+msgstr ""
+"Odklopi družabni račun od trenutnega uporabnika. Odstrani povezavo "
+"družabnega računa in prepreči prihodnje prijave prek tega ponudnika. "
+"Zahteva avtentifikacijo in račun mora pripadati trenutnemu uporabniku."
+
+#: auth_kit/social/views/login.py:58
 msgid "adapter_class is not defined"
 msgstr "adapter_class ni določen"
 
@@ -486,15 +580,15 @@ msgstr "Geslo je bilo ponastavljeno z novim geslom."
 msgid "New password has been saved."
 msgstr "Novo geslo je bilo shranjeno."
 
-#: auth_kit/views/registration.py:142
+#: auth_kit/views/registration.py:143
 msgid "Verification e-mail sent."
 msgstr "Verifikacijska e-pošta poslana."
 
-#: auth_kit/views/registration.py:143
+#: auth_kit/views/registration.py:144
 msgid "Successfully registered."
 msgstr "Uspešno registriran."
 
-#: auth_kit/views/registration.py:223 auth_kit/views/registration.py:268
+#: auth_kit/views/registration.py:224 auth_kit/views/registration.py:269
 msgid "ok"
 msgstr "v redu"
 

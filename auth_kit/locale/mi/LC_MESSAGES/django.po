@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DRF Auth Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-08 06:02+0000\n"
+"POT-Creation-Date: 2025-07-09 05:21+0000\n"
 "PO-Revision-Date: 2025-07-08 06:02+0000\n"
 "Last-Translator: DRF Auth Kit Team\n"
 "Language-Team: Māori\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: auth_kit/api_descriptions.py:25
+#: auth_kit/api_descriptions.py:29
 msgid ""
 "Returns user details along with JWT access and refresh tokens with "
 "expiration times."
@@ -24,67 +24,75 @@ msgstr ""
 "Whakahoki ai nga taipitopito kaiwhakamahi me nga tohu urunga JWT me nga tohu "
 "whakahou me nga taima mutunga."
 
-#: auth_kit/api_descriptions.py:29
+#: auth_kit/api_descriptions.py:33
 msgid ""
 "Returns user details along with a DRF authentication token for API access."
 msgstr ""
-"Whakahoki ai nga taipitopito kaiwhakamahi me he tohu whakamanatanga DRF mo te urunga API."
+"Whakahoki ai nga taipitopito kaiwhakamahi me he tohu whakamanatanga DRF mo "
+"te urunga API."
 
-#: auth_kit/api_descriptions.py:32
+#: auth_kit/api_descriptions.py:36
 msgid "Returns user details along with custom authentication tokens."
-msgstr "Whakahoki ai nga taipitopito kaiwhakamahi me nga tohu whakamanatanga ritenga."
+msgstr ""
+"Whakahoki ai nga taipitopito kaiwhakamahi me nga tohu whakamanatanga ritenga."
 
-#: auth_kit/api_descriptions.py:38
+#: auth_kit/api_descriptions.py:42
 msgid "JWT access and refresh tokens"
 msgstr "Nga tohu urunga JWT me nga tohu whakahou"
 
-#: auth_kit/api_descriptions.py:40
+#: auth_kit/api_descriptions.py:44
 msgid "DRF authentication token"
 msgstr "Tohu whakamanatanga DRF"
 
-#: auth_kit/api_descriptions.py:42
+#: auth_kit/api_descriptions.py:46
 msgid "custom authentication tokens"
 msgstr "nga tohu whakamanatanga ritenga"
 
-#: auth_kit/api_descriptions.py:49
+#: auth_kit/api_descriptions.py:53
 msgid "Authentication cookies are set automatically for secure token storage."
-msgstr "Ka whakaritea nga kuki whakamanatanga aunoa mo te penapena tohu haumaru."
+msgstr ""
+"Ka whakaritea nga kuki whakamanatanga aunoa mo te penapena tohu haumaru."
 
-#: auth_kit/api_descriptions.py:57
+#: auth_kit/api_descriptions.py:61
 msgid "Blacklists JWT refresh tokens to prevent further use."
-msgstr "Ka whakauru ki te raina ā-turi nga tohu whakahou JWT kia kore ai e whakamahi anō."
+msgstr ""
+"Ka whakauru ki te raina ā-turi nga tohu whakahou JWT kia kore ai e whakamahi "
+"anō."
 
-#: auth_kit/api_descriptions.py:59
+#: auth_kit/api_descriptions.py:63
 msgid "Deletes the DRF authentication token from the database."
 msgstr "Ka muku i te tohu whakamanatanga DRF i te pātaka raraunga."
 
-#: auth_kit/api_descriptions.py:61
+#: auth_kit/api_descriptions.py:65
 msgid "Invalidates custom authentication tokens."
 msgstr "Ka whakakorekore nga tohu whakamanatanga ritenga."
 
-#: auth_kit/api_descriptions.py:67
+#: auth_kit/api_descriptions.py:71
 msgid "Clears authentication cookies from the browser."
 msgstr "Ka whakamomohi nga kuki whakamanatanga i te pūtirotiro."
 
-#: auth_kit/api_descriptions.py:73
+#: auth_kit/api_descriptions.py:77
 msgid "Authenticate with username/email and password to obtain access tokens."
-msgstr "Whakamanatia me te ingoa-kaiwhakamahi/īmēra me te kupuhuna hoki nga tohu urunga."
+msgstr ""
+"Whakamanatia me te ingoa-kaiwhakamahi/īmēra me te kupuhuna hoki nga tohu "
+"urunga."
 
-#: auth_kit/api_descriptions.py:85
+#: auth_kit/api_descriptions.py:89
 msgid "Logout user and invalidate authentication tokens."
 msgstr "Whakaputa te kaiwhakamahi me te whakakorekore nga tohu whakamanatanga."
 
-#: auth_kit/api_descriptions.py:89
+#: auth_kit/api_descriptions.py:93
 msgid ""
 "Requires authentication to ensure only valid sessions can be logged out."
 msgstr ""
-"Me whakamanatia kia mohio ai he taima whakawhitiwhiti anake nga mea ka whakaputaina."
+"Me whakamanatia kia mohio ai he taima whakawhitiwhiti anake nga mea ka "
+"whakaputaina."
 
-#: auth_kit/api_descriptions.py:100
+#: auth_kit/api_descriptions.py:104
 msgid "Generate new JWT access tokens using refresh tokens."
 msgstr "Waihanga tohu urunga JWT hou ma nga tohu whakahou."
 
-#: auth_kit/api_descriptions.py:104
+#: auth_kit/api_descriptions.py:108
 msgid ""
 "Refresh tokens can be provided in request data or extracted automatically "
 "from HTTP cookies."
@@ -92,23 +100,29 @@ msgstr ""
 "Ka taea nga tohu whakahou te whakarato i nga raraunga tongi ranei te tango "
 "aunoa hoki i nga kuki HTTP."
 
-#: auth_kit/api_descriptions.py:106 auth_kit/api_descriptions.py:116
+#: auth_kit/api_descriptions.py:110 auth_kit/api_descriptions.py:120
 msgid "Returns new access tokens with updated expiration times."
 msgstr "Whakahoki ai nga tohu urunga hou me nga taima mutunga whakahoutia."
 
-#: auth_kit/api_descriptions.py:108
+#: auth_kit/api_descriptions.py:112
 msgid "New tokens are automatically set in HTTP cookies for secure storage."
-msgstr "Ka whakaritea nga tohu hou aunoa ki nga kuki HTTP mo te penapena haumaru."
+msgstr ""
+"Ka whakaritea nga tohu hou aunoa ki nga kuki HTTP mo te penapena haumaru."
 
-#: auth_kit/api_descriptions.py:115
+#: auth_kit/api_descriptions.py:119
 msgid "Refresh tokens must be provided in the request data."
 msgstr "Me whakarato nga tohu whakahou ki nga raraunga tongi."
 
-#: auth_kit/api_descriptions.py:122
+#: auth_kit/api_descriptions.py:127
 msgid "Register a new user account."
 msgstr "Rēhita he pūkete kaiwhakamahi hou."
 
-#: auth_kit/api_descriptions.py:126
+#: auth_kit/api_descriptions.py:134
+msgid ""
+"Users must verify their email address before the account is fully activated."
+msgstr "Me whakaū e nga kaiwhakamahi to rātou wāhitau īmēra i mua i te whakahohenga katoa o te pūkete."
+
+#: auth_kit/api_descriptions.py:143
 msgid ""
 "Send password reset instructions to the provided email address. If the email "
 "is registered, a secure reset link will be sent. The link expires after a "
@@ -118,21 +132,21 @@ msgstr ""
 "te īmēra, ka tukuna he hononga tautuhi haumaru. Ka mutu te hononga i muri i "
 "te roa roa mo te haumarutanga."
 
-#: auth_kit/api_descriptions.py:132
+#: auth_kit/api_descriptions.py:149
 msgid ""
 "Complete the password reset process using the token from the reset email. "
 "Requires the UID and token from the email along with the new password. The "
 "token is single-use and expires for security."
 msgstr ""
-"Whakaoti te taupānga tautuhi kupuhuna ma te tohu i te īmēra tautuhi. "
-"Me te UID me te tohu i te īmēra hoki me te kupuhuna hou. He "
-"whakamahi kotahi te tohu, a ka mutu mo te haumarutanga."
+"Whakaoti te taupānga tautuhi kupuhuna ma te tohu i te īmēra tautuhi. Me te "
+"UID me te tohu i te īmēra hoki me te kupuhuna hou. He whakamahi kotahi te "
+"tohu, a ka mutu mo te haumarutanga."
 
-#: auth_kit/api_descriptions.py:138
+#: auth_kit/api_descriptions.py:155
 msgid "Change the current user's password. Requires authentication. "
 msgstr "Huringa te kupuhuna o te kaiwhakamahi o naianei. Me whakamanatia. "
 
-#: auth_kit/api_descriptions.py:142
+#: auth_kit/api_descriptions.py:159
 msgid ""
 "Confirm email address using the verification key sent via email. This "
 "activates the user account and allows login access."
@@ -140,7 +154,7 @@ msgstr ""
 "Whakaū te wāhitau īmēra ma te kī whakamana i tukuna ma te īmēra. Tenei "
 "whakahohe ai te pūkete kaiwhakamahi me te whakaaetanga takiuru."
 
-#: auth_kit/api_descriptions.py:147
+#: auth_kit/api_descriptions.py:164
 msgid ""
 "Send a new email verification message to unverified email addresses. Only "
 "works for email addresses that are registered but not yet verified."
@@ -148,31 +162,31 @@ msgstr ""
 "Tukuna he karere whakamana īmēra hou ki nga wāhitau īmēra kore whakamana. "
 "Mahi anake mo nga wāhitau īmēra kua rēhita engari kaore anō kia whakamanatia."
 
-#: auth_kit/api_descriptions.py:152
+#: auth_kit/api_descriptions.py:169
 msgid ""
 "Retrieve the authenticated user's profile information including username, "
 "email, first name, and last name. Password fields are excluded."
 msgstr ""
 "Tikina nga taipitopito kōtaha o te kaiwhakamahi whakamanatia, tae atu ki te "
-"ingoa-kaiwhakamahi, īmēra, ingoa tuatahi, me te ingoa whakamutunga. Kaore nga "
-"āpure kupuhuna."
+"ingoa-kaiwhakamahi, īmēra, ingoa tuatahi, me te ingoa whakamutunga. Kaore "
+"nga āpure kupuhuna."
 
-#: auth_kit/api_descriptions.py:157
+#: auth_kit/api_descriptions.py:174
 msgid ""
 "Update the authenticated user's profile information. Allows modification of "
 "username, first name, and last name. Email field is read-only for security."
 msgstr ""
-"Whakahoutia nga taipitopito kōtaha o te kaiwhakamahi whakamanatia. Whakaaetanga "
-"whakakē o te ingoa-kaiwhakamahi, ingoa tuatahi, me te ingoa whakamutunga. He "
-"pānui-anake te āpure īmēra mo te haumarutanga."
+"Whakahoutia nga taipitopito kōtaha o te kaiwhakamahi whakamanatia. "
+"Whakaaetanga whakakē o te ingoa-kaiwhakamahi, ingoa tuatahi, me te ingoa "
+"whakamutunga. He pānui-anake te āpure īmēra mo te haumarutanga."
 
-#: auth_kit/api_descriptions.py:163
+#: auth_kit/api_descriptions.py:180
 msgid ""
 "Partially update the authenticated user's profile information. Only provided "
 "fields will be updated. Email field is read-only."
 msgstr ""
-"Whakahoutia wāhanga nga taipitopito kōtaha o te kaiwhakamahi whakamanatia. Ko "
-"nga āpure whakarato anake ka whakahoutia. He pānui-anake te āpure īmēra."
+"Whakahoutia wāhanga nga taipitopito kōtaha o te kaiwhakamahi whakamanatia. "
+"Ko nga āpure whakarato anake ka whakahoutia. He pānui-anake te āpure īmēra."
 
 #: auth_kit/forms.py:78
 msgid "The email address is not assigned to any user account."
@@ -196,8 +210,8 @@ msgid ""
 "First step of MFA-enabled authentication. Validates credentials and "
 "initiates MFA flow."
 msgstr ""
-"Te hianga tuatahi o te whakamanatanga MFA-whakahohea. Whakamanatia nga "
-"tohu me te whakatīmata rere MFA."
+"Te hianga tuatahi o te whakamanatanga MFA-whakahohea. Whakamanatia nga tohu "
+"me te whakatīmata rere MFA."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:41
 #, python-format
@@ -205,8 +219,8 @@ msgid ""
 "Returns ephemeral token for MFA verification or complete %(auth_tokens)s if "
 "MFA is disabled."
 msgstr ""
-"Whakahoki ai te tohu roa-poto mo te whakamana MFA tetahi rānei %(auth_tokens)s "
-"katoa mēnā kua monokia te MFA."
+"Whakahoki ai te tohu roa-poto mo te whakamana MFA tetahi rānei "
+"%(auth_tokens)s katoa mēnā kua monokia te MFA."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:51
 msgid ""
@@ -224,7 +238,8 @@ msgstr "Kōwhiri ki tetahi tikanga MFA kē i te rere whakamanatanga."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:70
 msgid "Requires valid ephemeral token from first step authentication."
-msgstr "Me he tohu roa-poto whakawhitiwhiti i te whakamanatanga hianga tuatahi."
+msgstr ""
+"Me he tohu roa-poto whakawhitiwhiti i te whakamanatanga hianga tuatahi."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:72
 #: auth_kit/mfa/mfa_api_descriptions.py:87
@@ -264,9 +279,9 @@ msgid ""
 "Automatically sets as primary method if no other primary method exists. "
 "Required before the method can be used for authentication."
 msgstr ""
-"Whakaū me te whakahohe he tikanga MFA hou ma te waehere whakamana. "
-"Whakarite aunoa hei tikanga matua mēnā kaore he tikanga matua kē. "
-"Me i mua i te whakamahi tikanga mo te whakamanatanga."
+"Whakaū me te whakahohe he tikanga MFA hou ma te waehere whakamana. Whakarite "
+"aunoa hei tikanga matua mēnā kaore he tikanga matua kē. Me i mua i te "
+"whakamahi tikanga mo te whakamanatanga."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:113
 msgid ""
@@ -274,9 +289,9 @@ msgid ""
 "itself. Cannot deactivate primary methods - set another method as primary "
 "first."
 msgstr ""
-"Whakakorekore he tikanga MFA hohe. Me he waehere whakamana i te tikanga "
-"ake. Kaore e taea te whakakorekore nga tikanga matua - whakarite he tikanga "
-"kē hei matua tuatahi."
+"Whakakorekore he tikanga MFA hohe. Me he waehere whakamana i te tikanga ake. "
+"Kaore e taea te whakakorekore nga tikanga matua - whakarite he tikanga kē "
+"hei matua tuatahi."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:121
 msgid ""
@@ -299,8 +314,8 @@ msgid ""
 "Send verification code for methods that support code dispatch. Useful for "
 "testing method configuration or manual code requests."
 msgstr ""
-"Tukuna te waehere whakamana mo nga tikanga tautoko tuku waehere. He pai "
-"mo te whakamatau whakarite tikanga me nga tono waehere ringa rānei."
+"Tukuna te waehere whakamana mo nga tikanga tautoko tuku waehere. He pai mo "
+"te whakamatau whakarite tikanga me nga tono waehere ringa rānei."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:142
 msgid "Permanently delete an MFA method."
@@ -354,9 +369,23 @@ msgstr "Tikanga MFA"
 msgid "MFA Methods"
 msgstr "Nga Tikanga MFA"
 
+#: auth_kit/mfa/serializers/login_factors.py:153
+msgid "Invalid code"
+msgstr "Waehere muhu"
+
+#: auth_kit/mfa/serializers/login_factors.py:172
+#: auth_kit/mfa/serializers/login_factors.py:226
+#: auth_kit/mfa/serializers/login_factors.py:272
+msgid "Invalid token"
+msgstr "Tohu muhu"
+
 #: auth_kit/mfa/serializers/login_factors.py:230
 msgid "Please select a new method"
 msgstr "Koa kōwhiri he tikanga hou"
+
+#: auth_kit/mfa/serializers/mfa.py:76
+msgid "This method is already exists"
+msgstr "Kua rēhia tenei tikanga"
 
 #: auth_kit/mfa/serializers/mfa.py:145 auth_kit/mfa/serializers/mfa.py:200
 #: auth_kit/mfa/serializers/mfa.py:345
@@ -455,7 +484,48 @@ msgstr "Kua rēhita te kaiwhakamahi me tenei wāhitau īmēra."
 msgid "Failed to exchange code for access token"
 msgstr "I rahua te whakawhiti waehere mo te tohu urunga"
 
-#: auth_kit/social/views/login.py:50
+#: auth_kit/social/social_api_descriptions.py:29
+#, python-format
+msgid ""
+"Authenticate with %(provider)s using OAuth2/OpenID Connect authorization "
+"code to obtain access tokens."
+msgstr "Whakamanatia me %(provider)s ma te waehere whakamana OAuth2/OpenID Connect hoki nga tohu urunga."
+
+#: auth_kit/social/social_api_descriptions.py:51
+#, python-format
+msgid ""
+"Connect a %(provider)s account to the current user's account. This allows "
+"the user to login using their existing %(provider)s account in the future."
+msgstr "Honoa he pūkete %(provider)s ki te pūkete o te kaiwhakamahi o nāianei. Tenei whakaaetanga te kaiwhakamahi takiuru ma to rātou pūkete %(provider)s o mua i nga rā o mua."
+
+#: auth_kit/social/social_api_descriptions.py:56
+#, python-format
+msgid ""
+"Requires authentication and a valid OAuth2/OpenID Connect authorization code "
+"from %(provider)s."
+msgstr "Me whakamanatia me he waehere whakamana OAuth2/OpenID Connect whakawhitiwhiti i %(provider)s."
+
+#: auth_kit/social/social_api_descriptions.py:60
+#, python-format
+msgid ""
+"On success, the %(provider)s account is linked and can be used for future "
+"logins."
+msgstr "I te angitū, ka honoa te pūkete %(provider)s ā ka taea te whakamahi mō nga takiuru a mua."
+
+#: auth_kit/social/social_api_descriptions.py:73
+msgid ""
+"List all social accounts connected to the current user. Shows account "
+"details including provider, UID, and connection dates."
+msgstr "Raina nga pūkete pāpori katoa kua honoa ki te kaiwhakamahi o nāianei. Whakaatu nga taipitopito pūkete me te kaiwhakamahi, UID, me nga rā hononga."
+
+#: auth_kit/social/social_api_descriptions.py:78
+msgid ""
+"Disconnect a social account from the current user. Removes the social "
+"account connection and prevents future logins via that provider. Requires "
+"authentication and the account must belong to the current user."
+msgstr "Wetekina he pūkete pāpori i te kaiwhakamahi o nāianei. Tangohia te hononga pūkete pāpori me te aukati nga takiuru a mua ma taua kaiwhakamahi. Me whakamanatia me no te kaiwhakamahi o nāianei te pūkete."
+
+#: auth_kit/social/views/login.py:58
 msgid "adapter_class is not defined"
 msgstr "Kaore te adapter_class i whakamāramahia"
 
@@ -487,15 +557,15 @@ msgstr "Kua tautuhi te kupuhuna me te kupuhuna hou."
 msgid "New password has been saved."
 msgstr "Kua tiakina te kupuhuna hou."
 
-#: auth_kit/views/registration.py:142
+#: auth_kit/views/registration.py:143
 msgid "Verification e-mail sent."
 msgstr "Īmēra whakamana tukuna."
 
-#: auth_kit/views/registration.py:143
+#: auth_kit/views/registration.py:144
 msgid "Successfully registered."
 msgstr "I rēhita pai."
 
-#: auth_kit/views/registration.py:223 auth_kit/views/registration.py:268
+#: auth_kit/views/registration.py:224 auth_kit/views/registration.py:269
 msgid "ok"
 msgstr "pai"
 

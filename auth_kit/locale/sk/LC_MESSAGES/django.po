@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DRF Auth Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-08 06:02+0000\n"
+"POT-Creation-Date: 2025-07-09 05:21+0000\n"
 "PO-Revision-Date: 2025-07-08 06:02+0000\n"
 "Last-Translator: DRF Auth Kit Team\n"
 "Language-Team: Slovak\n"
@@ -17,7 +17,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n == 1 ? 0 : n % 1 == 0 && n "
 ">= 2 && n <= 4 ? 1 : n % 1 != 0 ? 2: 3);\n"
-#: auth_kit/api_descriptions.py:25
+
+#: auth_kit/api_descriptions.py:29
 msgid ""
 "Returns user details along with JWT access and refresh tokens with "
 "expiration times."
@@ -25,123 +26,138 @@ msgstr ""
 "Vráti detaily používateľa spolu s JWT prístupovými a obnovovacími tokenmi s "
 "časom vypršania."
 
-#: auth_kit/api_descriptions.py:29
+#: auth_kit/api_descriptions.py:33
 msgid ""
 "Returns user details along with a DRF authentication token for API access."
 msgstr ""
-"Vráti detaily používateľa spolu s DRF autentifikačným tokenom pre prístup k API."
+"Vráti detaily používateľa spolu s DRF autentifikačným tokenom pre prístup k "
+"API."
 
-#: auth_kit/api_descriptions.py:32
+#: auth_kit/api_descriptions.py:36
 msgid "Returns user details along with custom authentication tokens."
 msgstr "Vráti detaily používateľa spolu s vlastnými autentifikačnými tokenmi."
 
-#: auth_kit/api_descriptions.py:38
+#: auth_kit/api_descriptions.py:42
 msgid "JWT access and refresh tokens"
 msgstr "JWT prístupové a obnovovacie tokeny"
 
-#: auth_kit/api_descriptions.py:40
+#: auth_kit/api_descriptions.py:44
 msgid "DRF authentication token"
 msgstr "DRF autentifikačný token"
 
-#: auth_kit/api_descriptions.py:42
+#: auth_kit/api_descriptions.py:46
 msgid "custom authentication tokens"
 msgstr "vlastné autentifikačné tokeny"
 
-#: auth_kit/api_descriptions.py:49
+#: auth_kit/api_descriptions.py:53
 msgid "Authentication cookies are set automatically for secure token storage."
-msgstr "Autentifikačné súbory cookie sa nastavia automaticky pre bezpečné ukladanie tokenov."
+msgstr ""
+"Autentifikačné súbory cookie sa nastavia automaticky pre bezpečné ukladanie "
+"tokenov."
 
-#: auth_kit/api_descriptions.py:57
+#: auth_kit/api_descriptions.py:61
 msgid "Blacklists JWT refresh tokens to prevent further use."
 msgstr "Zakáže JWT obnovovacie tokeny, aby sa zabránilo ich ďalšiemu použitiu."
 
-#: auth_kit/api_descriptions.py:59
+#: auth_kit/api_descriptions.py:63
 msgid "Deletes the DRF authentication token from the database."
 msgstr "Odstráni DRF autentifikačný token z databázy."
 
-#: auth_kit/api_descriptions.py:61
+#: auth_kit/api_descriptions.py:65
 msgid "Invalidates custom authentication tokens."
 msgstr "Zneplatní vlastné autentifikačné tokeny."
 
-#: auth_kit/api_descriptions.py:67
+#: auth_kit/api_descriptions.py:71
 msgid "Clears authentication cookies from the browser."
 msgstr "Vymaže autentifikačné súbory cookie z prehliadača."
 
-#: auth_kit/api_descriptions.py:73
+#: auth_kit/api_descriptions.py:77
 msgid "Authenticate with username/email and password to obtain access tokens."
-msgstr "Autentifikujte sa pomocou používateľského mena/e-mailu a hesla na získanie prístupových tokenov."
+msgstr ""
+"Autentifikujte sa pomocou používateľského mena/e-mailu a hesla na získanie "
+"prístupových tokenov."
 
-#: auth_kit/api_descriptions.py:85
+#: auth_kit/api_descriptions.py:89
 msgid "Logout user and invalidate authentication tokens."
 msgstr "Odhlási používateľa a zneplatní autentifikačné tokeny."
 
-#: auth_kit/api_descriptions.py:89
+#: auth_kit/api_descriptions.py:93
 msgid ""
 "Requires authentication to ensure only valid sessions can be logged out."
 msgstr ""
-"Vyžaduje autentifikáciu na zabezpečenie, že len platné relácie môžu byť odhlásené."
+"Vyžaduje autentifikáciu na zabezpečenie, že len platné relácie môžu byť "
+"odhlásené."
 
-#: auth_kit/api_descriptions.py:100
+#: auth_kit/api_descriptions.py:104
 msgid "Generate new JWT access tokens using refresh tokens."
 msgstr "Vygeneruje nové JWT prístupové tokeny pomocou obnovovacích tokenov."
 
-#: auth_kit/api_descriptions.py:104
+#: auth_kit/api_descriptions.py:108
 msgid ""
 "Refresh tokens can be provided in request data or extracted automatically "
 "from HTTP cookies."
 msgstr ""
-"Obnovovacie tokeny môžu byť poskytnuté v údajoch požiadavky alebo automaticky "
-"extrahované z HTTP súborov cookie."
+"Obnovovacie tokeny môžu byť poskytnuté v údajoch požiadavky alebo "
+"automaticky extrahované z HTTP súborov cookie."
 
-#: auth_kit/api_descriptions.py:106 auth_kit/api_descriptions.py:116
+#: auth_kit/api_descriptions.py:110 auth_kit/api_descriptions.py:120
 msgid "Returns new access tokens with updated expiration times."
 msgstr "Vráti nové prístupové tokeny s aktualizovanými časmi vypršania."
 
-#: auth_kit/api_descriptions.py:108
+#: auth_kit/api_descriptions.py:112
 msgid "New tokens are automatically set in HTTP cookies for secure storage."
-msgstr "Nové tokeny sa automaticky nastavia do HTTP súborov cookie pre bezpečné ukladanie."
+msgstr ""
+"Nové tokeny sa automaticky nastavia do HTTP súborov cookie pre bezpečné "
+"ukladanie."
 
-#: auth_kit/api_descriptions.py:115
+#: auth_kit/api_descriptions.py:119
 msgid "Refresh tokens must be provided in the request data."
 msgstr "Obnovovacie tokeny musia byť poskytnuté v údajoch požiadavky."
 
-#: auth_kit/api_descriptions.py:122
+#: auth_kit/api_descriptions.py:127
 msgid "Register a new user account."
 msgstr "Registruje nový používateľský účet."
 
-#: auth_kit/api_descriptions.py:126
+#: auth_kit/api_descriptions.py:134
+msgid ""
+"Users must verify their email address before the account is fully activated."
+msgstr ""
+"Používatelia musia overiť svoju e-mailovú adresu pred tým, ako bude účet "
+"úplne aktivovaný."
+
+#: auth_kit/api_descriptions.py:143
 msgid ""
 "Send password reset instructions to the provided email address. If the email "
 "is registered, a secure reset link will be sent. The link expires after a "
 "limited time for security."
 msgstr ""
-"Pošle pokyny na resetovanie hesla na poskytnutú e-mailovú adresu. Ak je e-mail "
-"registrovaný, pošle sa bezpečný odkaz na resetovanie. Odkaz z bezpečnostných "
-"dôvodov vyprší po obmedzenom čase."
+"Pošle pokyny na resetovanie hesla na poskytnutú e-mailovú adresu. Ak je e-"
+"mail registrovaný, pošle sa bezpečný odkaz na resetovanie. Odkaz z "
+"bezpečnostných dôvodov vyprší po obmedzenom čase."
 
-#: auth_kit/api_descriptions.py:132
+#: auth_kit/api_descriptions.py:149
 msgid ""
 "Complete the password reset process using the token from the reset email. "
 "Requires the UID and token from the email along with the new password. The "
 "token is single-use and expires for security."
 msgstr ""
 "Dokončí proces resetovania hesla pomocou tokenu z resetovacieho e-mailu. "
-"Vyžaduje UID a token z e-mailu spolu s novým heslom. Token je jednorazový "
-"a z bezpečnostných dôvodov vyprší."
+"Vyžaduje UID a token z e-mailu spolu s novým heslom. Token je jednorazový a "
+"z bezpečnostných dôvodov vyprší."
 
-#: auth_kit/api_descriptions.py:138
+#: auth_kit/api_descriptions.py:155
 msgid "Change the current user's password. Requires authentication. "
 msgstr "Zmení heslo aktuálneho používateľa. Vyžaduje autentifikáciu. "
 
-#: auth_kit/api_descriptions.py:142
+#: auth_kit/api_descriptions.py:159
 msgid ""
 "Confirm email address using the verification key sent via email. This "
 "activates the user account and allows login access."
 msgstr ""
-"Potvrdí e-mailovú adresu pomocou overovacieho kľúča zaslaného e-mailom. "
-"Toto aktivuje používateľský účet a umožní prístup na prihlásenie."
+"Potvrdí e-mailovú adresu pomocou overovacieho kľúča zaslaného e-mailom. Toto "
+"aktivuje používateľský účet a umožní prístup na prihlásenie."
 
-#: auth_kit/api_descriptions.py:147
+#: auth_kit/api_descriptions.py:164
 msgid ""
 "Send a new email verification message to unverified email addresses. Only "
 "works for email addresses that are registered but not yet verified."
@@ -149,24 +165,24 @@ msgstr ""
 "Pošle novú správu na overenie e-mailu na neoverené e-mailové adresy. Funguje "
 "len pre e-mailové adresy, ktoré sú registrované, ale ešte neoverené."
 
-#: auth_kit/api_descriptions.py:152
+#: auth_kit/api_descriptions.py:169
 msgid ""
 "Retrieve the authenticated user's profile information including username, "
 "email, first name, and last name. Password fields are excluded."
 msgstr ""
-"Získa informácie o profile autentifikovaného používateľa vrátane používateľského "
-"mena, e-mailu, mena a priezviska. Polia hesla sú vylúčené."
+"Získa informácie o profile autentifikovaného používateľa vrátane "
+"používateľského mena, e-mailu, mena a priezviska. Polia hesla sú vylúčené."
 
-#: auth_kit/api_descriptions.py:157
+#: auth_kit/api_descriptions.py:174
 msgid ""
 "Update the authenticated user's profile information. Allows modification of "
 "username, first name, and last name. Email field is read-only for security."
 msgstr ""
 "Aktualizuje informácie o profile autentifikovaného používateľa. Umožňuje "
-"úpravu používateľského mena, mena a priezviska. Pole e-mailu je z bezpečnostných "
-"dôvodov len na čítanie."
+"úpravu používateľského mena, mena a priezviska. Pole e-mailu je z "
+"bezpečnostných dôvodov len na čítanie."
 
-#: auth_kit/api_descriptions.py:163
+#: auth_kit/api_descriptions.py:180
 msgid ""
 "Partially update the authenticated user's profile information. Only provided "
 "fields will be updated. Email field is read-only."
@@ -196,8 +212,8 @@ msgid ""
 "First step of MFA-enabled authentication. Validates credentials and "
 "initiates MFA flow."
 msgstr ""
-"Prvý krok autentifikácie s povolenou MFA. Overuje poverenia a "
-"iniciuje MFA tok."
+"Prvý krok autentifikácie s povolenou MFA. Overuje poverenia a iniciuje MFA "
+"tok."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:41
 #, python-format
@@ -205,8 +221,8 @@ msgid ""
 "Returns ephemeral token for MFA verification or complete %(auth_tokens)s if "
 "MFA is disabled."
 msgstr ""
-"Vráti dočasný token na MFA overenie alebo kompletné %(auth_tokens)s ak "
-"je MFA zakázaná."
+"Vráti dočasný token na MFA overenie alebo kompletné %(auth_tokens)s ak je "
+"MFA zakázaná."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:51
 msgid ""
@@ -265,8 +281,8 @@ msgid ""
 "Required before the method can be used for authentication."
 msgstr ""
 "Potvrdí a aktivuje novo vytvorenú MFA metódu pomocou overovacieho kódu. "
-"Automaticky sa nastaví ako primárna metóda, ak neexistuje žiadna iná primárna "
-"metóda. Vyžaduje sa pred použitím metódy na autentifikáciu."
+"Automaticky sa nastaví ako primárna metóda, ak neexistuje žiadna iná "
+"primárna metóda. Vyžaduje sa pred použitím metódy na autentifikáciu."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:113
 msgid ""
@@ -353,9 +369,23 @@ msgstr "MFA Metóda"
 msgid "MFA Methods"
 msgstr "MFA Metódy"
 
+#: auth_kit/mfa/serializers/login_factors.py:153
+msgid "Invalid code"
+msgstr "Neplatný kód"
+
+#: auth_kit/mfa/serializers/login_factors.py:172
+#: auth_kit/mfa/serializers/login_factors.py:226
+#: auth_kit/mfa/serializers/login_factors.py:272
+msgid "Invalid token"
+msgstr "Neplatný token"
+
 #: auth_kit/mfa/serializers/login_factors.py:230
 msgid "Please select a new method"
 msgstr "Prosím, vyberte novú metódu"
+
+#: auth_kit/mfa/serializers/mfa.py:76
+msgid "This method is already exists"
+msgstr "Táto metóda už existuje"
 
 #: auth_kit/mfa/serializers/mfa.py:145 auth_kit/mfa/serializers/mfa.py:200
 #: auth_kit/mfa/serializers/mfa.py:345
@@ -436,7 +466,8 @@ msgstr "Dve polia hesla sa nezhodujú."
 
 #: auth_kit/social/serializers/connect.py:55
 msgid "Social account email must match your current account email."
-msgstr "E-mail sociálneho účtu sa musí zhodovať s e-mailom vášho aktuálneho účtu."
+msgstr ""
+"E-mail sociálneho účtu sa musí zhodovať s e-mailom vášho aktuálneho účtu."
 
 #: auth_kit/social/serializers/connect.py:98
 msgid "Connected"
@@ -454,7 +485,61 @@ msgstr "Používateľ s touto e-mailovou adresou je už registrovaný."
 msgid "Failed to exchange code for access token"
 msgstr "Nepodarilo sa vymeniť kód za prístupový token"
 
-#: auth_kit/social/views/login.py:50
+#: auth_kit/social/social_api_descriptions.py:29
+#, python-format
+msgid ""
+"Authenticate with %(provider)s using OAuth2/OpenID Connect authorization "
+"code to obtain access tokens."
+msgstr ""
+"Autentifikujte sa pomocou %(provider)s pomocou autorizačného kódu OAuth2/OpenID "
+"Connect na získanie prístupových tokenov."
+
+#: auth_kit/social/social_api_descriptions.py:51
+#, python-format
+msgid ""
+"Connect a %(provider)s account to the current user's account. This allows "
+"the user to login using their existing %(provider)s account in the future."
+msgstr ""
+"Pripojí %(provider)s účet k účtu aktuálneho používateľa. Toto umožní "
+"používateľovi prihlásiť sa pomocou existujúceho %(provider)s účtu v budúcnosti."
+
+#: auth_kit/social/social_api_descriptions.py:56
+#, python-format
+msgid ""
+"Requires authentication and a valid OAuth2/OpenID Connect authorization code "
+"from %(provider)s."
+msgstr ""
+"Vyžaduje autentifikáciu a platný autorizačný kód OAuth2/OpenID Connect "
+"od %(provider)s."
+
+#: auth_kit/social/social_api_descriptions.py:60
+#, python-format
+msgid ""
+"On success, the %(provider)s account is linked and can be used for future "
+"logins."
+msgstr ""
+"Pri úspechu je %(provider)s účet prepojený a môže sa použiť pre budúce "
+"prihlásenia."
+
+#: auth_kit/social/social_api_descriptions.py:73
+msgid ""
+"List all social accounts connected to the current user. Shows account "
+"details including provider, UID, and connection dates."
+msgstr ""
+"Zoznam všetkých sociálnych účtov pripojených k aktuálnemu používateľovi. "
+"Zobrazuje detaily účtu vrátane poskytovateľa, UID a dátumov pripojenia."
+
+#: auth_kit/social/social_api_descriptions.py:78
+msgid ""
+"Disconnect a social account from the current user. Removes the social "
+"account connection and prevents future logins via that provider. Requires "
+"authentication and the account must belong to the current user."
+msgstr ""
+"Odpojí sociálny účet od aktuálneho používateľa. Odstráni spojenie sociálneho "
+"účtu a zabraňuje budúcim prihlásením cez tohto poskytovateľa. Vyžaduje "
+"autentifikáciu a účet musí patriť aktuálnemu používateľovi."
+
+#: auth_kit/social/views/login.py:58
 msgid "adapter_class is not defined"
 msgstr "adapter_class nie je definovaný"
 
@@ -486,15 +571,15 @@ msgstr "Heslo bolo resetované novým heslom."
 msgid "New password has been saved."
 msgstr "Nové heslo bolo uložené."
 
-#: auth_kit/views/registration.py:142
+#: auth_kit/views/registration.py:143
 msgid "Verification e-mail sent."
 msgstr "Overovací e-mail odoslaný."
 
-#: auth_kit/views/registration.py:143
+#: auth_kit/views/registration.py:144
 msgid "Successfully registered."
 msgstr "Úspešne registrovaný."
 
-#: auth_kit/views/registration.py:223 auth_kit/views/registration.py:268
+#: auth_kit/views/registration.py:224 auth_kit/views/registration.py:269
 msgid "ok"
 msgstr "ok"
 

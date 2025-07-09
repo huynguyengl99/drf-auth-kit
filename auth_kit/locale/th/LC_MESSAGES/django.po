@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DRF Auth Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-08 06:02+0000\n"
+"POT-Creation-Date: 2025-07-09 05:21+0000\n"
 "PO-Revision-Date: 2025-07-09 00:00+0000\n"
 "Last-Translator: DRF Auth Kit Team\n"
 "Language-Team: Thai\n"
@@ -16,139 +16,159 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-#: auth_kit/api_descriptions.py:25
+
+#: auth_kit/api_descriptions.py:29
 msgid ""
 "Returns user details along with JWT access and refresh tokens with "
 "expiration times."
 msgstr "ส่งคืนรายละเอียดผู้ใช้พร้อมกับ JWT access และ refresh token พร้อมเวลาหมดอายุ"
 
-#: auth_kit/api_descriptions.py:29
+#: auth_kit/api_descriptions.py:33
 msgid ""
 "Returns user details along with a DRF authentication token for API access."
 msgstr "ส่งคืนรายละเอียดผู้ใช้พร้อมกับ DRF authentication token สำหรับการเข้าถึง API"
 
-#: auth_kit/api_descriptions.py:32
+#: auth_kit/api_descriptions.py:36
 msgid "Returns user details along with custom authentication tokens."
 msgstr "ส่งคืนรายละเอียดผู้ใช้พร้อมกับ custom authentication token"
 
-#: auth_kit/api_descriptions.py:38
+#: auth_kit/api_descriptions.py:42
 msgid "JWT access and refresh tokens"
 msgstr "JWT access และ refresh token"
 
-#: auth_kit/api_descriptions.py:40
+#: auth_kit/api_descriptions.py:44
 msgid "DRF authentication token"
 msgstr "DRF authentication token"
 
-#: auth_kit/api_descriptions.py:42
+#: auth_kit/api_descriptions.py:46
 msgid "custom authentication tokens"
 msgstr "custom authentication token"
 
-#: auth_kit/api_descriptions.py:49
+#: auth_kit/api_descriptions.py:53
 msgid "Authentication cookies are set automatically for secure token storage."
 msgstr "คุกกี้การรับรองความถูกต้องจะถูกตั้งค่าอัตโนมัติสำหรับการเก็บ token อย่างปลอดภัย"
 
-#: auth_kit/api_descriptions.py:57
+#: auth_kit/api_descriptions.py:61
 msgid "Blacklists JWT refresh tokens to prevent further use."
 msgstr "ใส่ JWT refresh token เข้าบัญชีดำเพื่อป้องกันการใช้งานต่อไป"
 
-#: auth_kit/api_descriptions.py:59
+#: auth_kit/api_descriptions.py:63
 msgid "Deletes the DRF authentication token from the database."
 msgstr "ลบ DRF authentication token จากฐานข้อมูล"
 
-#: auth_kit/api_descriptions.py:61
+#: auth_kit/api_descriptions.py:65
 msgid "Invalidates custom authentication tokens."
 msgstr "ยกเลิกความถูกต้องของ custom authentication token"
 
-#: auth_kit/api_descriptions.py:67
+#: auth_kit/api_descriptions.py:71
 msgid "Clears authentication cookies from the browser."
 msgstr "ล้างคุกกี้การรับรองความถูกต้องออกจากเบราว์เซอร์"
 
-#: auth_kit/api_descriptions.py:73
+#: auth_kit/api_descriptions.py:77
 msgid "Authenticate with username/email and password to obtain access tokens."
 msgstr "รับรองความถูกต้องด้วยชื่อผู้ใช้/อีเมลและรหัสผ่านเพื่อรับ access token"
 
-#: auth_kit/api_descriptions.py:85
+#: auth_kit/api_descriptions.py:89
 msgid "Logout user and invalidate authentication tokens."
 msgstr "ออกจากระบบและยกเลิกความถูกต้องของ authentication token"
 
-#: auth_kit/api_descriptions.py:89
+#: auth_kit/api_descriptions.py:93
 msgid ""
 "Requires authentication to ensure only valid sessions can be logged out."
 msgstr "ต้องการการรับรองความถูกต้องเพื่อให้แน่ใจว่าเฉพาะเซสชันที่ถูกต้องเท่านั้นที่สามารถออกจากระบบได้"
 
-#: auth_kit/api_descriptions.py:100
+#: auth_kit/api_descriptions.py:104
 msgid "Generate new JWT access tokens using refresh tokens."
 msgstr "สร้าง JWT access token ใหม่โดยใช้ refresh token"
 
-#: auth_kit/api_descriptions.py:104
+#: auth_kit/api_descriptions.py:108
 msgid ""
 "Refresh tokens can be provided in request data or extracted automatically "
 "from HTTP cookies."
 msgstr "Refresh token สามารถระบุในข้อมูลคำขอหรือดึงออกมาอัตโนมัติจาก HTTP cookie"
 
-#: auth_kit/api_descriptions.py:106 auth_kit/api_descriptions.py:116
+#: auth_kit/api_descriptions.py:110 auth_kit/api_descriptions.py:120
 msgid "Returns new access tokens with updated expiration times."
 msgstr "ส่งคืน access token ใหม่พร้อมเวลาหมดอายุที่อัปเดตแล้ว"
 
-#: auth_kit/api_descriptions.py:108
+#: auth_kit/api_descriptions.py:112
 msgid "New tokens are automatically set in HTTP cookies for secure storage."
 msgstr "Token ใหม่จะถูกตั้งค่าอัตโนมัติใน HTTP cookie สำหรับการเก็บข้อมูลที่ปลอดภัย"
 
-#: auth_kit/api_descriptions.py:115
+#: auth_kit/api_descriptions.py:119
 msgid "Refresh tokens must be provided in the request data."
 msgstr "ต้องระบุ refresh token ในข้อมูลคำขอ"
 
-#: auth_kit/api_descriptions.py:122
+#: auth_kit/api_descriptions.py:127
 msgid "Register a new user account."
 msgstr "ลงทะเบียนบัญชีผู้ใช้ใหม่"
 
-#: auth_kit/api_descriptions.py:126
+#: auth_kit/api_descriptions.py:134
+msgid ""
+"Users must verify their email address before the account is fully activated."
+msgstr "ผู้ใช้ต้องยืนยันที่อยู่อีเมลของพวกเขาก่อนที่บัญชีจะถูกเปิดใช้งานอย่างสมบูรณ์"
+
+#: auth_kit/api_descriptions.py:143
 msgid ""
 "Send password reset instructions to the provided email address. If the email "
 "is registered, a secure reset link will be sent. The link expires after a "
 "limited time for security."
-msgstr "ส่งคำแนะนำการรีเซ็ตรหัสผ่านไปยังที่อยู่อีเมลที่ระบุ หากอีเมลถูกลงทะเบียนแล้ว ลิงก์รีเซ็ตที่ปลอดภัยจะถูกส่งไป ลิงก์จะหมดอายุหลังจากเวลาที่จำกัดเพื่อความปลอดภัย"
+msgstr ""
+"ส่งคำแนะนำการรีเซ็ตรหัสผ่านไปยังที่อยู่อีเมลที่ระบุ หากอีเมลถูกลงทะเบียนแล้ว "
+"ลิงก์รีเซ็ตที่ปลอดภัยจะถูกส่งไป ลิงก์จะหมดอายุหลังจากเวลาที่จำกัดเพื่อความปลอดภัย"
 
-#: auth_kit/api_descriptions.py:132
+#: auth_kit/api_descriptions.py:149
 msgid ""
 "Complete the password reset process using the token from the reset email. "
 "Requires the UID and token from the email along with the new password. The "
 "token is single-use and expires for security."
-msgstr "ดำเนินการรีเซ็ตรหัสผ่านให้เสร็จสิ้นโดยใช้ token จากอีเมลรีเซ็ต ต้องใช้ UID และ token จากอีเมลพร้อมกับรหัสผ่านใหม่ Token ใช้ได้เพียงครั้งเดียวและจะหมดอายุเพื่อความปลอดภัย"
+msgstr ""
+"ดำเนินการรีเซ็ตรหัสผ่านให้เสร็จสิ้นโดยใช้ token จากอีเมลรีเซ็ต ต้องใช้ UID และ token "
+"จากอีเมลพร้อมกับรหัสผ่านใหม่ Token ใช้ได้เพียงครั้งเดียวและจะหมดอายุเพื่อความปลอดภัย"
 
-#: auth_kit/api_descriptions.py:138
+#: auth_kit/api_descriptions.py:155
 msgid "Change the current user's password. Requires authentication. "
 msgstr "เปลี่ยนรหัสผ่านของผู้ใช้ปัจจุบัน ต้องการการรับรองความถูกต้อง"
 
-#: auth_kit/api_descriptions.py:142
+#: auth_kit/api_descriptions.py:159
 msgid ""
 "Confirm email address using the verification key sent via email. This "
 "activates the user account and allows login access."
-msgstr "ยืนยันที่อยู่อีเมลโดยใช้คีย์ยืนยันที่ส่งทางอีเมล การดำเนินการนี้จะเปิดใช้งานบัญชีผู้ใช้และอนุญาตให้เข้าสู่ระบบได้"
+msgstr ""
+"ยืนยันที่อยู่อีเมลโดยใช้คีย์ยืนยันที่ส่งทางอีเมล "
+"การดำเนินการนี้จะเปิดใช้งานบัญชีผู้ใช้และอนุญาตให้เข้าสู่ระบบได้"
 
-#: auth_kit/api_descriptions.py:147
+#: auth_kit/api_descriptions.py:164
 msgid ""
 "Send a new email verification message to unverified email addresses. Only "
 "works for email addresses that are registered but not yet verified."
-msgstr "ส่งข้อความยืนยันอีเมลใหม่ไปยังที่อยู่อีเมลที่ยังไม่ได้รับการยืนยัน ใช้ได้เฉพาะกับที่อยู่อีเมลที่ลงทะเบียนแล้วแต่ยังไม่ได้รับการยืนยัน"
+msgstr ""
+"ส่งข้อความยืนยันอีเมลใหม่ไปยังที่อยู่อีเมลที่ยังไม่ได้รับการยืนยัน "
+"ใช้ได้เฉพาะกับที่อยู่อีเมลที่ลงทะเบียนแล้วแต่ยังไม่ได้รับการยืนยัน"
 
-#: auth_kit/api_descriptions.py:152
+#: auth_kit/api_descriptions.py:169
 msgid ""
 "Retrieve the authenticated user's profile information including username, "
 "email, first name, and last name. Password fields are excluded."
-msgstr "ดึงข้อมูลโปรไฟล์ของผู้ใช้ที่ได้รับการรับรองความถูกต้อง รวมถึงชื่อผู้ใช้ อีเมล ชื่อ และนามสกุล ไม่รวมฟิลด์รหัสผ่าน"
+msgstr ""
+"ดึงข้อมูลโปรไฟล์ของผู้ใช้ที่ได้รับการรับรองความถูกต้อง รวมถึงชื่อผู้ใช้ อีเมล ชื่อ และนามสกุล "
+"ไม่รวมฟิลด์รหัสผ่าน"
 
-#: auth_kit/api_descriptions.py:157
+#: auth_kit/api_descriptions.py:174
 msgid ""
 "Update the authenticated user's profile information. Allows modification of "
 "username, first name, and last name. Email field is read-only for security."
-msgstr "อัปเดตข้อมูลโปรไฟล์ของผู้ใช้ที่ได้รับการรับรองความถูกต้อง อนุญาตให้แก้ไขชื่อผู้ใช้ ชื่อ และนามสกุล ฟิลด์อีเมลเป็นแบบอ่านอย่างเดียวเพื่อความปลอดภัย"
+msgstr ""
+"อัปเดตข้อมูลโปรไฟล์ของผู้ใช้ที่ได้รับการรับรองความถูกต้อง อนุญาตให้แก้ไขชื่อผู้ใช้ ชื่อ และนามสกุล "
+"ฟิลด์อีเมลเป็นแบบอ่านอย่างเดียวเพื่อความปลอดภัย"
 
-#: auth_kit/api_descriptions.py:163
+#: auth_kit/api_descriptions.py:180
 msgid ""
 "Partially update the authenticated user's profile information. Only provided "
 "fields will be updated. Email field is read-only."
-msgstr "อัปเดตข้อมูลโปรไฟล์ของผู้ใช้ที่ได้รับการรับรองความถูกต้องบางส่วน เฉพาะฟิลด์ที่ระบุเท่านั้นที่จะถูกอัปเดต ฟิลด์อีเมลเป็นแบบอ่านอย่างเดียว"
+msgstr ""
+"อัปเดตข้อมูลโปรไฟล์ของผู้ใช้ที่ได้รับการรับรองความถูกต้องบางส่วน "
+"เฉพาะฟิลด์ที่ระบุเท่านั้นที่จะถูกอัปเดต ฟิลด์อีเมลเป็นแบบอ่านอย่างเดียว"
 
 #: auth_kit/forms.py:78
 msgid "The email address is not assigned to any user account."
@@ -171,14 +191,17 @@ msgstr "รหัส MFA จะหมดอายุใน %(seconds)s วิน
 msgid ""
 "First step of MFA-enabled authentication. Validates credentials and "
 "initiates MFA flow."
-msgstr "ขั้นตอนแรกของการรับรองความถูกต้องที่เปิดใช้งาน MFA ตรวจสอบข้อมูลประจำตัวและเริ่มต้นขั้นตอน MFA"
+msgstr ""
+"ขั้นตอนแรกของการรับรองความถูกต้องที่เปิดใช้งาน MFA ตรวจสอบข้อมูลประจำตัวและเริ่มต้นขั้นตอน MFA"
 
 #: auth_kit/mfa/mfa_api_descriptions.py:41
 #, python-format
 msgid ""
 "Returns ephemeral token for MFA verification or complete %(auth_tokens)s if "
 "MFA is disabled."
-msgstr "ส่งคืน ephemeral token สำหรับการยืนยัน MFA หรือ %(auth_tokens)s ที่สมบูรณ์หาก MFA ถูกปิดใช้งาน"
+msgstr ""
+"ส่งคืน ephemeral token สำหรับการยืนยัน MFA หรือ %(auth_tokens)s ที่สมบูรณ์หาก MFA "
+"ถูกปิดใช้งาน"
 
 #: auth_kit/mfa/mfa_api_descriptions.py:51
 msgid ""
@@ -215,34 +238,45 @@ msgstr "ใช้ได้เฉพาะกับวิธีที่ต้อ
 msgid ""
 "List all available MFA methods with their setup and activation status. Shows "
 "which methods are configured, active, and set as primary."
-msgstr "แสดงรายการวิธี MFA ที่มีทั้งหมดพร้อมสถานะการตั้งค่าและการเปิดใช้งาน แสดงว่าวิธีใดได้รับการกำหนดค่า เปิดใช้งาน และตั้งเป็นหลัก"
+msgstr ""
+"แสดงรายการวิธี MFA ที่มีทั้งหมดพร้อมสถานะการตั้งค่าและการเปิดใช้งาน "
+"แสดงว่าวิธีใดได้รับการกำหนดค่า เปิดใช้งาน และตั้งเป็นหลัก"
 
 #: auth_kit/mfa/mfa_api_descriptions.py:101
 msgid ""
 "Initialize a new MFA method setup. Creates the method with backup codes and "
 "returns setup instructions (e.g., QR code for authenticator apps). Method "
 "must be confirmed before activation."
-msgstr "เริ่มต้นการตั้งค่าวิธี MFA ใหม่ สร้างวิธีพร้อมรหัสสำรองและส่งคืนคำแนะนำการตั้งค่า (เช่น QR code สำหรับแอป authenticator) วิธีต้องได้รับการยืนยันก่อนเปิดใช้งาน"
+msgstr ""
+"เริ่มต้นการตั้งค่าวิธี MFA ใหม่ สร้างวิธีพร้อมรหัสสำรองและส่งคืนคำแนะนำการตั้งค่า (เช่น QR code "
+"สำหรับแอป authenticator) วิธีต้องได้รับการยืนยันก่อนเปิดใช้งาน"
 
 #: auth_kit/mfa/mfa_api_descriptions.py:107
 msgid ""
 "Confirm and activate a newly created MFA method using verification code. "
 "Automatically sets as primary method if no other primary method exists. "
 "Required before the method can be used for authentication."
-msgstr "ยืนยันและเปิดใช้งานวิธี MFA ที่สร้างใหม่โดยใช้รหัสยืนยัน ตั้งเป็นวิธีหลักโดยอัตโนมัติหากไม่มีวิธีหลักอื่นอยู่ จำเป็นก่อนที่จะสามารถใช้วิธีนี้สำหรับการรับรองความถูกต้อง"
+msgstr ""
+"ยืนยันและเปิดใช้งานวิธี MFA ที่สร้างใหม่โดยใช้รหัสยืนยัน "
+"ตั้งเป็นวิธีหลักโดยอัตโนมัติหากไม่มีวิธีหลักอื่นอยู่ "
+"จำเป็นก่อนที่จะสามารถใช้วิธีนี้สำหรับการรับรองความถูกต้อง"
 
 #: auth_kit/mfa/mfa_api_descriptions.py:113
 msgid ""
 "Deactivate an active MFA method. Requires verification code from the method "
 "itself. Cannot deactivate primary methods - set another method as primary "
 "first."
-msgstr "ปิดใช้งานวิธี MFA ที่เปิดใช้งานอยู่ ต้องใช้รหัสยืนยันจากวิธีนั้นเอง ไม่สามารถปิดใช้งานวิธีหลัก - ตั้งวิธีอื่นเป็นหลักก่อน"
+msgstr ""
+"ปิดใช้งานวิธี MFA ที่เปิดใช้งานอยู่ ต้องใช้รหัสยืนยันจากวิธีนั้นเอง ไม่สามารถปิดใช้งานวิธีหลัก - "
+"ตั้งวิธีอื่นเป็นหลักก่อน"
 
 #: auth_kit/mfa/mfa_api_descriptions.py:121
 msgid ""
 "Set an active MFA method as the primary authentication method. Primary "
 "method is used by default during login flow."
-msgstr "ตั้งวิธี MFA ที่เปิดใช้งานเป็นวิธีการรับรองความถูกต้องหลัก วิธีหลักจะถูกใช้โดยค่าเริ่มต้นในระหว่างขั้นตอนการเข้าสู่ระบบ"
+msgstr ""
+"ตั้งวิธี MFA ที่เปิดใช้งานเป็นวิธีการรับรองความถูกต้องหลัก "
+"วิธีหลักจะถูกใช้โดยค่าเริ่มต้นในระหว่างขั้นตอนการเข้าสู่ระบบ"
 
 #: auth_kit/mfa/mfa_api_descriptions.py:125
 msgid "Only one method can be primary at a time."
@@ -256,7 +290,9 @@ msgstr "ต้องใช้รหัสยืนยันจากวิธี
 msgid ""
 "Send verification code for methods that support code dispatch. Useful for "
 "testing method configuration or manual code requests."
-msgstr "ส่งรหัสยืนยันสำหรับวิธีที่รองรับการส่งรหัส มีประโยชน์สำหรับการทดสอบการกำหนดค่าวิธีหรือคำขอรหัสด้วยตนเอง"
+msgstr ""
+"ส่งรหัสยืนยันสำหรับวิธีที่รองรับการส่งรหัส "
+"มีประโยชน์สำหรับการทดสอบการกำหนดค่าวิธีหรือคำขอรหัสด้วยตนเอง"
 
 #: auth_kit/mfa/mfa_api_descriptions.py:142
 msgid "Permanently delete an MFA method."
@@ -310,9 +346,23 @@ msgstr "วิธี MFA"
 msgid "MFA Methods"
 msgstr "วิธี MFA"
 
+#: auth_kit/mfa/serializers/login_factors.py:153
+msgid "Invalid code"
+msgstr "รหัสไม่ถูกต้อง"
+
+#: auth_kit/mfa/serializers/login_factors.py:172
+#: auth_kit/mfa/serializers/login_factors.py:226
+#: auth_kit/mfa/serializers/login_factors.py:272
+msgid "Invalid token"
+msgstr "token ไม่ถูกต้อง"
+
 #: auth_kit/mfa/serializers/login_factors.py:230
 msgid "Please select a new method"
 msgstr "โปรดเลือกวิธีใหม่"
+
+#: auth_kit/mfa/serializers/mfa.py:76
+msgid "This method is already exists"
+msgstr "วิธีนี้มีอยู่แล้ว"
 
 #: auth_kit/mfa/serializers/mfa.py:145 auth_kit/mfa/serializers/mfa.py:200
 #: auth_kit/mfa/serializers/mfa.py:345
@@ -411,7 +461,61 @@ msgstr "ผู้ใช้ลงทะเบียนด้วยที่อย
 msgid "Failed to exchange code for access token"
 msgstr "ไม่สามารถแลกเปลี่ยนรหัสกับ access token"
 
-#: auth_kit/social/views/login.py:50
+#: auth_kit/social/social_api_descriptions.py:29
+#, python-format
+msgid ""
+"Authenticate with %(provider)s using OAuth2/OpenID Connect authorization "
+"code to obtain access tokens."
+msgstr ""
+"รับรองความถูกต้องด้วย %(provider)s โดยใช้รหัสการให้สิทธิ์ OAuth2/OpenID Connect "
+"เพื่อรับ access token"
+
+#: auth_kit/social/social_api_descriptions.py:51
+#, python-format
+msgid ""
+"Connect a %(provider)s account to the current user's account. This allows "
+"the user to login using their existing %(provider)s account in the future."
+msgstr ""
+"เชื่อมต่อบัญชี %(provider)s กับบัญชีของผู้ใช้ปัจจุบัน "
+"ทำให้ผู้ใช้สามารถเข้าสู่ระบบโดยใช้บัญชี %(provider)s ที่มีอยู่ในอนาคต"
+
+#: auth_kit/social/social_api_descriptions.py:56
+#, python-format
+msgid ""
+"Requires authentication and a valid OAuth2/OpenID Connect authorization code "
+"from %(provider)s."
+msgstr ""
+"ต้องการการรับรองความถูกต้องและรหัสการให้สิทธิ์ OAuth2/OpenID Connect "
+"ที่ถูกต้องจาก %(provider)s"
+
+#: auth_kit/social/social_api_descriptions.py:60
+#, python-format
+msgid ""
+"On success, the %(provider)s account is linked and can be used for future "
+"logins."
+msgstr ""
+"เมื่อสำเร็จ บัญชี %(provider)s จะถูกเชื่อมโยงและสามารถใช้สำหรับ"
+"การเข้าสู่ระบบในอนาคต"
+
+#: auth_kit/social/social_api_descriptions.py:73
+msgid ""
+"List all social accounts connected to the current user. Shows account "
+"details including provider, UID, and connection dates."
+msgstr ""
+"แสดงรายการบัญชีโซเชียลทั้งหมดที่เชื่อมต่อกับผู้ใช้ปัจจุบัน "
+"แสดงรายละเอียดบัญชีรวมถึงผู้ให้บริการ UID และวันที่เชื่อมต่อ"
+
+#: auth_kit/social/social_api_descriptions.py:78
+msgid ""
+"Disconnect a social account from the current user. Removes the social "
+"account connection and prevents future logins via that provider. Requires "
+"authentication and the account must belong to the current user."
+msgstr ""
+"ยกเลิกการเชื่อมต่อบัญชีโซเชียลจากผู้ใช้ปัจจุบัน ลบการเชื่อมต่อบัญชีโซเชียล"
+"และป้องกันการเข้าสู่ระบบในอนาคตผ่านผู้ให้บริการนั้น ต้องการการรับรองความถูกต้อง"
+"และบัญชีต้องเป็นของผู้ใช้ปัจจุบัน"
+
+#: auth_kit/social/views/login.py:58
 msgid "adapter_class is not defined"
 msgstr "adapter_class ไม่ได้ถูกกำหนด"
 
@@ -443,15 +547,15 @@ msgstr "รหัสผ่านได้รับการรีเซ็ตด
 msgid "New password has been saved."
 msgstr "บันทึกรหัสผ่านใหม่แล้ว"
 
-#: auth_kit/views/registration.py:142
+#: auth_kit/views/registration.py:143
 msgid "Verification e-mail sent."
 msgstr "ส่งอีเมลยืนยันแล้ว"
 
-#: auth_kit/views/registration.py:143
+#: auth_kit/views/registration.py:144
 msgid "Successfully registered."
 msgstr "ลงทะเบียนสำเร็จ"
 
-#: auth_kit/views/registration.py:223 auth_kit/views/registration.py:268
+#: auth_kit/views/registration.py:224 auth_kit/views/registration.py:269
 msgid "ok"
 msgstr "ตกลง"
 

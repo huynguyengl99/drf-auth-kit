@@ -138,11 +138,7 @@ paths:
   /auth/registration/:
     post:
       operationId: registration_create
-      description: |-
-        User Registration
-
-        Create new user accounts with email verification.
-        Users must verify their email address before the account is fully activated.
+      description: Register a new user account.
       tags:
       - registration
       requestBody:
@@ -166,11 +162,8 @@ paths:
   /auth/registration/resend-email/:
     post:
       operationId: registration_resend_email_create
-      description: |-
-        Resend Email Verification
-
-        Request a new email verification message for unverified accounts.
-        Useful when the original verification email was lost or expired.
+      description: Send a new email verification message to unverified email addresses.
+        Only works for email addresses that are registered but not yet verified.
       tags:
       - registration
       requestBody:

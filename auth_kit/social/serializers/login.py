@@ -314,12 +314,17 @@ class SocialLoginWithCodeRequestSerializer(SocialLoginWithTokenRequestSerializer
         return attrs
 
 
-def get_social_login_serializer() -> type[Serializer[dict[str, Any]]]:
+def get_social_login_serializer(
+    provider_name: str = "",
+) -> type[Serializer[dict[str, Any]]]:
     """
     Get the social login serializer class based on current settings.
 
     Creates a serializer class dynamically by combining the appropriate
     request and response serializers based on current auth kit settings.
+
+    Args:
+        provider_name: The name of the social provider (e.g., "Google", "Github")
 
     Returns:
         The combined social login serializer class
@@ -331,12 +336,25 @@ def get_social_login_serializer() -> type[Serializer[dict[str, Any]]]:
     else:
         social_login_request_serializer = SocialLoginWithCodeRequestSerializer
 
-    # Create the combined serializer class
-    class SocialLoginSerializer(
-        response_serializer, social_login_request_serializer  # type: ignore
-    ):
-        """Social authentication with OAuth credentials response."""
+    # Create unique class name based on provider
+    class_name = (
+        f"{provider_name}SocialLoginSerializer"
+        if provider_name
+        else "SocialLoginSerializer"
+    )
 
-        pass
+    # Create the combined serializer class
+    SocialLoginSerializer = type(  # noqa
+        class_name,
+        (response_serializer, social_login_request_serializer),
+        {
+            "__doc__": (
+                f"Social authentication with {provider_name} OAuth credentials response."
+                if provider_name
+                else "Social authentication with OAuth credentials response."
+            ),
+            "__module__": __name__,
+        },
+    )
 
     return SocialLoginSerializer

@@ -10,6 +10,10 @@ from typing import TYPE_CHECKING
 from django.utils.text import format_lazy
 from django.utils.translation import gettext_lazy as _
 
+from allauth.account import (  # pyright: ignore[reportMissingTypeStubs]
+    app_settings as allauth_account_settings,
+)
+
 from auth_kit.app_settings import auth_kit_settings
 
 if TYPE_CHECKING:  # pragma: no cover
@@ -118,8 +122,21 @@ def get_jwt_refresh_description() -> _StrOrPromise:
         return format_lazy("{} {} {}", base, token_source, response_part)
 
 
-# Registration and account management descriptions
-REGISTER_DESCRIPTION = _("Register a new user account.")
+def get_register_description() -> _StrOrPromise:
+    """Generate dynamic registration description based on email verification settings."""
+    base = _("Register a new user account.")
+
+    if (
+        allauth_account_settings.EMAIL_VERIFICATION
+        == allauth_account_settings.EmailVerificationMethod.MANDATORY
+    ):
+        verification_part = _(
+            "Users must verify their email address before the account is fully activated."
+        )
+        return format_lazy("{} {}", base, verification_part)
+
+    return base
+
 
 # Static descriptions for endpoints that don't need dynamic content
 PASSWORD_RESET_DESCRIPTION = _(

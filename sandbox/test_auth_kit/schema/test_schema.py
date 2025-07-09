@@ -57,7 +57,10 @@ def test_auth_kit_token_auth(no_warnings: CaptureFixture[str]) -> None:
 
 
 @override_auth_kit_settings(USE_AUTH_COOKIE=False, USE_MFA=False)
-def test_auth_kit_jwt_no_using_auth_cookie(no_warnings: CaptureFixture[str]) -> None:
+@override_settings(ACCOUNT_EMAIL_VERIFICATION="none")
+def test_auth_kit_jwt_no_using_auth_cookie_and_no_verify_email(
+    no_warnings: CaptureFixture[str],
+) -> None:
     urls = reload_necessary_modules_and_get_urls()
 
     get_login_serializer.cache_clear()

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DRF Auth Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-08 06:02+0000\n"
+"POT-Creation-Date: 2025-07-09 05:21+0000\n"
 "PO-Revision-Date: 2025-07-08 06:02+0000\n"
 "Last-Translator: DRF Auth Kit Team\n"
 "Language-Team: Danish\n"
@@ -16,73 +16,81 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-#: auth_kit/api_descriptions.py:25
+
+#: auth_kit/api_descriptions.py:29
 msgid ""
 "Returns user details along with JWT access and refresh tokens with "
 "expiration times."
 msgstr ""
-"Returnerer brugeroplysninger sammen med JWT-adgangs- og opdateringstokens med "
-"udløbstider."
+"Returnerer brugeroplysninger sammen med JWT-adgangs- og opdateringstokens "
+"med udløbstider."
 
-#: auth_kit/api_descriptions.py:29
+#: auth_kit/api_descriptions.py:33
 msgid ""
 "Returns user details along with a DRF authentication token for API access."
-msgstr "Returnerer brugeroplysninger sammen med et DRF-autentificeringstoken til API-adgang."
+msgstr ""
+"Returnerer brugeroplysninger sammen med et DRF-autentificeringstoken til API-"
+"adgang."
 
-#: auth_kit/api_descriptions.py:32
+#: auth_kit/api_descriptions.py:36
 msgid "Returns user details along with custom authentication tokens."
-msgstr "Returnerer brugeroplysninger sammen med brugerdefinerede autentificeringstokens."
+msgstr ""
+"Returnerer brugeroplysninger sammen med brugerdefinerede "
+"autentificeringstokens."
 
-#: auth_kit/api_descriptions.py:38
+#: auth_kit/api_descriptions.py:42
 msgid "JWT access and refresh tokens"
 msgstr "JWT-adgangs- og opdateringstokens"
 
-#: auth_kit/api_descriptions.py:40
+#: auth_kit/api_descriptions.py:44
 msgid "DRF authentication token"
 msgstr "DRF-autentificeringstoken"
 
-#: auth_kit/api_descriptions.py:42
+#: auth_kit/api_descriptions.py:46
 msgid "custom authentication tokens"
 msgstr "brugerdefinerede autentificeringstokens"
 
-#: auth_kit/api_descriptions.py:49
+#: auth_kit/api_descriptions.py:53
 msgid "Authentication cookies are set automatically for secure token storage."
-msgstr "Autentificeringsindstillinger indstilles automatisk til sikker tokenlagring."
+msgstr ""
+"Autentificeringsindstillinger indstilles automatisk til sikker tokenlagring."
 
-#: auth_kit/api_descriptions.py:57
+#: auth_kit/api_descriptions.py:61
 msgid "Blacklists JWT refresh tokens to prevent further use."
 msgstr "Sortlister JWT-opdateringstokens for at forhindre yderligere brug."
 
-#: auth_kit/api_descriptions.py:59
+#: auth_kit/api_descriptions.py:63
 msgid "Deletes the DRF authentication token from the database."
 msgstr "Sletter DRF-autentificeringstoken fra databasen."
 
-#: auth_kit/api_descriptions.py:61
+#: auth_kit/api_descriptions.py:65
 msgid "Invalidates custom authentication tokens."
 msgstr "Ugyldiggør brugerdefinerede autentificeringstokens."
 
-#: auth_kit/api_descriptions.py:67
+#: auth_kit/api_descriptions.py:71
 msgid "Clears authentication cookies from the browser."
 msgstr "Rydder autentificeringsindstillinger fra browseren."
 
-#: auth_kit/api_descriptions.py:73
+#: auth_kit/api_descriptions.py:77
 msgid "Authenticate with username/email and password to obtain access tokens."
-msgstr "Autentificer med brugernavn/e-mail og adgangskode for at få adgangstokens."
+msgstr ""
+"Autentificer med brugernavn/e-mail og adgangskode for at få adgangstokens."
 
-#: auth_kit/api_descriptions.py:85
+#: auth_kit/api_descriptions.py:89
 msgid "Logout user and invalidate authentication tokens."
 msgstr "Log bruger ud og ugyldiggør autentificeringstokens."
 
-#: auth_kit/api_descriptions.py:89
+#: auth_kit/api_descriptions.py:93
 msgid ""
 "Requires authentication to ensure only valid sessions can be logged out."
-msgstr "Kræver autentificering for at sikre, at kun gyldige sessioner kan logges ud."
+msgstr ""
+"Kræver autentificering for at sikre, at kun gyldige sessioner kan logges ud."
 
-#: auth_kit/api_descriptions.py:100
+#: auth_kit/api_descriptions.py:104
 msgid "Generate new JWT access tokens using refresh tokens."
 msgstr "Generer nye JWT-adgangstokens ved hjælp af opdateringstokens."
 
-#: auth_kit/api_descriptions.py:104
+#: auth_kit/api_descriptions.py:108
 msgid ""
 "Refresh tokens can be provided in request data or extracted automatically "
 "from HTTP cookies."
@@ -90,79 +98,89 @@ msgstr ""
 "Opdateringstokens kan leveres i anmodningsdata eller udtrækkes automatisk "
 "fra HTTP-indstillinger."
 
-#: auth_kit/api_descriptions.py:106 auth_kit/api_descriptions.py:116
+#: auth_kit/api_descriptions.py:110 auth_kit/api_descriptions.py:120
 msgid "Returns new access tokens with updated expiration times."
 msgstr "Returnerer nye adgangstokens med opdaterede udløbstider."
 
-#: auth_kit/api_descriptions.py:108
+#: auth_kit/api_descriptions.py:112
 msgid "New tokens are automatically set in HTTP cookies for secure storage."
-msgstr "Nye tokens indstilles automatisk i HTTP-indstillinger til sikker lagring."
+msgstr ""
+"Nye tokens indstilles automatisk i HTTP-indstillinger til sikker lagring."
 
-#: auth_kit/api_descriptions.py:115
+#: auth_kit/api_descriptions.py:119
 msgid "Refresh tokens must be provided in the request data."
 msgstr "Opdateringstokens skal leveres i anmodningsdata."
 
-#: auth_kit/api_descriptions.py:122
+#: auth_kit/api_descriptions.py:127
 msgid "Register a new user account."
 msgstr "Registrer en ny brugerkonto."
 
-#: auth_kit/api_descriptions.py:126
+#: auth_kit/api_descriptions.py:134
+msgid ""
+"Users must verify their email address before the account is fully activated."
+msgstr ""
+"Brugere skal verificere deres e-mail-adresse, før kontoen er fuldt aktiveret."
+
+#: auth_kit/api_descriptions.py:143
 msgid ""
 "Send password reset instructions to the provided email address. If the email "
 "is registered, a secure reset link will be sent. The link expires after a "
 "limited time for security."
 msgstr ""
-"Send instruktioner til nulstilling af adgangskode til den angivne e-mail-adresse. Hvis e-mail-adressen "
-"er registreret, vil et sikkert nulstillingslink blive sendt. Linket udløber efter et "
-"begrænset tidsrum af sikkerhedshensyn."
+"Send instruktioner til nulstilling af adgangskode til den angivne e-mail-"
+"adresse. Hvis e-mail-adressen er registreret, vil et sikkert "
+"nulstillingslink blive sendt. Linket udløber efter et begrænset tidsrum af "
+"sikkerhedshensyn."
 
-#: auth_kit/api_descriptions.py:132
+#: auth_kit/api_descriptions.py:149
 msgid ""
 "Complete the password reset process using the token from the reset email. "
 "Requires the UID and token from the email along with the new password. The "
 "token is single-use and expires for security."
 msgstr ""
-"Fuldfør nulstillingsprocessen for adgangskode ved hjælp af token fra nulstillings-e-mailen. "
-"Kræver UID og token fra e-mailen sammen med den nye adgangskode. Token "
-"kan kun bruges én gang og udløber af sikkerhedshensyn."
+"Fuldfør nulstillingsprocessen for adgangskode ved hjælp af token fra "
+"nulstillings-e-mailen. Kræver UID og token fra e-mailen sammen med den nye "
+"adgangskode. Token kan kun bruges én gang og udløber af sikkerhedshensyn."
 
-#: auth_kit/api_descriptions.py:138
+#: auth_kit/api_descriptions.py:155
 msgid "Change the current user's password. Requires authentication. "
 msgstr "Skift den aktuelle brugers adgangskode. Kræver autentificering. "
 
-#: auth_kit/api_descriptions.py:142
+#: auth_kit/api_descriptions.py:159
 msgid ""
 "Confirm email address using the verification key sent via email. This "
 "activates the user account and allows login access."
 msgstr ""
-"Bekræft e-mail-adresse ved hjælp af verifikationsnøglen sendt via e-mail. Dette "
-"aktiverer brugerkontoen og tillader login-adgang."
+"Bekræft e-mail-adresse ved hjælp af verifikationsnøglen sendt via e-mail. "
+"Dette aktiverer brugerkontoen og tillader login-adgang."
 
-#: auth_kit/api_descriptions.py:147
+#: auth_kit/api_descriptions.py:164
 msgid ""
 "Send a new email verification message to unverified email addresses. Only "
 "works for email addresses that are registered but not yet verified."
 msgstr ""
-"Send en ny e-mail-verificeringsbesked til ikke-verificerede e-mail-adresser. Virker kun "
-"for e-mail-adresser, der er registreret, men endnu ikke verificeret."
+"Send en ny e-mail-verificeringsbesked til ikke-verificerede e-mail-adresser. "
+"Virker kun for e-mail-adresser, der er registreret, men endnu ikke "
+"verificeret."
 
-#: auth_kit/api_descriptions.py:152
+#: auth_kit/api_descriptions.py:169
 msgid ""
 "Retrieve the authenticated user's profile information including username, "
 "email, first name, and last name. Password fields are excluded."
 msgstr ""
-"Hent den autentificerede brugers profiloplysninger, herunder brugernavn, "
-"e-mail, fornavn og efternavn. Adgangskodefelter er udelukket."
+"Hent den autentificerede brugers profiloplysninger, herunder brugernavn, e-"
+"mail, fornavn og efternavn. Adgangskodefelter er udelukket."
 
-#: auth_kit/api_descriptions.py:157
+#: auth_kit/api_descriptions.py:174
 msgid ""
 "Update the authenticated user's profile information. Allows modification of "
 "username, first name, and last name. Email field is read-only for security."
 msgstr ""
 "Opdater den autentificerede brugers profiloplysninger. Tillader ændring af "
-"brugernavn, fornavn og efternavn. E-mail-felt er skrivebeskyttet af sikkerhedshensyn."
+"brugernavn, fornavn og efternavn. E-mail-felt er skrivebeskyttet af "
+"sikkerhedshensyn."
 
-#: auth_kit/api_descriptions.py:163
+#: auth_kit/api_descriptions.py:180
 msgid ""
 "Partially update the authenticated user's profile information. Only provided "
 "fields will be updated. Email field is read-only."
@@ -192,8 +210,8 @@ msgid ""
 "First step of MFA-enabled authentication. Validates credentials and "
 "initiates MFA flow."
 msgstr ""
-"Første trin i MFA-aktiveret autentificering. Validerer legitimationsoplysninger og "
-"initierer MFA-flow."
+"Første trin i MFA-aktiveret autentificering. Validerer "
+"legitimationsoplysninger og initierer MFA-flow."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:41
 #, python-format
@@ -201,13 +219,15 @@ msgid ""
 "Returns ephemeral token for MFA verification or complete %(auth_tokens)s if "
 "MFA is disabled."
 msgstr ""
-"Returnerer midlertidigt token til MFA-verificering eller fuldstændige %(auth_tokens)s hvis "
-"MFA er deaktiveret."
+"Returnerer midlertidigt token til MFA-verificering eller fuldstændige "
+"%(auth_tokens)s hvis MFA er deaktiveret."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:51
 msgid ""
 "Complete MFA authentication using verification code and ephemeral token."
-msgstr "Fuldfør MFA-autentificering ved hjælp af verificeringskode og midlertidigt token."
+msgstr ""
+"Fuldfør MFA-autentificering ved hjælp af verificeringskode og midlertidigt "
+"token."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:56
 msgid "Supports both TOTP codes and backup codes for verification."
@@ -229,7 +249,8 @@ msgstr "Nyt midlertidigt token udløber om %(seconds)s sekunder."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:81
 msgid "Resend MFA verification code using existing ephemeral token."
-msgstr "Gensend MFA-verificeringskode ved hjælp af eksisterende midlertidigt token."
+msgstr ""
+"Gensend MFA-verificeringskode ved hjælp af eksisterende midlertidigt token."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:84
 msgid "Only applicable for methods that require code dispatch (e.g., email)."
@@ -240,8 +261,9 @@ msgid ""
 "List all available MFA methods with their setup and activation status. Shows "
 "which methods are configured, active, and set as primary."
 msgstr ""
-"Vis alle tilgængelige MFA-metoder med deres opsætnings- og aktiveringsstatus. Viser "
-"hvilke metoder der er konfigureret, aktive og indstillet som primære."
+"Vis alle tilgængelige MFA-metoder med deres opsætnings- og "
+"aktiveringsstatus. Viser hvilke metoder der er konfigureret, aktive og "
+"indstillet som primære."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:101
 msgid ""
@@ -250,8 +272,8 @@ msgid ""
 "must be confirmed before activation."
 msgstr ""
 "Initialiser opsætning af ny MFA-metode. Opretter metoden med backup-koder og "
-"returnerer opsætningsinstruktioner (f.eks. QR-kode til autentificeringsapps). Metoden "
-"skal bekræftes før aktivering."
+"returnerer opsætningsinstruktioner (f.eks. QR-kode til "
+"autentificeringsapps). Metoden skal bekræftes før aktivering."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:107
 msgid ""
@@ -260,8 +282,8 @@ msgid ""
 "Required before the method can be used for authentication."
 msgstr ""
 "Bekræft og aktiver en nyoprettet MFA-metode ved hjælp af verificeringskode. "
-"Indstilles automatisk som primær metode, hvis ingen anden primær metode eksisterer. "
-"Krævet før metoden kan bruges til autentificering."
+"Indstilles automatisk som primær metode, hvis ingen anden primær metode "
+"eksisterer. Krævet før metoden kan bruges til autentificering."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:113
 msgid ""
@@ -269,8 +291,8 @@ msgid ""
 "itself. Cannot deactivate primary methods - set another method as primary "
 "first."
 msgstr ""
-"Deaktiver en aktiv MFA-metode. Kræver verificeringskode fra metoden "
-"selv. Kan ikke deaktivere primære metoder - indstil en anden metode som primær "
+"Deaktiver en aktiv MFA-metode. Kræver verificeringskode fra metoden selv. "
+"Kan ikke deaktivere primære metoder - indstil en anden metode som primær "
 "først."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:121
@@ -294,8 +316,8 @@ msgid ""
 "Send verification code for methods that support code dispatch. Useful for "
 "testing method configuration or manual code requests."
 msgstr ""
-"Send verificeringskode for metoder, der understøtter kodeafsendelse. Nyttig til "
-"test af metodekonfiguration eller manuelle kodeanmodninger."
+"Send verificeringskode for metoder, der understøtter kodeafsendelse. Nyttig "
+"til test af metodekonfiguration eller manuelle kodeanmodninger."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:142
 msgid "Permanently delete an MFA method."
@@ -349,9 +371,23 @@ msgstr "MFA-metode"
 msgid "MFA Methods"
 msgstr "MFA-metoder"
 
+#: auth_kit/mfa/serializers/login_factors.py:153
+msgid "Invalid code"
+msgstr "Ugyldig kode"
+
+#: auth_kit/mfa/serializers/login_factors.py:172
+#: auth_kit/mfa/serializers/login_factors.py:226
+#: auth_kit/mfa/serializers/login_factors.py:272
+msgid "Invalid token"
+msgstr "Ugyldig token"
+
 #: auth_kit/mfa/serializers/login_factors.py:230
 msgid "Please select a new method"
 msgstr "Vælg venligst en ny metode"
+
+#: auth_kit/mfa/serializers/mfa.py:76
+msgid "This method is already exists"
+msgstr "Denne metode eksisterer allerede"
 
 #: auth_kit/mfa/serializers/mfa.py:145 auth_kit/mfa/serializers/mfa.py:200
 #: auth_kit/mfa/serializers/mfa.py:345
@@ -420,7 +456,8 @@ msgstr "Ugyldig værdi"
 
 #: auth_kit/serializers/password.py:220
 msgid "Your old password was entered incorrectly. Please enter it again."
-msgstr "Din gamle adgangskode blev indtastet forkert. Indtast den venligst igen."
+msgstr ""
+"Din gamle adgangskode blev indtastet forkert. Indtast den venligst igen."
 
 #: auth_kit/serializers/registration.py:88
 msgid "A user is already registered with this e-mail address."
@@ -450,7 +487,61 @@ msgstr "Bruger er allerede registreret med denne e-mail-adresse."
 msgid "Failed to exchange code for access token"
 msgstr "Fejlede i at veksle kode til adgangstoken"
 
-#: auth_kit/social/views/login.py:50
+#: auth_kit/social/social_api_descriptions.py:29
+#, python-format
+msgid ""
+"Authenticate with %(provider)s using OAuth2/OpenID Connect authorization "
+"code to obtain access tokens."
+msgstr ""
+"Autentificer med %(provider)s ved hjælp af OAuth2/OpenID Connect "
+"autorisationskode for at få adgangstokens."
+
+#: auth_kit/social/social_api_descriptions.py:51
+#, python-format
+msgid ""
+"Connect a %(provider)s account to the current user's account. This allows "
+"the user to login using their existing %(provider)s account in the future."
+msgstr ""
+"Tilslut en %(provider)s-konto til den nuværende brugers konto. Dette giver "
+"brugeren mulighed for at logge ind ved hjælp af deres eksisterende %(provider)s-konto i fremtiden."
+
+#: auth_kit/social/social_api_descriptions.py:56
+#, python-format
+msgid ""
+"Requires authentication and a valid OAuth2/OpenID Connect authorization code "
+"from %(provider)s."
+msgstr ""
+"Kræver autentificering og en gyldig OAuth2/OpenID Connect autorisationskode "
+"fra %(provider)s."
+
+#: auth_kit/social/social_api_descriptions.py:60
+#, python-format
+msgid ""
+"On success, the %(provider)s account is linked and can be used for future "
+"logins."
+msgstr ""
+"Ved succes linkes %(provider)s-kontoen og kan bruges til fremtidige "
+"logins."
+
+#: auth_kit/social/social_api_descriptions.py:73
+msgid ""
+"List all social accounts connected to the current user. Shows account "
+"details including provider, UID, and connection dates."
+msgstr ""
+"List alle sociale konti forbundet til den nuværende bruger. Viser konto-"
+"detaljer inklusiv udbyder, UID og tilslutningsdatoer."
+
+#: auth_kit/social/social_api_descriptions.py:78
+msgid ""
+"Disconnect a social account from the current user. Removes the social "
+"account connection and prevents future logins via that provider. Requires "
+"authentication and the account must belong to the current user."
+msgstr ""
+"Frakobl en social konto fra den nuværende bruger. Fjerner den sociale "
+"kontoforbindelse og forhindrer fremtidige logins via den udbyder. Kræver "
+"autentificering og kontoen skal tilhøre den nuværende bruger."
+
+#: auth_kit/social/views/login.py:58
 msgid "adapter_class is not defined"
 msgstr "adapter_class er ikke defineret"
 
@@ -482,15 +573,15 @@ msgstr "Adgangskoden er blevet nulstillet med den nye adgangskode."
 msgid "New password has been saved."
 msgstr "Ny adgangskode er blevet gemt."
 
-#: auth_kit/views/registration.py:142
+#: auth_kit/views/registration.py:143
 msgid "Verification e-mail sent."
 msgstr "Verificerings-e-mail sendt."
 
-#: auth_kit/views/registration.py:143
+#: auth_kit/views/registration.py:144
 msgid "Successfully registered."
 msgstr "Registreret med succes."
 
-#: auth_kit/views/registration.py:223 auth_kit/views/registration.py:268
+#: auth_kit/views/registration.py:224 auth_kit/views/registration.py:269
 msgid "ok"
 msgstr "ok"
 

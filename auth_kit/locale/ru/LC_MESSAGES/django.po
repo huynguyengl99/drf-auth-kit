@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DRF Auth Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-08 06:02+0000\n"
+"POT-Creation-Date: 2025-07-09 05:21+0000\n"
 "PO-Revision-Date: 2025-07-09 00:00+0000\n"
 "Last-Translator: DRF Auth Kit Team\n"
 "Language-Team: Russian\n"
@@ -18,166 +18,190 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
-#: auth_kit/api_descriptions.py:25
+
+#: auth_kit/api_descriptions.py:29
 msgid ""
 "Returns user details along with JWT access and refresh tokens with "
 "expiration times."
 msgstr ""
-"Возвращает данные пользователя вместе с токенами доступа и обновления JWT "
-"с временем истечения."
+"Возвращает данные пользователя вместе с токенами доступа и обновления JWT с "
+"временем истечения."
 
-#: auth_kit/api_descriptions.py:29
+#: auth_kit/api_descriptions.py:33
 msgid ""
 "Returns user details along with a DRF authentication token for API access."
 msgstr ""
 "Возвращает данные пользователя вместе с токеном аутентификации DRF для "
 "доступа к API."
 
-#: auth_kit/api_descriptions.py:32
+#: auth_kit/api_descriptions.py:36
 msgid "Returns user details along with custom authentication tokens."
-msgstr "Возвращает данные пользователя вместе с пользовательскими токенами аутентификации."
+msgstr ""
+"Возвращает данные пользователя вместе с пользовательскими токенами "
+"аутентификации."
 
-#: auth_kit/api_descriptions.py:38
+#: auth_kit/api_descriptions.py:42
 msgid "JWT access and refresh tokens"
 msgstr "Токены доступа и обновления JWT"
 
-#: auth_kit/api_descriptions.py:40
+#: auth_kit/api_descriptions.py:44
 msgid "DRF authentication token"
 msgstr "Токен аутентификации DRF"
 
-#: auth_kit/api_descriptions.py:42
+#: auth_kit/api_descriptions.py:46
 msgid "custom authentication tokens"
 msgstr "пользовательские токены аутентификации"
 
-#: auth_kit/api_descriptions.py:49
+#: auth_kit/api_descriptions.py:53
 msgid "Authentication cookies are set automatically for secure token storage."
-msgstr "Cookies аутентификации устанавливаются автоматически для безопасного хранения токенов."
+msgstr ""
+"Cookies аутентификации устанавливаются автоматически для безопасного "
+"хранения токенов."
 
-#: auth_kit/api_descriptions.py:57
+#: auth_kit/api_descriptions.py:61
 msgid "Blacklists JWT refresh tokens to prevent further use."
-msgstr "Заносит в черный список токены обновления JWT для предотвращения дальнейшего использования."
+msgstr ""
+"Заносит в черный список токены обновления JWT для предотвращения дальнейшего "
+"использования."
 
-#: auth_kit/api_descriptions.py:59
+#: auth_kit/api_descriptions.py:63
 msgid "Deletes the DRF authentication token from the database."
 msgstr "Удаляет токен аутентификации DRF из базы данных."
 
-#: auth_kit/api_descriptions.py:61
+#: auth_kit/api_descriptions.py:65
 msgid "Invalidates custom authentication tokens."
 msgstr "Делает недействительными пользовательские токены аутентификации."
 
-#: auth_kit/api_descriptions.py:67
+#: auth_kit/api_descriptions.py:71
 msgid "Clears authentication cookies from the browser."
 msgstr "Очищает cookies аутентификации из браузера."
 
-#: auth_kit/api_descriptions.py:73
+#: auth_kit/api_descriptions.py:77
 msgid "Authenticate with username/email and password to obtain access tokens."
-msgstr "Пройдите аутентификацию с именем пользователя/email и паролем для получения токенов доступа."
+msgstr ""
+"Пройдите аутентификацию с именем пользователя/email и паролем для получения "
+"токенов доступа."
 
-#: auth_kit/api_descriptions.py:85
+#: auth_kit/api_descriptions.py:89
 msgid "Logout user and invalidate authentication tokens."
 msgstr "Выйти из системы и аннулировать токены аутентификации."
 
-#: auth_kit/api_descriptions.py:89
+#: auth_kit/api_descriptions.py:93
 msgid ""
 "Requires authentication to ensure only valid sessions can be logged out."
 msgstr ""
-"Требует аутентификацию для обеспечения того, чтобы только действительные сессии могли быть завершены."
+"Требует аутентификацию для обеспечения того, чтобы только действительные "
+"сессии могли быть завершены."
 
-#: auth_kit/api_descriptions.py:100
+#: auth_kit/api_descriptions.py:104
 msgid "Generate new JWT access tokens using refresh tokens."
 msgstr "Генерировать новые токены доступа JWT, используя токены обновления."
 
-#: auth_kit/api_descriptions.py:104
+#: auth_kit/api_descriptions.py:108
 msgid ""
 "Refresh tokens can be provided in request data or extracted automatically "
 "from HTTP cookies."
 msgstr ""
-"Токены обновления могут быть предоставлены в данных запроса или извлечены автоматически "
-"из HTTP cookies."
+"Токены обновления могут быть предоставлены в данных запроса или извлечены "
+"автоматически из HTTP cookies."
 
-#: auth_kit/api_descriptions.py:106 auth_kit/api_descriptions.py:116
+#: auth_kit/api_descriptions.py:110 auth_kit/api_descriptions.py:120
 msgid "Returns new access tokens with updated expiration times."
 msgstr "Возвращает новые токены доступа с обновленными временами истечения."
 
-#: auth_kit/api_descriptions.py:108
+#: auth_kit/api_descriptions.py:112
 msgid "New tokens are automatically set in HTTP cookies for secure storage."
-msgstr "Новые токены автоматически устанавливаются в HTTP cookies для безопасного хранения."
+msgstr ""
+"Новые токены автоматически устанавливаются в HTTP cookies для безопасного "
+"хранения."
 
-#: auth_kit/api_descriptions.py:115
+#: auth_kit/api_descriptions.py:119
 msgid "Refresh tokens must be provided in the request data."
 msgstr "Токены обновления должны быть предоставлены в данных запроса."
 
-#: auth_kit/api_descriptions.py:122
+#: auth_kit/api_descriptions.py:127
 msgid "Register a new user account."
 msgstr "Зарегистрировать новую учетную запись пользователя."
 
-#: auth_kit/api_descriptions.py:126
+#: auth_kit/api_descriptions.py:134
+msgid ""
+"Users must verify their email address before the account is fully activated."
+msgstr ""
+"Пользователи должны подтвердить свой адрес электронной почты перед тем, как "
+"учетная запись будет полностью активирована."
+
+#: auth_kit/api_descriptions.py:143
 msgid ""
 "Send password reset instructions to the provided email address. If the email "
 "is registered, a secure reset link will be sent. The link expires after a "
 "limited time for security."
 msgstr ""
-"Отправить инструкции по сбросу пароля на предоставленный адрес электронной почты. Если email "
-"зарегистрирован, будет отправлена безопасная ссылка для сброса. Ссылка истекает через "
-"ограниченное время для безопасности."
+"Отправить инструкции по сбросу пароля на предоставленный адрес электронной "
+"почты. Если email зарегистрирован, будет отправлена безопасная ссылка для "
+"сброса. Ссылка истекает через ограниченное время для безопасности."
 
-#: auth_kit/api_descriptions.py:132
+#: auth_kit/api_descriptions.py:149
 msgid ""
 "Complete the password reset process using the token from the reset email. "
 "Requires the UID and token from the email along with the new password. The "
 "token is single-use and expires for security."
 msgstr ""
 "Завершить процесс сброса пароля, используя токен из email для сброса. "
-"Требует UID и токен из email вместе с новым паролем. "
-"Токен одноразового использования и истекает для безопасности."
+"Требует UID и токен из email вместе с новым паролем. Токен одноразового "
+"использования и истекает для безопасности."
 
-#: auth_kit/api_descriptions.py:138
+#: auth_kit/api_descriptions.py:155
 msgid "Change the current user's password. Requires authentication. "
 msgstr "Изменить пароль текущего пользователя. Требует аутентификацию."
 
-#: auth_kit/api_descriptions.py:142
+#: auth_kit/api_descriptions.py:159
 msgid ""
 "Confirm email address using the verification key sent via email. This "
 "activates the user account and allows login access."
 msgstr ""
-"Подтвердить адрес электронной почты, используя ключ проверки, отправленный по email. Это "
-"активирует учетную запись пользователя и разрешает доступ для входа."
+"Подтвердить адрес электронной почты, используя ключ проверки, отправленный "
+"по email. Это активирует учетную запись пользователя и разрешает доступ для "
+"входа."
 
-#: auth_kit/api_descriptions.py:147
+#: auth_kit/api_descriptions.py:164
 msgid ""
 "Send a new email verification message to unverified email addresses. Only "
 "works for email addresses that are registered but not yet verified."
 msgstr ""
-"Отправить новое сообщение для проверки email на неподтвержденные адреса электронной почты. "
-"Работает только для адресов электронной почты, которые зарегистрированы, но еще не подтверждены."
+"Отправить новое сообщение для проверки email на неподтвержденные адреса "
+"электронной почты. Работает только для адресов электронной почты, которые "
+"зарегистрированы, но еще не подтверждены."
 
-#: auth_kit/api_descriptions.py:152
+#: auth_kit/api_descriptions.py:169
 msgid ""
 "Retrieve the authenticated user's profile information including username, "
 "email, first name, and last name. Password fields are excluded."
 msgstr ""
-"Получить информацию профиля аутентифицированного пользователя, включая имя пользователя, "
-"email, имя и фамилию. Поля пароля исключены."
+"Получить информацию профиля аутентифицированного пользователя, включая имя "
+"пользователя, email, имя и фамилию. Поля пароля исключены."
 
-#: auth_kit/api_descriptions.py:157
+#: auth_kit/api_descriptions.py:174
 msgid ""
 "Update the authenticated user's profile information. Allows modification of "
 "username, first name, and last name. Email field is read-only for security."
 msgstr ""
-"Обновить информацию профиля аутентифицированного пользователя. Разрешает изменение "
-"имени пользователя, имени и фамилии. Поле email доступно только для чтения для безопасности."
+"Обновить информацию профиля аутентифицированного пользователя. Разрешает "
+"изменение имени пользователя, имени и фамилии. Поле email доступно только "
+"для чтения для безопасности."
 
-#: auth_kit/api_descriptions.py:163
+#: auth_kit/api_descriptions.py:180
 msgid ""
 "Partially update the authenticated user's profile information. Only provided "
 "fields will be updated. Email field is read-only."
 msgstr ""
-"Частично обновить информацию профиля аутентифицированного пользователя. Только предоставленные "
-"поля будут обновлены. Поле email доступно только для чтения."
+"Частично обновить информацию профиля аутентифицированного пользователя. "
+"Только предоставленные поля будут обновлены. Поле email доступно только для "
+"чтения."
 
 #: auth_kit/forms.py:78
 msgid "The email address is not assigned to any user account."
-msgstr "Адрес электронной почты не присвоен ни одной учетной записи пользователя."
+msgstr ""
+"Адрес электронной почты не присвоен ни одной учетной записи пользователя."
 
 #: auth_kit/mfa/exceptions.py:27
 msgid "Requested MFA method does not exist."
@@ -206,8 +230,8 @@ msgid ""
 "Returns ephemeral token for MFA verification or complete %(auth_tokens)s if "
 "MFA is disabled."
 msgstr ""
-"Возвращает временный токен для проверки MFA или завершает %(auth_tokens)s, если "
-"MFA отключена."
+"Возвращает временный токен для проверки MFA или завершает %(auth_tokens)s, "
+"если MFA отключена."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:51
 msgid ""
@@ -235,19 +259,22 @@ msgstr "Новый временный токен истекает через %(s
 
 #: auth_kit/mfa/mfa_api_descriptions.py:81
 msgid "Resend MFA verification code using existing ephemeral token."
-msgstr "Повторно отправить код проверки MFA, используя существующий временный токен."
+msgstr ""
+"Повторно отправить код проверки MFA, используя существующий временный токен."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:84
 msgid "Only applicable for methods that require code dispatch (e.g., email)."
-msgstr "Применимо только для методов, которые требуют отправки кода (например, email)."
+msgstr ""
+"Применимо только для методов, которые требуют отправки кода (например, "
+"email)."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:96
 msgid ""
 "List all available MFA methods with their setup and activation status. Shows "
 "which methods are configured, active, and set as primary."
 msgstr ""
-"Список всех доступных методов MFA с их состоянием настройки и активации. Показывает, "
-"какие методы настроены, активны и установлены как основные."
+"Список всех доступных методов MFA с их состоянием настройки и активации. "
+"Показывает, какие методы настроены, активны и установлены как основные."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:101
 msgid ""
@@ -255,9 +282,9 @@ msgid ""
 "returns setup instructions (e.g., QR code for authenticator apps). Method "
 "must be confirmed before activation."
 msgstr ""
-"Инициализировать настройку нового метода MFA. Создает метод с резервными кодами и "
-"возвращает инструкции по настройке (например, QR-код для приложений аутентификации). Метод "
-"должен быть подтвержден перед активацией."
+"Инициализировать настройку нового метода MFA. Создает метод с резервными "
+"кодами и возвращает инструкции по настройке (например, QR-код для приложений "
+"аутентификации). Метод должен быть подтвержден перед активацией."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:107
 msgid ""
@@ -265,9 +292,10 @@ msgid ""
 "Automatically sets as primary method if no other primary method exists. "
 "Required before the method can be used for authentication."
 msgstr ""
-"Подтвердить и активировать вновь созданный метод MFA, используя код проверки. "
-"Автоматически устанавливается как основной метод, если не существует другого основного метода. "
-"Требуется перед тем, как метод может быть использован для аутентификации."
+"Подтвердить и активировать вновь созданный метод MFA, используя код "
+"проверки. Автоматически устанавливается как основной метод, если не "
+"существует другого основного метода. Требуется перед тем, как метод может "
+"быть использован для аутентификации."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:113
 msgid ""
@@ -276,7 +304,8 @@ msgid ""
 "first."
 msgstr ""
 "Деактивировать активный метод MFA. Требует код проверки от самого метода. "
-"Нельзя деактивировать основные методы - сначала установите другой метод как основной."
+"Нельзя деактивировать основные методы - сначала установите другой метод как "
+"основной."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:121
 msgid ""
@@ -299,8 +328,8 @@ msgid ""
 "Send verification code for methods that support code dispatch. Useful for "
 "testing method configuration or manual code requests."
 msgstr ""
-"Отправить код проверки для методов, которые поддерживают отправку кода. Полезно для "
-"тестирования конфигурации метода или ручных запросов кода."
+"Отправить код проверки для методов, которые поддерживают отправку кода. "
+"Полезно для тестирования конфигурации метода или ручных запросов кода."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:142
 msgid "Permanently delete an MFA method."
@@ -354,9 +383,23 @@ msgstr "Метод MFA"
 msgid "MFA Methods"
 msgstr "Методы MFA"
 
+#: auth_kit/mfa/serializers/login_factors.py:153
+msgid "Invalid code"
+msgstr "Неверный код"
+
+#: auth_kit/mfa/serializers/login_factors.py:172
+#: auth_kit/mfa/serializers/login_factors.py:226
+#: auth_kit/mfa/serializers/login_factors.py:272
+msgid "Invalid token"
+msgstr "Неверный токен"
+
 #: auth_kit/mfa/serializers/login_factors.py:230
 msgid "Please select a new method"
 msgstr "Пожалуйста, выберите новый метод"
+
+#: auth_kit/mfa/serializers/mfa.py:76
+msgid "This method is already exists"
+msgstr "Этот метод уже существует"
 
 #: auth_kit/mfa/serializers/mfa.py:145 auth_kit/mfa/serializers/mfa.py:200
 #: auth_kit/mfa/serializers/mfa.py:345
@@ -437,7 +480,8 @@ msgstr "Два поля пароля не совпадают."
 
 #: auth_kit/social/serializers/connect.py:55
 msgid "Social account email must match your current account email."
-msgstr "Email социального аккаунта должен совпадать с email вашего текущего аккаунта."
+msgstr ""
+"Email социального аккаунта должен совпадать с email вашего текущего аккаунта."
 
 #: auth_kit/social/serializers/connect.py:98
 msgid "Connected"
@@ -455,7 +499,62 @@ msgstr "Пользователь уже зарегистрирован с эти
 msgid "Failed to exchange code for access token"
 msgstr "Не удалось обменять код на токен доступа"
 
-#: auth_kit/social/views/login.py:50
+#: auth_kit/social/social_api_descriptions.py:29
+#, python-format
+msgid ""
+"Authenticate with %(provider)s using OAuth2/OpenID Connect authorization "
+"code to obtain access tokens."
+msgstr ""
+"Пройдите аутентификацию с %(provider)s, используя код авторизации OAuth2/OpenID "
+"Connect для получения токенов доступа."
+
+#: auth_kit/social/social_api_descriptions.py:51
+#, python-format
+msgid ""
+"Connect a %(provider)s account to the current user's account. This allows "
+"the user to login using their existing %(provider)s account in the future."
+msgstr ""
+"Подключить аккаунт %(provider)s к аккаунту текущего пользователя. Это позволяет "
+"пользователю входить в систему, используя существующий аккаунт %(provider)s в "
+"будущем."
+
+#: auth_kit/social/social_api_descriptions.py:56
+#, python-format
+msgid ""
+"Requires authentication and a valid OAuth2/OpenID Connect authorization code "
+"from %(provider)s."
+msgstr ""
+"Требует аутентификацию и действительный код авторизации OAuth2/OpenID Connect "
+"от %(provider)s."
+
+#: auth_kit/social/social_api_descriptions.py:60
+#, python-format
+msgid ""
+"On success, the %(provider)s account is linked and can be used for future "
+"logins."
+msgstr ""
+"При успехе аккаунт %(provider)s связывается и может использоваться для будущих "
+"входов в систему."
+
+#: auth_kit/social/social_api_descriptions.py:73
+msgid ""
+"List all social accounts connected to the current user. Shows account "
+"details including provider, UID, and connection dates."
+msgstr ""
+"Список всех социальных аккаунтов, подключенных к текущему пользователю. "
+"Показывает детали аккаунта, включая провайдера, UID и даты подключения."
+
+#: auth_kit/social/social_api_descriptions.py:78
+msgid ""
+"Disconnect a social account from the current user. Removes the social "
+"account connection and prevents future logins via that provider. Requires "
+"authentication and the account must belong to the current user."
+msgstr ""
+"Отключить социальный аккаунт от текущего пользователя. Удаляет соединение "
+"социального аккаунта и предотвращает будущие входы через этого провайдера. "
+"Требует аутентификацию и аккаунт должен принадлежать текущему пользователю."
+
+#: auth_kit/social/views/login.py:58
 msgid "adapter_class is not defined"
 msgstr "adapter_class не определен"
 
@@ -487,15 +586,15 @@ msgstr "Пароль был сброшен с новым паролем."
 msgid "New password has been saved."
 msgstr "Новый пароль сохранен."
 
-#: auth_kit/views/registration.py:142
+#: auth_kit/views/registration.py:143
 msgid "Verification e-mail sent."
 msgstr "Письмо для подтверждения отправлено."
 
-#: auth_kit/views/registration.py:143
+#: auth_kit/views/registration.py:144
 msgid "Successfully registered."
 msgstr "Успешно зарегистрированы."
 
-#: auth_kit/views/registration.py:223 auth_kit/views/registration.py:268
+#: auth_kit/views/registration.py:224 auth_kit/views/registration.py:269
 msgid "ok"
 msgstr "ок"
 

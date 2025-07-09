@@ -14,8 +14,13 @@ from rest_framework import routers
 from allauth.socialaccount.adapter import (  # pyright: ignore[reportMissingTypeStubs]
     get_adapter as get_social_adapter,
 )
+from drf_spectacular.utils import extend_schema, extend_schema_view
 
 from auth_kit.app_settings import auth_kit_settings
+from auth_kit.social.social_api_descriptions import (
+    get_lazy_social_connect_description,
+    get_lazy_social_login_description,
+)
 from auth_kit.social.utils import normalize_app_name
 from auth_kit.social.views import SocialConnectView, SocialLoginView
 from auth_kit.utils import filter_excluded_urls
@@ -58,15 +63,19 @@ def create_social_provider_urls() -> list[Any]:
         # Create dynamic login class
         app_name, app_slug = normalize_app_name(social_app)
 
-        # Generate social login view class
+        # Generate social login view class with dynamic description
         social_login_class_name = f"{app_name}LoginView"
-        social_login_class: type[SocialLoginView] = type(
-            social_login_class_name,
-            (auth_kit_settings.SOCIAL_LOGIN_VIEW,),
-            {
-                "adapter_class": adapter_class,
-                "__module__": __name__,
-            },
+        social_login_class: type[SocialLoginView] = extend_schema_view(
+            post=extend_schema(description=get_lazy_social_login_description(app_name))
+        )(
+            type(
+                social_login_class_name,
+                (auth_kit_settings.SOCIAL_LOGIN_VIEW,),
+                {
+                    "adapter_class": adapter_class,
+                    "__module__": __name__,
+                },
+            )
         )
 
         # Create login URL pattern
@@ -78,15 +87,21 @@ def create_social_provider_urls() -> list[Any]:
         )
         urlpatterns.append(login_pattern)
 
-        # Generate social connect view class
+        # Generate social connect view class with dynamic description
         social_connect_class_name = f"{app_name}ConnectView"
-        social_connect_class: type[SocialConnectView] = type(
-            social_connect_class_name,
-            (auth_kit_settings.SOCIAL_CONNECT_VIEW,),
-            {
-                "adapter_class": adapter_class,
-                "__module__": __name__,
-            },
+        social_connect_class: type[SocialConnectView] = extend_schema_view(
+            post=extend_schema(
+                description=get_lazy_social_connect_description(app_name)
+            )
+        )(
+            type(
+                social_connect_class_name,
+                (auth_kit_settings.SOCIAL_CONNECT_VIEW,),
+                {
+                    "adapter_class": adapter_class,
+                    "__module__": __name__,
+                },
+            )
         )
 
         # Create connect URL pattern

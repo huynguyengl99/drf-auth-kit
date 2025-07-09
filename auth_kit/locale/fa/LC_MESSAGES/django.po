@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DRF Auth Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-08 06:02+0000\n"
+"POT-Creation-Date: 2025-07-09 05:21+0000\n"
 "PO-Revision-Date: 2025-07-08 06:02+0000\n"
 "Last-Translator: DRF Auth Kit Team\n"
 "Language-Team: Persian\n"
@@ -16,139 +16,169 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-#: auth_kit/api_descriptions.py:25
-msgid ""
-"Returns user details along with JWT access and refresh tokens with "
-"expiration times."
-msgstr "جزئیات کاربر همراه با توکن‌های دسترسی و تازه‌سازی JWT با زمان انقضا برگردانده می‌شود."
 
 #: auth_kit/api_descriptions.py:29
 msgid ""
-"Returns user details along with a DRF authentication token for API access."
-msgstr "جزئیات کاربر همراه با توکن احراز هویت DRF برای دسترسی به API برگردانده می‌شود."
+"Returns user details along with JWT access and refresh tokens with "
+"expiration times."
+msgstr ""
+"جزئیات کاربر همراه با توکن‌های دسترسی و تازه‌سازی JWT با زمان انقضا برگردانده "
+"می‌شود."
 
-#: auth_kit/api_descriptions.py:32
+#: auth_kit/api_descriptions.py:33
+msgid ""
+"Returns user details along with a DRF authentication token for API access."
+msgstr ""
+"جزئیات کاربر همراه با توکن احراز هویت DRF برای دسترسی به API برگردانده می‌شود."
+
+#: auth_kit/api_descriptions.py:36
 msgid "Returns user details along with custom authentication tokens."
 msgstr "جزئیات کاربر همراه با توکن‌های احراز هویت سفارشی برگردانده می‌شود."
 
-#: auth_kit/api_descriptions.py:38
+#: auth_kit/api_descriptions.py:42
 msgid "JWT access and refresh tokens"
 msgstr "توکن‌های دسترسی و تازه‌سازی JWT"
 
-#: auth_kit/api_descriptions.py:40
+#: auth_kit/api_descriptions.py:44
 msgid "DRF authentication token"
 msgstr "توکن احراز هویت DRF"
 
-#: auth_kit/api_descriptions.py:42
+#: auth_kit/api_descriptions.py:46
 msgid "custom authentication tokens"
 msgstr "توکن‌های احراز هویت سفارشی"
 
-#: auth_kit/api_descriptions.py:49
+#: auth_kit/api_descriptions.py:53
 msgid "Authentication cookies are set automatically for secure token storage."
 msgstr "کوکی‌های احراز هویت به طور خودکار برای ذخیره امن توکن‌ها تنظیم می‌شوند."
 
-#: auth_kit/api_descriptions.py:57
+#: auth_kit/api_descriptions.py:61
 msgid "Blacklists JWT refresh tokens to prevent further use."
-msgstr "توکن‌های تازه‌سازی JWT را در لیست سیاه قرار می‌دهد تا از استفاده مجدد جلوگیری شود."
+msgstr ""
+"توکن‌های تازه‌سازی JWT را در لیست سیاه قرار می‌دهد تا از استفاده مجدد جلوگیری "
+"شود."
 
-#: auth_kit/api_descriptions.py:59
+#: auth_kit/api_descriptions.py:63
 msgid "Deletes the DRF authentication token from the database."
 msgstr "توکن احراز هویت DRF را از پایگاه داده حذف می‌کند."
 
-#: auth_kit/api_descriptions.py:61
+#: auth_kit/api_descriptions.py:65
 msgid "Invalidates custom authentication tokens."
 msgstr "توکن‌های احراز هویت سفارشی را باطل می‌کند."
 
-#: auth_kit/api_descriptions.py:67
+#: auth_kit/api_descriptions.py:71
 msgid "Clears authentication cookies from the browser."
 msgstr "کوکی‌های احراز هویت را از مرورگر پاک می‌کند."
 
-#: auth_kit/api_descriptions.py:73
+#: auth_kit/api_descriptions.py:77
 msgid "Authenticate with username/email and password to obtain access tokens."
 msgstr "احراز هویت با نام کاربری/ایمیل و کلمه عبور برای دریافت توکن‌های دسترسی."
 
-#: auth_kit/api_descriptions.py:85
+#: auth_kit/api_descriptions.py:89
 msgid "Logout user and invalidate authentication tokens."
 msgstr "خروج کاربر و باطل کردن توکن‌های احراز هویت."
 
-#: auth_kit/api_descriptions.py:89
+#: auth_kit/api_descriptions.py:93
 msgid ""
 "Requires authentication to ensure only valid sessions can be logged out."
 msgstr "احراز هویت مورد نیاز است تا تنها جلسات معتبر بتوانند خارج شوند."
 
-#: auth_kit/api_descriptions.py:100
+#: auth_kit/api_descriptions.py:104
 msgid "Generate new JWT access tokens using refresh tokens."
 msgstr "تولید توکن‌های دسترسی JWT جدید با استفاده از توکن‌های تازه‌سازی."
 
-#: auth_kit/api_descriptions.py:104
+#: auth_kit/api_descriptions.py:108
 msgid ""
 "Refresh tokens can be provided in request data or extracted automatically "
 "from HTTP cookies."
-msgstr "توکن‌های تازه‌سازی می‌توانند در داده‌های درخواست ارائه شوند یا به طور خودکار از کوکی‌های HTTP استخراج شوند."
+msgstr ""
+"توکن‌های تازه‌سازی می‌توانند در داده‌های درخواست ارائه شوند یا به طور خودکار از "
+"کوکی‌های HTTP استخراج شوند."
 
-#: auth_kit/api_descriptions.py:106 auth_kit/api_descriptions.py:116
+#: auth_kit/api_descriptions.py:110 auth_kit/api_descriptions.py:120
 msgid "Returns new access tokens with updated expiration times."
 msgstr "توکن‌های دسترسی جدید با زمان انقضای به‌روزرسانی شده برگردانده می‌شود."
 
-#: auth_kit/api_descriptions.py:108
+#: auth_kit/api_descriptions.py:112
 msgid "New tokens are automatically set in HTTP cookies for secure storage."
-msgstr "توکن‌های جدید به طور خودکار در کوکی‌های HTTP برای ذخیره امن تنظیم می‌شوند."
+msgstr ""
+"توکن‌های جدید به طور خودکار در کوکی‌های HTTP برای ذخیره امن تنظیم می‌شوند."
 
-#: auth_kit/api_descriptions.py:115
+#: auth_kit/api_descriptions.py:119
 msgid "Refresh tokens must be provided in the request data."
 msgstr "توکن‌های تازه‌سازی باید در داده‌های درخواست ارائه شوند."
 
-#: auth_kit/api_descriptions.py:122
+#: auth_kit/api_descriptions.py:127
 msgid "Register a new user account."
 msgstr "ثبت نام حساب کاربری جدید."
 
-#: auth_kit/api_descriptions.py:126
+#: auth_kit/api_descriptions.py:134
+msgid ""
+"Users must verify their email address before the account is fully activated."
+msgstr "کاربران باید آدرس ایمیل خود را قبل از فعال‌سازی کامل حساب تأیید کنند."
+
+#: auth_kit/api_descriptions.py:143
 msgid ""
 "Send password reset instructions to the provided email address. If the email "
 "is registered, a secure reset link will be sent. The link expires after a "
 "limited time for security."
-msgstr "ارسال دستورالعمل بازنشانی کلمه عبور به آدرس ایمیل ارائه شده. اگر ایمیل ثبت شده باشد، یک لینک امن بازنشانی ارسال خواهد شد. این لینک پس از مدت محدود برای امنیت منقضی می‌شود."
+msgstr ""
+"ارسال دستورالعمل بازنشانی کلمه عبور به آدرس ایمیل ارائه شده. اگر ایمیل ثبت "
+"شده باشد، یک لینک امن بازنشانی ارسال خواهد شد. این لینک پس از مدت محدود برای "
+"امنیت منقضی می‌شود."
 
-#: auth_kit/api_descriptions.py:132
+#: auth_kit/api_descriptions.py:149
 msgid ""
 "Complete the password reset process using the token from the reset email. "
 "Requires the UID and token from the email along with the new password. The "
 "token is single-use and expires for security."
-msgstr "تکمیل فرآیند بازنشانی کلمه عبور با استفاده از توکن ایمیل بازنشانی. شناسه کاربری و توکن از ایمیل همراه با کلمه عبور جدید مورد نیاز است. توکن یک‌بار مصرف و برای امنیت منقضی می‌شود."
+msgstr ""
+"تکمیل فرآیند بازنشانی کلمه عبور با استفاده از توکن ایمیل بازنشانی. شناسه "
+"کاربری و توکن از ایمیل همراه با کلمه عبور جدید مورد نیاز است. توکن یک‌بار "
+"مصرف و برای امنیت منقضی می‌شود."
 
-#: auth_kit/api_descriptions.py:138
+#: auth_kit/api_descriptions.py:155
 msgid "Change the current user's password. Requires authentication. "
 msgstr "تغییر کلمه عبور کاربر فعلی. احراز هویت مورد نیاز است. "
 
-#: auth_kit/api_descriptions.py:142
+#: auth_kit/api_descriptions.py:159
 msgid ""
 "Confirm email address using the verification key sent via email. This "
 "activates the user account and allows login access."
-msgstr "تأیید آدرس ایمیل با استفاده از کلید تأیید ارسال شده از طریق ایمیل. این عمل حساب کاربری را فعال می‌کند و دسترسی ورود را امکان‌پذیر می‌سازد."
+msgstr ""
+"تأیید آدرس ایمیل با استفاده از کلید تأیید ارسال شده از طریق ایمیل. این عمل "
+"حساب کاربری را فعال می‌کند و دسترسی ورود را امکان‌پذیر می‌سازد."
 
-#: auth_kit/api_descriptions.py:147
+#: auth_kit/api_descriptions.py:164
 msgid ""
 "Send a new email verification message to unverified email addresses. Only "
 "works for email addresses that are registered but not yet verified."
-msgstr "ارسال پیام تأیید ایمیل جدید به آدرس‌های ایمیل تأیید نشده. فقط برای آدرس‌های ایمیل که ثبت شده اما هنوز تأیید نشده‌اند کار می‌کند."
+msgstr ""
+"ارسال پیام تأیید ایمیل جدید به آدرس‌های ایمیل تأیید نشده. فقط برای آدرس‌های "
+"ایمیل که ثبت شده اما هنوز تأیید نشده‌اند کار می‌کند."
 
-#: auth_kit/api_descriptions.py:152
+#: auth_kit/api_descriptions.py:169
 msgid ""
 "Retrieve the authenticated user's profile information including username, "
 "email, first name, and last name. Password fields are excluded."
-msgstr "بازیابی اطلاعات پروفایل کاربر احراز هویت شده شامل نام کاربری، ایمیل، نام و نام خانوادگی. فیلدهای کلمه عبور حذف می‌شوند."
+msgstr ""
+"بازیابی اطلاعات پروفایل کاربر احراز هویت شده شامل نام کاربری، ایمیل، نام و "
+"نام خانوادگی. فیلدهای کلمه عبور حذف می‌شوند."
 
-#: auth_kit/api_descriptions.py:157
+#: auth_kit/api_descriptions.py:174
 msgid ""
 "Update the authenticated user's profile information. Allows modification of "
 "username, first name, and last name. Email field is read-only for security."
-msgstr "به‌روزرسانی اطلاعات پروفایل کاربر احراز هویت شده. امکان تغییر نام کاربری، نام و نام خانوادگی را فراهم می‌کند. فیلد ایمیل برای امنیت فقط خواندنی است."
+msgstr ""
+"به‌روزرسانی اطلاعات پروفایل کاربر احراز هویت شده. امکان تغییر نام کاربری، نام "
+"و نام خانوادگی را فراهم می‌کند. فیلد ایمیل برای امنیت فقط خواندنی است."
 
-#: auth_kit/api_descriptions.py:163
+#: auth_kit/api_descriptions.py:180
 msgid ""
 "Partially update the authenticated user's profile information. Only provided "
 "fields will be updated. Email field is read-only."
-msgstr "به‌روزرسانی جزئی اطلاعات پروفایل کاربر احراز هویت شده. فقط فیلدهای ارائه شده به‌روزرسانی خواهند شد. فیلد ایمیل فقط خواندنی است."
+msgstr ""
+"به‌روزرسانی جزئی اطلاعات پروفایل کاربر احراز هویت شده. فقط فیلدهای ارائه شده "
+"به‌روزرسانی خواهند شد. فیلد ایمیل فقط خواندنی است."
 
 #: auth_kit/forms.py:78
 msgid "The email address is not assigned to any user account."
@@ -171,14 +201,17 @@ msgstr "کد MFA در %(seconds)s ثانیه منقضی می‌شود."
 msgid ""
 "First step of MFA-enabled authentication. Validates credentials and "
 "initiates MFA flow."
-msgstr "مرحله اول احراز هویت با MFA فعال. اعتبارسنجی اعتبارنامه‌ها و شروع جریان MFA."
+msgstr ""
+"مرحله اول احراز هویت با MFA فعال. اعتبارسنجی اعتبارنامه‌ها و شروع جریان MFA."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:41
 #, python-format
 msgid ""
 "Returns ephemeral token for MFA verification or complete %(auth_tokens)s if "
 "MFA is disabled."
-msgstr "توکن موقت برای تأیید MFA یا %(auth_tokens)s کامل در صورت غیرفعال بودن MFA برگردانده می‌شود."
+msgstr ""
+"توکن موقت برای تأیید MFA یا %(auth_tokens)s کامل در صورت غیرفعال بودن MFA "
+"برگردانده می‌شود."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:51
 msgid ""
@@ -215,34 +248,46 @@ msgstr "فقط برای روش‌هایی که نیاز به ارسال کد د�
 msgid ""
 "List all available MFA methods with their setup and activation status. Shows "
 "which methods are configured, active, and set as primary."
-msgstr "فهرست تمام روش‌های MFA موجود با وضعیت راه‌اندازی و فعال‌سازی آن‌ها. نشان می‌دهد کدام روش‌ها پیکربندی شده، فعال و به عنوان اصلی تنظیم شده‌اند."
+msgstr ""
+"فهرست تمام روش‌های MFA موجود با وضعیت راه‌اندازی و فعال‌سازی آن‌ها. نشان می‌دهد "
+"کدام روش‌ها پیکربندی شده، فعال و به عنوان اصلی تنظیم شده‌اند."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:101
 msgid ""
 "Initialize a new MFA method setup. Creates the method with backup codes and "
 "returns setup instructions (e.g., QR code for authenticator apps). Method "
 "must be confirmed before activation."
-msgstr "راه‌اندازی یک روش MFA جدید. روش را با کدهای پشتیبان ایجاد می‌کند و دستورالعمل راه‌اندازی (مثلاً QR کد برای برنامه‌های احراز هویت) برمی‌گرداند. روش باید قبل از فعال‌سازی تأیید شود."
+msgstr ""
+"راه‌اندازی یک روش MFA جدید. روش را با کدهای پشتیبان ایجاد می‌کند و دستورالعمل "
+"راه‌اندازی (مثلاً QR کد برای برنامه‌های احراز هویت) برمی‌گرداند. روش باید قبل از "
+"فعال‌سازی تأیید شود."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:107
 msgid ""
 "Confirm and activate a newly created MFA method using verification code. "
 "Automatically sets as primary method if no other primary method exists. "
 "Required before the method can be used for authentication."
-msgstr "تأیید و فعال‌سازی روش MFA تازه ایجاد شده با استفاده از کد تأیید. به طور خودکار به عنوان روش اصلی تنظیم می‌شود اگر هیچ روش اصلی دیگری وجود نداشته باشد. قبل از استفاده روش برای احراز هویت ضروری است."
+msgstr ""
+"تأیید و فعال‌سازی روش MFA تازه ایجاد شده با استفاده از کد تأیید. به طور "
+"خودکار به عنوان روش اصلی تنظیم می‌شود اگر هیچ روش اصلی دیگری وجود نداشته "
+"باشد. قبل از استفاده روش برای احراز هویت ضروری است."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:113
 msgid ""
 "Deactivate an active MFA method. Requires verification code from the method "
 "itself. Cannot deactivate primary methods - set another method as primary "
 "first."
-msgstr "غیرفعال کردن روش MFA فعال. کد تأیید از خود روش مورد نیاز است. نمی‌توان روش‌های اصلی را غیرفعال کرد - ابتدا روش دیگری را به عنوان اصلی تنظیم کنید."
+msgstr ""
+"غیرفعال کردن روش MFA فعال. کد تأیید از خود روش مورد نیاز است. نمی‌توان روش‌های "
+"اصلی را غیرفعال کرد - ابتدا روش دیگری را به عنوان اصلی تنظیم کنید."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:121
 msgid ""
 "Set an active MFA method as the primary authentication method. Primary "
 "method is used by default during login flow."
-msgstr "تنظیم روش MFA فعال به عنوان روش احراز هویت اصلی. روش اصلی به طور پیش‌فرض در جریان ورود استفاده می‌شود."
+msgstr ""
+"تنظیم روش MFA فعال به عنوان روش احراز هویت اصلی. روش اصلی به طور پیش‌فرض در "
+"جریان ورود استفاده می‌شود."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:125
 msgid "Only one method can be primary at a time."
@@ -256,7 +301,9 @@ msgstr "کد تأیید از روش اصلی فعلی مورد نیاز است."
 msgid ""
 "Send verification code for methods that support code dispatch. Useful for "
 "testing method configuration or manual code requests."
-msgstr "ارسال کد تأیید برای روش‌هایی که از ارسال کد پشتیبانی می‌کنند. برای آزمایش پیکربندی روش یا درخواست‌های دستی کد مفید است."
+msgstr ""
+"ارسال کد تأیید برای روش‌هایی که از ارسال کد پشتیبانی می‌کنند. برای آزمایش "
+"پیکربندی روش یا درخواست‌های دستی کد مفید است."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:142
 msgid "Permanently delete an MFA method."
@@ -310,9 +357,23 @@ msgstr "روش MFA"
 msgid "MFA Methods"
 msgstr "روش‌های MFA"
 
+#: auth_kit/mfa/serializers/login_factors.py:153
+msgid "Invalid code"
+msgstr "کد نامعتبر"
+
+#: auth_kit/mfa/serializers/login_factors.py:172
+#: auth_kit/mfa/serializers/login_factors.py:226
+#: auth_kit/mfa/serializers/login_factors.py:272
+msgid "Invalid token"
+msgstr "توکن نامعتبر"
+
 #: auth_kit/mfa/serializers/login_factors.py:230
 msgid "Please select a new method"
 msgstr "لطفاً روش جدیدی انتخاب کنید"
+
+#: auth_kit/mfa/serializers/mfa.py:76
+msgid "This method is already exists"
+msgstr "این روش از قبل وجود دارد"
 
 #: auth_kit/mfa/serializers/mfa.py:145 auth_kit/mfa/serializers/mfa.py:200
 #: auth_kit/mfa/serializers/mfa.py:345
@@ -411,7 +472,48 @@ msgstr "کاربر با این آدرس ایمیل قبلاً ثبت نام کر
 msgid "Failed to exchange code for access token"
 msgstr "تبدیل کد به توکن دسترسی ناموفق بود"
 
-#: auth_kit/social/views/login.py:50
+#: auth_kit/social/social_api_descriptions.py:29
+#, python-format
+msgid ""
+"Authenticate with %(provider)s using OAuth2/OpenID Connect authorization "
+"code to obtain access tokens."
+msgstr "احراز هویت با %(provider)s با استفاده از کد مجوز OAuth2/OpenID Connect برای دریافت توکن‌های دسترسی."
+
+#: auth_kit/social/social_api_descriptions.py:51
+#, python-format
+msgid ""
+"Connect a %(provider)s account to the current user's account. This allows "
+"the user to login using their existing %(provider)s account in the future."
+msgstr "اتصال حساب %(provider)s به حساب کاربر فعلی. این امکان ورود کاربر با استفاده از حساب %(provider)s موجود در آینده را فراهم می‌کند."
+
+#: auth_kit/social/social_api_descriptions.py:56
+#, python-format
+msgid ""
+"Requires authentication and a valid OAuth2/OpenID Connect authorization code "
+"from %(provider)s."
+msgstr "احراز هویت و کد مجوز OAuth2/OpenID Connect معتبر از %(provider)s مورد نیاز است."
+
+#: auth_kit/social/social_api_descriptions.py:60
+#, python-format
+msgid ""
+"On success, the %(provider)s account is linked and can be used for future "
+"logins."
+msgstr "در صورت موفقیت، حساب %(provider)s پیوند داده می‌شود و می‌تواند برای ورود‌های آینده استفاده شود."
+
+#: auth_kit/social/social_api_descriptions.py:73
+msgid ""
+"List all social accounts connected to the current user. Shows account "
+"details including provider, UID, and connection dates."
+msgstr "فهرست تمام حساب‌های اجتماعی متصل به کاربر فعلی. جزئیات حساب شامل ارائه‌دهنده، شناسه منحصر به فرد و تاریخ اتصال را نشان می‌دهد."
+
+#: auth_kit/social/social_api_descriptions.py:78
+msgid ""
+"Disconnect a social account from the current user. Removes the social "
+"account connection and prevents future logins via that provider. Requires "
+"authentication and the account must belong to the current user."
+msgstr "قطع اتصال حساب اجتماعی از کاربر فعلی. اتصال حساب اجتماعی را حذف می‌کند و از ورود‌های آینده از طریق آن ارائه‌دهنده جلوگیری می‌کند. احراز هویت مورد نیاز است و حساب باید متعلق به کاربر فعلی باشد."
+
+#: auth_kit/social/views/login.py:58
 msgid "adapter_class is not defined"
 msgstr "adapter_class تعریف نشده است"
 
@@ -443,15 +545,15 @@ msgstr "کلمه عبور با کلمه عبور جدید بازنشانی شد.
 msgid "New password has been saved."
 msgstr "کلمه عبور جدید ذخیره شد."
 
-#: auth_kit/views/registration.py:142
+#: auth_kit/views/registration.py:143
 msgid "Verification e-mail sent."
 msgstr "ایمیل تأیید ارسال شد."
 
-#: auth_kit/views/registration.py:143
+#: auth_kit/views/registration.py:144
 msgid "Successfully registered."
 msgstr "با موفقیت ثبت نام شد."
 
-#: auth_kit/views/registration.py:223 auth_kit/views/registration.py:268
+#: auth_kit/views/registration.py:224 auth_kit/views/registration.py:269
 msgid "ok"
 msgstr "تأیید"
 

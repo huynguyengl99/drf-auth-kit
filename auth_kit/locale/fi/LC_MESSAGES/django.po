@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DRF Auth Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-08 06:02+0000\n"
+"POT-Creation-Date: 2025-07-09 05:21+0000\n"
 "PO-Revision-Date: 2025-07-08 06:02+0000\n"
 "Last-Translator: DRF Auth Kit Team\n"
 "Language-Team: Finnish\n"
@@ -16,7 +16,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-#: auth_kit/api_descriptions.py:25
+
+#: auth_kit/api_descriptions.py:29
 msgid ""
 "Returns user details along with JWT access and refresh tokens with "
 "expiration times."
@@ -24,129 +25,145 @@ msgstr ""
 "Palauttaa käyttäjätiedot sekä JWT-pääsy- ja päivitystunnisteet "
 "vanhenemisaikoineen."
 
-#: auth_kit/api_descriptions.py:29
+#: auth_kit/api_descriptions.py:33
 msgid ""
 "Returns user details along with a DRF authentication token for API access."
-msgstr "Palauttaa käyttäjätiedot sekä DRF-tunnistautumistunnisteen API-käyttöön."
+msgstr ""
+"Palauttaa käyttäjätiedot sekä DRF-tunnistautumistunnisteen API-käyttöön."
 
-#: auth_kit/api_descriptions.py:32
+#: auth_kit/api_descriptions.py:36
 msgid "Returns user details along with custom authentication tokens."
 msgstr "Palauttaa käyttäjätiedot sekä mukautetut tunnistautumistunnisteet."
 
-#: auth_kit/api_descriptions.py:38
+#: auth_kit/api_descriptions.py:42
 msgid "JWT access and refresh tokens"
 msgstr "JWT-pääsy- ja päivitystunnisteet"
 
-#: auth_kit/api_descriptions.py:40
+#: auth_kit/api_descriptions.py:44
 msgid "DRF authentication token"
 msgstr "DRF-tunnistautumistunniste"
 
-#: auth_kit/api_descriptions.py:42
+#: auth_kit/api_descriptions.py:46
 msgid "custom authentication tokens"
 msgstr "mukautetut tunnistautumistunnisteet"
 
-#: auth_kit/api_descriptions.py:49
+#: auth_kit/api_descriptions.py:53
 msgid "Authentication cookies are set automatically for secure token storage."
-msgstr "Tunnistautumisevästeet asetetaan automaattisesti turvallista tunnisteiden tallennusta varten."
+msgstr ""
+"Tunnistautumisevästeet asetetaan automaattisesti turvallista tunnisteiden "
+"tallennusta varten."
 
-#: auth_kit/api_descriptions.py:57
+#: auth_kit/api_descriptions.py:61
 msgid "Blacklists JWT refresh tokens to prevent further use."
-msgstr "Lisää JWT-päivitystunnisteet mustalle listalle estääkseen niiden jatkokäytön."
+msgstr ""
+"Lisää JWT-päivitystunnisteet mustalle listalle estääkseen niiden jatkokäytön."
 
-#: auth_kit/api_descriptions.py:59
+#: auth_kit/api_descriptions.py:63
 msgid "Deletes the DRF authentication token from the database."
 msgstr "Poistaa DRF-tunnistautumistunnisteen tietokannasta."
 
-#: auth_kit/api_descriptions.py:61
+#: auth_kit/api_descriptions.py:65
 msgid "Invalidates custom authentication tokens."
 msgstr "Mitätöi mukautetut tunnistautumistunnisteet."
 
-#: auth_kit/api_descriptions.py:67
+#: auth_kit/api_descriptions.py:71
 msgid "Clears authentication cookies from the browser."
 msgstr "Poistaa tunnistautumisevästeet selaimesta."
 
-#: auth_kit/api_descriptions.py:73
+#: auth_kit/api_descriptions.py:77
 msgid "Authenticate with username/email and password to obtain access tokens."
-msgstr "Tunnistaudu käyttäjänimellä/sähköpostilla ja salasanalla saadaksesi pääsytunnisteet."
+msgstr ""
+"Tunnistaudu käyttäjänimellä/sähköpostilla ja salasanalla saadaksesi "
+"pääsytunnisteet."
 
-#: auth_kit/api_descriptions.py:85
+#: auth_kit/api_descriptions.py:89
 msgid "Logout user and invalidate authentication tokens."
 msgstr "Kirjaa käyttäjä ulos ja mitätöi tunnistautumistunnisteet."
 
-#: auth_kit/api_descriptions.py:89
+#: auth_kit/api_descriptions.py:93
 msgid ""
 "Requires authentication to ensure only valid sessions can be logged out."
-msgstr "Vaatii tunnistautumisen varmistaakseen, että vain voimassa olevat istunnot voidaan kirjata ulos."
+msgstr ""
+"Vaatii tunnistautumisen varmistaakseen, että vain voimassa olevat istunnot "
+"voidaan kirjata ulos."
 
-#: auth_kit/api_descriptions.py:100
+#: auth_kit/api_descriptions.py:104
 msgid "Generate new JWT access tokens using refresh tokens."
 msgstr "Luo uudet JWT-pääsytunnisteet käyttäen päivitystunnisteita."
 
-#: auth_kit/api_descriptions.py:104
+#: auth_kit/api_descriptions.py:108
 msgid ""
 "Refresh tokens can be provided in request data or extracted automatically "
 "from HTTP cookies."
 msgstr ""
-"Päivitystunnisteet voidaan antaa pyyntötiedoissa tai ne voidaan poimia automaattisesti "
-"HTTP-evästeistä."
+"Päivitystunnisteet voidaan antaa pyyntötiedoissa tai ne voidaan poimia "
+"automaattisesti HTTP-evästeistä."
 
-#: auth_kit/api_descriptions.py:106 auth_kit/api_descriptions.py:116
+#: auth_kit/api_descriptions.py:110 auth_kit/api_descriptions.py:120
 msgid "Returns new access tokens with updated expiration times."
 msgstr "Palauttaa uudet pääsytunnisteet päivitetyillä vanhenemisajoilla."
 
-#: auth_kit/api_descriptions.py:108
+#: auth_kit/api_descriptions.py:112
 msgid "New tokens are automatically set in HTTP cookies for secure storage."
-msgstr "Uudet tunnisteet asetetaan automaattisesti HTTP-evästeisiin turvallista tallennusta varten."
+msgstr ""
+"Uudet tunnisteet asetetaan automaattisesti HTTP-evästeisiin turvallista "
+"tallennusta varten."
 
-#: auth_kit/api_descriptions.py:115
+#: auth_kit/api_descriptions.py:119
 msgid "Refresh tokens must be provided in the request data."
 msgstr "Päivitystunnisteet on annettava pyyntötiedoissa."
 
-#: auth_kit/api_descriptions.py:122
+#: auth_kit/api_descriptions.py:127
 msgid "Register a new user account."
 msgstr "Rekisteröi uusi käyttäjätili."
 
-#: auth_kit/api_descriptions.py:126
+#: auth_kit/api_descriptions.py:134
+msgid ""
+"Users must verify their email address before the account is fully activated."
+msgstr "Käyttäjien on vahvistettava sähköpostiosoitteensa ennen kuin tili on täysin aktivoitu."
+
+#: auth_kit/api_descriptions.py:143
 msgid ""
 "Send password reset instructions to the provided email address. If the email "
 "is registered, a secure reset link will be sent. The link expires after a "
 "limited time for security."
 msgstr ""
-"Lähetä salasanan nollausohjeet annettuun sähköpostiosoitteeseen. Jos sähköposti "
-"on rekisteröity, turvallinen nollauslinkki lähetetään. Linkki vanhenee "
-"rajoitetun ajan kuluttua turvallisuussyistä."
+"Lähetä salasanan nollausohjeet annettuun sähköpostiosoitteeseen. Jos "
+"sähköposti on rekisteröity, turvallinen nollauslinkki lähetetään. Linkki "
+"vanhenee rajoitetun ajan kuluttua turvallisuussyistä."
 
-#: auth_kit/api_descriptions.py:132
+#: auth_kit/api_descriptions.py:149
 msgid ""
 "Complete the password reset process using the token from the reset email. "
 "Requires the UID and token from the email along with the new password. The "
 "token is single-use and expires for security."
 msgstr ""
-"Viimeistele salasanan nollausprosessi käyttäen nollaussähköpostin tunnistetta. "
-"Vaatii sähköpostin UID:n ja tunnisteen sekä uuden salasanan. Tunniste on "
-"kertakäyttöinen ja vanhenee turvallisuussyistä."
+"Viimeistele salasanan nollausprosessi käyttäen nollaussähköpostin "
+"tunnistetta. Vaatii sähköpostin UID:n ja tunnisteen sekä uuden salasanan. "
+"Tunniste on kertakäyttöinen ja vanhenee turvallisuussyistä."
 
-#: auth_kit/api_descriptions.py:138
+#: auth_kit/api_descriptions.py:155
 msgid "Change the current user's password. Requires authentication. "
 msgstr "Vaihda nykyisen käyttäjän salasana. Vaatii tunnistautumisen. "
 
-#: auth_kit/api_descriptions.py:142
+#: auth_kit/api_descriptions.py:159
 msgid ""
 "Confirm email address using the verification key sent via email. This "
 "activates the user account and allows login access."
 msgstr ""
-"Vahvista sähköpostiosoite käyttäen sähköpostitse lähetettyä vahvistusavainta. Tämä "
-"aktivoi käyttäjätilin ja sallii kirjautumisen."
+"Vahvista sähköpostiosoite käyttäen sähköpostitse lähetettyä "
+"vahvistusavainta. Tämä aktivoi käyttäjätilin ja sallii kirjautumisen."
 
-#: auth_kit/api_descriptions.py:147
+#: auth_kit/api_descriptions.py:164
 msgid ""
 "Send a new email verification message to unverified email addresses. Only "
 "works for email addresses that are registered but not yet verified."
 msgstr ""
-"Lähetä uusi sähköpostin vahvistusviesti vahvistamattomiin sähköpostiosoitteisiin. "
-"Toimii vain sähköpostiosoitteille, jotka on rekisteröity mutta ei vielä vahvistettu."
+"Lähetä uusi sähköpostin vahvistusviesti vahvistamattomiin "
+"sähköpostiosoitteisiin. Toimii vain sähköpostiosoitteille, jotka on "
+"rekisteröity mutta ei vielä vahvistettu."
 
-#: auth_kit/api_descriptions.py:152
+#: auth_kit/api_descriptions.py:169
 msgid ""
 "Retrieve the authenticated user's profile information including username, "
 "email, first name, and last name. Password fields are excluded."
@@ -154,15 +171,16 @@ msgstr ""
 "Hae tunnistautuneen käyttäjän profiilin tiedot mukaan lukien käyttäjänimi, "
 "sähköposti, etunimi ja sukunimi. Salasanakentät on jätetty pois."
 
-#: auth_kit/api_descriptions.py:157
+#: auth_kit/api_descriptions.py:174
 msgid ""
 "Update the authenticated user's profile information. Allows modification of "
 "username, first name, and last name. Email field is read-only for security."
 msgstr ""
 "Päivitä tunnistautuneen käyttäjän profiilin tiedot. Sallii käyttäjänimen, "
-"etunimen ja sukunimen muokkaamisen. Sähköpostikenttä on vain luku turvallisuussyistä."
+"etunimen ja sukunimen muokkaamisen. Sähköpostikenttä on vain luku "
+"turvallisuussyistä."
 
-#: auth_kit/api_descriptions.py:163
+#: auth_kit/api_descriptions.py:180
 msgid ""
 "Partially update the authenticated user's profile information. Only provided "
 "fields will be updated. Email field is read-only."
@@ -192,8 +210,8 @@ msgid ""
 "First step of MFA-enabled authentication. Validates credentials and "
 "initiates MFA flow."
 msgstr ""
-"MFA-tunnistautumisen ensimmäinen vaihe. Validoi tunnistetiedot ja "
-"aloittaa MFA-prosessin."
+"MFA-tunnistautumisen ensimmäinen vaihe. Validoi tunnistetiedot ja aloittaa "
+"MFA-prosessin."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:41
 #, python-format
@@ -201,13 +219,15 @@ msgid ""
 "Returns ephemeral token for MFA verification or complete %(auth_tokens)s if "
 "MFA is disabled."
 msgstr ""
-"Palauttaa tilapäisen tunnisteen MFA-vahvistusta varten tai täydelliset %(auth_tokens)s, jos "
-"MFA on poistettu käytöstä."
+"Palauttaa tilapäisen tunnisteen MFA-vahvistusta varten tai täydelliset "
+"%(auth_tokens)s, jos MFA on poistettu käytöstä."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:51
 msgid ""
 "Complete MFA authentication using verification code and ephemeral token."
-msgstr "Viimeistele MFA-tunnistautuminen käyttäen vahvistuskoodia ja tilapäistä tunnistetta."
+msgstr ""
+"Viimeistele MFA-tunnistautuminen käyttäen vahvistuskoodia ja tilapäistä "
+"tunnistetta."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:56
 msgid "Supports both TOTP codes and backup codes for verification."
@@ -219,7 +239,9 @@ msgstr "Vaihda toiseen MFA-menetelmään tunnistautumisprosessin aikana."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:70
 msgid "Requires valid ephemeral token from first step authentication."
-msgstr "Vaatii voimassa olevan tilapäisen tunnisteen ensimmäisen vaiheen tunnistautumisesta."
+msgstr ""
+"Vaatii voimassa olevan tilapäisen tunnisteen ensimmäisen vaiheen "
+"tunnistautumisesta."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:72
 #: auth_kit/mfa/mfa_api_descriptions.py:87
@@ -229,19 +251,24 @@ msgstr "Uusi tilapäinen tunniste vanhenee %(seconds)s sekunnin kuluttua."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:81
 msgid "Resend MFA verification code using existing ephemeral token."
-msgstr "Lähetä MFA-vahvistuskoodi uudelleen käyttäen olemassa olevaa tilapäistä tunnistetta."
+msgstr ""
+"Lähetä MFA-vahvistuskoodi uudelleen käyttäen olemassa olevaa tilapäistä "
+"tunnistetta."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:84
 msgid "Only applicable for methods that require code dispatch (e.g., email)."
-msgstr "Koskee vain menetelmiä, jotka vaativat koodin lähettämisen (esim. sähköposti)."
+msgstr ""
+"Koskee vain menetelmiä, jotka vaativat koodin lähettämisen (esim. "
+"sähköposti)."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:96
 msgid ""
 "List all available MFA methods with their setup and activation status. Shows "
 "which methods are configured, active, and set as primary."
 msgstr ""
-"Listaa kaikki saatavilla olevat MFA-menetelmät niiden asetukset ja aktivointitila. Näyttää "
-"mitkä menetelmät on määritetty, aktiivisia ja asetettu ensisijaisiksi."
+"Listaa kaikki saatavilla olevat MFA-menetelmät niiden asetukset ja "
+"aktivointitila. Näyttää mitkä menetelmät on määritetty, aktiivisia ja "
+"asetettu ensisijaisiksi."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:101
 msgid ""
@@ -250,8 +277,8 @@ msgid ""
 "must be confirmed before activation."
 msgstr ""
 "Alusta uuden MFA-menetelmän asetukset. Luo menetelmän varmuuskoodeineen ja "
-"palauttaa asennusohjeet (esim. QR-koodi todennussovelluksille). Menetelmä "
-"on vahvistettava ennen aktivointia."
+"palauttaa asennusohjeet (esim. QR-koodi todennussovelluksille). Menetelmä on "
+"vahvistettava ennen aktivointia."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:107
 msgid ""
@@ -260,8 +287,9 @@ msgid ""
 "Required before the method can be used for authentication."
 msgstr ""
 "Vahvista ja aktivoi äskettäin luotu MFA-menetelmä käyttäen vahvistuskoodia. "
-"Asettaa automaattisesti ensisijaiseksi menetelmäksi, jos muuta ensisijaista menetelmää ei ole. "
-"Vaaditaan ennen kuin menetelmää voidaan käyttää tunnistautumiseen."
+"Asettaa automaattisesti ensisijaiseksi menetelmäksi, jos muuta ensisijaista "
+"menetelmää ei ole. Vaaditaan ennen kuin menetelmää voidaan käyttää "
+"tunnistautumiseen."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:113
 msgid ""
@@ -269,17 +297,17 @@ msgid ""
 "itself. Cannot deactivate primary methods - set another method as primary "
 "first."
 msgstr ""
-"Poista aktiivinen MFA-menetelmä käytöstä. Vaatii vahvistuskoodin menetelmästä "
-"itsestään. Ei voi poistaa ensisijaisia menetelmiä käytöstä - aseta toinen menetelmä "
-"ensisijaiseksi ensin."
+"Poista aktiivinen MFA-menetelmä käytöstä. Vaatii vahvistuskoodin "
+"menetelmästä itsestään. Ei voi poistaa ensisijaisia menetelmiä käytöstä - "
+"aseta toinen menetelmä ensisijaiseksi ensin."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:121
 msgid ""
 "Set an active MFA method as the primary authentication method. Primary "
 "method is used by default during login flow."
 msgstr ""
-"Aseta aktiivinen MFA-menetelmä ensisijaiseksi tunnistautusmenetelmäksi. Ensisijaista "
-"menetelmää käytetään oletuksena kirjautumisprosessin aikana."
+"Aseta aktiivinen MFA-menetelmä ensisijaiseksi tunnistautusmenetelmäksi. "
+"Ensisijaista menetelmää käytetään oletuksena kirjautumisprosessin aikana."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:125
 msgid "Only one method can be primary at a time."
@@ -294,8 +322,9 @@ msgid ""
 "Send verification code for methods that support code dispatch. Useful for "
 "testing method configuration or manual code requests."
 msgstr ""
-"Lähetä vahvistuskoodi menetelmille, jotka tukevat koodin lähettämistä. Hyödyllinen "
-"menetelmän konfiguraation testaamiseen tai manuaalisiin koodipyyntöihin."
+"Lähetä vahvistuskoodi menetelmille, jotka tukevat koodin lähettämistä. "
+"Hyödyllinen menetelmän konfiguraation testaamiseen tai manuaalisiin "
+"koodipyyntöihin."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:142
 msgid "Permanently delete an MFA method."
@@ -349,9 +378,23 @@ msgstr "MFA-menetelmä"
 msgid "MFA Methods"
 msgstr "MFA-menetelmät"
 
+#: auth_kit/mfa/serializers/login_factors.py:153
+msgid "Invalid code"
+msgstr "Virheellinen koodi"
+
+#: auth_kit/mfa/serializers/login_factors.py:172
+#: auth_kit/mfa/serializers/login_factors.py:226
+#: auth_kit/mfa/serializers/login_factors.py:272
+msgid "Invalid token"
+msgstr "Virheellinen tunniste"
+
 #: auth_kit/mfa/serializers/login_factors.py:230
 msgid "Please select a new method"
 msgstr "Valitse uusi menetelmä"
+
+#: auth_kit/mfa/serializers/mfa.py:76
+msgid "This method is already exists"
+msgstr "Tämä menetelmä on jo olemassa"
 
 #: auth_kit/mfa/serializers/mfa.py:145 auth_kit/mfa/serializers/mfa.py:200
 #: auth_kit/mfa/serializers/mfa.py:345
@@ -432,7 +475,8 @@ msgstr "Salasanakentät eivät täsmää."
 
 #: auth_kit/social/serializers/connect.py:55
 msgid "Social account email must match your current account email."
-msgstr "Sosiaalisen tilin sähköpostin on täsmättävä nykyisen tilisi sähköpostiin."
+msgstr ""
+"Sosiaalisen tilin sähköpostin on täsmättävä nykyisen tilisi sähköpostiin."
 
 #: auth_kit/social/serializers/connect.py:98
 msgid "Connected"
@@ -450,7 +494,48 @@ msgstr "Käyttäjä on jo rekisteröity tällä sähköpostiosoitteella."
 msgid "Failed to exchange code for access token"
 msgstr "Koodin vaihtaminen pääsytunnisteeseen epäonnistui"
 
-#: auth_kit/social/views/login.py:50
+#: auth_kit/social/social_api_descriptions.py:29
+#, python-format
+msgid ""
+"Authenticate with %(provider)s using OAuth2/OpenID Connect authorization "
+"code to obtain access tokens."
+msgstr "Tunnistaudu %(provider)s-palvelun kanssa käyttäen OAuth2/OpenID Connect valtuutuskoodia saadaksesi pääsytunnisteet."
+
+#: auth_kit/social/social_api_descriptions.py:51
+#, python-format
+msgid ""
+"Connect a %(provider)s account to the current user's account. This allows "
+"the user to login using their existing %(provider)s account in the future."
+msgstr "Yhdistä %(provider)s-tili nykyiseen käyttäjätiliin. Tämä mahdollistaa käyttäjän kirjautumisen olemassa olevalla %(provider)s-tilillään tulevaisuudessa."
+
+#: auth_kit/social/social_api_descriptions.py:56
+#, python-format
+msgid ""
+"Requires authentication and a valid OAuth2/OpenID Connect authorization code "
+"from %(provider)s."
+msgstr "Vaatii tunnistautumisen ja kelvollisen OAuth2/OpenID Connect valtuutuskoodin %(provider)s-palvelusta."
+
+#: auth_kit/social/social_api_descriptions.py:60
+#, python-format
+msgid ""
+"On success, the %(provider)s account is linked and can be used for future "
+"logins."
+msgstr "Onnistumisen jälkeen %(provider)s-tili on yhdistetty ja sitä voidaan käyttää tuleviin kirjautumisiin."
+
+#: auth_kit/social/social_api_descriptions.py:73
+msgid ""
+"List all social accounts connected to the current user. Shows account "
+"details including provider, UID, and connection dates."
+msgstr "Listaa kaikki nykyiseen käyttäjään yhdistetyt sosiaalisen median tilit. Näyttää tilin tiedot mukaan lukien palveluntarjoaja, UID ja yhdistämispäivät."
+
+#: auth_kit/social/social_api_descriptions.py:78
+msgid ""
+"Disconnect a social account from the current user. Removes the social "
+"account connection and prevents future logins via that provider. Requires "
+"authentication and the account must belong to the current user."
+msgstr "Katkaise sosiaalisen median tilin yhteys nykyisestä käyttäjästä. Poistaa sosiaalisen median tilin yhteyden ja estää tulevat kirjautumiset kyseisen palveluntarjoajan kautta. Vaatii tunnistautumisen ja tilin on kuuluttava nykyiselle käyttäjälle."
+
+#: auth_kit/social/views/login.py:58
 msgid "adapter_class is not defined"
 msgstr "adapter_class ei ole määritelty"
 
@@ -482,15 +567,15 @@ msgstr "Salasana on nollattu uudella salasanalla."
 msgid "New password has been saved."
 msgstr "Uusi salasana on tallennettu."
 
-#: auth_kit/views/registration.py:142
+#: auth_kit/views/registration.py:143
 msgid "Verification e-mail sent."
 msgstr "Vahvistussähköposti lähetetty."
 
-#: auth_kit/views/registration.py:143
+#: auth_kit/views/registration.py:144
 msgid "Successfully registered."
 msgstr "Rekisteröityminen onnistui."
 
-#: auth_kit/views/registration.py:223 auth_kit/views/registration.py:268
+#: auth_kit/views/registration.py:224 auth_kit/views/registration.py:269
 msgid "ok"
 msgstr "ok"
 

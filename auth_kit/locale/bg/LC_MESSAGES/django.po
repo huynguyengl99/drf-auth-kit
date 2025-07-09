@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DRF Auth Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-08 06:02+0000\n"
+"POT-Creation-Date: 2025-07-09 05:21+0000\n"
 "PO-Revision-Date: 2025-07-08 06:02+0000\n"
 "Last-Translator: DRF Auth Kit Team\n"
 "Language-Team: Bulgarian\n"
@@ -16,73 +16,86 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-#: auth_kit/api_descriptions.py:25
+
+#: auth_kit/api_descriptions.py:29
 msgid ""
 "Returns user details along with JWT access and refresh tokens with "
 "expiration times."
 msgstr ""
-"Връща подробности за потребителя заедно с JWT токени за достъп и "
-"обновяване с времена на изтичане."
+"Връща подробности за потребителя заедно с JWT токени за достъп и обновяване "
+"с времена на изтичане."
 
-#: auth_kit/api_descriptions.py:29
+#: auth_kit/api_descriptions.py:33
 msgid ""
 "Returns user details along with a DRF authentication token for API access."
-msgstr "Връща подробности за потребителя заедно с DRF токен за удостоверяване за API достъп."
+msgstr ""
+"Връща подробности за потребителя заедно с DRF токен за удостоверяване за API "
+"достъп."
 
-#: auth_kit/api_descriptions.py:32
+#: auth_kit/api_descriptions.py:36
 msgid "Returns user details along with custom authentication tokens."
-msgstr "Връща подробности за потребителя заедно с персонализирани токени за удостоверяване."
+msgstr ""
+"Връща подробности за потребителя заедно с персонализирани токени за "
+"удостоверяване."
 
-#: auth_kit/api_descriptions.py:38
+#: auth_kit/api_descriptions.py:42
 msgid "JWT access and refresh tokens"
 msgstr "JWT токени за достъп и обновяване"
 
-#: auth_kit/api_descriptions.py:40
+#: auth_kit/api_descriptions.py:44
 msgid "DRF authentication token"
 msgstr "DRF токен за удостоверяване"
 
-#: auth_kit/api_descriptions.py:42
+#: auth_kit/api_descriptions.py:46
 msgid "custom authentication tokens"
 msgstr "персонализирани токени за удостоверяване"
 
-#: auth_kit/api_descriptions.py:49
+#: auth_kit/api_descriptions.py:53
 msgid "Authentication cookies are set automatically for secure token storage."
-msgstr "Бисквитките за удостоверяване се задават автоматично за сигурно съхранение на токени."
+msgstr ""
+"Бисквитките за удостоверяване се задават автоматично за сигурно съхранение "
+"на токени."
 
-#: auth_kit/api_descriptions.py:57
+#: auth_kit/api_descriptions.py:61
 msgid "Blacklists JWT refresh tokens to prevent further use."
-msgstr "Добавя JWT токените за обновяване в черния списък, за да предотврати по-нататъшно използване."
+msgstr ""
+"Добавя JWT токените за обновяване в черния списък, за да предотврати по-"
+"нататъшно използване."
 
-#: auth_kit/api_descriptions.py:59
+#: auth_kit/api_descriptions.py:63
 msgid "Deletes the DRF authentication token from the database."
 msgstr "Изтрива DRF токена за удостоверяване от базата данни."
 
-#: auth_kit/api_descriptions.py:61
+#: auth_kit/api_descriptions.py:65
 msgid "Invalidates custom authentication tokens."
 msgstr "Обезсилва персонализираните токени за удостоверяване."
 
-#: auth_kit/api_descriptions.py:67
+#: auth_kit/api_descriptions.py:71
 msgid "Clears authentication cookies from the browser."
 msgstr "Изчиства бисквитките за удостоверяване от браузъра."
 
-#: auth_kit/api_descriptions.py:73
+#: auth_kit/api_descriptions.py:77
 msgid "Authenticate with username/email and password to obtain access tokens."
-msgstr "Удостоверяване с потребителско име/имейл и парола за получаване на токени за достъп."
+msgstr ""
+"Удостоверяване с потребителско име/имейл и парола за получаване на токени за "
+"достъп."
 
-#: auth_kit/api_descriptions.py:85
+#: auth_kit/api_descriptions.py:89
 msgid "Logout user and invalidate authentication tokens."
 msgstr "Излизане на потребителя и обезсилване на токените за удостоверяване."
 
-#: auth_kit/api_descriptions.py:89
+#: auth_kit/api_descriptions.py:93
 msgid ""
 "Requires authentication to ensure only valid sessions can be logged out."
-msgstr "Изисква удостоверяване, за да се гарантира, че само валидни сесии могат да бъдат прекратени."
+msgstr ""
+"Изисква удостоверяване, за да се гарантира, че само валидни сесии могат да "
+"бъдат прекратени."
 
-#: auth_kit/api_descriptions.py:100
+#: auth_kit/api_descriptions.py:104
 msgid "Generate new JWT access tokens using refresh tokens."
 msgstr "Генерира нови JWT токени за достъп, използвайки токени за обновяване."
 
-#: auth_kit/api_descriptions.py:104
+#: auth_kit/api_descriptions.py:108
 msgid ""
 "Refresh tokens can be provided in request data or extracted automatically "
 "from HTTP cookies."
@@ -90,71 +103,82 @@ msgstr ""
 "Токените за обновяване могат да бъдат предоставени в данните на заявката или "
 "извлечени автоматично от HTTP бисквитки."
 
-#: auth_kit/api_descriptions.py:106 auth_kit/api_descriptions.py:116
+#: auth_kit/api_descriptions.py:110 auth_kit/api_descriptions.py:120
 msgid "Returns new access tokens with updated expiration times."
 msgstr "Връща нови токени за достъп с актуализирани времена на изтичане."
 
-#: auth_kit/api_descriptions.py:108
+#: auth_kit/api_descriptions.py:112
 msgid "New tokens are automatically set in HTTP cookies for secure storage."
-msgstr "Новите токени се задават автоматично в HTTP бисквитки за сигурно съхранение."
+msgstr ""
+"Новите токени се задават автоматично в HTTP бисквитки за сигурно съхранение."
 
-#: auth_kit/api_descriptions.py:115
+#: auth_kit/api_descriptions.py:119
 msgid "Refresh tokens must be provided in the request data."
-msgstr "Токените за обновяване трябва да бъдат предоставени в данните на заявката."
+msgstr ""
+"Токените за обновяване трябва да бъдат предоставени в данните на заявката."
 
-#: auth_kit/api_descriptions.py:122
+#: auth_kit/api_descriptions.py:127
 msgid "Register a new user account."
 msgstr "Регистрира нов потребителски акаунт."
 
-#: auth_kit/api_descriptions.py:126
+#: auth_kit/api_descriptions.py:134
+msgid ""
+"Users must verify their email address before the account is fully activated."
+msgstr ""
+"Потребителите трябва да потвърдят своя имейл адрес, преди акаунтът да бъде "
+"пълно активиран."
+
+#: auth_kit/api_descriptions.py:143
 msgid ""
 "Send password reset instructions to the provided email address. If the email "
 "is registered, a secure reset link will be sent. The link expires after a "
 "limited time for security."
 msgstr ""
 "Изпраща инструкции за нулиране на парола до предоставения имейл адрес. Ако "
-"имейлът е регистриран, ще бъде изпратена сигурна връзка за нулиране. Връзката "
-"изтича след ограничено време за сигурност."
+"имейлът е регистриран, ще бъде изпратена сигурна връзка за нулиране. "
+"Връзката изтича след ограничено време за сигурност."
 
-#: auth_kit/api_descriptions.py:132
+#: auth_kit/api_descriptions.py:149
 msgid ""
 "Complete the password reset process using the token from the reset email. "
 "Requires the UID and token from the email along with the new password. The "
 "token is single-use and expires for security."
 msgstr ""
-"Завършва процеса на нулиране на парола, използвайки токена от имейла за нулиране. "
-"Изисква UID и токен от имейла заедно с новата парола. Токенът е за еднократна "
-"употреба и изтича за сигурност."
+"Завършва процеса на нулиране на парола, използвайки токена от имейла за "
+"нулиране. Изисква UID и токен от имейла заедно с новата парола. Токенът е за "
+"еднократна употреба и изтича за сигурност."
 
-#: auth_kit/api_descriptions.py:138
+#: auth_kit/api_descriptions.py:155
 msgid "Change the current user's password. Requires authentication. "
 msgstr "Променя паролата на текущия потребител. Изисква удостоверяване. "
 
-#: auth_kit/api_descriptions.py:142
+#: auth_kit/api_descriptions.py:159
 msgid ""
 "Confirm email address using the verification key sent via email. This "
 "activates the user account and allows login access."
 msgstr ""
-"Потвърждава имейл адреса, използвайки ключа за потвърждение, изпратен по имейл. "
-"Това активира потребителския акаунт и позволява достъп за влизане."
+"Потвърждава имейл адреса, използвайки ключа за потвърждение, изпратен по "
+"имейл. Това активира потребителския акаунт и позволява достъп за влизане."
 
-#: auth_kit/api_descriptions.py:147
+#: auth_kit/api_descriptions.py:164
 msgid ""
 "Send a new email verification message to unverified email addresses. Only "
 "works for email addresses that are registered but not yet verified."
 msgstr ""
-"Изпраща ново съобщение за потвърждение на имейл до непотвърдени имейл адреси. "
-"Работи само за имейл адреси, които са регистрирани, но все още не са потвърдени."
+"Изпраща ново съобщение за потвърждение на имейл до непотвърдени имейл "
+"адреси. Работи само за имейл адреси, които са регистрирани, но все още не са "
+"потвърдени."
 
-#: auth_kit/api_descriptions.py:152
+#: auth_kit/api_descriptions.py:169
 msgid ""
 "Retrieve the authenticated user's profile information including username, "
 "email, first name, and last name. Password fields are excluded."
 msgstr ""
-"Извлича информацията за профила на удостоверения потребител, включително потребителско "
-"име, имейл, собствено име и фамилия. Полетата за парола са изключени."
+"Извлича информацията за профила на удостоверения потребител, включително "
+"потребителско име, имейл, собствено име и фамилия. Полетата за парола са "
+"изключени."
 
-#: auth_kit/api_descriptions.py:157
+#: auth_kit/api_descriptions.py:174
 msgid ""
 "Update the authenticated user's profile information. Allows modification of "
 "username, first name, and last name. Email field is read-only for security."
@@ -163,13 +187,14 @@ msgstr ""
 "промяна на потребителското име, собственото име и фамилията. Полето за имейл "
 "е само за четене за сигурност."
 
-#: auth_kit/api_descriptions.py:163
+#: auth_kit/api_descriptions.py:180
 msgid ""
 "Partially update the authenticated user's profile information. Only provided "
 "fields will be updated. Email field is read-only."
 msgstr ""
 "Частично актуализира информацията за профила на удостоверения потребител. Ще "
-"бъдат актуализирани само предоставените полета. Полето за имейл е само за четене."
+"бъдат актуализирани само предоставените полета. Полето за имейл е само за "
+"четене."
 
 #: auth_kit/forms.py:78
 msgid "The email address is not assigned to any user account."
@@ -202,13 +227,15 @@ msgid ""
 "Returns ephemeral token for MFA verification or complete %(auth_tokens)s if "
 "MFA is disabled."
 msgstr ""
-"Връща временен токен за MFA потвърждение или пълни %(auth_tokens)s, ако "
-"MFA е деактивиран."
+"Връща временен токен за MFA потвърждение или пълни %(auth_tokens)s, ако MFA "
+"е деактивиран."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:51
 msgid ""
 "Complete MFA authentication using verification code and ephemeral token."
-msgstr "Завършва MFA удостоверяването, използвайки код за потвърждение и временен токен."
+msgstr ""
+"Завършва MFA удостоверяването, използвайки код за потвърждение и временен "
+"токен."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:56
 msgid "Supports both TOTP codes and backup codes for verification."
@@ -216,7 +243,8 @@ msgstr "Поддържа както TOTP кодове, така и резерв�
 
 #: auth_kit/mfa/mfa_api_descriptions.py:68
 msgid "Switch to a different MFA method during authentication flow."
-msgstr "Превключва към различен MFA метод по време на процеса на удостоверяване."
+msgstr ""
+"Превключва към различен MFA метод по време на процеса на удостоверяване."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:70
 msgid "Requires valid ephemeral token from first step authentication."
@@ -230,19 +258,22 @@ msgstr "Новият временен токен изтича след %(seconds
 
 #: auth_kit/mfa/mfa_api_descriptions.py:81
 msgid "Resend MFA verification code using existing ephemeral token."
-msgstr "Препраща MFA кода за потвърждение, използвайки съществуващия временен токен."
+msgstr ""
+"Препраща MFA кода за потвърждение, използвайки съществуващия временен токен."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:84
 msgid "Only applicable for methods that require code dispatch (e.g., email)."
-msgstr "Приложимо само за методи, които изискват изпращане на код (напр. имейл)."
+msgstr ""
+"Приложимо само за методи, които изискват изпращане на код (напр. имейл)."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:96
 msgid ""
 "List all available MFA methods with their setup and activation status. Shows "
 "which methods are configured, active, and set as primary."
 msgstr ""
-"Изброява всички налични MFA методи с техния статус на настройка и активиране. "
-"Показва кои методи са конфигурирани, активни и зададени като основни."
+"Изброява всички налични MFA методи с техния статус на настройка и "
+"активиране. Показва кои методи са конфигурирани, активни и зададени като "
+"основни."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:101
 msgid ""
@@ -250,9 +281,9 @@ msgid ""
 "returns setup instructions (e.g., QR code for authenticator apps). Method "
 "must be confirmed before activation."
 msgstr ""
-"Инициализира настройката на нов MFA метод. Създава метода с резервни кодове и "
-"връща инструкции за настройка (напр. QR код за приложения за удостоверяване). "
-"Методът трябва да бъде потвърден преди активиране."
+"Инициализира настройката на нов MFA метод. Създава метода с резервни кодове "
+"и връща инструкции за настройка (напр. QR код за приложения за "
+"удостоверяване). Методът трябва да бъде потвърден преди активиране."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:107
 msgid ""
@@ -260,9 +291,10 @@ msgid ""
 "Automatically sets as primary method if no other primary method exists. "
 "Required before the method can be used for authentication."
 msgstr ""
-"Потвърждава и активира новосъздаден MFA метод, използвайки код за потвърждение. "
-"Автоматично се задава като основен метод, ако не съществува друг основен метод. "
-"Изисква се преди методът да може да бъде използван за удостоверяване."
+"Потвърждава и активира новосъздаден MFA метод, използвайки код за "
+"потвърждение. Автоматично се задава като основен метод, ако не съществува "
+"друг основен метод. Изисква се преди методът да може да бъде използван за "
+"удостоверяване."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:113
 msgid ""
@@ -270,8 +302,8 @@ msgid ""
 "itself. Cannot deactivate primary methods - set another method as primary "
 "first."
 msgstr ""
-"Деактивира активен MFA метод. Изисква код за потвърждение от самия метод. "
-"Не може да деактивира основни методи - първо задайте друг метод като основен."
+"Деактивира активен MFA метод. Изисква код за потвърждение от самия метод. Не "
+"може да деактивира основни методи - първо задайте друг метод като основен."
 
 #: auth_kit/mfa/mfa_api_descriptions.py:121
 msgid ""
@@ -349,9 +381,23 @@ msgstr "MFA метод"
 msgid "MFA Methods"
 msgstr "MFA методи"
 
+#: auth_kit/mfa/serializers/login_factors.py:153
+msgid "Invalid code"
+msgstr "Невалиден код"
+
+#: auth_kit/mfa/serializers/login_factors.py:172
+#: auth_kit/mfa/serializers/login_factors.py:226
+#: auth_kit/mfa/serializers/login_factors.py:272
+msgid "Invalid token"
+msgstr "Невалиден токен"
+
 #: auth_kit/mfa/serializers/login_factors.py:230
 msgid "Please select a new method"
 msgstr "Моля, изберете нов метод"
+
+#: auth_kit/mfa/serializers/mfa.py:76
+msgid "This method is already exists"
+msgstr "Този метод вече съществува"
 
 #: auth_kit/mfa/serializers/mfa.py:145 auth_kit/mfa/serializers/mfa.py:200
 #: auth_kit/mfa/serializers/mfa.py:345
@@ -432,7 +478,8 @@ msgstr "Двете полета за парола не съвпадат."
 
 #: auth_kit/social/serializers/connect.py:55
 msgid "Social account email must match your current account email."
-msgstr "Имейлът на социалния акаунт трябва да съвпада с имейла на текущия ви акаунт."
+msgstr ""
+"Имейлът на социалния акаунт трябва да съвпада с имейла на текущия ви акаунт."
 
 #: auth_kit/social/serializers/connect.py:98
 msgid "Connected"
@@ -450,7 +497,62 @@ msgstr "Потребител вече е регистриран с този им
 msgid "Failed to exchange code for access token"
 msgstr "Неуспешна размяна на код за токен за достъп"
 
-#: auth_kit/social/views/login.py:50
+#: auth_kit/social/social_api_descriptions.py:29
+#, python-format
+msgid ""
+"Authenticate with %(provider)s using OAuth2/OpenID Connect authorization "
+"code to obtain access tokens."
+msgstr ""
+"Удостоверяване с %(provider)s, използвайки OAuth2/OpenID Connect код за оторизация за "
+"получаване на токени за достъп."
+
+#: auth_kit/social/social_api_descriptions.py:51
+#, python-format
+msgid ""
+"Connect a %(provider)s account to the current user's account. This allows "
+"the user to login using their existing %(provider)s account in the future."
+msgstr ""
+"Свързва %(provider)s акаунт към акаунта на текущия потребител. Това позволява "
+"на потребителя да влиза, използвайки съществуващия си %(provider)s акаунт в "
+"бъдеще."
+
+#: auth_kit/social/social_api_descriptions.py:56
+#, python-format
+msgid ""
+"Requires authentication and a valid OAuth2/OpenID Connect authorization code "
+"from %(provider)s."
+msgstr ""
+"Изисква удостоверяване и валиден OAuth2/OpenID Connect код за оторизация от "
+"%(provider)s."
+
+#: auth_kit/social/social_api_descriptions.py:60
+#, python-format
+msgid ""
+"On success, the %(provider)s account is linked and can be used for future "
+"logins."
+msgstr ""
+"При успех %(provider)s акаунтът се свързва и може да се използва за бъдещи "
+"влизания."
+
+#: auth_kit/social/social_api_descriptions.py:73
+msgid ""
+"List all social accounts connected to the current user. Shows account "
+"details including provider, UID, and connection dates."
+msgstr ""
+"Изброява всички социални акаунти, свързани с текущия потребител. Показва "
+"подробности за акаунта, включително доставчик, UID и дати на свързване."
+
+#: auth_kit/social/social_api_descriptions.py:78
+msgid ""
+"Disconnect a social account from the current user. Removes the social "
+"account connection and prevents future logins via that provider. Requires "
+"authentication and the account must belong to the current user."
+msgstr ""
+"Откачва социален акаунт от текущия потребител. Премахва връзката със "
+"социалния акаунт и предотвратява бъдещи влизания чрез този доставчик. "
+"Изисква удостоверяване и акаунтът трябва да принадлежи на текущия потребител."
+
+#: auth_kit/social/views/login.py:58
 msgid "adapter_class is not defined"
 msgstr "adapter_class не е дефиниран"
 
@@ -482,15 +584,15 @@ msgstr "Паролата е нулирана с новата парола."
 msgid "New password has been saved."
 msgstr "Новата парола е запазена."
 
-#: auth_kit/views/registration.py:142
+#: auth_kit/views/registration.py:143
 msgid "Verification e-mail sent."
 msgstr "Имейл за потвърждение изпратен."
 
-#: auth_kit/views/registration.py:143
+#: auth_kit/views/registration.py:144
 msgid "Successfully registered."
 msgstr "Успешно регистриране."
 
-#: auth_kit/views/registration.py:223 auth_kit/views/registration.py:268
+#: auth_kit/views/registration.py:224 auth_kit/views/registration.py:269
 msgid "ok"
 msgstr "добре"
 
