@@ -1,0 +1,514 @@
+# Malay translation for DRF Auth Kit
+# Copyright (C) 2025 DRF Auth Kit Contributors
+# This file is distributed under the same license as the DRF Auth Kit package.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: DRF Auth Kit\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-08 06:02+0000\n"
+"PO-Revision-Date: 2025-07-08 06:02+0000\n"
+"Last-Translator: DRF Auth Kit Team\n"
+"Language-Team: Malay\n"
+"Language: ms\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: auth_kit/api_descriptions.py:25
+msgid ""
+"Returns user details along with JWT access and refresh tokens with "
+"expiration times."
+msgstr ""
+"Memulangkan butiran pengguna bersama token akses JWT dan token penyegaran dengan "
+"masa tamat tempoh."
+
+#: auth_kit/api_descriptions.py:29
+msgid ""
+"Returns user details along with a DRF authentication token for API access."
+msgstr ""
+"Memulangkan butiran pengguna bersama token pengesahan DRF untuk akses API."
+
+#: auth_kit/api_descriptions.py:32
+msgid "Returns user details along with custom authentication tokens."
+msgstr "Memulangkan butiran pengguna bersama token pengesahan tersuai."
+
+#: auth_kit/api_descriptions.py:38
+msgid "JWT access and refresh tokens"
+msgstr "Token akses JWT dan token penyegaran"
+
+#: auth_kit/api_descriptions.py:40
+msgid "DRF authentication token"
+msgstr "Token pengesahan DRF"
+
+#: auth_kit/api_descriptions.py:42
+msgid "custom authentication tokens"
+msgstr "token pengesahan tersuai"
+
+#: auth_kit/api_descriptions.py:49
+msgid "Authentication cookies are set automatically for secure token storage."
+msgstr "Cookie pengesahan ditetapkan secara automatik untuk penyimpanan token yang selamat."
+
+#: auth_kit/api_descriptions.py:57
+msgid "Blacklists JWT refresh tokens to prevent further use."
+msgstr "Memasukkan token penyegaran JWT ke dalam senarai hitam untuk mencegah penggunaan selanjutnya."
+
+#: auth_kit/api_descriptions.py:59
+msgid "Deletes the DRF authentication token from the database."
+msgstr "Memadamkan token pengesahan DRF dari pangkalan data."
+
+#: auth_kit/api_descriptions.py:61
+msgid "Invalidates custom authentication tokens."
+msgstr "Membatalkan token pengesahan tersuai."
+
+#: auth_kit/api_descriptions.py:67
+msgid "Clears authentication cookies from the browser."
+msgstr "Membersihkan cookie pengesahan dari pelayar."
+
+#: auth_kit/api_descriptions.py:73
+msgid "Authenticate with username/email and password to obtain access tokens."
+msgstr "Mengesahkan dengan nama pengguna/e-mel dan kata laluan untuk mendapatkan token akses."
+
+#: auth_kit/api_descriptions.py:85
+msgid "Logout user and invalidate authentication tokens."
+msgstr "Log keluar pengguna dan membatalkan token pengesahan."
+
+#: auth_kit/api_descriptions.py:89
+msgid ""
+"Requires authentication to ensure only valid sessions can be logged out."
+msgstr ""
+"Memerlukan pengesahan untuk memastikan hanya sesi yang sah boleh dilog keluar."
+
+#: auth_kit/api_descriptions.py:100
+msgid "Generate new JWT access tokens using refresh tokens."
+msgstr "Menjana token akses JWT baru menggunakan token penyegaran."
+
+#: auth_kit/api_descriptions.py:104
+msgid ""
+"Refresh tokens can be provided in request data or extracted automatically "
+"from HTTP cookies."
+msgstr ""
+"Token penyegaran boleh disediakan dalam data permintaan atau diekstrak secara automatik "
+"dari cookie HTTP."
+
+#: auth_kit/api_descriptions.py:106 auth_kit/api_descriptions.py:116
+msgid "Returns new access tokens with updated expiration times."
+msgstr "Memulangkan token akses baru dengan masa tamat tempoh yang dikemas kini."
+
+#: auth_kit/api_descriptions.py:108
+msgid "New tokens are automatically set in HTTP cookies for secure storage."
+msgstr "Token baru ditetapkan secara automatik dalam cookie HTTP untuk penyimpanan yang selamat."
+
+#: auth_kit/api_descriptions.py:115
+msgid "Refresh tokens must be provided in the request data."
+msgstr "Token penyegaran mesti disediakan dalam data permintaan."
+
+#: auth_kit/api_descriptions.py:122
+msgid "Register a new user account."
+msgstr "Daftarkan akaun pengguna baru."
+
+#: auth_kit/api_descriptions.py:126
+msgid ""
+"Send password reset instructions to the provided email address. If the email "
+"is registered, a secure reset link will be sent. The link expires after a "
+"limited time for security."
+msgstr ""
+"Hantar arahan tetapan semula kata laluan ke alamat e-mel yang disediakan. Jika e-mel "
+"telah didaftarkan, pautan tetapan semula yang selamat akan dihantar. Pautan akan tamat tempoh selepas "
+"masa terhad untuk keselamatan."
+
+#: auth_kit/api_descriptions.py:132
+msgid ""
+"Complete the password reset process using the token from the reset email. "
+"Requires the UID and token from the email along with the new password. The "
+"token is single-use and expires for security."
+msgstr ""
+"Melengkapkan proses tetapan semula kata laluan menggunakan token dari e-mel tetapan semula. "
+"Memerlukan UID dan token dari e-mel bersama dengan kata laluan baru. "
+"Token adalah untuk kegunaan sekali dan tamat tempoh untuk keselamatan."
+
+#: auth_kit/api_descriptions.py:138
+msgid "Change the current user's password. Requires authentication. "
+msgstr "Tukar kata laluan pengguna semasa. Memerlukan pengesahan. "
+
+#: auth_kit/api_descriptions.py:142
+msgid ""
+"Confirm email address using the verification key sent via email. This "
+"activates the user account and allows login access."
+msgstr ""
+"Sahkan alamat e-mel menggunakan kunci pengesahan yang dihantar melalui e-mel. Ini "
+"mengaktifkan akaun pengguna dan membenarkan akses log masuk."
+
+#: auth_kit/api_descriptions.py:147
+msgid ""
+"Send a new email verification message to unverified email addresses. Only "
+"works for email addresses that are registered but not yet verified."
+msgstr ""
+"Hantar mesej pengesahan e-mel baru ke alamat e-mel yang tidak disahkan. Hanya "
+"berfungsi untuk alamat e-mel yang didaftarkan tetapi belum disahkan."
+
+#: auth_kit/api_descriptions.py:152
+msgid ""
+"Retrieve the authenticated user's profile information including username, "
+"email, first name, and last name. Password fields are excluded."
+msgstr ""
+"Dapatkan maklumat profil pengguna yang disahkan termasuk nama pengguna, "
+"e-mel, nama pertama, dan nama akhir. Medan kata laluan dikecualikan."
+
+#: auth_kit/api_descriptions.py:157
+msgid ""
+"Update the authenticated user's profile information. Allows modification of "
+"username, first name, and last name. Email field is read-only for security."
+msgstr ""
+"Kemas kini maklumat profil pengguna yang disahkan. Membenarkan pengubahsuaian "
+"nama pengguna, nama pertama, dan nama akhir. Medan e-mel adalah baca sahaja untuk keselamatan."
+
+#: auth_kit/api_descriptions.py:163
+msgid ""
+"Partially update the authenticated user's profile information. Only provided "
+"fields will be updated. Email field is read-only."
+msgstr ""
+"Kemas kini sebahagian maklumat profil pengguna yang disahkan. Hanya medan yang disediakan "
+"akan dikemas kini. Medan e-mel adalah baca sahaja."
+
+#: auth_kit/forms.py:78
+msgid "The email address is not assigned to any user account."
+msgstr "Alamat e-mel tidak diperuntukkan kepada mana-mana akaun pengguna."
+
+#: auth_kit/mfa/exceptions.py:27
+msgid "Requested MFA method does not exist."
+msgstr "Kaedah MFA yang diminta tidak wujud."
+
+#: auth_kit/mfa/handlers/email.py:29
+msgid "Email message with MFA code has been sent."
+msgstr "Mesej e-mel dengan kod MFA telah dihantar."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:28
+#, python-format
+msgid "MFA code expires in %(seconds)s seconds."
+msgstr "Kod MFA tamat tempoh dalam %(seconds)s saat."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:36
+msgid ""
+"First step of MFA-enabled authentication. Validates credentials and "
+"initiates MFA flow."
+msgstr ""
+"Langkah pertama pengesahan yang dibolehkan MFA. Mengesahkan kelayakan dan "
+"memulakan aliran MFA."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:41
+#, python-format
+msgid ""
+"Returns ephemeral token for MFA verification or complete %(auth_tokens)s if "
+"MFA is disabled."
+msgstr ""
+"Memulangkan token sementara untuk pengesahan MFA atau lengkap %(auth_tokens)s jika "
+"MFA dilumpuhkan."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:51
+msgid ""
+"Complete MFA authentication using verification code and ephemeral token."
+msgstr ""
+"Melengkapkan pengesahan MFA menggunakan kod pengesahan dan token sementara."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:56
+msgid "Supports both TOTP codes and backup codes for verification."
+msgstr "Menyokong kod TOTP dan kod sandaran untuk pengesahan."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:68
+msgid "Switch to a different MFA method during authentication flow."
+msgstr "Tukar kepada kaedah MFA yang berbeza semasa aliran pengesahan."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:70
+msgid "Requires valid ephemeral token from first step authentication."
+msgstr "Memerlukan token sementara yang sah dari pengesahan langkah pertama."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:72
+#: auth_kit/mfa/mfa_api_descriptions.py:87
+#, python-format
+msgid "New ephemeral token expires in %(seconds)s seconds."
+msgstr "Token sementara baru tamat tempoh dalam %(seconds)s saat."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:81
+msgid "Resend MFA verification code using existing ephemeral token."
+msgstr "Hantar semula kod pengesahan MFA menggunakan token sementara yang sedia ada."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:84
+msgid "Only applicable for methods that require code dispatch (e.g., email)."
+msgstr "Hanya terpakai untuk kaedah yang memerlukan penghantaran kod (contohnya, e-mel)."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:96
+msgid ""
+"List all available MFA methods with their setup and activation status. Shows "
+"which methods are configured, active, and set as primary."
+msgstr ""
+"Senaraikan semua kaedah MFA yang tersedia dengan status persediaan dan pengaktifan mereka. Menunjukkan "
+"kaedah mana yang dikonfigurasi, aktif, dan ditetapkan sebagai utama."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:101
+msgid ""
+"Initialize a new MFA method setup. Creates the method with backup codes and "
+"returns setup instructions (e.g., QR code for authenticator apps). Method "
+"must be confirmed before activation."
+msgstr ""
+"Mulakan persediaan kaedah MFA baru. Mencipta kaedah dengan kod sandaran dan "
+"memulangkan arahan persediaan (contohnya, kod QR untuk aplikasi pengesah). Kaedah "
+"mesti disahkan sebelum pengaktifan."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:107
+msgid ""
+"Confirm and activate a newly created MFA method using verification code. "
+"Automatically sets as primary method if no other primary method exists. "
+"Required before the method can be used for authentication."
+msgstr ""
+"Sahkan dan aktifkan kaedah MFA yang baru dicipta menggunakan kod pengesahan. "
+"Secara automatik menetapkan sebagai kaedah utama jika tiada kaedah utama lain wujud. "
+"Diperlukan sebelum kaedah boleh digunakan untuk pengesahan."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:113
+msgid ""
+"Deactivate an active MFA method. Requires verification code from the method "
+"itself. Cannot deactivate primary methods - set another method as primary "
+"first."
+msgstr ""
+"Nyahaktifkan kaedah MFA yang aktif. Memerlukan kod pengesahan dari kaedah "
+"itu sendiri. Tidak boleh nyahaktifkan kaedah utama - tetapkan kaedah lain sebagai utama "
+"dahulu."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:121
+msgid ""
+"Set an active MFA method as the primary authentication method. Primary "
+"method is used by default during login flow."
+msgstr ""
+"Tetapkan kaedah MFA aktif sebagai kaedah pengesahan utama. Kaedah utama "
+"digunakan secara lalai semasa aliran log masuk."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:125
+msgid "Only one method can be primary at a time."
+msgstr "Hanya satu kaedah boleh menjadi utama pada satu masa."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:128
+msgid "Requires verification code from current primary method."
+msgstr "Memerlukan kod pengesahan dari kaedah utama semasa."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:135
+msgid ""
+"Send verification code for methods that support code dispatch. Useful for "
+"testing method configuration or manual code requests."
+msgstr ""
+"Hantar kod pengesahan untuk kaedah yang menyokong penghantaran kod. Berguna untuk "
+"menguji konfigurasi kaedah atau permintaan kod manual."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:142
+msgid "Permanently delete an MFA method."
+msgstr "Padamkan kaedah MFA secara kekal."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:143
+msgid "This action cannot be undone."
+msgstr "Tindakan ini tidak boleh dibatalkan."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:148
+msgid "Cannot delete active methods."
+msgstr "Tidak boleh memadam kaedah aktif."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:151
+msgid "Cannot delete primary methods."
+msgstr "Tidak boleh memadam kaedah utama."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:154
+msgid "Requires verification code for active methods."
+msgstr "Memerlukan kod pengesahan untuk kaedah aktif."
+
+#: auth_kit/mfa/models.py:158
+msgid "user"
+msgstr "pengguna"
+
+#: auth_kit/mfa/models.py:161
+msgid "name"
+msgstr "nama"
+
+#: auth_kit/mfa/models.py:162
+msgid "secret"
+msgstr "rahsia"
+
+#: auth_kit/mfa/models.py:163
+msgid "is primary"
+msgstr "adalah utama"
+
+#: auth_kit/mfa/models.py:164
+msgid "is active"
+msgstr "adalah aktif"
+
+#: auth_kit/mfa/models.py:165
+msgid "backup codes"
+msgstr "kod sandaran"
+
+#: auth_kit/mfa/models.py:170
+msgid "MFA Method"
+msgstr "Kaedah MFA"
+
+#: auth_kit/mfa/models.py:171
+msgid "MFA Methods"
+msgstr "Kaedah MFA"
+
+#: auth_kit/mfa/serializers/login_factors.py:230
+msgid "Please select a new method"
+msgstr "Sila pilih kaedah baru"
+
+#: auth_kit/mfa/serializers/mfa.py:145 auth_kit/mfa/serializers/mfa.py:200
+#: auth_kit/mfa/serializers/mfa.py:345
+msgid "Invalid OTP code"
+msgstr "Kod OTP tidak sah"
+
+#: auth_kit/mfa/serializers/mfa.py:155
+msgid "Activated MFA method"
+msgstr "Kaedah MFA diaktifkan"
+
+#: auth_kit/mfa/serializers/mfa.py:194
+msgid "You can only deactivate non-primary MFA method."
+msgstr "Anda hanya boleh nyahaktifkan kaedah MFA bukan utama."
+
+#: auth_kit/mfa/serializers/mfa.py:206
+msgid "Deactivated MFA method"
+msgstr "Kaedah MFA dinyahaktifkan"
+
+#: auth_kit/mfa/serializers/mfa.py:262
+msgid "Invalid primary method code"
+msgstr "Kod kaedah utama tidak sah"
+
+#: auth_kit/mfa/serializers/mfa.py:275
+msgid "Updated primary MFA method"
+msgstr "Kaedah MFA utama dikemas kini"
+
+#: auth_kit/mfa/serializers/mfa.py:330
+msgid "Cannot delete active MFA method"
+msgstr "Tidak boleh memadam kaedah MFA aktif"
+
+#: auth_kit/mfa/serializers/mfa.py:336
+msgid "Cannot delete primary MFA method"
+msgstr "Tidak boleh memadam kaedah MFA utama"
+
+#: auth_kit/mfa/serializers/mfa.py:350
+msgid "Method does not exist"
+msgstr "Kaedah tidak wujud"
+
+#: auth_kit/mfa/serializers/mfa.py:352
+msgid "Deleted MFA method"
+msgstr "Kaedah MFA dipadamkan"
+
+#: auth_kit/mfa/serializers/mfa.py:392
+msgid "MFA code sent"
+msgstr "Kod MFA dihantar"
+
+#: auth_kit/serializers/jwt.py:33
+msgid "Will override cookie."
+msgstr "Akan menggantikan cookie."
+
+#: auth_kit/serializers/jwt.py:70
+msgid "No valid refresh token found."
+msgstr "Tiada token penyegaran yang sah ditemui."
+
+#: auth_kit/serializers/login_factors.py:124
+msgid "E-mail is not verified."
+msgstr "E-mel tidak disahkan."
+
+#: auth_kit/serializers/login_factors.py:146
+msgid "Unable to log in with provided credentials."
+msgstr "Tidak dapat log masuk dengan kelayakan yang disediakan."
+
+#: auth_kit/serializers/password.py:137 auth_kit/serializers/password.py:140
+msgid "Invalid value"
+msgstr "Nilai tidak sah"
+
+#: auth_kit/serializers/password.py:220
+msgid "Your old password was entered incorrectly. Please enter it again."
+msgstr "Kata laluan lama anda dimasukkan dengan salah. Sila masukkannya semula."
+
+#: auth_kit/serializers/registration.py:88
+msgid "A user is already registered with this e-mail address."
+msgstr "Pengguna telah didaftarkan dengan alamat e-mel ini."
+
+#: auth_kit/serializers/registration.py:119
+msgid "The two password fields didn't match."
+msgstr "Kedua-dua medan kata laluan tidak sepadan."
+
+#: auth_kit/social/serializers/connect.py:55
+msgid "Social account email must match your current account email."
+msgstr "E-mel akaun sosial mesti sepadan dengan e-mel akaun semasa anda."
+
+#: auth_kit/social/serializers/connect.py:98
+msgid "Connected"
+msgstr "Disambungkan"
+
+#: auth_kit/social/serializers/login.py:82
+msgid "Failed to complete OAuth flow"
+msgstr "Gagal melengkapkan aliran OAuth"
+
+#: auth_kit/social/serializers/login.py:117
+msgid "User is already registered with this e-mail address."
+msgstr "Pengguna telah didaftarkan dengan alamat e-mel ini."
+
+#: auth_kit/social/serializers/login.py:296
+msgid "Failed to exchange code for access token"
+msgstr "Gagal menukar kod untuk token akses"
+
+#: auth_kit/social/views/login.py:50
+msgid "adapter_class is not defined"
+msgstr "adapter_class tidak ditakrifkan"
+
+#: auth_kit/views/logout.py:111
+msgid "Refresh token was not included in cookie data."
+msgstr "Token penyegaran tidak disertakan dalam data cookie."
+
+#: auth_kit/views/logout.py:121
+msgid "Refresh token was not included in request data."
+msgstr "Token penyegaran tidak disertakan dalam data permintaan."
+
+#: auth_kit/views/logout.py:132
+msgid "An error has occurred."
+msgstr "Ralat telah berlaku."
+
+#: auth_kit/views/logout.py:149
+msgid "Successfully logged out."
+msgstr "Berjaya log keluar."
+
+#: auth_kit/views/password.py:64
+msgid "Password reset e-mail has been sent."
+msgstr "E-mel tetapan semula kata laluan telah dihantar."
+
+#: auth_kit/views/password.py:111
+msgid "Password has been reset with the new password."
+msgstr "Kata laluan telah ditetapkan semula dengan kata laluan baru."
+
+#: auth_kit/views/password.py:156
+msgid "New password has been saved."
+msgstr "Kata laluan baru telah disimpan."
+
+#: auth_kit/views/registration.py:142
+msgid "Verification e-mail sent."
+msgstr "E-mel pengesahan dihantar."
+
+#: auth_kit/views/registration.py:143
+msgid "Successfully registered."
+msgstr "Berjaya didaftarkan."
+
+#: auth_kit/views/registration.py:223 auth_kit/views/registration.py:268
+msgid "ok"
+msgstr "baik"
+
+#: sandbox_extras/custom_username/accounts/admin.py:11
+#: sandbox_extras/email_user/accounts/admin.py:11
+msgid "Personal info"
+msgstr "Maklumat peribadi"
+
+#: sandbox_extras/custom_username/accounts/admin.py:13
+#: sandbox_extras/email_user/accounts/admin.py:13
+msgid "Permissions"
+msgstr "Kebenaran"
+
+#: sandbox_extras/custom_username/accounts/admin.py:24
+#: sandbox_extras/email_user/accounts/admin.py:24
+msgid "Important dates"
+msgstr "Tarikh penting"

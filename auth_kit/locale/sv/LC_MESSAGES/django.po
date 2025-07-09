@@ -1,0 +1,512 @@
+# Swedish translation for DRF Auth Kit
+# Copyright (C) 2025 DRF Auth Kit Contributors
+# This file is distributed under the same license as the DRF Auth Kit package.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: DRF Auth Kit\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-08 06:02+0000\n"
+"PO-Revision-Date: 2025-07-08 06:02+0000\n"
+"Last-Translator: DRF Auth Kit Team\n"
+"Language-Team: Swedish\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: auth_kit/api_descriptions.py:25
+msgid ""
+"Returns user details along with JWT access and refresh tokens with "
+"expiration times."
+msgstr ""
+"Returnerar användardetaljer tillsammans med JWT åtkomst- och uppdateringstokens med "
+"utgångstider."
+
+#: auth_kit/api_descriptions.py:29
+msgid ""
+"Returns user details along with a DRF authentication token for API access."
+msgstr ""
+"Returnerar användardetaljer tillsammans med en DRF autentiseringstoken för API-åtkomst."
+
+#: auth_kit/api_descriptions.py:32
+msgid "Returns user details along with custom authentication tokens."
+msgstr "Returnerar användardetaljer tillsammans med anpassade autentiseringstokens."
+
+#: auth_kit/api_descriptions.py:38
+msgid "JWT access and refresh tokens"
+msgstr "JWT åtkomst- och uppdateringstokens"
+
+#: auth_kit/api_descriptions.py:40
+msgid "DRF authentication token"
+msgstr "DRF autentiseringstoken"
+
+#: auth_kit/api_descriptions.py:42
+msgid "custom authentication tokens"
+msgstr "anpassade autentiseringstokens"
+
+#: auth_kit/api_descriptions.py:49
+msgid "Authentication cookies are set automatically for secure token storage."
+msgstr "Autentiseringscookies ställs automatiskt in för säker tokenlagring."
+
+#: auth_kit/api_descriptions.py:57
+msgid "Blacklists JWT refresh tokens to prevent further use."
+msgstr "Svartlistar JWT uppdateringstokens för att förhindra vidare användning."
+
+#: auth_kit/api_descriptions.py:59
+msgid "Deletes the DRF authentication token from the database."
+msgstr "Raderar DRF autentiseringstoken från databasen."
+
+#: auth_kit/api_descriptions.py:61
+msgid "Invalidates custom authentication tokens."
+msgstr "Ogiltigförklarar anpassade autentiseringstokens."
+
+#: auth_kit/api_descriptions.py:67
+msgid "Clears authentication cookies from the browser."
+msgstr "Rensar autentiseringscookies från webbläsaren."
+
+#: auth_kit/api_descriptions.py:73
+msgid "Authenticate with username/email and password to obtain access tokens."
+msgstr "Autentisera med användarnamn/e-post och lösenord för att erhålla åtkomsttokens."
+
+#: auth_kit/api_descriptions.py:85
+msgid "Logout user and invalidate authentication tokens."
+msgstr "Loggar ut användare och ogiltigförklarar autentiseringstokens."
+
+#: auth_kit/api_descriptions.py:89
+msgid ""
+"Requires authentication to ensure only valid sessions can be logged out."
+msgstr ""
+"Kräver autentisering för att säkerställa att endast giltiga sessioner kan loggas ut."
+
+#: auth_kit/api_descriptions.py:100
+msgid "Generate new JWT access tokens using refresh tokens."
+msgstr "Genererar nya JWT åtkomsttokens med hjälp av uppdateringstokens."
+
+#: auth_kit/api_descriptions.py:104
+msgid ""
+"Refresh tokens can be provided in request data or extracted automatically "
+"from HTTP cookies."
+msgstr ""
+"Uppdateringstokens kan tillhandahållas i förfrågningsdata eller extraheras automatiskt "
+"från HTTP-cookies."
+
+#: auth_kit/api_descriptions.py:106 auth_kit/api_descriptions.py:116
+msgid "Returns new access tokens with updated expiration times."
+msgstr "Returnerar nya åtkomsttokens med uppdaterade utgångstider."
+
+#: auth_kit/api_descriptions.py:108
+msgid "New tokens are automatically set in HTTP cookies for secure storage."
+msgstr "Nya tokens ställs automatiskt in i HTTP-cookies för säker lagring."
+
+#: auth_kit/api_descriptions.py:115
+msgid "Refresh tokens must be provided in the request data."
+msgstr "Uppdateringstokens måste tillhandahållas i förfrågningsdata."
+
+#: auth_kit/api_descriptions.py:122
+msgid "Register a new user account."
+msgstr "Registrerar ett nytt användarkonto."
+
+#: auth_kit/api_descriptions.py:126
+msgid ""
+"Send password reset instructions to the provided email address. If the email "
+"is registered, a secure reset link will be sent. The link expires after a "
+"limited time for security."
+msgstr ""
+"Skickar instruktioner för lösenordsåterställning till den angivna e-postadressen. "
+"Om e-posten är registrerad kommer en säker återställningslänk att skickas. Länken "
+"går ut efter en begränsad tid av säkerhetsskäl."
+
+#: auth_kit/api_descriptions.py:132
+msgid ""
+"Complete the password reset process using the token from the reset email. "
+"Requires the UID and token from the email along with the new password. The "
+"token is single-use and expires for security."
+msgstr ""
+"Slutför lösenordsåterställningsprocessen med hjälp av token från återställningsmailen. "
+"Kräver UID och token från e-posten tillsammans med det nya lösenordet. Token "
+"är för engångsbruk och går ut av säkerhetsskäl."
+
+#: auth_kit/api_descriptions.py:138
+msgid "Change the current user's password. Requires authentication. "
+msgstr "Ändra den aktuella användarens lösenord. Kräver autentisering. "
+
+#: auth_kit/api_descriptions.py:142
+msgid ""
+"Confirm email address using the verification key sent via email. This "
+"activates the user account and allows login access."
+msgstr ""
+"Bekräfta e-postadress med hjälp av verifieringsnyckeln som skickas via e-post. "
+"Detta aktiverar användarkontot och tillåter inloggningsåtkomst."
+
+#: auth_kit/api_descriptions.py:147
+msgid ""
+"Send a new email verification message to unverified email addresses. Only "
+"works for email addresses that are registered but not yet verified."
+msgstr ""
+"Skicka ett nytt e-postverifieringsmeddelande till overifierade e-postadresser. "
+"Fungerar endast för e-postadresser som är registrerade men ännu inte verifierade."
+
+#: auth_kit/api_descriptions.py:152
+msgid ""
+"Retrieve the authenticated user's profile information including username, "
+"email, first name, and last name. Password fields are excluded."
+msgstr ""
+"Hämtar den autentiserade användarens profilinformation inklusive användarnamn, "
+"e-post, förnamn och efternamn. Lösenordsfält är undantagna."
+
+#: auth_kit/api_descriptions.py:157
+msgid ""
+"Update the authenticated user's profile information. Allows modification of "
+"username, first name, and last name. Email field is read-only for security."
+msgstr ""
+"Uppdaterar den autentiserade användarens profilinformation. Tillåter modifiering "
+"av användarnamn, förnamn och efternamn. E-postfältet är skrivskyddat av säkerhetsskäl."
+
+#: auth_kit/api_descriptions.py:163
+msgid ""
+"Partially update the authenticated user's profile information. Only provided "
+"fields will be updated. Email field is read-only."
+msgstr ""
+"Delvis uppdatera den autentiserade användarens profilinformation. Endast "
+"angivna fält kommer att uppdateras. E-postfältet är skrivskyddat."
+
+#: auth_kit/forms.py:78
+msgid "The email address is not assigned to any user account."
+msgstr "E-postadressen är inte tilldelad till något användarkonto."
+
+#: auth_kit/mfa/exceptions.py:27
+msgid "Requested MFA method does not exist."
+msgstr "Begärd MFA-metod existerar inte."
+
+#: auth_kit/mfa/handlers/email.py:29
+msgid "Email message with MFA code has been sent."
+msgstr "E-postmeddelande med MFA-kod har skickats."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:28
+#, python-format
+msgid "MFA code expires in %(seconds)s seconds."
+msgstr "MFA-kod går ut om %(seconds)s sekunder."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:36
+msgid ""
+"First step of MFA-enabled authentication. Validates credentials and "
+"initiates MFA flow."
+msgstr ""
+"Första steget av MFA-aktiverad autentisering. Validerar referenser och "
+"initierar MFA-flöde."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:41
+#, python-format
+msgid ""
+"Returns ephemeral token for MFA verification or complete %(auth_tokens)s if "
+"MFA is disabled."
+msgstr ""
+"Returnerar tillfällig token för MFA-verifiering eller kompletta %(auth_tokens)s om "
+"MFA är inaktiverad."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:51
+msgid ""
+"Complete MFA authentication using verification code and ephemeral token."
+msgstr ""
+"Slutför MFA-autentisering med hjälp av verifieringskod och tillfällig token."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:56
+msgid "Supports both TOTP codes and backup codes for verification."
+msgstr "Stöder både TOTP-koder och reservkoder för verifiering."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:68
+msgid "Switch to a different MFA method during authentication flow."
+msgstr "Byt till en annan MFA-metod under autentiseringsflödet."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:70
+msgid "Requires valid ephemeral token from first step authentication."
+msgstr "Kräver giltig tillfällig token från första steget autentisering."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:72
+#: auth_kit/mfa/mfa_api_descriptions.py:87
+#, python-format
+msgid "New ephemeral token expires in %(seconds)s seconds."
+msgstr "Ny tillfällig token går ut om %(seconds)s sekunder."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:81
+msgid "Resend MFA verification code using existing ephemeral token."
+msgstr "Skicka MFA-verifieringskod igen med befintlig tillfällig token."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:84
+msgid "Only applicable for methods that require code dispatch (e.g., email)."
+msgstr "Gäller endast för metoder som kräver kodsändning (t.ex. e-post)."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:96
+msgid ""
+"List all available MFA methods with their setup and activation status. Shows "
+"which methods are configured, active, and set as primary."
+msgstr ""
+"Lista alla tillgängliga MFA-metoder med deras inställnings- och aktiveringsstatus. "
+"Visar vilka metoder som är konfigurerade, aktiva och inställda som primära."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:101
+msgid ""
+"Initialize a new MFA method setup. Creates the method with backup codes and "
+"returns setup instructions (e.g., QR code for authenticator apps). Method "
+"must be confirmed before activation."
+msgstr ""
+"Initialisera en ny MFA-metodinställning. Skapar metoden med reservkoder och "
+"returnerar inställningsinstruktioner (t.ex. QR-kod för autentiseringsappar). "
+"Metoden måste bekräftas före aktivering."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:107
+msgid ""
+"Confirm and activate a newly created MFA method using verification code. "
+"Automatically sets as primary method if no other primary method exists. "
+"Required before the method can be used for authentication."
+msgstr ""
+"Bekräfta och aktivera en nyligen skapad MFA-metod med hjälp av verifieringskod. "
+"Ställs automatiskt in som primär metod om ingen annan primär metod existerar. "
+"Krävs innan metoden kan användas för autentisering."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:113
+msgid ""
+"Deactivate an active MFA method. Requires verification code from the method "
+"itself. Cannot deactivate primary methods - set another method as primary "
+"first."
+msgstr ""
+"Inaktivera en aktiv MFA-metod. Kräver verifieringskod från metoden själv. "
+"Kan inte inaktivera primära metoder - ställ in en annan metod som primär först."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:121
+msgid ""
+"Set an active MFA method as the primary authentication method. Primary "
+"method is used by default during login flow."
+msgstr ""
+"Ställ in en aktiv MFA-metod som den primära autentiseringsmetoden. Primär "
+"metod används som standard under inloggningsflödet."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:125
+msgid "Only one method can be primary at a time."
+msgstr "Endast en metod kan vara primär åt gången."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:128
+msgid "Requires verification code from current primary method."
+msgstr "Kräver verifieringskod från nuvarande primära metod."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:135
+msgid ""
+"Send verification code for methods that support code dispatch. Useful for "
+"testing method configuration or manual code requests."
+msgstr ""
+"Skicka verifieringskod för metoder som stöder kodsändning. Användbart för "
+"testning av metodkonfiguration eller manuella kodförfrågningar."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:142
+msgid "Permanently delete an MFA method."
+msgstr "Radera en MFA-metod permanent."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:143
+msgid "This action cannot be undone."
+msgstr "Denna åtgärd kan inte ångras."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:148
+msgid "Cannot delete active methods."
+msgstr "Kan inte radera aktiva metoder."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:151
+msgid "Cannot delete primary methods."
+msgstr "Kan inte radera primära metoder."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:154
+msgid "Requires verification code for active methods."
+msgstr "Kräver verifieringskod för aktiva metoder."
+
+#: auth_kit/mfa/models.py:158
+msgid "user"
+msgstr "användare"
+
+#: auth_kit/mfa/models.py:161
+msgid "name"
+msgstr "namn"
+
+#: auth_kit/mfa/models.py:162
+msgid "secret"
+msgstr "hemlighet"
+
+#: auth_kit/mfa/models.py:163
+msgid "is primary"
+msgstr "är primär"
+
+#: auth_kit/mfa/models.py:164
+msgid "is active"
+msgstr "är aktiv"
+
+#: auth_kit/mfa/models.py:165
+msgid "backup codes"
+msgstr "reservkoder"
+
+#: auth_kit/mfa/models.py:170
+msgid "MFA Method"
+msgstr "MFA-metod"
+
+#: auth_kit/mfa/models.py:171
+msgid "MFA Methods"
+msgstr "MFA-metoder"
+
+#: auth_kit/mfa/serializers/login_factors.py:230
+msgid "Please select a new method"
+msgstr "Vänligen välj en ny metod"
+
+#: auth_kit/mfa/serializers/mfa.py:145 auth_kit/mfa/serializers/mfa.py:200
+#: auth_kit/mfa/serializers/mfa.py:345
+msgid "Invalid OTP code"
+msgstr "Ogiltig OTP-kod"
+
+#: auth_kit/mfa/serializers/mfa.py:155
+msgid "Activated MFA method"
+msgstr "Aktiverad MFA-metod"
+
+#: auth_kit/mfa/serializers/mfa.py:194
+msgid "You can only deactivate non-primary MFA method."
+msgstr "Du kan bara inaktivera icke-primär MFA-metod."
+
+#: auth_kit/mfa/serializers/mfa.py:206
+msgid "Deactivated MFA method"
+msgstr "Inaktiverad MFA-metod"
+
+#: auth_kit/mfa/serializers/mfa.py:262
+msgid "Invalid primary method code"
+msgstr "Ogiltig primär metodkod"
+
+#: auth_kit/mfa/serializers/mfa.py:275
+msgid "Updated primary MFA method"
+msgstr "Uppdaterad primär MFA-metod"
+
+#: auth_kit/mfa/serializers/mfa.py:330
+msgid "Cannot delete active MFA method"
+msgstr "Kan inte radera aktiv MFA-metod"
+
+#: auth_kit/mfa/serializers/mfa.py:336
+msgid "Cannot delete primary MFA method"
+msgstr "Kan inte radera primär MFA-metod"
+
+#: auth_kit/mfa/serializers/mfa.py:350
+msgid "Method does not exist"
+msgstr "Metoden existerar inte"
+
+#: auth_kit/mfa/serializers/mfa.py:352
+msgid "Deleted MFA method"
+msgstr "Raderad MFA-metod"
+
+#: auth_kit/mfa/serializers/mfa.py:392
+msgid "MFA code sent"
+msgstr "MFA-kod skickad"
+
+#: auth_kit/serializers/jwt.py:33
+msgid "Will override cookie."
+msgstr "Kommer att åsidosätta cookie."
+
+#: auth_kit/serializers/jwt.py:70
+msgid "No valid refresh token found."
+msgstr "Ingen giltig uppdateringstoken hittades."
+
+#: auth_kit/serializers/login_factors.py:124
+msgid "E-mail is not verified."
+msgstr "E-post är inte verifierad."
+
+#: auth_kit/serializers/login_factors.py:146
+msgid "Unable to log in with provided credentials."
+msgstr "Kan inte logga in med angivna referenser."
+
+#: auth_kit/serializers/password.py:137 auth_kit/serializers/password.py:140
+msgid "Invalid value"
+msgstr "Ogiltigt värde"
+
+#: auth_kit/serializers/password.py:220
+msgid "Your old password was entered incorrectly. Please enter it again."
+msgstr "Ditt gamla lösenord angavs felaktigt. Vänligen ange det igen."
+
+#: auth_kit/serializers/registration.py:88
+msgid "A user is already registered with this e-mail address."
+msgstr "En användare är redan registrerad med denna e-postadress."
+
+#: auth_kit/serializers/registration.py:119
+msgid "The two password fields didn't match."
+msgstr "De två lösenordsfälten stämde inte överens."
+
+#: auth_kit/social/serializers/connect.py:55
+msgid "Social account email must match your current account email."
+msgstr "E-post för socialt konto måste matcha din nuvarande kontos e-post."
+
+#: auth_kit/social/serializers/connect.py:98
+msgid "Connected"
+msgstr "Ansluten"
+
+#: auth_kit/social/serializers/login.py:82
+msgid "Failed to complete OAuth flow"
+msgstr "Misslyckades att slutföra OAuth-flöde"
+
+#: auth_kit/social/serializers/login.py:117
+msgid "User is already registered with this e-mail address."
+msgstr "Användare är redan registrerad med denna e-postadress."
+
+#: auth_kit/social/serializers/login.py:296
+msgid "Failed to exchange code for access token"
+msgstr "Misslyckades att växla kod mot åtkomsttoken"
+
+#: auth_kit/social/views/login.py:50
+msgid "adapter_class is not defined"
+msgstr "adapter_class är inte definierad"
+
+#: auth_kit/views/logout.py:111
+msgid "Refresh token was not included in cookie data."
+msgstr "Uppdateringstoken var inte inkluderad i cookiedata."
+
+#: auth_kit/views/logout.py:121
+msgid "Refresh token was not included in request data."
+msgstr "Uppdateringstoken var inte inkluderad i förfrågningsdata."
+
+#: auth_kit/views/logout.py:132
+msgid "An error has occurred."
+msgstr "Ett fel har uppstått."
+
+#: auth_kit/views/logout.py:149
+msgid "Successfully logged out."
+msgstr "Framgångsrikt utloggad."
+
+#: auth_kit/views/password.py:64
+msgid "Password reset e-mail has been sent."
+msgstr "E-post för lösenordsåterställning har skickats."
+
+#: auth_kit/views/password.py:111
+msgid "Password has been reset with the new password."
+msgstr "Lösenordet har återställts med det nya lösenordet."
+
+#: auth_kit/views/password.py:156
+msgid "New password has been saved."
+msgstr "Nytt lösenord har sparats."
+
+#: auth_kit/views/registration.py:142
+msgid "Verification e-mail sent."
+msgstr "Verifierings-e-post skickad."
+
+#: auth_kit/views/registration.py:143
+msgid "Successfully registered."
+msgstr "Framgångsrikt registrerad."
+
+#: auth_kit/views/registration.py:223 auth_kit/views/registration.py:268
+msgid "ok"
+msgstr "ok"
+
+#: sandbox_extras/custom_username/accounts/admin.py:11
+#: sandbox_extras/email_user/accounts/admin.py:11
+msgid "Personal info"
+msgstr "Personlig information"
+
+#: sandbox_extras/custom_username/accounts/admin.py:13
+#: sandbox_extras/email_user/accounts/admin.py:13
+msgid "Permissions"
+msgstr "Behörigheter"
+
+#: sandbox_extras/custom_username/accounts/admin.py:24
+#: sandbox_extras/email_user/accounts/admin.py:24
+msgid "Important dates"
+msgstr "Viktiga datum"

@@ -1,0 +1,472 @@
+# Chinese translation for DRF Auth Kit
+# Copyright (C) 2025 DRF Auth Kit Contributors
+# This file is distributed under the same license as the DRF Auth Kit package.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: DRF Auth Kit\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-08 06:02+0000\n"
+"PO-Revision-Date: 2025-07-09 00:00+0000\n"
+"Last-Translator: DRF Auth Kit Team\n"
+"Language-Team: Chinese\n"
+"Language: zh\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: auth_kit/api_descriptions.py:25
+msgid ""
+"Returns user details along with JWT access and refresh tokens with "
+"expiration times."
+msgstr "返回用户详情以及带有过期时间的JWT访问和刷新令牌。"
+
+#: auth_kit/api_descriptions.py:29
+msgid ""
+"Returns user details along with a DRF authentication token for API access."
+msgstr "返回用户详情以及用于API访问的DRF身份验证令牌。"
+
+#: auth_kit/api_descriptions.py:32
+msgid "Returns user details along with custom authentication tokens."
+msgstr "返回用户详情以及自定义身份验证令牌。"
+
+#: auth_kit/api_descriptions.py:38
+msgid "JWT access and refresh tokens"
+msgstr "JWT访问和刷新令牌"
+
+#: auth_kit/api_descriptions.py:40
+msgid "DRF authentication token"
+msgstr "DRF身份验证令牌"
+
+#: auth_kit/api_descriptions.py:42
+msgid "custom authentication tokens"
+msgstr "自定义身份验证令牌"
+
+#: auth_kit/api_descriptions.py:49
+msgid "Authentication cookies are set automatically for secure token storage."
+msgstr "身份验证cookie会自动设置以安全存储令牌。"
+
+#: auth_kit/api_descriptions.py:57
+msgid "Blacklists JWT refresh tokens to prevent further use."
+msgstr "将JWT刷新令牌列入黑名单以防止进一步使用。"
+
+#: auth_kit/api_descriptions.py:59
+msgid "Deletes the DRF authentication token from the database."
+msgstr "从数据库中删除DRF身份验证令牌。"
+
+#: auth_kit/api_descriptions.py:61
+msgid "Invalidates custom authentication tokens."
+msgstr "使自定义身份验证令牌失效。"
+
+#: auth_kit/api_descriptions.py:67
+msgid "Clears authentication cookies from the browser."
+msgstr "从浏览器中清除身份验证cookie。"
+
+#: auth_kit/api_descriptions.py:73
+msgid "Authenticate with username/email and password to obtain access tokens."
+msgstr "使用用户名/邮箱和密码进行身份验证以获取访问令牌。"
+
+#: auth_kit/api_descriptions.py:85
+msgid "Logout user and invalidate authentication tokens."
+msgstr "注销用户并使身份验证令牌失效。"
+
+#: auth_kit/api_descriptions.py:89
+msgid ""
+"Requires authentication to ensure only valid sessions can be logged out."
+msgstr "需要身份验证以确保只有有效会话才能注销。"
+
+#: auth_kit/api_descriptions.py:100
+msgid "Generate new JWT access tokens using refresh tokens."
+msgstr "使用刷新令牌生成新的JWT访问令牌。"
+
+#: auth_kit/api_descriptions.py:104
+msgid ""
+"Refresh tokens can be provided in request data or extracted automatically "
+"from HTTP cookies."
+msgstr "刷新令牌可以在请求数据中提供或从HTTP cookie中自动提取。"
+
+#: auth_kit/api_descriptions.py:106 auth_kit/api_descriptions.py:116
+msgid "Returns new access tokens with updated expiration times."
+msgstr "返回具有更新过期时间的新访问令牌。"
+
+#: auth_kit/api_descriptions.py:108
+msgid "New tokens are automatically set in HTTP cookies for secure storage."
+msgstr "新令牌会自动设置在HTTP cookie中以安全存储。"
+
+#: auth_kit/api_descriptions.py:115
+msgid "Refresh tokens must be provided in the request data."
+msgstr "必须在请求数据中提供刷新令牌。"
+
+#: auth_kit/api_descriptions.py:122
+msgid "Register a new user account."
+msgstr "注册新用户账户。"
+
+#: auth_kit/api_descriptions.py:126
+msgid ""
+"Send password reset instructions to the provided email address. If the email "
+"is registered, a secure reset link will be sent. The link expires after a "
+"limited time for security."
+msgstr "向提供的邮箱地址发送密码重置说明。如果邮箱已注册，将发送安全的重置链接。出于安全考虑，链接将在有限时间后过期。"
+
+#: auth_kit/api_descriptions.py:132
+msgid ""
+"Complete the password reset process using the token from the reset email. "
+"Requires the UID and token from the email along with the new password. The "
+"token is single-use and expires for security."
+msgstr "使用重置邮件中的令牌完成密码重置过程。需要邮件中的UID和令牌以及新密码。出于安全考虑，令牌为一次性使用并会过期。"
+
+#: auth_kit/api_descriptions.py:138
+msgid "Change the current user's password. Requires authentication. "
+msgstr "更改当前用户的密码。需要身份验证。 "
+
+#: auth_kit/api_descriptions.py:142
+msgid ""
+"Confirm email address using the verification key sent via email. This "
+"activates the user account and allows login access."
+msgstr "使用通过邮件发送的验证密钥确认邮箱地址。这将激活用户账户并允许登录访问。"
+
+#: auth_kit/api_descriptions.py:147
+msgid ""
+"Send a new email verification message to unverified email addresses. Only "
+"works for email addresses that are registered but not yet verified."
+msgstr "向未验证的邮箱地址发送新的邮箱验证消息。仅适用于已注册但尚未验证的邮箱地址。"
+
+#: auth_kit/api_descriptions.py:152
+msgid ""
+"Retrieve the authenticated user's profile information including username, "
+"email, first name, and last name. Password fields are excluded."
+msgstr "获取已身份验证用户的资料信息，包括用户名、邮箱、名字和姓氏。密码字段被排除。"
+
+#: auth_kit/api_descriptions.py:157
+msgid ""
+"Update the authenticated user's profile information. Allows modification of "
+"username, first name, and last name. Email field is read-only for security."
+msgstr "更新已身份验证用户的资料信息。允许修改用户名、名字和姓氏。出于安全考虑，邮箱字段为只读。"
+
+#: auth_kit/api_descriptions.py:163
+msgid ""
+"Partially update the authenticated user's profile information. Only provided "
+"fields will be updated. Email field is read-only."
+msgstr "部分更新已身份验证用户的资料信息。仅更新提供的字段。邮箱字段为只读。"
+
+#: auth_kit/forms.py:78
+msgid "The email address is not assigned to any user account."
+msgstr "该邮箱地址未分配给任何用户账户。"
+
+#: auth_kit/mfa/exceptions.py:27
+msgid "Requested MFA method does not exist."
+msgstr "请求的MFA方法不存在。"
+
+#: auth_kit/mfa/handlers/email.py:29
+msgid "Email message with MFA code has been sent."
+msgstr "包含MFA代码的邮件已发送。"
+
+#: auth_kit/mfa/mfa_api_descriptions.py:28
+#, python-format
+msgid "MFA code expires in %(seconds)s seconds."
+msgstr "MFA代码将在%(seconds)s秒后过期。"
+
+#: auth_kit/mfa/mfa_api_descriptions.py:36
+msgid ""
+"First step of MFA-enabled authentication. Validates credentials and "
+"initiates MFA flow."
+msgstr "启用MFA身份验证的第一步。验证凭据并启动MFA流程。"
+
+#: auth_kit/mfa/mfa_api_descriptions.py:41
+#, python-format
+msgid ""
+"Returns ephemeral token for MFA verification or complete %(auth_tokens)s if "
+"MFA is disabled."
+msgstr "返回MFA验证的临时令牌，或在MFA禁用时返回完整的%(auth_tokens)s。"
+
+#: auth_kit/mfa/mfa_api_descriptions.py:51
+msgid ""
+"Complete MFA authentication using verification code and ephemeral token."
+msgstr "使用验证码和临时令牌完成MFA身份验证。"
+
+#: auth_kit/mfa/mfa_api_descriptions.py:56
+msgid "Supports both TOTP codes and backup codes for verification."
+msgstr "支持TOTP码和备份码进行验证。"
+
+#: auth_kit/mfa/mfa_api_descriptions.py:68
+msgid "Switch to a different MFA method during authentication flow."
+msgstr "在身份验证流程中切换到不同的MFA方法。"
+
+#: auth_kit/mfa/mfa_api_descriptions.py:70
+msgid "Requires valid ephemeral token from first step authentication."
+msgstr "需要来自第一步身份验证的有效临时令牌。"
+
+#: auth_kit/mfa/mfa_api_descriptions.py:72
+#: auth_kit/mfa/mfa_api_descriptions.py:87
+#, python-format
+msgid "New ephemeral token expires in %(seconds)s seconds."
+msgstr "新的临时令牌将在%(seconds)s秒后过期。"
+
+#: auth_kit/mfa/mfa_api_descriptions.py:81
+msgid "Resend MFA verification code using existing ephemeral token."
+msgstr "使用现有的临时令牌重新发送MFA验证码。"
+
+#: auth_kit/mfa/mfa_api_descriptions.py:84
+msgid "Only applicable for methods that require code dispatch (e.g., email)."
+msgstr "仅适用于需要代码分发的方法（如邮箱）。"
+
+#: auth_kit/mfa/mfa_api_descriptions.py:96
+msgid ""
+"List all available MFA methods with their setup and activation status. Shows "
+"which methods are configured, active, and set as primary."
+msgstr "列出所有可用的MFA方法及其设置和激活状态。显示哪些方法已配置、激活并设置为主要方法。"
+
+#: auth_kit/mfa/mfa_api_descriptions.py:101
+msgid ""
+"Initialize a new MFA method setup. Creates the method with backup codes and "
+"returns setup instructions (e.g., QR code for authenticator apps). Method "
+"must be confirmed before activation."
+msgstr "初始化新的MFA方法设置。创建带有备份码的方法并返回设置说明（如验证器应用的二维码）。激活前必须确认方法。"
+
+#: auth_kit/mfa/mfa_api_descriptions.py:107
+msgid ""
+"Confirm and activate a newly created MFA method using verification code. "
+"Automatically sets as primary method if no other primary method exists. "
+"Required before the method can be used for authentication."
+msgstr "使用验证码确认并激活新创建的MFA方法。如果不存在其他主要方法，则自动设置为主要方法。在用于身份验证之前必须执行。"
+
+#: auth_kit/mfa/mfa_api_descriptions.py:113
+msgid ""
+"Deactivate an active MFA method. Requires verification code from the method "
+"itself. Cannot deactivate primary methods - set another method as primary "
+"first."
+msgstr "停用活跃的MFA方法。需要来自方法本身的验证码。无法停用主要方法 - 请先将其他方法设置为主要方法。"
+
+#: auth_kit/mfa/mfa_api_descriptions.py:121
+msgid ""
+"Set an active MFA method as the primary authentication method. Primary "
+"method is used by default during login flow."
+msgstr "将活跃的MFA方法设置为主要身份验证方法。在登录流程中默认使用主要方法。"
+
+#: auth_kit/mfa/mfa_api_descriptions.py:125
+msgid "Only one method can be primary at a time."
+msgstr "一次只能有一个方法为主要方法。"
+
+#: auth_kit/mfa/mfa_api_descriptions.py:128
+msgid "Requires verification code from current primary method."
+msgstr "需要来自当前主要方法的验证码。"
+
+#: auth_kit/mfa/mfa_api_descriptions.py:135
+msgid ""
+"Send verification code for methods that support code dispatch. Useful for "
+"testing method configuration or manual code requests."
+msgstr "为支持代码分发的方法发送验证码。用于测试方法配置或手动代码请求。"
+
+#: auth_kit/mfa/mfa_api_descriptions.py:142
+msgid "Permanently delete an MFA method."
+msgstr "永久删除MFA方法。"
+
+#: auth_kit/mfa/mfa_api_descriptions.py:143
+msgid "This action cannot be undone."
+msgstr "此操作无法撤销。"
+
+#: auth_kit/mfa/mfa_api_descriptions.py:148
+msgid "Cannot delete active methods."
+msgstr "无法删除活跃的方法。"
+
+#: auth_kit/mfa/mfa_api_descriptions.py:151
+msgid "Cannot delete primary methods."
+msgstr "无法删除主要方法。"
+
+#: auth_kit/mfa/mfa_api_descriptions.py:154
+msgid "Requires verification code for active methods."
+msgstr "活跃方法需要验证码。"
+
+#: auth_kit/mfa/models.py:158
+msgid "user"
+msgstr "用户"
+
+#: auth_kit/mfa/models.py:161
+msgid "name"
+msgstr "名称"
+
+#: auth_kit/mfa/models.py:162
+msgid "secret"
+msgstr "密钥"
+
+#: auth_kit/mfa/models.py:163
+msgid "is primary"
+msgstr "是主要的"
+
+#: auth_kit/mfa/models.py:164
+msgid "is active"
+msgstr "是活跃的"
+
+#: auth_kit/mfa/models.py:165
+msgid "backup codes"
+msgstr "备份代码"
+
+#: auth_kit/mfa/models.py:170
+msgid "MFA Method"
+msgstr "MFA方法"
+
+#: auth_kit/mfa/models.py:171
+msgid "MFA Methods"
+msgstr "MFA方法"
+
+#: auth_kit/mfa/serializers/login_factors.py:230
+msgid "Please select a new method"
+msgstr "请选择新方法"
+
+#: auth_kit/mfa/serializers/mfa.py:145 auth_kit/mfa/serializers/mfa.py:200
+#: auth_kit/mfa/serializers/mfa.py:345
+msgid "Invalid OTP code"
+msgstr "无效的OTP代码"
+
+#: auth_kit/mfa/serializers/mfa.py:155
+msgid "Activated MFA method"
+msgstr "已激活MFA方法"
+
+#: auth_kit/mfa/serializers/mfa.py:194
+msgid "You can only deactivate non-primary MFA method."
+msgstr "您只能停用非主要MFA方法。"
+
+#: auth_kit/mfa/serializers/mfa.py:206
+msgid "Deactivated MFA method"
+msgstr "已停用MFA方法"
+
+#: auth_kit/mfa/serializers/mfa.py:262
+msgid "Invalid primary method code"
+msgstr "无效的主要方法代码"
+
+#: auth_kit/mfa/serializers/mfa.py:275
+msgid "Updated primary MFA method"
+msgstr "已更新主要MFA方法"
+
+#: auth_kit/mfa/serializers/mfa.py:330
+msgid "Cannot delete active MFA method"
+msgstr "无法删除活跃的MFA方法"
+
+#: auth_kit/mfa/serializers/mfa.py:336
+msgid "Cannot delete primary MFA method"
+msgstr "无法删除主要MFA方法"
+
+#: auth_kit/mfa/serializers/mfa.py:350
+msgid "Method does not exist"
+msgstr "方法不存在"
+
+#: auth_kit/mfa/serializers/mfa.py:352
+msgid "Deleted MFA method"
+msgstr "已删除MFA方法"
+
+#: auth_kit/mfa/serializers/mfa.py:392
+msgid "MFA code sent"
+msgstr "MFA代码已发送"
+
+#: auth_kit/serializers/jwt.py:33
+msgid "Will override cookie."
+msgstr "将覆盖cookie。"
+
+#: auth_kit/serializers/jwt.py:70
+msgid "No valid refresh token found."
+msgstr "未找到有效的刷新令牌。"
+
+#: auth_kit/serializers/login_factors.py:124
+msgid "E-mail is not verified."
+msgstr "邮箱未验证。"
+
+#: auth_kit/serializers/login_factors.py:146
+msgid "Unable to log in with provided credentials."
+msgstr "无法使用提供的凭据登录。"
+
+#: auth_kit/serializers/password.py:137 auth_kit/serializers/password.py:140
+msgid "Invalid value"
+msgstr "无效值"
+
+#: auth_kit/serializers/password.py:220
+msgid "Your old password was entered incorrectly. Please enter it again."
+msgstr "您的旧密码输入错误。请重新输入。"
+
+#: auth_kit/serializers/registration.py:88
+msgid "A user is already registered with this e-mail address."
+msgstr "该邮箱地址已注册用户。"
+
+#: auth_kit/serializers/registration.py:119
+msgid "The two password fields didn't match."
+msgstr "两个密码字段不匹配。"
+
+#: auth_kit/social/serializers/connect.py:55
+msgid "Social account email must match your current account email."
+msgstr "社交账户邮箱必须与您当前账户邮箱匹配。"
+
+#: auth_kit/social/serializers/connect.py:98
+msgid "Connected"
+msgstr "已连接"
+
+#: auth_kit/social/serializers/login.py:82
+msgid "Failed to complete OAuth flow"
+msgstr "无法完成OAuth流程"
+
+#: auth_kit/social/serializers/login.py:117
+msgid "User is already registered with this e-mail address."
+msgstr "用户已使用此邮箱地址注册。"
+
+#: auth_kit/social/serializers/login.py:296
+msgid "Failed to exchange code for access token"
+msgstr "无法交换代码获取访问令牌"
+
+#: auth_kit/social/views/login.py:50
+msgid "adapter_class is not defined"
+msgstr "adapter_class未定义"
+
+#: auth_kit/views/logout.py:111
+msgid "Refresh token was not included in cookie data."
+msgstr "刷新令牌未包含在cookie数据中。"
+
+#: auth_kit/views/logout.py:121
+msgid "Refresh token was not included in request data."
+msgstr "刷新令牌未包含在请求数据中。"
+
+#: auth_kit/views/logout.py:132
+msgid "An error has occurred."
+msgstr "发生了错误。"
+
+#: auth_kit/views/logout.py:149
+msgid "Successfully logged out."
+msgstr "成功注销。"
+
+#: auth_kit/views/password.py:64
+msgid "Password reset e-mail has been sent."
+msgstr "密码重置邮件已发送。"
+
+#: auth_kit/views/password.py:111
+msgid "Password has been reset with the new password."
+msgstr "密码已使用新密码重置。"
+
+#: auth_kit/views/password.py:156
+msgid "New password has been saved."
+msgstr "新密码已保存。"
+
+#: auth_kit/views/registration.py:142
+msgid "Verification e-mail sent."
+msgstr "验证邮件已发送。"
+
+#: auth_kit/views/registration.py:143
+msgid "Successfully registered."
+msgstr "成功注册。"
+
+#: auth_kit/views/registration.py:223 auth_kit/views/registration.py:268
+msgid "ok"
+msgstr "确定"
+
+#: sandbox_extras/custom_username/accounts/admin.py:11
+#: sandbox_extras/email_user/accounts/admin.py:11
+msgid "Personal info"
+msgstr "个人信息"
+
+#: sandbox_extras/custom_username/accounts/admin.py:13
+#: sandbox_extras/email_user/accounts/admin.py:13
+msgid "Permissions"
+msgstr "权限"
+
+#: sandbox_extras/custom_username/accounts/admin.py:24
+#: sandbox_extras/email_user/accounts/admin.py:24
+msgid "Important dates"
+msgstr "重要日期"

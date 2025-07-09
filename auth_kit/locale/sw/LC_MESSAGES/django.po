@@ -1,0 +1,515 @@
+# Swahili translation for DRF Auth Kit
+# Copyright (C) 2025 DRF Auth Kit Contributors
+# This file is distributed under the same license as the DRF Auth Kit package.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: DRF Auth Kit\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-08 06:02+0000\n"
+"PO-Revision-Date: 2025-07-08 06:02+0000\n"
+"Last-Translator: DRF Auth Kit Team\n"
+"Language-Team: Swahili\n"
+"Language: sw\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: auth_kit/api_descriptions.py:25
+msgid ""
+"Returns user details along with JWT access and refresh tokens with "
+"expiration times."
+msgstr ""
+"Inarudisha maelezo ya mtumiaji pamoja na alama za JWT za ufikiaji na ubugarizi "
+"pamoja na muda wa kumalizika."
+
+#: auth_kit/api_descriptions.py:29
+msgid ""
+"Returns user details along with a DRF authentication token for API access."
+msgstr ""
+"Inarudisha maelezo ya mtumiaji pamoja na alama ya uthibitishaji ya DRF kwa ufikiaji wa API."
+
+#: auth_kit/api_descriptions.py:32
+msgid "Returns user details along with custom authentication tokens."
+msgstr "Inarudisha maelezo ya mtumiaji pamoja na alama za uthibitishaji za kawaida."
+
+#: auth_kit/api_descriptions.py:38
+msgid "JWT access and refresh tokens"
+msgstr "Alama za ufikiaji na ubugarizi za JWT"
+
+#: auth_kit/api_descriptions.py:40
+msgid "DRF authentication token"
+msgstr "Alama ya uthibitishaji ya DRF"
+
+#: auth_kit/api_descriptions.py:42
+msgid "custom authentication tokens"
+msgstr "alama za uthibitishaji za kawaida"
+
+#: auth_kit/api_descriptions.py:49
+msgid "Authentication cookies are set automatically for secure token storage."
+msgstr "Vidakuzi vya uthibitishaji vinawekwa kiotomatiki kwa kuhifadhi alama kwa usalama."
+
+#: auth_kit/api_descriptions.py:57
+msgid "Blacklists JWT refresh tokens to prevent further use."
+msgstr "Inaweka alama za ubugarizi za JWT kwenye orodha nyeusi ili kuzuia matumizi zaidi."
+
+#: auth_kit/api_descriptions.py:59
+msgid "Deletes the DRF authentication token from the database."
+msgstr "Inafuta alama ya uthibitishaji ya DRF kutoka kwenye hifadhidata."
+
+#: auth_kit/api_descriptions.py:61
+msgid "Invalidates custom authentication tokens."
+msgstr "Inabatilisha alama za uthibitishaji za kawaida."
+
+#: auth_kit/api_descriptions.py:67
+msgid "Clears authentication cookies from the browser."
+msgstr "Inafuta vidakuzi vya uthibitishaji kutoka kwenye kivinjari."
+
+#: auth_kit/api_descriptions.py:73
+msgid "Authenticate with username/email and password to obtain access tokens."
+msgstr "Thibitisha kwa jina la mtumiaji/barua pepe na nenosiri ili kupata alama za ufikiaji."
+
+#: auth_kit/api_descriptions.py:85
+msgid "Logout user and invalidate authentication tokens."
+msgstr "Inaitoa mtumiaji na kubatilisha alama za uthibitishaji."
+
+#: auth_kit/api_descriptions.py:89
+msgid ""
+"Requires authentication to ensure only valid sessions can be logged out."
+msgstr ""
+"Inahitaji uthibitishaji ili kuhakikisha kwamba ni vikao halali tu vinavyoweza kutolewa."
+
+#: auth_kit/api_descriptions.py:100
+msgid "Generate new JWT access tokens using refresh tokens."
+msgstr "Inazalisha alama mpya za ufikiaji za JWT kwa kutumia alama za ubugarizi."
+
+#: auth_kit/api_descriptions.py:104
+msgid ""
+"Refresh tokens can be provided in request data or extracted automatically "
+"from HTTP cookies."
+msgstr ""
+"Alama za ubugarizi zinaweza kutolewa katika data ya ombi au kutolewa kiotomatiki "
+"kutoka kwenye vidakuzi vya HTTP."
+
+#: auth_kit/api_descriptions.py:106 auth_kit/api_descriptions.py:116
+msgid "Returns new access tokens with updated expiration times."
+msgstr "Inarudisha alama mpya za ufikiaji zilizo na muda mpya wa kumalizika."
+
+#: auth_kit/api_descriptions.py:108
+msgid "New tokens are automatically set in HTTP cookies for secure storage."
+msgstr "Alama mpya zinawekwa kiotomatiki katika vidakuzi vya HTTP kwa kuhifadhi kwa usalama."
+
+#: auth_kit/api_descriptions.py:115
+msgid "Refresh tokens must be provided in the request data."
+msgstr "Alama za ubugarizi lazima zitolewe katika data ya ombi."
+
+#: auth_kit/api_descriptions.py:122
+msgid "Register a new user account."
+msgstr "Inasajili akaunti mpya ya mtumiaji."
+
+#: auth_kit/api_descriptions.py:126
+msgid ""
+"Send password reset instructions to the provided email address. If the email "
+"is registered, a secure reset link will be sent. The link expires after a "
+"limited time for security."
+msgstr ""
+"Inatuma maagizo ya kuweka upya nenosiri kwenye anwani ya barua pepe iliyotolewa. "
+"Ikiwa barua pepe imesajiliwa, kiungo cha usalama cha kuweka upya kitatumwa. "
+"Kiungo kinakwisha baada ya muda mchache kwa usalama."
+
+#: auth_kit/api_descriptions.py:132
+msgid ""
+"Complete the password reset process using the token from the reset email. "
+"Requires the UID and token from the email along with the new password. The "
+"token is single-use and expires for security."
+msgstr ""
+"Inamalizia mchakato wa kuweka upya nenosiri kwa kutumia alama kutoka kwenye barua "
+"pepe ya kuweka upya. Inahitaji UID na alama kutoka kwenye barua pepe pamoja na "
+"nenosiri jipya. Alama ni ya matumizi moja na inakwisha kwa usalama."
+
+#: auth_kit/api_descriptions.py:138
+msgid "Change the current user's password. Requires authentication. "
+msgstr "Inabadilisha nenosiri la mtumiaji wa sasa. Inahitaji uthibitishaji. "
+
+#: auth_kit/api_descriptions.py:142
+msgid ""
+"Confirm email address using the verification key sent via email. This "
+"activates the user account and allows login access."
+msgstr ""
+"Inathibitisha anwani ya barua pepe kwa kutumia ufunguo wa uthibitishaji uliotumwa "
+"kupitia barua pepe. Hii inaamilisha akaunti ya mtumiaji na kuruhusu ufikiaji wa kuingia."
+
+#: auth_kit/api_descriptions.py:147
+msgid ""
+"Send a new email verification message to unverified email addresses. Only "
+"works for email addresses that are registered but not yet verified."
+msgstr ""
+"Inatuma ujumbe mpya wa uthibitishaji wa barua pepe kwa anwani za barua pepe "
+"ambazo hazijathibitishwa. Inafanya kazi tu kwa anwani za barua pepe ambazo "
+"zimesajiliwa lakini bado hazijathibitishwa."
+
+#: auth_kit/api_descriptions.py:152
+msgid ""
+"Retrieve the authenticated user's profile information including username, "
+"email, first name, and last name. Password fields are excluded."
+msgstr ""
+"Inapata taarifa za profaili ya mtumiaji aliyethibitishwa ikijumuisha jina la "
+"mtumiaji, barua pepe, jina la kwanza, na jina la mwisho. Uwanda wa nenosiri haujaambatishwa."
+
+#: auth_kit/api_descriptions.py:157
+msgid ""
+"Update the authenticated user's profile information. Allows modification of "
+"username, first name, and last name. Email field is read-only for security."
+msgstr ""
+"Inasasisha taarifa za profaili ya mtumiaji aliyethibitishwa. Inaruhusu urekebishaji "
+"wa jina la mtumiaji, jina la kwanza, na jina la mwisho. Uwanda wa barua pepe "
+"ni wa kusoma tu kwa usalama."
+
+#: auth_kit/api_descriptions.py:163
+msgid ""
+"Partially update the authenticated user's profile information. Only provided "
+"fields will be updated. Email field is read-only."
+msgstr ""
+"Inasasisha kwa sehemu taarifa za profaili ya mtumiaji aliyethibitishwa. Ni "
+"uwanda uliotolewa tu utakao sasishwa. Uwanda wa barua pepe ni wa kusoma tu."
+
+#: auth_kit/forms.py:78
+msgid "The email address is not assigned to any user account."
+msgstr "Anwani ya barua pepe haijapangwa kwa akaunti yoyote ya mtumiaji."
+
+#: auth_kit/mfa/exceptions.py:27
+msgid "Requested MFA method does not exist."
+msgstr "Njia ya MFA iliyoombwa haipo."
+
+#: auth_kit/mfa/handlers/email.py:29
+msgid "Email message with MFA code has been sent."
+msgstr "Ujumbe wa barua pepe wenye msimbo wa MFA umetumwa."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:28
+#, python-format
+msgid "MFA code expires in %(seconds)s seconds."
+msgstr "Msimbo wa MFA unakwisha katika sekunde %(seconds)s."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:36
+msgid ""
+"First step of MFA-enabled authentication. Validates credentials and "
+"initiates MFA flow."
+msgstr ""
+"Hatua ya kwanza ya uthibitishaji uliowezeshwa na MFA. Inathibitisha hati za utambulisho "
+"na kuanzisha mtiririko wa MFA."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:41
+#, python-format
+msgid ""
+"Returns ephemeral token for MFA verification or complete %(auth_tokens)s if "
+"MFA is disabled."
+msgstr ""
+"Inarudisha alama ya muda mfupi kwa uthibitishaji wa MFA au %(auth_tokens)s kamili "
+"ikiwa MFA imezimwa."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:51
+msgid ""
+"Complete MFA authentication using verification code and ephemeral token."
+msgstr ""
+"Inamalizia uthibitishaji wa MFA kwa kutumia msimbo wa uthibitishaji na alama ya muda mfupi."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:56
+msgid "Supports both TOTP codes and backup codes for verification."
+msgstr "Inasaidia misimbo ya TOTP na misimbo ya kuhifadhi kwa uthibitishaji."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:68
+msgid "Switch to a different MFA method during authentication flow."
+msgstr "Inabadilisha kwenda njia nyingine ya MFA wakati wa mtiririko wa uthibitishaji."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:70
+msgid "Requires valid ephemeral token from first step authentication."
+msgstr "Inahitaji alama halali ya muda mfupi kutoka kwenye uthibitishaji wa hatua ya kwanza."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:72
+#: auth_kit/mfa/mfa_api_descriptions.py:87
+#, python-format
+msgid "New ephemeral token expires in %(seconds)s seconds."
+msgstr "Alama mpya ya muda mfupi inakwisha katika sekunde %(seconds)s."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:81
+msgid "Resend MFA verification code using existing ephemeral token."
+msgstr "Inatuma tena msimbo wa uthibitishaji wa MFA kwa kutumia alama ya muda mfupi iliyopo."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:84
+msgid "Only applicable for methods that require code dispatch (e.g., email)."
+msgstr "Inatumika tu kwa njia zinazohitaji utumaji wa msimbo (k.v., barua pepe)."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:96
+msgid ""
+"List all available MFA methods with their setup and activation status. Shows "
+"which methods are configured, active, and set as primary."
+msgstr ""
+"Inaorodhesha njia zote za MFA zinazopatikana pamoja na hali zao za mipangilio "
+"na uamilishaji. Inaonyesha njia gani zimepangwa, ni amilifu, na zimewekwa kama za msingi."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:101
+msgid ""
+"Initialize a new MFA method setup. Creates the method with backup codes and "
+"returns setup instructions (e.g., QR code for authenticator apps). Method "
+"must be confirmed before activation."
+msgstr ""
+"Inaanzisha mipangilio ya njia mpya ya MFA. Inaunda njia pamoja na misimbo ya "
+"kuhifadhi na kurudi maagizo ya mipangilio (k.v., msimbo wa QR kwa programu za "
+"uthibitishaji). Njia lazima ithibitishwe kabla ya uamilishaji."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:107
+msgid ""
+"Confirm and activate a newly created MFA method using verification code. "
+"Automatically sets as primary method if no other primary method exists. "
+"Required before the method can be used for authentication."
+msgstr ""
+"Inathibitisha na kuamilisha njia ya MFA iliyoundwa hivi karibuni kwa kutumia "
+"msimbo wa uthibitishaji. Huweka kiotomatiki kama njia ya msingi ikiwa hakuna "
+"njia nyingine ya msingi. Inahitajika kabla njia haijaweza kutumiwa kwa uthibitishaji."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:113
+msgid ""
+"Deactivate an active MFA method. Requires verification code from the method "
+"itself. Cannot deactivate primary methods - set another method as primary "
+"first."
+msgstr ""
+"Inazima njia ya MFA iliyo amilifu. Inahitaji msimbo wa uthibitishaji kutoka "
+"kwenye njia hiyo hiyo. Haiwezi kuzima njia za msingi - weka njia nyingine kama "
+"ya msingi kwanza."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:121
+msgid ""
+"Set an active MFA method as the primary authentication method. Primary "
+"method is used by default during login flow."
+msgstr ""
+"Inaweka njia ya MFA iliyo amilifu kama njia ya msingi ya uthibitishaji. Njia "
+"ya msingi inatumiwa kwa uongozi wakati wa mtiririko wa kuingia."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:125
+msgid "Only one method can be primary at a time."
+msgstr "Njia moja tu inaweza kuwa ya msingi kwa wakati mmoja."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:128
+msgid "Requires verification code from current primary method."
+msgstr "Inahitaji msimbo wa uthibitishaji kutoka kwenye njia ya msingi ya sasa."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:135
+msgid ""
+"Send verification code for methods that support code dispatch. Useful for "
+"testing method configuration or manual code requests."
+msgstr ""
+"Inatuma msimbo wa uthibitishaji kwa njia zinazosaidia utumaji wa msimbo. Ni "
+"ya manufaa kwa kupima mipangilio ya njia au maombi ya mwongozo ya msimbo."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:142
+msgid "Permanently delete an MFA method."
+msgstr "Inafuta kabisa njia ya MFA."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:143
+msgid "This action cannot be undone."
+msgstr "Kitendo hiki hakiwezi kutendua."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:148
+msgid "Cannot delete active methods."
+msgstr "Haiwezi kufuta njia amilifu."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:151
+msgid "Cannot delete primary methods."
+msgstr "Haiwezi kufuta njia za msingi."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:154
+msgid "Requires verification code for active methods."
+msgstr "Inahitaji msimbo wa uthibitishaji kwa njia amilifu."
+
+#: auth_kit/mfa/models.py:158
+msgid "user"
+msgstr "mtumiaji"
+
+#: auth_kit/mfa/models.py:161
+msgid "name"
+msgstr "jina"
+
+#: auth_kit/mfa/models.py:162
+msgid "secret"
+msgstr "siri"
+
+#: auth_kit/mfa/models.py:163
+msgid "is primary"
+msgstr "ni ya msingi"
+
+#: auth_kit/mfa/models.py:164
+msgid "is active"
+msgstr "ni amilifu"
+
+#: auth_kit/mfa/models.py:165
+msgid "backup codes"
+msgstr "misimbo ya kuhifadhi"
+
+#: auth_kit/mfa/models.py:170
+msgid "MFA Method"
+msgstr "Njia ya MFA"
+
+#: auth_kit/mfa/models.py:171
+msgid "MFA Methods"
+msgstr "Njia za MFA"
+
+#: auth_kit/mfa/serializers/login_factors.py:230
+msgid "Please select a new method"
+msgstr "Tafadhali chagua njia mpya"
+
+#: auth_kit/mfa/serializers/mfa.py:145 auth_kit/mfa/serializers/mfa.py:200
+#: auth_kit/mfa/serializers/mfa.py:345
+msgid "Invalid OTP code"
+msgstr "Msimbo wa OTP si sahihi"
+
+#: auth_kit/mfa/serializers/mfa.py:155
+msgid "Activated MFA method"
+msgstr "Njia ya MFA imeamilishwa"
+
+#: auth_kit/mfa/serializers/mfa.py:194
+msgid "You can only deactivate non-primary MFA method."
+msgstr "Unaweza kuzima tu njia ya MFA ambayo si ya msingi."
+
+#: auth_kit/mfa/serializers/mfa.py:206
+msgid "Deactivated MFA method"
+msgstr "Njia ya MFA imezimwa"
+
+#: auth_kit/mfa/serializers/mfa.py:262
+msgid "Invalid primary method code"
+msgstr "Msimbo wa njia ya msingi si sahihi"
+
+#: auth_kit/mfa/serializers/mfa.py:275
+msgid "Updated primary MFA method"
+msgstr "Njia ya MFA ya msingi imesasishwa"
+
+#: auth_kit/mfa/serializers/mfa.py:330
+msgid "Cannot delete active MFA method"
+msgstr "Haiwezi kufuta njia ya MFA iliyo amilifu"
+
+#: auth_kit/mfa/serializers/mfa.py:336
+msgid "Cannot delete primary MFA method"
+msgstr "Haiwezi kufuta njia ya MFA ya msingi"
+
+#: auth_kit/mfa/serializers/mfa.py:350
+msgid "Method does not exist"
+msgstr "Njia haipo"
+
+#: auth_kit/mfa/serializers/mfa.py:352
+msgid "Deleted MFA method"
+msgstr "Njia ya MFA imefutwa"
+
+#: auth_kit/mfa/serializers/mfa.py:392
+msgid "MFA code sent"
+msgstr "Msimbo wa MFA umetumwa"
+
+#: auth_kit/serializers/jwt.py:33
+msgid "Will override cookie."
+msgstr "Itasahihisha kidakuzi."
+
+#: auth_kit/serializers/jwt.py:70
+msgid "No valid refresh token found."
+msgstr "Hakuna alama halali ya ubugarizi imepatikana."
+
+#: auth_kit/serializers/login_factors.py:124
+msgid "E-mail is not verified."
+msgstr "Barua pepe haijathibitishwa."
+
+#: auth_kit/serializers/login_factors.py:146
+msgid "Unable to log in with provided credentials."
+msgstr "Haiwezi kuingia kwa hati za utambulisho zilizotolewa."
+
+#: auth_kit/serializers/password.py:137 auth_kit/serializers/password.py:140
+msgid "Invalid value"
+msgstr "Thamani si sahihi"
+
+#: auth_kit/serializers/password.py:220
+msgid "Your old password was entered incorrectly. Please enter it again."
+msgstr "Nenosiri lako la zamani liliingizwa kwa makosa. Tafadhali liingie tena."
+
+#: auth_kit/serializers/registration.py:88
+msgid "A user is already registered with this e-mail address."
+msgstr "Mtumiaji tayari amesajiliwa kwa anwani hii ya barua pepe."
+
+#: auth_kit/serializers/registration.py:119
+msgid "The two password fields didn't match."
+msgstr "Uwanda mbili wa nenosiri hazikuwa sawa."
+
+#: auth_kit/social/serializers/connect.py:55
+msgid "Social account email must match your current account email."
+msgstr "Barua pepe ya akaunti ya kijamii lazima ilingane na barua pepe ya akaunti yako ya sasa."
+
+#: auth_kit/social/serializers/connect.py:98
+msgid "Connected"
+msgstr "Imeunganishwa"
+
+#: auth_kit/social/serializers/login.py:82
+msgid "Failed to complete OAuth flow"
+msgstr "Imeshindwa kumalizia mtiririko wa OAuth"
+
+#: auth_kit/social/serializers/login.py:117
+msgid "User is already registered with this e-mail address."
+msgstr "Mtumiaji tayari amesajiliwa kwa anwani hii ya barua pepe."
+
+#: auth_kit/social/serializers/login.py:296
+msgid "Failed to exchange code for access token"
+msgstr "Imeshindwa kubadilishana msimbo kwa alama ya ufikiaji"
+
+#: auth_kit/social/views/login.py:50
+msgid "adapter_class is not defined"
+msgstr "adapter_class haijafafanuliwa"
+
+#: auth_kit/views/logout.py:111
+msgid "Refresh token was not included in cookie data."
+msgstr "Alama ya ubugarizi haikujumuishwa katika data ya kidakuzi."
+
+#: auth_kit/views/logout.py:121
+msgid "Refresh token was not included in request data."
+msgstr "Alama ya ubugarizi haikujumuishwa katika data ya ombi."
+
+#: auth_kit/views/logout.py:132
+msgid "An error has occurred."
+msgstr "Kosa limetokea."
+
+#: auth_kit/views/logout.py:149
+msgid "Successfully logged out."
+msgstr "Umetoka kwa mafanikio."
+
+#: auth_kit/views/password.py:64
+msgid "Password reset e-mail has been sent."
+msgstr "Barua pepe ya kuweka upya nenosiri imetumwa."
+
+#: auth_kit/views/password.py:111
+msgid "Password has been reset with the new password."
+msgstr "Nenosiri limewekwa upya kwa nenosiri jipya."
+
+#: auth_kit/views/password.py:156
+msgid "New password has been saved."
+msgstr "Nenosiri jipya limehifadhiwa."
+
+#: auth_kit/views/registration.py:142
+msgid "Verification e-mail sent."
+msgstr "Barua pepe ya uthibitishaji imetumwa."
+
+#: auth_kit/views/registration.py:143
+msgid "Successfully registered."
+msgstr "Umesajiliwa kwa mafanikio."
+
+#: auth_kit/views/registration.py:223 auth_kit/views/registration.py:268
+msgid "ok"
+msgstr "sawa"
+
+#: sandbox_extras/custom_username/accounts/admin.py:11
+#: sandbox_extras/email_user/accounts/admin.py:11
+msgid "Personal info"
+msgstr "Taarifa za kibinafsi"
+
+#: sandbox_extras/custom_username/accounts/admin.py:13
+#: sandbox_extras/email_user/accounts/admin.py:13
+msgid "Permissions"
+msgstr "Ruhusa"
+
+#: sandbox_extras/custom_username/accounts/admin.py:24
+#: sandbox_extras/email_user/accounts/admin.py:24
+msgid "Important dates"
+msgstr "Tarehe muhimu"

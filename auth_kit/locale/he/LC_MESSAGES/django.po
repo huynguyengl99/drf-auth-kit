@@ -1,0 +1,472 @@
+# Hebrew translation for DRF Auth Kit
+# Copyright (C) 2025 DRF Auth Kit Contributors
+# This file is distributed under the same license as the DRF Auth Kit package.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: DRF Auth Kit\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-08 06:02+0000\n"
+"PO-Revision-Date: 2025-07-08 06:02+0000\n"
+"Last-Translator: DRF Auth Kit Team\n"
+"Language-Team: Hebrew\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % "
+"1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
+#: auth_kit/api_descriptions.py:25
+msgid ""
+"Returns user details along with JWT access and refresh tokens with "
+"expiration times."
+msgstr "מחזיר פרטי משתמש יחד עם אסימוני גישה ורענון JWT עם זמני תפוגה."
+
+#: auth_kit/api_descriptions.py:29
+msgid ""
+"Returns user details along with a DRF authentication token for API access."
+msgstr "מחזיר פרטי משתמש יחד עם אסימון אימות DRF לגישה ל-API."
+
+#: auth_kit/api_descriptions.py:32
+msgid "Returns user details along with custom authentication tokens."
+msgstr "מחזיר פרטי משתמש יחד עם אסימוני אימות מותאמים אישית."
+
+#: auth_kit/api_descriptions.py:38
+msgid "JWT access and refresh tokens"
+msgstr "אסימוני גישה ורענון JWT"
+
+#: auth_kit/api_descriptions.py:40
+msgid "DRF authentication token"
+msgstr "אסימון אימות DRF"
+
+#: auth_kit/api_descriptions.py:42
+msgid "custom authentication tokens"
+msgstr "אסימוני אימות מותאמים אישית"
+
+#: auth_kit/api_descriptions.py:49
+msgid "Authentication cookies are set automatically for secure token storage."
+msgstr "עוגיות אימות מוגדרות אוטומטית לאחסון מאובטח של אסימונים."
+
+#: auth_kit/api_descriptions.py:57
+msgid "Blacklists JWT refresh tokens to prevent further use."
+msgstr "מוסיף אסימוני רענון JWT לרשימה שחורה כדי למנוע שימוש נוסף."
+
+#: auth_kit/api_descriptions.py:59
+msgid "Deletes the DRF authentication token from the database."
+msgstr "מוחק את אסימון האימות DRF ממסד הנתונים."
+
+#: auth_kit/api_descriptions.py:61
+msgid "Invalidates custom authentication tokens."
+msgstr "מבטל אסימוני אימות מותאמים אישית."
+
+#: auth_kit/api_descriptions.py:67
+msgid "Clears authentication cookies from the browser."
+msgstr "מנקה עוגיות אימות מהדפדפן."
+
+#: auth_kit/api_descriptions.py:73
+msgid "Authenticate with username/email and password to obtain access tokens."
+msgstr "אימות עם שם משתמש/דוא״ל וסיסמה כדי לקבל אסימוני גישה."
+
+#: auth_kit/api_descriptions.py:85
+msgid "Logout user and invalidate authentication tokens."
+msgstr "יציאה של משתמש ובטול אסימוני אימות."
+
+#: auth_kit/api_descriptions.py:89
+msgid ""
+"Requires authentication to ensure only valid sessions can be logged out."
+msgstr "דורש אימות כדי לוודא שרק הפעלות תקינות יכולות להתנתק."
+
+#: auth_kit/api_descriptions.py:100
+msgid "Generate new JWT access tokens using refresh tokens."
+msgstr "יצירת אסימוני גישה JWT חדשים באמצעות אסימוני רענון."
+
+#: auth_kit/api_descriptions.py:104
+msgid ""
+"Refresh tokens can be provided in request data or extracted automatically "
+"from HTTP cookies."
+msgstr "אסימוני רענון יכולים להיות מסופקים בנתוני הבקשה או מחולצים אוטומטית מעוגיות HTTP."
+
+#: auth_kit/api_descriptions.py:106 auth_kit/api_descriptions.py:116
+msgid "Returns new access tokens with updated expiration times."
+msgstr "מחזיר אסימוני גישה חדשים עם זמני תפוגה מעודכנים."
+
+#: auth_kit/api_descriptions.py:108
+msgid "New tokens are automatically set in HTTP cookies for secure storage."
+msgstr "אסימונים חדשים מוגדרים אוטומטית בעוגיות HTTP לאחסון מאובטח."
+
+#: auth_kit/api_descriptions.py:115
+msgid "Refresh tokens must be provided in the request data."
+msgstr "אסימוני רענון חייבים להיות מסופקים בנתוני הבקשה."
+
+#: auth_kit/api_descriptions.py:122
+msgid "Register a new user account."
+msgstr "רישום חשבון משתמש חדש."
+
+#: auth_kit/api_descriptions.py:126
+msgid ""
+"Send password reset instructions to the provided email address. If the email "
+"is registered, a secure reset link will be sent. The link expires after a "
+"limited time for security."
+msgstr "שליחת הנחיות איפוס סיסמה לכתובת הדוא״ל שסופקה. אם הדוא״ל רשום, יישלח קישור איפוס מאובטח. הקישור תפוג לאחר זמן מוגבל לביטחון."
+
+#: auth_kit/api_descriptions.py:132
+msgid ""
+"Complete the password reset process using the token from the reset email. "
+"Requires the UID and token from the email along with the new password. The "
+"token is single-use and expires for security."
+msgstr "השלמת תהליך איפוס הסיסמה באמצעות האסימון מדוא״ל האיפוס. דורש את ה-UID והאסימון מהדוא״ל יחד עם הסיסמה החדשה. האסימון הוא לשימוש חד-פעמי ותפוג לביטחון."
+
+#: auth_kit/api_descriptions.py:138
+msgid "Change the current user's password. Requires authentication. "
+msgstr "שינוי סיסמת המשתמש הנוכחי. דורש אימות. "
+
+#: auth_kit/api_descriptions.py:142
+msgid ""
+"Confirm email address using the verification key sent via email. This "
+"activates the user account and allows login access."
+msgstr "אישור כתובת דוא״ל באמצעות מפתח האימות שנשלח בדוא״ל. זה מפעיל את חשבון המשתמש ומאפשר גישה לכניסה."
+
+#: auth_kit/api_descriptions.py:147
+msgid ""
+"Send a new email verification message to unverified email addresses. Only "
+"works for email addresses that are registered but not yet verified."
+msgstr "שליחת הודעת אימות דוא״ל חדשה לכתובות דוא״ל לא מאומתות. עובד רק עבור כתובות דוא״ל שרשומות אבל עדיין לא מאומתות."
+
+#: auth_kit/api_descriptions.py:152
+msgid ""
+"Retrieve the authenticated user's profile information including username, "
+"email, first name, and last name. Password fields are excluded."
+msgstr "אחזור פרטי הפרופיל של המשתמש המאומת כולל שם משתמש, דוא״ל, שם פרטי ושם משפחה. שדות סיסמה מוחרגים."
+
+#: auth_kit/api_descriptions.py:157
+msgid ""
+"Update the authenticated user's profile information. Allows modification of "
+"username, first name, and last name. Email field is read-only for security."
+msgstr "עדכון פרטי הפרופיל של המשתמש המאומת. מאפשר שינוי של שם משתמש, שם פרטי ושם משפחה. שדה הדוא״ל הוא לקריאה בלבד לביטחון."
+
+#: auth_kit/api_descriptions.py:163
+msgid ""
+"Partially update the authenticated user's profile information. Only provided "
+"fields will be updated. Email field is read-only."
+msgstr "עדכון חלקי של פרטי הפרופיל של המשתמש המאומת. רק השדות שסופקו יעודכנו. שדה הדוא״ל הוא לקריאה בלבד."
+
+#: auth_kit/forms.py:78
+msgid "The email address is not assigned to any user account."
+msgstr "כתובת הדוא״ל אינה מוקצית לאף חשבון משתמש."
+
+#: auth_kit/mfa/exceptions.py:27
+msgid "Requested MFA method does not exist."
+msgstr "שיטת האימות הרב-שלבי המבוקשת אינה קיימת."
+
+#: auth_kit/mfa/handlers/email.py:29
+msgid "Email message with MFA code has been sent."
+msgstr "הודעת דוא״ל עם קוד אימות רב-שלבי נשלחה."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:28
+#, python-format
+msgid "MFA code expires in %(seconds)s seconds."
+msgstr "קוד האימות הרב-שלבי תפוג בעוד %(seconds)s שניות."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:36
+msgid ""
+"First step of MFA-enabled authentication. Validates credentials and "
+"initiates MFA flow."
+msgstr "השלב הראשון של אימות עם אימות רב-שלבי. מאמת אישורים ומתחיל תהליך אימות רב-שלבי."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:41
+#, python-format
+msgid ""
+"Returns ephemeral token for MFA verification or complete %(auth_tokens)s if "
+"MFA is disabled."
+msgstr "מחזיר אסימון זמני לאימות רב-שלבי או %(auth_tokens)s מלאים אם אימות רב-שלבי מבוטל."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:51
+msgid ""
+"Complete MFA authentication using verification code and ephemeral token."
+msgstr "השלמת אימות רב-שלבי באמצעות קוד אימות ואסימון זמני."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:56
+msgid "Supports both TOTP codes and backup codes for verification."
+msgstr "תומך גם בקודי TOTP וגם בקודי גיבוי לאימות."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:68
+msgid "Switch to a different MFA method during authentication flow."
+msgstr "מעבר לשיטת אימות רב-שלבי אחרת במהלך תהליך האימות."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:70
+msgid "Requires valid ephemeral token from first step authentication."
+msgstr "דורש אסימון זמני תקין מהשלב הראשון של האימות."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:72
+#: auth_kit/mfa/mfa_api_descriptions.py:87
+#, python-format
+msgid "New ephemeral token expires in %(seconds)s seconds."
+msgstr "אסימון זמני חדש תפוג בעוד %(seconds)s שניות."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:81
+msgid "Resend MFA verification code using existing ephemeral token."
+msgstr "שליחה מחדש של קוד אימות רב-שלבי באמצעות אסימון זמני קיים."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:84
+msgid "Only applicable for methods that require code dispatch (e.g., email)."
+msgstr "חל רק על שיטות שדורשות שליחת קוד (למשל, דוא״ל)."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:96
+msgid ""
+"List all available MFA methods with their setup and activation status. Shows "
+"which methods are configured, active, and set as primary."
+msgstr "רשימה של כל שיטות האימות הרב-שלבי הזמינות עם מצב ההגדרה והפעלה שלהן. מציג אילו שיטות מוגדרות, פעילות, ומוגדרות כראשיות."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:101
+msgid ""
+"Initialize a new MFA method setup. Creates the method with backup codes and "
+"returns setup instructions (e.g., QR code for authenticator apps). Method "
+"must be confirmed before activation."
+msgstr "אתחול הגדרת שיטת אימות רב-שלבי חדשה. יוצר את השיטה עם קודי גיבוי ומחזיר הנחיות הגדרה (למשל, קוד QR לאפליקציות אימות). השיטה חייבת להיות מאושרת לפני הפעלה."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:107
+msgid ""
+"Confirm and activate a newly created MFA method using verification code. "
+"Automatically sets as primary method if no other primary method exists. "
+"Required before the method can be used for authentication."
+msgstr "אישור והפעלה של שיטת אימות רב-שלבי חדשה שנוצרה באמצעות קוד אימות. מגדיר אוטומטית כשיטה ראשית אם לא קיימת שיטה ראשית אחרת. נדרש לפני שניתן להשתמש בשיטה לאימות."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:113
+msgid ""
+"Deactivate an active MFA method. Requires verification code from the method "
+"itself. Cannot deactivate primary methods - set another method as primary "
+"first."
+msgstr "ביטול הפעלה של שיטת אימות רב-שלבי פעילה. דורש קוד אימות מהשיטה עצמה. לא ניתן לבטל שיטות ראשיות - יש להגדיר שיטה אחרת כראשית תחילה."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:121
+msgid ""
+"Set an active MFA method as the primary authentication method. Primary "
+"method is used by default during login flow."
+msgstr "הגדרת שיטת אימות רב-שלבי פעילה כשיטת האימות הראשית. השיטה הראשית משמשת כברירת מחדל במהלך תהליך הכניסה."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:125
+msgid "Only one method can be primary at a time."
+msgstr "רק שיטה אחת יכולה להיות ראשית בכל זמן."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:128
+msgid "Requires verification code from current primary method."
+msgstr "דורש קוד אימות מהשיטה הראשית הנוכחית."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:135
+msgid ""
+"Send verification code for methods that support code dispatch. Useful for "
+"testing method configuration or manual code requests."
+msgstr "שליחת קוד אימות לשיטות שתומכות בשליחת קוד. שימושי לבדיקת הגדרת השיטה או בקשות קוד ידניות."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:142
+msgid "Permanently delete an MFA method."
+msgstr "מחיקה לצמיתות של שיטת אימות רב-שלבי."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:143
+msgid "This action cannot be undone."
+msgstr "פעולה זו לא ניתנת לביטול."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:148
+msgid "Cannot delete active methods."
+msgstr "לא ניתן למחוק שיטות פעילות."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:151
+msgid "Cannot delete primary methods."
+msgstr "לא ניתן למחוק שיטות ראשיות."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:154
+msgid "Requires verification code for active methods."
+msgstr "דורש קוד אימות לשיטות פעילות."
+
+#: auth_kit/mfa/models.py:158
+msgid "user"
+msgstr "משתמש"
+
+#: auth_kit/mfa/models.py:161
+msgid "name"
+msgstr "שם"
+
+#: auth_kit/mfa/models.py:162
+msgid "secret"
+msgstr "סוד"
+
+#: auth_kit/mfa/models.py:163
+msgid "is primary"
+msgstr "ראשית"
+
+#: auth_kit/mfa/models.py:164
+msgid "is active"
+msgstr "פעיל"
+
+#: auth_kit/mfa/models.py:165
+msgid "backup codes"
+msgstr "קודי גיבוי"
+
+#: auth_kit/mfa/models.py:170
+msgid "MFA Method"
+msgstr "שיטת אימות רב-שלבי"
+
+#: auth_kit/mfa/models.py:171
+msgid "MFA Methods"
+msgstr "שיטות אימות רב-שלבי"
+
+#: auth_kit/mfa/serializers/login_factors.py:230
+msgid "Please select a new method"
+msgstr "אנא בחר שיטה חדשה"
+
+#: auth_kit/mfa/serializers/mfa.py:145 auth_kit/mfa/serializers/mfa.py:200
+#: auth_kit/mfa/serializers/mfa.py:345
+msgid "Invalid OTP code"
+msgstr "קוד OTP לא תקין"
+
+#: auth_kit/mfa/serializers/mfa.py:155
+msgid "Activated MFA method"
+msgstr "שיטת אימות רב-שלבי הופעלה"
+
+#: auth_kit/mfa/serializers/mfa.py:194
+msgid "You can only deactivate non-primary MFA method."
+msgstr "ניתן לבטל רק שיטת אימות רב-שלבי שאינה ראשית."
+
+#: auth_kit/mfa/serializers/mfa.py:206
+msgid "Deactivated MFA method"
+msgstr "שיטת אימות רב-שלבי בוטלה"
+
+#: auth_kit/mfa/serializers/mfa.py:262
+msgid "Invalid primary method code"
+msgstr "קוד שיטה ראשית לא תקין"
+
+#: auth_kit/mfa/serializers/mfa.py:275
+msgid "Updated primary MFA method"
+msgstr "שיטת אימות רב-שלבי ראשית עודכנה"
+
+#: auth_kit/mfa/serializers/mfa.py:330
+msgid "Cannot delete active MFA method"
+msgstr "לא ניתן למחוק שיטת אימות רב-שלבי פעילה"
+
+#: auth_kit/mfa/serializers/mfa.py:336
+msgid "Cannot delete primary MFA method"
+msgstr "לא ניתן למחוק שיטת אימות רב-שלבי ראשית"
+
+#: auth_kit/mfa/serializers/mfa.py:350
+msgid "Method does not exist"
+msgstr "השיטה אינה קיימת"
+
+#: auth_kit/mfa/serializers/mfa.py:352
+msgid "Deleted MFA method"
+msgstr "שיטת אימות רב-שלבי נמחקה"
+
+#: auth_kit/mfa/serializers/mfa.py:392
+msgid "MFA code sent"
+msgstr "קוד אימות רב-שלבי נשלח"
+
+#: auth_kit/serializers/jwt.py:33
+msgid "Will override cookie."
+msgstr "יעקוף את העוגיה."
+
+#: auth_kit/serializers/jwt.py:70
+msgid "No valid refresh token found."
+msgstr "לא נמצא אסימון רענון תקין."
+
+#: auth_kit/serializers/login_factors.py:124
+msgid "E-mail is not verified."
+msgstr "הדוא״ל אינו מאומת."
+
+#: auth_kit/serializers/login_factors.py:146
+msgid "Unable to log in with provided credentials."
+msgstr "לא ניתן להתחבר עם האישורים שסופקו."
+
+#: auth_kit/serializers/password.py:137 auth_kit/serializers/password.py:140
+msgid "Invalid value"
+msgstr "ערך לא תקין"
+
+#: auth_kit/serializers/password.py:220
+msgid "Your old password was entered incorrectly. Please enter it again."
+msgstr "הסיסמה הישנה שלך הוזנה בצורה שגויה. אנא הזן אותה שוב."
+
+#: auth_kit/serializers/registration.py:88
+msgid "A user is already registered with this e-mail address."
+msgstr "משתמש כבר רשום עם כתובת דוא״ל זו."
+
+#: auth_kit/serializers/registration.py:119
+msgid "The two password fields didn't match."
+msgstr "שני שדות הסיסמה לא תואמים."
+
+#: auth_kit/social/serializers/connect.py:55
+msgid "Social account email must match your current account email."
+msgstr "דוא״ל החשבון החברתי חייב להתאים לדוא״ל החשבון הנוכחי שלך."
+
+#: auth_kit/social/serializers/connect.py:98
+msgid "Connected"
+msgstr "מחובר"
+
+#: auth_kit/social/serializers/login.py:82
+msgid "Failed to complete OAuth flow"
+msgstr "נכשל בהשלמת תהליך OAuth"
+
+#: auth_kit/social/serializers/login.py:117
+msgid "User is already registered with this e-mail address."
+msgstr "משתמש כבר רשום עם כתובת דוא״ל זו."
+
+#: auth_kit/social/serializers/login.py:296
+msgid "Failed to exchange code for access token"
+msgstr "נכשל בהחלפת קוד לאסימון גישה"
+
+#: auth_kit/social/views/login.py:50
+msgid "adapter_class is not defined"
+msgstr "adapter_class אינו מוגדר"
+
+#: auth_kit/views/logout.py:111
+msgid "Refresh token was not included in cookie data."
+msgstr "אסימון רענון לא נכלל בנתוני העוגיה."
+
+#: auth_kit/views/logout.py:121
+msgid "Refresh token was not included in request data."
+msgstr "אסימון רענון לא נכלל בנתוני הבקשה."
+
+#: auth_kit/views/logout.py:132
+msgid "An error has occurred."
+msgstr "אירעה שגיאה."
+
+#: auth_kit/views/logout.py:149
+msgid "Successfully logged out."
+msgstr "התנתקות הושלמה בהצלחה."
+
+#: auth_kit/views/password.py:64
+msgid "Password reset e-mail has been sent."
+msgstr "דוא״ל איפוס סיסמה נשלח."
+
+#: auth_kit/views/password.py:111
+msgid "Password has been reset with the new password."
+msgstr "הסיסמה אופסה עם הסיסמה החדשה."
+
+#: auth_kit/views/password.py:156
+msgid "New password has been saved."
+msgstr "הסיסמה החדשה נשמרה."
+
+#: auth_kit/views/registration.py:142
+msgid "Verification e-mail sent."
+msgstr "דוא״ל אימות נשלח."
+
+#: auth_kit/views/registration.py:143
+msgid "Successfully registered."
+msgstr "הרישום הושלם בהצלחה."
+
+#: auth_kit/views/registration.py:223 auth_kit/views/registration.py:268
+msgid "ok"
+msgstr "בסדר"
+
+#: sandbox_extras/custom_username/accounts/admin.py:11
+#: sandbox_extras/email_user/accounts/admin.py:11
+msgid "Personal info"
+msgstr "מידע אישי"
+
+#: sandbox_extras/custom_username/accounts/admin.py:13
+#: sandbox_extras/email_user/accounts/admin.py:13
+msgid "Permissions"
+msgstr "הרשאות"
+
+#: sandbox_extras/custom_username/accounts/admin.py:24
+#: sandbox_extras/email_user/accounts/admin.py:24
+msgid "Important dates"
+msgstr "תאריכים חשובים"

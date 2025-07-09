@@ -29,6 +29,7 @@ django_stubs_ext.monkeypatch()
 CONFIG_PATH = Path(__file__)
 BASE_DIR = CONFIG_PATH.parent.parent.parent
 ROOT_DIR = BASE_DIR.parent
+PACKAGE_DIR = ROOT_DIR / "auth_kit"
 
 # =========================================================================
 # ENVIRONMENT SETTINGS
@@ -85,6 +86,7 @@ INSTALLED_APPS = [
     "auth_kit.mfa",
     "rest_framework_simplejwt.token_blacklist",
     "knox",
+    "utils",
 ]
 
 # =========================================================================
@@ -184,6 +186,69 @@ AUTH_PASSWORD_VALIDATORS = [
 # =========================================================================
 
 LANGUAGE_CODE = "en"
+
+LANGUAGES = [
+    ("af", "Afrikaans"),
+    ("ar", "العربية"),
+    ("az", "Azərbaycan"),
+    ("be", "Беларуская"),
+    ("bg", "Български"),
+    ("bs", "Bosanski"),
+    ("ca", "Català"),
+    ("cs", "Čeština"),
+    ("cy", "Cymraeg"),
+    ("da", "Dansk"),
+    ("de", "Deutsch"),
+    ("el", "Ελληνικά"),
+    ("en", "English"),
+    ("es", "Español"),
+    ("et", "Eesti"),
+    ("fa", "فارسی"),
+    ("fi", "Suomi"),
+    ("fr", "Français"),
+    ("gl", "Galego"),
+    ("he", "עברית"),
+    ("hi", "हिन्दी"),
+    ("hr", "Hrvatski"),
+    ("hu", "Magyar"),
+    ("hy", "Հայերեն"),
+    ("id", "Bahasa Indonesia"),
+    ("is", "Íslenska"),
+    ("it", "Italiano"),
+    ("ja", "日本語"),
+    ("kk", "Қазақ"),
+    ("kn", "ಕನ್ನಡ"),
+    ("ko", "한국어"),
+    ("lt", "Lietuvių"),
+    ("lv", "Latviešu"),
+    ("mi", "Māori"),
+    ("mk", "Македонски"),
+    ("mr", "मराठी"),
+    ("ms", "Bahasa Melayu"),
+    ("ne", "नेपाली"),
+    ("nl", "Nederlands"),
+    ("no", "Norsk"),
+    ("pl", "Polski"),
+    ("pt", "Português"),
+    ("ro", "Română"),
+    ("ru", "Русский"),
+    ("sk", "Slovenčina"),
+    ("sl", "Slovenščina"),
+    ("sr", "Српски"),
+    ("sv", "Svenska"),
+    ("sw", "Kiswahili"),
+    ("ta", "தமிழ்"),
+    ("th", "ไทย"),
+    ("tl", "Tagalog"),
+    ("tr", "Türkçe"),
+    ("uk", "Українська"),
+    ("ur", "اردو"),
+    ("vi", "Tiếng Việt"),
+    ("zh", "中文"),
+]
+
+APP_LOCALE = str(PACKAGE_DIR / "locale")
+LOCALE_PATHS = [APP_LOCALE]
 
 TIME_ZONE = "UTC"
 USE_I18N = True

@@ -1,0 +1,515 @@
+# Lithuanian translation for DRF Auth Kit
+# Copyright (C) 2025 DRF Auth Kit Contributors
+# This file is distributed under the same license as the DRF Auth Kit package.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: DRF Auth Kit\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-08 06:02+0000\n"
+"PO-Revision-Date: 2025-07-08 06:02+0000\n"
+"Last-Translator: DRF Auth Kit Team\n"
+"Language-Team: Lithuanian\n"
+"Language: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n % 10 == 1 && (n % 100 > 19 || n % 100 < "
+"11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? "
+"1 : n % 1 != 0 ? 2: 3);\n"
+
+#: auth_kit/api_descriptions.py:25
+msgid ""
+"Returns user details along with JWT access and refresh tokens with "
+"expiration times."
+msgstr ""
+"Grąžina vartotojo duomenis kartu su JWT prieigos ir atnaujinimo žetonais su "
+"galiojimo laikais."
+
+#: auth_kit/api_descriptions.py:29
+msgid ""
+"Returns user details along with a DRF authentication token for API access."
+msgstr ""
+"Grąžina vartotojo duomenis kartu su DRF autentifikacijos žetonu API prieigai."
+
+#: auth_kit/api_descriptions.py:32
+msgid "Returns user details along with custom authentication tokens."
+msgstr "Grąžina vartotojo duomenis kartu su pasirinktiniais autentifikacijos žetonais."
+
+#: auth_kit/api_descriptions.py:38
+msgid "JWT access and refresh tokens"
+msgstr "JWT prieigos ir atnaujinimo žetonai"
+
+#: auth_kit/api_descriptions.py:40
+msgid "DRF authentication token"
+msgstr "DRF autentifikacijos žetonas"
+
+#: auth_kit/api_descriptions.py:42
+msgid "custom authentication tokens"
+msgstr "pasirinktiniai autentifikacijos žetonai"
+
+#: auth_kit/api_descriptions.py:49
+msgid "Authentication cookies are set automatically for secure token storage."
+msgstr "Autentifikacijos slapukai nustatomi automatiškai saugiems žetonams saugoti."
+
+#: auth_kit/api_descriptions.py:57
+msgid "Blacklists JWT refresh tokens to prevent further use."
+msgstr "Įtraukia JWT atnaujinimo žetonus į juodąjį sąrašą, kad užkirstų kelią tolesniam naudojimui."
+
+#: auth_kit/api_descriptions.py:59
+msgid "Deletes the DRF authentication token from the database."
+msgstr "Ištrina DRF autentifikacijos žetoną iš duomenų bazės."
+
+#: auth_kit/api_descriptions.py:61
+msgid "Invalidates custom authentication tokens."
+msgstr "Panaikina pasirinktinių autentifikacijos žetonų galiojimą."
+
+#: auth_kit/api_descriptions.py:67
+msgid "Clears authentication cookies from the browser."
+msgstr "Išvalo autentifikacijos slapukus iš naršyklės."
+
+#: auth_kit/api_descriptions.py:73
+msgid "Authenticate with username/email and password to obtain access tokens."
+msgstr "Autentifikuotis su vartotojo vardu/el. paštu ir slaptažodžiu, kad gautumėte prieigos žetonus."
+
+#: auth_kit/api_descriptions.py:85
+msgid "Logout user and invalidate authentication tokens."
+msgstr "Atsijungti vartotoją ir panaikinti autentifikacijos žetonų galiojimą."
+
+#: auth_kit/api_descriptions.py:89
+msgid ""
+"Requires authentication to ensure only valid sessions can be logged out."
+msgstr ""
+"Reikia autentifikacijos, kad užtikrintumėte, jog tik galiojančios sesijos gali būti atjungtos."
+
+#: auth_kit/api_descriptions.py:100
+msgid "Generate new JWT access tokens using refresh tokens."
+msgstr "Sukurti naują JWT prieigos žetoną naudojant atnaujinimo žetonus."
+
+#: auth_kit/api_descriptions.py:104
+msgid ""
+"Refresh tokens can be provided in request data or extracted automatically "
+"from HTTP cookies."
+msgstr ""
+"Atnaujinimo žetonai gali būti pateikti užklausos duomenyse arba automatiškai "
+"ištraukti iš HTTP slapukų."
+
+#: auth_kit/api_descriptions.py:106 auth_kit/api_descriptions.py:116
+msgid "Returns new access tokens with updated expiration times."
+msgstr "Grąžina naują prieigos žetoną su atnaujintu galiojimo laiku."
+
+#: auth_kit/api_descriptions.py:108
+msgid "New tokens are automatically set in HTTP cookies for secure storage."
+msgstr "Nauji žetonai automatiškai nustatomi HTTP slapukuose saugiam saugojimui."
+
+#: auth_kit/api_descriptions.py:115
+msgid "Refresh tokens must be provided in the request data."
+msgstr "Atnaujinimo žetonai turi būti pateikti užklausos duomenyse."
+
+#: auth_kit/api_descriptions.py:122
+msgid "Register a new user account."
+msgstr "Registruoti naują vartotojo paskyrą."
+
+#: auth_kit/api_descriptions.py:126
+msgid ""
+"Send password reset instructions to the provided email address. If the email "
+"is registered, a secure reset link will be sent. The link expires after a "
+"limited time for security."
+msgstr ""
+"Išsiųsti slaptažodžio atstatymo instrukcijas į pateiktą el. pašto adresą. Jei el. paštas "
+"yra registruotas, bus išsiųsta saugi atstatymo nuoroda. Nuoroda nebegalioja po "
+"riboto laiko dėl saugumo."
+
+#: auth_kit/api_descriptions.py:132
+msgid ""
+"Complete the password reset process using the token from the reset email. "
+"Requires the UID and token from the email along with the new password. The "
+"token is single-use and expires for security."
+msgstr ""
+"Užbaikite slaptažodžio atstatymo procesą naudodami žetoną iš atstatymo el. laiško. "
+"Reikia UID ir žetono iš el. laiško kartu su nauju slaptažodžiu. "
+"Žetonas naudojamas vieną kartą ir nebegalioja dėl saugumo."
+
+#: auth_kit/api_descriptions.py:138
+msgid "Change the current user's password. Requires authentication. "
+msgstr "Keisti esamo vartotojo slaptažodį. Reikia autentifikacijos. "
+
+#: auth_kit/api_descriptions.py:142
+msgid ""
+"Confirm email address using the verification key sent via email. This "
+"activates the user account and allows login access."
+msgstr ""
+"Patvirtinti el. pašto adresą naudojant patvirtinimo raktą, išsiųstą el. paštu. Tai "
+"aktyvuoja vartotojo paskyrą ir leidžia prisijungti."
+
+#: auth_kit/api_descriptions.py:147
+msgid ""
+"Send a new email verification message to unverified email addresses. Only "
+"works for email addresses that are registered but not yet verified."
+msgstr ""
+"Išsiųsti naują el. pašto patvirtinimo pranešimą nepatvirtintiems el. pašto adresams. Veikia "
+"tik el. pašto adresams, kurie yra registruoti, bet dar nepatvirtinti."
+
+#: auth_kit/api_descriptions.py:152
+msgid ""
+"Retrieve the authenticated user's profile information including username, "
+"email, first name, and last name. Password fields are excluded."
+msgstr ""
+"Gauti autentifikuoto vartotojo profilio informaciją, įskaitant vartotojo vardą, "
+"el. paštą, vardą ir pavardę. Slaptažodžio laukai neįtraukti."
+
+#: auth_kit/api_descriptions.py:157
+msgid ""
+"Update the authenticated user's profile information. Allows modification of "
+"username, first name, and last name. Email field is read-only for security."
+msgstr ""
+"Atnaujinti autentifikuoto vartotojo profilio informaciją. Leidžia keisti "
+"vartotojo vardą, vardą ir pavardę. El. pašto laukas yra tik skaitomas dėl saugumo."
+
+#: auth_kit/api_descriptions.py:163
+msgid ""
+"Partially update the authenticated user's profile information. Only provided "
+"fields will be updated. Email field is read-only."
+msgstr ""
+"Dalinai atnaujinti autentifikuoto vartotojo profilio informaciją. Tik pateikti "
+"laukai bus atnaujinti. El. pašto laukas yra tik skaitomas."
+
+#: auth_kit/forms.py:78
+msgid "The email address is not assigned to any user account."
+msgstr "El. pašto adresas nėra priskirtas jokiai vartotojo paskyrai."
+
+#: auth_kit/mfa/exceptions.py:27
+msgid "Requested MFA method does not exist."
+msgstr "Prašomas MFA metodas neegzistuoja."
+
+#: auth_kit/mfa/handlers/email.py:29
+msgid "Email message with MFA code has been sent."
+msgstr "El. pašto pranešimas su MFA kodu buvo išsiųstas."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:28
+#, python-format
+msgid "MFA code expires in %(seconds)s seconds."
+msgstr "MFA kodas nebegalioja po %(seconds)s sekundžių."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:36
+msgid ""
+"First step of MFA-enabled authentication. Validates credentials and "
+"initiates MFA flow."
+msgstr ""
+"Pirmas MFA-įgalintos autentifikacijos žingsnis. Patikrina kredencialus ir "
+"inicijuoja MFA srautą."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:41
+#, python-format
+msgid ""
+"Returns ephemeral token for MFA verification or complete %(auth_tokens)s if "
+"MFA is disabled."
+msgstr ""
+"Grąžina laikinąjį žetoną MFA patvirtinimui arba užbaigtą %(auth_tokens)s, jei "
+"MFA yra išjungtas."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:51
+msgid ""
+"Complete MFA authentication using verification code and ephemeral token."
+msgstr ""
+"Užbaigti MFA autentifikaciją naudojant patvirtinimo kodą ir laikinąjį žetoną."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:56
+msgid "Supports both TOTP codes and backup codes for verification."
+msgstr "Palaiko ir TOTP kodus, ir atsargos kodus patvirtinimui."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:68
+msgid "Switch to a different MFA method during authentication flow."
+msgstr "Pereiti prie kito MFA metodo autentifikacijos srauto metu."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:70
+msgid "Requires valid ephemeral token from first step authentication."
+msgstr "Reikia galiojančio laikinojo žetono iš pirmo žingsnio autentifikacijos."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:72
+#: auth_kit/mfa/mfa_api_descriptions.py:87
+#, python-format
+msgid "New ephemeral token expires in %(seconds)s seconds."
+msgstr "Naujas laikinasis žetonas nebegalioja po %(seconds)s sekundžių."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:81
+msgid "Resend MFA verification code using existing ephemeral token."
+msgstr "Iš naujo išsiųsti MFA patvirtinimo kodą naudojant esamą laikinąjį žetoną."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:84
+msgid "Only applicable for methods that require code dispatch (e.g., email)."
+msgstr "Taikoma tik metodams, kuriems reikia kodo siuntimo (pvz., el. paštas)."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:96
+msgid ""
+"List all available MFA methods with their setup and activation status. Shows "
+"which methods are configured, active, and set as primary."
+msgstr ""
+"Išvardinti visus prieinamus MFA metodus su jų nustatymo ir aktyvavimo būsena. Rodo, "
+"kurie metodai yra sukonfigūruoti, aktyvūs ir nustatyti kaip pirminiai."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:101
+msgid ""
+"Initialize a new MFA method setup. Creates the method with backup codes and "
+"returns setup instructions (e.g., QR code for authenticator apps). Method "
+"must be confirmed before activation."
+msgstr ""
+"Inicijuoti naują MFA metodo nustatymą. Sukuria metodą su atsargos kodais ir "
+"grąžina nustatymo instrukcijas (pvz., QR kodą autentifikatorių programoms). Metodas "
+"turi būti patvirtintas prieš aktyvavimą."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:107
+msgid ""
+"Confirm and activate a newly created MFA method using verification code. "
+"Automatically sets as primary method if no other primary method exists. "
+"Required before the method can be used for authentication."
+msgstr ""
+"Patvirtinti ir aktyvuoti naujai sukurtą MFA metodą naudojant patvirtinimo kodą. "
+"Automatiškai nustato kaip pirminį metodą, jei nėra kito pirminio metodo. "
+"Būtina prieš naudojant metodą autentifikacijai."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:113
+msgid ""
+"Deactivate an active MFA method. Requires verification code from the method "
+"itself. Cannot deactivate primary methods - set another method as primary "
+"first."
+msgstr ""
+"Išjungti aktyvų MFA metodą. Reikia patvirtinimo kodo iš paties metodo. "
+"Negalima išjungti pirminių metodų - pirmiau nustatykite kitą metodą kaip pirminį."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:121
+msgid ""
+"Set an active MFA method as the primary authentication method. Primary "
+"method is used by default during login flow."
+msgstr ""
+"Nustatyti aktyvų MFA metodą kaip pirminį autentifikacijos metodą. Pirminis "
+"metodas naudojamas pagal numatytuosius nustatymus prisijungimo srauto metu."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:125
+msgid "Only one method can be primary at a time."
+msgstr "Vienu metu tik vienas metodas gali būti pirminis."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:128
+msgid "Requires verification code from current primary method."
+msgstr "Reikia patvirtinimo kodo iš dabartinio pirminio metodo."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:135
+msgid ""
+"Send verification code for methods that support code dispatch. Useful for "
+"testing method configuration or manual code requests."
+msgstr ""
+"Siųsti patvirtinimo kodą metodams, kurie palaiko kodo siuntimą. Naudinga "
+"metodo konfigūracijos testavimui arba rankinėms kodo užklausoms."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:142
+msgid "Permanently delete an MFA method."
+msgstr "Visam laikui ištrinti MFA metodą."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:143
+msgid "This action cannot be undone."
+msgstr "Šis veiksmas negali būti atšauktas."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:148
+msgid "Cannot delete active methods."
+msgstr "Negalima ištrinti aktyvių metodų."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:151
+msgid "Cannot delete primary methods."
+msgstr "Negalima ištrinti pirminių metodų."
+
+#: auth_kit/mfa/mfa_api_descriptions.py:154
+msgid "Requires verification code for active methods."
+msgstr "Reikia patvirtinimo kodo aktyviems metodams."
+
+#: auth_kit/mfa/models.py:158
+msgid "user"
+msgstr "vartotojas"
+
+#: auth_kit/mfa/models.py:161
+msgid "name"
+msgstr "vardas"
+
+#: auth_kit/mfa/models.py:162
+msgid "secret"
+msgstr "slaptas"
+
+#: auth_kit/mfa/models.py:163
+msgid "is primary"
+msgstr "yra pirminis"
+
+#: auth_kit/mfa/models.py:164
+msgid "is active"
+msgstr "yra aktyvus"
+
+#: auth_kit/mfa/models.py:165
+msgid "backup codes"
+msgstr "atsargos kodai"
+
+#: auth_kit/mfa/models.py:170
+msgid "MFA Method"
+msgstr "MFA metodas"
+
+#: auth_kit/mfa/models.py:171
+msgid "MFA Methods"
+msgstr "MFA metodai"
+
+#: auth_kit/mfa/serializers/login_factors.py:230
+msgid "Please select a new method"
+msgstr "Pasirinkite naują metodą"
+
+#: auth_kit/mfa/serializers/mfa.py:145 auth_kit/mfa/serializers/mfa.py:200
+#: auth_kit/mfa/serializers/mfa.py:345
+msgid "Invalid OTP code"
+msgstr "Neteisingas OTP kodas"
+
+#: auth_kit/mfa/serializers/mfa.py:155
+msgid "Activated MFA method"
+msgstr "Aktyvuotas MFA metodas"
+
+#: auth_kit/mfa/serializers/mfa.py:194
+msgid "You can only deactivate non-primary MFA method."
+msgstr "Galite išjungti tik ne pirminį MFA metodą."
+
+#: auth_kit/mfa/serializers/mfa.py:206
+msgid "Deactivated MFA method"
+msgstr "Išjungtas MFA metodas"
+
+#: auth_kit/mfa/serializers/mfa.py:262
+msgid "Invalid primary method code"
+msgstr "Neteisingas pirminio metodo kodas"
+
+#: auth_kit/mfa/serializers/mfa.py:275
+msgid "Updated primary MFA method"
+msgstr "Atnaujintas pirminis MFA metodas"
+
+#: auth_kit/mfa/serializers/mfa.py:330
+msgid "Cannot delete active MFA method"
+msgstr "Negalima ištrinti aktyvaus MFA metodo"
+
+#: auth_kit/mfa/serializers/mfa.py:336
+msgid "Cannot delete primary MFA method"
+msgstr "Negalima ištrinti pirminio MFA metodo"
+
+#: auth_kit/mfa/serializers/mfa.py:350
+msgid "Method does not exist"
+msgstr "Metodas neegzistuoja"
+
+#: auth_kit/mfa/serializers/mfa.py:352
+msgid "Deleted MFA method"
+msgstr "Ištrintas MFA metodas"
+
+#: auth_kit/mfa/serializers/mfa.py:392
+msgid "MFA code sent"
+msgstr "MFA kodas išsiųstas"
+
+#: auth_kit/serializers/jwt.py:33
+msgid "Will override cookie."
+msgstr "Perrašys slapuką."
+
+#: auth_kit/serializers/jwt.py:70
+msgid "No valid refresh token found."
+msgstr "Nerasta galiojančio atnaujinimo žetono."
+
+#: auth_kit/serializers/login_factors.py:124
+msgid "E-mail is not verified."
+msgstr "El. paštas nepatvirtintas."
+
+#: auth_kit/serializers/login_factors.py:146
+msgid "Unable to log in with provided credentials."
+msgstr "Nepavyko prisijungti su pateiktais kredencialais."
+
+#: auth_kit/serializers/password.py:137 auth_kit/serializers/password.py:140
+msgid "Invalid value"
+msgstr "Neteisinga vertė"
+
+#: auth_kit/serializers/password.py:220
+msgid "Your old password was entered incorrectly. Please enter it again."
+msgstr "Jūsų senas slaptažodis buvo įvestas neteisingai. Įveskite jį dar kartą."
+
+#: auth_kit/serializers/registration.py:88
+msgid "A user is already registered with this e-mail address."
+msgstr "Vartotojas jau registruotas su šiuo el. pašto adresu."
+
+#: auth_kit/serializers/registration.py:119
+msgid "The two password fields didn't match."
+msgstr "Du slaptažodžio laukai nesutapo."
+
+#: auth_kit/social/serializers/connect.py:55
+msgid "Social account email must match your current account email."
+msgstr "Socialinės paskyros el. paštas turi sutapti su jūsų dabartinės paskyros el. paštu."
+
+#: auth_kit/social/serializers/connect.py:98
+msgid "Connected"
+msgstr "Prisijungta"
+
+#: auth_kit/social/serializers/login.py:82
+msgid "Failed to complete OAuth flow"
+msgstr "Nepavyko užbaigti OAuth srauto"
+
+#: auth_kit/social/serializers/login.py:117
+msgid "User is already registered with this e-mail address."
+msgstr "Vartotojas jau registruotas su šiuo el. pašto adresu."
+
+#: auth_kit/social/serializers/login.py:296
+msgid "Failed to exchange code for access token"
+msgstr "Nepavyko pakeisti kodo į prieigos žetoną"
+
+#: auth_kit/social/views/login.py:50
+msgid "adapter_class is not defined"
+msgstr "adapter_class nėra apibrėžtas"
+
+#: auth_kit/views/logout.py:111
+msgid "Refresh token was not included in cookie data."
+msgstr "Atnaujinimo žetonas nebuvo įtrauktas į slapuko duomenis."
+
+#: auth_kit/views/logout.py:121
+msgid "Refresh token was not included in request data."
+msgstr "Atnaujinimo žetonas nebuvo įtrauktas į užklausos duomenis."
+
+#: auth_kit/views/logout.py:132
+msgid "An error has occurred."
+msgstr "Įvyko klaida."
+
+#: auth_kit/views/logout.py:149
+msgid "Successfully logged out."
+msgstr "Sėkmingai atsijungta."
+
+#: auth_kit/views/password.py:64
+msgid "Password reset e-mail has been sent."
+msgstr "Slaptažodžio atstatymo el. laiškas buvo išsiųstas."
+
+#: auth_kit/views/password.py:111
+msgid "Password has been reset with the new password."
+msgstr "Slaptažodis atstatytas su nauju slaptažodžiu."
+
+#: auth_kit/views/password.py:156
+msgid "New password has been saved."
+msgstr "Naujas slaptažodis išsaugotas."
+
+#: auth_kit/views/registration.py:142
+msgid "Verification e-mail sent."
+msgstr "Patvirtinimo el. laiškas išsiųstas."
+
+#: auth_kit/views/registration.py:143
+msgid "Successfully registered."
+msgstr "Sėkmingai registruota."
+
+#: auth_kit/views/registration.py:223 auth_kit/views/registration.py:268
+msgid "ok"
+msgstr "gerai"
+
+#: sandbox_extras/custom_username/accounts/admin.py:11
+#: sandbox_extras/email_user/accounts/admin.py:11
+msgid "Personal info"
+msgstr "Asmeninė informacija"
+
+#: sandbox_extras/custom_username/accounts/admin.py:13
+#: sandbox_extras/email_user/accounts/admin.py:13
+msgid "Permissions"
+msgstr "Leidimai"
+
+#: sandbox_extras/custom_username/accounts/admin.py:24
+#: sandbox_extras/email_user/accounts/admin.py:24
+msgid "Important dates"
+msgstr "Svarbios datos"
