@@ -10,7 +10,7 @@ Before starting development, ensure you have the following installed:
 - [Docker](https://docs.docker.com/get-docker/) and Docker Compose
 - [uv](https://docs.astral.sh/uv/getting-started/installation/) for Python package management
 
-## Install the library for development
+## Quick Setup
 
 ### Setting up your environment
 
@@ -21,102 +21,86 @@ uv venv
 source .venv/bin/activate
 ```
 
-Then use uv to install all dev packages:
+Install all development dependencies including extras:
 ```bash
 uv sync --all-extras
 ```
 
-### Using tox for complete environment testing
+### Prepare the environment
 
-For testing across multiple Python versions and configurations, we use tox:
+Before working with the project, ensure:
+- Docker is running
+- Run `docker compose up` to create necessary databases/services
+
+## Understanding the project structure
+
+The project uses multiple test environments:
+
+1. **Main sandbox** (`sandbox/`): Core testing environment
+   - Contains primary test applications and configurations
+   - Used for most development and testing
+   - Run Django dev server: `python sandbox/manage.py runserver`
+
+2. **Specialized test environments** (`sandbox_extras/`):
+   - `custom_auth/`: Tests custom authentication backends
+   - `email_user/`: Tests email-based user models
+   - `custom_username/`: Tests custom username field configurations
+   - These test different user model configurations that require separate Django projects
+
+## Testing
+
+### Running all tests
+
+Use the comprehensive test script that covers all environments:
 
 ```bash
-# Install tox following the official documentation
-# https://tox.wiki/en/latest/installation.html
+# Run all tests across all environments
+scripts/test_all.sh
+
+# Run all tests with coverage
+scripts/test_all.sh --cov
+```
+
+### Running specific test environments
+
+```bash
+# Main sandbox tests (most common during development)
+pytest --cov=auth_kit --cov-report=term-missing sandbox
+
+# Specific sandbox_extras environment
+pytest sandbox_extras/custom_auth
+pytest sandbox_extras/email_user
+pytest sandbox_extras/custom_username
+```
+
+### Using tox for complete environment testing
+
+For testing across multiple Python versions and configurations:
+
+```bash
+# Install tox
 uv tool install tox
 
 # Run tests on all supported Python versions
 tox
 
-# Run tests for a specific environment
-tox -e py310-django42
+# Run tests for specific environment
+tox -e py311
 
-# Run only the linting checks
+# Run only linting checks
 tox -e lint
-
-# Run test coverage
-tox -e coverage
-```
-
-## Understanding the project structure
-
-The project uses a `sandbox` directory which serves two main purposes:
-
-1. **Testing Environment**: Write and run tests for the package
-   - Contains test applications and configurations
-   - Used with pytest to validate package functionality
-
-2. **Development Playground**: Run as a Django application to test features
-   - Run Django commands like `makemigrations` and `migrate`
-   - Interact with API endpoints for manual testing
-   - Test UI components and integrations
-
-## Prepare the environment
-
-Before working with the sandbox or running tests, ensure:
-- Docker is running
-- Run `docker compose up` to create necessary databases/services
-
-## Working with the sandbox project
-
-### Setting up and running the sandbox
-
-```bash
-# Apply database migrations
-python sandbox/manage.py migrate
-
-# Create a superuser for accessing the admin interface
-python sandbox/manage.py createsuperuser
-
-# Run Django development server
-python sandbox/manage.py runserver
-```
-
-Once the server is running, you can:
-- Access the admin interface at http://127.0.0.1:8000/admin/
-- Test API endpoints
-- Verify your package functionality in a real Django environment
-
-### Development commands
-
-```bash
-# Create migrations for your changes
-python sandbox/manage.py makemigrations
 ```
 
 ## Code quality tools
 
-DRF Auth Kit uses several tools to ensure code quality. You should run these tools before submitting a pull request.
-
-### Pre-commit hooks
-
-We use pre-commit hooks to automatically check and format your code on commit. Install them with:
-
-```bash
-pip install pre-commit
-pre-commit install
-```
-
 ### Linting and formatting
-
-For manual linting and formatting:
 
 ```bash
 # Run linting checks
-bash scripts/lint.sh
+scripts/lint.sh
 
 # Fix linting issues automatically
-bash scripts/lint.sh --fix
+scripts/lint.sh --fix
 ```
 
 This runs:
@@ -126,108 +110,97 @@ This runs:
 
 ### Type checking
 
-We use multiple type checking tools for maximum safety:
-
 ```bash
 # Run mypy on the auth_kit package
-bash scripts/mypy.sh
+scripts/mypy.sh
 
 # Run mypy on the sandbox
-bash scripts/mypy.sh --sandbox
+scripts/mypy.sh --sandbox
 
 # Run pyright
 pyright
 ```
 
-The project uses strict type checking settings to ensure high code quality.
-
 ### Docstring coverage
 
-We aim for high docstring coverage. Check your docstring coverage with:
-
 ```bash
-# Run interrogate to check docstring coverage
+# Check docstring coverage (requires 80% minimum)
 interrogate -vv auth_kit
 ```
 
-The project requires at least 80% docstring coverage as configured in the project settings.
+## Working with the development sandbox
 
-## Testing
-
-### Running tests
+### Setting up and running the sandbox
 
 ```bash
-# Run all tests
-pytest sandbox
+# Apply database migrations
+python sandbox/manage.py migrate
 
-# Run tests with coverage report
-pytest --cov-report term-missing --cov=auth_kit sandbox
+# Create a superuser
+python sandbox/manage.py createsuperuser
+
+# Run Django development server
+python sandbox/manage.py runserver
 ```
 
-### Writing tests
+Once running, you can:
+- Access admin interface at http://127.0.0.1:8000/admin/
+- Test API endpoints manually
+- Verify package functionality in real Django environment
 
-When adding new features, please include appropriate tests in the `sandbox` directory. Tests should:
+## Pre-submission checklist
 
-- Verify the expected behavior of your feature
-- Include both success and failure cases
-- Use the fixtures and utilities provided by the testing framework
-- Test Django/DRF integration points carefully
+Before creating a pull request, ensure:
 
-## Validating your changes before submission
-
-Before creating a pull request, please ensure your code meets the project's standards:
-
-### 1. Run the test suite
-
+### 1. All tests pass
 ```bash
-pytest --cov-report term-missing --cov=auth_kit sandbox
+scripts/test_all.sh --cov
 ```
 
-### 2. Run type checkers
-
+### 2. Code quality checks pass
 ```bash
-bash scripts/mypy.sh
-bash scripts/mypy.sh --sandbox
+scripts/lint.sh
+scripts/mypy.sh
+scripts/mypy.sh --sandbox
 pyright
 ```
 
-### 3. Lint and format your code
-
-```bash
-bash scripts/lint.sh --fix
-```
-
-### 4. Check docstring coverage
-
+### 3. Documentation coverage meets requirements
 ```bash
 interrogate -vv auth_kit
 ```
 
-### 5. Run the complete validation suite with tox
-
+### 4. Comprehensive testing with tox
 ```bash
 tox
 ```
 
 ## Commit guidelines
 
-For committing code, use the [Commitizen](https://commitizen-tools.github.io/commitizen/) tool to follow
-commit best practices:
+Follow [Conventional Commits](https://www.conventionalcommits.org/) format:
 
-```bash
-cz commit
+```
+<type>(<scope>): <description>
+
+[optional body]
 ```
 
-This ensures that all commits follow the [Conventional Commits](https://www.conventionalcommits.org/) format.
+Examples:
+- `feat(auth): add custom authentication backend support`
+- `fix(mfa): resolve backup code validation issue`
+- `docs(readme): update installation instructions`
 
-## Creating a Pull Request
+## Customization and extensions
 
-When creating a pull request:
+DRF Auth Kit is designed for extensibility. When contributing:
 
-1. Make sure all tests pass and code quality checks succeed
-2. Update the documentation if needed
-3. Add a clear description of your changes
-4. Reference any related issues
+- **Custom authentication backends**: Support for different token types and validation methods
+- **MFA enhancements**: Additional MFA handlers and verification methods
+- **Social authentication**: Integration with new providers or enhanced OAuth flows
+- **Serializer customization**: Flexible request/response serializer composition
+- **Documentation improvements**: Better guides and examples
+
+For detailed customization patterns, see the [Customization Guide](docs/user-guides/customization.rst).
 
 ## Development best practices
 
@@ -235,14 +208,14 @@ When creating a pull request:
 - **Write descriptive docstrings**: All public API functions should be well-documented
 - **Add type annotations**: All code should be properly typed
 - **Follow Django/DRF conventions**: Use Django and DRF best practices
-- **Test thoroughly**: Include tests for all new functionality, especially DRF-specific features
+- **Test thoroughly**: Include tests for all new functionality
 - **Consider backwards compatibility**: Ensure package works with multiple Django/DRF versions
 
 ## Package-specific considerations
 
-- **Multiple Django versions**: The package is tested against multiple Django versions (configure in tox.ini)
+- **Multiple Django versions**: Tested against multiple Django versions (see tox.ini)
 - **Django REST Framework compatibility**: Ensure features work with supported DRF versions
 - **Installation and distribution**: Test that the package installs correctly via pip
-- **Documentation**: Update README.md and documentation for any API changes
+- **Documentation**: Update documentation for any API changes
 
 Thank you for contributing to DRF Auth Kit!
