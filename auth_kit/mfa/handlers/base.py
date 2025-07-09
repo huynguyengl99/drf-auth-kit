@@ -39,16 +39,11 @@ class MFABaseHandler:
     management, and code dispatch. Subclasses must implement method-specific
     behavior like sending codes via email or SMS.
 
-    Attributes:
-        NAME: Snake_case method name (required)
-        DISPLAY_NAME: Human-readable method name (auto-generated if not set)
-        REQUIRES_DISPATCH: Whether method requires code dispatch
-        SETUP_RESPONSE_MESSAGE: Message shown after code dispatch
-        TOTP_INTERVAL: TOTP validity interval in seconds
-        TOTP_VALID_WINDOW: Number of intervals to check for validity
-
-    Instance Attributes:
-        mfa_method: Associated MFAMethod instance
+    Subclasses must define a NAME (snake_case method identifier) and optionally
+    customize DISPLAY_NAME (human-readable name), REQUIRES_DISPATCH flag for
+    code sending, SETUP_RESPONSE_MESSAGE for user feedback, and TOTP timing
+    parameters (TOTP_INTERVAL and TOTP_VALID_WINDOW). Each handler instance
+    is associated with an MFAMethod instance.
     """
 
     NAME = ""

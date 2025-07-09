@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DRF Auth Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-09 09:28+0000\n"
+"POT-Creation-Date: 2025-07-09 09:49+0000\n"
 "PO-Revision-Date: 2025-07-08 06:02+0000\n"
 "Last-Translator: DRF Auth Kit Team\n"
 "Language-Team: Hindi\n"
@@ -322,35 +322,59 @@ msgstr "प्राथमिक विधियों को हटाया �
 msgid "Requires verification code for active methods."
 msgstr "सक्रिय विधियों के लिए सत्यापन कोड की आवश्यकता है।"
 
-#: auth_kit/mfa/models.py:158
+#: auth_kit/mfa/models.py:149
 msgid "user"
 msgstr "उपयोगकर्ता"
 
-#: auth_kit/mfa/models.py:161
+#: auth_kit/mfa/models.py:151
+msgid "User who owns this MFA method"
+msgstr "उपयोगकर्ता जो इस MFA विधि का मालिक है"
+
+#: auth_kit/mfa/models.py:154
 msgid "name"
 msgstr "नाम"
 
-#: auth_kit/mfa/models.py:162
+#: auth_kit/mfa/models.py:156
+msgid "MFA method name (e.g., 'app', 'email')"
+msgstr "MFA विधि नाम (जैसे, 'app', 'email')"
+
+#: auth_kit/mfa/models.py:159
 msgid "secret"
 msgstr "गुप्त"
 
-#: auth_kit/mfa/models.py:163
+#: auth_kit/mfa/models.py:161
+msgid "TOTP secret key for generating verification codes"
+msgstr "सत्यापन कोड उत्पन्न करने के लिए TOTP गुप्त कुंजी"
+
+#: auth_kit/mfa/models.py:164
 msgid "is primary"
 msgstr "प्राथमिक है"
 
-#: auth_kit/mfa/models.py:164
+#: auth_kit/mfa/models.py:166
+msgid "Whether this is the user's primary MFA method"
+msgstr "क्या यह उपयोगकर्ता की प्राथमिक MFA विधि है"
+
+#: auth_kit/mfa/models.py:169
 msgid "is active"
 msgstr "सक्रिय है"
 
-#: auth_kit/mfa/models.py:165
+#: auth_kit/mfa/models.py:171
+msgid "Whether this method is active and can be used"
+msgstr "क्या यह विधि सक्रिय है और इसका उपयोग किया जा सकता है"
+
+#: auth_kit/mfa/models.py:174
 msgid "backup codes"
 msgstr "बैकअप कोड"
 
-#: auth_kit/mfa/models.py:170
+#: auth_kit/mfa/models.py:177
+msgid "JSON field storing backup codes for account recovery"
+msgstr "खाता पुनर्प्राप्ति के लिए बैकअप कोड संग्रहीत करने वाला JSON फ़ील्ड"
+
+#: auth_kit/mfa/models.py:183
 msgid "MFA Method"
 msgstr "MFA विधि"
 
-#: auth_kit/mfa/models.py:171
+#: auth_kit/mfa/models.py:184
 msgid "MFA Methods"
 msgstr "MFA विधियां"
 

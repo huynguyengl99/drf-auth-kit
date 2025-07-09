@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DRF Auth Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-09 09:28+0000\n"
+"POT-Creation-Date: 2025-07-09 09:49+0000\n"
 "PO-Revision-Date: 2025-07-08 06:02+0000\n"
 "Last-Translator: DRF Auth Kit Team\n"
 "Language-Team: Swahili\n"
@@ -355,35 +355,59 @@ msgstr "Haiwezi kufuta njia za msingi."
 msgid "Requires verification code for active methods."
 msgstr "Inahitaji msimbo wa uthibitishaji kwa njia amilifu."
 
-#: auth_kit/mfa/models.py:158
+#: auth_kit/mfa/models.py:149
 msgid "user"
 msgstr "mtumiaji"
 
-#: auth_kit/mfa/models.py:161
+#: auth_kit/mfa/models.py:151
+msgid "User who owns this MFA method"
+msgstr "Mtumiaji anayemiliki njia hii ya MFA"
+
+#: auth_kit/mfa/models.py:154
 msgid "name"
 msgstr "jina"
 
-#: auth_kit/mfa/models.py:162
+#: auth_kit/mfa/models.py:156
+msgid "MFA method name (e.g., 'app', 'email')"
+msgstr "Jina la njia ya MFA (mfano, 'app', 'email')"
+
+#: auth_kit/mfa/models.py:159
 msgid "secret"
 msgstr "siri"
 
-#: auth_kit/mfa/models.py:163
+#: auth_kit/mfa/models.py:161
+msgid "TOTP secret key for generating verification codes"
+msgstr "Ufunguo wa siri wa TOTP kwa kuzalisha misimbo ya uthibitishaji"
+
+#: auth_kit/mfa/models.py:164
 msgid "is primary"
 msgstr "ni ya msingi"
 
-#: auth_kit/mfa/models.py:164
+#: auth_kit/mfa/models.py:166
+msgid "Whether this is the user's primary MFA method"
+msgstr "Iwapo hii ni njia ya msingi ya MFA ya mtumiaji"
+
+#: auth_kit/mfa/models.py:169
 msgid "is active"
 msgstr "ni amilifu"
 
-#: auth_kit/mfa/models.py:165
+#: auth_kit/mfa/models.py:171
+msgid "Whether this method is active and can be used"
+msgstr "Iwapo njia hii ni amilifu na inaweza kutumika"
+
+#: auth_kit/mfa/models.py:174
 msgid "backup codes"
 msgstr "misimbo ya kuhifadhi"
 
-#: auth_kit/mfa/models.py:170
+#: auth_kit/mfa/models.py:177
+msgid "JSON field storing backup codes for account recovery"
+msgstr "Uga wa JSON unahifadhi misimbo ya kuhifadhi kwa kurejesha akaunti"
+
+#: auth_kit/mfa/models.py:183
 msgid "MFA Method"
 msgstr "Njia ya MFA"
 
-#: auth_kit/mfa/models.py:171
+#: auth_kit/mfa/models.py:184
 msgid "MFA Methods"
 msgstr "Njia za MFA"
 

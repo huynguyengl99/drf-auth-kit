@@ -30,7 +30,8 @@ dev = [
 docs = [
   "Sphinx>=7.0.0,<8",
   "myst-parser>=4.0.1",
-  "sphinx_rtd_theme"
+  "sphinx_rtd_theme",
+  "sphinxcontrib-django>=2.5"
 ]
 lint = [
   "black>=25.1.0,<26",

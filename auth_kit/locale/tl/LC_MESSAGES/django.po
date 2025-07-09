@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DRF Auth Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-09 09:28+0000\n"
+"POT-Creation-Date: 2025-07-09 09:49+0000\n"
 "PO-Revision-Date: 2025-07-09 00:00+0000\n"
 "Last-Translator: DRF Auth Kit Team\n"
 "Language-Team: Filipino\n"
@@ -353,35 +353,59 @@ msgstr "Hindi maaaring tanggalin ang primary methods."
 msgid "Requires verification code for active methods."
 msgstr "Kailangan ng verification code para sa active methods."
 
-#: auth_kit/mfa/models.py:158
+#: auth_kit/mfa/models.py:149
 msgid "user"
 msgstr "user"
 
-#: auth_kit/mfa/models.py:161
+#: auth_kit/mfa/models.py:151
+msgid "User who owns this MFA method"
+msgstr "User na may-ari ng MFA method na ito"
+
+#: auth_kit/mfa/models.py:154
 msgid "name"
 msgstr "pangalan"
 
-#: auth_kit/mfa/models.py:162
+#: auth_kit/mfa/models.py:156
+msgid "MFA method name (e.g., 'app', 'email')"
+msgstr "Pangalan ng MFA method (hal. 'app', 'email')"
+
+#: auth_kit/mfa/models.py:159
 msgid "secret"
 msgstr "lihim"
 
-#: auth_kit/mfa/models.py:163
+#: auth_kit/mfa/models.py:161
+msgid "TOTP secret key for generating verification codes"
+msgstr "TOTP secret key para sa pagbuo ng mga verification code"
+
+#: auth_kit/mfa/models.py:164
 msgid "is primary"
 msgstr "ay primary"
 
-#: auth_kit/mfa/models.py:164
+#: auth_kit/mfa/models.py:166
+msgid "Whether this is the user's primary MFA method"
+msgstr "Kung ito ba ay primary MFA method ng user"
+
+#: auth_kit/mfa/models.py:169
 msgid "is active"
 msgstr "ay active"
 
-#: auth_kit/mfa/models.py:165
+#: auth_kit/mfa/models.py:171
+msgid "Whether this method is active and can be used"
+msgstr "Kung ang method na ito ay active at maaaring gamitin"
+
+#: auth_kit/mfa/models.py:174
 msgid "backup codes"
 msgstr "backup codes"
 
-#: auth_kit/mfa/models.py:170
+#: auth_kit/mfa/models.py:177
+msgid "JSON field storing backup codes for account recovery"
+msgstr "JSON field na nag-iimbak ng backup codes para sa account recovery"
+
+#: auth_kit/mfa/models.py:183
 msgid "MFA Method"
 msgstr "MFA Method"
 
-#: auth_kit/mfa/models.py:171
+#: auth_kit/mfa/models.py:184
 msgid "MFA Methods"
 msgstr "MFA Methods"
 

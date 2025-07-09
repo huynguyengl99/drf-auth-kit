@@ -130,19 +130,10 @@ class MFAMethod(Model):
     """
     Multi-Factor Authentication method configuration for users.
 
-    Stores MFA method configuration including secrets, backup codes, and status.
-    Enforces constraints ensuring only one primary method per user and that
-    primary methods must be active.
-
-    Attributes:
-        id: Primary key
-        user_id: Foreign key to user
-        user: User relationship
-        name: MFA method name (e.g., 'app', 'email')
-        secret: TOTP secret key
-        is_primary: Whether this is the user's primary MFA method
-        is_active: Whether this method is active and can be used
-        _backup_codes: JSON field storing backup codes
+    Stores MFA method configuration including method name (e.g., 'app', 'email'),
+    TOTP secret keys, backup codes, and status flags. Each method can be marked
+    as primary (the default method) and active/inactive. Enforces constraints
+    ensuring only one primary method per user and that primary methods must be active.
 
     Constraints:
         - Unique (user, name) combination
@@ -157,12 +148,34 @@ class MFAMethod(Model):
         on_delete=CASCADE,
         verbose_name=_("user"),
         related_name="mfa_methods",
+        help_text=_("User who owns this MFA method"),
     )
-    name = CharField[str, str](_("name"), max_length=255)
-    secret = CharField[str, str](_("secret"), max_length=255)
-    is_primary = BooleanField[bool, bool](_("is primary"), default=False)
-    is_active = BooleanField[bool, bool](_("is active"), default=False)
-    _backup_codes = JSONField[Any, Any](_("backup codes"), default=dict, blank=True)
+    name = CharField[str, str](
+        _("name"),
+        max_length=255,
+        help_text=_("MFA method name (e.g., 'app', 'email')"),
+    )
+    secret = CharField[str, str](
+        _("secret"),
+        max_length=255,
+        help_text=_("TOTP secret key for generating verification codes"),
+    )
+    is_primary = BooleanField[bool, bool](
+        _("is primary"),
+        default=False,
+        help_text=_("Whether this is the user's primary MFA method"),
+    )
+    is_active = BooleanField[bool, bool](
+        _("is active"),
+        default=False,
+        help_text=_("Whether this method is active and can be used"),
+    )
+    _backup_codes = JSONField[Any, Any](
+        _("backup codes"),
+        default=dict,
+        blank=True,
+        help_text=_("JSON field storing backup codes for account recovery"),
+    )
 
     class Meta:
         """Database configuration and constraints for MFAMethod model."""

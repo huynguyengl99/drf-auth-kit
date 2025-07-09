@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DRF Auth Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-09 09:28+0000\n"
+"POT-Creation-Date: 2025-07-09 09:49+0000\n"
 "PO-Revision-Date: 2025-07-08 06:02+0000\n"
 "Last-Translator: DRF Auth Kit Team\n"
 "Language-Team: Macedonian\n"
@@ -345,35 +345,59 @@ msgstr "Не можат да се бришат примарни методи."
 msgid "Requires verification code for active methods."
 msgstr "Бара код за верификација за активни методи."
 
-#: auth_kit/mfa/models.py:158
+#: auth_kit/mfa/models.py:149
 msgid "user"
 msgstr "корисник"
 
-#: auth_kit/mfa/models.py:161
+#: auth_kit/mfa/models.py:151
+msgid "User who owns this MFA method"
+msgstr "Корисник кој ја поседува оваа MFA метода"
+
+#: auth_kit/mfa/models.py:154
 msgid "name"
 msgstr "име"
 
-#: auth_kit/mfa/models.py:162
+#: auth_kit/mfa/models.py:156
+msgid "MFA method name (e.g., 'app', 'email')"
+msgstr "Име на MFA метода (на пример, 'app', 'email')"
+
+#: auth_kit/mfa/models.py:159
 msgid "secret"
 msgstr "тајна"
 
-#: auth_kit/mfa/models.py:163
+#: auth_kit/mfa/models.py:161
+msgid "TOTP secret key for generating verification codes"
+msgstr "TOTP таен клуч за генерирање кодови за верификација"
+
+#: auth_kit/mfa/models.py:164
 msgid "is primary"
 msgstr "е примарна"
 
-#: auth_kit/mfa/models.py:164
+#: auth_kit/mfa/models.py:166
+msgid "Whether this is the user's primary MFA method"
+msgstr "Дали ова е примарната MFA метода на корисникот"
+
+#: auth_kit/mfa/models.py:169
 msgid "is active"
 msgstr "е активна"
 
-#: auth_kit/mfa/models.py:165
+#: auth_kit/mfa/models.py:171
+msgid "Whether this method is active and can be used"
+msgstr "Дали оваа метода е активна и може да се користи"
+
+#: auth_kit/mfa/models.py:174
 msgid "backup codes"
 msgstr "резервни кодови"
 
-#: auth_kit/mfa/models.py:170
+#: auth_kit/mfa/models.py:177
+msgid "JSON field storing backup codes for account recovery"
+msgstr "JSON поле кое ги чува резервните кодови за опоравување на сметка"
+
+#: auth_kit/mfa/models.py:183
 msgid "MFA Method"
 msgstr "MFA Метода"
 
-#: auth_kit/mfa/models.py:171
+#: auth_kit/mfa/models.py:184
 msgid "MFA Methods"
 msgstr "MFA Методи"
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DRF Auth Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-09 09:28+0000\n"
+"POT-Creation-Date: 2025-07-09 09:49+0000\n"
 "PO-Revision-Date: 2025-07-08 06:02+0000\n"
 "Language: no\n"
 "MIME-Version: 1.0\n"
@@ -327,35 +327,59 @@ msgstr "Kan ikke slette primære metoder."
 msgid "Requires verification code for active methods."
 msgstr "Krever bekreftelseskode for aktive metoder."
 
-#: auth_kit/mfa/models.py:158
+#: auth_kit/mfa/models.py:149
 msgid "user"
 msgstr "bruker"
 
-#: auth_kit/mfa/models.py:161
+#: auth_kit/mfa/models.py:151
+msgid "User who owns this MFA method"
+msgstr "Bruker som eier denne MFA-metoden"
+
+#: auth_kit/mfa/models.py:154
 msgid "name"
 msgstr "navn"
 
-#: auth_kit/mfa/models.py:162
+#: auth_kit/mfa/models.py:156
+msgid "MFA method name (e.g., 'app', 'email')"
+msgstr "MFA-metodenavn (f.eks. 'app', 'email')"
+
+#: auth_kit/mfa/models.py:159
 msgid "secret"
 msgstr "hemmelighet"
 
-#: auth_kit/mfa/models.py:163
+#: auth_kit/mfa/models.py:161
+msgid "TOTP secret key for generating verification codes"
+msgstr "TOTP hemmelig nøkkel for å generere bekreftelseskoder"
+
+#: auth_kit/mfa/models.py:164
 msgid "is primary"
 msgstr "er primær"
 
-#: auth_kit/mfa/models.py:164
+#: auth_kit/mfa/models.py:166
+msgid "Whether this is the user's primary MFA method"
+msgstr "Om dette er brukerens primære MFA-metode"
+
+#: auth_kit/mfa/models.py:169
 msgid "is active"
 msgstr "er aktiv"
 
-#: auth_kit/mfa/models.py:165
+#: auth_kit/mfa/models.py:171
+msgid "Whether this method is active and can be used"
+msgstr "Om denne metoden er aktiv og kan brukes"
+
+#: auth_kit/mfa/models.py:174
 msgid "backup codes"
 msgstr "backup-koder"
 
-#: auth_kit/mfa/models.py:170
+#: auth_kit/mfa/models.py:177
+msgid "JSON field storing backup codes for account recovery"
+msgstr "JSON-felt som lagrer reservekoder for kontogjenoppretting"
+
+#: auth_kit/mfa/models.py:183
 msgid "MFA Method"
 msgstr "MFA-metode"
 
-#: auth_kit/mfa/models.py:171
+#: auth_kit/mfa/models.py:184
 msgid "MFA Methods"
 msgstr "MFA-metoder"
 

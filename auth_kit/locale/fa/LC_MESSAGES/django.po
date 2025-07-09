@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DRF Auth Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-09 09:28+0000\n"
+"POT-Creation-Date: 2025-07-09 09:49+0000\n"
 "PO-Revision-Date: 2025-07-08 06:02+0000\n"
 "Last-Translator: DRF Auth Kit Team\n"
 "Language-Team: Persian\n"
@@ -325,35 +325,59 @@ msgstr "نمی‌توان روش‌های اصلی را حذف کرد."
 msgid "Requires verification code for active methods."
 msgstr "کد تأیید برای روش‌های فعال مورد نیاز است."
 
-#: auth_kit/mfa/models.py:158
+#: auth_kit/mfa/models.py:149
 msgid "user"
 msgstr "کاربر"
 
-#: auth_kit/mfa/models.py:161
+#: auth_kit/mfa/models.py:151
+msgid "User who owns this MFA method"
+msgstr "کاربری که مالک این روش MFA است"
+
+#: auth_kit/mfa/models.py:154
 msgid "name"
 msgstr "نام"
 
-#: auth_kit/mfa/models.py:162
+#: auth_kit/mfa/models.py:156
+msgid "MFA method name (e.g., 'app', 'email')"
+msgstr "نام روش MFA (مثلاً 'app', 'email')"
+
+#: auth_kit/mfa/models.py:159
 msgid "secret"
 msgstr "رمز"
 
-#: auth_kit/mfa/models.py:163
+#: auth_kit/mfa/models.py:161
+msgid "TOTP secret key for generating verification codes"
+msgstr "کلید محرمانه TOTP برای تولید کدهای تأیید"
+
+#: auth_kit/mfa/models.py:164
 msgid "is primary"
 msgstr "اصلی است"
 
-#: auth_kit/mfa/models.py:164
+#: auth_kit/mfa/models.py:166
+msgid "Whether this is the user's primary MFA method"
+msgstr "آیا این روش MFA اصلی کاربر است"
+
+#: auth_kit/mfa/models.py:169
 msgid "is active"
 msgstr "فعال است"
 
-#: auth_kit/mfa/models.py:165
+#: auth_kit/mfa/models.py:171
+msgid "Whether this method is active and can be used"
+msgstr "آیا این روش فعال است و قابل استفاده است"
+
+#: auth_kit/mfa/models.py:174
 msgid "backup codes"
 msgstr "کدهای پشتیبان"
 
-#: auth_kit/mfa/models.py:170
+#: auth_kit/mfa/models.py:177
+msgid "JSON field storing backup codes for account recovery"
+msgstr "فیلد JSON برای ذخیره کدهای پشتیبان برای بازیابی حساب"
+
+#: auth_kit/mfa/models.py:183
 msgid "MFA Method"
 msgstr "روش MFA"
 
-#: auth_kit/mfa/models.py:171
+#: auth_kit/mfa/models.py:184
 msgid "MFA Methods"
 msgstr "روش‌های MFA"
 
