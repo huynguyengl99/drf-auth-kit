@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DRF Auth Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-09 05:21+0000\n"
+"POT-Creation-Date: 2025-07-09 09:28+0000\n"
 "PO-Revision-Date: 2025-07-08 06:02+0000\n"
 "Last-Translator: DRF Auth Kit Team\n"
 "Language-Team: Bosnian\n"
@@ -121,7 +121,8 @@ msgstr "Registruj novi korisnički račun."
 msgid ""
 "Users must verify their email address before the account is fully activated."
 msgstr ""
-"Korisnici moraju potvrditi svoju email adresu prije nego što se račun potpuno aktivira."
+"Korisnici moraju potvrditi svoju email adresu prije nego što se račun "
+"potpuno aktivira."
 
 #: auth_kit/api_descriptions.py:143
 msgid ""
@@ -455,15 +456,15 @@ msgstr "Nije moguće prijaviti se sa pruženim kredencijalima."
 msgid "Invalid value"
 msgstr "Nevažeća vrijednost"
 
-#: auth_kit/serializers/password.py:220
+#: auth_kit/serializers/password.py:222
 msgid "Your old password was entered incorrectly. Please enter it again."
 msgstr "Vaša stara lozinka je pogrešno unesena. Molimo unesite je ponovo."
 
-#: auth_kit/serializers/registration.py:88
+#: auth_kit/serializers/registration.py:98
 msgid "A user is already registered with this e-mail address."
 msgstr "Korisnik je već registrovan sa ovom e-mail adresom."
 
-#: auth_kit/serializers/registration.py:119
+#: auth_kit/serializers/registration.py:129
 msgid "The two password fields didn't match."
 msgstr "Dva polja za lozinku se ne poklapaju."
 
@@ -488,25 +489,26 @@ msgstr "Korisnik je već registrovan sa ovom e-mail adresom."
 msgid "Failed to exchange code for access token"
 msgstr "Neuspješna zamjena koda za pristupni token"
 
-#: auth_kit/social/social_api_descriptions.py:29
+#: auth_kit/social/social_api_descriptions.py:31
 #, python-format
 msgid ""
 "Authenticate with %(provider)s using OAuth2/OpenID Connect authorization "
 "code to obtain access tokens."
 msgstr ""
-"Autentificiraj se sa %(provider)s koristeći OAuth2/OpenID Connect autorizacijski "
-"kod da dobiješ pristupne tokene."
+"Autentificiraj se sa %(provider)s koristeći OAuth2/OpenID Connect "
+"autorizacijski kod da dobiješ pristupne tokene."
 
-#: auth_kit/social/social_api_descriptions.py:51
+#: auth_kit/social/social_api_descriptions.py:53
 #, python-format
 msgid ""
 "Connect a %(provider)s account to the current user's account. This allows "
 "the user to login using their existing %(provider)s account in the future."
 msgstr ""
 "Poveži %(provider)s račun sa računom trenutnog korisnika. Ovo omogućava "
-"korisniku da se prijavi koristeći svoj postojeći %(provider)s račun u budućnosti."
+"korisniku da se prijavi koristeći svoj postojeći %(provider)s račun u "
+"budućnosti."
 
-#: auth_kit/social/social_api_descriptions.py:56
+#: auth_kit/social/social_api_descriptions.py:58
 #, python-format
 msgid ""
 "Requires authentication and a valid OAuth2/OpenID Connect authorization code "
@@ -515,7 +517,7 @@ msgstr ""
 "Zahtijeva autentifikaciju i valjan OAuth2/OpenID Connect autorizacijski kod "
 "od %(provider)s."
 
-#: auth_kit/social/social_api_descriptions.py:60
+#: auth_kit/social/social_api_descriptions.py:62
 #, python-format
 msgid ""
 "On success, the %(provider)s account is linked and can be used for future "
@@ -524,7 +526,7 @@ msgstr ""
 "Kod uspjeha, %(provider)s račun je povezan i može se koristiti za buduće "
 "prijave."
 
-#: auth_kit/social/social_api_descriptions.py:73
+#: auth_kit/social/social_api_descriptions.py:85
 msgid ""
 "List all social accounts connected to the current user. Shows account "
 "details including provider, UID, and connection dates."
@@ -532,7 +534,7 @@ msgstr ""
 "Nabroji sve društvene račune povezane sa trenutnim korisnikom. Prikazuje "
 "detalje računa uključujući pružioca, UID i datume povezivanja."
 
-#: auth_kit/social/social_api_descriptions.py:78
+#: auth_kit/social/social_api_descriptions.py:90
 msgid ""
 "Disconnect a social account from the current user. Removes the social "
 "account connection and prevents future logins via that provider. Requires "

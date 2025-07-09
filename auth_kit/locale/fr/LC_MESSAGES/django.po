@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DRF Auth Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-09 05:21+0000\n"
+"POT-Creation-Date: 2025-07-09 09:28+0000\n"
 "PO-Revision-Date: 2025-07-09 00:00+0000\n"
 "Last-Translator: DRF Auth Kit Team\n"
 "Language-Team: French\n"
@@ -129,7 +129,9 @@ msgstr "Enregistre un nouveau compte utilisateur."
 #: auth_kit/api_descriptions.py:134
 msgid ""
 "Users must verify their email address before the account is fully activated."
-msgstr "Les utilisateurs doivent vérifier leur adresse email avant que le compte ne soit entièrement activé."
+msgstr ""
+"Les utilisateurs doivent vérifier leur adresse email avant que le compte ne "
+"soit entièrement activé."
 
 #: auth_kit/api_descriptions.py:143
 msgid ""
@@ -475,17 +477,17 @@ msgstr "Impossible de se connecter avec les identifiants fournis."
 msgid "Invalid value"
 msgstr "Valeur invalide"
 
-#: auth_kit/serializers/password.py:220
+#: auth_kit/serializers/password.py:222
 msgid "Your old password was entered incorrectly. Please enter it again."
 msgstr ""
 "Votre ancien mot de passe a été saisi incorrectement. Veuillez le saisir à "
 "nouveau."
 
-#: auth_kit/serializers/registration.py:88
+#: auth_kit/serializers/registration.py:98
 msgid "A user is already registered with this e-mail address."
 msgstr "Un utilisateur est déjà enregistré avec cette adresse email."
 
-#: auth_kit/serializers/registration.py:119
+#: auth_kit/serializers/registration.py:129
 msgid "The two password fields didn't match."
 msgstr "Les deux champs de mot de passe ne correspondent pas."
 
@@ -510,46 +512,61 @@ msgstr "L'utilisateur est déjà enregistré avec cette adresse email."
 msgid "Failed to exchange code for access token"
 msgstr "Échec de l'échange du code pour le jeton d'accès"
 
-#: auth_kit/social/social_api_descriptions.py:29
+#: auth_kit/social/social_api_descriptions.py:31
 #, python-format
 msgid ""
 "Authenticate with %(provider)s using OAuth2/OpenID Connect authorization "
 "code to obtain access tokens."
-msgstr "Authentifiez-vous avec %(provider)s en utilisant le code d'autorisation OAuth2/OpenID Connect pour obtenir des jetons d'accès."
+msgstr ""
+"Authentifiez-vous avec %(provider)s en utilisant le code d'autorisation "
+"OAuth2/OpenID Connect pour obtenir des jetons d'accès."
 
-#: auth_kit/social/social_api_descriptions.py:51
+#: auth_kit/social/social_api_descriptions.py:53
 #, python-format
 msgid ""
 "Connect a %(provider)s account to the current user's account. This allows "
 "the user to login using their existing %(provider)s account in the future."
-msgstr "Connecte un compte %(provider)s au compte de l'utilisateur actuel. Cela permet à l'utilisateur de se connecter en utilisant son compte %(provider)s existant à l'avenir."
+msgstr ""
+"Connecte un compte %(provider)s au compte de l'utilisateur actuel. Cela "
+"permet à l'utilisateur de se connecter en utilisant son compte %(provider)s "
+"existant à l'avenir."
 
-#: auth_kit/social/social_api_descriptions.py:56
+#: auth_kit/social/social_api_descriptions.py:58
 #, python-format
 msgid ""
 "Requires authentication and a valid OAuth2/OpenID Connect authorization code "
 "from %(provider)s."
-msgstr "Nécessite une authentification et un code d'autorisation OAuth2/OpenID Connect valide de %(provider)s."
+msgstr ""
+"Nécessite une authentification et un code d'autorisation OAuth2/OpenID "
+"Connect valide de %(provider)s."
 
-#: auth_kit/social/social_api_descriptions.py:60
+#: auth_kit/social/social_api_descriptions.py:62
 #, python-format
 msgid ""
 "On success, the %(provider)s account is linked and can be used for future "
 "logins."
-msgstr "En cas de succès, le compte %(provider)s est lié et peut être utilisé pour les connexions futures."
+msgstr ""
+"En cas de succès, le compte %(provider)s est lié et peut être utilisé pour "
+"les connexions futures."
 
-#: auth_kit/social/social_api_descriptions.py:73
+#: auth_kit/social/social_api_descriptions.py:85
 msgid ""
 "List all social accounts connected to the current user. Shows account "
 "details including provider, UID, and connection dates."
-msgstr "Liste tous les comptes sociaux connectés à l'utilisateur actuel. Affiche les détails du compte incluant le fournisseur, l'UID et les dates de connexion."
+msgstr ""
+"Liste tous les comptes sociaux connectés à l'utilisateur actuel. Affiche les "
+"détails du compte incluant le fournisseur, l'UID et les dates de connexion."
 
-#: auth_kit/social/social_api_descriptions.py:78
+#: auth_kit/social/social_api_descriptions.py:90
 msgid ""
 "Disconnect a social account from the current user. Removes the social "
 "account connection and prevents future logins via that provider. Requires "
 "authentication and the account must belong to the current user."
-msgstr "Déconnecte un compte social de l'utilisateur actuel. Supprime la connexion du compte social et empêche les connexions futures via ce fournisseur. Nécessite une authentification et le compte doit appartenir à l'utilisateur actuel."
+msgstr ""
+"Déconnecte un compte social de l'utilisateur actuel. Supprime la connexion "
+"du compte social et empêche les connexions futures via ce fournisseur. "
+"Nécessite une authentification et le compte doit appartenir à l'utilisateur "
+"actuel."
 
 #: auth_kit/social/views/login.py:58
 msgid "adapter_class is not defined"

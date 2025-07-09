@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DRF Auth Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-09 05:21+0000\n"
+"POT-Creation-Date: 2025-07-09 09:28+0000\n"
 "PO-Revision-Date: 2025-07-08 06:02+0000\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
@@ -456,15 +456,15 @@ msgstr "Kan niet inloggen met opgegeven inloggegevens."
 msgid "Invalid value"
 msgstr "Ongeldige waarde"
 
-#: auth_kit/serializers/password.py:220
+#: auth_kit/serializers/password.py:222
 msgid "Your old password was entered incorrectly. Please enter it again."
 msgstr "Uw oude wachtwoord is onjuist ingevoerd. Voer het opnieuw in."
 
-#: auth_kit/serializers/registration.py:88
+#: auth_kit/serializers/registration.py:98
 msgid "A user is already registered with this e-mail address."
 msgstr "Er is al een gebruiker geregistreerd met dit e-mailadres."
 
-#: auth_kit/serializers/registration.py:119
+#: auth_kit/serializers/registration.py:129
 msgid "The two password fields didn't match."
 msgstr "De twee wachtwoordvelden komen niet overeen."
 
@@ -489,7 +489,7 @@ msgstr "Gebruiker is al geregistreerd met dit e-mailadres."
 msgid "Failed to exchange code for access token"
 msgstr "Kan code niet uitwisselen voor toegangstoken"
 
-#: auth_kit/social/social_api_descriptions.py:29
+#: auth_kit/social/social_api_descriptions.py:31
 #, python-format
 msgid ""
 "Authenticate with %(provider)s using OAuth2/OpenID Connect authorization "
@@ -498,7 +498,7 @@ msgstr ""
 "Authenticeer met %(provider)s met behulp van OAuth2/OpenID Connect "
 "autorisatiecode om toegangstokens te verkrijgen."
 
-#: auth_kit/social/social_api_descriptions.py:51
+#: auth_kit/social/social_api_descriptions.py:53
 #, python-format
 msgid ""
 "Connect a %(provider)s account to the current user's account. This allows "
@@ -508,7 +508,7 @@ msgstr ""
 "stelt de gebruiker in staat om in de toekomst in te loggen met hun bestaande "
 "%(provider)s account."
 
-#: auth_kit/social/social_api_descriptions.py:56
+#: auth_kit/social/social_api_descriptions.py:58
 #, python-format
 msgid ""
 "Requires authentication and a valid OAuth2/OpenID Connect authorization code "
@@ -517,7 +517,7 @@ msgstr ""
 "Vereist authenticatie en een geldige OAuth2/OpenID Connect autorisatiecode "
 "van %(provider)s."
 
-#: auth_kit/social/social_api_descriptions.py:60
+#: auth_kit/social/social_api_descriptions.py:62
 #, python-format
 msgid ""
 "On success, the %(provider)s account is linked and can be used for future "
@@ -526,7 +526,7 @@ msgstr ""
 "Bij succes wordt het %(provider)s account gekoppeld en kan het worden "
 "gebruikt voor toekomstige logins."
 
-#: auth_kit/social/social_api_descriptions.py:73
+#: auth_kit/social/social_api_descriptions.py:85
 msgid ""
 "List all social accounts connected to the current user. Shows account "
 "details including provider, UID, and connection dates."
@@ -534,7 +534,7 @@ msgstr ""
 "Lijst alle sociale accounts die zijn verbonden met de huidige gebruiker. "
 "Toont accountgegevens inclusief provider, UID en verbindingsdatums."
 
-#: auth_kit/social/social_api_descriptions.py:78
+#: auth_kit/social/social_api_descriptions.py:90
 msgid ""
 "Disconnect a social account from the current user. Removes the social "
 "account connection and prevents future logins via that provider. Requires "

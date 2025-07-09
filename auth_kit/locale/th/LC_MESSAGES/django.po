@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DRF Auth Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-09 05:21+0000\n"
+"POT-Creation-Date: 2025-07-09 09:28+0000\n"
 "PO-Revision-Date: 2025-07-09 00:00+0000\n"
 "Last-Translator: DRF Auth Kit Team\n"
 "Language-Team: Thai\n"
@@ -429,15 +429,15 @@ msgstr "ไม่สามารถเข้าสู่ระบบด้วย
 msgid "Invalid value"
 msgstr "ค่าไม่ถูกต้อง"
 
-#: auth_kit/serializers/password.py:220
+#: auth_kit/serializers/password.py:222
 msgid "Your old password was entered incorrectly. Please enter it again."
 msgstr "รหัสผ่านเก่าของคุณถูกป้อนไม่ถูกต้อง โปรดป้อนอีกครั้ง"
 
-#: auth_kit/serializers/registration.py:88
+#: auth_kit/serializers/registration.py:98
 msgid "A user is already registered with this e-mail address."
 msgstr "มีผู้ใช้ลงทะเบียนด้วยที่อยู่อีเมลนี้แล้ว"
 
-#: auth_kit/serializers/registration.py:119
+#: auth_kit/serializers/registration.py:129
 msgid "The two password fields didn't match."
 msgstr "ฟิลด์รหัสผ่านทั้งสองไม่ตรงกัน"
 
@@ -461,59 +461,58 @@ msgstr "ผู้ใช้ลงทะเบียนด้วยที่อย
 msgid "Failed to exchange code for access token"
 msgstr "ไม่สามารถแลกเปลี่ยนรหัสกับ access token"
 
-#: auth_kit/social/social_api_descriptions.py:29
+#: auth_kit/social/social_api_descriptions.py:31
 #, python-format
 msgid ""
 "Authenticate with %(provider)s using OAuth2/OpenID Connect authorization "
 "code to obtain access tokens."
 msgstr ""
-"รับรองความถูกต้องด้วย %(provider)s โดยใช้รหัสการให้สิทธิ์ OAuth2/OpenID Connect "
-"เพื่อรับ access token"
+"รับรองความถูกต้องด้วย %(provider)s โดยใช้รหัสการให้สิทธิ์ OAuth2/OpenID Connect เพื่อรับ "
+"access token"
 
-#: auth_kit/social/social_api_descriptions.py:51
+#: auth_kit/social/social_api_descriptions.py:53
 #, python-format
 msgid ""
 "Connect a %(provider)s account to the current user's account. This allows "
 "the user to login using their existing %(provider)s account in the future."
 msgstr ""
-"เชื่อมต่อบัญชี %(provider)s กับบัญชีของผู้ใช้ปัจจุบัน "
-"ทำให้ผู้ใช้สามารถเข้าสู่ระบบโดยใช้บัญชี %(provider)s ที่มีอยู่ในอนาคต"
+"เชื่อมต่อบัญชี %(provider)s กับบัญชีของผู้ใช้ปัจจุบัน ทำให้ผู้ใช้สามารถเข้าสู่ระบบโดยใช้บัญชี "
+"%(provider)s ที่มีอยู่ในอนาคต"
 
-#: auth_kit/social/social_api_descriptions.py:56
+#: auth_kit/social/social_api_descriptions.py:58
 #, python-format
 msgid ""
 "Requires authentication and a valid OAuth2/OpenID Connect authorization code "
 "from %(provider)s."
 msgstr ""
-"ต้องการการรับรองความถูกต้องและรหัสการให้สิทธิ์ OAuth2/OpenID Connect "
-"ที่ถูกต้องจาก %(provider)s"
+"ต้องการการรับรองความถูกต้องและรหัสการให้สิทธิ์ OAuth2/OpenID Connect ที่ถูกต้องจาก "
+"%(provider)s"
 
-#: auth_kit/social/social_api_descriptions.py:60
+#: auth_kit/social/social_api_descriptions.py:62
 #, python-format
 msgid ""
 "On success, the %(provider)s account is linked and can be used for future "
 "logins."
 msgstr ""
-"เมื่อสำเร็จ บัญชี %(provider)s จะถูกเชื่อมโยงและสามารถใช้สำหรับ"
-"การเข้าสู่ระบบในอนาคต"
+"เมื่อสำเร็จ บัญชี %(provider)s จะถูกเชื่อมโยงและสามารถใช้สำหรับการเข้าสู่ระบบในอนาคต"
 
-#: auth_kit/social/social_api_descriptions.py:73
+#: auth_kit/social/social_api_descriptions.py:85
 msgid ""
 "List all social accounts connected to the current user. Shows account "
 "details including provider, UID, and connection dates."
 msgstr ""
-"แสดงรายการบัญชีโซเชียลทั้งหมดที่เชื่อมต่อกับผู้ใช้ปัจจุบัน "
-"แสดงรายละเอียดบัญชีรวมถึงผู้ให้บริการ UID และวันที่เชื่อมต่อ"
+"แสดงรายการบัญชีโซเชียลทั้งหมดที่เชื่อมต่อกับผู้ใช้ปัจจุบัน แสดงรายละเอียดบัญชีรวมถึงผู้ให้บริการ UID "
+"และวันที่เชื่อมต่อ"
 
-#: auth_kit/social/social_api_descriptions.py:78
+#: auth_kit/social/social_api_descriptions.py:90
 msgid ""
 "Disconnect a social account from the current user. Removes the social "
 "account connection and prevents future logins via that provider. Requires "
 "authentication and the account must belong to the current user."
 msgstr ""
-"ยกเลิกการเชื่อมต่อบัญชีโซเชียลจากผู้ใช้ปัจจุบัน ลบการเชื่อมต่อบัญชีโซเชียล"
-"และป้องกันการเข้าสู่ระบบในอนาคตผ่านผู้ให้บริการนั้น ต้องการการรับรองความถูกต้อง"
-"และบัญชีต้องเป็นของผู้ใช้ปัจจุบัน"
+"ยกเลิกการเชื่อมต่อบัญชีโซเชียลจากผู้ใช้ปัจจุบัน "
+"ลบการเชื่อมต่อบัญชีโซเชียลและป้องกันการเข้าสู่ระบบในอนาคตผ่านผู้ให้บริการนั้น "
+"ต้องการการรับรองความถูกต้องและบัญชีต้องเป็นของผู้ใช้ปัจจุบัน"
 
 #: auth_kit/social/views/login.py:58
 msgid "adapter_class is not defined"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DRF Auth Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-09 05:21+0000\n"
+"POT-Creation-Date: 2025-07-09 09:28+0000\n"
 "PO-Revision-Date: 2025-07-08 06:02+0000\n"
 "Last-Translator: DRF Auth Kit Team\n"
 "Language-Team: Latvian\n"
@@ -121,7 +121,9 @@ msgstr "Reģistrēt jaunu lietotāja kontu."
 #: auth_kit/api_descriptions.py:134
 msgid ""
 "Users must verify their email address before the account is fully activated."
-msgstr "Lietotājiem ir jāapstiprina sava e-pasta adrese, pirms konts tiek pilnībā aktivizēts."
+msgstr ""
+"Lietotājiem ir jāapstiprina sava e-pasta adrese, pirms konts tiek pilnībā "
+"aktivizēts."
 
 #: auth_kit/api_descriptions.py:143
 msgid ""
@@ -456,15 +458,15 @@ msgstr "Nevar pieteikties ar norādītajiem akreditācijas datiem."
 msgid "Invalid value"
 msgstr "Nederīga vērtība"
 
-#: auth_kit/serializers/password.py:220
+#: auth_kit/serializers/password.py:222
 msgid "Your old password was entered incorrectly. Please enter it again."
 msgstr "Jūsu vecā parole tika ievadīta nepareizi. Lūdzu, ievadiet to vēlreiz."
 
-#: auth_kit/serializers/registration.py:88
+#: auth_kit/serializers/registration.py:98
 msgid "A user is already registered with this e-mail address."
 msgstr "Lietotājs jau ir reģistrēts ar šo e-pasta adresi."
 
-#: auth_kit/serializers/registration.py:119
+#: auth_kit/serializers/registration.py:129
 msgid "The two password fields didn't match."
 msgstr "Abi paroles lauki neatbilst."
 
@@ -488,46 +490,59 @@ msgstr "Lietotājs jau ir reģistrēts ar šo e-pasta adresi."
 msgid "Failed to exchange code for access token"
 msgstr "Neizdevās apmainīt kodu pret piekļuves žetonu"
 
-#: auth_kit/social/social_api_descriptions.py:29
+#: auth_kit/social/social_api_descriptions.py:31
 #, python-format
 msgid ""
 "Authenticate with %(provider)s using OAuth2/OpenID Connect authorization "
 "code to obtain access tokens."
-msgstr "Autentificēties ar %(provider)s, izmantojot OAuth2/OpenID Connect autorizācijas kodu, lai iegūtu piekļuves žetonus."
+msgstr ""
+"Autentificēties ar %(provider)s, izmantojot OAuth2/OpenID Connect "
+"autorizācijas kodu, lai iegūtu piekļuves žetonus."
 
-#: auth_kit/social/social_api_descriptions.py:51
+#: auth_kit/social/social_api_descriptions.py:53
 #, python-format
 msgid ""
 "Connect a %(provider)s account to the current user's account. This allows "
 "the user to login using their existing %(provider)s account in the future."
-msgstr "Savienot %(provider)s kontu ar pašreizējā lietotāja kontu. Tas ļauj lietotājam turpmāk pieteikties, izmantojot savu esošo %(provider)s kontu."
+msgstr ""
+"Savienot %(provider)s kontu ar pašreizējā lietotāja kontu. Tas ļauj "
+"lietotājam turpmāk pieteikties, izmantojot savu esošo %(provider)s kontu."
 
-#: auth_kit/social/social_api_descriptions.py:56
+#: auth_kit/social/social_api_descriptions.py:58
 #, python-format
 msgid ""
 "Requires authentication and a valid OAuth2/OpenID Connect authorization code "
 "from %(provider)s."
-msgstr "Nepieciešama autentifikācija un derīgs OAuth2/OpenID Connect autorizācijas kods no %(provider)s."
+msgstr ""
+"Nepieciešama autentifikācija un derīgs OAuth2/OpenID Connect autorizācijas "
+"kods no %(provider)s."
 
-#: auth_kit/social/social_api_descriptions.py:60
+#: auth_kit/social/social_api_descriptions.py:62
 #, python-format
 msgid ""
 "On success, the %(provider)s account is linked and can be used for future "
 "logins."
-msgstr "Veiksmīgas darbības gadījumā %(provider)s konts tiek saistīts un to var izmantot turpmākajām pieteikšanās reizēm."
+msgstr ""
+"Veiksmīgas darbības gadījumā %(provider)s konts tiek saistīts un to var "
+"izmantot turpmākajām pieteikšanās reizēm."
 
-#: auth_kit/social/social_api_descriptions.py:73
+#: auth_kit/social/social_api_descriptions.py:85
 msgid ""
 "List all social accounts connected to the current user. Shows account "
 "details including provider, UID, and connection dates."
-msgstr "Uzskaita visus sociālos kontus, kas savienoti ar pašreizējo lietotāju. Rāda konta detaļas, ieskaitot nodrošinātāju, UID un savienojuma datumus."
+msgstr ""
+"Uzskaita visus sociālos kontus, kas savienoti ar pašreizējo lietotāju. Rāda "
+"konta detaļas, ieskaitot nodrošinātāju, UID un savienojuma datumus."
 
-#: auth_kit/social/social_api_descriptions.py:78
+#: auth_kit/social/social_api_descriptions.py:90
 msgid ""
 "Disconnect a social account from the current user. Removes the social "
 "account connection and prevents future logins via that provider. Requires "
 "authentication and the account must belong to the current user."
-msgstr "Atvienot sociālo kontu no pašreizējā lietotāja. Noņem sociālā konta savienojumu un novērš turpmāko pieteikšanos caur šo nodrošinātāju. Nepieciešama autentifikācija un kontam jāpieder pašreizējam lietotājam."
+msgstr ""
+"Atvienot sociālo kontu no pašreizējā lietotāja. Noņem sociālā konta "
+"savienojumu un novērš turpmāko pieteikšanos caur šo nodrošinātāju. "
+"Nepieciešama autentifikācija un kontam jāpieder pašreizējam lietotājam."
 
 #: auth_kit/social/views/login.py:58
 msgid "adapter_class is not defined"

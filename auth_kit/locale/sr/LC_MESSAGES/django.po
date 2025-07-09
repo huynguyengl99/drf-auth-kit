@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DRF Auth Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-09 05:21+0000\n"
+"POT-Creation-Date: 2025-07-09 09:28+0000\n"
 "PO-Revision-Date: 2025-07-08 06:02+0000\n"
 "Last-Translator: DRF Auth Kit Team\n"
 "Language-Team: Serbian\n"
@@ -457,15 +457,15 @@ msgstr "Nije moguće prijaviti se sa dostavljenim pristupnim podacima."
 msgid "Invalid value"
 msgstr "Neispravna vrednost"
 
-#: auth_kit/serializers/password.py:220
+#: auth_kit/serializers/password.py:222
 msgid "Your old password was entered incorrectly. Please enter it again."
 msgstr "Vaša stara lozinka je uneta neispravno. Molimo unesite je ponovo."
 
-#: auth_kit/serializers/registration.py:88
+#: auth_kit/serializers/registration.py:98
 msgid "A user is already registered with this e-mail address."
 msgstr "Korisnik sa ovom email adresom je već registrovan."
 
-#: auth_kit/serializers/registration.py:119
+#: auth_kit/serializers/registration.py:129
 msgid "The two password fields didn't match."
 msgstr "Dva polja za lozinku se ne poklapaju."
 
@@ -490,7 +490,7 @@ msgstr "Korisnik sa ovom email adresom je već registrovan."
 msgid "Failed to exchange code for access token"
 msgstr "Neuspešna razmena koda za pristupni token"
 
-#: auth_kit/social/social_api_descriptions.py:29
+#: auth_kit/social/social_api_descriptions.py:31
 #, python-format
 msgid ""
 "Authenticate with %(provider)s using OAuth2/OpenID Connect authorization "
@@ -499,7 +499,7 @@ msgstr ""
 "Autentifikacija sa %(provider)s koristeći autorizacioni kod OAuth2/OpenID "
 "Connect za dobijanje pristupnih tokena."
 
-#: auth_kit/social/social_api_descriptions.py:51
+#: auth_kit/social/social_api_descriptions.py:53
 #, python-format
 msgid ""
 "Connect a %(provider)s account to the current user's account. This allows "
@@ -508,16 +508,16 @@ msgstr ""
 "Povezuje %(provider)s nalog sa nalogom trenutnog korisnika. Ovo omogućava "
 "korisniku da se ubuduće prijavljuje koristeći postojeji %(provider)s nalog."
 
-#: auth_kit/social/social_api_descriptions.py:56
+#: auth_kit/social/social_api_descriptions.py:58
 #, python-format
 msgid ""
 "Requires authentication and a valid OAuth2/OpenID Connect authorization code "
 "from %(provider)s."
 msgstr ""
-"Zahteva autentifikaciju i važeći autorizacioni kod OAuth2/OpenID Connect "
-"od %(provider)s."
+"Zahteva autentifikaciju i važeći autorizacioni kod OAuth2/OpenID Connect od "
+"%(provider)s."
 
-#: auth_kit/social/social_api_descriptions.py:60
+#: auth_kit/social/social_api_descriptions.py:62
 #, python-format
 msgid ""
 "On success, the %(provider)s account is linked and can be used for future "
@@ -526,7 +526,7 @@ msgstr ""
 "Kod uspeha, %(provider)s nalog je povezan i može se koristiti za buduće "
 "prijavljivanja."
 
-#: auth_kit/social/social_api_descriptions.py:73
+#: auth_kit/social/social_api_descriptions.py:85
 msgid ""
 "List all social accounts connected to the current user. Shows account "
 "details including provider, UID, and connection dates."
@@ -534,7 +534,7 @@ msgstr ""
 "Lista svih društvenih naloga povezanih sa trenutnim korisnikom. Prikazuje "
 "detalje naloga uključujući pružaoca, UID i datume povezivanja."
 
-#: auth_kit/social/social_api_descriptions.py:78
+#: auth_kit/social/social_api_descriptions.py:90
 msgid ""
 "Disconnect a social account from the current user. Removes the social "
 "account connection and prevents future logins via that provider. Requires "

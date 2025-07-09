@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DRF Auth Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-09 05:21+0000\n"
+"POT-Creation-Date: 2025-07-09 09:28+0000\n"
 "PO-Revision-Date: 2025-07-08 06:02+0000\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
@@ -124,8 +124,8 @@ msgstr "Înregistrează un nou cont de utilizator."
 msgid ""
 "Users must verify their email address before the account is fully activated."
 msgstr ""
-"Utilizatorii trebuie să își verifice adresa de email înainte ca contul să fie "
-"complet activat."
+"Utilizatorii trebuie să își verifice adresa de email înainte ca contul să "
+"fie complet activat."
 
 #: auth_kit/api_descriptions.py:143
 msgid ""
@@ -460,16 +460,16 @@ msgstr "Nu pot să mă conectez cu acreditările furnizate."
 msgid "Invalid value"
 msgstr "Valoare invalidă"
 
-#: auth_kit/serializers/password.py:220
+#: auth_kit/serializers/password.py:222
 msgid "Your old password was entered incorrectly. Please enter it again."
 msgstr ""
 "Parola veche a fost introdusă incorect. Vă rugăm introduceți-o din nou."
 
-#: auth_kit/serializers/registration.py:88
+#: auth_kit/serializers/registration.py:98
 msgid "A user is already registered with this e-mail address."
 msgstr "Un utilizator este deja înregistrat cu această adresă de email."
 
-#: auth_kit/serializers/registration.py:119
+#: auth_kit/serializers/registration.py:129
 msgid "The two password fields didn't match."
 msgstr "Cele două câmpuri de parolă nu se potrivesc."
 
@@ -495,7 +495,7 @@ msgstr "Utilizatorul este deja înregistrat cu această adresă de email."
 msgid "Failed to exchange code for access token"
 msgstr "Nu s-a reușit schimbarea codului pentru token de acces"
 
-#: auth_kit/social/social_api_descriptions.py:29
+#: auth_kit/social/social_api_descriptions.py:31
 #, python-format
 msgid ""
 "Authenticate with %(provider)s using OAuth2/OpenID Connect authorization "
@@ -504,7 +504,7 @@ msgstr ""
 "Autentifică cu %(provider)s folosind codul de autorizare OAuth2/OpenID "
 "Connect pentru a obține token-uri de acces."
 
-#: auth_kit/social/social_api_descriptions.py:51
+#: auth_kit/social/social_api_descriptions.py:53
 #, python-format
 msgid ""
 "Connect a %(provider)s account to the current user's account. This allows "
@@ -514,7 +514,7 @@ msgstr ""
 "permite utilizatorului să se conecteze folosind contul %(provider)s existent "
 "în viitor."
 
-#: auth_kit/social/social_api_descriptions.py:56
+#: auth_kit/social/social_api_descriptions.py:58
 #, python-format
 msgid ""
 "Requires authentication and a valid OAuth2/OpenID Connect authorization code "
@@ -523,7 +523,7 @@ msgstr ""
 "Necesită autentificare și un cod de autorizare OAuth2/OpenID Connect valid "
 "de la %(provider)s."
 
-#: auth_kit/social/social_api_descriptions.py:60
+#: auth_kit/social/social_api_descriptions.py:62
 #, python-format
 msgid ""
 "On success, the %(provider)s account is linked and can be used for future "
@@ -532,7 +532,7 @@ msgstr ""
 "La succes, contul %(provider)s este conectat și poate fi folosit pentru "
 "conectări viitoare."
 
-#: auth_kit/social/social_api_descriptions.py:73
+#: auth_kit/social/social_api_descriptions.py:85
 msgid ""
 "List all social accounts connected to the current user. Shows account "
 "details including provider, UID, and connection dates."
@@ -540,15 +540,15 @@ msgstr ""
 "Listează toate conturile sociale conectate la utilizatorul curent. Arată "
 "detaliile contului incluzând furnizorul, UID-ul și datele de conectare."
 
-#: auth_kit/social/social_api_descriptions.py:78
+#: auth_kit/social/social_api_descriptions.py:90
 msgid ""
 "Disconnect a social account from the current user. Removes the social "
 "account connection and prevents future logins via that provider. Requires "
 "authentication and the account must belong to the current user."
 msgstr ""
 "Deconectează un cont social de la utilizatorul curent. Elimină conexiunea "
-"contului social și previne conectările viitoare prin acel furnizor. "
-"Necesită autentificare și contul trebuie să aparțină utilizatorului curent."
+"contului social și previne conectările viitoare prin acel furnizor. Necesită "
+"autentificare și contul trebuie să aparțină utilizatorului curent."
 
 #: auth_kit/social/views/login.py:58
 msgid "adapter_class is not defined"

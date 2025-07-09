@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DRF Auth Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-09 05:21+0000\n"
+"POT-Creation-Date: 2025-07-09 09:28+0000\n"
 "PO-Revision-Date: 2025-07-08 06:02+0000\n"
 "Last-Translator: DRF Auth Kit Team\n"
 "Language-Team: Galician\n"
@@ -123,7 +123,9 @@ msgstr "Rexistrar unha nova conta de usuario."
 #: auth_kit/api_descriptions.py:134
 msgid ""
 "Users must verify their email address before the account is fully activated."
-msgstr "Os usuarios deben verificar o seu enderezo de correo electrónico antes de que a conta sexa completamente activada."
+msgstr ""
+"Os usuarios deben verificar o seu enderezo de correo electrónico antes de "
+"que a conta sexa completamente activada."
 
 #: auth_kit/api_descriptions.py:143
 msgid ""
@@ -463,17 +465,17 @@ msgstr "Non se pode iniciar sesión coas credenciais proporcionadas."
 msgid "Invalid value"
 msgstr "Valor inválido"
 
-#: auth_kit/serializers/password.py:220
+#: auth_kit/serializers/password.py:222
 msgid "Your old password was entered incorrectly. Please enter it again."
 msgstr ""
 "O teu contrasinal anterior foi introducido incorrectamente. Por favor, "
 "introdúceo de novo."
 
-#: auth_kit/serializers/registration.py:88
+#: auth_kit/serializers/registration.py:98
 msgid "A user is already registered with this e-mail address."
 msgstr "Xa hai un usuario rexistrado con este enderezo de correo electrónico."
 
-#: auth_kit/serializers/registration.py:119
+#: auth_kit/serializers/registration.py:129
 msgid "The two password fields didn't match."
 msgstr "Os dous campos de contrasinal non coinciden."
 
@@ -499,46 +501,59 @@ msgstr "O usuario xa está rexistrado con este enderezo de correo electrónico."
 msgid "Failed to exchange code for access token"
 msgstr "Fallo ao intercambiar código por token de acceso"
 
-#: auth_kit/social/social_api_descriptions.py:29
+#: auth_kit/social/social_api_descriptions.py:31
 #, python-format
 msgid ""
 "Authenticate with %(provider)s using OAuth2/OpenID Connect authorization "
 "code to obtain access tokens."
-msgstr "Autentica con %(provider)s usando código de autorización OAuth2/OpenID Connect para obter tokens de acceso."
+msgstr ""
+"Autentica con %(provider)s usando código de autorización OAuth2/OpenID "
+"Connect para obter tokens de acceso."
 
-#: auth_kit/social/social_api_descriptions.py:51
+#: auth_kit/social/social_api_descriptions.py:53
 #, python-format
 msgid ""
 "Connect a %(provider)s account to the current user's account. This allows "
 "the user to login using their existing %(provider)s account in the future."
-msgstr "Conecta unha conta %(provider)s á conta do usuario actual. Isto permite ao usuario iniciar sesión usando a súa conta %(provider)s existente no futuro."
+msgstr ""
+"Conecta unha conta %(provider)s á conta do usuario actual. Isto permite ao "
+"usuario iniciar sesión usando a súa conta %(provider)s existente no futuro."
 
-#: auth_kit/social/social_api_descriptions.py:56
+#: auth_kit/social/social_api_descriptions.py:58
 #, python-format
 msgid ""
 "Requires authentication and a valid OAuth2/OpenID Connect authorization code "
 "from %(provider)s."
-msgstr "Require autenticación e un código de autorización OAuth2/OpenID Connect válido de %(provider)s."
+msgstr ""
+"Require autenticación e un código de autorización OAuth2/OpenID Connect "
+"válido de %(provider)s."
 
-#: auth_kit/social/social_api_descriptions.py:60
+#: auth_kit/social/social_api_descriptions.py:62
 #, python-format
 msgid ""
 "On success, the %(provider)s account is linked and can be used for future "
 "logins."
-msgstr "En caso de éxito, a conta %(provider)s está vinculada e pode usarse para futuros inicios de sesión."
+msgstr ""
+"En caso de éxito, a conta %(provider)s está vinculada e pode usarse para "
+"futuros inicios de sesión."
 
-#: auth_kit/social/social_api_descriptions.py:73
+#: auth_kit/social/social_api_descriptions.py:85
 msgid ""
 "List all social accounts connected to the current user. Shows account "
 "details including provider, UID, and connection dates."
-msgstr "Lista todas as contas sociais conectadas ao usuario actual. Mostra os detalles da conta incluíndo provedor, UID e datas de conexión."
+msgstr ""
+"Lista todas as contas sociais conectadas ao usuario actual. Mostra os "
+"detalles da conta incluíndo provedor, UID e datas de conexión."
 
-#: auth_kit/social/social_api_descriptions.py:78
+#: auth_kit/social/social_api_descriptions.py:90
 msgid ""
 "Disconnect a social account from the current user. Removes the social "
 "account connection and prevents future logins via that provider. Requires "
 "authentication and the account must belong to the current user."
-msgstr "Desconecta unha conta social do usuario actual. Elimina a conexión da conta social e evita futuros inicios de sesión a través dese provedor. Require autenticación e a conta debe pertencer ao usuario actual."
+msgstr ""
+"Desconecta unha conta social do usuario actual. Elimina a conexión da conta "
+"social e evita futuros inicios de sesión a través dese provedor. Require "
+"autenticación e a conta debe pertencer ao usuario actual."
 
 #: auth_kit/social/views/login.py:58
 msgid "adapter_class is not defined"

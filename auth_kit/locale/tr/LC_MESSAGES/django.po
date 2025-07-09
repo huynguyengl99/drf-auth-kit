@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DRF Auth Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-09 05:21+0000\n"
+"POT-Creation-Date: 2025-07-09 09:28+0000\n"
 "PO-Revision-Date: 2025-07-09 00:00+0000\n"
 "Last-Translator: DRF Auth Kit Team\n"
 "Language-Team: Turkish\n"
@@ -459,15 +459,15 @@ msgstr "Sağlanan kimlik bilgileri ile giriş yapılamadı."
 msgid "Invalid value"
 msgstr "Geçersiz değer"
 
-#: auth_kit/serializers/password.py:220
+#: auth_kit/serializers/password.py:222
 msgid "Your old password was entered incorrectly. Please enter it again."
 msgstr "Eski şifreniz yanlış girildi. Lütfen tekrar girin."
 
-#: auth_kit/serializers/registration.py:88
+#: auth_kit/serializers/registration.py:98
 msgid "A user is already registered with this e-mail address."
 msgstr "Bu e-posta adresi ile zaten kayıtlı bir kullanıcı var."
 
-#: auth_kit/serializers/registration.py:119
+#: auth_kit/serializers/registration.py:129
 msgid "The two password fields didn't match."
 msgstr "İki şifre alanı eşleşmedi."
 
@@ -491,7 +491,7 @@ msgstr "Kullanıcı bu e-posta adresi ile zaten kayıtlı."
 msgid "Failed to exchange code for access token"
 msgstr "Kod erişim tokeni ile değiştirilemedi"
 
-#: auth_kit/social/social_api_descriptions.py:29
+#: auth_kit/social/social_api_descriptions.py:31
 #, python-format
 msgid ""
 "Authenticate with %(provider)s using OAuth2/OpenID Connect authorization "
@@ -500,16 +500,17 @@ msgstr ""
 "Erişim tokenları elde etmek için OAuth2/OpenID Connect yetkilendirme kodunu "
 "kullanarak %(provider)s ile kimlik doğrulaması yapar."
 
-#: auth_kit/social/social_api_descriptions.py:51
+#: auth_kit/social/social_api_descriptions.py:53
 #, python-format
 msgid ""
 "Connect a %(provider)s account to the current user's account. This allows "
 "the user to login using their existing %(provider)s account in the future."
 msgstr ""
 "%(provider)s hesabını mevcut kullanıcının hesabına bağlar. Bu, kullanıcının "
-"gelecekte mevcut %(provider)s hesabını kullanarak giriş yapmasına olanak tanır."
+"gelecekte mevcut %(provider)s hesabını kullanarak giriş yapmasına olanak "
+"tanır."
 
-#: auth_kit/social/social_api_descriptions.py:56
+#: auth_kit/social/social_api_descriptions.py:58
 #, python-format
 msgid ""
 "Requires authentication and a valid OAuth2/OpenID Connect authorization code "
@@ -518,7 +519,7 @@ msgstr ""
 "Kimlik doğrulaması ve %(provider)s'den geçerli OAuth2/OpenID Connect "
 "yetkilendirme kodu gerektirir."
 
-#: auth_kit/social/social_api_descriptions.py:60
+#: auth_kit/social/social_api_descriptions.py:62
 #, python-format
 msgid ""
 "On success, the %(provider)s account is linked and can be used for future "
@@ -527,7 +528,7 @@ msgstr ""
 "Başarı durumunda, %(provider)s hesabı bağlanır ve gelecekteki girişler için "
 "kullanılabilir."
 
-#: auth_kit/social/social_api_descriptions.py:73
+#: auth_kit/social/social_api_descriptions.py:85
 msgid ""
 "List all social accounts connected to the current user. Shows account "
 "details including provider, UID, and connection dates."
@@ -535,7 +536,7 @@ msgstr ""
 "Mevcut kullanıcıya bağlı tüm sosyal hesapları listeler. Sağlayıcı, UID ve "
 "bağlantı tarihleri dahil hesap detaylarını gösterir."
 
-#: auth_kit/social/social_api_descriptions.py:78
+#: auth_kit/social/social_api_descriptions.py:90
 msgid ""
 "Disconnect a social account from the current user. Removes the social "
 "account connection and prevents future logins via that provider. Requires "

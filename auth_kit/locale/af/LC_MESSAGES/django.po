@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DRF Auth Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-09 05:21+0000\n"
+"POT-Creation-Date: 2025-07-09 09:28+0000\n"
 "PO-Revision-Date: 2025-07-08 12:00+0000\n"
 "Last-Translator: DRF Auth Kit Team\n"
 "Language-Team: Afrikaans\n"
@@ -449,15 +449,15 @@ msgstr "Kan nie inteken met verskafde geloofsbriewe nie."
 msgid "Invalid value"
 msgstr "Ongeldige waarde"
 
-#: auth_kit/serializers/password.py:220
+#: auth_kit/serializers/password.py:222
 msgid "Your old password was entered incorrectly. Please enter it again."
 msgstr "Jou ou wagwoord is verkeerd ingevoer. Voer dit asseblief weer in."
 
-#: auth_kit/serializers/registration.py:88
+#: auth_kit/serializers/registration.py:98
 msgid "A user is already registered with this e-mail address."
 msgstr "'n Gebruiker is reeds geregistreer met hierdie e-posadres."
 
-#: auth_kit/serializers/registration.py:119
+#: auth_kit/serializers/registration.py:129
 msgid "The two password fields didn't match."
 msgstr "Die twee wagwoord velde stem nie ooreen nie."
 
@@ -481,7 +481,7 @@ msgstr "Gebruiker is reeds geregistreer met hierdie e-posadres."
 msgid "Failed to exchange code for access token"
 msgstr "Kon nie kode vir toegangstoken uitruil nie"
 
-#: auth_kit/social/social_api_descriptions.py:29
+#: auth_kit/social/social_api_descriptions.py:31
 #, python-format
 msgid ""
 "Authenticate with %(provider)s using OAuth2/OpenID Connect authorization "
@@ -490,7 +490,7 @@ msgstr ""
 "Verifieer met %(provider)s deur OAuth2/OpenID Connect magtigingskode te "
 "gebruik om toegangstokens te verkry."
 
-#: auth_kit/social/social_api_descriptions.py:51
+#: auth_kit/social/social_api_descriptions.py:53
 #, python-format
 msgid ""
 "Connect a %(provider)s account to the current user's account. This allows "
@@ -500,7 +500,7 @@ msgstr ""
 "laat die gebruiker toe om in die toekoms met hul bestaande %(provider)s-"
 "rekening in te teken."
 
-#: auth_kit/social/social_api_descriptions.py:56
+#: auth_kit/social/social_api_descriptions.py:58
 #, python-format
 msgid ""
 "Requires authentication and a valid OAuth2/OpenID Connect authorization code "
@@ -509,7 +509,7 @@ msgstr ""
 "Vereis verifikasie en 'n geldige OAuth2/OpenID Connect magtigingskode van "
 "%(provider)s."
 
-#: auth_kit/social/social_api_descriptions.py:60
+#: auth_kit/social/social_api_descriptions.py:62
 #, python-format
 msgid ""
 "On success, the %(provider)s account is linked and can be used for future "
@@ -518,7 +518,7 @@ msgstr ""
 "Met sukses word die %(provider)s-rekening gekoppel en kan vir toekomstige "
 "intekeninge gebruik word."
 
-#: auth_kit/social/social_api_descriptions.py:73
+#: auth_kit/social/social_api_descriptions.py:85
 msgid ""
 "List all social accounts connected to the current user. Shows account "
 "details including provider, UID, and connection dates."
@@ -526,7 +526,7 @@ msgstr ""
 "Lys alle sosiale rekeninge wat aan die huidige gebruiker gekoppel is. Wys "
 "rekening besonderhede insluitend verskaffer, UID, en verbindingsdatums."
 
-#: auth_kit/social/social_api_descriptions.py:78
+#: auth_kit/social/social_api_descriptions.py:90
 msgid ""
 "Disconnect a social account from the current user. Removes the social "
 "account connection and prevents future logins via that provider. Requires "

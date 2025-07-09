@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DRF Auth Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-09 05:21+0000\n"
+"POT-Creation-Date: 2025-07-09 09:28+0000\n"
 "PO-Revision-Date: 2025-07-08 06:02+0000\n"
 "Last-Translator: DRF Auth Kit Team\n"
 "Language-Team: Nepali\n"
@@ -109,8 +109,7 @@ msgstr "नयाँ प्रयोगकर्ता खाता दर्त
 #: auth_kit/api_descriptions.py:134
 msgid ""
 "Users must verify their email address before the account is fully activated."
-msgstr ""
-"खाता पूर्ण रूपमा सक्रिय हुनु अघि प्रयोगकर्ताहरूले आफ्नो इमेल ठेगाना प्रमाणित गर्नुपर्छ।"
+msgstr "खाता पूर्ण रूपमा सक्रिय हुनु अघि प्रयोगकर्ताहरूले आफ्नो इमेल ठेगाना प्रमाणित गर्नुपर्छ।"
 
 #: auth_kit/api_descriptions.py:143
 msgid ""
@@ -435,15 +434,15 @@ msgstr "प्रदान गरिएका प्रमाणपत्रह�
 msgid "Invalid value"
 msgstr "अवैध मान"
 
-#: auth_kit/serializers/password.py:220
+#: auth_kit/serializers/password.py:222
 msgid "Your old password was entered incorrectly. Please enter it again."
 msgstr "तपाईंको पुरानो पासवर्ड गलत प्रविष्ट गरिएको छ। कृपया यसलाई फेरि प्रविष्ट गर्नुहोस्।"
 
-#: auth_kit/serializers/registration.py:88
+#: auth_kit/serializers/registration.py:98
 msgid "A user is already registered with this e-mail address."
 msgstr "यो इमेल ठेगानासँग प्रयोगकर्ता पहिले नै दर्ता भएको छ।"
 
-#: auth_kit/serializers/registration.py:119
+#: auth_kit/serializers/registration.py:129
 msgid "The two password fields didn't match."
 msgstr "दुई पासवर्ड फिल्डहरू मेल खाएनन्।"
 
@@ -467,16 +466,16 @@ msgstr "यो इमेल ठेगानासँग प्रयोगकर
 msgid "Failed to exchange code for access token"
 msgstr "पहुँच टोकनको लागि कोड आदानप्रदान गर्न असफल"
 
-#: auth_kit/social/social_api_descriptions.py:29
+#: auth_kit/social/social_api_descriptions.py:31
 #, python-format
 msgid ""
 "Authenticate with %(provider)s using OAuth2/OpenID Connect authorization "
 "code to obtain access tokens."
 msgstr ""
-"पहुँच टोकनहरू प्राप्त गर्न OAuth2/OpenID Connect प्राधिकरण कोड प्रयोग गरेर %(provider)s "
-"सँग प्रमाणीकरण गर्नुहोस्।"
+"पहुँच टोकनहरू प्राप्त गर्न OAuth2/OpenID Connect प्राधिकरण कोड प्रयोग गरेर "
+"%(provider)s सँग प्रमाणीकरण गर्नुहोस्।"
 
-#: auth_kit/social/social_api_descriptions.py:51
+#: auth_kit/social/social_api_descriptions.py:53
 #, python-format
 msgid ""
 "Connect a %(provider)s account to the current user's account. This allows "
@@ -485,7 +484,7 @@ msgstr ""
 "हालको प्रयोगकर्ताको खातामा %(provider)s खाता जडान गर्नुहोस्। यसले प्रयोगकर्तालाई "
 "भविष्यमा आफ्नो अवस्थित %(provider)s खाता प्रयोग गरेर लगिन गर्न अनुमति दिन्छ।"
 
-#: auth_kit/social/social_api_descriptions.py:56
+#: auth_kit/social/social_api_descriptions.py:58
 #, python-format
 msgid ""
 "Requires authentication and a valid OAuth2/OpenID Connect authorization code "
@@ -493,7 +492,7 @@ msgid ""
 msgstr ""
 "प्रमाणीकरण र %(provider)s बाट वैध OAuth2/OpenID Connect प्राधिकरण कोड आवश्यक छ।"
 
-#: auth_kit/social/social_api_descriptions.py:60
+#: auth_kit/social/social_api_descriptions.py:62
 #, python-format
 msgid ""
 "On success, the %(provider)s account is linked and can be used for future "
@@ -502,15 +501,15 @@ msgstr ""
 "सफलतामा, %(provider)s खाता लिङ्क गरिन्छ र भविष्यका लगिनहरूको लागि प्रयोग गर्न "
 "सकिन्छ।"
 
-#: auth_kit/social/social_api_descriptions.py:73
+#: auth_kit/social/social_api_descriptions.py:85
 msgid ""
 "List all social accounts connected to the current user. Shows account "
 "details including provider, UID, and connection dates."
 msgstr ""
-"हालको प्रयोगकर्तामा जडान गरिएका सबै सामाजिक खाताहरूको सूची। प्रदायक, UID, र "
-"जडान मितिहरू सहित खाता विवरणहरू देखाउँदछ।"
+"हालको प्रयोगकर्तामा जडान गरिएका सबै सामाजिक खाताहरूको सूची। प्रदायक, UID, र जडान "
+"मितिहरू सहित खाता विवरणहरू देखाउँदछ।"
 
-#: auth_kit/social/social_api_descriptions.py:78
+#: auth_kit/social/social_api_descriptions.py:90
 msgid ""
 "Disconnect a social account from the current user. Removes the social "
 "account connection and prevents future logins via that provider. Requires "

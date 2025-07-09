@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DRF Auth Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-09 05:21+0000\n"
+"POT-Creation-Date: 2025-07-09 09:28+0000\n"
 "PO-Revision-Date: 2025-07-08 06:02+0000\n"
 "Last-Translator: DRF Auth Kit Team\n"
 "Language-Team: Indonesian\n"
@@ -119,7 +119,9 @@ msgstr "Mendaftarkan akun pengguna baru."
 #: auth_kit/api_descriptions.py:134
 msgid ""
 "Users must verify their email address before the account is fully activated."
-msgstr "Pengguna harus memverifikasi alamat email mereka sebelum akun sepenuhnya diaktifkan."
+msgstr ""
+"Pengguna harus memverifikasi alamat email mereka sebelum akun sepenuhnya "
+"diaktifkan."
 
 #: auth_kit/api_descriptions.py:143
 msgid ""
@@ -457,15 +459,15 @@ msgstr "Tidak dapat masuk dengan kredensial yang diberikan."
 msgid "Invalid value"
 msgstr "Nilai tidak valid"
 
-#: auth_kit/serializers/password.py:220
+#: auth_kit/serializers/password.py:222
 msgid "Your old password was entered incorrectly. Please enter it again."
 msgstr "Kata sandi lama Anda salah. Silakan masukkan kembali."
 
-#: auth_kit/serializers/registration.py:88
+#: auth_kit/serializers/registration.py:98
 msgid "A user is already registered with this e-mail address."
 msgstr "Pengguna sudah terdaftar dengan alamat e-mail ini."
 
-#: auth_kit/serializers/registration.py:119
+#: auth_kit/serializers/registration.py:129
 msgid "The two password fields didn't match."
 msgstr "Kedua bidang kata sandi tidak cocok."
 
@@ -489,25 +491,26 @@ msgstr "Pengguna sudah terdaftar dengan alamat e-mail ini."
 msgid "Failed to exchange code for access token"
 msgstr "Gagal menukar kode untuk token akses"
 
-#: auth_kit/social/social_api_descriptions.py:29
+#: auth_kit/social/social_api_descriptions.py:31
 #, python-format
 msgid ""
 "Authenticate with %(provider)s using OAuth2/OpenID Connect authorization "
 "code to obtain access tokens."
 msgstr ""
-"Melakukan autentikasi dengan %(provider)s menggunakan kode otorisasi "
-"OAuth2/OpenID Connect untuk mendapatkan token akses."
+"Melakukan autentikasi dengan %(provider)s menggunakan kode otorisasi OAuth2/"
+"OpenID Connect untuk mendapatkan token akses."
 
-#: auth_kit/social/social_api_descriptions.py:51
+#: auth_kit/social/social_api_descriptions.py:53
 #, python-format
 msgid ""
 "Connect a %(provider)s account to the current user's account. This allows "
 "the user to login using their existing %(provider)s account in the future."
 msgstr ""
 "Menghubungkan akun %(provider)s ke akun pengguna saat ini. Ini memungkinkan "
-"pengguna untuk masuk menggunakan akun %(provider)s yang sudah ada di masa depan."
+"pengguna untuk masuk menggunakan akun %(provider)s yang sudah ada di masa "
+"depan."
 
-#: auth_kit/social/social_api_descriptions.py:56
+#: auth_kit/social/social_api_descriptions.py:58
 #, python-format
 msgid ""
 "Requires authentication and a valid OAuth2/OpenID Connect authorization code "
@@ -516,16 +519,16 @@ msgstr ""
 "Memerlukan autentikasi dan kode otorisasi OAuth2/OpenID Connect yang valid "
 "dari %(provider)s."
 
-#: auth_kit/social/social_api_descriptions.py:60
+#: auth_kit/social/social_api_descriptions.py:62
 #, python-format
 msgid ""
 "On success, the %(provider)s account is linked and can be used for future "
 "logins."
 msgstr ""
-"Jika berhasil, akun %(provider)s terhubung dan dapat digunakan untuk "
-"masuk di masa depan."
+"Jika berhasil, akun %(provider)s terhubung dan dapat digunakan untuk masuk "
+"di masa depan."
 
-#: auth_kit/social/social_api_descriptions.py:73
+#: auth_kit/social/social_api_descriptions.py:85
 msgid ""
 "List all social accounts connected to the current user. Shows account "
 "details including provider, UID, and connection dates."
@@ -533,14 +536,14 @@ msgstr ""
 "Daftar semua akun sosial yang terhubung ke pengguna saat ini. Menampilkan "
 "detail akun termasuk penyedia, UID, dan tanggal koneksi."
 
-#: auth_kit/social/social_api_descriptions.py:78
+#: auth_kit/social/social_api_descriptions.py:90
 msgid ""
 "Disconnect a social account from the current user. Removes the social "
 "account connection and prevents future logins via that provider. Requires "
 "authentication and the account must belong to the current user."
 msgstr ""
-"Memutuskan akun sosial dari pengguna saat ini. Menghapus koneksi akun "
-"sosial dan mencegah masuk di masa depan melalui penyedia tersebut. Memerlukan "
+"Memutuskan akun sosial dari pengguna saat ini. Menghapus koneksi akun sosial "
+"dan mencegah masuk di masa depan melalui penyedia tersebut. Memerlukan "
 "autentikasi dan akun harus milik pengguna saat ini."
 
 #: auth_kit/social/views/login.py:58

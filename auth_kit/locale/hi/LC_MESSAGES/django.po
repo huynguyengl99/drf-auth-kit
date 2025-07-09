@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DRF Auth Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-09 05:21+0000\n"
+"POT-Creation-Date: 2025-07-09 09:28+0000\n"
 "PO-Revision-Date: 2025-07-08 06:02+0000\n"
 "Last-Translator: DRF Auth Kit Team\n"
 "Language-Team: Hindi\n"
@@ -112,7 +112,8 @@ msgstr "नया उपयोगकर्ता खाता पंजीकृ
 #: auth_kit/api_descriptions.py:134
 msgid ""
 "Users must verify their email address before the account is fully activated."
-msgstr "खाता पूर्ण रूप से सक्रिय होने से पहले उपयोगकर्ताओं को अपना ईमेल पता सत्यापित करना होगा।"
+msgstr ""
+"खाता पूर्ण रूप से सक्रिय होने से पहले उपयोगकर्ताओं को अपना ईमेल पता सत्यापित करना होगा।"
 
 #: auth_kit/api_descriptions.py:143
 msgid ""
@@ -436,15 +437,15 @@ msgstr "प्रदान किए गए क्रेडेंशियल �
 msgid "Invalid value"
 msgstr "अमान्य मान"
 
-#: auth_kit/serializers/password.py:220
+#: auth_kit/serializers/password.py:222
 msgid "Your old password was entered incorrectly. Please enter it again."
 msgstr "आपका पुराना पासवर्ड गलत दर्ज किया गया था। कृपया इसे फिर से दर्ज करें।"
 
-#: auth_kit/serializers/registration.py:88
+#: auth_kit/serializers/registration.py:98
 msgid "A user is already registered with this e-mail address."
 msgstr "इस ईमेल पते से पहले से ही एक उपयोगकर्ता पंजीकृत है।"
 
-#: auth_kit/serializers/registration.py:119
+#: auth_kit/serializers/registration.py:129
 msgid "The two password fields didn't match."
 msgstr "दो पासवर्ड फ़ील्ड मेल नहीं खाते।"
 
@@ -468,7 +469,7 @@ msgstr "इस ईमेल पते से उपयोगकर्ता प�
 msgid "Failed to exchange code for access token"
 msgstr "एक्सेस टोकन के लिए कोड एक्सचेंज करने में विफल"
 
-#: auth_kit/social/social_api_descriptions.py:29
+#: auth_kit/social/social_api_descriptions.py:31
 #, python-format
 msgid ""
 "Authenticate with %(provider)s using OAuth2/OpenID Connect authorization "
@@ -477,7 +478,7 @@ msgstr ""
 "एक्सेस टोकन प्राप्त करने के लिए OAuth2/OpenID Connect प्राधिकरण कोड का उपयोग करके "
 "%(provider)s के साथ प्रमाणीकरण करें।"
 
-#: auth_kit/social/social_api_descriptions.py:51
+#: auth_kit/social/social_api_descriptions.py:53
 #, python-format
 msgid ""
 "Connect a %(provider)s account to the current user's account. This allows "
@@ -486,24 +487,25 @@ msgstr ""
 "वर्तमान उपयोगकर्ता के खाते से %(provider)s खाता कनेक्ट करें। यह उपयोगकर्ता को भविष्य में "
 "अपने मौजूदा %(provider)s खाते का उपयोग करके लॉगिन करने की अनुमति देता है।"
 
-#: auth_kit/social/social_api_descriptions.py:56
+#: auth_kit/social/social_api_descriptions.py:58
 #, python-format
 msgid ""
 "Requires authentication and a valid OAuth2/OpenID Connect authorization code "
 "from %(provider)s."
 msgstr ""
-"%(provider)s से प्रमाणीकरण और वैध OAuth2/OpenID Connect प्राधिकरण कोड की आवश्यकता है।"
+"%(provider)s से प्रमाणीकरण और वैध OAuth2/OpenID Connect प्राधिकरण कोड की आवश्यकता "
+"है।"
 
-#: auth_kit/social/social_api_descriptions.py:60
+#: auth_kit/social/social_api_descriptions.py:62
 #, python-format
 msgid ""
 "On success, the %(provider)s account is linked and can be used for future "
 "logins."
 msgstr ""
-"सफलता पर, %(provider)s खाता लिंक हो जाता है और भविष्य के लॉगिन के लिए उपयोग किया जा "
-"सकता है।"
+"सफलता पर, %(provider)s खाता लिंक हो जाता है और भविष्य के लॉगिन के लिए उपयोग किया "
+"जा सकता है।"
 
-#: auth_kit/social/social_api_descriptions.py:73
+#: auth_kit/social/social_api_descriptions.py:85
 msgid ""
 "List all social accounts connected to the current user. Shows account "
 "details including provider, UID, and connection dates."
@@ -511,14 +513,14 @@ msgstr ""
 "वर्तमान उपयोगकर्ता से जुड़े सभी सामाजिक खातों की सूची। प्रदाता, UID और कनेक्शन तिथियों "
 "सहित खाता विवरण दिखाता है।"
 
-#: auth_kit/social/social_api_descriptions.py:78
+#: auth_kit/social/social_api_descriptions.py:90
 msgid ""
 "Disconnect a social account from the current user. Removes the social "
 "account connection and prevents future logins via that provider. Requires "
 "authentication and the account must belong to the current user."
 msgstr ""
-"वर्तमान उपयोगकर्ता से सामाजिक खाता डिस्कनेक्ट करें। सामाजिक खाता कनेक्शन हटाता है और "
-"उस प्रदाता के माध्यम से भविष्य के लॉगिन को रोकता है। प्रमाणीकरण की आवश्यकता है और खाता "
+"वर्तमान उपयोगकर्ता से सामाजिक खाता डिस्कनेक्ट करें। सामाजिक खाता कनेक्शन हटाता है और उस "
+"प्रदाता के माध्यम से भविष्य के लॉगिन को रोकता है। प्रमाणीकरण की आवश्यकता है और खाता "
 "वर्तमान उपयोगकर्ता का होना चाहिए।"
 
 #: auth_kit/social/views/login.py:58

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DRF Auth Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-09 05:21+0000\n"
+"POT-Creation-Date: 2025-07-09 09:28+0000\n"
 "PO-Revision-Date: 2025-07-09 00:00+0000\n"
 "Last-Translator: DRF Auth Kit Team\n"
 "Language-Team: Russian\n"
@@ -466,15 +466,15 @@ msgstr "Невозможно войти в систему с предостав�
 msgid "Invalid value"
 msgstr "Неверное значение"
 
-#: auth_kit/serializers/password.py:220
+#: auth_kit/serializers/password.py:222
 msgid "Your old password was entered incorrectly. Please enter it again."
 msgstr "Ваш старый пароль введен неправильно. Пожалуйста, введите его снова."
 
-#: auth_kit/serializers/registration.py:88
+#: auth_kit/serializers/registration.py:98
 msgid "A user is already registered with this e-mail address."
 msgstr "Пользователь уже зарегистрирован с этим адресом электронной почты."
 
-#: auth_kit/serializers/registration.py:119
+#: auth_kit/serializers/registration.py:129
 msgid "The two password fields didn't match."
 msgstr "Два поля пароля не совпадают."
 
@@ -499,44 +499,44 @@ msgstr "Пользователь уже зарегистрирован с эти
 msgid "Failed to exchange code for access token"
 msgstr "Не удалось обменять код на токен доступа"
 
-#: auth_kit/social/social_api_descriptions.py:29
+#: auth_kit/social/social_api_descriptions.py:31
 #, python-format
 msgid ""
 "Authenticate with %(provider)s using OAuth2/OpenID Connect authorization "
 "code to obtain access tokens."
 msgstr ""
-"Пройдите аутентификацию с %(provider)s, используя код авторизации OAuth2/OpenID "
-"Connect для получения токенов доступа."
+"Пройдите аутентификацию с %(provider)s, используя код авторизации OAuth2/"
+"OpenID Connect для получения токенов доступа."
 
-#: auth_kit/social/social_api_descriptions.py:51
+#: auth_kit/social/social_api_descriptions.py:53
 #, python-format
 msgid ""
 "Connect a %(provider)s account to the current user's account. This allows "
 "the user to login using their existing %(provider)s account in the future."
 msgstr ""
-"Подключить аккаунт %(provider)s к аккаунту текущего пользователя. Это позволяет "
-"пользователю входить в систему, используя существующий аккаунт %(provider)s в "
-"будущем."
+"Подключить аккаунт %(provider)s к аккаунту текущего пользователя. Это "
+"позволяет пользователю входить в систему, используя существующий аккаунт "
+"%(provider)s в будущем."
 
-#: auth_kit/social/social_api_descriptions.py:56
+#: auth_kit/social/social_api_descriptions.py:58
 #, python-format
 msgid ""
 "Requires authentication and a valid OAuth2/OpenID Connect authorization code "
 "from %(provider)s."
 msgstr ""
-"Требует аутентификацию и действительный код авторизации OAuth2/OpenID Connect "
-"от %(provider)s."
+"Требует аутентификацию и действительный код авторизации OAuth2/OpenID "
+"Connect от %(provider)s."
 
-#: auth_kit/social/social_api_descriptions.py:60
+#: auth_kit/social/social_api_descriptions.py:62
 #, python-format
 msgid ""
 "On success, the %(provider)s account is linked and can be used for future "
 "logins."
 msgstr ""
-"При успехе аккаунт %(provider)s связывается и может использоваться для будущих "
-"входов в систему."
+"При успехе аккаунт %(provider)s связывается и может использоваться для "
+"будущих входов в систему."
 
-#: auth_kit/social/social_api_descriptions.py:73
+#: auth_kit/social/social_api_descriptions.py:85
 msgid ""
 "List all social accounts connected to the current user. Shows account "
 "details including provider, UID, and connection dates."
@@ -544,7 +544,7 @@ msgstr ""
 "Список всех социальных аккаунтов, подключенных к текущему пользователю. "
 "Показывает детали аккаунта, включая провайдера, UID и даты подключения."
 
-#: auth_kit/social/social_api_descriptions.py:78
+#: auth_kit/social/social_api_descriptions.py:90
 msgid ""
 "Disconnect a social account from the current user. Removes the social "
 "account connection and prevents future logins via that provider. Requires "

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DRF Auth Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-09 05:21+0000\n"
+"POT-Creation-Date: 2025-07-09 09:28+0000\n"
 "PO-Revision-Date: 2025-07-08 06:02+0000\n"
 "Last-Translator: DRF Auth Kit Team\n"
 "Language-Team: Persian\n"
@@ -440,15 +440,15 @@ msgstr "امکان ورود با اعتبارنامه‌های ارائه شده
 msgid "Invalid value"
 msgstr "مقدار نامعتبر"
 
-#: auth_kit/serializers/password.py:220
+#: auth_kit/serializers/password.py:222
 msgid "Your old password was entered incorrectly. Please enter it again."
 msgstr "کلمه عبور قدیمی شما اشتباه وارد شده است. لطفاً دوباره وارد کنید."
 
-#: auth_kit/serializers/registration.py:88
+#: auth_kit/serializers/registration.py:98
 msgid "A user is already registered with this e-mail address."
 msgstr "کاربری با این آدرس ایمیل قبلاً ثبت نام کرده است."
 
-#: auth_kit/serializers/registration.py:119
+#: auth_kit/serializers/registration.py:129
 msgid "The two password fields didn't match."
 msgstr "دو فیلد کلمه عبور مطابقت نداشتند."
 
@@ -472,46 +472,59 @@ msgstr "کاربر با این آدرس ایمیل قبلاً ثبت نام کر
 msgid "Failed to exchange code for access token"
 msgstr "تبدیل کد به توکن دسترسی ناموفق بود"
 
-#: auth_kit/social/social_api_descriptions.py:29
+#: auth_kit/social/social_api_descriptions.py:31
 #, python-format
 msgid ""
 "Authenticate with %(provider)s using OAuth2/OpenID Connect authorization "
 "code to obtain access tokens."
-msgstr "احراز هویت با %(provider)s با استفاده از کد مجوز OAuth2/OpenID Connect برای دریافت توکن‌های دسترسی."
+msgstr ""
+"احراز هویت با %(provider)s با استفاده از کد مجوز OAuth2/OpenID Connect برای "
+"دریافت توکن‌های دسترسی."
 
-#: auth_kit/social/social_api_descriptions.py:51
+#: auth_kit/social/social_api_descriptions.py:53
 #, python-format
 msgid ""
 "Connect a %(provider)s account to the current user's account. This allows "
 "the user to login using their existing %(provider)s account in the future."
-msgstr "اتصال حساب %(provider)s به حساب کاربر فعلی. این امکان ورود کاربر با استفاده از حساب %(provider)s موجود در آینده را فراهم می‌کند."
+msgstr ""
+"اتصال حساب %(provider)s به حساب کاربر فعلی. این امکان ورود کاربر با استفاده "
+"از حساب %(provider)s موجود در آینده را فراهم می‌کند."
 
-#: auth_kit/social/social_api_descriptions.py:56
+#: auth_kit/social/social_api_descriptions.py:58
 #, python-format
 msgid ""
 "Requires authentication and a valid OAuth2/OpenID Connect authorization code "
 "from %(provider)s."
-msgstr "احراز هویت و کد مجوز OAuth2/OpenID Connect معتبر از %(provider)s مورد نیاز است."
+msgstr ""
+"احراز هویت و کد مجوز OAuth2/OpenID Connect معتبر از %(provider)s مورد نیاز "
+"است."
 
-#: auth_kit/social/social_api_descriptions.py:60
+#: auth_kit/social/social_api_descriptions.py:62
 #, python-format
 msgid ""
 "On success, the %(provider)s account is linked and can be used for future "
 "logins."
-msgstr "در صورت موفقیت، حساب %(provider)s پیوند داده می‌شود و می‌تواند برای ورود‌های آینده استفاده شود."
+msgstr ""
+"در صورت موفقیت، حساب %(provider)s پیوند داده می‌شود و می‌تواند برای ورود‌های "
+"آینده استفاده شود."
 
-#: auth_kit/social/social_api_descriptions.py:73
+#: auth_kit/social/social_api_descriptions.py:85
 msgid ""
 "List all social accounts connected to the current user. Shows account "
 "details including provider, UID, and connection dates."
-msgstr "فهرست تمام حساب‌های اجتماعی متصل به کاربر فعلی. جزئیات حساب شامل ارائه‌دهنده، شناسه منحصر به فرد و تاریخ اتصال را نشان می‌دهد."
+msgstr ""
+"فهرست تمام حساب‌های اجتماعی متصل به کاربر فعلی. جزئیات حساب شامل ارائه‌دهنده، "
+"شناسه منحصر به فرد و تاریخ اتصال را نشان می‌دهد."
 
-#: auth_kit/social/social_api_descriptions.py:78
+#: auth_kit/social/social_api_descriptions.py:90
 msgid ""
 "Disconnect a social account from the current user. Removes the social "
 "account connection and prevents future logins via that provider. Requires "
 "authentication and the account must belong to the current user."
-msgstr "قطع اتصال حساب اجتماعی از کاربر فعلی. اتصال حساب اجتماعی را حذف می‌کند و از ورود‌های آینده از طریق آن ارائه‌دهنده جلوگیری می‌کند. احراز هویت مورد نیاز است و حساب باید متعلق به کاربر فعلی باشد."
+msgstr ""
+"قطع اتصال حساب اجتماعی از کاربر فعلی. اتصال حساب اجتماعی را حذف می‌کند و از "
+"ورود‌های آینده از طریق آن ارائه‌دهنده جلوگیری می‌کند. احراز هویت مورد نیاز است "
+"و حساب باید متعلق به کاربر فعلی باشد."
 
 #: auth_kit/social/views/login.py:58
 msgid "adapter_class is not defined"

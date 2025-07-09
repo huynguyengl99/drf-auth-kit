@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DRF Auth Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-09 05:21+0000\n"
+"POT-Creation-Date: 2025-07-09 09:28+0000\n"
 "PO-Revision-Date: 2025-07-08 06:02+0000\n"
 "Last-Translator: DRF Auth Kit Team\n"
 "Language-Team: Marathi\n"
@@ -429,15 +429,15 @@ msgstr "प्रदान केलेल्या क्रेडेंशि�
 msgid "Invalid value"
 msgstr "अवैध मूल्य"
 
-#: auth_kit/serializers/password.py:220
+#: auth_kit/serializers/password.py:222
 msgid "Your old password was entered incorrectly. Please enter it again."
 msgstr "तुमचा जुना पासवर्ड चुकीचा एंटर केला होता. कृपया तो पुन्हा एंटर करा."
 
-#: auth_kit/serializers/registration.py:88
+#: auth_kit/serializers/registration.py:98
 msgid "A user is already registered with this e-mail address."
 msgstr "या ईमेल पत्त्यासह युजर आधीच नोंदणीकृत आहे."
 
-#: auth_kit/serializers/registration.py:119
+#: auth_kit/serializers/registration.py:129
 msgid "The two password fields didn't match."
 msgstr "दोन पासवर्ड फील्ड्स जुळत नाहीत."
 
@@ -461,46 +461,58 @@ msgstr "या ईमेल पत्त्यासह युजर आधी�
 msgid "Failed to exchange code for access token"
 msgstr "एक्सेस टोकनसाठी कोड एक्सचेंज करण्यात अयशस्वी"
 
-#: auth_kit/social/social_api_descriptions.py:29
+#: auth_kit/social/social_api_descriptions.py:31
 #, python-format
 msgid ""
 "Authenticate with %(provider)s using OAuth2/OpenID Connect authorization "
 "code to obtain access tokens."
-msgstr "एक्सेस टोकन्स मिळवण्यासाठी OAuth2/OpenID Connect ऑथोरायजेशन कोड वापरून %(provider)s सह ऑथेंटिकेट करा."
+msgstr ""
+"एक्सेस टोकन्स मिळवण्यासाठी OAuth2/OpenID Connect ऑथोरायजेशन कोड वापरून "
+"%(provider)s सह ऑथेंटिकेट करा."
 
-#: auth_kit/social/social_api_descriptions.py:51
+#: auth_kit/social/social_api_descriptions.py:53
 #, python-format
 msgid ""
 "Connect a %(provider)s account to the current user's account. This allows "
 "the user to login using their existing %(provider)s account in the future."
-msgstr "%(provider)s खाते वर्तमान युजरच्या खात्याशी कनेक्ट करा. हे युजरला भविष्यात त्यांचे विद्यमान %(provider)s खाते वापरून लॉगिन करण्याची अनुमती देते."
+msgstr ""
+"%(provider)s खाते वर्तमान युजरच्या खात्याशी कनेक्ट करा. हे युजरला भविष्यात त्यांचे "
+"विद्यमान %(provider)s खाते वापरून लॉगिन करण्याची अनुमती देते."
 
-#: auth_kit/social/social_api_descriptions.py:56
+#: auth_kit/social/social_api_descriptions.py:58
 #, python-format
 msgid ""
 "Requires authentication and a valid OAuth2/OpenID Connect authorization code "
 "from %(provider)s."
-msgstr "%(provider)s कडून ऑथेंटिकेशन आणि वैध OAuth2/OpenID Connect ऑथोरायजेशन कोड आवश्यक आहे."
+msgstr ""
+"%(provider)s कडून ऑथेंटिकेशन आणि वैध OAuth2/OpenID Connect ऑथोरायजेशन कोड आवश्यक आहे."
 
-#: auth_kit/social/social_api_descriptions.py:60
+#: auth_kit/social/social_api_descriptions.py:62
 #, python-format
 msgid ""
 "On success, the %(provider)s account is linked and can be used for future "
 "logins."
-msgstr "यशस्वी ङाल्यावर, %(provider)s खाते लिंक केले जाते आणि भविष्यातील लॉगिनसाठी वापरले जाऊ शकते."
+msgstr ""
+"यशस्वी ङाल्यावर, %(provider)s खाते लिंक केले जाते आणि भविष्यातील लॉगिनसाठी वापरले जाऊ "
+"शकते."
 
-#: auth_kit/social/social_api_descriptions.py:73
+#: auth_kit/social/social_api_descriptions.py:85
 msgid ""
 "List all social accounts connected to the current user. Shows account "
 "details including provider, UID, and connection dates."
-msgstr "वर्तमान युजरशी कनेक्ट केलेली सर्व सामाजिक खाती यादी करा. प्रावाइडर, UID आणि कनेक्शन तारखांसह खात्याचे तपशील दाखवते."
+msgstr ""
+"वर्तमान युजरशी कनेक्ट केलेली सर्व सामाजिक खाती यादी करा. प्रावाइडर, UID आणि कनेक्शन "
+"तारखांसह खात्याचे तपशील दाखवते."
 
-#: auth_kit/social/social_api_descriptions.py:78
+#: auth_kit/social/social_api_descriptions.py:90
 msgid ""
 "Disconnect a social account from the current user. Removes the social "
 "account connection and prevents future logins via that provider. Requires "
 "authentication and the account must belong to the current user."
-msgstr "वर्तमान युजरमधून सामाजिक खाते डिसकनेक्ट करा. सामाजिक खात्याचे कनेक्शन काढून टाकते आणि त्या प्रावाइडरद्वारे भविष्यातील लॉगिन रोखते. ऑथेंटिकेशन आवश्यक आहे आणि खाते वर्तमान युजरचे असले पाहिजे."
+msgstr ""
+"वर्तमान युजरमधून सामाजिक खाते डिसकनेक्ट करा. सामाजिक खात्याचे कनेक्शन काढून टाकते आणि "
+"त्या प्रावाइडरद्वारे भविष्यातील लॉगिन रोखते. ऑथेंटिकेशन आवश्यक आहे आणि खाते वर्तमान युजरचे "
+"असले पाहिजे."
 
 #: auth_kit/social/views/login.py:58
 msgid "adapter_class is not defined"

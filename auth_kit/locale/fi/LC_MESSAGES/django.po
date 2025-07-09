@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DRF Auth Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-09 05:21+0000\n"
+"POT-Creation-Date: 2025-07-09 09:28+0000\n"
 "PO-Revision-Date: 2025-07-08 06:02+0000\n"
 "Last-Translator: DRF Auth Kit Team\n"
 "Language-Team: Finnish\n"
@@ -120,7 +120,9 @@ msgstr "Rekisteröi uusi käyttäjätili."
 #: auth_kit/api_descriptions.py:134
 msgid ""
 "Users must verify their email address before the account is fully activated."
-msgstr "Käyttäjien on vahvistettava sähköpostiosoitteensa ennen kuin tili on täysin aktivoitu."
+msgstr ""
+"Käyttäjien on vahvistettava sähköpostiosoitteensa ennen kuin tili on täysin "
+"aktivoitu."
 
 #: auth_kit/api_descriptions.py:143
 msgid ""
@@ -461,15 +463,15 @@ msgstr "Kirjautuminen epäonnistui annetuilla tunnistietiedoilla."
 msgid "Invalid value"
 msgstr "Virheellinen arvo"
 
-#: auth_kit/serializers/password.py:220
+#: auth_kit/serializers/password.py:222
 msgid "Your old password was entered incorrectly. Please enter it again."
 msgstr "Vanha salasanasi syötettiin väärin. Anna se uudelleen."
 
-#: auth_kit/serializers/registration.py:88
+#: auth_kit/serializers/registration.py:98
 msgid "A user is already registered with this e-mail address."
 msgstr "Käyttäjä on jo rekisteröity tällä sähköpostiosoitteella."
 
-#: auth_kit/serializers/registration.py:119
+#: auth_kit/serializers/registration.py:129
 msgid "The two password fields didn't match."
 msgstr "Salasanakentät eivät täsmää."
 
@@ -494,46 +496,61 @@ msgstr "Käyttäjä on jo rekisteröity tällä sähköpostiosoitteella."
 msgid "Failed to exchange code for access token"
 msgstr "Koodin vaihtaminen pääsytunnisteeseen epäonnistui"
 
-#: auth_kit/social/social_api_descriptions.py:29
+#: auth_kit/social/social_api_descriptions.py:31
 #, python-format
 msgid ""
 "Authenticate with %(provider)s using OAuth2/OpenID Connect authorization "
 "code to obtain access tokens."
-msgstr "Tunnistaudu %(provider)s-palvelun kanssa käyttäen OAuth2/OpenID Connect valtuutuskoodia saadaksesi pääsytunnisteet."
+msgstr ""
+"Tunnistaudu %(provider)s-palvelun kanssa käyttäen OAuth2/OpenID Connect "
+"valtuutuskoodia saadaksesi pääsytunnisteet."
 
-#: auth_kit/social/social_api_descriptions.py:51
+#: auth_kit/social/social_api_descriptions.py:53
 #, python-format
 msgid ""
 "Connect a %(provider)s account to the current user's account. This allows "
 "the user to login using their existing %(provider)s account in the future."
-msgstr "Yhdistä %(provider)s-tili nykyiseen käyttäjätiliin. Tämä mahdollistaa käyttäjän kirjautumisen olemassa olevalla %(provider)s-tilillään tulevaisuudessa."
+msgstr ""
+"Yhdistä %(provider)s-tili nykyiseen käyttäjätiliin. Tämä mahdollistaa "
+"käyttäjän kirjautumisen olemassa olevalla %(provider)s-tilillään "
+"tulevaisuudessa."
 
-#: auth_kit/social/social_api_descriptions.py:56
+#: auth_kit/social/social_api_descriptions.py:58
 #, python-format
 msgid ""
 "Requires authentication and a valid OAuth2/OpenID Connect authorization code "
 "from %(provider)s."
-msgstr "Vaatii tunnistautumisen ja kelvollisen OAuth2/OpenID Connect valtuutuskoodin %(provider)s-palvelusta."
+msgstr ""
+"Vaatii tunnistautumisen ja kelvollisen OAuth2/OpenID Connect valtuutuskoodin "
+"%(provider)s-palvelusta."
 
-#: auth_kit/social/social_api_descriptions.py:60
+#: auth_kit/social/social_api_descriptions.py:62
 #, python-format
 msgid ""
 "On success, the %(provider)s account is linked and can be used for future "
 "logins."
-msgstr "Onnistumisen jälkeen %(provider)s-tili on yhdistetty ja sitä voidaan käyttää tuleviin kirjautumisiin."
+msgstr ""
+"Onnistumisen jälkeen %(provider)s-tili on yhdistetty ja sitä voidaan käyttää "
+"tuleviin kirjautumisiin."
 
-#: auth_kit/social/social_api_descriptions.py:73
+#: auth_kit/social/social_api_descriptions.py:85
 msgid ""
 "List all social accounts connected to the current user. Shows account "
 "details including provider, UID, and connection dates."
-msgstr "Listaa kaikki nykyiseen käyttäjään yhdistetyt sosiaalisen median tilit. Näyttää tilin tiedot mukaan lukien palveluntarjoaja, UID ja yhdistämispäivät."
+msgstr ""
+"Listaa kaikki nykyiseen käyttäjään yhdistetyt sosiaalisen median tilit. "
+"Näyttää tilin tiedot mukaan lukien palveluntarjoaja, UID ja yhdistämispäivät."
 
-#: auth_kit/social/social_api_descriptions.py:78
+#: auth_kit/social/social_api_descriptions.py:90
 msgid ""
 "Disconnect a social account from the current user. Removes the social "
 "account connection and prevents future logins via that provider. Requires "
 "authentication and the account must belong to the current user."
-msgstr "Katkaise sosiaalisen median tilin yhteys nykyisestä käyttäjästä. Poistaa sosiaalisen median tilin yhteyden ja estää tulevat kirjautumiset kyseisen palveluntarjoajan kautta. Vaatii tunnistautumisen ja tilin on kuuluttava nykyiselle käyttäjälle."
+msgstr ""
+"Katkaise sosiaalisen median tilin yhteys nykyisestä käyttäjästä. Poistaa "
+"sosiaalisen median tilin yhteyden ja estää tulevat kirjautumiset kyseisen "
+"palveluntarjoajan kautta. Vaatii tunnistautumisen ja tilin on kuuluttava "
+"nykyiselle käyttäjälle."
 
 #: auth_kit/social/views/login.py:58
 msgid "adapter_class is not defined"

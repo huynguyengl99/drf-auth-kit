@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DRF Auth Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-09 05:21+0000\n"
+"POT-Creation-Date: 2025-07-09 09:28+0000\n"
 "PO-Revision-Date: 2025-07-08 06:02+0000\n"
 "Last-Translator: DRF Auth Kit Team\n"
 "Language-Team: Armenian\n"
@@ -123,7 +123,9 @@ msgstr "Գրանցել նոր օգտատիրոջ հաշիվ:"
 #: auth_kit/api_descriptions.py:134
 msgid ""
 "Users must verify their email address before the account is fully activated."
-msgstr "Օգտատերերը պետք է հաստատեն իրենց էլ. փոստի հասցեն՝ մինչև հաշիվը ամբողջությամբ ակտիվացվի:"
+msgstr ""
+"Օգտատերերը պետք է հաստատեն իրենց էլ. փոստի հասցեն՝ մինչև հաշիվը "
+"ամբողջությամբ ակտիվացվի:"
 
 #: auth_kit/api_descriptions.py:143
 msgid ""
@@ -465,15 +467,15 @@ msgstr "Հնարավոր չէ մուտք գործել տրամադրված իր�
 msgid "Invalid value"
 msgstr "Անվավեր արժեք"
 
-#: auth_kit/serializers/password.py:220
+#: auth_kit/serializers/password.py:222
 msgid "Your old password was entered incorrectly. Please enter it again."
 msgstr "Ձեր հին գաղտնաբառը սխալ է մուտքագրված: Խնդրում ենք նորից մուտքագրել:"
 
-#: auth_kit/serializers/registration.py:88
+#: auth_kit/serializers/registration.py:98
 msgid "A user is already registered with this e-mail address."
 msgstr "Օգտատեր արդեն գրանցված է այս էլ. փոստի հասցեով:"
 
-#: auth_kit/serializers/registration.py:119
+#: auth_kit/serializers/registration.py:129
 msgid "The two password fields didn't match."
 msgstr "Երկու գաղտնաբառի դաշտերը չեն համընկնում:"
 
@@ -498,7 +500,7 @@ msgstr "Օգտատերը արդեն գրանցված է այս էլ. փոստի 
 msgid "Failed to exchange code for access token"
 msgstr "Չհաջողվեց փոխանակել ծածկագիրը մուտքի նշանի համար"
 
-#: auth_kit/social/social_api_descriptions.py:29
+#: auth_kit/social/social_api_descriptions.py:31
 #, python-format
 msgid ""
 "Authenticate with %(provider)s using OAuth2/OpenID Connect authorization "
@@ -507,7 +509,7 @@ msgstr ""
 "Նույնականացում %(provider)s-ի հետ՝ օգտագործելով OAuth2/OpenID Connect "
 "լիազորման ծածկագիրը՝ մուտքի նշաններ ստանալու համար:"
 
-#: auth_kit/social/social_api_descriptions.py:51
+#: auth_kit/social/social_api_descriptions.py:53
 #, python-format
 msgid ""
 "Connect a %(provider)s account to the current user's account. This allows "
@@ -517,7 +519,7 @@ msgstr ""
 "օգտատիրոջը՝ ապագայում մուտք գործել իրենց գոյություն ունեցող %(provider)s "
 "հաշվով:"
 
-#: auth_kit/social/social_api_descriptions.py:56
+#: auth_kit/social/social_api_descriptions.py:58
 #, python-format
 msgid ""
 "Requires authentication and a valid OAuth2/OpenID Connect authorization code "
@@ -526,7 +528,7 @@ msgstr ""
 "Պահանջում է նույնականացում և վավեր OAuth2/OpenID Connect լիազորման ծածկագիր "
 "%(provider)s-ից:"
 
-#: auth_kit/social/social_api_descriptions.py:60
+#: auth_kit/social/social_api_descriptions.py:62
 #, python-format
 msgid ""
 "On success, the %(provider)s account is linked and can be used for future "
@@ -535,24 +537,23 @@ msgstr ""
 "Հաջող գործողության դեպքում՝ %(provider)s հաշիվը կապակցված է և կարող է "
 "օգտագործվել ապագա մուտքերի համար:"
 
-#: auth_kit/social/social_api_descriptions.py:73
+#: auth_kit/social/social_api_descriptions.py:85
 msgid ""
 "List all social accounts connected to the current user. Shows account "
 "details including provider, UID, and connection dates."
 msgstr ""
-"Ցուցակել ընթացիկ օգտատիրոջ հետ կապակցված բոլոր սոցիալական հաշիվները: "
-"Ցույց է տալիս հաշվի մանրամասներ՝ ներառյալ մատակարարը, UID և "
-"կապակցման ամսաթվերը:"
+"Ցուցակել ընթացիկ օգտատիրոջ հետ կապակցված բոլոր սոցիալական հաշիվները: Ցույց է "
+"տալիս հաշվի մանրամասներ՝ ներառյալ մատակարարը, UID և կապակցման ամսաթվերը:"
 
-#: auth_kit/social/social_api_descriptions.py:78
+#: auth_kit/social/social_api_descriptions.py:90
 msgid ""
 "Disconnect a social account from the current user. Removes the social "
 "account connection and prevents future logins via that provider. Requires "
 "authentication and the account must belong to the current user."
 msgstr ""
-"Անջատել սոցիալական հաշիվը ընթացիկ օգտատիրոջից: Հեռացնում է սոցիալական "
-"հաշվի կապակցումը և կանխում է ապագա մուտքերը այդ մատակարարի միջոցով: "
-"Պահանջում է նույնականացում և հաշիվը պետք է պատկանի ընթացիկ օգտատիրոջը:"
+"Անջատել սոցիալական հաշիվը ընթացիկ օգտատիրոջից: Հեռացնում է սոցիալական հաշվի "
+"կապակցումը և կանխում է ապագա մուտքերը այդ մատակարարի միջոցով: Պահանջում է "
+"նույնականացում և հաշիվը պետք է պատկանի ընթացիկ օգտատիրոջը:"
 
 #: auth_kit/social/views/login.py:58
 msgid "adapter_class is not defined"

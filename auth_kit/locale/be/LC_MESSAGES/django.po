@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DRF Auth Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-09 05:21+0000\n"
+"POT-Creation-Date: 2025-07-09 09:28+0000\n"
 "PO-Revision-Date: 2025-07-08 12:00+0000\n"
 "Last-Translator: DRF Auth Kit Team\n"
 "Language-Team: Belarusian\n"
@@ -126,8 +126,8 @@ msgstr "Рэгістрацыя новага карыстальніцкага к�
 msgid ""
 "Users must verify their email address before the account is fully activated."
 msgstr ""
-"Карыстальнікі павінны праверыць свой адрас электроннай пошты перад тым, як конт "
-"будзе поўнасцю актываваны."
+"Карыстальнікі павінны праверыць свой адрас электроннай пошты перад тым, як "
+"конт будзе поўнасцю актываваны."
 
 #: auth_kit/api_descriptions.py:143
 msgid ""
@@ -465,16 +465,16 @@ msgstr "Немагчыма ўвайсці з пададзенымі ўліков
 msgid "Invalid value"
 msgstr "Няправільнае значэнне"
 
-#: auth_kit/serializers/password.py:220
+#: auth_kit/serializers/password.py:222
 msgid "Your old password was entered incorrectly. Please enter it again."
 msgstr ""
 "Ваш стары пароль быў уведзены няправільна. Калі ласка, увядзіце яго зноў."
 
-#: auth_kit/serializers/registration.py:88
+#: auth_kit/serializers/registration.py:98
 msgid "A user is already registered with this e-mail address."
 msgstr "Карыстальнік ужо зарэгістраваны з гэтым адрасам электроннай пошты."
 
-#: auth_kit/serializers/registration.py:119
+#: auth_kit/serializers/registration.py:129
 msgid "The two password fields didn't match."
 msgstr "Два палі пароля не супадаюць."
 
@@ -500,35 +500,35 @@ msgstr "Карыстальнік ужо зарэгістраваны з гэты
 msgid "Failed to exchange code for access token"
 msgstr "Не ўдалося абмяняць код на токен доступу"
 
-#: auth_kit/social/social_api_descriptions.py:29
+#: auth_kit/social/social_api_descriptions.py:31
 #, python-format
 msgid ""
 "Authenticate with %(provider)s using OAuth2/OpenID Connect authorization "
 "code to obtain access tokens."
 msgstr ""
-"Аўтэнтыфікацыя з %(provider)s з выкарыстаннем кода аўтарызацыі "
-"OAuth2/OpenID Connect для отрымання токенаў доступу."
+"Аўтэнтыфікацыя з %(provider)s з выкарыстаннем кода аўтарызацыі OAuth2/OpenID "
+"Connect для отрымання токенаў доступу."
 
-#: auth_kit/social/social_api_descriptions.py:51
+#: auth_kit/social/social_api_descriptions.py:53
 #, python-format
 msgid ""
 "Connect a %(provider)s account to the current user's account. This allows "
 "the user to login using their existing %(provider)s account in the future."
 msgstr ""
 "Падключыць конт %(provider)s да конта бягучага карыстальніка. Гэта дазваляе "
-"карыстальніку уваходзіць з выкарыстаннем свайго існуючага конта %(provider)s у "
-"будучыні."
+"карыстальніку уваходзіць з выкарыстаннем свайго існуючага конта %(provider)s "
+"у будучыні."
 
-#: auth_kit/social/social_api_descriptions.py:56
+#: auth_kit/social/social_api_descriptions.py:58
 #, python-format
 msgid ""
 "Requires authentication and a valid OAuth2/OpenID Connect authorization code "
 "from %(provider)s."
 msgstr ""
-"Патрабуе аўтэнтыфікацыі і дзейнага кода аўтарызацыі "
-"OAuth2/OpenID Connect ад %(provider)s."
+"Патрабуе аўтэнтыфікацыі і дзейнага кода аўтарызацыі OAuth2/OpenID Connect ад "
+"%(provider)s."
 
-#: auth_kit/social/social_api_descriptions.py:60
+#: auth_kit/social/social_api_descriptions.py:62
 #, python-format
 msgid ""
 "On success, the %(provider)s account is linked and can be used for future "
@@ -537,7 +537,7 @@ msgstr ""
 "Пры паспяховай аперацыі конт %(provider)s будзе павязаны і можа быць "
 "выкарыстаны для будучых уваходаў."
 
-#: auth_kit/social/social_api_descriptions.py:73
+#: auth_kit/social/social_api_descriptions.py:85
 msgid ""
 "List all social accounts connected to the current user. Shows account "
 "details including provider, UID, and connection dates."
@@ -545,7 +545,7 @@ msgstr ""
 "Спіс усіх сацыяльных контаў, падключаных да бягучага карыстальніка. Паказвае "
 "падрабязнасці конта, уключаючы пастаўшчыка, UID і даты падключэння."
 
-#: auth_kit/social/social_api_descriptions.py:78
+#: auth_kit/social/social_api_descriptions.py:90
 msgid ""
 "Disconnect a social account from the current user. Removes the social "
 "account connection and prevents future logins via that provider. Requires "

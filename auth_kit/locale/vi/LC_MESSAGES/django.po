@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DRF Auth Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-09 05:21+0000\n"
+"POT-Creation-Date: 2025-07-09 09:28+0000\n"
 "PO-Revision-Date: 2025-07-08 06:02+0000\n"
 "Last-Translator: DRF Auth Kit Team\n"
 "Language-Team: Vietnamese\n"
@@ -445,15 +445,15 @@ msgstr "Không thể đăng nhập với thông tin đăng nhập được cung 
 msgid "Invalid value"
 msgstr "Giá trị không hợp lệ"
 
-#: auth_kit/serializers/password.py:220
+#: auth_kit/serializers/password.py:222
 msgid "Your old password was entered incorrectly. Please enter it again."
 msgstr "Mật khẩu cũ của bạn đã được nhập sai. Vui lòng nhập lại."
 
-#: auth_kit/serializers/registration.py:88
+#: auth_kit/serializers/registration.py:98
 msgid "A user is already registered with this e-mail address."
 msgstr "Đã có người dùng đăng ký với địa chỉ email này."
 
-#: auth_kit/serializers/registration.py:119
+#: auth_kit/serializers/registration.py:129
 msgid "The two password fields didn't match."
 msgstr "Hai trường mật khẩu không khớp."
 
@@ -479,7 +479,7 @@ msgstr "Người dùng đã đăng ký với địa chỉ email này."
 msgid "Failed to exchange code for access token"
 msgstr "Không thể đổi mã lấy access token"
 
-#: auth_kit/social/social_api_descriptions.py:29
+#: auth_kit/social/social_api_descriptions.py:31
 #, python-format
 msgid ""
 "Authenticate with %(provider)s using OAuth2/OpenID Connect authorization "
@@ -488,7 +488,7 @@ msgstr ""
 "Xác thực với %(provider)s bằng mã authorization OAuth2/OpenID Connect để lấy "
 "access token."
 
-#: auth_kit/social/social_api_descriptions.py:51
+#: auth_kit/social/social_api_descriptions.py:53
 #, python-format
 msgid ""
 "Connect a %(provider)s account to the current user's account. This allows "
@@ -498,7 +498,7 @@ msgstr ""
 "cho phép người dùng đăng nhập bằng tài khoản %(provider)s hiện có trong "
 "tương lai."
 
-#: auth_kit/social/social_api_descriptions.py:56
+#: auth_kit/social/social_api_descriptions.py:58
 #, python-format
 msgid ""
 "Requires authentication and a valid OAuth2/OpenID Connect authorization code "
@@ -507,7 +507,7 @@ msgstr ""
 "Yêu cầu xác thực và mã authorization OAuth2/OpenID Connect hợp lệ từ "
 "%(provider)s."
 
-#: auth_kit/social/social_api_descriptions.py:60
+#: auth_kit/social/social_api_descriptions.py:62
 #, python-format
 msgid ""
 "On success, the %(provider)s account is linked and can be used for future "
@@ -516,7 +516,7 @@ msgstr ""
 "Khi thành công, tài khoản %(provider)s sẽ được liên kết và có thể được sử "
 "dụng cho các lần đăng nhập trong tương lai."
 
-#: auth_kit/social/social_api_descriptions.py:73
+#: auth_kit/social/social_api_descriptions.py:85
 msgid ""
 "List all social accounts connected to the current user. Shows account "
 "details including provider, UID, and connection dates."
@@ -524,15 +524,15 @@ msgstr ""
 "Liệt kê tất cả tài khoản mạng xã hội được kết nối với người dùng hiện tại. "
 "Hiển thị chi tiết tài khoản bao gồm nhà cung cấp, UID và ngày kết nối."
 
-#: auth_kit/social/social_api_descriptions.py:78
+#: auth_kit/social/social_api_descriptions.py:90
 msgid ""
 "Disconnect a social account from the current user. Removes the social "
 "account connection and prevents future logins via that provider. Requires "
 "authentication and the account must belong to the current user."
 msgstr ""
-"Ngắt kết nối tài khoản mạng xã hội khỏi người dùng hiện tại. Xóa kết nối "
-"tài khoản mạng xã hội và ngăn chặn đăng nhập trong tương lai qua nhà cung "
-"cấp đó. Yêu cầu xác thực và tài khoản phải thuộc về người dùng hiện tại."
+"Ngắt kết nối tài khoản mạng xã hội khỏi người dùng hiện tại. Xóa kết nối tài "
+"khoản mạng xã hội và ngăn chặn đăng nhập trong tương lai qua nhà cung cấp "
+"đó. Yêu cầu xác thực và tài khoản phải thuộc về người dùng hiện tại."
 
 #: auth_kit/social/views/login.py:58
 msgid "adapter_class is not defined"

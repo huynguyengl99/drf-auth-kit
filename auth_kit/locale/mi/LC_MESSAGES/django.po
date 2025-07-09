@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DRF Auth Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-09 05:21+0000\n"
+"POT-Creation-Date: 2025-07-09 09:28+0000\n"
 "PO-Revision-Date: 2025-07-08 06:02+0000\n"
 "Last-Translator: DRF Auth Kit Team\n"
 "Language-Team: Māori\n"
@@ -120,7 +120,9 @@ msgstr "Rēhita he pūkete kaiwhakamahi hou."
 #: auth_kit/api_descriptions.py:134
 msgid ""
 "Users must verify their email address before the account is fully activated."
-msgstr "Me whakaū e nga kaiwhakamahi to rātou wāhitau īmēra i mua i te whakahohenga katoa o te pūkete."
+msgstr ""
+"Me whakaū e nga kaiwhakamahi to rātou wāhitau īmēra i mua i te whakahohenga "
+"katoa o te pūkete."
 
 #: auth_kit/api_descriptions.py:143
 msgid ""
@@ -452,15 +454,15 @@ msgstr "Kaore e taea te takiuru me nga tohu whakarato."
 msgid "Invalid value"
 msgstr "Uara muhu"
 
-#: auth_kit/serializers/password.py:220
+#: auth_kit/serializers/password.py:222
 msgid "Your old password was entered incorrectly. Please enter it again."
 msgstr "Ko to kupuhuna tawhito i whakaurua he. Koa whakaurua anō."
 
-#: auth_kit/serializers/registration.py:88
+#: auth_kit/serializers/registration.py:98
 msgid "A user is already registered with this e-mail address."
 msgstr "Kua rēhita he kaiwhakamahi me tenei wāhitau īmēra."
 
-#: auth_kit/serializers/registration.py:119
+#: auth_kit/serializers/registration.py:129
 msgid "The two password fields didn't match."
 msgstr "Kaore nga āpure kupuhuna e rua i rite."
 
@@ -484,46 +486,60 @@ msgstr "Kua rēhita te kaiwhakamahi me tenei wāhitau īmēra."
 msgid "Failed to exchange code for access token"
 msgstr "I rahua te whakawhiti waehere mo te tohu urunga"
 
-#: auth_kit/social/social_api_descriptions.py:29
+#: auth_kit/social/social_api_descriptions.py:31
 #, python-format
 msgid ""
 "Authenticate with %(provider)s using OAuth2/OpenID Connect authorization "
 "code to obtain access tokens."
-msgstr "Whakamanatia me %(provider)s ma te waehere whakamana OAuth2/OpenID Connect hoki nga tohu urunga."
+msgstr ""
+"Whakamanatia me %(provider)s ma te waehere whakamana OAuth2/OpenID Connect "
+"hoki nga tohu urunga."
 
-#: auth_kit/social/social_api_descriptions.py:51
+#: auth_kit/social/social_api_descriptions.py:53
 #, python-format
 msgid ""
 "Connect a %(provider)s account to the current user's account. This allows "
 "the user to login using their existing %(provider)s account in the future."
-msgstr "Honoa he pūkete %(provider)s ki te pūkete o te kaiwhakamahi o nāianei. Tenei whakaaetanga te kaiwhakamahi takiuru ma to rātou pūkete %(provider)s o mua i nga rā o mua."
+msgstr ""
+"Honoa he pūkete %(provider)s ki te pūkete o te kaiwhakamahi o nāianei. Tenei "
+"whakaaetanga te kaiwhakamahi takiuru ma to rātou pūkete %(provider)s o mua i "
+"nga rā o mua."
 
-#: auth_kit/social/social_api_descriptions.py:56
+#: auth_kit/social/social_api_descriptions.py:58
 #, python-format
 msgid ""
 "Requires authentication and a valid OAuth2/OpenID Connect authorization code "
 "from %(provider)s."
-msgstr "Me whakamanatia me he waehere whakamana OAuth2/OpenID Connect whakawhitiwhiti i %(provider)s."
+msgstr ""
+"Me whakamanatia me he waehere whakamana OAuth2/OpenID Connect "
+"whakawhitiwhiti i %(provider)s."
 
-#: auth_kit/social/social_api_descriptions.py:60
+#: auth_kit/social/social_api_descriptions.py:62
 #, python-format
 msgid ""
 "On success, the %(provider)s account is linked and can be used for future "
 "logins."
-msgstr "I te angitū, ka honoa te pūkete %(provider)s ā ka taea te whakamahi mō nga takiuru a mua."
+msgstr ""
+"I te angitū, ka honoa te pūkete %(provider)s ā ka taea te whakamahi mō nga "
+"takiuru a mua."
 
-#: auth_kit/social/social_api_descriptions.py:73
+#: auth_kit/social/social_api_descriptions.py:85
 msgid ""
 "List all social accounts connected to the current user. Shows account "
 "details including provider, UID, and connection dates."
-msgstr "Raina nga pūkete pāpori katoa kua honoa ki te kaiwhakamahi o nāianei. Whakaatu nga taipitopito pūkete me te kaiwhakamahi, UID, me nga rā hononga."
+msgstr ""
+"Raina nga pūkete pāpori katoa kua honoa ki te kaiwhakamahi o nāianei. "
+"Whakaatu nga taipitopito pūkete me te kaiwhakamahi, UID, me nga rā hononga."
 
-#: auth_kit/social/social_api_descriptions.py:78
+#: auth_kit/social/social_api_descriptions.py:90
 msgid ""
 "Disconnect a social account from the current user. Removes the social "
 "account connection and prevents future logins via that provider. Requires "
 "authentication and the account must belong to the current user."
-msgstr "Wetekina he pūkete pāpori i te kaiwhakamahi o nāianei. Tangohia te hononga pūkete pāpori me te aukati nga takiuru a mua ma taua kaiwhakamahi. Me whakamanatia me no te kaiwhakamahi o nāianei te pūkete."
+msgstr ""
+"Wetekina he pūkete pāpori i te kaiwhakamahi o nāianei. Tangohia te hononga "
+"pūkete pāpori me te aukati nga takiuru a mua ma taua kaiwhakamahi. Me "
+"whakamanatia me no te kaiwhakamahi o nāianei te pūkete."
 
 #: auth_kit/social/views/login.py:58
 msgid "adapter_class is not defined"

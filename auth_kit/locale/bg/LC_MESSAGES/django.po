@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DRF Auth Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-09 05:21+0000\n"
+"POT-Creation-Date: 2025-07-09 09:28+0000\n"
 "PO-Revision-Date: 2025-07-08 06:02+0000\n"
 "Last-Translator: DRF Auth Kit Team\n"
 "Language-Team: Bulgarian\n"
@@ -464,15 +464,15 @@ msgstr "Невъзможно влизане с предоставените да
 msgid "Invalid value"
 msgstr "Невалидна стойност"
 
-#: auth_kit/serializers/password.py:220
+#: auth_kit/serializers/password.py:222
 msgid "Your old password was entered incorrectly. Please enter it again."
 msgstr "Старата ви парола е въведена неправилно. Моля, въведете я отново."
 
-#: auth_kit/serializers/registration.py:88
+#: auth_kit/serializers/registration.py:98
 msgid "A user is already registered with this e-mail address."
 msgstr "Потребител вече е регистриран с този имейл адрес."
 
-#: auth_kit/serializers/registration.py:119
+#: auth_kit/serializers/registration.py:129
 msgid "The two password fields didn't match."
 msgstr "Двете полета за парола не съвпадат."
 
@@ -497,26 +497,26 @@ msgstr "Потребител вече е регистриран с този им
 msgid "Failed to exchange code for access token"
 msgstr "Неуспешна размяна на код за токен за достъп"
 
-#: auth_kit/social/social_api_descriptions.py:29
+#: auth_kit/social/social_api_descriptions.py:31
 #, python-format
 msgid ""
 "Authenticate with %(provider)s using OAuth2/OpenID Connect authorization "
 "code to obtain access tokens."
 msgstr ""
-"Удостоверяване с %(provider)s, използвайки OAuth2/OpenID Connect код за оторизация за "
-"получаване на токени за достъп."
+"Удостоверяване с %(provider)s, използвайки OAuth2/OpenID Connect код за "
+"оторизация за получаване на токени за достъп."
 
-#: auth_kit/social/social_api_descriptions.py:51
+#: auth_kit/social/social_api_descriptions.py:53
 #, python-format
 msgid ""
 "Connect a %(provider)s account to the current user's account. This allows "
 "the user to login using their existing %(provider)s account in the future."
 msgstr ""
-"Свързва %(provider)s акаунт към акаунта на текущия потребител. Това позволява "
-"на потребителя да влиза, използвайки съществуващия си %(provider)s акаунт в "
-"бъдеще."
+"Свързва %(provider)s акаунт към акаунта на текущия потребител. Това "
+"позволява на потребителя да влиза, използвайки съществуващия си %(provider)s "
+"акаунт в бъдеще."
 
-#: auth_kit/social/social_api_descriptions.py:56
+#: auth_kit/social/social_api_descriptions.py:58
 #, python-format
 msgid ""
 "Requires authentication and a valid OAuth2/OpenID Connect authorization code "
@@ -525,7 +525,7 @@ msgstr ""
 "Изисква удостоверяване и валиден OAuth2/OpenID Connect код за оторизация от "
 "%(provider)s."
 
-#: auth_kit/social/social_api_descriptions.py:60
+#: auth_kit/social/social_api_descriptions.py:62
 #, python-format
 msgid ""
 "On success, the %(provider)s account is linked and can be used for future "
@@ -534,7 +534,7 @@ msgstr ""
 "При успех %(provider)s акаунтът се свързва и може да се използва за бъдещи "
 "влизания."
 
-#: auth_kit/social/social_api_descriptions.py:73
+#: auth_kit/social/social_api_descriptions.py:85
 msgid ""
 "List all social accounts connected to the current user. Shows account "
 "details including provider, UID, and connection dates."
@@ -542,7 +542,7 @@ msgstr ""
 "Изброява всички социални акаунти, свързани с текущия потребител. Показва "
 "подробности за акаунта, включително доставчик, UID и дати на свързване."
 
-#: auth_kit/social/social_api_descriptions.py:78
+#: auth_kit/social/social_api_descriptions.py:90
 msgid ""
 "Disconnect a social account from the current user. Removes the social "
 "account connection and prevents future logins via that provider. Requires "

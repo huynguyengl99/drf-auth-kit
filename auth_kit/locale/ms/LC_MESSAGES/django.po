@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DRF Auth Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-09 05:21+0000\n"
+"POT-Creation-Date: 2025-07-09 09:28+0000\n"
 "PO-Revision-Date: 2025-07-08 06:02+0000\n"
 "Last-Translator: DRF Auth Kit Team\n"
 "Language-Team: Malay\n"
@@ -459,16 +459,16 @@ msgstr "Tidak dapat log masuk dengan kelayakan yang disediakan."
 msgid "Invalid value"
 msgstr "Nilai tidak sah"
 
-#: auth_kit/serializers/password.py:220
+#: auth_kit/serializers/password.py:222
 msgid "Your old password was entered incorrectly. Please enter it again."
 msgstr ""
 "Kata laluan lama anda dimasukkan dengan salah. Sila masukkannya semula."
 
-#: auth_kit/serializers/registration.py:88
+#: auth_kit/serializers/registration.py:98
 msgid "A user is already registered with this e-mail address."
 msgstr "Pengguna telah didaftarkan dengan alamat e-mel ini."
 
-#: auth_kit/serializers/registration.py:119
+#: auth_kit/serializers/registration.py:129
 msgid "The two password fields didn't match."
 msgstr "Kedua-dua medan kata laluan tidak sepadan."
 
@@ -492,7 +492,7 @@ msgstr "Pengguna telah didaftarkan dengan alamat e-mel ini."
 msgid "Failed to exchange code for access token"
 msgstr "Gagal menukar kod untuk token akses"
 
-#: auth_kit/social/social_api_descriptions.py:29
+#: auth_kit/social/social_api_descriptions.py:31
 #, python-format
 msgid ""
 "Authenticate with %(provider)s using OAuth2/OpenID Connect authorization "
@@ -501,7 +501,7 @@ msgstr ""
 "Mengesahkan dengan %(provider)s menggunakan kod kebenaran OAuth2/OpenID "
 "Connect untuk mendapatkan token akses."
 
-#: auth_kit/social/social_api_descriptions.py:51
+#: auth_kit/social/social_api_descriptions.py:53
 #, python-format
 msgid ""
 "Connect a %(provider)s account to the current user's account. This allows "
@@ -511,7 +511,7 @@ msgstr ""
 "pengguna log masuk menggunakan akaun %(provider)s sedia ada mereka pada masa "
 "akan datang."
 
-#: auth_kit/social/social_api_descriptions.py:56
+#: auth_kit/social/social_api_descriptions.py:58
 #, python-format
 msgid ""
 "Requires authentication and a valid OAuth2/OpenID Connect authorization code "
@@ -520,7 +520,7 @@ msgstr ""
 "Memerlukan pengesahan dan kod kebenaran OAuth2/OpenID Connect yang sah dari "
 "%(provider)s."
 
-#: auth_kit/social/social_api_descriptions.py:60
+#: auth_kit/social/social_api_descriptions.py:62
 #, python-format
 msgid ""
 "On success, the %(provider)s account is linked and can be used for future "
@@ -529,7 +529,7 @@ msgstr ""
 "Apabila berjaya, akaun %(provider)s dipautkan dan boleh digunakan untuk log "
 "masuk pada masa akan datang."
 
-#: auth_kit/social/social_api_descriptions.py:73
+#: auth_kit/social/social_api_descriptions.py:85
 msgid ""
 "List all social accounts connected to the current user. Shows account "
 "details including provider, UID, and connection dates."
@@ -537,7 +537,7 @@ msgstr ""
 "Senaraikan semua akaun sosial yang disambungkan kepada pengguna semasa. "
 "Menunjukkan butiran akaun termasuk penyedia, UID, dan tarikh sambungan."
 
-#: auth_kit/social/social_api_descriptions.py:78
+#: auth_kit/social/social_api_descriptions.py:90
 msgid ""
 "Disconnect a social account from the current user. Removes the social "
 "account connection and prevents future logins via that provider. Requires "

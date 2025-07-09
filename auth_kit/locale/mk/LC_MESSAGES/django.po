@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DRF Auth Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-09 05:21+0000\n"
+"POT-Creation-Date: 2025-07-09 09:28+0000\n"
 "PO-Revision-Date: 2025-07-08 06:02+0000\n"
 "Last-Translator: DRF Auth Kit Team\n"
 "Language-Team: Macedonian\n"
@@ -123,7 +123,9 @@ msgstr "Регистрирај нова корисничка сметка."
 #: auth_kit/api_descriptions.py:134
 msgid ""
 "Users must verify their email address before the account is fully activated."
-msgstr "Корисниците мора да ја верифицираат својата емаил адреса пред сметката да биде целосно активирана."
+msgstr ""
+"Корисниците мора да ја верифицираат својата емаил адреса пред сметката да "
+"биде целосно активирана."
 
 #: auth_kit/api_descriptions.py:143
 msgid ""
@@ -458,16 +460,16 @@ msgstr "Не може да се најави со обезбедените ак�
 msgid "Invalid value"
 msgstr "Невалидна вредност"
 
-#: auth_kit/serializers/password.py:220
+#: auth_kit/serializers/password.py:222
 msgid "Your old password was entered incorrectly. Please enter it again."
 msgstr ""
 "Вашата стара лозинка беше внесена неточно. Ве молиме внесете ја повторно."
 
-#: auth_kit/serializers/registration.py:88
+#: auth_kit/serializers/registration.py:98
 msgid "A user is already registered with this e-mail address."
 msgstr "Корисник веќе е регистриран со оваа емаил адреса."
 
-#: auth_kit/serializers/registration.py:119
+#: auth_kit/serializers/registration.py:129
 msgid "The two password fields didn't match."
 msgstr "Двете полиња за лозинка не се совпаѓаат."
 
@@ -493,46 +495,60 @@ msgstr "Корисник веќе е регистриран со оваа ема
 msgid "Failed to exchange code for access token"
 msgstr "Неуспешна размена на код за токен за пристап"
 
-#: auth_kit/social/social_api_descriptions.py:29
+#: auth_kit/social/social_api_descriptions.py:31
 #, python-format
 msgid ""
 "Authenticate with %(provider)s using OAuth2/OpenID Connect authorization "
 "code to obtain access tokens."
-msgstr "Автентикувај се со %(provider)s користејќи OAuth2/OpenID Connect авторизациски код за да добиеш токени за пристап."
+msgstr ""
+"Автентикувај се со %(provider)s користејќи OAuth2/OpenID Connect "
+"авторизациски код за да добиеш токени за пристап."
 
-#: auth_kit/social/social_api_descriptions.py:51
+#: auth_kit/social/social_api_descriptions.py:53
 #, python-format
 msgid ""
 "Connect a %(provider)s account to the current user's account. This allows "
 "the user to login using their existing %(provider)s account in the future."
-msgstr "Поврзи %(provider)s сметка со сметката на тековниот корисник. Ова овозможува корисникот да се најави користејќи ја својата постоечка %(provider)s сметка во иднина."
+msgstr ""
+"Поврзи %(provider)s сметка со сметката на тековниот корисник. Ова овозможува "
+"корисникот да се најави користејќи ја својата постоечка %(provider)s сметка "
+"во иднина."
 
-#: auth_kit/social/social_api_descriptions.py:56
+#: auth_kit/social/social_api_descriptions.py:58
 #, python-format
 msgid ""
 "Requires authentication and a valid OAuth2/OpenID Connect authorization code "
 "from %(provider)s."
-msgstr "Бара автентикација и валиден OAuth2/OpenID Connect авторизациски код од %(provider)s."
+msgstr ""
+"Бара автентикација и валиден OAuth2/OpenID Connect авторизациски код од "
+"%(provider)s."
 
-#: auth_kit/social/social_api_descriptions.py:60
+#: auth_kit/social/social_api_descriptions.py:62
 #, python-format
 msgid ""
 "On success, the %(provider)s account is linked and can be used for future "
 "logins."
-msgstr "При успех, %(provider)s сметката е поврзана и може да се користи за идни најавувања."
+msgstr ""
+"При успех, %(provider)s сметката е поврзана и може да се користи за идни "
+"најавувања."
 
-#: auth_kit/social/social_api_descriptions.py:73
+#: auth_kit/social/social_api_descriptions.py:85
 msgid ""
 "List all social accounts connected to the current user. Shows account "
 "details including provider, UID, and connection dates."
-msgstr "Листа на сите социјални сметки поврзани со тековниот корисник. Покажува детали за сметката вклучувајќи давател, UID и датуми на поврзување."
+msgstr ""
+"Листа на сите социјални сметки поврзани со тековниот корисник. Покажува "
+"детали за сметката вклучувајќи давател, UID и датуми на поврзување."
 
-#: auth_kit/social/social_api_descriptions.py:78
+#: auth_kit/social/social_api_descriptions.py:90
 msgid ""
 "Disconnect a social account from the current user. Removes the social "
 "account connection and prevents future logins via that provider. Requires "
 "authentication and the account must belong to the current user."
-msgstr "Исклучи социјална сметка од тековниот корисник. Ја отстранува врската со социјалната сметка и спречува идни најавувања преку тој давател. Бара автентикација и сметката мора да му припаѓа на тековниот корисник."
+msgstr ""
+"Исклучи социјална сметка од тековниот корисник. Ја отстранува врската со "
+"социјалната сметка и спречува идни најавувања преку тој давател. Бара "
+"автентикација и сметката мора да му припаѓа на тековниот корисник."
 
 #: auth_kit/social/views/login.py:58
 msgid "adapter_class is not defined"

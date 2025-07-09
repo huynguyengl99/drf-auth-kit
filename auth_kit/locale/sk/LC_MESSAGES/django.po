@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DRF Auth Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-09 05:21+0000\n"
+"POT-Creation-Date: 2025-07-09 09:28+0000\n"
 "PO-Revision-Date: 2025-07-08 06:02+0000\n"
 "Last-Translator: DRF Auth Kit Team\n"
 "Language-Team: Slovak\n"
@@ -452,15 +452,15 @@ msgstr "Nie je možné sa prihlásiť s poskytnutými povereniami."
 msgid "Invalid value"
 msgstr "Neplatná hodnota"
 
-#: auth_kit/serializers/password.py:220
+#: auth_kit/serializers/password.py:222
 msgid "Your old password was entered incorrectly. Please enter it again."
 msgstr "Vaše staré heslo bolo zadané nesprávne. Prosím, zadajte ho znovu."
 
-#: auth_kit/serializers/registration.py:88
+#: auth_kit/serializers/registration.py:98
 msgid "A user is already registered with this e-mail address."
 msgstr "Používateľ s touto e-mailovou adresou je už registrovaný."
 
-#: auth_kit/serializers/registration.py:119
+#: auth_kit/serializers/registration.py:129
 msgid "The two password fields didn't match."
 msgstr "Dve polia hesla sa nezhodujú."
 
@@ -485,34 +485,35 @@ msgstr "Používateľ s touto e-mailovou adresou je už registrovaný."
 msgid "Failed to exchange code for access token"
 msgstr "Nepodarilo sa vymeniť kód za prístupový token"
 
-#: auth_kit/social/social_api_descriptions.py:29
+#: auth_kit/social/social_api_descriptions.py:31
 #, python-format
 msgid ""
 "Authenticate with %(provider)s using OAuth2/OpenID Connect authorization "
 "code to obtain access tokens."
 msgstr ""
-"Autentifikujte sa pomocou %(provider)s pomocou autorizačného kódu OAuth2/OpenID "
-"Connect na získanie prístupových tokenov."
+"Autentifikujte sa pomocou %(provider)s pomocou autorizačného kódu OAuth2/"
+"OpenID Connect na získanie prístupových tokenov."
 
-#: auth_kit/social/social_api_descriptions.py:51
+#: auth_kit/social/social_api_descriptions.py:53
 #, python-format
 msgid ""
 "Connect a %(provider)s account to the current user's account. This allows "
 "the user to login using their existing %(provider)s account in the future."
 msgstr ""
 "Pripojí %(provider)s účet k účtu aktuálneho používateľa. Toto umožní "
-"používateľovi prihlásiť sa pomocou existujúceho %(provider)s účtu v budúcnosti."
+"používateľovi prihlásiť sa pomocou existujúceho %(provider)s účtu v "
+"budúcnosti."
 
-#: auth_kit/social/social_api_descriptions.py:56
+#: auth_kit/social/social_api_descriptions.py:58
 #, python-format
 msgid ""
 "Requires authentication and a valid OAuth2/OpenID Connect authorization code "
 "from %(provider)s."
 msgstr ""
-"Vyžaduje autentifikáciu a platný autorizačný kód OAuth2/OpenID Connect "
-"od %(provider)s."
+"Vyžaduje autentifikáciu a platný autorizačný kód OAuth2/OpenID Connect od "
+"%(provider)s."
 
-#: auth_kit/social/social_api_descriptions.py:60
+#: auth_kit/social/social_api_descriptions.py:62
 #, python-format
 msgid ""
 "On success, the %(provider)s account is linked and can be used for future "
@@ -521,7 +522,7 @@ msgstr ""
 "Pri úspechu je %(provider)s účet prepojený a môže sa použiť pre budúce "
 "prihlásenia."
 
-#: auth_kit/social/social_api_descriptions.py:73
+#: auth_kit/social/social_api_descriptions.py:85
 msgid ""
 "List all social accounts connected to the current user. Shows account "
 "details including provider, UID, and connection dates."
@@ -529,7 +530,7 @@ msgstr ""
 "Zoznam všetkých sociálnych účtov pripojených k aktuálnemu používateľovi. "
 "Zobrazuje detaily účtu vrátane poskytovateľa, UID a dátumov pripojenia."
 
-#: auth_kit/social/social_api_descriptions.py:78
+#: auth_kit/social/social_api_descriptions.py:90
 msgid ""
 "Disconnect a social account from the current user. Removes the social "
 "account connection and prevents future logins via that provider. Requires "

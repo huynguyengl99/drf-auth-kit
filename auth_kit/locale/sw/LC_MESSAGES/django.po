@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DRF Auth Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-09 05:21+0000\n"
+"POT-Creation-Date: 2025-07-09 09:28+0000\n"
 "PO-Revision-Date: 2025-07-08 06:02+0000\n"
 "Last-Translator: DRF Auth Kit Team\n"
 "Language-Team: Swahili\n"
@@ -470,16 +470,16 @@ msgstr "Haiwezi kuingia kwa hati za utambulisho zilizotolewa."
 msgid "Invalid value"
 msgstr "Thamani si sahihi"
 
-#: auth_kit/serializers/password.py:220
+#: auth_kit/serializers/password.py:222
 msgid "Your old password was entered incorrectly. Please enter it again."
 msgstr ""
 "Nenosiri lako la zamani liliingizwa kwa makosa. Tafadhali liingie tena."
 
-#: auth_kit/serializers/registration.py:88
+#: auth_kit/serializers/registration.py:98
 msgid "A user is already registered with this e-mail address."
 msgstr "Mtumiaji tayari amesajiliwa kwa anwani hii ya barua pepe."
 
-#: auth_kit/serializers/registration.py:119
+#: auth_kit/serializers/registration.py:129
 msgid "The two password fields didn't match."
 msgstr "Uwanda mbili wa nenosiri hazikuwa sawa."
 
@@ -505,7 +505,7 @@ msgstr "Mtumiaji tayari amesajiliwa kwa anwani hii ya barua pepe."
 msgid "Failed to exchange code for access token"
 msgstr "Imeshindwa kubadilishana msimbo kwa alama ya ufikiaji"
 
-#: auth_kit/social/social_api_descriptions.py:29
+#: auth_kit/social/social_api_descriptions.py:31
 #, python-format
 msgid ""
 "Authenticate with %(provider)s using OAuth2/OpenID Connect authorization "
@@ -514,7 +514,7 @@ msgstr ""
 "Thibitisha kwa %(provider)s kwa kutumia msimbo wa idhini wa OAuth2/OpenID "
 "Connect ili kupata alama za ufikiaji."
 
-#: auth_kit/social/social_api_descriptions.py:51
+#: auth_kit/social/social_api_descriptions.py:53
 #, python-format
 msgid ""
 "Connect a %(provider)s account to the current user's account. This allows "
@@ -524,7 +524,7 @@ msgstr ""
 "inaruhusu mtumiaji kuingia kwa kutumia akaunti yao ya %(provider)s iliyopo "
 "katika siku zijazo."
 
-#: auth_kit/social/social_api_descriptions.py:56
+#: auth_kit/social/social_api_descriptions.py:58
 #, python-format
 msgid ""
 "Requires authentication and a valid OAuth2/OpenID Connect authorization code "
@@ -533,16 +533,16 @@ msgstr ""
 "Inahitaji uthibitishaji na msimbo halali wa idhini wa OAuth2/OpenID Connect "
 "kutoka %(provider)s."
 
-#: auth_kit/social/social_api_descriptions.py:60
+#: auth_kit/social/social_api_descriptions.py:62
 #, python-format
 msgid ""
 "On success, the %(provider)s account is linked and can be used for future "
 "logins."
 msgstr ""
-"Ikiwa imefanikiwa, akaunti ya %(provider)s itaunganishwa na inaweza "
-"kutumiwa kwa kuingia katika siku zijazo."
+"Ikiwa imefanikiwa, akaunti ya %(provider)s itaunganishwa na inaweza kutumiwa "
+"kwa kuingia katika siku zijazo."
 
-#: auth_kit/social/social_api_descriptions.py:73
+#: auth_kit/social/social_api_descriptions.py:85
 msgid ""
 "List all social accounts connected to the current user. Shows account "
 "details including provider, UID, and connection dates."
@@ -551,7 +551,7 @@ msgstr ""
 "Inaonyesha maelezo ya akaunti ikijumuisha mtoa huduma, UID, na tarehe za "
 "muunganisho."
 
-#: auth_kit/social/social_api_descriptions.py:78
+#: auth_kit/social/social_api_descriptions.py:90
 msgid ""
 "Disconnect a social account from the current user. Removes the social "
 "account connection and prevents future logins via that provider. Requires "

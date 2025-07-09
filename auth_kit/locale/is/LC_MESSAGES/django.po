@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DRF Auth Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-09 05:21+0000\n"
+"POT-Creation-Date: 2025-07-09 09:28+0000\n"
 "PO-Revision-Date: 2025-07-08 06:02+0000\n"
 "Last-Translator: DRF Auth Kit Team\n"
 "Language-Team: Icelandic\n"
@@ -447,16 +447,16 @@ msgstr "Getur ekki skráð inn með uppgefnum skilríkjum."
 msgid "Invalid value"
 msgstr "Ógilt gildi"
 
-#: auth_kit/serializers/password.py:220
+#: auth_kit/serializers/password.py:222
 msgid "Your old password was entered incorrectly. Please enter it again."
 msgstr ""
 "Gamla lykilorðið þitt var slegið inn rangt. Vinsamlegast sláðu það inn aftur."
 
-#: auth_kit/serializers/registration.py:88
+#: auth_kit/serializers/registration.py:98
 msgid "A user is already registered with this e-mail address."
 msgstr "Notandi er þegar skráður með þetta tölvupóstfang."
 
-#: auth_kit/serializers/registration.py:119
+#: auth_kit/serializers/registration.py:129
 msgid "The two password fields didn't match."
 msgstr "Lykilorðsreitirnir tveir stemma ekki."
 
@@ -481,7 +481,7 @@ msgstr "Notandi er þegar skráður með þetta tölvupóstfang."
 msgid "Failed to exchange code for access token"
 msgstr "Mistókst að skipta kóða fyrir aðgangslykil"
 
-#: auth_kit/social/social_api_descriptions.py:29
+#: auth_kit/social/social_api_descriptions.py:31
 #, python-format
 msgid ""
 "Authenticate with %(provider)s using OAuth2/OpenID Connect authorization "
@@ -490,7 +490,7 @@ msgstr ""
 "Auðkennið þig með %(provider)s með OAuth2/OpenID Connect heimilunarkóða til "
 "að fá aðgangslykla."
 
-#: auth_kit/social/social_api_descriptions.py:51
+#: auth_kit/social/social_api_descriptions.py:53
 #, python-format
 msgid ""
 "Connect a %(provider)s account to the current user's account. This allows "
@@ -500,7 +500,7 @@ msgstr ""
 "notandanum kleift að skrá sig inn með núverandi %(provider)s reikningi í "
 "framtíðinni."
 
-#: auth_kit/social/social_api_descriptions.py:56
+#: auth_kit/social/social_api_descriptions.py:58
 #, python-format
 msgid ""
 "Requires authentication and a valid OAuth2/OpenID Connect authorization code "
@@ -509,7 +509,7 @@ msgstr ""
 "Krefst auðkenningar og gildurs OAuth2/OpenID Connect heimilunarkóða frá "
 "%(provider)s."
 
-#: auth_kit/social/social_api_descriptions.py:60
+#: auth_kit/social/social_api_descriptions.py:62
 #, python-format
 msgid ""
 "On success, the %(provider)s account is linked and can be used for future "
@@ -518,7 +518,7 @@ msgstr ""
 "Við árangur er %(provider)s reikningurinn tengdur og hægt að nota hann fyrir "
 "framtíðar innskráningar."
 
-#: auth_kit/social/social_api_descriptions.py:73
+#: auth_kit/social/social_api_descriptions.py:85
 msgid ""
 "List all social accounts connected to the current user. Shows account "
 "details including provider, UID, and connection dates."
@@ -526,16 +526,16 @@ msgstr ""
 "Sýna alla samfélagsreikninga sem eru tengdir núverandi notanda. Sýnir "
 "reikningsupplýsingar þar á meðal veitanda, UID og tengingardagsetningar."
 
-#: auth_kit/social/social_api_descriptions.py:78
+#: auth_kit/social/social_api_descriptions.py:90
 msgid ""
 "Disconnect a social account from the current user. Removes the social "
 "account connection and prevents future logins via that provider. Requires "
 "authentication and the account must belong to the current user."
 msgstr ""
 "Aftenga samfélagsreikning frá núverandi notanda. Fjarlægir tengingu "
-"samfélagsreiknings og kemur í veg fyrir framtíðar innskráningar í gegnum þann "
-"veitanda. Krefst auðkenningar og reikningurinn verður að tilheyra núverandi "
-"notanda."
+"samfélagsreiknings og kemur í veg fyrir framtíðar innskráningar í gegnum "
+"þann veitanda. Krefst auðkenningar og reikningurinn verður að tilheyra "
+"núverandi notanda."
 
 #: auth_kit/social/views/login.py:58
 msgid "adapter_class is not defined"
