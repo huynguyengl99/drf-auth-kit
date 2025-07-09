@@ -466,6 +466,7 @@ Now that you understand social authentication:
 - **Account Management**: Build user interfaces for connecting/disconnecting social accounts
 - **Multi-Factor Authentication**: :doc:`mfa` - Combine social auth with MFA for enhanced security
 - **Customization**: :doc:`customization` - Customize social authentication behavior
+- **Future Features**: :doc:`../upcoming` - See planned social authentication enhancements
 
 **Provider Documentation**
 

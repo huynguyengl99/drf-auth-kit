@@ -547,3 +547,4 @@ Now that you understand MFA implementation:
 - **Monitor Usage**: Track MFA adoption and usage patterns
 - **Social Authentication**: :doc:`social-authentication` - Combine with social login
 - **Customization**: :doc:`customization` - Create custom MFA handlers
+- **Future Features**: :doc:`../upcoming` - See planned MFA enhancements

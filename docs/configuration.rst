@@ -774,7 +774,7 @@ Environment-Specific Settings
     }
 
 Internationalization
--------------------
+--------------------
 
 DRF Auth Kit includes built-in support for internationalization (i18n) with translations for 57 languages.
 

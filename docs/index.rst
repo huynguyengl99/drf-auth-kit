@@ -39,5 +39,6 @@ Contents
    :maxdepth: 1
    :caption: Development
 
+   upcoming
    contributing
    changelog

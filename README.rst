@@ -153,6 +153,29 @@ Please visit `DRF Auth Kit docs <https://drf-auth-kit.readthedocs.io/>`_ for com
 - Advanced usage patterns
 - Integration guides
 
+Upcoming Features
+-----------------
+
+**Enhanced Multi-Factor Authentication**
+
+- ☐ **Hardware Security Keys**: YubiKey and FIDO2/WebAuthn support
+- ☐ **SMS & Voice**: Twilio integration for SMS and voice-based MFA
+- ☐ **Authenticator Apps**: Enhanced TOTP support (Google Authenticator, Authy, etc.)
+- ☐ **Trusted Devices**: Remember MFA verification for trusted browsers/sessions
+
+**Passwordless Authentication**
+
+- ☐ **WebAuthn**: Biometric and hardware key authentication
+- ☐ **Magic Links**: Email-based passwordless login
+- ☐ **SMS Login**: One-time password via SMS
+
+**Advanced Security Features**
+
+- ☐ **Rate Limiting**: Configurable rate limits for authentication endpoints
+- ☐ **Account Lockout**: Progressive delays and temporary account locks
+- ☐ **Audit Logging**: Comprehensive security event logging
+- ☐ **Geographic Restrictions**: IP-based access controls and geo-blocking
+
 Contributing
 ------------
 
