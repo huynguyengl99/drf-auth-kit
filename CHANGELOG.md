@@ -1,3 +1,25 @@
+## v0.2.0 (2025-07-09)
+
+### Feat
+
+- **auth**: enhance registration, user validation, and error handling
+- **i18n**: add internationalization support with 50+ language locales
+- **urls**: add URL exclusion functionality via EXCLUDED_URL_NAMES setting
+- **auth**: add login redirect support with next and redirect_to parameters
+- **mfa**: improved internationalization support and type safety
+- **mfa**: add i18n support and comprehensive API documentation
+- **mfa**: add multi-factor authentication support
+- **social**: add comprehensive social authentication support with django-allauth integration
+- **tests**: add comprehensive test suite and sandbox examples
+- **serializers**: add dynamic serializer loading and improved authentication
+
+### Fix
+
+- **api**: correct registration descriptions and add missing i18n for social auth
+- **package**: update package dependencies
+- **rtd**: ignore building docs if the commit message is not bump version
+- **coverage**: export xml for cov report
+
 ## v0.1.1 (2025-06-19)
 
 ### Fix
