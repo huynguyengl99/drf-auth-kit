@@ -37,6 +37,7 @@ Features
 - **Complete User Management**: Registration, password reset, email verification
 - **Multi-Factor Authentication**: Support multiple MFAs with backup codes
 - **Social Authentication**: Django Allauth integration with 50+ providers, support for both OAuth2 and OpenID connect.
+- **Internationalization**: Built-in support for 57 languages including English, Spanish, French, German, Chinese, Japanese, Korean, Vietnamese, and more
 - **Full Type Safety**: Complete type hints with mypy and pyright
 - **OpenAPI Integration**: Auto-generated API documentation with DRF Spectacular
 - **Flexible Configuration**: Customizable serializers, views, and authentication backends

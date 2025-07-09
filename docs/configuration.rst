@@ -773,6 +773,121 @@ Environment-Specific Settings
         'PASSWORD_RESET_PREVENT_ENUMERATION': True,  # Prevent enumeration
     }
 
+Internationalization
+-------------------
+
+DRF Auth Kit includes built-in support for internationalization (i18n) with translations for 57 languages.
+
+**Supported Languages**
+
+DRF Auth Kit supports the following major languages:
+
+- **English** (en) - Default language
+- **Spanish** (es) - Español
+- **French** (fr) - Français
+- **German** (de) - Deutsch
+- **Chinese** (zh) - 中文
+- **Japanese** (ja) - 日本語
+- **Korean** (ko) - 한국어
+- **Vietnamese** (vi) - Tiếng Việt
+- **Russian** (ru) - Русский
+- **Arabic** (ar) - العربية
+- **Portuguese** (pt) - Português
+- **Italian** (it) - Italiano
+- **Dutch** (nl) - Nederlands
+- **Hindi** (hi) - हिन्दी
+- **And 43 more languages...**
+
+**Django i18n Configuration**
+
+To enable internationalization in your Django project:
+
+.. code-block:: python
+
+    # settings.py
+    LANGUAGE_CODE = 'en'  # Default language
+
+    # Enable Django's i18n system
+    USE_I18N = True
+    USE_L10N = True
+    USE_TZ = True
+
+    # Add LocaleMiddleware to process language preferences
+    MIDDLEWARE = [
+        # ... other middleware
+        'django.middleware.locale.LocaleMiddleware',
+        # ... other middleware
+    ]
+
+    # Optional: Specify supported languages
+    LANGUAGES = [
+        ('en', 'English'),
+        ('es', 'Español'),
+        ('fr', 'Français'),
+        ('de', 'Deutsch'),
+        ('zh', '中文'),
+        ('ja', '日本語'),
+        ('ko', '한국어'),
+        ('vi', 'Tiếng Việt'),
+        # Add more languages as needed
+    ]
+
+**Translation Coverage**
+
+All DRF Auth Kit components include translations for:
+
+- Authentication messages (login, logout, registration)
+- Error messages and validation errors
+- MFA setup and verification messages
+- Social authentication responses
+- Password reset and email verification messages
+- User profile and account management messages
+
+**Language Selection**
+
+Users can select their preferred language through:
+
+1. **HTTP Accept-Language Header**: Automatically detected by Django
+2. **URL Language Prefix**: Using Django's i18n URL patterns
+3. **Session/Cookie Language**: Persistent language preference
+4. **User Profile Setting**: Custom language preference storage
+
+**Example: URL Language Prefix**
+
+.. code-block:: python
+
+    # urls.py
+    from django.conf.urls.i18n import i18n_patterns
+    from django.urls import path, include
+
+    urlpatterns = i18n_patterns(
+        path('api/auth/', include('auth_kit.urls')),
+        # ... other URLs
+    )
+
+    # Enables URLs like:
+    # /en/api/auth/login/
+    # /es/api/auth/login/
+    # /fr/api/auth/login/
+
+**Custom Translation Override**
+
+You can override any translation by providing your own translation files:
+
+.. code-block:: bash
+
+    # Create locale directory structure
+    mkdir -p locale/en/LC_MESSAGES/
+    mkdir -p locale/es/LC_MESSAGES/
+
+    # Generate translation files
+    python manage.py makemessages -l en
+    python manage.py makemessages -l es
+
+    # Edit .po files to customize translations
+    # Compile translations
+    python manage.py compilemessages
+
 Related Django Settings
 ------------------------
 

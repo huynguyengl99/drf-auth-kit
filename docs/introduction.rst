@@ -51,6 +51,12 @@ Key Features
 - Social account management views
 - Support for 50+ providers
 
+**🌍 Internationalization**
+
+- Built-in support for 57 languages
+- Major languages include: English, Spanish, French, German, Chinese, Japanese, Korean, Vietnamese, Russian, Arabic, Portuguese, Italian, Dutch, and more
+- Translation support for all authentication messages and MFA responses
+
 **🚀 Superior Developer Experience**
 
 - **Full type hints** with mypy and pyright

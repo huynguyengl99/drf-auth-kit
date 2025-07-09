@@ -322,22 +322,202 @@ Advanced Topics
 
 **Custom MFA Handlers**
 
-You can create custom MFA methods by extending the base handler:
+You can create custom MFA methods by extending the base handler class. The MFA system uses a registry-based approach for managing handlers.
+
+**Creating a Custom Handler**
 
 .. code-block:: python
 
-    from auth_kit.mfa.handlers.base import MFABaseHandler
+    from auth_kit.mfa.handlers.base import MFABaseHandler, MFAHandlerRegistry
 
     class SMSMFAHandler(MFABaseHandler):
-        name = "sms"
+        # Required: snake_case method identifier
+        NAME = "sms"
 
-        def send_code(self, user, method):
-            # Implement SMS sending logic
-            pass
+        # Optional: human-readable display name (auto-generated if not provided)
+        DISPLAY_NAME = "SMS Authentication"
 
-        def verify_code(self, user, method, code):
-            # Implement SMS code verification
-            pass
+        # Optional: whether this method requires code dispatch (default: True)
+        REQUIRES_DISPATCH = True
+
+        # Optional: message shown to user during setup
+        SETUP_RESPONSE_MESSAGE = "SMS verification code has been sent to your phone."
+
+        # Optional: TOTP timing configuration
+        TOTP_INTERVAL = 30  # seconds
+        TOTP_VALID_WINDOW = 0  # clock skew tolerance
+
+        def send_code(self):
+            """Send verification code to user via SMS."""
+            code = self.get_otp_code()
+            # Implement SMS sending logic here
+            send_sms(self.mfa_method.user.phone_number, f"Your code: {code}")
+
+        def initialize_method(self):
+            """Initialize method setup and return setup data."""
+            self.send_code()
+            return {"detail": self.SETUP_RESPONSE_MESSAGE}
+
+    # Register the handler with the registry
+    MFAHandlerRegistry.register(SMSMFAHandler)
+
+**Configure in Django Settings**
+
+Add your custom handler to the ``MFA_HANDLERS`` setting to ensure it's imported and loaded:
+
+.. code-block:: python
+
+    # settings.py
+    AUTH_KIT = {
+        'USE_MFA': True,
+        'MFA_HANDLERS': [
+            'auth_kit.mfa.handlers.app.MFAAppHandler',      # Built-in
+            'auth_kit.mfa.handlers.email.MFAEmailHandler',  # Built-in
+            'myapp.mfa.handlers.SMSMFAHandler',             # Your custom handler
+        ],
+    }
+
+**Handler Base Class Features**
+
+The ``MFABaseHandler`` base class provides:
+
+- **TOTP Generation**: ``get_otp_code()`` generates time-based codes
+- **Code Validation**: ``validate_code()`` validates both TOTP and backup codes
+- **Backup Code Support**: ``validate_backup_code()`` handles recovery codes
+- **Method Initialization**: ``initialize_method()`` sets up the method
+- **Serializer Integration**: ``get_initialize_method_serializer_class()`` for API responses
+
+**Required Handler Attributes**
+
+- ``NAME``: Snake_case method identifier (e.g., "sms", "phone_call")
+- Must implement ``send_code()`` if ``REQUIRES_DISPATCH = True``
+
+**Optional Handler Attributes**
+
+- ``DISPLAY_NAME``: Human-readable name (auto-generated from NAME if not provided)
+- ``REQUIRES_DISPATCH``: Whether method sends codes (default: True)
+- ``SETUP_RESPONSE_MESSAGE``: User feedback during setup
+- ``TOTP_INTERVAL``: Code validity period in seconds (default: 30)
+- ``TOTP_VALID_WINDOW``: Clock skew tolerance in intervals (default: 0)
+
+**Registering Custom Handlers**
+
+Custom MFA handlers must be registered using **both** methods:
+
+1. **Direct Registration** (in your handler module):
+
+.. code-block:: python
+
+    # At the bottom of your handler module (e.g., myapp/mfa/handlers.py)
+    MFAHandlerRegistry.register(SMSMFAHandler)
+
+2. **Settings Configuration** (required for handler discovery):
+
+.. code-block:: python
+
+    # settings.py
+    AUTH_KIT = {
+        'MFA_HANDLERS': [
+            'auth_kit.mfa.handlers.app.MFAAppHandler',      # Built-in
+            'auth_kit.mfa.handlers.email.MFAEmailHandler',  # Built-in
+            'myapp.mfa.handlers.SMSMFAHandler',             # Custom
+            'myapp.mfa.handlers.VoiceCallMFAHandler',       # Custom
+        ],
+    }
+
+**Why Both Are Required:**
+
+- **Settings Configuration**: Ensures your handler module is imported and loaded by Django
+- **Registry Call**: Actually registers the handler class when the module is imported
+
+The system imports handlers from the ``MFA_HANDLERS`` setting, which triggers the ``MFAHandlerRegistry.register()`` call in your handler module.
+
+**Advanced Handler Customization**
+
+For more complex handlers, you can override additional methods:
+
+.. code-block:: python
+
+    from rest_framework import serializers
+    from auth_kit.mfa.handlers.base import MFABaseHandler
+
+    class CustomSetupSerializer(serializers.Serializer):
+        qr_code = serializers.CharField(read_only=True)
+        phone_number = serializers.CharField(read_only=True)
+
+    class AdvancedSMSHandler(MFABaseHandler):
+        NAME = "advanced_sms"
+
+        def initialize_method(self):
+            """Custom initialization with additional setup data."""
+            self.send_code()
+            return {
+                "detail": "SMS sent successfully",
+                "phone_number": self.mfa_method.user.phone_number,
+                "expires_in": self.TOTP_INTERVAL
+            }
+
+        @classmethod
+        def get_initialize_method_serializer_class(cls):
+            """Return custom serializer for setup responses."""
+            return CustomSetupSerializer
+
+        def validate_code(self, code):
+            """Custom validation with additional checks."""
+            # Add custom validation logic
+            if not self.is_valid_phone_number():
+                return False
+            return super().validate_code(code)
+
+**Handler Registry API**
+
+The ``MFAHandlerRegistry`` provides methods for managing handlers:
+
+.. code-block:: python
+
+    from auth_kit.mfa.handlers.base import MFAHandlerRegistry
+
+    # Get all registered handler names
+    handler_names = MFAHandlerRegistry.list_handler_names()
+
+    # Get handler class by name
+    handler_class = MFAHandlerRegistry.get_handler_class("sms")
+
+    # Get handler instance for an MFA method
+    handler = MFAHandlerRegistry.get_handler(mfa_method_instance)
+
+    # Get all handlers dictionary
+    all_handlers = MFAHandlerRegistry.get_handlers()
+
+**Testing Custom Handlers**
+
+Test your custom handlers thoroughly:
+
+.. code-block:: python
+
+    from django.test import TestCase
+    from auth_kit.mfa.models import MFAMethod
+    from myapp.mfa.handlers import SMSMFAHandler
+
+    class SMSHandlerTest(TestCase):
+        def setUp(self):
+            self.user = User.objects.create_user(username='test', phone_number='+1234567890')
+            self.mfa_method = MFAMethod.objects.create(user=self.user, name='sms')
+            self.handler = SMSMFAHandler(self.mfa_method)
+
+        def test_code_generation(self):
+            code = self.handler.get_otp_code()
+            self.assertEqual(len(code), 6)  # Default TOTP length
+
+        def test_code_validation(self):
+            code = self.handler.get_otp_code()
+            self.assertTrue(self.handler.validate_code(code))
+
+        def test_send_code(self):
+            # Mock SMS sending and test
+            with patch('myapp.sms.send_sms') as mock_send:
+                self.handler.send_code()
+                mock_send.assert_called_once()
 
 **Error Handling**
 
