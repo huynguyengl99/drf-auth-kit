@@ -1,3 +1,10 @@
+## v0.2.2 (2025-07-09)
+
+### Fix
+
+- **roadmap**: add upcoming features documentation and roadmap
+- **contributing**: update development workflow and testing practices
+
 ## v0.2.1 (2025-07-09)
 
 ### Fix
