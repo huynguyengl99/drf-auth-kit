@@ -5,8 +5,8 @@ DRF AUTH KIT
    :target: https://pypi.org/project/drf-auth-kit/
    :alt: PyPI
 
-.. image:: https://codecov.io/gh/forthecraft/drf-auth-kit/branch/main/graph/badge.svg
-   :target: https://codecov.io/gh/forthecraft/drf-auth-kit
+.. image:: https://codecov.io/github/forthecraft/drf-auth-kit/graph/badge.svg?token=lpj7sFpe3F
+   :target: https://codecov.io/github/forthecraft/drf-auth-kit
    :alt: Code Coverage
 
 .. image:: https://github.com/forthecraft/drf-auth-kit/actions/workflows/test.yml/badge.svg?branch=main
