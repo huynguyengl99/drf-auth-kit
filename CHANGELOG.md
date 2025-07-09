@@ -1,3 +1,9 @@
+## v0.2.1 (2025-07-09)
+
+### Fix
+
+- **rtd**: install all extras for building readthedocs
+
 ## v0.2.0 (2025-07-09)
 
 ### Feat
