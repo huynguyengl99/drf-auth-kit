@@ -1,3 +1,9 @@
+## v0.2.3 (2025-07-12)
+
+### Fix
+
+- **dependencies**: loosen version for drf spectacular and structlog
+
 ## v0.2.2 (2025-07-09)
 
 ### Fix
