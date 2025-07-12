@@ -1,3 +1,9 @@
+## v0.2.4 (2025-07-12)
+
+### Fix
+
+- **serializers**: add _has_phone_field property to RegisterSerializer
+
 ## v0.2.3 (2025-07-12)
 
 ### Fix
