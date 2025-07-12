@@ -9,7 +9,7 @@ import importlib
 from typing import Any
 
 from django.db import ProgrammingError
-from django.urls import path
+from django.urls import URLPattern, URLResolver, path
 from rest_framework import routers
 
 from allauth.socialaccount.adapter import (  # pyright: ignore[reportMissingTypeStubs]
@@ -46,7 +46,7 @@ def create_social_provider_urls() -> list[Any]:
     Returns:
         List of URL patterns for social provider endpoints
     """
-    social_urls = []
+    social_urls: list[URLPattern | URLResolver] = []
     social_adapter = get_social_adapter()
 
     try:
