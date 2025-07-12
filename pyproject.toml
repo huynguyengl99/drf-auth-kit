@@ -75,8 +75,8 @@ classifiers = [
 ]
 dependencies = [
   "Django>=5,<6",
-  "django-allauth>=65.5.0",
-  "djangorestframework-simplejwt>=5",
+  "django-allauth>=65.5.0,<66",
+  "djangorestframework-simplejwt>=5,<6",
   "djangorestframework>=3,<4",
   "drf-spectacular",
   "structlog"

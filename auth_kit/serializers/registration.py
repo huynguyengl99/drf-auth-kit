@@ -179,6 +179,19 @@ class RegisterSerializer(serializers.Serializer[dict[str, Any]]):
         setup_user_email(request, user, [])
         return user
 
+    @property
+    def _has_phone_field(self) -> bool:
+        """
+        Check if the serializer has a phone field.
+
+        This property is used by django-allauth to determine if phone
+        number handling should be performed during user registration.
+
+        Returns:
+            True if the serializer contains a 'phone' field, False otherwise
+        """
+        return "phone" in self.fields
+
 
 class VerifyEmailSerializer(serializers.Serializer[dict[str, Any]]):
     """Email address verification with confirmation key."""
