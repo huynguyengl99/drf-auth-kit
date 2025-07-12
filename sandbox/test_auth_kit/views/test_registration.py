@@ -28,11 +28,15 @@ class TestRegisterView(APITestCase):
             "email": "test@example.com",
             "password1": "complexpass123",
             "password2": "complexpass123",
+            "first_name": "John",
+            "last_name": "Doe",
         }
         self.user_data = {
             "username": "testuser",
             "email": "test@example.com",
             "password": "complexpass123",
+            "first_name": "John",
+            "last_name": "Doe",
         }
 
     def test_register_default_case(self) -> None:
@@ -52,6 +56,10 @@ class TestRegisterView(APITestCase):
         user = User.objects.get(username="testuser")
         assert user.is_active is True
 
+        # Verify name fields are saved correctly
+        assert user.first_name == "John"
+        assert user.last_name == "Doe"
+
         # Verify email is not active
         email_address = EmailAddress.objects.get(user=user)
         assert not email_address.verified
@@ -67,6 +75,49 @@ class TestRegisterView(APITestCase):
             "http://testserver/api/auth/registration/verify-email?key="
             in register_email.body
         )
+
+    def test_registration_without_name_fields(self) -> None:
+        """Test registration without first_name and last_name fields (optional)"""
+        url = reverse("rest_register")
+        # Create registration data without name fields
+        data = {
+            "username": "testuser2",
+            "email": "test2@example.com",
+            "password1": "complexpass123",
+            "password2": "complexpass123",
+        }
+
+        response: Response = self.client.post(url, data, format="json")
+
+        assert response.status_code == status.HTTP_201_CREATED
+        assert "Verification e-mail sent" in response.data["detail"]
+
+        # Verify user was created with empty name fields (default values)
+        user = User.objects.get(username="testuser2")
+        assert user.first_name == ""
+        assert user.last_name == ""
+
+    def test_registration_with_empty_name_fields(self) -> None:
+        """Test registration with empty/blank first_name and last_name"""
+        url = reverse("rest_register")
+        data = {
+            "username": "testuser3",
+            "email": "test3@example.com",
+            "password1": "complexpass123",
+            "password2": "complexpass123",
+            "first_name": "",
+            "last_name": "",
+        }
+
+        response: Response = self.client.post(url, data, format="json")
+
+        assert response.status_code == status.HTTP_201_CREATED
+        assert "Verification e-mail sent" in response.data["detail"]
+
+        # Verify user was created with empty name fields
+        user = User.objects.get(username="testuser3")
+        assert user.first_name == ""
+        assert user.last_name == ""
 
     def test_registration_password_mismatch(self) -> None:
         data = self.registration_data.copy()
@@ -212,6 +263,8 @@ class TestVerifyEmailView(APITestCase):
             "username": "testuser",
             "email": "test@example.com",
             "password": "complexpass123",
+            "first_name": "John",
+            "last_name": "Doe",
         }
         self.url = reverse("rest_verify_email")
 
@@ -296,6 +349,8 @@ class TestResendEmailVerificationView(APITestCase):
             "username": "testuser",
             "email": "test@example.com",
             "password": "complexpass123",
+            "first_name": "John",
+            "last_name": "Doe",
         }
         self.url = reverse("rest_resend_email")
 

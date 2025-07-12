@@ -153,6 +153,8 @@ class RegisterSerializer(serializers.Serializer[dict[str, Any]]):
             "username": self.validated_data.get(UserNameField, ""),
             "password1": self.validated_data.get("password1", ""),
             "email": self.validated_data.get("email", ""),
+            "first_name": self.validated_data.get("first_name", ""),
+            "last_name": self.validated_data.get("last_name", ""),
         }
 
     def save(self, **kwargs: Any) -> AbstractBaseUser:  # type: ignore[override]
