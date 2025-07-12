@@ -8,6 +8,7 @@ providers, creating login and account connection endpoints for each provider.
 import importlib
 from typing import Any
 
+from django.db import ProgrammingError
 from django.urls import path
 from rest_framework import routers
 
@@ -45,9 +46,14 @@ def create_social_provider_urls() -> list[Any]:
     Returns:
         List of URL patterns for social provider endpoints
     """
-    urlpatterns = []
+    social_urls = []
     social_adapter = get_social_adapter()
-    social_apps = social_adapter.list_apps(None)
+
+    try:
+        social_apps = social_adapter.list_apps(None)
+    except ProgrammingError:  # pragma: no cover
+        # Database tables may not exist yet (e.g., during migrations)
+        return social_urls
 
     for social_app in social_apps:
         # Import provider module
@@ -85,7 +91,7 @@ def create_social_provider_urls() -> list[Any]:
             {"provider_id": social_app.provider_id},
             name=f"rest_social_{app_slug}_login",
         )
-        urlpatterns.append(login_pattern)
+        social_urls.append(login_pattern)
 
         # Generate social connect view class with dynamic description
         social_connect_class_name = f"{app_name}ConnectView"
@@ -111,9 +117,9 @@ def create_social_provider_urls() -> list[Any]:
             {"provider_id": social_app.provider_id},
             name=f"rest_social_{app_slug}_connect",
         )
-        urlpatterns.append(connect_pattern)
+        social_urls.append(connect_pattern)
 
-    return urlpatterns
+    return social_urls
 
 
 # Generate URL patterns for all social providers
