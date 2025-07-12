@@ -1,3 +1,9 @@
+## v0.2.7 (2025-07-12)
+
+### Fix
+
+- **registration**: include first_name and last_name in cleaned registration data
+
 ## v0.2.6 (2025-07-12)
 
 ### Fix
