@@ -769,10 +769,10 @@ requires-dist = [
     { name = "django-allauth", extras = ["socialaccount"], marker = "extra == 'social'", specifier = ">=65.5.0" },
     { name = "djangorestframework", specifier = ">=3,<4" },
     { name = "djangorestframework-simplejwt", specifier = ">=5" },
-    { name = "drf-spectacular", specifier = ">=0.28.0" },
+    { name = "drf-spectacular" },
     { name = "pyotp", marker = "extra == 'all'", specifier = ">=2.9.0" },
     { name = "pyotp", marker = "extra == 'mfa'", specifier = ">=2.9.0" },
-    { name = "structlog", specifier = ">=25.2.0,<26" },
+    { name = "structlog" },
 ]
 provides-extras = ["all", "mfa", "social"]
 
