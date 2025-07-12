@@ -1,3 +1,9 @@
+## v0.2.6 (2025-07-12)
+
+### Fix
+
+- **social**: update type hint for social_urls
+
 ## v0.2.5 (2025-07-12)
 
 ### Fix
