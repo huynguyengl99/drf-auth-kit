@@ -59,7 +59,7 @@ class SocialAccountViewSet(
         Returns:
             QuerySet of SocialAccount objects for the current user
         """
-        return SocialAccount.objects.filter(user=self.request.user)  # type: ignore[no-any-return]
+        return SocialAccount.objects.filter(user_id=self.request.user.pk)  # type: ignore[no-any-return]
 
     def perform_destroy(  # pyright: ignore[reportIncompatibleMethodOverride]
         self, instance: SocialAccount
