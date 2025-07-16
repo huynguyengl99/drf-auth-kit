@@ -1,3 +1,9 @@
+## v0.2.8 (2025-07-17)
+
+### Fix
+
+- **SocialAccountViewSet**: update get_queryset to use user_id to prevent drf_spectacular raise exception
+
 ## v0.2.7 (2025-07-12)
 
 ### Fix
