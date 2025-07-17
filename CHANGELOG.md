@@ -1,3 +1,10 @@
+## v0.2.9 (2025-07-17)
+
+### Fix
+
+- **types**: add pyright to lint section of tox and fix some minor type errors
+- **auth_kit**: rename user details view and serializer for better api doc
+
 ## v0.2.8 (2025-07-17)
 
 ### Fix
