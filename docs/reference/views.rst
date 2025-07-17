@@ -40,7 +40,7 @@ User Views
 
 .. module:: auth_kit.views.user
 
-.. autoclass:: auth_kit.views.UserDetailsView
+.. autoclass:: auth_kit.views.UserView
    :members:
    :undoc-members:
    :show-inheritance:

@@ -10,7 +10,7 @@ from .login import LoginView
 from .logout import LogoutView
 from .password import PasswordChangeView, PasswordResetConfirmView, PasswordResetView
 from .registration import RegisterView, ResendEmailVerificationView, VerifyEmailView
-from .user import UserDetailsView
+from .user import UserView
 
 __all__ = [
     "RefreshViewWithCookieSupport",
@@ -22,5 +22,5 @@ __all__ = [
     "RegisterView",
     "ResendEmailVerificationView",
     "VerifyEmailView",
-    "UserDetailsView",
+    "UserView",
 ]

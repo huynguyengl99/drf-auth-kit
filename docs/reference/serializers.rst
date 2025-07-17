@@ -66,7 +66,7 @@ User Serializers
 
 .. module:: auth_kit.serializers.user
 
-.. autoclass:: auth_kit.serializers.user.UserDetailsSerializer
+.. autoclass:: auth_kit.serializers.user.UserSerializer
    :members:
    :undoc-members:
    :show-inheritance:

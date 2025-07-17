@@ -416,20 +416,20 @@ Customize user profile serialization:
 .. code-block:: python
 
     # serializers.py
-    from auth_kit.serializers import UserDetailsSerializer
+    from auth_kit.serializers import UserSerializer
     from rest_framework import serializers
     from django.contrib.auth import get_user_model
 
     User = get_user_model()
 
-    class CustomUserDetailsSerializer(UserDetailsSerializer):
+    class CustomUserSerializer(UserSerializer):
         full_name = serializers.SerializerMethodField()
         avatar = serializers.SerializerMethodField()
         phone_number = serializers.CharField(source='profile.phone_number', read_only=True)
         is_premium = serializers.BooleanField(source='profile.is_premium', read_only=True)
 
-        class Meta(UserDetailsSerializer.Meta):
-            fields = UserDetailsSerializer.Meta.fields + [
+        class Meta(UserSerializer.Meta):
+            fields = UserSerializer.Meta.fields + [
                 'full_name', 'avatar', 'phone_number', 'is_premium'
             ]
 
@@ -464,7 +464,7 @@ Configure it in settings:
 .. code-block:: python
 
     AUTH_KIT = {
-        'USER_DETAILS_SERIALIZER': 'myapp.serializers.CustomUserDetailsSerializer',
+        'USER_SERIALIZER': 'myapp.serializers.CustomUserSerializer',
     }
 
 Custom Views
@@ -754,10 +754,10 @@ Use custom permissions in views:
 .. code-block:: python
 
     # views.py
-    from auth_kit.views import UserDetailsView
+    from auth_kit.views import UserView
     from .permissions import IsPremiumUser
 
-    class CustomUserDetailsView(UserDetailsView):
+    class CustomUserView(UserView):
         permission_classes = [IsPremiumUser]
 
         def get_queryset(self):

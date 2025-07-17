@@ -158,7 +158,7 @@ class BaseLoginResponseSerializer(serializers.Serializer[dict[str, Any]]):
 
     user = serializers.SerializerMethodField()
 
-    @extend_schema_field(auth_kit_settings.USER_DETAILS_SERIALIZER)
+    @extend_schema_field(auth_kit_settings.USER_SERIALIZER)
     def get_user(self, obj: dict[str, Any]) -> dict[str, Any]:
         """
         Get serialized user details for the response.
@@ -169,7 +169,7 @@ class BaseLoginResponseSerializer(serializers.Serializer[dict[str, Any]]):
         Returns:
             Serialized user data dictionary
         """
-        user_detail_serializer = auth_kit_settings.USER_DETAILS_SERIALIZER(
+        user_detail_serializer = auth_kit_settings.USER_SERIALIZER(
             obj["user"], context=self.context
         )
         return cast_dict(user_detail_serializer.data)

@@ -269,7 +269,7 @@ class TestEmailOnlyAuthFlows(APITestCase):
         user, _ = UserFactory.create_with_email_address(self.user_data)
         self.client.force_authenticate(user=user)
 
-        url = reverse("rest_user_details")
+        url = reverse("rest_user")
         response: Response = self.client.get(url)
 
         assert response.status_code == status.HTTP_200_OK

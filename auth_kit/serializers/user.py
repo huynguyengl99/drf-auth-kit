@@ -15,7 +15,7 @@ from allauth.account.adapter import (  # pyright: ignore[reportMissingTypeStubs]
 from auth_kit.utils import UserModel
 
 
-class UserDetailsSerializer(serializers.ModelSerializer[AbstractBaseUser]):
+class UserSerializer(serializers.ModelSerializer[AbstractBaseUser]):
     """User profile information and updates."""
 
     def validate_username(self, username: str) -> str:

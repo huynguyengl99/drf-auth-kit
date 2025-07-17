@@ -34,7 +34,7 @@ if TYPE_CHECKING:
         PasswordResetView,
         RegisterView,
         ResendEmailVerificationView,
-        UserDetailsView,
+        UserView,
         VerifyEmailView,
     )
     from auth_kit.views.jwt import RefreshViewWithCookieSupport
@@ -108,12 +108,10 @@ class MySetting:
     # ===================================================================
     # USER MANAGEMENT SERIALIZERS & VIEWS
     # ===================================================================
-    USER_DETAILS_SERIALIZER: type[Serializer[dict[str, Any]]] = ImportStr(
-        "auth_kit.serializers.user.UserDetailsSerializer"
+    USER_SERIALIZER: type[Serializer[dict[str, Any]]] = ImportStr(
+        "auth_kit.serializers.user.UserSerializer"
     )
-    USER_DETAILS_VIEW: type["UserDetailsView"] = ImportStr(
-        "auth_kit.views.UserDetailsView"
-    )
+    USER_VIEW: type["UserView"] = ImportStr("auth_kit.views.UserView")
 
     # ===================================================================
     # REGISTRATION SERIALIZERS & VIEWS

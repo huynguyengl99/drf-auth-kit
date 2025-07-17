@@ -9,7 +9,7 @@ from test_utils.user_factory import UserFactory
 User = get_user_model()
 
 
-class TestUserDetailsView(APITestCase):
+class TestUserView(APITestCase):
     def setUp(self) -> None:
         self.user_data = {
             "username": "testuser",
@@ -17,7 +17,7 @@ class TestUserDetailsView(APITestCase):
             "password": "complexpass123",
         }
         self.user, _ = UserFactory.create_with_email_address(self.user_data)
-        self.url = reverse("rest_user_details")
+        self.url = reverse("rest_user")
 
     def test_get_user_details_unauthenticated(self) -> None:
         """Test retrieving user details without authentication"""
@@ -319,7 +319,7 @@ class TestUserDetailsView(APITestCase):
         assert self.user.last_name == "User"
 
 
-class TestUserDetailsViewEdgeCases(APITestCase):
+class TestUserViewEdgeCases(APITestCase):
     """Test edge cases for user details view"""
 
     def setUp(self) -> None:
@@ -329,13 +329,13 @@ class TestUserDetailsViewEdgeCases(APITestCase):
             "password": "complexpass123",
         }
         self.user, _ = UserFactory.create_with_email_address(self.user_data)
-        self.url = reverse("rest_user_details")
+        self.url = reverse("rest_user")
 
     def test_get_queryset_returns_empty(self) -> None:
         """Test that get_queryset returns empty queryset"""
-        from auth_kit.views.user import UserDetailsView
+        from auth_kit.views.user import UserView
 
-        view = UserDetailsView()
+        view = UserView()
         queryset = view.get_queryset()
 
         assert queryset.count() == 0

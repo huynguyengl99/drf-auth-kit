@@ -29,8 +29,8 @@ urlpatterns: list[URLPattern | URLResolver] = [
     re_path(r"logout/?$", auth_kit_settings.LOGOUT_VIEW.as_view(), name="rest_logout"),
     re_path(
         r"user/?$",
-        auth_kit_settings.USER_DETAILS_VIEW.as_view(),
-        name="rest_user_details",
+        auth_kit_settings.USER_VIEW.as_view(),
+        name="rest_user",
     ),
     re_path(
         r"password/change/?$",

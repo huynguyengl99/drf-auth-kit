@@ -295,7 +295,7 @@ components:
           readOnly: true
         user:
           allOf:
-          - $ref: '#/components/schemas/UserDetails'
+          - $ref: '#/components/schemas/User'
           readOnly: true
     FacebookSocialLoginRequest:
       type: object
@@ -327,7 +327,7 @@ components:
           readOnly: true
         user:
           allOf:
-          - $ref: '#/components/schemas/UserDetails'
+          - $ref: '#/components/schemas/User'
           readOnly: true
     GithubSocialLoginRequest:
       type: object
@@ -359,7 +359,7 @@ components:
           readOnly: true
         user:
           allOf:
-          - $ref: '#/components/schemas/UserDetails'
+          - $ref: '#/components/schemas/User'
           readOnly: true
     GoogleSocialLoginRequest:
       type: object
@@ -391,7 +391,7 @@ components:
           readOnly: true
         user:
           allOf:
-          - $ref: '#/components/schemas/UserDetails'
+          - $ref: '#/components/schemas/User'
           readOnly: true
     LinkedinSocialLoginRequest:
       type: object
@@ -479,7 +479,7 @@ components:
           minLength: 1
       required:
       - code
-    UserDetails:
+    User:
       type: object
       description: User profile information and updates.
       properties:

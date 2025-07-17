@@ -281,7 +281,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UserDetails'
+                $ref: '#/components/schemas/User'
           description: ''
     put:
       operationId: user_update
@@ -297,7 +297,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UserDetails'
+                $ref: '#/components/schemas/User'
           description: ''
     patch:
       operationId: user_partial_update
@@ -313,7 +313,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UserDetails'
+                $ref: '#/components/schemas/User'
           description: ''
 components:
   schemas:
@@ -371,7 +371,7 @@ components:
           readOnly: true
         user:
           allOf:
-          - $ref: '#/components/schemas/UserDetails'
+          - $ref: '#/components/schemas/User'
           readOnly: true
     LoginRequest:
       type: object
@@ -520,7 +520,7 @@ components:
           minLength: 1
       required:
       - token
-    UserDetails:
+    User:
       type: object
       description: User profile information and updates.
       properties:

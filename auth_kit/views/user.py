@@ -27,7 +27,7 @@ from auth_kit.api_descriptions import (
 from auth_kit.app_settings import auth_kit_settings
 
 
-class UserDetailsView(RetrieveUpdateAPIView[Any]):
+class UserView(RetrieveUpdateAPIView[Any]):
     """
     User Profile Management
 
@@ -35,7 +35,7 @@ class UserDetailsView(RetrieveUpdateAPIView[Any]):
     Allows viewing and modifying profile details like name and preferences.
     """
 
-    serializer_class = auth_kit_settings.USER_DETAILS_SERIALIZER
+    serializer_class = auth_kit_settings.USER_SERIALIZER
     permission_classes = (IsAuthenticated,)
 
     def get_object(self) -> AbstractBaseUser | AnonymousUser:

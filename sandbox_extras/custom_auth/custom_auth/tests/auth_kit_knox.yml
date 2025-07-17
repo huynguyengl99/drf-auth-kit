@@ -227,7 +227,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UserDetails'
+                $ref: '#/components/schemas/User'
           description: ''
     put:
       operationId: user_update
@@ -239,10 +239,10 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/UserDetailsRequest'
+              $ref: '#/components/schemas/UserRequest'
           multipart/form-data:
             schema:
-              $ref: '#/components/schemas/UserDetailsRequest'
+              $ref: '#/components/schemas/UserRequest'
         required: true
       security:
       - KnoxTokenAuthentication: []
@@ -252,7 +252,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UserDetails'
+                $ref: '#/components/schemas/User'
           description: ''
     patch:
       operationId: user_partial_update
@@ -264,10 +264,10 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/PatchedUserDetailsRequest'
+              $ref: '#/components/schemas/PatchedUserRequest'
           multipart/form-data:
             schema:
-              $ref: '#/components/schemas/PatchedUserDetailsRequest'
+              $ref: '#/components/schemas/PatchedUserRequest'
       security:
       - KnoxTokenAuthentication: []
         KnoxTokenCookieAuthentication: []
@@ -276,7 +276,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UserDetails'
+                $ref: '#/components/schemas/User'
           description: ''
 components:
   schemas:
@@ -300,7 +300,7 @@ components:
           readOnly: true
         user:
           allOf:
-          - $ref: '#/components/schemas/UserDetails'
+          - $ref: '#/components/schemas/User'
           readOnly: true
     LoginRequest:
       type: object
@@ -393,7 +393,7 @@ components:
           minLength: 1
       required:
       - email
-    PatchedUserDetailsRequest:
+    PatchedUserRequest:
       type: object
       description: User profile information and updates.
       properties:
@@ -467,7 +467,7 @@ components:
           minLength: 1
       required:
       - email
-    UserDetails:
+    User:
       type: object
       description: User profile information and updates.
       properties:
@@ -494,7 +494,7 @@ components:
           maxLength: 150
       required:
       - username
-    UserDetailsRequest:
+    UserRequest:
       type: object
       description: User profile information and updates.
       properties:

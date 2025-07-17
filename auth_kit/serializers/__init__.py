@@ -18,8 +18,6 @@ from .registration import (
     VerifyEmailSerializer,
 )
 
-# UsersDetailSerializer and login factors serializers are not imported here to avoid circular import
-
 __all__ = [
     "get_login_serializer",
     "CookieTokenRefreshSerializer",

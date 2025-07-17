@@ -56,8 +56,8 @@ Here's a complete list of all available AUTH_KIT settings with their defaults:
         # ===================================================================
         # USER MANAGEMENT SERIALIZERS & VIEWS
         # ===================================================================
-        'USER_DETAILS_SERIALIZER': 'auth_kit.serializers.user.UserDetailsSerializer',
-        'USER_DETAILS_VIEW': 'auth_kit.views.UserDetailsView',
+        'USER_SERIALIZER': 'auth_kit.serializers.user.UserSerializer',
+        'USER_VIEW': 'auth_kit.views.UserView',
 
         # ===================================================================
         # REGISTRATION SERIALIZERS & VIEWS
@@ -326,10 +326,10 @@ Core Authentication Components
 User Management
 ~~~~~~~~~~~~~~~
 
-**USER_DETAILS_SERIALIZER** (default: :class:`~auth_kit.serializers.user.UserDetailsSerializer`)
+**USER_SERIALIZER** (default: :class:`~auth_kit.serializers.user.UserSerializer`)
     Serializer for user profile information.
 
-**USER_DETAILS_VIEW** (default: :class:`~auth_kit.views.UserDetailsView`)
+**USER_VIEW** (default: :class:`~auth_kit.views.UserView`)
     View for retrieving and updating user profile information.
 
 Registration & Email Verification
@@ -586,7 +586,7 @@ You can override any serializer by providing the import path:
         'LOGIN_REQUEST_SERIALIZER': 'myapp.serializers.CustomLoginSerializer',
         'LOGIN_RESPONSE_SERIALIZER': 'myapp.serializers.CustomLoginResponseSerializer',
         'REGISTER_SERIALIZER': 'myapp.serializers.CustomRegisterSerializer',
-        'USER_DETAILS_SERIALIZER': 'myapp.serializers.CustomUserSerializer',
+        'USER_SERIALIZER': 'myapp.serializers.CustomUserSerializer',
         'PASSWORD_CHANGE_SERIALIZER': 'myapp.serializers.CustomPasswordChangeSerializer',
         'PASSWORD_RESET_SERIALIZER': 'myapp.serializers.CustomPasswordResetSerializer',
         'PASSWORD_RESET_CONFIRM_SERIALIZER': 'myapp.serializers.CustomPasswordResetConfirmSerializer',
@@ -597,7 +597,7 @@ You can override any serializer by providing the import path:
 - **LOGIN_REQUEST_SERIALIZER**: :class:`~auth_kit.serializers.login_factors.LoginRequestSerializer`
 - **LOGIN_RESPONSE_SERIALIZER**: :class:`~auth_kit.serializers.login_factors.BaseLoginResponseSerializer`
 - **REGISTER_SERIALIZER**: :class:`~auth_kit.serializers.RegisterSerializer`
-- **USER_DETAILS_SERIALIZER**: :class:`~auth_kit.serializers.user.UserDetailsSerializer`
+- **USER_SERIALIZER**: :class:`~auth_kit.serializers.user.UserSerializer`
 - **PASSWORD_CHANGE_SERIALIZER**: :class:`~auth_kit.serializers.PasswordChangeSerializer`
 - **PASSWORD_RESET_SERIALIZER**: :class:`~auth_kit.serializers.PasswordResetSerializer`
 - **PASSWORD_RESET_CONFIRM_SERIALIZER**: :class:`~auth_kit.serializers.PasswordResetConfirmSerializer`
@@ -612,14 +612,14 @@ Override views with custom implementations:
     AUTH_KIT = {
         'LOGIN_VIEW': 'myapp.views.CustomLoginView',
         'LOGOUT_VIEW': 'myapp.views.CustomLogoutView',
-        'USER_DETAILS_VIEW': 'myapp.views.CustomUserDetailsView',
+        'USER_VIEW': 'myapp.views.CustomUserView',
     }
 
 **Default Views:**
 
 - **LOGIN_VIEW**: :class:`~auth_kit.views.LoginView`
 - **LOGOUT_VIEW**: :class:`~auth_kit.views.LogoutView`
-- **USER_DETAILS_VIEW**: :class:`~auth_kit.views.UserDetailsView`
+- **USER_VIEW**: :class:`~auth_kit.views.UserView`
 - **REGISTER_VIEW**: :class:`~auth_kit.views.RegisterView`
 - **VERIFY_EMAIL_VIEW**: :class:`~auth_kit.views.VerifyEmailView`
 - **RESEND_EMAIL_VERIFICATION_VIEW**: :class:`~auth_kit.views.ResendEmailVerificationView`
@@ -641,7 +641,7 @@ For custom authentication backends, set ``AUTH_TYPE`` to ``'custom'`` and overri
         'LOGIN_VIEW': 'myapp.views.MyLoginView',
         'LOGOUT_VIEW': 'myapp.views.MyLogoutView',
         # Override any other components as needed
-        'USER_DETAILS_SERIALIZER': 'myapp.serializers.MyUserSerializer',
+        'USER_SERIALIZER': 'myapp.serializers.MyUserSerializer',
     }
 
 **Example: Knox Token Authentication**
