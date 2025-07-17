@@ -1,7 +1,7 @@
 from typing import cast
 from urllib.parse import quote_plus
 
-from django.contrib.auth import get_user_model
+from django.contrib.auth.models import User
 from django.core import mail
 from django.test import override_settings
 from django.urls import reverse
@@ -17,7 +17,6 @@ from auth_kit.test_utils import override_auth_kit_settings
 
 from test_utils.user_factory import UserFactory
 
-User = get_user_model()
 EmailConfirmationModel = get_emailconfirmation_model()
 
 

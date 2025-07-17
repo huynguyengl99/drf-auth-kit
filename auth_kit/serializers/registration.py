@@ -5,9 +5,10 @@ This module provides serializers for user registration, email verification,
 and email verification resend functionality with django-allauth integration.
 """
 
-from typing import Any
+from typing import Any, cast
 
 from django.contrib.auth.base_user import AbstractBaseUser
+from django.contrib.auth.models import User
 from django.utils.translation import gettext_lazy as _
 from rest_framework import serializers
 from rest_framework.exceptions import ValidationError
@@ -175,7 +176,7 @@ class RegisterSerializer(serializers.Serializer[dict[str, Any]]):
         user: AbstractBaseUser = adapter.new_user(request)
         self.cleaned_data = self.get_cleaned_data()
 
-        user = adapter.save_user(request, user, self, commit=False)
+        user = cast(User, adapter.save_user(request, user, self, commit=False))
         user.save()
         self.custom_signup(request, user)
         setup_user_email(request, user, [])
