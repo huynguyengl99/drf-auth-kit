@@ -331,9 +331,6 @@ Use settings to integrate your custom serializers:
 
         # Or override the complete serializer
         'LOGIN_SERIALIZER': 'myapp.serializers.CustomLoginSerializer',
-
-        # Custom authentication class if needed
-        'AUTHENTICATION_CLASS': 'myapp.authentication.CustomAuthentication',
     }
 
 **Factory Function Override**

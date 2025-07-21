@@ -85,7 +85,7 @@ Quick Start
 
     REST_FRAMEWORK = {
         'DEFAULT_AUTHENTICATION_CLASSES': [
-            'auth_kit.authentication.AuthKitAuthentication',
+            'auth_kit.authentication.JWTCookieAuthentication',
         ],
     }
 

@@ -24,7 +24,7 @@ Add the required apps to ``INSTALLED_APPS`` and configure authentication:
 
     REST_FRAMEWORK = {
         'DEFAULT_AUTHENTICATION_CLASSES': [
-            'auth_kit.authentication.AuthKitAuthentication',
+            'auth_kit.authentication.JWTCookieAuthentication',
         ],
         'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
     }

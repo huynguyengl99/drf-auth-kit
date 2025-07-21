@@ -249,6 +249,12 @@ Authentication Type
     - ``'token'`` - DRF Token authentication
     - ``'custom'`` - Custom authentication backend
 
+    **Note**: The authentication class you use in ``DEFAULT_AUTHENTICATION_CLASSES`` should match your ``AUTH_TYPE``:
+
+    - For ``'jwt'``: use ``'auth_kit.authentication.JWTCookieAuthentication'``
+    - For ``'token'``: use ``'auth_kit.authentication.TokenCookieAuthentication'``
+    - For ``'custom'``: use your custom authentication class that inherits from ``AuthKitCookieAuthentication``
+
 **USE_AUTH_COOKIE** (default: ``True``)
     Enable HTTP-only cookie-based authentication. When enabled, tokens are stored in secure cookies.
 
@@ -961,7 +967,7 @@ Related Django Settings
 
     REST_FRAMEWORK = {
         'DEFAULT_AUTHENTICATION_CLASSES': [
-            'auth_kit.authentication.AuthKitAuthentication',
+            'auth_kit.authentication.JWTCookieAuthentication',
         ],
         'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
     }

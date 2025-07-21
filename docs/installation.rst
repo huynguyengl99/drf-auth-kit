@@ -12,8 +12,8 @@ DRF Auth Kit automatically installs these core dependencies:
 - **Django REST Framework** (>=3.0) - API framework
 - **Django Allauth** (>=65.5.0) - User management and email verification
 - **DRF SimpleJWT** (>=5.0) - JWT token authentication
-- **DRF Spectacular** (>=0.28.0) - OpenAPI schema generation
-- **structlog** (>=25.2.0) - Structured logging
+- **DRF Spectacular** - OpenAPI schema generation
+- **structlog** - Structured logging
 
 **Optional Dependencies**:
 

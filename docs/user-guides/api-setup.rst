@@ -64,7 +64,7 @@ To use DRF's browsable API for testing endpoints, add the renderer to your setti
             'rest_framework.renderers.BrowsableAPIRenderer',  # For development
         ],
         'DEFAULT_AUTHENTICATION_CLASSES': [
-            'auth_kit.authentication.AuthKitAuthentication',
+            'auth_kit.authentication.JWTCookieAuthentication',
         ],
         'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
         # ... your other settings
