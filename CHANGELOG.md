@@ -1,3 +1,9 @@
+## v0.3.1 (2025-07-21)
+
+### Fix
+
+- **docs**: correct configuration examples and version requirements
+
 ## v0.3.0 (2025-07-21)
 
 ### Feat
