@@ -1,3 +1,9 @@
+## v0.3.0 (2025-07-21)
+
+### Feat
+
+- **urls**: add flexible frontend URL configuration for email verification and password reset
+
 ## v0.2.9 (2025-07-17)
 
 ### Fix
