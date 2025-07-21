@@ -66,7 +66,8 @@ Here's a complete list of all available AUTH_KIT settings with their defaults:
         'REGISTER_VIEW': 'auth_kit.views.RegisterView',
         'VERIFY_EMAIL_VIEW': 'auth_kit.views.VerifyEmailView',
         'RESEND_EMAIL_VERIFICATION_VIEW': 'auth_kit.views.ResendEmailVerificationView',
-        'REGISTER_EMAIL_CONFIRM_URL': None,
+        'FRONTEND_BASE_URL': None,
+        'REGISTER_EMAIL_CONFIRM_PATH': None,
         'GET_EMAIL_VERIFICATION_URL_FUNC': 'auth_kit.views.registration.get_email_verification_url',
         'SEND_VERIFY_EMAIL_FUNC': 'auth_kit.views.registration.send_verify_email',
 
@@ -79,7 +80,7 @@ Here's a complete list of all available AUTH_KIT settings with their defaults:
         'PASSWORD_RESET_VIEW': 'auth_kit.views.PasswordResetView',
         'PASSWORD_RESET_CONFIRM_SERIALIZER': 'auth_kit.serializers.PasswordResetConfirmSerializer',
         'PASSWORD_RESET_CONFIRM_VIEW': 'auth_kit.views.PasswordResetConfirmView',
-        'PASSWORD_RESET_CONFIRM_URL': None,
+        'PASSWORD_RESET_CONFIRM_PATH': None,
         'PASSWORD_RESET_URL_GENERATOR': 'auth_kit.forms.password_reset_url_generator',
         'OLD_PASSWORD_FIELD_ENABLED': False,
         'PASSWORD_RESET_PREVENT_ENUMERATION': True,
@@ -557,11 +558,69 @@ Password Management
 **PASSWORD_RESET_PREVENT_ENUMERATION** (default: ``True``)
     Prevent user enumeration in password reset flow.
 
-**PASSWORD_RESET_CONFIRM_URL** (default: ``None``)
-    URL template for password reset confirmation emails.
+**FRONTEND_BASE_URL** (default: ``None``)
+    Base URL for frontend application. Used to generate URLs for email verification and password reset that redirect to your frontend instead of the API backend.
 
-**REGISTER_EMAIL_CONFIRM_URL** (default: ``None``)
-    URL template for email confirmation during registration.
+**REGISTER_EMAIL_CONFIRM_PATH** (default: ``None``)
+    Custom path for email verification URLs. If not provided, uses the backend API path. Used in combination with ``FRONTEND_BASE_URL``.
+
+**PASSWORD_RESET_CONFIRM_PATH** (default: ``None``)
+    Custom path for password reset URLs. If not provided, uses the backend API path. Used in combination with ``FRONTEND_BASE_URL``.
+
+Frontend URL Configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Frontend Integration Example**
+
+When building a frontend application (React, Vue, Angular, etc.), you'll want email verification and password reset links to direct users to your frontend rather than the API backend:
+
+.. code-block:: python
+
+    AUTH_KIT = {
+        # Redirect all email links to your frontend
+        'FRONTEND_BASE_URL': 'https://myapp.com',
+        'REGISTER_EMAIL_CONFIRM_PATH': '/auth/verify-email',
+        'PASSWORD_RESET_CONFIRM_PATH': '/auth/reset-password',
+    }
+
+This configuration will generate URLs like:
+
+- Email verification: ``https://myapp.com/auth/verify-email?key=abc123``
+- Password reset: ``https://myapp.com/auth/reset-password?uid=xyz&token=def456``
+
+**Flexible Path Configuration**
+
+If you don't specify custom paths, the system uses backend API paths with your frontend base URL:
+
+.. code-block:: python
+
+    AUTH_KIT = {
+        'FRONTEND_BASE_URL': 'https://myapp.com',
+        # Paths default to backend API paths:
+        # REGISTER_EMAIL_CONFIRM_PATH defaults to '/api/auth/registration/verify-email'
+        # PASSWORD_RESET_CONFIRM_PATH defaults to '/api/auth/password/reset/confirm'
+    }
+
+This generates:
+
+- Email verification: ``https://myapp.com/api/auth/registration/verify-email?key=abc123``
+- Password reset: ``https://myapp.com/api/auth/password/reset/confirm?uid=xyz&token=def456``
+
+**Backend-Only Configuration**
+
+For API-only applications without a separate frontend:
+
+.. code-block:: python
+
+    AUTH_KIT = {
+        # No FRONTEND_BASE_URL specified
+        # All URLs will use Django's build_absolute_uri with backend paths
+    }
+
+This generates backend URLs like:
+
+- Email verification: ``https://api.myapp.com/api/auth/registration/verify-email?key=abc123``
+- Password reset: ``https://api.myapp.com/api/auth/password/reset/confirm?uid=xyz&token=def456``
 
 URL Configuration
 -----------------
@@ -727,6 +786,11 @@ Here's a comprehensive configuration example:
         # Password Management
         'OLD_PASSWORD_FIELD_ENABLED': True,
         'PASSWORD_RESET_PREVENT_ENUMERATION': False,  # Allow enumeration in internal apps
+
+        # Frontend Integration
+        'FRONTEND_BASE_URL': 'https://myapp.com',
+        'REGISTER_EMAIL_CONFIRM_PATH': '/auth/verify-email',
+        'PASSWORD_RESET_CONFIRM_PATH': '/auth/reset-password',
 
         # URLs
         'URL_NAMESPACE': 'api:auth',

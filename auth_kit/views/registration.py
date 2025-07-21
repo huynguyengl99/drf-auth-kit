@@ -6,7 +6,7 @@ and email verification resend functionality.
 """
 
 # pyright: reportMissingTypeStubs=false, reportUnknownVariableType=false
-from typing import Any, NoReturn
+from typing import Any, NoReturn, cast
 from urllib.parse import urlencode
 
 from django.contrib.auth.models import AbstractUser
@@ -41,7 +41,7 @@ from auth_kit.serializers import (
     ResendEmailVerificationSerializer,
     VerifyEmailSerializer,
 )
-from auth_kit.utils import sensitive_post_parameters_m
+from auth_kit.utils import build_frontend_url, sensitive_post_parameters_m
 
 
 def get_email_verification_url(request: Request, emailconfirmation: Any) -> str:
@@ -56,16 +56,24 @@ def get_email_verification_url(request: Request, emailconfirmation: Any) -> str:
         Complete email verification URL with query parameters
     """
     query_params: dict[str, str] = {"key": str(emailconfirmation.key)}
-    encoded_params = urlencode(query_params)
 
-    if auth_kit_settings.REGISTER_EMAIL_CONFIRM_URL:
-        url = f"{auth_kit_settings.REGISTER_EMAIL_CONFIRM_URL}?{encoded_params}"
-    else:
+    # Determine the path to use
+    path = auth_kit_settings.REGISTER_EMAIL_CONFIRM_PATH
+    if not path:
         path = reverse(f"{auth_kit_settings.URL_NAMESPACE}rest_verify_email")
-        full_path = f"{path}?{encoded_params}"
-        url = build_absolute_uri(request, full_path)
 
-    return url
+    # Build the full path with query params
+    encoded_params = urlencode(query_params)
+    path_with_params = f"{path}?{encoded_params}"
+
+    # Check if we have a frontend base URL
+    if auth_kit_settings.FRONTEND_BASE_URL:
+        return build_frontend_url(
+            auth_kit_settings.FRONTEND_BASE_URL, path, query_params
+        )
+    else:
+        # Use build_absolute_uri with the backend path
+        return cast(str, build_absolute_uri(request, path_with_params))
 
 
 def send_verify_email(request: Request, user: AbstractUser) -> None:

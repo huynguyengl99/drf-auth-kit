@@ -6,7 +6,7 @@ using django-allauth integration.
 """
 
 # pyright: reportMissingTypeStubs=false, reportUnknownVariableType=false
-from typing import Any
+from typing import Any, cast
 from urllib.parse import urlencode
 
 from django.contrib.auth.base_user import AbstractBaseUser
@@ -27,6 +27,7 @@ from allauth.account.utils import (
 from allauth.utils import build_absolute_uri
 
 from .app_settings import auth_kit_settings
+from .utils import build_frontend_url
 
 
 def password_reset_url_generator(
@@ -44,18 +45,25 @@ def password_reset_url_generator(
         Complete password reset URL with query parameters
     """
     uid = user_pk_to_url_str(user)
-
     query_params: dict[str, str] = {"uid": uid, "token": temp_key}
-    encoded_params = urlencode(query_params)
 
-    if auth_kit_settings.PASSWORD_RESET_CONFIRM_URL:
-        url = f"{auth_kit_settings.PASSWORD_RESET_CONFIRM_URL}?{encoded_params}"
-    else:
+    # Determine the path to use
+    path = auth_kit_settings.PASSWORD_RESET_CONFIRM_PATH
+    if not path:
         path = reverse(f"{auth_kit_settings.URL_NAMESPACE}rest_password_reset_confirm")
-        full_path = f"{path}?{encoded_params}"
-        url = build_absolute_uri(request, full_path)
 
-    return url
+    # Build the full path with query params
+    encoded_params = urlencode(query_params)
+    path_with_params = f"{path}?{encoded_params}"
+
+    # Check if we have a frontend base URL
+    if auth_kit_settings.FRONTEND_BASE_URL:
+        return build_frontend_url(
+            auth_kit_settings.FRONTEND_BASE_URL, path, query_params
+        )
+    else:
+        # Use build_absolute_uri with the backend path
+        return cast(str, build_absolute_uri(request, path_with_params))
 
 
 class AllAuthPasswordResetForm(DefaultPasswordResetForm):  # type: ignore[misc]

@@ -223,9 +223,10 @@ class TestRegisterView(APITestCase):
         assert len(mail.outbox) == 0
 
     @override_auth_kit_settings(
-        REGISTER_EMAIL_CONFIRM_URL="https://example.com/path/to/fe"
+        FRONTEND_BASE_URL="https://frontend.example.com",
+        REGISTER_EMAIL_CONFIRM_PATH="/auth/verify-email",
     )
-    def test_registration_custom_email_verification_url(self) -> None:
+    def test_registration_frontend_base_url_with_path(self) -> None:
         url = reverse("rest_register")
         response: Response = self.client.post(
             url, self.registration_data, format="json"
@@ -234,17 +235,26 @@ class TestRegisterView(APITestCase):
         assert response.status_code == status.HTTP_201_CREATED
         assert "Verification e-mail sent" in response.data["detail"]
 
-        # Verify user was created
-        user_exists = User.objects.filter(username="testuser").exists()
-        assert user_exists is True
+        assert len(mail.outbox) == 1
+        register_email = mail.outbox[0]
 
-        # Verify user is active (default Django behavior)
-        user = User.objects.get(username="testuser")
-        assert user.is_active is True
+        assert register_email.to == [self.registration_data["email"]]
+        assert (
+            register_email.subject == "[testserver] Please Confirm Your Email Address"
+        )
+        assert (
+            "https://frontend.example.com/auth/verify-email?key=" in register_email.body
+        )
 
-        # Verify email is not active
-        email_address = EmailAddress.objects.get(user=user)
-        assert not email_address.verified
+    @override_auth_kit_settings(FRONTEND_BASE_URL="https://frontend.example.com/")
+    def test_registration_frontend_base_url_default_path(self) -> None:
+        url = reverse("rest_register")
+        response: Response = self.client.post(
+            url, self.registration_data, format="json"
+        )
+
+        assert response.status_code == status.HTTP_201_CREATED
+        assert "Verification e-mail sent" in response.data["detail"]
 
         assert len(mail.outbox) == 1
         register_email = mail.outbox[0]
@@ -253,7 +263,35 @@ class TestRegisterView(APITestCase):
         assert (
             register_email.subject == "[testserver] Please Confirm Your Email Address"
         )
-        assert "https://example.com/path/to/fe?key=" in register_email.body
+        # Should use the backend path when no custom path is set
+        assert (
+            "https://frontend.example.com/api/auth/registration/verify-email?key="
+            in register_email.body
+        )
+
+    @override_auth_kit_settings(
+        FRONTEND_BASE_URL="https://frontend.example.com",
+        REGISTER_EMAIL_CONFIRM_PATH="auth/verify-email",  # Test without leading slash
+    )
+    def test_registration_frontend_base_url_path_without_leading_slash(self) -> None:
+        url = reverse("rest_register")
+        response: Response = self.client.post(
+            url, self.registration_data, format="json"
+        )
+
+        assert response.status_code == status.HTTP_201_CREATED
+        assert "Verification e-mail sent" in response.data["detail"]
+
+        assert len(mail.outbox) == 1
+        register_email = mail.outbox[0]
+
+        assert register_email.to == [self.registration_data["email"]]
+        assert (
+            register_email.subject == "[testserver] Please Confirm Your Email Address"
+        )
+        assert (
+            "https://frontend.example.com/auth/verify-email?key=" in register_email.body
+        )
 
 
 class TestVerifyEmailView(APITestCase):

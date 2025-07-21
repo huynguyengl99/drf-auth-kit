@@ -7,6 +7,7 @@ security decorators, type casting utilities, and user model references.
 
 from collections.abc import Sequence
 from typing import Any, TypeAlias, cast
+from urllib.parse import urlencode
 
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import User
@@ -99,3 +100,21 @@ def convert_form_errors_to_drf(form: Form) -> dict[str, list[str]]:
             errors[field_name] = [str(error) for error in field_errors]
 
     return errors
+
+
+def build_frontend_url(base_url: str, path: str, query_params: dict[str, str]) -> str:
+    """
+    Build a complete frontend URL from base URL, path, and query parameters.
+
+    Args:
+        base_url: Frontend base URL
+        path: URL path
+        query_params: Query parameters dictionary
+
+    Returns:
+        Complete URL with query parameters
+    """
+    encoded_params = urlencode(query_params)
+    base_url = base_url.rstrip("/")
+    path = path.lstrip("/")
+    return f"{base_url}/{path}?{encoded_params}"

@@ -130,7 +130,8 @@ class MySetting:
     )
 
     # Registration Configuration
-    REGISTER_EMAIL_CONFIRM_URL: str | None = None
+    FRONTEND_BASE_URL: str | None = None
+    REGISTER_EMAIL_CONFIRM_PATH: str | None = None
     GET_EMAIL_VERIFICATION_URL_FUNC: Callable[..., str] = ImportStr(
         "auth_kit.views.registration.get_email_verification_url"
     )
@@ -163,7 +164,7 @@ class MySetting:
     )
 
     # Password Configuration
-    PASSWORD_RESET_CONFIRM_URL: str | None = None
+    PASSWORD_RESET_CONFIRM_PATH: str | None = None
     PASSWORD_RESET_URL_GENERATOR: Callable[..., str] = ImportStr(
         "auth_kit.forms.password_reset_url_generator"
     )

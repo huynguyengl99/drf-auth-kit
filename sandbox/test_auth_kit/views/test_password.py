@@ -124,10 +124,11 @@ class TestPasswordResetView(APITestCase):
         assert len(urls) >= 1
 
     @override_auth_kit_settings(
-        PASSWORD_RESET_CONFIRM_URL="https://myapp.com/reset-password"
+        FRONTEND_BASE_URL="https://frontend.example.com",
+        PASSWORD_RESET_CONFIRM_PATH="/auth/reset-password",
     )
-    def test_password_reset_email_content_with_custom_confirm_url(self) -> None:
-        """Test that password reset email uses custom confirm URL when configured"""
+    def test_password_reset_email_content_with_frontend_base_url_and_path(self) -> None:
+        """Test that password reset email uses frontend base URL with custom path"""
         UserFactory.create_with_email_address(self.user_data)
 
         data = {"email": "test@example.com"}
@@ -139,20 +140,77 @@ class TestPasswordResetView(APITestCase):
         email = mail.outbox[0]
         assert "test@example.com" in email.to
 
-        # Check that email contains custom reset URL
+        # Check that email contains frontend reset URL
         email_body = email.body
         assert "password" in email_body.lower()
 
-        # Verify the custom URL is used instead of the default API endpoint
-        assert "https://myapp.com/reset-password?uid=" in email_body
+        # Verify the frontend URL with custom path is used
+        assert "https://frontend.example.com/auth/reset-password?uid=" in email_body
         assert "&token=" in email_body
 
         # Ensure it's not using the default API endpoint
         assert "/api/auth/password/reset/confirm" not in email_body
 
-        url_pattern = (
-            r"https://myapp\.com/reset-password\?uid=[a-zA-Z0-9]+&token=[a-zA-Z0-9\-]+"
+        url_pattern = r"https://frontend\.example\.com/auth/reset-password\?uid=[a-zA-Z0-9]+&token=[a-zA-Z0-9\-]+"
+        urls: list[Any] = re.findall(url_pattern, str(email_body))
+        assert len(urls) >= 1
+
+    @override_auth_kit_settings(FRONTEND_BASE_URL="https://frontend.example.com/")
+    def test_password_reset_email_content_with_frontend_base_url_default_path(
+        self,
+    ) -> None:
+        """Test that password reset email uses frontend base URL with default backend path"""
+        UserFactory.create_with_email_address(self.user_data)
+
+        data = {"email": "test@example.com"}
+        response: Response = self.client.post(self.url, data, format="json")
+
+        assert response.status_code == status.HTTP_200_OK
+        assert len(mail.outbox) == 1
+
+        email = mail.outbox[0]
+        assert "test@example.com" in email.to
+
+        # Check that email contains frontend reset URL with backend path
+        email_body = email.body
+        assert "password" in email_body.lower()
+
+        # Should use frontend base URL with backend path when no custom path is set
+        assert (
+            "https://frontend.example.com/api/auth/password/reset/confirm?uid="
+            in email_body
         )
+        assert "&token=" in email_body
+
+        url_pattern = r"https://frontend\.example\.com/api/auth/password/reset/confirm\?uid=[a-zA-Z0-9]+&token=[a-zA-Z0-9\-]+"
+        urls: list[Any] = re.findall(url_pattern, str(email_body))
+        assert len(urls) >= 1
+
+    @override_auth_kit_settings(
+        FRONTEND_BASE_URL="https://frontend.example.com",
+        PASSWORD_RESET_CONFIRM_PATH="auth/reset-password",  # Test without leading slash
+    )
+    def test_password_reset_email_content_path_without_leading_slash(self) -> None:
+        """Test that password reset email handles path without leading slash correctly"""
+        UserFactory.create_with_email_address(self.user_data)
+
+        data = {"email": "test@example.com"}
+        response: Response = self.client.post(self.url, data, format="json")
+
+        assert response.status_code == status.HTTP_200_OK
+        assert len(mail.outbox) == 1
+
+        email = mail.outbox[0]
+        assert "test@example.com" in email.to
+
+        email_body = email.body
+        assert "password" in email_body.lower()
+
+        # Should properly handle path without leading slash
+        assert "https://frontend.example.com/auth/reset-password?uid=" in email_body
+        assert "&token=" in email_body
+
+        url_pattern = r"https://frontend\.example\.com/auth/reset-password\?uid=[a-zA-Z0-9]+&token=[a-zA-Z0-9\-]+"
         urls: list[Any] = re.findall(url_pattern, str(email_body))
         assert len(urls) >= 1
 

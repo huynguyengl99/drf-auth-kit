@@ -74,6 +74,10 @@ If ``ACCOUNT_EMAIL_VERIFICATION = "mandatory"`` in your settings:
 
 To resend verification emails, use ``POST /api/auth/registration/resend-email/``.
 
+**Frontend URL Configuration**
+
+By default, email verification links point to the API backend. For frontend applications, configure ``FRONTEND_BASE_URL`` and ``REGISTER_EMAIL_CONFIRM_PATH`` to redirect users to your frontend verification page. See :doc:`../configuration` for details.
+
 User Login
 ----------
 
@@ -185,6 +189,10 @@ For users who forgot their password:
 2. User receives reset email with token
 3. ``POST /api/auth/password/reset/confirm/`` with reset token and new password
 
+**Frontend URL Configuration**
+
+By default, password reset links point to the API backend. For frontend applications, configure ``FRONTEND_BASE_URL`` and ``PASSWORD_RESET_CONFIRM_PATH`` to redirect users to your frontend password reset page. See :doc:`../configuration` for details.
+
 Token Management (JWT Only)
 ---------------------------
 
@@ -234,6 +242,20 @@ Use your API documentation to test error conditions:
 
 Frontend Integration
 --------------------
+
+**Email Links Configuration**
+
+For frontend applications, configure email verification and password reset links to redirect to your frontend pages instead of the API backend:
+
+.. code-block:: python
+
+    AUTH_KIT = {
+        'FRONTEND_BASE_URL': 'https://myapp.com',
+        'REGISTER_EMAIL_CONFIRM_PATH': '/auth/verify-email',
+        'PASSWORD_RESET_CONFIRM_PATH': '/auth/reset-password',
+    }
+
+See :doc:`../configuration` for complete frontend URL configuration options.
 
 **Cookie Authentication (Recommended)**
 

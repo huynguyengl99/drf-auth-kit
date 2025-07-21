@@ -280,10 +280,11 @@ class TestEmailOnlyAuthFlows(APITestCase):
         assert "username" not in user_data  # Username should not be present
 
     @override_auth_kit_settings(
-        PASSWORD_RESET_CONFIRM_URL="https://myapp.com/reset-password"
+        FRONTEND_BASE_URL="https://myapp.com",
+        PASSWORD_RESET_CONFIRM_PATH="/reset-password",
     )
     def test_password_reset_custom_url(self) -> None:
-        """Test password reset with custom confirmation URL"""
+        """Test password reset with custom frontend URL and path"""
         user, _ = UserFactory.create_with_email_address(self.user_data)
 
         url = reverse("rest_password_reset")
@@ -295,7 +296,7 @@ class TestEmailOnlyAuthFlows(APITestCase):
 
         email_body = mail.outbox[0].body
 
-        # Verify custom URL is used instead of default API endpoint
+        # Verify frontend URL with custom path is used instead of default API endpoint
         assert "https://myapp.com/reset-password?uid=" in email_body
         assert "&token=" in email_body
         assert "/api/auth/password/reset/confirm" not in email_body
