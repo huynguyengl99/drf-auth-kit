@@ -6,14 +6,17 @@ from django.urls import reverse
 from rest_framework import status
 from rest_framework.test import APITestCase
 
+import responses
 from allauth.socialaccount.models import (  # pyright: ignore[reportMissingTypeStubs]
     SocialAccount,
 )
 
 from test_utils.user_factory import UserFactory
 
+from .helper import SocialTestMixin
 
-class TestSocialLoginTemplateView(APITestCase):
+
+class TestSocialLoginTemplateView(SocialTestMixin, APITestCase):
     @patch("auth_kit.social.views.ui.get_social_adapter")
     def test_no_providers(self, mock_adapter: MagicMock) -> None:
         mock_adapter.return_value.list_apps.return_value = []
@@ -25,7 +28,11 @@ class TestSocialLoginTemplateView(APITestCase):
             "No social providers are properly configured" in response.content.decode()
         )
 
+    @responses.activate
     def test_renders_with_all_providers(self) -> None:
+        # Mock LinkedIn OpenID Connect configuration to avoid external HTTP requests
+        self.mock_oauth_responses("linkedin")
+
         response = self.client.get(reverse("social_login_page"))
 
         assert response.status_code == 200
@@ -36,7 +43,7 @@ class TestSocialLoginTemplateView(APITestCase):
         assert "Continue with LinkedIn" in content
 
 
-class TestSocialAccountManagementView(APITestCase):
+class TestSocialAccountManagementView(SocialTestMixin, APITestCase):
     def setUp(self) -> None:
         self.user = UserFactory.create()
 
@@ -56,7 +63,11 @@ class TestSocialAccountManagementView(APITestCase):
             "No social providers are properly configured" in response.content.decode()
         )
 
+    @responses.activate
     def test_renders_with_all_providers(self) -> None:
+        # Mock LinkedIn OpenID Connect configuration to avoid external HTTP requests
+        self.mock_oauth_responses("linkedin")
+
         self.client.force_authenticate(user=self.user)
         SocialAccount.objects.create(user=self.user, provider="google")
 
