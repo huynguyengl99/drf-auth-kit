@@ -1,3 +1,9 @@
+## v0.3.2 (2025-07-22)
+
+### Fix
+
+- **password**: disable authentication for password reset confirm view
+
 ## v0.3.1 (2025-07-21)
 
 ### Fix
