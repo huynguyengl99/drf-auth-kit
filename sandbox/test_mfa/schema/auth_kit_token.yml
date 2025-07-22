@@ -374,8 +374,6 @@ paths:
               $ref: '#/components/schemas/PasswordResetConfirmRequest'
         required: true
       security:
-      - TokenAuthentication: []
-        TokenCookieAuthentication: []
       - {}
       responses:
         '200':

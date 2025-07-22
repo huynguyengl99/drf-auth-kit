@@ -373,8 +373,6 @@ paths:
               $ref: '#/components/schemas/PasswordResetConfirmRequest'
         required: true
       security:
-      - KnoxTokenAuthentication: []
-        KnoxTokenCookieAuthentication: []
       - {}
       responses:
         '200':

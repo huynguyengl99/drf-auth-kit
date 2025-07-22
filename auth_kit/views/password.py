@@ -75,6 +75,7 @@ class PasswordResetConfirmView(GenericAPIView[Any]):
 
     serializer_class = auth_kit_settings.PASSWORD_RESET_CONFIRM_SERIALIZER
     permission_classes = (AllowAny,)
+    authentication_classes = []
     throttle_scope = "auth_kit"
 
     @sensitive_post_parameters_m

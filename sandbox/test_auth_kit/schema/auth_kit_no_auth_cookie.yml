@@ -125,8 +125,6 @@ paths:
               $ref: '#/components/schemas/PasswordResetConfirmRequest'
         required: true
       security:
-      - JWTAuthentication: []
-        JWTCookieAuthentication: []
       - {}
       responses:
         '200':
