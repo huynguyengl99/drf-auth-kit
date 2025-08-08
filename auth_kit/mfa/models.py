@@ -143,7 +143,7 @@ class MFAMethod(Model):
 
     id: int | None
     user_id: int
-    user = ForeignKey["User", "User"](
+    user = ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=CASCADE,
         verbose_name=_("user"),
@@ -160,17 +160,17 @@ class MFAMethod(Model):
         max_length=255,
         help_text=_("TOTP secret key for generating verification codes"),
     )
-    is_primary = BooleanField[bool, bool](
+    is_primary = BooleanField(
         _("is primary"),
         default=False,
         help_text=_("Whether this is the user's primary MFA method"),
     )
-    is_active = BooleanField[bool, bool](
+    is_active = BooleanField(
         _("is active"),
         default=False,
         help_text=_("Whether this method is active and can be used"),
     )
-    _backup_codes = JSONField[Any, Any](
+    _backup_codes = JSONField(
         _("backup codes"),
         default=dict,
         blank=True,
