@@ -150,12 +150,12 @@ class MFAMethod(Model):
         related_name="mfa_methods",
         help_text=_("User who owns this MFA method"),
     )
-    name = CharField[str, str](
+    name = CharField(
         _("name"),
         max_length=255,
         help_text=_("MFA method name (e.g., 'app', 'email')"),
     )
-    secret = CharField[str, str](
+    secret = CharField(
         _("secret"),
         max_length=255,
         help_text=_("TOTP secret key for generating verification codes"),
