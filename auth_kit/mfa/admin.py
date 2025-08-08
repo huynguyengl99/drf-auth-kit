@@ -12,7 +12,7 @@ from .models import MFAMethod
 
 
 @admin.register(MFAMethod)
-class MFAMethodAdmin(admin.ModelAdmin[MFAMethod]):
+class MFAMethodAdmin(admin.ModelAdmin):
     """
     Admin interface for MFA method management.
 
