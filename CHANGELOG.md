@@ -1,3 +1,9 @@
+## v0.3.3 (2025-08-09)
+
+### Fix
+
+- **jwt**: add dateutil parser import and type support for cookie expiration
+
 ## v0.3.2 (2025-07-22)
 
 ### Fix
